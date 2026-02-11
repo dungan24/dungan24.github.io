@@ -238,16 +238,16 @@ function renderRegime(data) {
     backgroundColor: 'transparent',
     series: [{
       type: 'gauge',
-      center: ['50%', '60%'],
-      radius: '85%',
+      center: ['50%', '55%'],
+      radius: '78%',
       startAngle: 200,
       endAngle: -20,
       min: 0,
       max: 100,
-      splitNumber: 4,
+      splitNumber: 3,
       axisLine: {
         lineStyle: {
-          width: 20,
+          width: 18,
           color: [
             [0.2, '#FF3366'],
             [0.4, '#FFD600'],
@@ -256,43 +256,36 @@ function renderRegime(data) {
           ],
         },
       },
-      pointer: { itemStyle: { color: 'auto' }, width: 5 },
+      pointer: { itemStyle: { color: 'auto' }, width: 4 },
       axisTick: { show: false },
-      splitLine: { length: 12, lineStyle: { color: 'auto', width: 2 } },
+      splitLine: { length: 10, lineStyle: { color: 'auto', width: 2 } },
       axisLabel: {
-        distance: 28,
+        distance: 22,
         color: theme.text,
-        fontSize: 11,
+        fontSize: 10,
         formatter: function (val) {
-          if (val <= 15) return 'Panic';
-          if (val <= 35) return 'Risk-Off';
-          if (val <= 65) return 'Cautious';
+          if (val <= 10) return 'Panic';
+          if (val <= 40) return 'Risk-Off';
+          if (val <= 75) return 'Cautious';
           return 'Risk-On';
         },
       },
-      title: { show: true, offsetCenter: [0, '70%'], color: theme.text },
+      title: {
+        show: true,
+        offsetCenter: [0, '72%'],
+        color: theme.text,
+        fontSize: 12,
+      },
       detail: {
         valueAnimation: true,
         formatter: function () { return regime.icon + ' ' + regime.label; },
         color: theme.text,
-        fontSize: 18,
-        offsetCenter: [0, '45%'],
+        fontSize: 16,
+        offsetCenter: [0, '48%'],
       },
       data: [{ value: score, name: regime.summary }],
     }],
   });
-
-  // 시그널 표시
-  if (regime.signals && regime.signals.length > 0) {
-    const el = document.getElementById('chart-regime');
-    const signalHtml = regime.signals.map(s =>
-      `<span style="margin-right:1rem">${s.assessment} <b>${s.name}</b>: ${s.value} (${s.note})</span>`
-    ).join('');
-    const div = document.createElement('div');
-    div.style.cssText = 'text-align:center;padding:0.5rem;font-size:0.85rem;color:' + theme.text;
-    div.innerHTML = signalHtml;
-    el.appendChild(div);
-  }
 
   window.addEventListener('resize', () => chart.resize());
 }
