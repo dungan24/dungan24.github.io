@@ -1,4 +1,4 @@
-baseURL = 'https://mocogma.github.io/market-pulse-blog/'
+baseURL = 'https://dungan24.github.io/market-pulse-blog/'
 languageCode = 'ko-KR'
 title = 'Market Pulse'
 theme = 'PaperMod'
@@ -19,7 +19,7 @@ Content = '팩트 기반 시장 브리핑. 매일 개장 전 업데이트.'
 
 [[params.socialIcons]]
 name = 'github'
-url = 'https://github.com/mocogma/market-pulse-blog'
+url = 'https://github.com/dungan24/market-pulse-blog'
 
 [outputs]
 home = ['HTML', 'RSS', 'JSON']
