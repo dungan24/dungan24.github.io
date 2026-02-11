@@ -1,0 +1,16 @@
+disabled = false
+languageCode = "ko-KR"
+languageName = "Korean"
+weight = 1
+title = "Market Pulse"
+
+[params]
+  displayName = "KO"
+  isoCode = "ko"
+  rtl = false
+  dateFormat = "2006-01-02"
+  description = "AI 기반 일일 시장 브리핑"
+
+[params.author]
+  name = "Market Pulse"
+  headline = "Fact-driven market intelligence"

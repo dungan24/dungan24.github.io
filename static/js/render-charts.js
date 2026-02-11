@@ -6,39 +6,42 @@
 /* globals echarts */
 
 const COLORS = {
-  primary: '#1e90ff',
-  success: '#22c55e',
-  danger: '#ef4444',
-  warning: '#f59e0b',
-  muted: '#94a3b8',
-  bg: '#1a1a2e',
-  text: '#e2e8f0',
+  primary: '#22d3ee',    /* cyan-400 Bloomberg blue */
+  success: '#4ade80',    /* green-400 상승 */
+  danger: '#f87171',     /* red-400 하락 */
+  warning: '#fbbf24',    /* amber-400 */
+  muted: '#94a3b8',      /* slate-400 */
+  bg: '#0a0f1e',         /* 최대 다크 */
+  text: '#e2e8f0',       /* slate-200 */
 };
 
 const METRIC_COLORS = {
-  SPX: '#1e90ff',
-  NDX: '#8b5cf6',
-  DJI: '#22c55e',
-  VIX: '#ef4444',
-  BTC: '#f59e0b',
-  USDKRW: '#06b6d4',
-  GOLD: '#eab308',
-  OIL: '#78716c',
-  US10Y: '#ec4899',
+  SPX: '#22d3ee',       /* cyan-400 */
+  NDX: '#818cf8',       /* indigo-400 */
+  DJI: '#34d399',       /* emerald-400 */
+  VIX: '#f87171',       /* red-400 */
+  BTC: '#fbbf24',       /* amber-400 */
+  USDKRW: '#06b6d4',   /* cyan-500 */
+  GOLD: '#eab308',      /* yellow-500 */
+  OIL: '#a8a29e',       /* stone-400 */
+  US10Y: '#f472b6',     /* pink-400 */
 };
 
 function isDarkMode() {
-  return document.body.classList.contains('dark') ||
+  return document.documentElement.classList.contains('dark') ||
+    document.body.classList.contains('dark') ||
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
 function getTheme() {
   const dark = isDarkMode();
   return {
-    bg: dark ? '#1a1a2e' : '#ffffff',
+    bg: dark ? '#0a0f1e' : '#ffffff',
     text: dark ? '#e2e8f0' : '#334155',
-    axis: dark ? '#475569' : '#cbd5e1',
+    axis: dark ? '#334155' : '#cbd5e1',
     tooltip: dark ? '#1e293b' : '#ffffff',
+    success: dark ? '#4ade80' : '#16a34a',
+    danger: dark ? '#f87171' : '#dc2626',
   };
 }
 
@@ -93,10 +96,10 @@ function renderTimeSeries(data) {
     backgroundColor: 'transparent',
     tooltip: { trigger: 'axis' },
     legend: { data: [...leftKeys, ...rightKeys].filter(k => series[k]), textStyle: { color: theme.text } },
-    grid: { left: '8%', right: '8%', bottom: '12%' },
+    grid: { left: '14%', right: '12%', bottom: '12%' },
     xAxis: { type: 'category', data: dates, axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text } },
     yAxis: [
-      { type: 'value', name: '지수', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } } },
+      { type: 'value', name: '지수', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: function(v) { return v >= 1000 ? (v/1000).toFixed(0) + 'K' : v; } }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } } },
       { type: 'value', name: 'VIX', axisLine: { lineStyle: { color: METRIC_COLORS.VIX } }, axisLabel: { color: theme.text }, splitLine: { show: false } },
     ],
     series: seriesConfig,
@@ -119,7 +122,7 @@ function renderCorrelations(data) {
   const items = data.correlations;
   const labels = items.map(c => c.labels.join(' ↔ '));
   const values = items.map(c => c.value);
-  const colors = values.map(v => v > 0.3 ? COLORS.danger : v < -0.3 ? COLORS.primary : COLORS.muted);
+  const colors = values.map(v => v > 0.3 ? theme.danger : v < -0.3 ? COLORS.primary : COLORS.muted);
 
   chart.setOption({
     backgroundColor: 'transparent',
@@ -270,7 +273,7 @@ function renderSectors(data) {
         type: 'bar',
         data: week1.map(v => ({
           value: v,
-          itemStyle: { color: v != null && v > 0 ? COLORS.success : COLORS.danger, borderRadius: [0, 4, 4, 0] },
+          itemStyle: { color: v != null && v > 0 ? theme.success : theme.danger, borderRadius: [0, 4, 4, 0] },
         })),
       },
       {
@@ -278,7 +281,7 @@ function renderSectors(data) {
         type: 'bar',
         data: month1.map(v => ({
           value: v,
-          itemStyle: { color: v != null && v > 0 ? 'rgba(34,197,94,0.5)' : 'rgba(239,68,68,0.5)', borderRadius: [0, 4, 4, 0] },
+          itemStyle: { color: v != null && v > 0 ? theme.success + '80' : theme.danger + '80', borderRadius: [0, 4, 4, 0] },
         })),
       },
     ],
@@ -328,7 +331,7 @@ function renderFiveDay(data) {
       data: values.map(v => ({
         value: +v.toFixed(2),
         itemStyle: {
-          color: v > 0 ? COLORS.success : COLORS.danger,
+          color: v > 0 ? theme.success : theme.danger,
           borderRadius: v > 0 ? [4, 4, 0, 0] : [0, 0, 4, 4],
         },
       })),

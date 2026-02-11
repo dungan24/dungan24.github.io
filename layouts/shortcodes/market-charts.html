@@ -1,21 +1,40 @@
 {{ if .Page.Params.chartData }}
-<div class="chart-container" id="market-charts-root">
+<div class="w-full" id="market-charts-root">
+  <div class="market-chart-card" id="charts-status-container" data-label="SYSTEM // SYNC">
+    <div class="chart-loading-state" id="charts-loading-ui">
+      <div class="chart-spinner"></div>
+      <span>CONNECTING TO TERMINAL...</span>
+    </div>
+  </div>
 
-  <h3 class="chart-title">📈 주요 지표 추이</h3>
-  <div class="chart-box" id="chart-timeseries"></div>
+  <div class="hidden" id="charts-content">
+    <div class="market-chart-card" data-label="CHART // INTRA-DAY TREND">
+      <h3 class="chart-title-compact">📈 주요 지표 추이</h3>
+      <div class="chart-box" id="chart-timeseries"></div>
+    </div>
 
-  <h3 class="chart-title">🔗 자산 간 상관관계</h3>
-  <div class="chart-box" id="chart-correlations"></div>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div class="market-chart-card" data-label="ANALYSIS // CORRELATION">
+        <h3 class="chart-title-compact">🔗 자산 간 상관관계</h3>
+        <div class="chart-box" id="chart-correlations" style="height:320px"></div>
+      </div>
 
-  <h3 class="chart-title">🎯 시장 국면 (Regime)</h3>
-  <div class="chart-box" id="chart-regime" style="height:300px"></div>
+      <div class="market-chart-card" data-label="MARKET // REGIME SCORE">
+        <h3 class="chart-title-compact">🎯 시장 국면 (Regime)</h3>
+        <div class="chart-box" id="chart-regime" style="height:320px"></div>
+      </div>
+    </div>
 
-  <h3 class="chart-title">📊 섹터 상대강도</h3>
-  <div class="chart-box" id="chart-sectors"></div>
+    <div class="market-chart-card" data-label="SECTOR // RELATIVE STRENGTH">
+      <h3 class="chart-title-compact">📊 섹터 상대강도</h3>
+      <div class="chart-box" id="chart-sectors"></div>
+    </div>
 
-  <h3 class="chart-title">📉 5일 변동 비교</h3>
-  <div class="chart-box" id="chart-5day" style="height:300px"></div>
-
+    <div class="market-chart-card" data-label="PERFORMANCE // 5-DAY CHANGE">
+      <h3 class="chart-title-compact">📉 5일 변동 비교</h3>
+      <div class="chart-box" id="chart-5day" style="height:320px"></div>
+    </div>
+  </div>
 </div>
 
 <script src="/js/render-charts.js"></script>
@@ -23,13 +42,26 @@
   (function() {
     const chartDataUrl = '{{ .Page.Params.chartData }}';
     if (!chartDataUrl) return;
+
+    const statusContainer = document.getElementById('charts-status-container');
+    const loadingUI = document.getElementById('charts-loading-ui');
+    const content = document.getElementById('charts-content');
+
     fetch(chartDataUrl)
-      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) throw new Error('DATA_UNAVAILABLE');
+        return r.json();
+      })
       .then(data => renderAllCharts(data))
+      .then(() => {
+        if (statusContainer) statusContainer.style.display = 'none';
+        if (content) content.classList.remove('hidden');
+      })
       .catch(err => {
         console.error('Chart data load failed:', err);
-        document.getElementById('market-charts-root').innerHTML =
-          '<p style="color:gray">차트 데이터를 불러올 수 없습니다.</p>';
+        if (loadingUI) {
+          loadingUI.innerHTML = '<div style="text-align:center;color:#f87171"><div style="font-weight:700;margin-bottom:0.5rem">[ CONNECTION_ERROR ]</div><div style="font-size:12px;opacity:0.9">FAILED TO SYNCHRONIZE MARKET DATA</div></div>';
+        }
       });
   })();
 </script>

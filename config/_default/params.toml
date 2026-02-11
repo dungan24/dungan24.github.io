@@ -1,0 +1,49 @@
+colorScheme = "bloomberg"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+[header]
+  layout = "fixed"
+
+[footer]
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "background"
+  homepageImage = "img/hero.svg"
+  showRecent = true
+  showRecentItems = 10
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = true
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = false
+
+[article]
+  showDate = true
+  showDateOnlyInArticle = false
+  showAuthor = false
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showZenMode = false
+
+[list]
+  showBreadcrumbs = true
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  cardView = true
+  groupByYear = false

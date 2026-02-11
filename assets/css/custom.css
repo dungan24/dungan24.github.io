@@ -1,0 +1,203 @@
+/* ===== Market Pulse - Bloomberg Terminal Style Polish ===== */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* --- Base Typography --- */
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+code, pre, .num-cell, .terminal-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- Global Variables & Improvements --- */
+:root {
+  --terminal-border: rgb(var(--color-neutral-400) / 0.3);
+  --terminal-bg-card: rgb(var(--color-neutral-800) / 0.4);
+  --terminal-accent-fact: rgb(var(--color-primary-400));
+  --terminal-accent-opinion: rgb(var(--color-secondary-400));
+}
+
+/* --- Homepage Hero Polish --- */
+.prose h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, rgb(var(--color-primary-400)), rgb(var(--color-primary-200)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.prose h2.hero-subtitle {
+  font-weight: 400;
+  color: rgb(var(--color-neutral-400));
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Briefing Sections (Cards) --- */
+.briefing-section {
+  position: relative;
+  border: 1px solid var(--terminal-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 3rem 0;
+  background: var(--terminal-bg-card);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.briefing-section::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: rgb(var(--color-neutral-800));
+  padding: 0 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgb(var(--color-neutral-400));
+  letter-spacing: 0.1em;
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.briefing-section--fact {
+  border-left: 3px solid var(--terminal-accent-fact);
+}
+.briefing-section--fact::before {
+  color: var(--terminal-accent-fact);
+  content: "FACTS // MARKET DATA";
+}
+
+.briefing-section--opinion {
+  border-left: 3px solid var(--terminal-accent-opinion);
+}
+.briefing-section--opinion::before {
+  color: var(--terminal-accent-opinion);
+  content: "ANALYSIS // OPINION";
+}
+
+.briefing-section h2 {
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.25rem !important;
+  border-bottom: 1px solid var(--terminal-border);
+  padding-bottom: 0.5rem;
+  color: rgb(var(--color-neutral-100));
+}
+
+/* --- 상승/하락 색상 강화 --- */
+.num-up {
+  color: rgb(74, 222, 128) !important;
+  font-weight: 600 !important;
+}
+
+.num-down {
+  color: rgb(248, 113, 113) !important;
+  font-weight: 600 !important;
+}
+
+.stat-highlight {
+  background: rgb(var(--color-primary-400) / 0.15);
+  color: rgb(var(--color-primary-300)) !important;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid rgb(var(--color-primary-400) / 0.3);
+}
+
+/* Light Mode Adjustments */
+:root:not(.dark) .briefing-section {
+  background: rgb(var(--color-neutral-50));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+:root:not(.dark) .briefing-section::before {
+  background: white;
+}
+
+:root:not(.dark) .briefing-section h2 {
+  color: rgb(var(--color-neutral-800));
+}
+
+:root:not(.dark) .num-up { color: rgb(22, 163, 74) !important; }
+:root:not(.dark) .num-down { color: rgb(220, 38, 38) !important; }
+
+/* --- Table Polish --- */
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgb(var(--color-neutral-900) / 0.2);
+}
+
+.prose thead th {
+  background: rgb(var(--color-neutral-700));
+  color: rgb(var(--color-neutral-300));
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.prose tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgb(var(--color-neutral-400) / 0.1);
+  color: rgb(var(--color-neutral-200));
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover td {
+  background: rgb(var(--color-neutral-400) / 0.1);
+}
+
+.prose thead th:not(:first-child),
+.prose td:not(:first-child) {
+  text-align: right !important;
+}
+
+/* --- Mobile Spacing & Scaling --- */
+@media (max-width: 640px) {
+  .prose { font-size: 0.95rem; }
+  .prose table { font-size: 0.75rem; }
+  .prose tbody td, .prose thead th { padding: 0.6rem 0.75rem; }
+
+  .briefing-section {
+    padding: 1.5rem 1rem;
+    margin: 2rem -1.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .briefing-section::before { left: 1.5rem; }
+}
+
+/* --- Scrollbar Polish --- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-neutral-600)); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-primary-500)); }

@@ -1,0 +1,90 @@
+<!-- Market Pulse: UI Polish & Intelligence -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const content = document.querySelector('.prose');
+  if (!content) return;
+
+  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+
+  // 1. Terminal Data Cell Coloring & Formatting
+  const cells = content.querySelectorAll('td');
+  cells.forEach(td => {
+    const text = td.textContent.trim();
+    if (/^\+\d/.test(text) || /↑/.test(text)) td.classList.add('num-up');
+    else if (/^-\d/.test(text) || (/↓/.test(text) && !/^-$/.test(text))) td.classList.add('num-down');
+    if (/⚡/.test(text)) td.classList.add('stat-highlight');
+    if (/^[+\-]?[\d,]+\.?\d*%?(\s|$)/.test(text) || /^\d[\d,.]*%?$/.test(text)) td.classList.add('num-cell');
+  });
+
+  // 2. Table Mobile Responsive Wrapper
+  const tables = content.querySelectorAll('table');
+  tables.forEach(table => {
+    if (!table.parentElement.classList.contains('table-wrapper')) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
+
+  // 3. Dynamic Briefing Section Wrapping (Skip on Home for Hero clarity)
+  if (!isHomePage) {
+    const h2s = content.querySelectorAll('h2');
+    h2s.forEach(h2 => {
+      if (h2.closest('.briefing-section') || h2.classList.contains('hero-subtitle')) return;
+
+      const zone = getZoneForElement(content, h2);
+      const section = document.createElement('section');
+      section.className = 'briefing-section';
+      if (zone === 'opinion') section.classList.add('briefing-section--opinion');
+      else section.classList.add('briefing-section--fact');
+
+      h2.parentNode.insertBefore(section, h2);
+      section.appendChild(h2);
+
+      let next = section.nextSibling;
+      while (next) {
+        const current = next;
+        next = next.nextSibling;
+        if (current.nodeType === 1) {
+          const tag = current.tagName;
+          if (tag === 'H2' || tag === 'HR' || tag === 'SECTION') break;
+        }
+        section.appendChild(current);
+      }
+    });
+  }
+
+  function getZoneForElement(container, el) {
+    let zone = null;
+    let node = container.firstChild;
+    while (node && node !== el) {
+      if (node.nodeType === 8) {
+        const v = node.textContent.trim();
+        if (v === 'FACT_ZONE_START') zone = 'fact';
+        else if (v === 'OPINION_ZONE_START') zone = 'opinion';
+        else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;
+      }
+      if (node.nodeType === 1 && node.childNodes.length > 0) {
+        const inner = scanChildComments(node);
+        if (inner !== undefined) zone = inner;
+      }
+      node = node.nextSibling;
+    }
+    return zone;
+  }
+
+  function scanChildComments(parent) {
+    let zone;
+    parent.childNodes.forEach(child => {
+      if (child.nodeType === 8) {
+        const v = child.textContent.trim();
+        if (v === 'FACT_ZONE_START') zone = 'fact';
+        else if (v === 'OPINION_ZONE_START') zone = 'opinion';
+        else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;
+      }
+    });
+    return zone;
+  }
+});
+</script>
