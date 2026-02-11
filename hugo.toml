@@ -15,7 +15,7 @@ ShowShareButtons = false
 
 [params.homeInfoParams]
 Title = 'Market Pulse'
-Content = '팩트 기반 시장 브리핑. 매일 개장 전 업데이트.'
+Content = '매일 아침, 팩트만 담은 시장 브리핑을 전해드려요.'
 
 [[params.socialIcons]]
 name = 'github'
