@@ -1,3 +1,14 @@
 /public/
 /resources/_gen/
 /.hugo_build.lock
+
+# AI 작업 파일
+.aidocs/
+.claude/plan.md
+
+# 개발용 스크린샷
+screenshots/
+post-current-full.png
+
+# 크래시 덤프
+*.stackdump
