@@ -1,0 +1,37 @@
+/* Market Pulse — Modern Fintech Theme */
+/* neutral: 슬레이트, primary: 인디고, secondary: 틸 */
+:root {
+  --color-neutral: 255, 255, 255;
+  --color-neutral-50: 241, 245, 249;
+  --color-neutral-100: 226, 232, 240;
+  --color-neutral-200: 148, 163, 184;
+  --color-neutral-300: 100, 116, 139;
+  --color-neutral-400: 71, 85, 105;
+  --color-neutral-500: 51, 65, 85;
+  --color-neutral-600: 30, 41, 59;
+  --color-neutral-700: 15, 23, 42;
+  --color-neutral-800: 15, 23, 43;
+  --color-neutral-900: 8, 12, 32;
+
+  --color-primary-50: 238, 242, 255;
+  --color-primary-100: 224, 231, 255;
+  --color-primary-200: 199, 210, 254;
+  --color-primary-300: 165, 180, 252;
+  --color-primary-400: 129, 140, 248;
+  --color-primary-500: 99, 102, 241;
+  --color-primary-600: 79, 70, 229;
+  --color-primary-700: 67, 56, 202;
+  --color-primary-800: 55, 48, 163;
+  --color-primary-900: 49, 46, 129;
+
+  --color-secondary-50: 240, 253, 250;
+  --color-secondary-100: 204, 251, 241;
+  --color-secondary-200: 153, 246, 228;
+  --color-secondary-300: 94, 234, 212;
+  --color-secondary-400: 45, 212, 191;
+  --color-secondary-500: 20, 184, 166;
+  --color-secondary-600: 13, 148, 136;
+  --color-secondary-700: 15, 118, 110;
+  --color-secondary-800: 17, 94, 89;
+  --color-secondary-900: 19, 78, 74;
+}
