@@ -2,7 +2,8 @@ baseURL = 'https://mocogma.github.io/market-pulse-blog/'
 languageCode = 'ko-KR'
 title = 'Market Pulse'
 theme = 'PaperMod'
-paginate = 10
+[pagination]
+pagerSize = 10
 
 [params]
 description = '매일 업데이트되는 시장 브리핑'
