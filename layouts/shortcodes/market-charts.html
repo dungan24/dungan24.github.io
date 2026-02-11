@@ -1,0 +1,36 @@
+{{ if .Page.Params.chartData }}
+<div class="chart-container" id="market-charts-root">
+
+  <h3 class="chart-title">📈 주요 지표 추이</h3>
+  <div class="chart-box" id="chart-timeseries"></div>
+
+  <h3 class="chart-title">🔗 자산 간 상관관계</h3>
+  <div class="chart-box" id="chart-correlations"></div>
+
+  <h3 class="chart-title">🎯 시장 국면 (Regime)</h3>
+  <div class="chart-box" id="chart-regime" style="height:300px"></div>
+
+  <h3 class="chart-title">📊 섹터 상대강도</h3>
+  <div class="chart-box" id="chart-sectors"></div>
+
+  <h3 class="chart-title">📉 5일 변동 비교</h3>
+  <div class="chart-box" id="chart-5day" style="height:300px"></div>
+
+</div>
+
+<script src="/js/render-charts.js"></script>
+<script>
+  (function() {
+    const chartDataUrl = '{{ .Page.Params.chartData }}';
+    if (!chartDataUrl) return;
+    fetch(chartDataUrl)
+      .then(r => r.json())
+      .then(data => renderAllCharts(data))
+      .catch(err => {
+        console.error('Chart data load failed:', err);
+        document.getElementById('market-charts-root').innerHTML =
+          '<p style="color:gray">차트 데이터를 불러올 수 없습니다.</p>';
+      });
+  })();
+</script>
+{{ end }}
