@@ -1,6 +1,6 @@
 ---
 title: "개장전 브리핑 (Pre-Market)"
-date: 2026-02-12T07:00:00+09:00
+date: 2026-02-12T00:00:00+09:00
 draft: false
 tags: ["pre-market", "브리핑"]
 chartData: "/data/chart-data-2026-02-12.json"
@@ -9,17 +9,17 @@ chartData: "/data/chart-data-2026-02-12.json"
 <!-- OPINION_ZONE_START -->
 ## 30초 핵심 요약
 
-- 핵심: S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11) — 연준 정책 주시
-- 변동성: VIX 17.52 (-1.52%)
+- 핵심: S&P +0.22%, 나스닥 +0.51% 소폭 상승 마감, 크립토 극단적 공포(11) — 연준 정책 주시
+- 변동성: VIX 17.44 (-1.97%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,443.86 (-12.35)
+- 환율: 원/달러 1,443.71 (-12.5)
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 ---
 
 ## 한줄 요약
 
-S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11) — 연준 정책 주시
+S&P +0.22%, 나스닥 +0.51% 소폭 상승 마감, 크립토 극단적 공포(11) — 연준 정책 주시
 
 <!-- OPINION_ZONE_END -->
 
@@ -35,12 +35,12 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 ### 무슨 일이 있었나
 
-미국 증시는 소폭 상승으로 마감했습니다. S&P 500은 +0.18%, 나스닥은 +0.45% 상승한 반면 다우는 -0.07%로 하락 마감했습니다. 
+미국 증시는 소폭 상승으로 마감했습니다. S&P 500은 +0.22%, 나스닥은 +0.51% 상승한 반면 다우는 -0.02%로 하락 마감했습니다. 
 주요 소식으로는 "David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold" 등이 시장의 관심을 끌었습니다.
 
 ### 왜 그런가
 
-연준 정책 주시 관련 이슈가 시장 흐름에 주된 영향을 미쳤습니다. 공포지수(VIX)는 17.52대로 정상 범위에 위치하며, 현재 시장은 특별한 불안 징후는 보이지 않습니다.
+연준 정책 주시 관련 이슈가 시장 흐름에 주된 영향을 미쳤습니다. 공포지수(VIX)는 17.44대로 정상 범위에 위치하며, 현재 시장은 특별한 불안 징후는 보이지 않습니다.
 
 ### 오늘 주목할 것
 
@@ -64,42 +64,42 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| S&P 500 | 6,954.31 | +12.5 | +0.18% | ↑1일 |
-| 나스닥 | 25,241.36 | +113.72 | +0.45% | ↑1일 |
-| 다우존스 | 50,154.11 | -34.03 | -0.07% | ↓1일 |
-| VIX (공포지수) | 17.52 | -0.27 | -1.52% | ↓1일 |
+| S&P 500 | 6,956.78 | +14.97 | +0.22% | ↑1일 |
+| 나스닥 | 25,256.4 | +128.77 | +0.51% | ↑1일 |
+| 다우존스 | 50,175.93 | -12.21 | -0.02% | - |
+| VIX (공포지수) | 17.44 | -0.35 | -1.97% | ↓1일 |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.83 | +0.03 | +0.03% | - |
+| 달러인덱스 (DXY) | 96.81 | +0.01 | +0.01% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,623 | -1,217.21 | -1.80% | ↓1일 |
-| 이더리움 (ETH) | 1,952.02 | -56.41 | -2.89% | - |
+| 비트코인 (BTC) | 67,486 | -1,302.48 | -1.93% | ↓1일 |
+| 이더리움 (ETH) | 1,947.55 | -58.04 | -2.98% | - |
 | 공포탐욕지수 | 11 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,443.86 | -12.35 | -0.85% | ↓1일 ⚡ 하위 4% |
+| 원/달러 (USDKRW) | 1,443.71 | -12.5 | -0.86% | ↓1일 ⚡ 하위 4% |
 
 ### 지수 선물
 
-> ↗ 본장 +0.18% 마감 → 선물 +0.16% 반등 중 (Basis: +0.16%)
+> ↗ 본장 +0.22% 마감 → 선물 +0.24% 반등 중 (Basis: +0.24%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,965.75 | +4.25 | +0.06% |
-| 나스닥 100 선물 | 25,276 | +57.75 | +0.23% |
+| S&P 500 선물 | 6,973.25 | +11.75 | +0.17% |
+| 나스닥 100 선물 | 25,323.25 | +105 | +0.42% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,111.1 | +80.1 | +1.59% |
-| WTI 유가 (Oil) | 64.8 | +0.84 | +1.31% |
+| 국제 금 (Gold) | 5,116.4 | +85.4 | +1.70% |
+| WTI 유가 (Oil) | 64.58 | +0.62 | +0.97% |
 
 <!-- FACT_ZONE_END -->
 
@@ -115,8 +115,8 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 | 근거 | 값 | 판단 |
 |------|-----|------|
-| VIX | 17.5 | ✅ 안정 |
-| SPX 20일 | +1.0% | ⚠ 횡보 |
+| VIX | 17.4 | ✅ 안정 |
+| SPX 20일 | +1.1% | ⚠ 횡보 |
 | US10Y 방향 | +2bp (5일) | ✅ 안정 |
 | 크립토 심리 | 11 | ✅ 극단적 공포 |
 
@@ -124,12 +124,12 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
-| S&P 500 ↔ BTC | +0.76 | 🔴 강한 동조 | 위험자산 동반 움직임 |
-| S&P 500 ↔ 원/달러 | +0.5 | 🟡 약한 동조 | 약한 미국 쏠림 |
+| S&P 500 ↔ BTC | +0.75 | 🔴 강한 동조 | 위험자산 동반 움직임 |
+| S&P 500 ↔ 원/달러 | +0.49 | 🟡 약한 동조 | 약한 미국 쏠림 |
 | S&P 500 ↔ 10년물 | +0.44 | 🟡 약한 동조 | 약한 동반 상승 |
 | VIX ↔ 금 | -0.07 | ⚪ 비동조 | 독립적 |
 | BTC ↔ 금 | +0.07 | ⚪ 비동조 | 독립적 자산 |
-| 유가 ↔ 10년물 | -0.03 | ⚪ 비동조 | 독립적 |
+| 유가 ↔ 10년물 | -0.04 | ⚪ 비동조 | 독립적 |
 
 ## 섹터 상대강도 (vs KODEX200)
 
@@ -147,10 +147,10 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
-| SPX | 6,940.78 | 6,954.31 | +0.19% | 보합 |
-| BTC | 66,714 | 67,623 | +1.36% | 소폭 상승 |
-| VIX | 17.69 | 17.52 | -0.96% | 소폭 안정 |
-| USDKRW | 1,445.5원 | 1,443.86원 | -0.11% | 보합 |
+| SPX | 6,940.78 | 6,956.78 | +0.23% | 보합 |
+| BTC | 66,714 | 67,486 | +1.16% | 소폭 상승 |
+| VIX | 17.69 | 17.44 | -1.41% | 소폭 안정 |
+| USDKRW | 1,445.5원 | 1,443.71원 | -0.12% | 보합 |
 
 ## 이벤트 임팩트
 
@@ -170,35 +170,31 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
    CNBC · 02:42 · central-bank
 
 2. [**S&P 500 Is Set for Record as Solid Jobs Sink Bonds: Markets Wrap**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQZXBZTlAwLWtnRnV6RThSVlR3dG1UN3NYSkxSTGlrZTRIUTNxRjlzNzJBQi1LNl8zcDd2RTN6OUVzLUxxNzNjTXpObGVOWkc2M0F2czFHSzlTdFV5ZzFfVXl1ZFdBQUd2X3RiZ0hod0FNV1R2R3V6NFJGcGZJTUxaVmMyVzBNVVVPaWhuZGFKc3hOUGlsQkE?oc=5)
-   Bloomberg · 03:07 · 시장 이벤트
+   Bloomberg.com · 03:07 · 시장 이벤트
 
-3. [**Most Federal Reserve Officials Are Unwilling To Resume Interest Rate Cuts Yet**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQTzhfSXdubXhKWU03QzI4bFFUcjRzeHFjR3BNNWhSVEFsZEl2c3JMbDlBOGo2cTJ0YVd3VEVyTXBrVno1VElqUkxxTUJuNWxUckVaaWdBQmVXY2pRVkhZc2I0U1pMNkFDRkEtc0NFQjBvMHVXa2RxdW50aHpYdWl2NUhvaW9nQTdMdGRDVnNheE1QTmRCWXQyVGJnTlA0SlpiRzZBYkFaNVdDdFdlWnludU5CcnkxN0NvSktRN0ozT0xGbWlQMXJ0OEdiOG1MQTFQSVE?oc=5)
+3. [**Stock market today: Dow, S&P 500 waver, Nasdaq slides after January jobs report smashes expectations**](https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQmN2WDhSTVk5c2FDZmRnV3dSQlZCeFRoQ2RUSXkzd3FlbDBmbUpzMnZUSWRodEhpdW9SY0pWN1J2bE5oYXVRQm9GX2NnR0xkNlVhSTB0ZUwzYTlWZFNtR3JNMDlCWjV6cHBSaFFaSGNiZ3JILVUzWTA5RWgwRFRMZ1IxZC1idVdEcDMyQlFLeTdKRkZmWnVYYkNKZzhVUGU1dzBMTVk4el9EV0cwUmY2VmN3Ry1lN0lLV3lacFBuUUN1NzgzckhJM2VvZ0dWQkV1eXlnQXRKaTVmdDRlTEZGZQ?oc=5)
+   Yahoo Finance · 04:13 · 시장 이벤트
+
+4. [**Most Federal Reserve Officials Are Unwilling To Resume Interest Rate Cuts Yet**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQTzhfSXdubXhKWU03QzI4bFFUcjRzeHFjR3BNNWhSVEFsZEl2c3JMbDlBOGo2cTJ0YVd3VEVyTXBrVno1VElqUkxxTUJuNWxUckVaaWdBQmVXY2pRVkhZc2I0U1pMNkFDRkEtc0NFQjBvMHVXa2RxdW50aHpYdWl2NUhvaW9nQTdMdGRDVnNheE1QTmRCWXQyVGJnTlA0SlpiRzZBYkFaNVdDdFdlWnludU5CcnkxN0NvSktRN0ozT0xGbWlQMXJ0OEdiOG1MQTFQSVE?oc=5)
    TradingView · 02:44 · central-bank
 
-4. [**Delayed CPI Report to Show Persistent Inflation**](https://news.google.com/rss/articles/CBMihwFBVV95cUxOTWpvVEkySWh0ZDZRWC00TWdZRmtCSEdWcEpheUEwWFBoMmw5b2VwVldyYnFDOTFHWEZTOVBBbEFGdHNPemk5Uk03VDNtZmNLbGszNFgwMWRmMDhxZ0RCVk1iZTNWcEx6QVlRLWpPX2EtdExiRWZGNVo5X3p1eTl1Wldlc0NQMjQ?oc=5)
+5. [**Delayed CPI Report to Show Persistent Inflation**](https://news.google.com/rss/articles/CBMihwFBVV95cUxOTWpvVEkySWh0ZDZRWC00TWdZRmtCSEdWcEpheUEwWFBoMmw5b2VwVldyYnFDOTFHWEZTOVBBbEFGdHNPemk5Uk03VDNtZmNLbGszNFgwMWRmMDhxZ0RCVk1iZTNWcEx6QVlRLWpPX2EtdExiRWZGNVo5X3p1eTl1Wldlc0NQMjQ?oc=5)
    Morningstar · 02:19 · 미국 매크로
 
-5. [**Powell’s parting gift from the Fed may be more rate cuts than expected, courtesy of deteriorating data**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOVk82dnctZHpQWVM1LWJWX2o2VDlCbjJlT1ZNRWtZYXp2Rm5vdTBOMDh6cjE2cGZhdllvazk3UHQxdGxNUnJySkRyR2dZRm9tci1qd3pjLU5BTGhHR1dJYkw5ek1MX2xqWURuLTh0OTFWdGNqX2dRUGVzOTRPaTBPeE1rS3RJM3M1R0FrV1JZNA?oc=5)
+6. [**Powell’s parting gift from the Fed may be more rate cuts than expected, courtesy of deteriorating data**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOVk82dnctZHpQWVM1LWJWX2o2VDlCbjJlT1ZNRWtZYXp2Rm5vdTBOMDh6cjE2cGZhdllvazk3UHQxdGxNUnJySkRyR2dZRm9tci1qd3pjLU5BTGhHR1dJYkw5ek1MX2xqWURuLTh0OTFWdGNqX2dRUGVzOTRPaTBPeE1rS3RJM3M1R0FrV1JZNA?oc=5)
    Fortune · 21:03 · central-bank
 
-6. [**Fed’s Schmid warns against rate cuts amid "hot" inflation**](https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSC02X2N0SlIzMXIzQjVPM3B2MDFiSEpSY1BHQy0wVS1mWWdFQjhMaTIxeExNWG9BMGtKUUN2cVNkclBfMlBNcXpvWTFsZmh2U0ZDOERCMHZOcUhLZGVQVnJMcUs3ZWZwbWdZZzZWbVB0S1BDRWR5R0hsYWFRMWtUQmxwQTlHWXR2N2dGOHc4N1U3MDZPeWJHY0FYZGQ4cWhoRW92QWdJVFBBQQ?oc=5)
+7. [**Fed’s Schmid warns against rate cuts amid "hot" inflation**](https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSC02X2N0SlIzMXIzQjVPM3B2MDFiSEpSY1BHQy0wVS1mWWdFQjhMaTIxeExNWG9BMGtKUUN2cVNkclBfMlBNcXpvWTFsZmh2U0ZDOERCMHZOcUhLZGVQVnJMcUs3ZWZwbWdZZzZWbVB0S1BDRWR5R0hsYWFRMWtUQmxwQTlHWXR2N2dGOHc4N1U3MDZPeWJHY0FYZGQ4cWhoRW92QWdJVFBBQQ?oc=5)
    Investing.com · 00:16 · 미국 매크로
 
-7. [**Gold trims gains as strong U.S. jobs data dampens rate‑cut bets**](https://news.google.com/rss/articles/CBMimwFBVV95cUxOajVXbExKaDQwVnhyc09FSTJuSzdoQTk3d2JVQkNfd0RwaENXMXVmbGN2RWpZa2NnYlhxck5yMTRNWGh4R3hLcHBqSVFCVWM3WU5GTkF6cm9ZazN6dG1iWEVpdzRfQ3E0cWQ5N1pYajJ5N3BrLUZjMEF3M1NkRC1UNHJEbTRMSzVjU2w5TExBeGgzYU9FaTlBWU43QdIBoAFBVV95cUxQZW9LS0VpaTl4V1c1emlCOGg0T2hnX0w3V0pXa0N3QlFLZGQ5Und5c2Y2UFdJWm5lZndSRkp5QTJabTVjRWtuQ2w0bmRJUFhVczdSaWhzbzY5dUk5bjV1a3RTM1AydDd2MHZRcWVHWk02TGRqV0xMTE1jTUgzYTM0MldPT1VkeHlYZDROYmdqZ3RoY0psTmFMdDUyd0ZNZ0ZY?oc=5)
+8. [**Gold trims gains as strong U.S. jobs data dampens rate‑cut bets**](https://news.google.com/rss/articles/CBMimwFBVV95cUxOajVXbExKaDQwVnhyc09FSTJuSzdoQTk3d2JVQkNfd0RwaENXMXVmbGN2RWpZa2NnYlhxck5yMTRNWGh4R3hLcHBqSVFCVWM3WU5GTkF6cm9ZazN6dG1iWEVpdzRfQ3E0cWQ5N1pYajJ5N3BrLUZjMEF3M1NkRC1UNHJEbTRMSzVjU2w5TExBeGgzYU9FaTlBWU43QdIBoAFBVV95cUxQZW9LS0VpaTl4V1c1emlCOGg0T2hnX0w3V0pXa0N3QlFLZGQ5Und5c2Y2UFdJWm5lZndSRkp5QTJabTVjRWtuQ2w0bmRJUFhVczdSaWhzbzY5dUk5bjV1a3RTM1AydDd2MHZRcWVHWk02TGRqV0xMTE1jTUgzYTM0MldPT1VkeHlYZDROYmdqZ3RoY0psTmFMdDUyd0ZNZ0ZY?oc=5)
    CNBC · 21:58 · 원자재
-
-8. [**What the Fall of the Telegraph Says About Fossil Fuels**](https://news.google.com/rss/articles/CBMipAFBVV95cUxOWFhoWVhsNlZnWlhsR3JsYlhQcjdfWGRpQnBVMHFubGhleTl2NXVMQXNpX2ZOeXhHV0kzdUpGMzNSQ043OU92cEJ5ZnpPWWVKaDVZZjNHY0R6SlRCYU1ra3M2bjFxRE9pdXBZamx5d0l5VDJ2NzdUbFVPV3UxT1NMZkVRMXJLak9jbmZkMDlQQkM2b0NabmZsVGxIRHREZWdzZGZiY9IBqgFBVV95cUxQbzdzdk9PTmhWYlRaNWdpMnhRU3FkSzA4UnN3dnNtNmdlQWY5QXd4UW1kUTBXWmtkSWxyY1NlV0RQTWE3bWVKS1EzSWVvV1ZSWGFaLTdaS3VpU1dOYTNtZ25JSExNcHEwalhFVTJwY0M4aHNWRXRBWDVpdkhteUo5bWUtSWxOcjViTmU1a3hlREkxMDFFTzN4N1lVb1RUS2tWd3A4VENnZzFQUQ?oc=5)
-   Crude Oil Prices Today | OilPrice.com · 04:00 · 원자재
 
 ### 국내
 
 1. [**[단독] 26개 정부 출연硏 묶어…AI·인구·성장전략 짠다**](https://www.mk.co.kr/news/economy/11960150)
    매일경제 경제 · 18:28 · 국내 시장
    > 경제인문사회硏 보고서 입수 11개 국가과제 중장기 연구 예산 작년보다 2.5배 증액정부 산하 26개 출연연구기관을 총괄하는 경제인문사회연구회(NRC)가 인구, 인공지능(AI), ....
-
-2. [**26개 정부 출연硏 묶어 AI·인구·성장전략 짠다**](https://www.mk.co.kr/news/economy/11960119)
-   매일경제 경제 · 17:54 · 국내 시장
-   > 정부 산하 26개 출연연구기관을 총괄하는 경제인문사회연구회(NRC·이사장 이한주)가 인구, 인공지능(AI), 경제 성장 등 11개 범국가 과제에 대한 연구 계획을 최근 국무총리실에...
 
 ---
 
@@ -232,6 +228,6 @@ S&P +0.18%, 나스닥 +0.45% 소폭 상승 마감, 크립토 극단적 공포(11
 
 ---
 
-**생성 시각**: 2026-02-12 04:19:43 KST
+**생성 시각**: 2026-02-12 04:24:14 KST
 **브리핑 슬롯**: pre-market (개장전)
-**데이터 기준 시각**: 2026-02-12 04:19:43 KST
+**데이터 기준 시각**: 2026-02-12 04:24:14 KST
