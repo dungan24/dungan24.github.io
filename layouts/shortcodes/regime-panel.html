@@ -1,0 +1,35 @@
+{{/* regime-panel: 사이버펑크 HUD 스타일 시장 국면 패널 */}}
+{{ $status := .Get "status" | default "CAUTIOUS" }}
+{{ $label := .Get "label" | default "Cautious" }}
+{{ $summary := .Get "summary" | default "" }}
+
+{{ $statusClass := "cautious" }}
+{{ if eq $status "RISK_ON" }}{{ $statusClass = "risk-on" }}{{ end }}
+{{ if eq $status "RISK_OFF" }}{{ $statusClass = "risk-off" }}{{ end }}
+{{ if eq $status "PANIC" }}{{ $statusClass = "panic" }}{{ end }}
+
+<div class="mp-regime-panel mp-regime--{{ $statusClass }}" data-regime="{{ $status }}">
+  <div class="mp-regime-header">
+    <span class="mp-regime-dot"></span>
+    <span class="mp-regime-label">{{ $label }}</span>
+  </div>
+  {{ with $summary }}
+  <p class="mp-regime-summary">{{ . }}</p>
+  {{ end }}
+  <div class="mp-regime-signals">
+    {{ range split .Inner "\n" }}
+      {{ $line := strings.TrimSpace . }}
+      {{ if $line }}
+        {{ $parts := split $line "|" }}
+        {{ if ge (len $parts) 4 }}
+          <div class="mp-signal" data-level="{{ index $parts 2 | strings.TrimSpace }}">
+            <span class="mp-signal-indicator"></span>
+            <span class="mp-signal-name">{{ index $parts 0 | strings.TrimSpace }}</span>
+            <span class="mp-signal-value">{{ index $parts 1 | strings.TrimSpace }}</span>
+            <span class="mp-signal-badge">{{ index $parts 3 | strings.TrimSpace }}</span>
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

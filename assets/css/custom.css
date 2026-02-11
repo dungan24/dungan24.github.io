@@ -1003,3 +1003,159 @@ html { scroll-behavior: smooth; }
   text-shadow: none;
 }
 
+/* ========== Regime Panel — Cyberpunk HUD ========== */
+.mp-regime-panel {
+  position: relative;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background:
+    linear-gradient(160deg, rgba(124, 58, 237, 0.05), transparent 40%),
+    rgba(18, 18, 42, 0.92);
+  overflow: hidden;
+}
+
+/* 상단 네온 라인 */
+.mp-regime-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.mp-regime--risk-on::before  { background: linear-gradient(90deg, #00FF88 0%, transparent 70%); }
+.mp-regime--cautious::before { background: linear-gradient(90deg, #FFD600 0%, transparent 70%); }
+.mp-regime--risk-off::before { background: linear-gradient(90deg, #FF3366 0%, transparent 70%); }
+.mp-regime--panic::before    { background: linear-gradient(90deg, #FF0040 0%, transparent 70%); }
+
+/* 헤더 */
+.mp-regime-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mp-regime-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: mp-regime-pulse 2s ease-in-out infinite;
+}
+.mp-regime--risk-on  .mp-regime-dot { background: #00FF88; box-shadow: 0 0 10px #00FF88; }
+.mp-regime--cautious .mp-regime-dot { background: #FFD600; box-shadow: 0 0 10px #FFD600; }
+.mp-regime--risk-off .mp-regime-dot { background: #FF3366; box-shadow: 0 0 10px #FF3366; }
+.mp-regime--panic    .mp-regime-dot { background: #FF0040; box-shadow: 0 0 10px #FF0040; }
+
+@keyframes mp-regime-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.mp-regime-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.mp-regime--risk-on  .mp-regime-label { color: #00FF88; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
+.mp-regime--cautious .mp-regime-label { color: #FFD600; text-shadow: 0 0 15px rgba(255,214,0,0.3); }
+.mp-regime--risk-off .mp-regime-label { color: #FF3366; text-shadow: 0 0 15px rgba(255,51,102,0.3); }
+.mp-regime--panic    .mp-regime-label { color: #FF0040; text-shadow: 0 0 15px rgba(255,0,64,0.3); }
+
+.mp-regime-summary {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* 시그널 행 */
+.mp-regime-signals {
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-signal {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+  gap: 0.75rem;
+}
+.mp-signal:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mp-signal-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mp-signal[data-level="ok"]     .mp-signal-indicator { background: #00FF88; box-shadow: 0 0 6px rgba(0,255,136,0.5); }
+.mp-signal[data-level="warn"]   .mp-signal-indicator { background: #FFD600; box-shadow: 0 0 6px rgba(255,214,0,0.5); }
+.mp-signal[data-level="danger"] .mp-signal-indicator { background: #FF3366; box-shadow: 0 0 6px rgba(255,51,102,0.5); }
+
+.mp-signal-name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.mp-signal-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  min-width: 70px;
+  text-align: right;
+}
+
+.mp-signal-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  min-width: 75px;
+  text-align: center;
+}
+.mp-signal[data-level="ok"] .mp-signal-badge {
+  color: #00FF88;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+.mp-signal[data-level="warn"] .mp-signal-badge {
+  color: #FFD600;
+  background: rgba(255, 214, 0, 0.08);
+  border: 1px solid rgba(255, 214, 0, 0.2);
+}
+.mp-signal[data-level="danger"] .mp-signal-badge {
+  color: #FF3366;
+  background: rgba(255, 51, 102, 0.08);
+  border: 1px solid rgba(255, 51, 102, 0.2);
+}
+
+/* 라이트 모드 */
+:root:not(.dark) .mp-regime-panel {
+  background: rgba(248, 250, 252, 0.95);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+:root:not(.dark) .mp-regime-summary { color: #64748B; }
+:root:not(.dark) .mp-signal-name { color: #64748B; }
+:root:not(.dark) .mp-signal-value { color: #1E1E3A; }
+
+@media (max-width: 640px) {
+  .mp-regime-panel { padding: 1rem; }
+  .mp-signal { flex-wrap: wrap; gap: 0.4rem; }
+  .mp-signal-value { min-width: auto; }
+  .mp-signal-badge { min-width: auto; font-size: 0.65rem; }
+}
+
