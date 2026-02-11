@@ -4,6 +4,9 @@ date: 2026-02-11T07:00:00+09:00
 draft: false
 tags: ["pre-market", "브리핑"]
 chartData: "/data/chart-data-2026-02-11.json"
+regime: "CAUTIOUS"
+regimeIcon: "🟡"
+summary: "S&P -0.33%, 나스닥 -0.56% 소폭 하락 마감, 크립토 극단적 공포(11) — 금리동결 시사"
 ---
 
 <!-- OPINION_ZONE_START -->

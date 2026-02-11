@@ -16,11 +16,11 @@ enableCodeCopy = true
   showScrollToTop = true
 
 [homepage]
-  layout = "background"
+  layout = "custom"
   homepageImage = "img/hero.svg"
-  showRecent = true
+  showRecent = false
   showRecentItems = 10
-  showMoreLink = true
+  showMoreLink = false
   showMoreLinkDest = "/posts/"
   cardView = true
   cardViewScreenWidth = false

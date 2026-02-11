@@ -10,29 +10,31 @@
   <div class="hidden" id="charts-content">
     <div class="market-chart-card" data-label="CHART // INTRA-DAY TREND">
       <h3 class="chart-title-compact">📈 주요 지표 추이</h3>
-      <div class="chart-box" id="chart-timeseries"></div>
+      <div class="chart-box" id="chart-timeseries" style="height:350px"></div>
     </div>
 
-    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div class="market-chart-card" data-label="ANALYSIS // CORRELATION">
         <h3 class="chart-title-compact">🔗 자산 간 상관관계</h3>
-        <div class="chart-box" id="chart-correlations" style="height:320px"></div>
+        <div class="chart-box" id="chart-correlations" style="height:300px"></div>
       </div>
 
       <div class="market-chart-card" data-label="MARKET // REGIME SCORE">
         <h3 class="chart-title-compact">🎯 시장 국면 (Regime)</h3>
-        <div class="chart-box" id="chart-regime" style="height:320px"></div>
+        <div class="chart-box" id="chart-regime" style="height:300px"></div>
       </div>
     </div>
 
-    <div class="market-chart-card" data-label="SECTOR // RELATIVE STRENGTH">
-      <h3 class="chart-title-compact">📊 섹터 상대강도</h3>
-      <div class="chart-box" id="chart-sectors"></div>
-    </div>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="market-chart-card" data-label="SECTOR // RELATIVE STRENGTH">
+        <h3 class="chart-title-compact">📊 섹터 상대강도</h3>
+        <div class="chart-box" id="chart-sectors" style="height:300px"></div>
+      </div>
 
-    <div class="market-chart-card" data-label="PERFORMANCE // 5-DAY CHANGE">
-      <h3 class="chart-title-compact">📉 5일 변동 비교</h3>
-      <div class="chart-box" id="chart-5day" style="height:320px"></div>
+      <div class="market-chart-card" data-label="PERFORMANCE // 5-DAY CHANGE">
+        <h3 class="chart-title-compact">📉 5일 변동 비교</h3>
+        <div class="chart-box" id="chart-5day" style="height:300px"></div>
+      </div>
     </div>
   </div>
 </div>

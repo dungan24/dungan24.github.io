@@ -1,26 +1,50 @@
 <!-- Market Pulse: UI Polish & Intelligence -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const content = document.querySelector('.prose');
+  var content = document.querySelector('.prose');
   if (!content) return;
 
-  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+
+  // === Regime Color Map ===
+  var REGIME_COLOR_MAP = {
+    'RISK_ON': '#4ade80',
+    'CAUTIOUS': '#fbbf24',
+    'RISK_OFF': '#f87171',
+    'PANIC': '#ef4444',
+  };
+  var REGIME_COLOR_RGB_MAP = {
+    'RISK_ON': '74 222 128',
+    'CAUTIOUS': '251 191 36',
+    'RISK_OFF': '248 113 113',
+    'PANIC': '239 68 68',
+  };
+
+  // === Helper: Find briefing-section by H2 text ===
+  function findSectionByTitle(titleText) {
+    var sections = content.querySelectorAll('.briefing-section');
+    for (var i = 0; i < sections.length; i++) {
+      var h2 = sections[i].querySelector('h2');
+      if (h2 && h2.textContent.includes(titleText)) return sections[i];
+    }
+    return null;
+  }
 
   // 1. Terminal Data Cell Coloring & Formatting
-  const cells = content.querySelectorAll('td');
-  cells.forEach(td => {
-    const text = td.textContent.trim();
-    if (/^\+\d/.test(text) || /↑/.test(text)) td.classList.add('num-up');
-    else if (/^-\d/.test(text) || (/↓/.test(text) && !/^-$/.test(text))) td.classList.add('num-down');
-    if (/⚡/.test(text)) td.classList.add('stat-highlight');
+  var cells = content.querySelectorAll('td');
+  cells.forEach(function(td) {
+    var text = td.textContent.trim();
+    if (/^\+\d/.test(text) || /\u2191/.test(text)) td.classList.add('num-up');
+    else if (/^-\d/.test(text) || (/\u2193/.test(text) && !/^-$/.test(text))) td.classList.add('num-down');
+    if (/\u26A1/.test(text)) td.classList.add('stat-highlight');
     if (/^[+\-]?[\d,]+\.?\d*%?(\s|$)/.test(text) || /^\d[\d,.]*%?$/.test(text)) td.classList.add('num-cell');
   });
 
   // 2. Table Mobile Responsive Wrapper
-  const tables = content.querySelectorAll('table');
-  tables.forEach(table => {
+  var tables = content.querySelectorAll('table');
+  tables.forEach(function(table) {
     if (!table.parentElement.classList.contains('table-wrapper')) {
-      const wrapper = document.createElement('div');
+      var wrapper = document.createElement('div');
       wrapper.className = 'table-wrapper';
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
@@ -29,12 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 3. Dynamic Briefing Section Wrapping (Skip on Home for Hero clarity)
   if (!isHomePage) {
-    const h2s = content.querySelectorAll('h2');
-    h2s.forEach(h2 => {
+    var h2s = content.querySelectorAll('h2');
+    h2s.forEach(function(h2) {
       if (h2.closest('.briefing-section') || h2.classList.contains('hero-subtitle')) return;
 
-      const zone = getZoneForElement(content, h2);
-      const section = document.createElement('section');
+      var zone = getZoneForElement(content, h2);
+      var section = document.createElement('section');
       section.className = 'briefing-section';
       if (zone === 'opinion') section.classList.add('briefing-section--opinion');
       else section.classList.add('briefing-section--fact');
@@ -42,31 +66,353 @@ document.addEventListener('DOMContentLoaded', function() {
       h2.parentNode.insertBefore(section, h2);
       section.appendChild(h2);
 
-      let next = section.nextSibling;
+      var next = section.nextSibling;
       while (next) {
-        const current = next;
+        var current = next;
         next = next.nextSibling;
         if (current.nodeType === 1) {
-          const tag = current.tagName;
+          var tag = current.tagName;
           if (tag === 'H2' || tag === 'HR' || tag === 'SECTION') break;
         }
         section.appendChild(current);
       }
     });
+
+    // === 4. Post Page Enhancements ===
+
+    // 4a. Regime Hero Injection
+    if (window.__MP_PAGE && window.__MP_PAGE.regime) {
+      var mp = window.__MP_PAGE;
+      var regimeColor = REGIME_COLOR_MAP[mp.regime] || '#fbbf24';
+      var regimeRgb = REGIME_COLOR_RGB_MAP[mp.regime] || '251 191 36';
+
+      document.documentElement.style.setProperty('--regime-color', regimeColor);
+      document.documentElement.style.setProperty('--regime-color-rgb', regimeRgb);
+
+      var articleHeader = document.querySelector('header.mt-12') ||
+                          document.querySelector('article header') ||
+                          document.querySelector('#single_header');
+      if (articleHeader) {
+        var hero = document.createElement('div');
+        hero.className = 'mp-post-hero';
+        hero.style.borderLeftColor = regimeColor;
+        hero.innerHTML =
+          '<div class="mp-post-hero__top">' +
+            '<span class="mp-regime-badge">' + (mp.regimeIcon || '') + ' ' + mp.regime + '</span>' +
+          '</div>' +
+          (mp.summary ? '<p class="mp-post-hero__summary">' + mp.summary + '</p>' : '');
+        articleHeader.after(hero);
+      }
+
+      // Hide "한줄 요약" section (now in hero)
+      var summarySection = findSectionByTitle('\uD55C\uC904 \uC694\uC57D');
+      if (summarySection) summarySection.style.display = 'none';
+    }
+
+    // 4b. Collapsible Sections
+    var COLLAPSIBLE_TITLES = [
+      '\uCD5C\uADFC \uD750\uB984',       // 최근 흐름
+      '\uC139\uD130 \uC0C1\uB300\uAC15\uB3C4', // 섹터 상대강도
+      '\uC774\uBCA4\uD2B8 \uC784\uD329\uD2B8', // 이벤트 임팩트
+      '\uC2DC\uC7A5 \uB3D9\uC870\uD654',   // 시장 동조화
+      '\uC2DC\uC7A5 \uAD6D\uBA74',         // 시장 국면
+      '\uC6A9\uC5B4 \uC124\uBA85',         // 용어 설명
+      '\uCD9C\uCC98',                       // 출처
+    ];
+
+    var allSections = content.querySelectorAll('.briefing-section');
+    allSections.forEach(function(sec) {
+      var h2 = sec.querySelector('h2');
+      if (!h2) return;
+      var title = h2.textContent.trim();
+      var shouldCollapse = COLLAPSIBLE_TITLES.some(function(t) { return title.includes(t); });
+      if (!shouldCollapse) return;
+
+      var toggleBtn = document.createElement('button');
+      toggleBtn.className = 'mp-collapse-toggle';
+      toggleBtn.type = 'button';
+      toggleBtn.innerHTML = '<span class="mp-collapse-toggle__icon">\u25B8</span>';
+
+      while (h2.firstChild) toggleBtn.appendChild(h2.firstChild);
+      h2.appendChild(toggleBtn);
+
+      var collapsible = document.createElement('div');
+      collapsible.className = 'mp-collapsible';
+
+      var sibling = h2.nextSibling;
+      while (sibling) {
+        var nextSib = sibling.nextSibling;
+        collapsible.appendChild(sibling);
+        sibling = nextSib;
+      }
+      sec.appendChild(collapsible);
+
+      toggleBtn.addEventListener('click', function() {
+        var isOpen = collapsible.classList.toggle('is-open');
+        toggleBtn.classList.toggle('is-open', isOpen);
+        if (isOpen) {
+          collapsible.style.maxHeight = collapsible.scrollHeight + 'px';
+          setTimeout(function() { collapsible.style.maxHeight = 'none'; }, 350);
+        } else {
+          collapsible.style.maxHeight = collapsible.scrollHeight + 'px';
+          collapsible.offsetHeight;
+          collapsible.style.maxHeight = '0';
+        }
+      });
+    });
+
+    // Auto-open collapsible on anchor link
+    window.addEventListener('hashchange', function() {
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (!target) return;
+      var coll = target.closest('.mp-collapsible');
+      if (coll && !coll.classList.contains('is-open')) {
+        var btn = coll.parentElement.querySelector('.mp-collapse-toggle');
+        if (btn) btn.click();
+        setTimeout(function() { target.scrollIntoView({ behavior: 'smooth' }); }, 400);
+      }
+    });
+
+    // 4c. News List to Card Grid Transformation
+    var newsSection = findSectionByTitle('\uC8FC\uC694 \uB274\uC2A4'); // 주요 뉴스
+    if (newsSection) {
+      try {
+        var subHeaders = newsSection.querySelectorAll('h3');
+        var newsContainer = document.createElement('div');
+
+        subHeaders.forEach(function(h3) {
+          var categoryLabel = h3.textContent.trim();
+          var ol = h3.nextElementSibling;
+          if (!ol || ol.tagName !== 'OL') return;
+
+          var label = document.createElement('div');
+          label.className = 'mp-news-section-label';
+          label.textContent = categoryLabel;
+          newsContainer.appendChild(label);
+
+          var grid = document.createElement('div');
+          grid.className = 'mp-news-grid';
+
+          var items = ol.querySelectorAll('li');
+          items.forEach(function(li) {
+            var card = document.createElement('div');
+            card.className = 'mp-news-card';
+
+            var link = li.querySelector('a');
+            var strong = li.querySelector('strong');
+            var headline = strong ? strong.textContent : (link ? link.textContent : '');
+            var href = link ? link.getAttribute('href') : '#';
+
+            var textContent = li.textContent || '';
+            var headlineEnd = textContent.indexOf(headline) + headline.length;
+            var metaText = textContent.substring(headlineEnd).trim();
+
+            var metaParts = metaText.split('\u00B7').map(function(s) { return s.trim(); });
+            var source = metaParts[0] || '';
+            var time = metaParts[1] || '';
+            var category = metaParts[2] || '';
+
+            var blockquote = li.querySelector('blockquote');
+            var excerpt = blockquote ? blockquote.textContent.trim() : '';
+
+            card.innerHTML =
+              (source ? '<div class="mp-news-card__source">' + source + '</div>' : '') +
+              '<div class="mp-news-card__headline"><a href="' + href + '" target="_blank" rel="noopener">' + headline + '</a></div>' +
+              '<div class="mp-news-card__meta">' + [time, category].filter(Boolean).join(' \u00B7 ') + '</div>' +
+              (excerpt ? '<div class="mp-news-card__excerpt">' + excerpt.substring(0, 120) + (excerpt.length > 120 ? '...' : '') + '</div>' : '');
+
+            grid.appendChild(card);
+          });
+
+          newsContainer.appendChild(grid);
+        });
+
+        if (newsContainer.children.length > 0) {
+          var newsH2 = newsSection.querySelector('h2');
+          while (newsH2.nextSibling) newsSection.removeChild(newsH2.nextSibling);
+          newsSection.appendChild(newsContainer);
+        }
+      } catch (e) {
+        console.warn('News card transformation failed, keeping original:', e);
+      }
+    }
+
+    // 4d. Ticker Card Transformation — convert tables in "핵심 수치" to ticker cards
+    var keyDataSection = findSectionByTitle('\uD575\uC2EC \uC218\uCE58'); // 핵심 수치
+    if (keyDataSection) {
+      try {
+        convertTablesToTickerCards(keyDataSection);
+      } catch (e) {
+        console.warn('Ticker card transformation failed, keeping tables:', e);
+      }
+    }
+
+    // 4e. TOC ScrollSpy
+    initScrollSpy();
+  }
+
+  // === Ticker Card Conversion ===
+  function convertTablesToTickerCards(section) {
+    // Identify groups: H2 direct table = first group, H3 = subsequent groups
+    var groups = [];
+    var currentGroup = null;
+    var children = Array.prototype.slice.call(section.children);
+
+    children.forEach(function(child) {
+      if (child.tagName === 'H2') {
+        // First group starts with H2 — label extracted from H2 text
+        currentGroup = { label: '\uBBF8\uAD6D \uC9C0\uC218', tables: [], elements: [] };
+        groups.push(currentGroup);
+      } else if (child.tagName === 'H3') {
+        currentGroup = { label: child.textContent.trim().replace(/\s*⚠.*$/, ''), tables: [], elements: [child] };
+        groups.push(currentGroup);
+      } else if (child.classList && child.classList.contains('table-wrapper')) {
+        var table = child.querySelector('table');
+        if (table && currentGroup) {
+          currentGroup.tables.push(table);
+          currentGroup.elements.push(child);
+        }
+      } else if (child.tagName === 'TABLE' && currentGroup) {
+        currentGroup.tables.push(child);
+        currentGroup.elements.push(child);
+      } else if (child.tagName === 'BLOCKQUOTE' && currentGroup) {
+        // Futures basis blockquote — keep it
+        currentGroup.elements.push(child);
+      }
+    });
+
+    if (groups.length === 0) return;
+
+    // Build ticker card container
+    var container = document.createElement('div');
+    container.className = 'mp-ticker-groups';
+
+    groups.forEach(function(group) {
+      if (group.tables.length === 0) return;
+
+      var card = document.createElement('div');
+      card.className = 'mp-ticker-group';
+
+      var title = document.createElement('div');
+      title.className = 'mp-ticker-group__title';
+      title.textContent = group.label;
+      card.appendChild(title);
+
+      group.tables.forEach(function(table) {
+        var rows = table.querySelectorAll('tbody tr');
+        rows.forEach(function(tr) {
+          var tds = tr.querySelectorAll('td');
+          if (tds.length < 3) return;
+
+          var tickerRow = document.createElement('div');
+          tickerRow.className = 'mp-ticker-row';
+
+          var name = document.createElement('span');
+          name.className = 'mp-ticker-name';
+          name.textContent = tds[0].textContent.trim();
+
+          var price = document.createElement('span');
+          price.className = 'mp-ticker-price';
+          price.textContent = tds[1].textContent.trim();
+
+          var change = document.createElement('span');
+          change.className = 'mp-ticker-change';
+          // Use change% (col 3) if available, else change (col 2)
+          var changeText = tds.length >= 4 ? tds[3].textContent.trim() : tds[2].textContent.trim();
+          change.textContent = changeText;
+
+          // Color coding
+          if (/^\+/.test(changeText) || /\u2191/.test(changeText)) {
+            change.classList.add('num-up');
+          } else if (/^-/.test(changeText) && changeText !== '-') {
+            change.classList.add('num-down');
+          }
+
+          tickerRow.appendChild(name);
+          tickerRow.appendChild(price);
+          tickerRow.appendChild(change);
+
+          // Flow column (col 4) if exists
+          if (tds.length >= 5) {
+            var flow = tds[4].textContent.trim();
+            if (flow && flow !== '-') {
+              var flowSpan = document.createElement('span');
+              flowSpan.className = 'mp-ticker-flow';
+              flowSpan.textContent = flow;
+              if (/\u2191/.test(flow)) flowSpan.classList.add('num-up');
+              else if (/\u2193/.test(flow)) flowSpan.classList.add('num-down');
+              tickerRow.appendChild(flowSpan);
+            }
+          }
+
+          card.appendChild(tickerRow);
+        });
+      });
+
+      container.appendChild(card);
+    });
+
+    // Find insertion point: after H2
+    var h2 = section.querySelector('h2');
+    // Remove old tables and H3s
+    groups.forEach(function(group) {
+      group.elements.forEach(function(el) {
+        if (el.parentNode) el.parentNode.removeChild(el);
+      });
+    });
+
+    // Insert ticker cards after H2
+    if (h2.nextSibling) {
+      h2.parentNode.insertBefore(container, h2.nextSibling);
+    } else {
+      section.appendChild(container);
+    }
+  }
+
+  // === TOC ScrollSpy ===
+  function initScrollSpy() {
+    var tocContainer = document.querySelector('.toc');
+    if (!tocContainer) return;
+
+    var tocLinks = tocContainer.querySelectorAll('a[href^="#"]');
+    if (tocLinks.length === 0) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute('id');
+        if (!id) return;
+
+        tocLinks.forEach(function(link) {
+          link.classList.remove('is-active');
+        });
+
+        var activeLink = tocContainer.querySelector('a[href="#' + id + '"]');
+        if (activeLink) activeLink.classList.add('is-active');
+      });
+    }, {
+      rootMargin: '-20% 0px -80% 0px'
+    });
+
+    // Observe all H2 elements that have IDs
+    var headings = content.querySelectorAll('h2[id]');
+    headings.forEach(function(h2) {
+      observer.observe(h2);
+    });
   }
 
   function getZoneForElement(container, el) {
-    let zone = null;
-    let node = container.firstChild;
+    var zone = null;
+    var node = container.firstChild;
     while (node && node !== el) {
       if (node.nodeType === 8) {
-        const v = node.textContent.trim();
+        var v = node.textContent.trim();
         if (v === 'FACT_ZONE_START') zone = 'fact';
         else if (v === 'OPINION_ZONE_START') zone = 'opinion';
         else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;
       }
       if (node.nodeType === 1 && node.childNodes.length > 0) {
-        const inner = scanChildComments(node);
+        var inner = scanChildComments(node);
         if (inner !== undefined) zone = inner;
       }
       node = node.nextSibling;
@@ -75,10 +421,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function scanChildComments(parent) {
-    let zone;
-    parent.childNodes.forEach(child => {
+    var zone;
+    parent.childNodes.forEach(function(child) {
       if (child.nodeType === 8) {
-        const v = child.textContent.trim();
+        var v = child.textContent.trim();
         if (v === 'FACT_ZONE_START') zone = 'fact';
         else if (v === 'OPINION_ZONE_START') zone = 'opinion';
         else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;

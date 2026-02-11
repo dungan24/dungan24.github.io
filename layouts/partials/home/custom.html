@@ -1,0 +1,273 @@
+{{/* Market Pulse Homepage — Hero + Tickers + Briefings */}}
+<div style="max-width:72rem;margin:0 auto;padding:2rem 1rem 4rem">
+
+  <!-- Hero -->
+  <div style="text-align:center">
+    <h1 style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.25rem">
+      <span class="mp-heartbeat">Market Pulse</span>
+    </h1>
+
+    <div class="mp-ecg-wrap">
+      <div class="mp-ecg-scroller">
+        <svg id="mp-ecg" viewBox="0 0 1200 50" preserveAspectRatio="none" style="width:100%;height:50px">
+          <polyline id="mp-ecg-line" fill="none" stroke="#fbbf24" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgb(var(--color-neutral-500));letter-spacing:0.12em;text-transform:uppercase;margin:0.5rem 0 1.5rem">
+      FACT-DRIVEN MARKET INTELLIGENCE
+    </p>
+
+    <div id="mp-regime-badge" class="mp-regime-badge">--</div>
+    <p id="mp-hero-summary" class="mp-hero-summary">Loading...</p>
+    <p id="mp-hero-updated" class="mp-hero-updated"></p>
+  </div>
+
+  <!-- Ticker Groups -->
+  <h3 class="mp-section-header">Market Overview</h3>
+  <div id="mp-ticker-groups" class="mp-ticker-groups">
+    <span style="opacity:0.4;grid-column:1/-1;text-align:center;padding:2rem;font-size:0.85rem">Loading market data...</span>
+  </div>
+  <p id="mp-data-timestamp" class="mp-hero-updated" style="text-align:right;margin-top:0.5rem"></p>
+
+  <!-- Recent Briefings -->
+  {{ partial "home/recent-briefings.html" . }}
+
+  <!-- More -->
+  <div style="text-align:center;margin-top:2rem">
+    <a href="/posts/" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:rgb(var(--color-primary-400));text-decoration:none">
+      전체 브리핑 보기 →
+    </a>
+  </div>
+</div>
+
+<style>
+/* ECG scroll animation */
+@keyframes ecg-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.mp-ecg-scroller {
+  animation: ecg-scroll 10s linear infinite;
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── ECG heartbeat pattern ──
+  function generateECG() {
+    var el = document.getElementById('mp-ecg-line');
+    if (!el) return;
+
+    // Single heartbeat cycle (100 units wide, baseline y=25)
+    var beat = [
+      [0,25],[20,25],[25,21],[30,25],[35,25],
+      [38,28],[40,4],[42,44],[46,25],
+      [56,25],[62,19],[68,25],[100,25]
+    ];
+
+    var points = [];
+    // 12 cycles → first 6 visible, last 6 for seamless loop
+    for (var c = 0; c < 12; c++) {
+      for (var i = 0; i < beat.length; i++) {
+        points.push((beat[i][0] + c * 100) + ',' + beat[i][1]);
+      }
+    }
+    el.setAttribute('points', points.join(' '));
+  }
+
+  // ── Regime colors ──
+  var REGIME_COLORS = {
+    'RISK_ON':  { hex: '#4ade80', rgb: '74 222 128' },
+    'CAUTIOUS': { hex: '#fbbf24', rgb: '251 191 36' },
+    'RISK_OFF': { hex: '#f87171', rgb: '248 113 113' },
+    'PANIC':    { hex: '#ef4444', rgb: '239 68 68' }
+  };
+
+  // ── Ticker group definitions ──
+  var GROUPS = [
+    { title: 'US INDICES', tickers: [
+      { key: 'SPX', name: 'S&P 500', fmt: 'index' },
+      { key: 'NDX', name: 'Nasdaq', fmt: 'index' },
+      { key: 'DJI', name: 'Dow Jones', fmt: 'index' },
+      { key: 'VIX', name: 'VIX', fmt: 'decimal', invertColor: true }
+    ]},
+    { title: 'CRYPTO', tickers: [
+      { key: 'BTC', name: 'Bitcoin', fmt: 'dollar' },
+      { key: 'ETH', name: 'Ethereum', fmt: 'dollar' }
+    ]},
+    { title: 'COMMODITIES', tickers: [
+      { key: 'GOLD', name: 'Gold', fmt: 'dollar' },
+      { key: 'OIL', name: 'WTI Oil', fmt: 'dollar' }
+    ]},
+    { title: 'FOREX', tickers: [
+      { key: 'USDKRW', name: 'USD/KRW', fmt: 'decimal' },
+      { key: 'DXY', name: 'Dollar Index', fmt: 'decimal' }
+    ]},
+    { title: 'KOREA', tickers: [
+      { key: 'KOSPI', name: 'KOSPI', fmt: 'decimal' },
+      { key: 'KOSDAQ', name: 'KOSDAQ', fmt: 'decimal' }
+    ]}
+  ];
+
+  // ── Format helpers ──
+  function fmtPrice(val, fmt) {
+    if (fmt === 'index') return val.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    if (fmt === 'dollar') return val.toLocaleString('en-US', { maximumFractionDigits: val >= 1000 ? 0 : 2 });
+    return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function fmtChange(pct) {
+    var sign = pct >= 0 ? '+' : '';
+    return sign + pct.toFixed(2) + '%';
+  }
+
+  // ── Sparkline SVG (pure, no CDN) ──
+  function generateSparkline(data, color) {
+    if (!data || data.length < 2) return '';
+    var pts = data.slice(-15);
+    var min = Math.min.apply(null, pts);
+    var max = Math.max.apply(null, pts);
+    var range = max - min || 1;
+    var w = 60, h = 20, pad = 2;
+
+    var coords = [];
+    for (var i = 0; i < pts.length; i++) {
+      var x = (i / (pts.length - 1)) * w;
+      var y = pad + ((max - pts[i]) / range) * (h - pad * 2);
+      coords.push(x.toFixed(1) + ',' + y.toFixed(1));
+    }
+
+    return '<svg class="mp-sparkline" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+      '<polyline points="' + coords.join(' ') + '" fill="none" stroke="' + color +
+      '" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  // ── Render ticker groups ──
+  function renderTickerGroups(ts) {
+    var container = document.getElementById('mp-ticker-groups');
+    if (!container || !ts || !ts.series) return;
+
+    var html = '';
+
+    for (var g = 0; g < GROUPS.length; g++) {
+      var group = GROUPS[g];
+      var rows = '';
+      var hasData = false;
+
+      for (var t = 0; t < group.tickers.length; t++) {
+        var ticker = group.tickers[t];
+        var s = ts.series[ticker.key];
+        if (!s || s.length < 2) continue;
+
+        hasData = true;
+        var current = s[s.length - 1];
+        var prev = s[s.length - 2];
+        var changePct = ((current - prev) / prev) * 100;
+
+        var isPositive = ticker.invertColor ? changePct < 0 : changePct >= 0;
+        var changeColor = changePct === 0 ? 'rgb(var(--color-neutral-400))'
+          : isPositive ? '#4ade80' : '#f87171';
+        var sparkColor = changePct === 0 ? '#6b7280' : isPositive ? '#4ade80' : '#f87171';
+
+        rows += '<div class="mp-ticker-row">' +
+          '<span class="mp-ticker-name">' + ticker.name + '</span>' +
+          '<span class="mp-ticker-price">' + fmtPrice(current, ticker.fmt) + '</span>' +
+          '<span class="mp-ticker-change" style="color:' + changeColor + '">' + fmtChange(changePct) + '</span>' +
+          generateSparkline(s, sparkColor) +
+          '</div>';
+      }
+
+      if (!hasData) continue;
+
+      html += '<div class="mp-ticker-group">' +
+        '<div class="mp-ticker-group__title">' + group.title + '</div>' +
+        rows + '</div>';
+    }
+
+    container.innerHTML = html ||
+      '<span style="opacity:0.4;grid-column:1/-1;text-align:center;padding:2rem">' +
+      '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+  }
+
+  // ── Main render ──
+  function render(data) {
+    if (!data) return;
+
+    var regime = data.regime;
+    var color = REGIME_COLORS[regime && regime.current] || REGIME_COLORS['CAUTIOUS'];
+
+    // 1. Set CSS variables
+    document.documentElement.style.setProperty('--regime-color', color.hex);
+    document.documentElement.style.setProperty('--regime-color-rgb', color.rgb);
+
+    // 2. ECG stroke (SVG may not pick up CSS variables)
+    var ecgLine = document.getElementById('mp-ecg-line');
+    if (ecgLine) ecgLine.setAttribute('stroke', color.hex);
+
+    // 3. Regime badge
+    var badge = document.getElementById('mp-regime-badge');
+    if (badge && regime) {
+      badge.textContent = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
+    }
+
+    // 4. Hero summary
+    var summary = document.getElementById('mp-hero-summary');
+    if (summary && regime && regime.summary) {
+      summary.textContent = regime.summary;
+    }
+
+    // 5. Updated time
+    var updated = document.getElementById('mp-hero-updated');
+    if (updated && data.date) {
+      updated.textContent = '\uAE30\uC900: ' + data.date;
+    }
+
+    // 6. Ticker groups
+    if (data.timeSeries) {
+      renderTickerGroups(data.timeSeries);
+    }
+
+    // 7. Data timestamp
+    var ts = document.getElementById('mp-data-timestamp');
+    if (ts && data.date) {
+      ts.textContent = '\uB370\uC774\uD130 \uAE30\uC900: ' + data.date;
+    }
+  }
+
+  // ── Data fetch (today → yesterday fallback) ──
+  function fetchData() {
+    var today = new Date();
+    var fmt = function(d) { return d.toISOString().split('T')[0]; };
+    var urls = [
+      '/data/chart-data-' + fmt(today) + '.json',
+      '/data/chart-data-' + fmt(new Date(today.getTime() - 86400000)) + '.json'
+    ];
+    tryFetch(urls, 0);
+  }
+
+  function tryFetch(urls, idx) {
+    if (idx >= urls.length) {
+      var el = document.getElementById('mp-hero-summary');
+      if (el) el.textContent = 'Data unavailable';
+      var tg = document.getElementById('mp-ticker-groups');
+      if (tg) tg.innerHTML = '<span style="opacity:0.4;grid-column:1/-1;text-align:center;padding:2rem">' +
+        '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+      return;
+    }
+
+    fetch(urls[idx])
+      .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(data) { render(data); })
+      .catch(function() { tryFetch(urls, idx + 1); });
+  }
+
+  // ── Init ──
+  generateECG();
+  fetchData();
+})();
+</script>

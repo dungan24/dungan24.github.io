@@ -1,3 +1,13 @@
+{{ if .Params.regime }}
+<script>
+  window.__MP_PAGE = {
+    regime: {{ .Params.regime | jsonify }},
+    regimeIcon: {{ .Params.regimeIcon | jsonify }},
+    summary: {{ .Params.summary | jsonify }},
+    chartData: {{ .Params.chartData | jsonify }}
+  };
+</script>
+{{ end }}
 {{ if .Params.chartData }}
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 <style>
