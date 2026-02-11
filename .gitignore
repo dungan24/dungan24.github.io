@@ -10,5 +10,8 @@
 screenshots/
 post-current-full.png
 
+# Playwright MCP 로그
+.playwright-mcp/
+
 # 크래시 덤프
 *.stackdump
