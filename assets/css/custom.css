@@ -378,6 +378,10 @@ code, pre, .num-cell, .terminal-data {
   flex: 1;
   color: #E2E8F0;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .mp-ticker-price {
@@ -793,13 +797,7 @@ code, pre, .num-cell, .terminal-data {
 /* --- Post Ticker Cards (inside briefing-section) --- */
 .briefing-section .mp-ticker-groups {
   margin: 1rem 0;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@media (min-width: 1024px) {
-  .briefing-section .mp-ticker-groups {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
 .mp-ticker-flow {
@@ -953,5 +951,55 @@ html { scroll-behavior: smooth; }
 .prose p {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+}
+
+/* ===== Post Page - FHD Width & Readability ===== */
+
+/* Widen outer container for XL+ (1280px+) screens */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    max-width: 96rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+
+  /* Wider post content area (default: 65ch ~740px → 56rem ~896px) */
+  .article-content,
+  #single_header,
+  article > footer {
+    max-width: 56rem !important;
+  }
+}
+
+/* Table: prevent cell text wrapping for data readability */
+.prose table td,
+.prose table th {
+  white-space: nowrap;
+}
+
+/* Mobile: horizontal scroll for wide tables */
+@media (max-width: 768px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Briefing section h3 — cyberpunk neon style */
+.briefing-section h3 {
+  font-family: 'Exo 2', sans-serif;
+  color: var(--mp-neon-cyan) !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.2);
+}
+
+:root:not(.dark) .briefing-section h3 {
+  color: var(--mp-neon-purple) !important;
+  text-shadow: none;
 }
 
