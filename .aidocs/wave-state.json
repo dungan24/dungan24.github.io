@@ -1,0 +1,40 @@
+{
+  "version": "4.0",
+  "lastUpdated": "2026-02-12T10:00:00Z",
+  "source": "task.md",
+  "currentPhase": 5,
+  "currentTask": "5.5",
+  "phases": {
+    "1": { "name": "색상 스킴 + 폰트 교체", "status": "completed" },
+    "2": {
+      "name": "Custom CSS 전면 리라이트",
+      "status": "completed",
+      "completedAt": "2026-02-12T00:03:00Z",
+      "summary": "26개 Task 완료. 루트 변수, 모든 컴포넌트 색상, 스캔라인, 애니메이션, TOC 교체"
+    },
+    "3": {
+      "name": "홈페이지 레이아웃 + SVG + 효과",
+      "status": "completed",
+      "completedAt": "2026-02-12T01:00:00Z",
+      "summary": "Ambient Orbs 퍼플/시안, ECG 시안, 서브타이틀 JetBrains Mono, Hero SVG 그라디언트, Regime/Sparkline 네온"
+    },
+    "4": {
+      "name": "차트 Cyberpunk 테마 + 개선",
+      "status": "completed",
+      "completedAt": "2026-02-12T01:30:00Z",
+      "summary": "COLORS/TOOLTIP/Theme 사이버펑크. 차트1 %정규화, 차트2 5단계색상, 차트3 네온게이지, 차트4 롤리팝, 차트5 전자산확장. 카드CSS+에러메시지 교체."
+    },
+    "5": {
+      "name": "마무리 + 최종 검증",
+      "status": "in_progress",
+      "tasks": [
+        { "id": "5.1", "name": "Prose body 스타일 확인", "status": "completed", "summary": "이미 적용 완료, 변경 불필요" },
+        { "id": "5.2", "name": "모바일 반응형 확인", "status": "completed", "summary": "640/768/1024px 모든 규칙 정상" },
+        { "id": "5.3", "name": "파일 정리", "status": "completed", "summary": ":root 블록 병합, 깨진 주석 수정" },
+        { "id": "5.4", "name": "Hugo 빌드 검증", "status": "completed", "summary": "빌드 성공 257ms, 18페이지, 에러 없음" },
+        { "id": "5.5", "name": "커밋", "status": "in_progress" }
+      ]
+    }
+  },
+  "resumeHint": "Wave 5 Task 5.1~5.4 완료. Task 5.5 커밋 진행 중."
+}

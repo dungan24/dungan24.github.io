@@ -6,13 +6,13 @@
 /* globals echarts */
 
 const COLORS = {
-  primary: '#22d3ee',    /* cyan-400 Bloomberg blue */
-  success: '#4ade80',    /* green-400 상승 */
-  danger: '#f87171',     /* red-400 하락 */
-  warning: '#fbbf24',    /* amber-400 */
-  muted: '#94a3b8',      /* slate-400 */
-  bg: '#0a0f1e',         /* 최대 다크 */
-  text: '#e2e8f0',       /* slate-200 */
+  primary: '#7C3AED',
+  success: '#00FF88',
+  danger: '#FF3366',
+  warning: '#FFD600',
+  muted: '#64748B',
+  bg: '#0A0A1A',
+  text: '#E2E8F0',
 };
 
 const METRIC_COLORS = {
@@ -27,6 +27,15 @@ const METRIC_COLORS = {
   US10Y: '#f472b6',     /* pink-400 */
 };
 
+const GLASS_TOOLTIP = {
+  backgroundColor: 'rgba(10, 10, 26, 0.95)',
+  borderColor: 'rgba(124, 58, 237, 0.3)',
+  borderWidth: 1,
+  borderRadius: 4,
+  textStyle: { color: '#E2E8F0', fontSize: 13 },
+  extraCssText: 'box-shadow:0 0 15px rgba(124,58,237,0.2),0 8px 32px -8px rgba(0,0,0,0.5)',
+};
+
 function isDarkMode() {
   return document.documentElement.classList.contains('dark') ||
     document.body.classList.contains('dark') ||
@@ -36,12 +45,12 @@ function isDarkMode() {
 function getTheme() {
   const dark = isDarkMode();
   return {
-    bg: dark ? '#0a0f1e' : '#ffffff',
-    text: dark ? '#e2e8f0' : '#334155',
-    axis: dark ? '#334155' : '#cbd5e1',
-    tooltip: dark ? '#1e293b' : '#ffffff',
-    success: dark ? '#4ade80' : '#16a34a',
-    danger: dark ? '#f87171' : '#dc2626',
+    bg: dark ? '#0A0A1A' : '#ffffff',
+    text: dark ? '#E2E8F0' : '#1E1E3A',
+    axis: dark ? '#1E1E3A' : '#cbd5e1',
+    tooltip: dark ? '#12122A' : '#ffffff',
+    success: dark ? '#00FF88' : '#059669',
+    danger: dark ? '#FF3366' : '#DC2626',
   };
 }
 
@@ -51,17 +60,31 @@ function createChart(id) {
   return echarts.init(el, isDarkMode() ? 'dark' : null);
 }
 
-// ===== 차트 1: 주요 지표 추이 (이중 Y축 Line) =====
+// ===== 차트 1: 주요 지표 추이 (이중 Y축 Line, % 변화율 정규화) =====
 function renderTimeSeries(data) {
   const chart = createChart('chart-timeseries');
   if (!chart || !data.timeSeries) return;
 
   const { dates, series } = data.timeSeries;
 
+  // % 변화율 정규화 함수
+  function normalizeToPercent(arr) {
+    if (!arr || arr.length === 0) return arr;
+    const base = arr[0];
+    if (base === 0) return arr;
+    return arr.map(v => +((v - base) / base * 100).toFixed(2));
+  }
+
   // 좌축: 지수 (SPX, NDX, DJI), 우축: VIX
   const leftKeys = ['SPX', 'NDX', 'DJI'];
   const rightKeys = ['VIX'];
   const theme = getTheme();
+
+  // 원본 데이터 저장 (tooltip용)
+  const originalSeries = {};
+  for (const key of [...leftKeys, ...rightKeys]) {
+    if (series[key]) originalSeries[key] = series[key];
+  }
 
   const seriesConfig = [];
   for (const key of leftKeys) {
@@ -69,7 +92,7 @@ function renderTimeSeries(data) {
     seriesConfig.push({
       name: key,
       type: 'line',
-      data: series[key],
+      data: normalizeToPercent(series[key]),
       yAxisIndex: 0,
       smooth: true,
       symbol: 'none',
@@ -82,7 +105,7 @@ function renderTimeSeries(data) {
     seriesConfig.push({
       name: key,
       type: 'line',
-      data: series[key],
+      data: normalizeToPercent(series[key]),
       yAxisIndex: 1,
       smooth: true,
       symbol: 'none',
@@ -94,13 +117,32 @@ function renderTimeSeries(data) {
 
   chart.setOption({
     backgroundColor: 'transparent',
-    tooltip: { trigger: 'axis' },
+    tooltip: {
+      ...GLASS_TOOLTIP,
+      trigger: 'axis',
+      formatter: function(params) {
+        if (!params || params.length === 0) return '';
+        let html = '<b>' + params[0].axisValue + '</b>';
+        params.forEach(p => {
+          const key = p.seriesName;
+          const idx = p.dataIndex;
+          const originalValue = originalSeries[key] ? originalSeries[key][idx] : null;
+          const changePct = p.value;
+          html += '<br/>' + p.marker + ' ' + key + ': ';
+          if (originalValue !== null) {
+            html += originalValue.toLocaleString(undefined, {maximumFractionDigits: 2}) + ' ';
+          }
+          html += '(' + (changePct > 0 ? '+' : '') + changePct + '%)';
+        });
+        return html;
+      }
+    },
     legend: { data: [...leftKeys, ...rightKeys].filter(k => series[k]), textStyle: { color: theme.text } },
     grid: { left: '14%', right: '12%', bottom: '12%' },
     xAxis: { type: 'category', data: dates, axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text } },
     yAxis: [
-      { type: 'value', name: '지수', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: function(v) { return v >= 1000 ? (v/1000).toFixed(0) + 'K' : v; } }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } } },
-      { type: 'value', name: 'VIX', axisLine: { lineStyle: { color: METRIC_COLORS.VIX } }, axisLabel: { color: theme.text }, splitLine: { show: false } },
+      { type: 'value', name: '변동률(%)', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: '{value}%' }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } } },
+      { type: 'value', name: 'VIX 변동률(%)', axisLine: { lineStyle: { color: METRIC_COLORS.VIX } }, axisLabel: { color: theme.text, formatter: '{value}%' }, splitLine: { show: false } },
     ],
     series: seriesConfig,
     dataZoom: [{ type: 'inside', start: 0, end: 100 }],
@@ -118,15 +160,24 @@ function renderCorrelations(data) {
     return;
   }
 
+  // 5단계 그라데이션 색상 함수
+  function getCorrelationColor(v) {
+    if (v >= 0.5) return '#FF3366';      // 강한 양의 상관: 네온 핑크
+    if (v >= 0.3) return '#FFD600';      // 중간 양의 상관: 네온 옐로우
+    if (v > -0.3) return '#64748B';      // 약한/무상관: 뮤트
+    if (v > -0.5) return '#00F0FF';      // 중간 음의 상관: 시안
+    return '#7C3AED';                     // 강한 음의 상관: 퍼플
+  }
+
   const theme = getTheme();
   const items = data.correlations;
   const labels = items.map(c => c.labels.join(' ↔ '));
   const values = items.map(c => c.value);
-  const colors = values.map(v => v > 0.3 ? theme.danger : v < -0.3 ? COLORS.primary : COLORS.muted);
 
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: {
+      ...GLASS_TOOLTIP,
       trigger: 'axis',
       formatter: function (params) {
         const idx = params[0].dataIndex;
@@ -139,7 +190,7 @@ function renderCorrelations(data) {
       type: 'value', min: -1, max: 1,
       axisLine: { lineStyle: { color: theme.axis } },
       axisLabel: { color: theme.text },
-      splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } },
+      splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
     },
     yAxis: {
       type: 'category', data: labels, inverse: true,
@@ -148,9 +199,17 @@ function renderCorrelations(data) {
     },
     series: [{
       type: 'bar',
-      data: values.map((v, i) => ({ value: v, itemStyle: { color: colors[i], borderRadius: [0, 4, 4, 0] } })),
+      data: values.map((v, i) => ({
+        value: v,
+        itemStyle: { color: getCorrelationColor(v), borderRadius: [0, 4, 4, 0] },
+        label: {
+          show: true,
+          position: 'right',
+          formatter: '{c}',
+          color: getCorrelationColor(v),
+        }
+      })),
       barWidth: '60%',
-      label: { show: true, position: 'right', formatter: '{c}', color: theme.text },
     }],
     // 기준선 (r=0)
     markLine: { data: [{ xAxis: 0 }] },
@@ -188,10 +247,10 @@ function renderRegime(data) {
         lineStyle: {
           width: 20,
           color: [
-            [0.2, COLORS.danger],
-            [0.4, COLORS.warning],
-            [0.7, '#94a3b8'],
-            [1, COLORS.success],
+            [0.2, '#FF3366'],
+            [0.4, '#FFD600'],
+            [0.7, '#64748B'],
+            [1, '#00FF88'],
           ],
         },
       },
@@ -236,7 +295,7 @@ function renderRegime(data) {
   window.addEventListener('resize', () => chart.resize());
 }
 
-// ===== 차트 4: 섹터 상대강도 (Horizontal Bar) =====
+// ===== 차트 4: 섹터 상대강도 (Lollipop Chart) =====
 function renderSectors(data) {
   const chart = createChart('chart-sectors');
   if (!chart || !data.sectorStrength || data.sectorStrength.length === 0) {
@@ -253,14 +312,14 @@ function renderSectors(data) {
 
   chart.setOption({
     backgroundColor: 'transparent',
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-    legend: { data: ['1주 초과수익', '1개월 초과수익'], textStyle: { color: theme.text } },
+    tooltip: { ...GLASS_TOOLTIP, trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text } },
     grid: { left: '18%', right: '5%', top: '12%', bottom: '5%' },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
       axisLabel: { color: theme.text, formatter: '{value}%' },
-      splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } },
+      splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
     },
     yAxis: {
       type: 'category', data: names, inverse: true,
@@ -269,20 +328,32 @@ function renderSectors(data) {
     },
     series: [
       {
-        name: '1주 초과수익',
+        name: '1주',
         type: 'bar',
         data: week1.map(v => ({
           value: v,
-          itemStyle: { color: v != null && v > 0 ? theme.success : theme.danger, borderRadius: [0, 4, 4, 0] },
+          itemStyle: {
+            color: v != null && v > 0 ? theme.success : theme.danger,
+            borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4]
+          },
         })),
+        barWidth: '40%',
       },
       {
-        name: '1개월 초과수익',
-        type: 'bar',
-        data: month1.map(v => ({
-          value: v,
-          itemStyle: { color: v != null && v > 0 ? theme.success + '80' : theme.danger + '80', borderRadius: [0, 4, 4, 0] },
-        })),
+        name: '1개월',
+        type: 'scatter',
+        data: month1,
+        symbol: 'diamond',
+        symbolSize: 10,
+        itemStyle: {
+          color: function(params) {
+            return params.value > 0 ? '#00FF8880' : '#FF336680';
+          },
+          borderColor: function(params) {
+            return params.value > 0 ? '#00FF88' : '#FF3366';
+          },
+          borderWidth: 1,
+        },
       },
     ],
   });
@@ -290,58 +361,136 @@ function renderSectors(data) {
   window.addEventListener('resize', () => chart.resize());
 }
 
-// ===== 차트 5: 5일 변동 비교 (Bar) =====
+// ===== 차트 5: 5일 변동 비교 (전체 자산 확장) =====
 function renderFiveDay(data) {
   const chart = createChart('chart-5day');
-  if (!chart || !data.fiveDayComparison || data.fiveDayComparison.length === 0) {
-    const el = document.getElementById('chart-5day');
-    if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">5일 비교 데이터 없음</p>';
+  if (!chart) return;
+
+  const theme = getTheme();
+
+  // timeSeries에서 5일 변동률 계산
+  const ts = data.timeSeries;
+  if (!ts || !ts.series || !ts.dates || ts.dates.length < 2) {
+    // fallback to fiveDayComparison if available
+    if (data.fiveDayComparison && data.fiveDayComparison.length > 0) {
+      const items = data.fiveDayComparison;
+      const labels = items.map(i => i.metric);
+      const values = items.map(i => i.changePct);
+
+      chart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: {
+          ...GLASS_TOOLTIP,
+          trigger: 'axis',
+          formatter: function (params) {
+            const idx = params[0].dataIndex;
+            const item = items[idx];
+            return `<b>${item.metric}</b>: ${item.changePct > 0 ? '+' : ''}${item.changePct.toFixed(2)}%<br/>${item.label}`;
+          },
+        },
+        grid: { left: '10%', right: '5%', top: '10%', bottom: '15%' },
+        xAxis: {
+          type: 'category', data: labels,
+          axisLine: { lineStyle: { color: theme.axis } },
+          axisLabel: { color: theme.text },
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: { lineStyle: { color: theme.axis } },
+          axisLabel: { color: theme.text, formatter: '{value}%' },
+          splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
+        },
+        series: [{
+          type: 'bar',
+          data: values.map(v => ({
+            value: +v.toFixed(2),
+            itemStyle: {
+              color: v > 0 ? theme.success : theme.danger,
+              borderRadius: v > 0 ? [4, 4, 0, 0] : [0, 0, 4, 4],
+            },
+          })),
+          label: {
+            show: true,
+            position: 'top',
+            formatter: function (p) { return (p.value > 0 ? '+' : '') + p.value + '%'; },
+            color: theme.text,
+            fontSize: 11,
+          },
+        }],
+      });
+
+      window.addEventListener('resize', () => chart.resize());
+    } else {
+      const el = document.getElementById('chart-5day');
+      if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">5일 비교 데이터 없음</p>';
+    }
     return;
   }
 
-  const theme = getTheme();
-  const items = data.fiveDayComparison;
-  const labels = items.map(i => i.metric);
+  const ASSET_NAMES = {
+    SPX: 'S&P 500', NDX: 'Nasdaq', DJI: 'Dow',
+    VIX: 'VIX', BTC: 'Bitcoin', GOLD: 'Gold',
+    OIL: 'WTI Oil', USDKRW: 'USD/KRW', US10Y: '10Y Bond'
+  };
+
+  const items = [];
+  for (const [key, arr] of Object.entries(ts.series)) {
+    if (!arr || arr.length < 2) continue;
+    const len = arr.length;
+    // 5일 전 또는 가장 오래된 데이터
+    const fiveDayAgo = len >= 6 ? arr[len - 6] : arr[0];
+    const current = arr[len - 1];
+    const changePct = +((current - fiveDayAgo) / fiveDayAgo * 100).toFixed(2);
+    items.push({ key, name: ASSET_NAMES[key] || key, changePct });
+  }
+
+  // changePct 절대값 기준 내림차순 정렬 (변동 큰 게 위로)
+  items.sort((a, b) => Math.abs(b.changePct) - Math.abs(a.changePct));
+
+  // 가로 바 차트로 변경 (세로 바 → 가로 바, 자산 많아서 가로가 읽기 쉬움)
+  const labels = items.map(i => i.name);
   const values = items.map(i => i.changePct);
 
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: {
+      ...GLASS_TOOLTIP,
       trigger: 'axis',
-      formatter: function (params) {
+      formatter: function(params) {
         const idx = params[0].dataIndex;
         const item = items[idx];
-        return `<b>${item.metric}</b>: ${item.changePct > 0 ? '+' : ''}${item.changePct.toFixed(2)}%<br/>${item.label}`;
+        return '<b>' + item.name + '</b>: ' + (item.changePct > 0 ? '+' : '') + item.changePct + '%';
       },
     },
-    grid: { left: '10%', right: '5%', top: '10%', bottom: '15%' },
+    grid: { left: '18%', right: '10%', top: '5%', bottom: '5%' },
     xAxis: {
-      type: 'category', data: labels,
-      axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text },
-    },
-    yAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
       axisLabel: { color: theme.text, formatter: '{value}%' },
-      splitLine: { lineStyle: { color: theme.axis, opacity: 0.3 } },
+      splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
+    },
+    yAxis: {
+      type: 'category', data: labels, inverse: true,
+      axisLine: { lineStyle: { color: theme.axis } },
+      axisLabel: { color: theme.text, fontSize: 12 },
     },
     series: [{
       type: 'bar',
       data: values.map(v => ({
-        value: +v.toFixed(2),
+        value: v,
         itemStyle: {
           color: v > 0 ? theme.success : theme.danger,
-          borderRadius: v > 0 ? [4, 4, 0, 0] : [0, 0, 4, 4],
+          borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
+        },
+        label: {
+          show: true,
+          position: v > 0 ? 'right' : 'left',
+          formatter: (v > 0 ? '+' : '') + v + '%',
+          color: theme.text,
+          fontSize: 11,
         },
       })),
-      label: {
-        show: true,
-        position: 'top',
-        formatter: function (p) { return (p.value > 0 ? '+' : '') + p.value + '%'; },
-        color: theme.text,
-        fontSize: 11,
-      },
+      barWidth: '55%',
     }],
   });
 

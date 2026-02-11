@@ -1,5 +1,10 @@
 {{/* Market Pulse Homepage — Hero + Tickers + Briefings */}}
-<div style="max-width:72rem;margin:0 auto;padding:2rem 1rem 4rem">
+<div class="mp-home-shell" style="max-width:72rem;margin:0 auto;padding:2rem 1rem 4rem;position:relative;overflow:hidden">
+  <div class="mp-ambient-orbs">
+    <div style="position:absolute;top:-10%;left:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);filter:blur(60px);pointer-events:none" class="animate-pulse-slow"></div>
+    <div style="position:absolute;top:40%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,240,255,0.12),transparent 70%);filter:blur(60px);pointer-events:none" class="animate-pulse-slower"></div>
+  </div>
+  <div class="mp-home-content" style="position:relative;z-index:1">
 
   <!-- Hero -->
   <div style="text-align:center">
@@ -10,14 +15,14 @@
     <div class="mp-ecg-wrap">
       <div class="mp-ecg-scroller">
         <svg id="mp-ecg" viewBox="0 0 1200 50" preserveAspectRatio="none" style="width:100%;height:50px">
-          <polyline id="mp-ecg-line" fill="none" stroke="#fbbf24" stroke-width="1.5"
+          <polyline id="mp-ecg-line" fill="none" stroke="#00F0FF" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </div>
 
-    <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgb(var(--color-neutral-500));letter-spacing:0.12em;text-transform:uppercase;margin:0.5rem 0 1.5rem">
-      FACT-DRIVEN MARKET INTELLIGENCE
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00F0FF;letter-spacing:0.15em;margin:0.5rem 0 1.5rem;text-transform:uppercase;text-shadow:0 0 8px rgba(0,240,255,0.3)">
+      // FACT-DRIVEN MARKET INTELLIGENCE
     </p>
 
     <div id="mp-regime-badge" class="mp-regime-badge">--</div>
@@ -37,10 +42,11 @@
 
   <!-- More -->
   <div style="text-align:center;margin-top:2rem">
-    <a href="/posts/" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:rgb(var(--color-primary-400));text-decoration:none">
+    <a href="/posts/" class="mp-more-link">
       전체 브리핑 보기 →
     </a>
   </div>
+</div>
 </div>
 
 <style>
@@ -82,10 +88,10 @@
 
   // ── Regime colors ──
   var REGIME_COLORS = {
-    'RISK_ON':  { hex: '#4ade80', rgb: '74 222 128' },
-    'CAUTIOUS': { hex: '#fbbf24', rgb: '251 191 36' },
-    'RISK_OFF': { hex: '#f87171', rgb: '248 113 113' },
-    'PANIC':    { hex: '#ef4444', rgb: '239 68 68' }
+    'RISK_ON':  { hex: '#00FF88', rgb: '0 255 136' },
+    'CAUTIOUS': { hex: '#FFD600', rgb: '255 214 0' },
+    'RISK_OFF': { hex: '#FF3366', rgb: '255 51 102' },
+    'PANIC':    { hex: '#FF0040', rgb: '255 0 64' }
   };
 
   // ── Ticker group definitions ──
@@ -171,8 +177,8 @@
 
         var isPositive = ticker.invertColor ? changePct < 0 : changePct >= 0;
         var changeColor = changePct === 0 ? 'rgb(var(--color-neutral-400))'
-          : isPositive ? '#4ade80' : '#f87171';
-        var sparkColor = changePct === 0 ? '#6b7280' : isPositive ? '#4ade80' : '#f87171';
+          : isPositive ? '#00FF88' : '#FF3366';
+        var sparkColor = changePct === 0 ? '#64748B' : isPositive ? '#00FF88' : '#FF3366';
 
         rows += '<div class="mp-ticker-row">' +
           '<span class="mp-ticker-name">' + ticker.name + '</span>' +
