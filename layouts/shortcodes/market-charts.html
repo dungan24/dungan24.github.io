@@ -54,10 +54,13 @@
         if (!r.ok) throw new Error('DATA_UNAVAILABLE');
         return r.json();
       })
-      .then(data => renderAllCharts(data))
-      .then(() => {
+      .then(data => {
         if (statusContainer) statusContainer.style.display = 'none';
-        if (content) content.classList.remove('hidden');
+        if (content) {
+          content.classList.remove('hidden');
+          void content.offsetHeight; // 브라우저 reflow 강제 → 컨테이너 크기 확정
+        }
+        renderAllCharts(data);
       })
       .catch(err => {
         console.error('Chart data load failed:', err);

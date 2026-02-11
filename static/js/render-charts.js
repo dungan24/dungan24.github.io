@@ -138,7 +138,7 @@ function renderTimeSeries(data) {
       }
     },
     legend: { data: [...leftKeys, ...rightKeys].filter(k => series[k]), textStyle: { color: theme.text } },
-    grid: { left: '14%', right: '12%', bottom: '12%' },
+    grid: { left: 10, right: 10, bottom: 30, top: 40, containLabel: true },
     xAxis: { type: 'category', data: dates, axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text } },
     yAxis: [
       { type: 'value', name: '변동률(%)', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: '{value}%' }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } } },
@@ -171,7 +171,7 @@ function renderCorrelations(data) {
 
   const theme = getTheme();
   const items = data.correlations;
-  const labels = items.map(c => c.labels.join(' ↔ '));
+  const labels = items.map(c => c.labels.join(' / '));
   const values = items.map(c => c.value);
 
   chart.setOption({
@@ -185,7 +185,7 @@ function renderCorrelations(data) {
         return `<b>${c.labels[0]} ↔ ${c.labels[1]}</b><br/>r = ${c.value}<br/>${c.status}: ${c.meaning}`;
       },
     },
-    grid: { left: '25%', right: '10%', top: '5%', bottom: '5%' },
+    grid: { left: 10, right: 45, top: 10, bottom: 10, containLabel: true },
     xAxis: {
       type: 'value', min: -1, max: 1,
       axisLine: { lineStyle: { color: theme.axis } },
@@ -238,6 +238,8 @@ function renderRegime(data) {
     backgroundColor: 'transparent',
     series: [{
       type: 'gauge',
+      center: ['50%', '60%'],
+      radius: '85%',
       startAngle: 200,
       endAngle: -20,
       min: 0,
@@ -314,7 +316,7 @@ function renderSectors(data) {
     backgroundColor: 'transparent',
     tooltip: { ...GLASS_TOOLTIP, trigger: 'axis', axisPointer: { type: 'shadow' } },
     legend: { data: ['1주', '1개월'], textStyle: { color: theme.text } },
-    grid: { left: '18%', right: '5%', top: '12%', bottom: '5%' },
+    grid: { left: 10, right: 10, top: 35, bottom: 10, containLabel: true },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
@@ -388,7 +390,7 @@ function renderFiveDay(data) {
             return `<b>${item.metric}</b>: ${item.changePct > 0 ? '+' : ''}${item.changePct.toFixed(2)}%<br/>${item.label}`;
           },
         },
-        grid: { left: '10%', right: '5%', top: '10%', bottom: '15%' },
+        grid: { left: 10, right: 10, top: 30, bottom: 30, containLabel: true },
         xAxis: {
           type: 'category', data: labels,
           axisLine: { lineStyle: { color: theme.axis } },
@@ -504,4 +506,12 @@ function renderAllCharts(data) {
   renderRegime(data);
   renderSectors(data);
   renderFiveDay(data);
+
+  // hidden→visible 전환 직후 레이아웃 안정화를 위한 resize safety net
+  requestAnimationFrame(function() {
+    document.querySelectorAll('.chart-box').forEach(function(el) {
+      var inst = echarts.getInstanceByDom(el);
+      if (inst) inst.resize();
+    });
+  });
 }
