@@ -37,10 +37,14 @@
         1458.54,
 <<<<<<< Updated upstream
         1445.5,
+<<<<<<< Updated upstream
         1439.29
 =======
         1454.78,
         null
+>>>>>>> Stashed changes
+=======
+        1438.34
 >>>>>>> Stashed changes
       ],
       "BTC": [
@@ -48,25 +52,38 @@
 <<<<<<< Updated upstream
         70120,
         66714,
+<<<<<<< Updated upstream
 =======
         69011,
 >>>>>>> Stashed changes
         67145
+=======
+        67250
+>>>>>>> Stashed changes
       ],
       "GOLD": [
         5050.9,
 <<<<<<< Updated upstream
         5050.9,
         5100.7,
+<<<<<<< Updated upstream
         5081.6
 =======
         5067.7,
         5080.7
 >>>>>>> Stashed changes
+=======
+        5085.9
+>>>>>>> Stashed changes
       ],
       "OIL": [
         64.36,
+<<<<<<< Updated upstream
         64.44,
+=======
+        64.36,
+        64.95,
+>>>>>>> Stashed changes
         64.85
       ]
     }
@@ -165,6 +182,7 @@
       }
     ]
   },
+<<<<<<< Updated upstream
   "sectorStrength": [
     {
       "name": "IT",
@@ -209,6 +227,98 @@
       "month1": -6.42
     }
   ],
+=======
+  "sectorStrength": {
+    "us": [
+      {
+        "name": "테크",
+        "symbol": "XLK",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "금융",
+        "symbol": "XLF",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "헬스케어",
+        "symbol": "XLV",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "소비재",
+        "symbol": "XLY",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "에너지",
+        "symbol": "XLE",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "산업",
+        "symbol": "XLI",
+        "change": null,
+        "over": null
+      },
+      {
+        "name": "반도체",
+        "symbol": "SOXX",
+        "change": null,
+        "over": null
+      }
+    ],
+    "kr": [
+      {
+        "name": "은행",
+        "sector": "KODEX_BANK",
+        "week1": 10.47,
+        "month1": 1.69
+      },
+      {
+        "name": "IT",
+        "sector": "TIGER_IT",
+        "week1": -0.85,
+        "month1": 3.11
+      },
+      {
+        "name": "에너지",
+        "sector": "KODEX_ENERGY",
+        "week1": -1,
+        "month1": -10.12
+      },
+      {
+        "name": "반도체",
+        "sector": "KODEX_SEMI",
+        "week1": -1.42,
+        "month1": 11.22
+      },
+      {
+        "name": "자동차",
+        "sector": "KODEX_AUTO",
+        "week1": -3.21,
+        "month1": -2.16
+      },
+      {
+        "name": "바이오",
+        "sector": "KODEX_BIO",
+        "week1": -6.46,
+        "month1": -29.29
+      },
+      {
+        "name": "2차전지",
+        "sector": "TIGER_BATT",
+        "week1": -6.76,
+        "month1": -9.59
+      }
+    ]
+  },
+>>>>>>> Stashed changes
   "fiveDayComparison": [
     {
       "metric": "SPX",
@@ -219,7 +329,11 @@
       "metric": "BTC",
 <<<<<<< Updated upstream
       "label": "약세 전환",
+<<<<<<< Updated upstream
       "changePct": -4.83
+=======
+      "changePct": -4.68
+>>>>>>> Stashed changes
     },
     {
       "metric": "VIX",
@@ -229,6 +343,7 @@
     {
       "metric": "USDKRW",
       "label": "약세 전환",
+<<<<<<< Updated upstream
       "changePct": -2.13
 =======
       "label": "소폭 상승",
@@ -238,6 +353,9 @@
       "metric": "VIX",
       "label": "보합",
       "changePct": -0.23
+>>>>>>> Stashed changes
+=======
+      "changePct": -2.2
 >>>>>>> Stashed changes
     }
   ]

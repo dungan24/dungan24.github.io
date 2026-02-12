@@ -61,7 +61,11 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 실적 시즌
 - 변동성: VIX 17.65 (-0.79%)
 - 금리: 미 10년물 4.17% (+0.03)
+<<<<<<< Updated upstream
 - 환율: 원/달러 1,439.29 (-6.17)
+=======
+- 환율: 원/달러 1,438.34 (-7.12)
+>>>>>>> Stashed changes
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 =======
@@ -81,24 +85,34 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 다우존스 | 50,121.4 | -66.7 | -0.13% | - |
 | VIX (공포지수) | 17.65 | -0.14 | -0.79% | - |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
+<<<<<<< Updated upstream
 | 달러인덱스 (DXY) | 96.91 | +0.07 | +0.08% | - |
+=======
+| 달러인덱스 (DXY) | 96.87 | +0.04 | +0.04% | - |
+>>>>>>> Stashed changes
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 | 비트코인 (BTC) | 67,145 | +228.29 | +0.34% | - |
 =======
 | 비트코인 (BTC) | 67,145 | +228.29 | +0.34% | ↓2일 |
 >>>>>>> Stashed changes
 | 이더리움 (ETH) | 1,969.55 | +26.39 | +1.34% | - |
+=======
+| 비트코인 (BTC) | 67,250 | +349.7 | +0.52% | ↑2일 |
+| 이더리움 (ETH) | 1,971.12 | +28.38 | +1.44% | - |
+>>>>>>> Stashed changes
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 | 원/달러 (USDKRW) | 1,439.29 | -6.17 | -0.43% | - |
 =======
@@ -117,11 +131,24 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 =======
 | 나스닥 100 선물 | 25,352.25 | +63.75 | +0.25% |
 >>>>>>> Stashed changes
+=======
+| 원/달러 (USDKRW) | 1,438.34 | -7.12 | -0.49% | ↓5일 |
+
+### 지수 선물
+
+> ↗ 본장 0.00% 마감 → 선물 +0.61% 반등 중 (Basis: +0.61%)
+
+| 항목 | 현재가 | 등락 | 등락률 |
+|------|--------|------|--------|
+| S&P 500 선물 | 6,983.75 | +23.25 | +0.33% |
+| 나스닥 100 선물 | 25,365.5 | +77 | +0.30% |
+>>>>>>> Stashed changes
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 | 국제 금 (Gold) | 5,081.6 | -16.9 | -0.33% |
 | WTI 유가 (Oil) | 64.84 | +0.21 | +0.32% |
@@ -130,6 +157,10 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | WTI 유가 (Oil) | 64.85 | +0.22 | +0.34% |
 
 <!-- FACT_ZONE_END -->
+>>>>>>> Stashed changes
+=======
+| 국제 금 (Gold) | 5,085.9 | -12.6 | -0.25% |
+| WTI 유가 (Oil) | 64.85 | +0.22 | +0.34% |
 >>>>>>> Stashed changes
 
 {{< market-charts >}}
@@ -141,7 +172,11 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 ### 글로벌
 
+<<<<<<< Updated upstream
 1. [**Stock Market News, 2026년 2월 11일: 다우지수는 사상 최고치에서 하락하고, 나스닥과 S&P 500은 1월 일자리 데이터 이후 연속 하락세를 보였습니다. 시스코 수익 창출; 금과 은이 더 높습니다.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxQLUxIenUzenUtZ3o2Z0tWUUFnNDBwaU53d0VkZzVIWmozZ3JVcTlCUjNCLVJmeGZvakZTSFFjWEJ6ZDZpaXRCb2VJSU5jMVl6VFFzMGJ0ZEZHYUk4ZFlmT0pRdTNabUt3aWhYdG4yYUVEYk1NcmREaDZCMEM5RU9uY1JvbGdYblpEYXNOMnZKX0ZleUF3d29uRXozOEsxcTNnOWtSMGJPNVdabjg0RkNOdzZaNjg1eENNdDBjRzQzejlHZ1B6ZDFhZDdUbk5LQ3AwZUhUZy1YaWRpOG0zbU5UTGd0a3N1RV9pVWkzSHNwOEFfY3FMaVRtUWlLRW82dDYxNDI3N1A0MTNTbXhpMEVyX2xhTE1YemI5YVNRQlZaQVNsQi1hcGpHUWxoV2pBVDV5cFVSUlFabktaMm0tcUg0YWhGamJpVG1DcG1Nd2RrQVJ6TWtRT28tT0dVUDMtSEtYUS1pU0Q3UEpDX3BHX3VSc3hIQ1lkVE1xdnBPOW9GaG5neENIZGdCb21xVkF0dUlVX1QxWGZQWWM3VDRrYVlwcG5JdF9IaTl0WDJUWFBsYmdjaFFyUUhWcm56d3ZnQQ?oc=5)
+=======
+1. [**Stock Market News, 2026년 2월 11일: 다우지수는 사상 최고치에서 하락하고, 나스닥과 S&P 500은 1월 일자리 데이터 이후 연속 하락세를 보였습니다. 시스코 수익 창출; 금과 은이 더 높습니다.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxNYzBmMGtrZVE4RkZGRHFmcW1EUzA3aExQTTJhZmVjWERKY2pIMS1FR1NpTnJieDYtdVdXR0YwNEMxcWMyT2hlUzBRTWN2WEcxS0NIM0RfR0k1SXQ0bWRaRHhibmk1azhfcHhTb3hObkJzRTRiNnhjTy1RNXJFeEYxS1BuZkFyRjNiLU5fZ1c3QmZiQzZBeDU3Z19ranMxMlV6RDVjWTE2dm1QS0t0ZThJUGRrZ3p3WmpxUGFwOUsteHlaTXRubXBCaXRscXhxYmJacm1LN1BLaElRZXljTEgxSTFCbmY4b04tT3VjcXkyZjdneDVITDh5UWUxa084Z1NqYnJ4UDR0NDJudW44OEhoTVNkV3FmTlBvUE1kZ1AyZzZmRFczeThRUTJvM0x0SDNJaEwyclNkaXNBX0ROVG5HN202WWVaR0E1ajBxeDJaUUJKRVRaZ0V3a19Jb045YkxJeGt5ZWRWTnEzSUZUb1d1UmhCNFlHUndxSFdDOXlucl9TYUR3bUpFaEVKRUwtbDF2N0tRTFdVbThRemQxTVE5MllSbmlEZERBM1pXUXZKYTlVaWxrd1ZGLTFMN2dxdw?oc=5)
+>>>>>>> Stashed changes
    MarketWatch · 2026-02-12 06:17 KST · 시장 이벤트
    원문: Stock Market News, Feb. 11, 2026: Dow falls from all-time high, Nasdaq and S&P 500 see back-to-back losses after January jobs data; Cisco earnings on tap; gold and silver higher.
 
@@ -210,6 +245,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 ## 섹터 상대강도 (vs KODEX200)
 
+<<<<<<< Updated upstream
 | 섹터 | 1주 수익률 | 1주 초과수익 | 1개월 초과수익 |
 |------|-----------|------------|--------------|
 | IT | +3.5% | +0.43% | -1.6% |
@@ -219,6 +255,9 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 에너지 | +2.05% | -1.02% | +4.42% |
 | 자동차 | +0.38% | -2.69% | +0.34% |
 | 바이오 | +0.04% | -3.03% | -6.42% |
+=======
+{{SECTOR_TABLE}}
+>>>>>>> Stashed changes
 
 ## 최근 흐름 (5일)
 
@@ -226,6 +265,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 |------|-------|------|------|------|
 <<<<<<< Updated upstream
 | SPX | 6,932.3 | 6,941.47 | +0.13% | 보합 |
+<<<<<<< Updated upstream
 | BTC | 70,555 | 67,145 | -4.83% | 약세 전환 |
 | VIX | 20.37 | 17.65 | -13.35% | 급격 안정 |
 | USDKRW | 1,470.68원 | 1,439.29원 | -2.13% | 약세 전환 |
@@ -233,6 +273,11 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | SPX | 6,940.78 | 6,941.47 | +0.01% | 보합 |
 | BTC | 66,714 | 67,145 | +0.65% | 소폭 상승 |
 | VIX | 17.69 | 17.65 | -0.23% | 보합 |
+>>>>>>> Stashed changes
+=======
+| BTC | 70,555 | 67,250 | -4.68% | 약세 전환 |
+| VIX | 20.37 | 17.65 | -13.35% | 급격 안정 |
+| USDKRW | 1,470.68원 | 1,438.34원 | -2.20% | 약세 전환 |
 >>>>>>> Stashed changes
 
 ## 이벤트 임팩트
@@ -329,6 +374,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 <div class="mp-briefing-meta">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <span>생성 시각: 2026-02-12 17:07:11 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
   <span>데이터 기준 시각: 2026-02-12 17:07:11 KST</span>
@@ -336,5 +382,10 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
   <span>생성 시각: 2026-02-12 17:07:01 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
   <span>데이터 기준 시각: 2026-02-12 17:07:01 KST</span>
+>>>>>>> Stashed changes
+=======
+  <span>생성 시각: 2026-02-12 17:11:53 KST</span>
+  <span>브리핑 슬롯: pre-market (개장전)</span>
+  <span>데이터 기준 시각: 2026-02-12 17:11:53 KST</span>
 >>>>>>> Stashed changes
 </div>
