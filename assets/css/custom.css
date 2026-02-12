@@ -107,8 +107,8 @@ code, pre, .num-cell, .terminal-data {
   border: 1px solid var(--mp-glass-border);
   border-radius: var(--mp-radius-md);
   box-shadow: var(--mp-shadow-sm);
-  padding: 1.75rem;
-  margin: 2.5rem 0;
+  padding: 1.25rem 1.75rem 1.75rem;
+  margin: 1.75rem 0;
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -158,8 +158,8 @@ code, pre, .num-cell, .terminal-data {
 .briefing-section h2 {
   font-family: 'Orbitron', sans-serif;
   margin-top: 0 !important;
-  margin-bottom: 1.5rem !important;
-  font-size: 1.15rem !important;
+  margin-bottom: 1.25rem !important;
+  font-size: 1.35rem !important;
   border-bottom: 1px solid var(--mp-border);
   padding-bottom: 0.5rem;
   color: #E2E8F0;
@@ -226,14 +226,15 @@ code, pre, .num-cell, .terminal-data {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem;
   border-bottom: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .prose tbody td {
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
   border-bottom: 1px solid rgba(124, 58, 237, 0.08);
   color: #CBD5E1;
 }
@@ -250,19 +251,52 @@ code, pre, .num-cell, .terminal-data {
 
 /* --- Mobile Spacing & Scaling --- */
 @media (max-width: 640px) {
-  .prose { font-size: 0.95rem; }
-  .prose table { font-size: 0.75rem; }
-  .prose tbody td, .prose thead th { padding: 0.6rem 0.75rem; }
+  .prose { font-size: 0.92rem; }
+  .prose table { font-size: 0.72rem; }
+  .prose tbody td, .prose thead th { padding: 0.5rem 0.6rem; }
 
   .briefing-section {
-    padding: 1.5rem 1rem;
-    margin: 2rem -1.5rem;
+    padding: 1rem 1rem 1.25rem;
+    margin: 1.25rem -1.5rem;
     border-radius: 0;
     border-left: none;
     border-right: none;
   }
-  
+
   .briefing-section::before { left: 1.5rem; }
+
+  /* 브리핑 섹션 h2 — 모바일 축소 */
+  .briefing-section h2 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* 브리핑 섹션 h3 — 모바일 축소 */
+  .briefing-section h3 {
+    font-size: 0.95rem !important;
+  }
+
+  /* 티커 행 — 모바일에서 더 컴팩트 */
+  .mp-ticker-row {
+    font-size: 0.8rem;
+    padding: 0.35rem 0;
+  }
+  .mp-ticker-price { font-size: 0.72rem; }
+  .mp-ticker-change { font-size: 0.72rem; min-width: 52px; }
+  .mp-ticker-flow { font-size: 0.62rem; min-width: 40px; }
+
+  /* Regime 패널 — 모바일 컴팩트 */
+  .mp-regime-label { font-size: 1rem; }
+  .mp-regime-summary { font-size: 0.8rem; }
+  .mp-signal-name { font-size: 0.8rem; }
+  .mp-signal-value { font-size: 0.8rem; }
+  .mp-signal-badge { font-size: 0.62rem; min-width: 60px; }
+
+  /* Collapse 토글 — 터치 타겟 확대 */
+  .mp-collapse-toggle {
+    padding: 0.5rem 0;
+    min-height: 44px;
+  }
 }
 
 /* --- Prose List Bullet Fix --- */
@@ -397,10 +431,10 @@ code, pre, .num-cell, .terminal-data {
 
 .mp-ticker-group__title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--mp-neon-cyan);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
@@ -660,6 +694,7 @@ code, pre, .num-cell, .terminal-data {
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, opacity 0.25s ease;
+  font-size: 0.92em;
 }
 
 .mp-collapsible.is-open {
@@ -726,14 +761,15 @@ code, pre, .num-cell, .terminal-data {
 .mp-news-card__source {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mp-neon-purple);
-  background: rgba(124, 58, 237, 0.1);
-  padding: 0.1rem 0.5rem;
+  background: rgba(124, 58, 237, 0.12);
+  padding: 0.2rem 0.65rem;
   border-radius: 2px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
   margin-bottom: 0.5rem;
 }
 
@@ -842,14 +878,19 @@ code, pre, .num-cell, .terminal-data {
 /* --- News Section Sub-Headers --- */
 .mp-news-section-label {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--mp-neon-cyan);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-top: 1.75rem;
   margin-bottom: 0.75rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+.mp-news-section-label:first-child {
+  margin-top: 0;
 }
 
 /* --- Post Ticker Cards (inside briefing-section) --- */
@@ -866,12 +907,190 @@ code, pre, .num-cell, .terminal-data {
   text-align: right;
 }
 
+/* --- TOC Typography --- */
+.toc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.toc a {
+  padding: 0.2rem 0;
+}
+
 /* --- TOC ScrollSpy --- */
 .toc a.is-active {
   color: var(--regime-color, var(--mp-neon-cyan)) !important;
   font-weight: 600;
   border-left: 2px solid var(--regime-color, var(--mp-neon-cyan));
   padding-left: 0.5rem;
+}
+
+/* --- TOC Hierarchy Enhancement --- */
+#TableOfContents {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* h2 레벨 — 메인 섹션 */
+#TableOfContents > ul > li {
+  margin-bottom: 0.15rem;
+}
+
+#TableOfContents > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  color: #CBD5E1;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#TableOfContents > ul > li > a::before {
+  content: '▸';
+  color: var(--mp-neon-purple);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+#TableOfContents > ul > li > a:hover {
+  color: var(--mp-neon-purple);
+  background: rgba(124, 58, 237, 0.06);
+  border-left-color: rgba(124, 58, 237, 0.3);
+}
+
+#TableOfContents > ul > li > a:hover::before {
+  opacity: 1;
+}
+
+/* h2 Active 상태 */
+#TableOfContents > ul > li > a.active {
+  color: var(--mp-neon-cyan) !important;
+  border-left-color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+#TableOfContents > ul > li > a.active::before {
+  color: var(--mp-neon-cyan);
+  opacity: 1;
+}
+
+/* 서브섹션이 있는 h2 그룹 하단 구분선 */
+#TableOfContents > ul > li:has(ul) {
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+/* h3 레벨 — 서브섹션 */
+#TableOfContents > ul > li > ul {
+  margin-left: 0.6rem;
+  padding-left: 0.65rem;
+  border-left: 1px dashed rgba(124, 58, 237, 0.15);
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  display: block;
+  padding: 0.2rem 0.5rem;
+  color: #64748B;
+  font-weight: 400;
+  font-size: 0.72rem;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 2px 2px 0;
+  transition: all 0.2s ease;
+}
+
+#TableOfContents > ul > li > ul > li > a:hover {
+  color: #94A3B8;
+  background: rgba(124, 58, 237, 0.04);
+  border-left-color: rgba(124, 58, 237, 0.2);
+}
+
+/* h3 Active 상태 */
+#TableOfContents > ul > li > ul > li > a.active {
+  color: var(--mp-neon-cyan) !important;
+  font-weight: 600;
+  border-left-color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.04);
+}
+
+/* Light mode */
+:root:not(.dark) #TableOfContents > ul > li > a {
+  color: #334155;
+}
+:root:not(.dark) #TableOfContents > ul > li > a:hover {
+  color: var(--mp-neon-purple);
+  background: rgba(124, 58, 237, 0.04);
+}
+:root:not(.dark) #TableOfContents > ul > li > ul > li > a {
+  color: #94A3B8;
+}
+:root:not(.dark) #TableOfContents > ul > li > ul > li > a:hover {
+  color: #475569;
+}
+
+/* --- TOCView Cyberpunk Panel --- */
+#TOCView {
+  position: relative;
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  box-shadow: var(--mp-shadow-sm);
+  margin-left: 0;
+  padding-left: 1.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+#TOCView::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+#TOCView::before {
+  content: '// NAV';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 10px;
+  border-bottom-right-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--mp-neon-purple);
+  z-index: 1;
+}
+
+#TOCView > div {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+:root:not(.dark) #TOCView {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(124, 58, 237, 0.12);
+  box-shadow: 0 4px 16px -4px rgba(124, 58, 237, 0.08);
 }
 
 /* --- Post Page Responsive --- */
@@ -1196,6 +1415,8 @@ html { scroll-behavior: smooth; }
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 .toc-custom li ul {
   padding-left: 1rem;
@@ -1208,12 +1429,31 @@ html { scroll-behavior: smooth; }
 
 /* Prose overrides for better reading experience */
 .prose {
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.8;
+  font-size: 1rem; /* 16px — base */
+  line-height: 1.75;
 }
 .prose p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Prose heading hierarchy */
+.prose h2 {
+  font-size: 1.35rem !important;
+  line-height: 1.3;
+  margin-top: 2.5em !important;
+  margin-bottom: 0.75em !important;
+}
+.prose h3 {
+  font-size: 1.1rem !important;
+  line-height: 1.4;
+  margin-top: 2em !important;
+  margin-bottom: 0.5em !important;
+}
+.prose h4 {
+  font-size: 1rem !important;
+  line-height: 1.4;
+  font-weight: 600;
 }
 
 /* ===== Post Page - FHD Width & Readability ===== */
@@ -1234,12 +1474,20 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* Table: prevent cell text wrapping for data readability */
+/* Table: prevent cell text wrapping for data readability (desktop) */
 .prose table td,
 .prose table th {
   white-space: nowrap;
 }
 
+/* Mobile: allow wrapping for last column */
+@media (max-width: 640px) {
+  .prose table td:last-child,
+  .prose table th:last-child {
+    white-space: normal;
+    min-width: 60px;
+  }
+}
 /* Briefing sections: break out of prose max-width */
 .article-content .briefing-section {
   max-width: none;
@@ -1254,7 +1502,7 @@ html { scroll-behavior: smooth; }
 .briefing-section table {
   display: table !important;
   width: 100% !important;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
 }
 
 /* Row header (first column): bold, compact */
@@ -1281,12 +1529,35 @@ html { scroll-behavior: smooth; }
   color: #1E1E3A;
 }
 
-/* Mobile: horizontal scroll for wide tables */
+/* Mobile: horizontal scroll for wide tables + fade hint */
 @media (max-width: 768px) {
   .prose table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Scroll fade hint on right edge */
+  .briefing-section {
+    --table-fade: linear-gradient(to right, transparent 85%, rgba(10, 10, 26, 0.85));
+  }
+
+  .briefing-section table {
+    font-size: 0.8rem;
+  }
+
+  .briefing-section table td,
+  .briefing-section table th {
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Briefing section breakout 해제 (모바일) */
+  .article-content .briefing-section {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -1294,7 +1565,7 @@ html { scroll-behavior: smooth; }
 .briefing-section h3 {
   font-family: 'Exo 2', sans-serif;
   color: var(--mp-neon-cyan) !important;
-  font-size: 1rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600;
   letter-spacing: 0.02em;
   margin-top: 1.5em !important;

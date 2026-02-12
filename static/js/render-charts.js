@@ -42,6 +42,10 @@ function isDarkMode() {
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
+function isMobile() {
+  return window.innerWidth <= 640;
+}
+
 function getTheme() {
   const dark = isDarkMode();
   return {
@@ -137,12 +141,22 @@ function renderTimeSeries(data) {
         return html;
       }
     },
-    legend: { data: [...leftKeys, ...rightKeys].filter(k => series[k]), textStyle: { color: theme.text } },
-    grid: { left: 10, right: 10, bottom: 30, top: 40, containLabel: true },
-    xAxis: { type: 'category', data: dates, axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text } },
+    legend: {
+      data: [...leftKeys, ...rightKeys].filter(k => series[k]),
+      textStyle: { color: theme.text, fontSize: isMobile() ? 11 : 13 },
+      top: 0,
+      itemWidth: isMobile() ? 12 : 25,
+      itemGap: isMobile() ? 8 : 15,
+    },
+    grid: { left: 10, right: 10, bottom: 30, top: isMobile() ? 30 : 40, containLabel: true },
+    xAxis: {
+      type: 'category', data: dates,
+      axisLine: { lineStyle: { color: theme.axis } },
+      axisLabel: { color: theme.text, fontSize: isMobile() ? 10 : 12, rotate: isMobile() ? 30 : 0 },
+    },
     yAxis: [
-      { type: 'value', name: '변동률(%)', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: '{value}%' }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } } },
-      { type: 'value', name: 'VIX 변동률(%)', axisLine: { lineStyle: { color: METRIC_COLORS.VIX } }, axisLabel: { color: theme.text, formatter: '{value}%' }, splitLine: { show: false } },
+      { type: 'value', name: isMobile() ? '' : '변동률(%)', axisLine: { lineStyle: { color: theme.axis } }, axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 }, splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } } },
+      { type: 'value', name: isMobile() ? '' : 'VIX 변동률(%)', axisLine: { lineStyle: { color: METRIC_COLORS.VIX } }, axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 }, splitLine: { show: false } },
     ],
     series: seriesConfig,
     dataZoom: [{ type: 'inside', start: 0, end: 100 }],
@@ -171,7 +185,7 @@ function renderCorrelations(data) {
 
   const theme = getTheme();
   const items = data.correlations;
-  const labels = items.map(c => c.labels.join(' / '));
+  const labels = items.map(c => isMobile() ? c.labels.join('\n') : c.labels.join(' / '));
   const values = items.map(c => c.value);
 
   chart.setOption({
@@ -185,7 +199,7 @@ function renderCorrelations(data) {
         return `<b>${c.labels[0]} ↔ ${c.labels[1]}</b><br/>r = ${c.value}<br/>${c.status}: ${c.meaning}`;
       },
     },
-    grid: { left: 10, right: 45, top: 10, bottom: 10, containLabel: true },
+    grid: { left: 10, right: isMobile() ? 35 : 45, top: 10, bottom: 10, containLabel: true },
     xAxis: {
       type: 'value', min: -1, max: 1,
       axisLine: { lineStyle: { color: theme.axis } },
@@ -195,7 +209,7 @@ function renderCorrelations(data) {
     yAxis: {
       type: 'category', data: labels, inverse: true,
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, fontSize: 12 },
+      axisLabel: { color: theme.text, fontSize: isMobile() ? 10 : 12 },
     },
     series: [{
       type: 'bar',
@@ -308,18 +322,18 @@ function renderSectors(data) {
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: { ...GLASS_TOOLTIP, trigger: 'axis', axisPointer: { type: 'shadow' } },
-    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text }, itemWidth: 16, itemHeight: 10 },
-    grid: { left: 10, right: 55, top: 35, bottom: 10, containLabel: true },
+    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text, fontSize: isMobile() ? 11 : 13 }, itemWidth: isMobile() ? 12 : 16, itemHeight: 10 },
+    grid: { left: 10, right: isMobile() ? 40 : 55, top: 35, bottom: 10, containLabel: true },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, formatter: '{value}%' },
+      axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 },
       splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
     },
     yAxis: {
       type: 'category', data: names, inverse: true,
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text },
+      axisLabel: { color: theme.text, fontSize: isMobile() ? 11 : 12 },
     },
     series: [
       {
@@ -472,17 +486,17 @@ function renderFiveDay(data) {
         return '<b>' + item.name + '</b>: ' + (item.changePct > 0 ? '+' : '') + item.changePct + '%';
       },
     },
-    grid: { left: '18%', right: '10%', top: '5%', bottom: '5%' },
+    grid: { left: isMobile() ? '22%' : '18%', right: '10%', top: '5%', bottom: '5%' },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, formatter: '{value}%' },
+      axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 },
       splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
     },
     yAxis: {
       type: 'category', data: labels, inverse: true,
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, fontSize: 12 },
+      axisLabel: { color: theme.text, fontSize: isMobile() ? 11 : 12 },
     },
     series: [{
       type: 'bar',

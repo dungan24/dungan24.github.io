@@ -103,8 +103,6 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 <!-- FACT_ZONE_END -->
 
-{{< market-charts >}}
-
 ---
 
 <!-- FACT_ZONE_START -->
