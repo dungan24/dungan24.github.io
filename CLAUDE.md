@@ -31,15 +31,16 @@ market-pulse (private)              market-pulse-blog (public)
 ### 뉴스 섹션 (글로벌)
 
 ```markdown
-1. [**English Headline Here**](https://...)
+1. [**한국어 번역 제목**](https://...)
    Source · 2026-02-12 11:04 KST · 카테고리
-   > 한국어 번역/요약 (blockquote 필수)
+   원문: English Original Headline
+   > 한국어 요약 (선택)
 ```
 
-- **영문 헤드라인**: `[**bold**](url)` — 원문 유지
+- **한국어 번역 제목**: `[**bold**](url)` — 번역된 헤드라인이 카드 타이틀
 - **메타 라인**: `출처 · 시각 · 카테고리` — `·` (middle dot) 구분자 3개
-- **번역 (blockquote `>`)**: JS가 `KR` 태그를 붙여 별도 스타일링
-- 번역이 없으면 blockquote 생략 가능 (카드에 excerpt 없이 렌더링)
+- **원문 라인** (선택): `원문: English Headline` — JS가 `EN` 태그를 붙여 서브라인으로 표시
+- **번역 (blockquote `>`)**: 선택. JS가 `KR` 태그를 붙여 별도 스타일링
 
 ### 뉴스 섹션 (국내)
 
@@ -102,6 +103,7 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 | briefing-section wrapping | H2별로 `.briefing-section` div 생성 |
 | 뉴스 카드 그리드 | `<ol>` → `.mp-news-grid` > `.mp-news-card` 2열 카드 |
 | 티커 카드 | 핵심 수치 `<table>` → `.mp-ticker-groups` 카드 |
+| 섹터 상대강도 티커 | `## 섹터 상대강도` 테이블 → `.mp-ticker-groups` 카드 (US/KR) |
 | Collapsible 섹션 | 용어 설명/출처 등 접기 가능 |
 | Regime Hero | `window.__MP_PAGE.regime`으로 색상/배지 동적 생성 |
 | TOC ScrollSpy | 스크롤 위치에 따라 TOC 활성 항목 하이라이트 |

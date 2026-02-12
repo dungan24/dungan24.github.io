@@ -307,14 +307,29 @@ function renderRegime(data) {
 // ===== 차트 4: 섹터 상대강도 (Lollipop Chart) =====
 function renderSectors(data) {
   const chart = createChart('chart-sectors');
-  if (!chart || !data.sectorStrength || data.sectorStrength.length === 0) {
+  if (!chart || !data.sectorStrength) {
+    const el = document.getElementById('chart-sectors');
+    if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">섹터 데이터 없음</p>';
+    return;
+  }
+
+  const ss = data.sectorStrength;
+
+  // 신 스키마: {us: [...], kr: [...]} 객체
+  if (typeof ss === 'object' && !Array.isArray(ss)) {
+    renderSectorsV2(chart, ss);
+    return;
+  }
+
+  // 구 스키마: 배열 (하위 호환)
+  if (!Array.isArray(ss) || ss.length === 0) {
     const el = document.getElementById('chart-sectors');
     if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">섹터 데이터 없음</p>';
     return;
   }
 
   const theme = getTheme();
-  const sectors = data.sectorStrength;
+  const sectors = ss;
   const names = sectors.map(s => s.name);
   const week1 = sectors.map(s => s.week1);
   const month1 = sectors.map(s => s.month1);
@@ -380,6 +395,107 @@ function renderSectors(data) {
         },
       },
     ],
+  });
+
+  window.addEventListener('resize', () => chart.resize());
+}
+
+// ===== 차트 4b: 섹터 상대강도 V2 (US/KR 듀얼 그리드, 통일 week1/month1 스키마) =====
+function renderSectorsV2(chart, ss) {
+  const theme = getTheme();
+  // week1이 null인 항목 제외 (데이터 미수신)
+  const usRaw = (ss.us || []).filter(s => s.week1 != null);
+  const krRaw = (ss.kr || []).filter(s => s.week1 != null);
+
+  if (usRaw.length === 0 && krRaw.length === 0) {
+    const el = document.getElementById('chart-sectors');
+    if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">섹터 데이터 없음</p>';
+    return;
+  }
+
+  const hasUS = usRaw.length > 0;
+  const hasKR = krRaw.length > 0;
+
+  // 마켓별 그리드 빌더 (US/KR 동일 구조)
+  const grids = [];
+  const xAxes = [];
+  const yAxes = [];
+  const seriesList = [];
+
+  function addMarketGrid(items, topPos, bottomPos) {
+    const names = items.map(s => s.name);
+    const week1 = items.map(s => s.week1);
+    const month1 = items.map(s => s.month1);
+    const gridIdx = grids.length;
+
+    grids.push({ left: 10, right: isMobile() ? 40 : 55, top: topPos, bottom: bottomPos, containLabel: true });
+    xAxes.push({
+      type: 'value', gridIndex: gridIdx,
+      axisLine: { lineStyle: { color: theme.axis } },
+      axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 },
+      splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
+    });
+    yAxes.push({
+      type: 'category', data: names, inverse: true, gridIndex: gridIdx,
+      axisLine: { lineStyle: { color: theme.axis } },
+      axisLabel: { color: theme.text, fontSize: isMobile() ? 11 : 12 },
+    });
+    seriesList.push({
+      name: '1주', type: 'bar', xAxisIndex: gridIdx, yAxisIndex: gridIdx,
+      data: week1.map(v => ({
+        value: v,
+        itemStyle: {
+          color: v != null && v > 0 ? theme.success : theme.danger,
+          borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
+        },
+      })),
+      barWidth: '45%',
+      markLine: { silent: true, symbol: 'none', lineStyle: { color: theme.text, opacity: 0.35, type: 'solid', width: 1 }, data: [{ xAxis: 0 }], label: { show: false } },
+    });
+    seriesList.push({
+      name: '1개월', type: 'scatter', xAxisIndex: gridIdx, yAxisIndex: gridIdx,
+      data: month1, symbol: 'diamond', symbolSize: 16,
+      itemStyle: {
+        color: function(p) { return p.value > 0 ? '#FF3366CC' : '#3388FFCC'; },
+        borderColor: function(p) { return p.value > 0 ? '#FF3366' : '#3388FF'; },
+        borderWidth: 2,
+      },
+      label: {
+        show: true, position: 'right',
+        formatter: function(p) { return p.value != null ? (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '%' : ''; },
+        fontSize: 10, color: theme.text, distance: 4,
+      },
+    });
+  }
+
+  if (hasUS && hasKR) {
+    addMarketGrid(usRaw, 35, '55%');
+    addMarketGrid(krRaw, '52%', 10);
+  } else if (hasUS) {
+    addMarketGrid(usRaw, 35, 10);
+  } else {
+    addMarketGrid(krRaw, 35, 10);
+  }
+
+  const titleConfig = [];
+  if (hasUS && hasKR) {
+    titleConfig.push({ text: 'US', left: '3%', top: 15, textStyle: { color: theme.text, fontSize: 12, fontFamily: 'Orbitron' } });
+    titleConfig.push({ text: 'KR', left: '3%', top: '48%', textStyle: { color: theme.text, fontSize: 12, fontFamily: 'Orbitron' } });
+  } else if (hasUS) {
+    titleConfig.push({ text: 'US Sectors', left: '3%', top: 10, textStyle: { color: theme.text, fontSize: 12, fontFamily: 'Orbitron' } });
+  } else {
+    titleConfig.push({ text: 'KR Sectors', left: '3%', top: 10, textStyle: { color: theme.text, fontSize: 12, fontFamily: 'Orbitron' } });
+  }
+
+  chart.setOption({
+    backgroundColor: 'transparent',
+    title: titleConfig,
+    tooltip: { ...GLASS_TOOLTIP, trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text, fontSize: isMobile() ? 11 : 13 }, itemWidth: isMobile() ? 12 : 16, itemHeight: 10 },
+    grid: grids,
+    xAxis: xAxes,
+    yAxis: yAxes,
+    series: seriesList,
   });
 
   window.addEventListener('resize', () => chart.resize());

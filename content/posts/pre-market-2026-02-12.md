@@ -13,9 +13,9 @@ chartData: "/data/chart-data-2026-02-12.json"
 > **S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표**
 
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표
-- 변동성: VIX 17.51 (-1.57%)
+- 변동성: VIX 17.38 (-2.30%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,437 (-8.46)
+- 환율: 원/달러 1,435.89 (-9.57)
 - 오늘은: **[GBP] GDP m/m** 발표만 체크해도 충분해요
 
 ---
@@ -30,7 +30,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 
 ### 왜 그런가
 
-고용 지표 관련 이슈가 시장 흐름에 주된 영향을 미쳤습니다. 공포지수(VIX)는 17.51대로 정상 범위에 위치하며, 현재 시장은 특별한 불안 징후는 보이지 않습니다.
+고용 지표 관련 이슈가 시장 흐름에 주된 영향을 미쳤습니다. 공포지수(VIX)는 17.38대로 정상 범위에 위치하며, 현재 시장은 특별한 불안 징후는 보이지 않습니다.
 
 ### 오늘 주목할 것
 
@@ -56,39 +56,39 @@ chartData: "/data/chart-data-2026-02-12.json"
 | S&P 500 | 6,941.47 | -0.34 | 0.00% | - |
 | 나스닥 | 25,201.26 | +73.62 | +0.29% | - |
 | 다우존스 | 50,121.4 | -66.7 | -0.13% | - |
-| VIX (공포지수) | 17.51 | -0.28 | -1.57% | ↓3일 |
+| VIX (공포지수) | 17.38 | -0.41 | -2.30% | ↓3일 |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.9 | +0.07 | +0.07% | - |
+| 달러인덱스 (DXY) | 96.81 | -0.02 | -0.02% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,026 | +80.43 | +0.12% | ↑2일 |
-| 이더리움 (ETH) | 1,963.46 | +14.53 | +0.74% | - |
+| 비트코인 (BTC) | 67,041 | +160.9 | +0.24% | - |
+| 이더리움 (ETH) | 1,962.97 | +14.72 | +0.75% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,437 | -8.46 | -0.59% | - ⚡ 하위 9% |
+| 원/달러 (USDKRW) | 1,435.89 | -9.57 | -0.66% | ↓5일 ⚡ 하위 7% |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.50% 반등 중 (Basis: +0.50%)
+> ↗ 본장 0.00% 마감 → 선물 +0.58% 반등 중 (Basis: +0.58%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,976.5 | +16 | +0.23% |
-| 나스닥 100 선물 | 25,333.75 | +45.25 | +0.18% |
+| S&P 500 선물 | 6,981.5 | +21 | +0.30% |
+| 나스닥 100 선물 | 25,348.25 | +59.75 | +0.24% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,086.6 | -11.9 | -0.23% |
-| WTI 유가 (Oil) | 64.95 | +0.32 | +0.50% |
+| 국제 금 (Gold) | 5,088.9 | -9.6 | -0.19% |
+| WTI 유가 (Oil) | 65.01 | +0.38 | +0.59% |
 
 {{< market-charts >}}
 
@@ -107,7 +107,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 3. [**Gold Retreats as Strong US Jobs Report Dims Rate-Cut Prospects**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
    Bloomberg · 2026-02-12 14:06 KST · 원자재
 
-4. [**Gold edges lower on firmer dollar after strong US jobs data**](https://news.google.com/rss/articles/CBMipAFBVV95cUxPelo0N3JjSFIxdjlaWVhWTjVsNjJGbUl6N0V5UnRjNWQ5b3Y4eDhzcVZ0OEpZOUVBQjZKX0t5U2Z4LTdRS2F5Q2F1alhCdUdXTXREQ3Y1N2lnQklnLUhJbk9TdHdleThCNmdJRV9teXZmOHVab1ZQa3dVUDgzSVozOFpHUDZWS0d5RTRqRWlIT1ZmTExnODVZUlY1NGNZMDZsb2l2TA?oc=5)
+4. [**Gold eases as strong US jobs data tempers Fed rate‑cut expectations**](https://news.google.com/rss/articles/CBMipAFBVV95cUxPelo0N3JjSFIxdjlaWVhWTjVsNjJGbUl6N0V5UnRjNWQ5b3Y4eDhzcVZ0OEpZOUVBQjZKX0t5U2Z4LTdRS2F5Q2F1alhCdUdXTXREQ3Y1N2lnQklnLUhJbk9TdHdleThCNmdJRV9teXZmOHVab1ZQa3dVUDgzSVozOFpHUDZWS0d5RTRqRWlIT1ZmTExnODVZUlY1NGNZMDZsb2l2TA?oc=5)
    Reuters · 2026-02-12 11:01 KST · 원자재
 
 5. [**David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
@@ -144,7 +144,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 
 | 근거 | 값 | 판단 |
 |------|-----|------|
-| VIX | 17.5 | ✅ 안정 |
+| VIX | 17.4 | ✅ 안정 |
 | SPX 20일 | -0.0% | ⚠ 횡보 |
 | US10Y 방향 | -4bp (5일) | ✅ 안정 |
 | 크립토 심리 | 5 | ✅ 극단적 공포 |
@@ -192,9 +192,9 @@ chartData: "/data/chart-data-2026-02-12.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,941.47 | +0.13% | 보합 |
-| BTC | 70,555 | 67,026 | -5.00% | 급락 |
-| VIX | 20.37 | 17.51 | -14.04% | 급격 안정 |
-| USDKRW | 1,470.68원 | 1,437원 | -2.29% | 약세 전환 |
+| BTC | 70,555 | 67,041 | -4.98% | 약세 전환 |
+| VIX | 20.37 | 17.38 | -14.68% | 급격 안정 |
+| USDKRW | 1,470.68원 | 1,435.89원 | -2.37% | 약세 전환 |
 
 ## 이벤트 임팩트
 
@@ -229,7 +229,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-12 17:56:35 KST</span>
+  <span>생성 시각: 2026-02-12 18:12:40 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-12 17:56:35 KST</span>
+  <span>데이터 기준 시각: 2026-02-12 18:12:40 KST</span>
 </div>
