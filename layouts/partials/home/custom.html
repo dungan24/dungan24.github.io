@@ -16,17 +16,34 @@
 
   <!-- Hero -->
   <div style="text-align:center">
-    <h1 style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.25rem">
-      <span class="mp-heartbeat">Market Pulse</span>
-    </h1>
+    <div class="mp-hero-title-row">
+      <svg class="mp-ecg-pulse mp-ecg-pulse--left" viewBox="0 0 200 40" fill="none">
+        <defs>
+          <filter id="ecg-glow" x="-20%" y="-80%" width="140%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur1"/>
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+            <feMerge>
+              <feMergeNode in="blur2"/>
+              <feMergeNode in="blur1"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path class="mp-ecg-line" filter="url(#ecg-glow)"
+              d="M 0,20 L 55,20 L 62,16 L 70,20 L 78,20 L 82,23 L 86,3 L 90,37 L 94,20 L 106,20 L 114,13 L 122,20 L 200,20"
+              stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
 
-    <div class="mp-ecg-wrap">
-      <div class="mp-ecg-scroller">
-        <svg id="mp-ecg" viewBox="0 0 1200 50" preserveAspectRatio="none" style="width:100%;height:50px">
-          <polyline id="mp-ecg-line" fill="none" stroke="#00F0FF" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </div>
+      <h1 class="mp-heartbeat-title">
+        <span class="mp-heartbeat">Market Pulse</span>
+      </h1>
+
+      <svg class="mp-ecg-pulse mp-ecg-pulse--right" viewBox="0 0 200 40" fill="none">
+        <use href="#ecg-glow"/>
+        <path class="mp-ecg-line mp-ecg-line--right" filter="url(#ecg-glow)"
+              d="M 0,20 L 78,20 L 86,13 L 94,20 L 106,20 L 110,23 L 114,3 L 118,37 L 122,20 L 138,20 L 145,16 L 150,20 L 200,20"
+              stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </div>
 
     <p class="mp-subtitle-flicker" style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00F0FF;letter-spacing:0.15em;margin:0.5rem 0 1.5rem;text-transform:uppercase;text-shadow:0 0 8px rgba(0,240,255,0.3)">
@@ -58,41 +75,30 @@
 </div>
 
 <style>
-/* ECG scroll animation */
-@keyframes ecg-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* ECG pulse draw animation */
+.mp-ecg-line {
+  stroke-dasharray: 269;
+  stroke-dashoffset: 269;
+  animation: ecg-draw 3.5s ease-in-out infinite;
 }
-.mp-ecg-scroller {
-  animation: ecg-scroll 10s linear infinite;
+
+.mp-ecg-line--right {
+  animation-delay: 0.3s;
+}
+
+@keyframes ecg-draw {
+  0%   { stroke-dashoffset: 269; opacity: 0; }
+  8%   { opacity: 0.85; }
+  50%  { stroke-dashoffset: 0; opacity: 0.85; }
+  70%  { stroke-dashoffset: 0; opacity: 0.5; }
+  90%  { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 269; opacity: 0; }
 }
 </style>
 
 <script>
 (function() {
   'use strict';
-
-  // ── ECG heartbeat pattern ──
-  function generateECG() {
-    var el = document.getElementById('mp-ecg-line');
-    if (!el) return;
-
-    // Single heartbeat cycle (100 units wide, baseline y=25)
-    var beat = [
-      [0,25],[20,25],[25,21],[30,25],[35,25],
-      [38,28],[40,4],[42,44],[46,25],
-      [56,25],[62,19],[68,25],[100,25]
-    ];
-
-    var points = [];
-    // 12 cycles → first 6 visible, last 6 for seamless loop
-    for (var c = 0; c < 12; c++) {
-      for (var i = 0; i < beat.length; i++) {
-        points.push((beat[i][0] + c * 100) + ',' + beat[i][1]);
-      }
-    }
-    el.setAttribute('points', points.join(' '));
-  }
 
   // ── Regime colors ──
   var REGIME_COLORS = {
@@ -212,29 +218,25 @@
     document.documentElement.style.setProperty('--regime-color', color.hex);
     document.documentElement.style.setProperty('--regime-color-rgb', color.rgb);
 
-    // 2. ECG stroke (SVG may not pick up CSS variables)
-    var ecgLine = document.getElementById('mp-ecg-line');
-    if (ecgLine) ecgLine.setAttribute('stroke', color.hex);
-
-    // 3. Regime badge
+    // 2. Regime badge
     var badge = document.getElementById('mp-regime-badge');
     if (badge && regime) {
       badge.textContent = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
     }
 
-    // 4. Hero summary
+    // 3. Hero summary
     var summary = document.getElementById('mp-hero-summary');
     if (summary && regime && regime.summary) {
       summary.textContent = regime.summary;
     }
 
-    // 5. Updated time
+    // 4. Updated time
     var updated = document.getElementById('mp-hero-updated');
     if (updated && data.date) {
       updated.textContent = '\uAE30\uC900: ' + data.date;
     }
 
-    // 6. Ticker groups
+    // 5. Ticker groups
     if (data.timeSeries) {
       renderTickerGroups(data.timeSeries);
     }
@@ -274,7 +276,6 @@
   }
 
   // ── Init ──
-  generateECG();
   fetchData();
 })();
 </script>
