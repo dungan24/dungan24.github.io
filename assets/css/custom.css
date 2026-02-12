@@ -259,6 +259,21 @@ code, pre, .num-cell, .terminal-data {
   .briefing-section::before { left: 1.5rem; }
 }
 
+/* --- Prose List Bullet Fix --- */
+/* Tailwind v4 prose-invert의 --tw-prose-bullets가 배경색과 동일해 안 보이는 버그 수정 */
+.dark .prose ul > li::marker {
+  color: #94A3B8 !important;
+}
+.dark .prose ol > li::marker {
+  color: #94A3B8 !important;
+}
+:root:not(.dark) .prose ul > li::marker {
+  color: #475569 !important;
+}
+:root:not(.dark) .prose ol > li::marker {
+  color: #475569 !important;
+}
+
 /* --- Scrollbar Polish --- */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #0A0A1A; }
