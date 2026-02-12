@@ -26,6 +26,8 @@ market-pulse (private)              market-pulse-blog (public)
 `extend-footer.html`의 JS가 마크다운을 사이버펑크 UI로 변환한다.
 **Writer가 아래 마크다운 패턴을 지켜야 UI가 정상 렌더링된다.**
 
+기준 계약 문서: `../market-pulse/specs/render-contract.md`
+
 ### 뉴스 섹션 (글로벌)
 
 ```markdown
@@ -72,6 +74,14 @@ market-pulse (private)              market-pulse-blog (public)
 ```
 
 JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opinion` 클래스를 할당.
+
+## 교차 레포 계약 동기화 원칙
+
+- 파서 규칙(`extend-footer.html`)을 변경할 때는 Writer 출력과의 호환성을 먼저 확인
+- 블로그 쪽에서 추가 데이터/포맷이 필요하면, 먼저 계약 문서(`render-contract.md`)에 요구사항 명시
+- 계약 변경 시 양쪽 문서 동시 업데이트:
+  - `market-pulse`: `CLAUDE.md`, `AGENTS.md`
+  - `market-pulse-blog`: `CLAUDE.md`, `AGENTS.md`
 
 ## CSS 체계
 

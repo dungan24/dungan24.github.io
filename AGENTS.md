@@ -15,6 +15,8 @@ Primary references:
 - `CLAUDE.md`
 - `config/_default/hugo.toml`
 - `.github/workflows/hugo.yml`
+- `../market-pulse/specs/render-contract.md`
+- `../market-pulse/specs/smoke-checklist.md`
 
 ## 2) Source-of-Truth Commands
 
@@ -51,6 +53,7 @@ hugo --gc --minify
 - Do not reformat unrelated files
 - Never change data semantics in this repo; only rendering/transformation behavior
 - If markdown parsing rules are changed, verify at least one recent pre-market post rendering end-to-end
+- If parser behavior changes, update the render contract document in `market-pulse`
 
 Validation checklist before finishing:
 - Run local Hugo server and verify `/posts/pre-market-YYYY-MM-DD/`
@@ -62,6 +65,7 @@ Validation checklist before finishing:
 - This repo does not generate facts; it only renders/publishes supplied content
 - If rendering looks stale, first verify source markdown/json arrival times in `content/posts/` and `static/data/`
 - If `market-pulse` pipeline path is wrong, set `BLOG_REPO_PATH` in `market-pulse` before debugging blog UI
+- Treat contract changes as cross-repo changes; sync docs in both repositories in the same session
 
 ## 6) Maintenance
 
