@@ -1,5 +1,5 @@
 /**
- * Market Pulse - ECharts 렌더링 (5종 차트)
+ * Market Pulse - ECharts 렌더링 (4종 차트: Trend, Correlation, Regime, Sectors)
  * chart-data-YYYY-MM-DD.json을 fetch하여 시각화합니다.
  */
 
@@ -501,149 +501,12 @@ function renderSectorsV2(chart, ss) {
   window.addEventListener('resize', () => chart.resize());
 }
 
-// ===== 차트 5: 5일 변동 비교 (전체 자산 확장) =====
-function renderFiveDay(data) {
-  const chart = createChart('chart-5day');
-  if (!chart) return;
-
-  const theme = getTheme();
-
-  // timeSeries에서 5일 변동률 계산
-  const ts = data.timeSeries;
-  if (!ts || !ts.series || !ts.dates || ts.dates.length < 2) {
-    // fallback to fiveDayComparison if available
-    if (data.fiveDayComparison && data.fiveDayComparison.length > 0) {
-      const items = data.fiveDayComparison;
-      const labels = items.map(i => i.metric);
-      const values = items.map(i => i.changePct);
-
-      chart.setOption({
-        backgroundColor: 'transparent',
-        tooltip: {
-          ...GLASS_TOOLTIP,
-          trigger: 'axis',
-          formatter: function (params) {
-            const idx = params[0].dataIndex;
-            const item = items[idx];
-            return `<b>${item.metric}</b>: ${item.changePct > 0 ? '+' : ''}${item.changePct.toFixed(2)}%<br/>${item.label}`;
-          },
-        },
-        grid: { left: 10, right: 10, top: 30, bottom: 30, containLabel: true },
-        xAxis: {
-          type: 'category', data: labels,
-          axisLine: { lineStyle: { color: theme.axis } },
-          axisLabel: { color: theme.text },
-        },
-        yAxis: {
-          type: 'value',
-          axisLine: { lineStyle: { color: theme.axis } },
-          axisLabel: { color: theme.text, formatter: '{value}%' },
-          splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
-        },
-        series: [{
-          type: 'bar',
-          data: values.map(v => ({
-            value: +v.toFixed(2),
-            itemStyle: {
-              color: v > 0 ? theme.success : theme.danger,
-              borderRadius: v > 0 ? [4, 4, 0, 0] : [0, 0, 4, 4],
-            },
-          })),
-          label: {
-            show: true,
-            position: 'top',
-            formatter: function (p) { return (p.value > 0 ? '+' : '') + p.value + '%'; },
-            color: theme.text,
-            fontSize: 11,
-          },
-        }],
-      });
-
-      window.addEventListener('resize', () => chart.resize());
-    } else {
-      const el = document.getElementById('chart-5day');
-      if (el) el.innerHTML = '<p style="text-align:center;color:gray;padding:2rem">5일 비교 데이터 없음</p>';
-    }
-    return;
-  }
-
-  const ASSET_NAMES = {
-    SPX: 'S&P 500', NDX: 'Nasdaq', DJI: 'Dow',
-    VIX: 'VIX', BTC: 'Bitcoin', GOLD: 'Gold',
-    OIL: 'WTI Oil', USDKRW: 'USD/KRW', US10Y: '10Y Bond'
-  };
-
-  const items = [];
-  for (const [key, arr] of Object.entries(ts.series)) {
-    if (!arr || arr.length < 2) continue;
-    const len = arr.length;
-    // 5일 전 또는 가장 오래된 데이터
-    const fiveDayAgo = len >= 6 ? arr[len - 6] : arr[0];
-    const current = arr[len - 1];
-    const changePct = +((current - fiveDayAgo) / fiveDayAgo * 100).toFixed(2);
-    items.push({ key, name: ASSET_NAMES[key] || key, changePct });
-  }
-
-  // changePct 절대값 기준 내림차순 정렬 (변동 큰 게 위로)
-  items.sort((a, b) => Math.abs(b.changePct) - Math.abs(a.changePct));
-
-  // 가로 바 차트로 변경 (세로 바 → 가로 바, 자산 많아서 가로가 읽기 쉬움)
-  const labels = items.map(i => i.name);
-  const values = items.map(i => i.changePct);
-
-  chart.setOption({
-    backgroundColor: 'transparent',
-    tooltip: {
-      ...GLASS_TOOLTIP,
-      trigger: 'axis',
-      formatter: function(params) {
-        const idx = params[0].dataIndex;
-        const item = items[idx];
-        return '<b>' + item.name + '</b>: ' + (item.changePct > 0 ? '+' : '') + item.changePct + '%';
-      },
-    },
-    grid: { left: isMobile() ? '22%' : '18%', right: '10%', top: '5%', bottom: '5%' },
-    xAxis: {
-      type: 'value',
-      axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, formatter: '{value}%', fontSize: isMobile() ? 10 : 12 },
-      splitLine: { lineStyle: { color: theme.axis, opacity: 0.15, type: 'dashed' } },
-    },
-    yAxis: {
-      type: 'category', data: labels, inverse: true,
-      axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, fontSize: isMobile() ? 11 : 12 },
-    },
-    series: [{
-      type: 'bar',
-      data: values.map(v => ({
-        value: v,
-        itemStyle: {
-          color: v > 0 ? theme.success : theme.danger,
-          borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
-        },
-        label: {
-          show: true,
-          position: v > 0 ? 'right' : 'left',
-          formatter: (v > 0 ? '+' : '') + v + '%',
-          color: theme.text,
-          fontSize: 11,
-        },
-      })),
-      barWidth: '55%',
-    }],
-  });
-
-  window.addEventListener('resize', () => chart.resize());
-}
-
 // ===== 메인 렌더링 함수 =====
 function renderAllCharts(data) {
   renderTimeSeries(data);
   renderCorrelations(data);
   renderRegime(data);
   renderSectors(data);
-  renderFiveDay(data);
 
   // hidden→visible 전환 직후 레이아웃 안정화를 위한 resize safety net
   requestAnimationFrame(function() {

@@ -107,6 +107,7 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 | Collapsible 섹션 | 용어 설명/출처 등 접기 가능 |
 | Regime Hero | `window.__MP_PAGE.regime`으로 색상/배지 동적 생성 |
 | TOC ScrollSpy | 스크롤 위치에 따라 TOC 활성 항목 하이라이트 |
+| ECharts 차트 (4종) | Trend(전체폭) → Correlation+Regime(2col) → Sectors(전체폭) |
 
 ## 로컬 개발 서버
 
