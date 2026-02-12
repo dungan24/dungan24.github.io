@@ -28,6 +28,7 @@
         4.17
       ],
       "USDKRW": [
+<<<<<<< Updated upstream
         1451.55,
         1439.18
       ],
@@ -42,6 +43,22 @@
       "OIL": [
         64.32,
         64.81
+=======
+        null,
+        1439.67
+      ],
+      "BTC": [
+        67488,
+        67109
+      ],
+      "GOLD": [
+        5083.8,
+        5083.1
+      ],
+      "OIL": [
+        64.33,
+        64.63
+>>>>>>> Stashed changes
       ]
     }
   },
@@ -62,7 +79,11 @@
         "S&P 500",
         "원/달러"
       ],
+<<<<<<< Updated upstream
       "value": -0.04,
+=======
+      "value": -0.02,
+>>>>>>> Stashed changes
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -82,7 +103,11 @@
         "VIX",
         "금"
       ],
+<<<<<<< Updated upstream
       "value": -0.37,
+=======
+      "value": -0.39,
+>>>>>>> Stashed changes
       "status": "약한 역동조",
       "meaning": "금이 공포와 무관"
     },
@@ -92,7 +117,11 @@
         "BTC",
         "금"
       ],
+<<<<<<< Updated upstream
       "value": 0,
+=======
+      "value": -0.06,
+>>>>>>> Stashed changes
       "status": "비동조",
       "meaning": "독립적 자산"
     },
@@ -102,9 +131,15 @@
         "유가",
         "10년물"
       ],
+<<<<<<< Updated upstream
       "value": 0.32,
       "status": "약한 동조",
       "meaning": "약한 인플레 시그널"
+=======
+      "value": 0.29,
+      "status": "비동조",
+      "meaning": "독립적"
+>>>>>>> Stashed changes
     }
   ],
   "regime": {
@@ -192,7 +227,11 @@
     {
       "metric": "BTC",
       "label": "보합",
+<<<<<<< Updated upstream
       "changePct": -0.05
+=======
+      "changePct": -0.01
+>>>>>>> Stashed changes
     },
     {
       "metric": "VIX",
@@ -202,7 +241,11 @@
     {
       "metric": "USDKRW",
       "label": "보합",
+<<<<<<< Updated upstream
       "changePct": -0.07
+=======
+      "changePct": 0.03
+>>>>>>> Stashed changes
     }
   ]
 }
