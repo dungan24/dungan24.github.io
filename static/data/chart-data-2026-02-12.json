@@ -3,55 +3,45 @@
   "version": "v1",
   "timeSeries": {
     "dates": [
-      "2026-02-10",
       "2026-02-11",
       "2026-02-12"
     ],
     "series": {
       "SPX": [
         6941.81,
-        6941.81,
         6941.47
       ],
       "NDX": [
-        23102.47,
         25127.64,
         25201.26
       ],
       "DJI": [
         50188.14,
-        50188.14,
         50121.4
       ],
       "VIX": [
-        17.79,
         17.79,
         17.65
       ],
       "US10Y": [
         4.15,
-        4.15,
         4.17
       ],
       "USDKRW": [
-        1458.54,
         1454.78,
-        1441.48
+        1441.58
       ],
       "BTC": [
-        70120,
         69011,
-        67544
+        66930
       ],
       "GOLD": [
-        5050.9,
         5067.7,
-        5076.7
+        5074.1
       ],
       "OIL": [
-        64.36,
         64.44,
-        64.97
+        64.77
       ]
     }
   },
@@ -72,7 +62,7 @@
         "S&P 500",
         "원/달러"
       ],
-      "value": 0.05,
+      "value": -0.24,
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -82,7 +72,7 @@
         "S&P 500",
         "10년물"
       ],
-      "value": 0.41,
+      "value": 0.46,
       "status": "약한 동조",
       "meaning": "약한 동반 상승"
     },
@@ -92,7 +82,7 @@
         "VIX",
         "금"
       ],
-      "value": -0.82,
+      "value": -0.84,
       "status": "강한 역동조",
       "meaning": "금 하락 중 공포 상승 (유동성 위기)"
     },
@@ -102,7 +92,7 @@
         "BTC",
         "금"
       ],
-      "value": 0.51,
+      "value": 0.54,
       "status": "약한 동조",
       "meaning": "약한 가치저장 동조"
     },
@@ -112,7 +102,7 @@
         "유가",
         "10년물"
       ],
-      "value": 0.62,
+      "value": 0.68,
       "status": "약한 동조",
       "meaning": "약한 인플레 시그널"
     }
@@ -131,13 +121,13 @@
       },
       {
         "name": "SPX 20일",
-        "value": "-0.0%",
+        "value": "+0.0%",
         "assessment": "⚠",
         "note": "횡보"
       },
       {
         "name": "US10Y 방향",
-        "value": "+2bp (5일)",
+        "value": "0bp (5일)",
         "assessment": "✅",
         "note": "안정"
       },
@@ -153,66 +143,66 @@
     {
       "name": "IT",
       "sector": "TIGER_IT",
-      "week1": 0.43,
-      "month1": -1.6
-    },
-    {
-      "name": "반도체",
-      "sector": "KODEX_SEMI",
-      "week1": -0.34,
-      "month1": -4.43
-    },
-    {
-      "name": "2차전지",
-      "sector": "TIGER_BATT",
-      "week1": -0.7,
-      "month1": -2.35
+      "week1": 0.27,
+      "month1": -1.52
     },
     {
       "name": "은행",
       "sector": "KODEX_BANK",
-      "week1": -0.75,
-      "month1": 15.77
+      "week1": -0.02,
+      "month1": 14.15
+    },
+    {
+      "name": "반도체",
+      "sector": "KODEX_SEMI",
+      "week1": -0.5,
+      "month1": -3.01
+    },
+    {
+      "name": "2차전지",
+      "sector": "TIGER_BATT",
+      "week1": -0.67,
+      "month1": -3.78
     },
     {
       "name": "에너지",
       "sector": "KODEX_ENERGY",
-      "week1": -1.02,
-      "month1": 4.42
+      "week1": -0.77,
+      "month1": 1.14
     },
     {
       "name": "자동차",
       "sector": "KODEX_AUTO",
-      "week1": -2.69,
-      "month1": 0.34
+      "week1": -3.09,
+      "month1": 0.04
     },
     {
       "name": "바이오",
       "sector": "KODEX_BIO",
-      "week1": -3.03,
-      "month1": -6.42
+      "week1": -3.94,
+      "month1": -4.98
     }
   ],
   "fiveDayComparison": [
     {
       "metric": "SPX",
       "label": "보합",
-      "changePct": 0.01
+      "changePct": 0
     },
     {
       "metric": "BTC",
-      "label": "소폭 상승",
-      "changePct": 1.24
+      "label": "보합",
+      "changePct": -0.06
     },
     {
       "metric": "VIX",
       "label": "보합",
-      "changePct": -0.23
+      "changePct": 0
     },
     {
       "metric": "USDKRW",
       "label": "보합",
-      "changePct": -0.28
+      "changePct": 0.05
     }
   ]
 }
