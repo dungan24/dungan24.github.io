@@ -147,6 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       sec.appendChild(collapsible);
 
+      // 기본 펼침 상태
+      collapsible.classList.add('is-open');
+      toggleBtn.classList.add('is-open');
+
       toggleBtn.addEventListener('click', function() {
         var isOpen = collapsible.classList.toggle('is-open');
         toggleBtn.classList.toggle('is-open', isOpen);
