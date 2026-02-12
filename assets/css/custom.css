@@ -1102,10 +1102,10 @@ code, pre, .num-cell, .terminal-data {
   background: rgba(124, 58, 237, 0.04);
 }
 :root:not(.dark) #TableOfContents > ul > li > ul > li > a {
-  color: #94A3B8;
+  color: #475569;
 }
 :root:not(.dark) #TableOfContents > ul > li > ul > li > a:hover {
-  color: #475569;
+  color: #1E293B;
 }
 
 /* --- TOCView Cyberpunk Panel --- */

@@ -557,7 +557,17 @@ function renderSectors(data) {
 }
 
 // ===== 메인 렌더링 함수 =====
+var __mpChartData = null;
+
 function renderAllCharts(data) {
+  __mpChartData = data;
+
+  // 기존 인스턴스 dispose (테마 전환 시 재생성 필요)
+  document.querySelectorAll('.chart-box').forEach(function(el) {
+    var inst = echarts.getInstanceByDom(el);
+    if (inst) inst.dispose();
+  });
+
   renderTimeSeries(data);
   renderCorrelations(data);
   renderRegime(data);
@@ -571,3 +581,17 @@ function renderAllCharts(data) {
     });
   });
 }
+
+// ===== 테마 전환 감지 → 차트 리렌더 =====
+(function() {
+  var observer = new MutationObserver(function(mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      if (mutations[i].attributeName === 'class' && __mpChartData) {
+        // 클래스 변경 후 약간의 딜레이로 CSS 전환 완료 대기
+        setTimeout(function() { renderAllCharts(__mpChartData); }, 50);
+        return;
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+})();
