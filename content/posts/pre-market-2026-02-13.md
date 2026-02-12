@@ -10,12 +10,12 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 연준 정책 주시**
+> **S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 실적 시즌**
 
-- 핵심: S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 연준 정책 주시
+- 핵심: S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 실적 시즌
 - 변동성: VIX 20.82 (+17.96%)
 - 금리: 미 10년물 4.1% (-0.07)
-- 환율: 원/달러 1,447.8 (-)
+- 환율: 원/달러 1,441.51 (-3.95)
 - 오늘은: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
 
 ---
@@ -25,15 +25,15 @@ chartData: "/data/chart-data-2026-02-13.json"
 ### 무슨 일이 있었나
 미국 증시는 약세로 마감했습니다. S&P 500 -1.57%, 나스닥 -2.04%, 다우 -1.34%.
 
-주요 소식으로는 **"트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다."** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"트레이더들이 수익을 관찰하면서 주식 선물 상승, 데이터: 시장 랩"** 이 시장의 관심을 끌었습니다.
 
-현재 S&P 선물은 현물 대비 +0.42% 반등 중이어서, 오늘 장 시작 시 갭이 발생할 수 있습니다.
+현재 S&P 선물은 현물 대비 +0.35% 반등 중이어서, 오늘 장 시작 시 갭이 발생할 수 있습니다.
 
 **한국 시장** 쪽에서는 ""코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인" 소식이 눈에 띕니다.
 가상자산 시장은 공포탐욕지수 **5(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-연준의 통화정책 방향이 시장 전체의 기류를 좌우하고 있습니다. 금리 동결/인상 기조가 이어지면 → 달러 강세 → 신흥국 자금 이탈, 인하 신호가 나오면 → 위험자산 선호 → 주식·비트코인 동반 상승 가능성입니다.
+실적 시즌 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 경계 수준으로 올라서 변동성 확대에 대비할 필요가 있는 상황입니다.
 
 공포지수(VIX)는 20.82로 5일 전(20.37) 대비 +2.21% 변동했습니다.
 
@@ -82,31 +82,31 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,352 | -650.25 | -0.98% | ↓1일 |
-| 이더리움 (ETH) | 1,947.25 | +10.32 | +0.53% | - |
+| 비트코인 (BTC) | 66,188 | -807.49 | -1.22% | ↓1일 |
+| 이더리움 (ETH) | 1,944.68 | +2.92 | +0.15% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,447.8 | - | -% | - |
+| 원/달러 (USDKRW) | 1,441.51 | -3.95 | -0.27% | ↑1일 |
 
 ### 지수 선물
 
-> ↗ 본장 -1.57% 마감 → 선물 +0.42% 반등 중 (Basis: +0.42%)
+> ↗ 본장 -1.57% 마감 → 선물 +0.35% 반등 중 (Basis: +0.35%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,861.5 | +10.5 | +0.15% |
-| 나스닥 100 선물 | 24,830.25 | +62.25 | +0.25% |
+| S&P 500 선물 | 6,857 | +6 | +0.09% |
+| 나스닥 100 선물 | 24,806.75 | +38.75 | +0.16% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,941.4 | -7 | -0.14% |
-| WTI 유가 (Oil) | 62.89 | +0.05 | +0.08% |
+| 국제 금 (Gold) | 4,943.2 | -5.2 | -0.11% |
+| WTI 유가 (Oil) | 62.82 | -0.02 | -0.03% |
 
 {{< market-charts >}}
 
@@ -116,36 +116,36 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ### 글로벌
 
-1. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxPZm5qeDZGZzAtN0xndFBZN1BWek9qU1BjT21uWGpwUTJpTzJpb0tQMTR4Q1lrT1FSUjE3RGlJMWpEbnFWVWVXLUtDekhHZDlTOTFDTU1HZWdmTV82QmdLaVpqMGdrUHpoaEQ4MGY4S0NaNlNpdENJMUQwZUdaXzZlN3NIalFSUlU1ckxYV19nUFA3MkFyTFNJeGtCSjg2ZUdXcTQzT2RweVpBLUc1QTRXUGRkWGRCSzFaTnRPUFV4UGVKTDhvdHdlZEZEY2JRSEZ1N1NNTlA1MFF1TEtyOXRZTjNITDVnSExlazFFbE1oR3lUUHdMWHFYY2xkRTd5OGx2UE9hZUY2ZnBNeVp4aEdneFRFZVpLS09rVjVPZjJLMGxzeFJJUTdJODl5YkwtbmNaWTFCM1Y5V2NXTDlaVXpNS0VtWTh0bXZtc1lZNzgtelJrRldsSk1DLTctY1A4WlNMMjl0SURRblNQajNjb1FYNXlXN2EtVFZqN0E?oc=5)
+1. [**트레이더들이 수익을 관찰하면서 주식 선물 상승, 데이터: 시장 랩**](https://news.google.com/rss/articles/CBMilAFBVV95cUxPUlV0TUpfOU1oYl9iY2hRakVlYlAyRmpRQVlxZGppOWtNa251LWFpQ0xQd2RsV1NlWFNjZW1qTEpQamlId3IwTnlJSG5KUHdaUnVJLVdOb1FxYXBZZHdnbnVNVHhCXzBaOVRPQWpFQzlsaFpTNjE5Q0NrOHF6eDZ6cmFHMnYxNG1RdWRRYkRmM0gySmhW?oc=5)
+   Bloomberg.com · 2026-02-13 07:35 KST · 시장 이벤트
+   원문: Stock Futures Rise as Traders Watch Earnings, Data: Markets Wrap
+
+2. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxPaGc0MHpXaGIzS2E4LW95Q3ZXSVBlakV3cTRBZ3pCTC1udnFGREhiWGNYc2k0UEF1bmxMbXJsWGxDbW5RWWdGNzhreUJUTkNwZk1odXMxamFveXBULVNtZjQ3REpDUXhsN3NWUlp5alFGQWRBYjAzM3BqTk5vTlFsYV9IV3l6My1Qb0tUYklydGN2WG5lcUp4Y2s5TVV3Mzl2QmY2STJlNDlHaWVoRHRBcHQteGFINC1aNEl0Y3dZZnEzYmhfZkxQeUN3b2l5ejNWNnZLZmR1VjEwREdwb1pEV2h5QzFhNHNmcTlYMVBod3BMbjhNQjNGS1VLYVY1dWQzOUE1RWV2OGtTeHkwcFZPS2VrcEl1YzB0d2o5aEhscnJRMGlGRTlNNkM1anBWNmJLWGJwZmVBdTNqbGgzRWxaMTNXV2VJNHFXSjl2UDd6MXUxMFcxRzJpZUc4Zmhwb0ZFSFFFcmljV3VJUHFQNW1TOUNCTzBweHV0MWc?oc=5)
    Barron's · 2026-02-13 05:59 KST · central-bank
    원문: Trump Wants Lower Rates. The Fed Sees Little Reason to Comply.
 
-2. [**다우지수는 600포인트 하락하고, S&P 500은 AI 파괴로 인해 시장이 흔들리는 것을 두려워하여 3일 연속 하락했습니다.**](https://news.google.com/rss/articles/CBMid0FVX3lxTE9FN2VlMkQwUUxVWHdDU0E4SU41bmdRTXliZFdLc2RTZVJGeU93RVd0WVJtcmJQcWFuUXZIcXJCU2RyaEFmOUJvTGF4ck5IXzJEMTBqMWdNSGZybDAzdnQyZlpIZVRoVVJIVXB4ZkdvTjVGX3VLYnM00gF8QVVfeXFMTUJFYjdqZHI4dXI5WUdRVWpOWVlYcUc0WWRQVUF3RVlBWVBKS3ZYZjJpMktKbE9pZWV4X3BLT180ZFBsanpaWF9vTTI2QV9xcTk5VC1fR0dpb3hXbVdoNWJkZXNQT1ZnZ0hnN3pBaHdwQTVnazFXZjJWY1BkSQ?oc=5)
-   CNBC · 2026-02-13 06:27 KST · 시장 이벤트
-   원문: Dow slides 600 points, S&P 500 falls for a third day as AI disruption fears rattle markets: Live updates
+3. [**연준이 금리를 인상하려면 무엇이 필요할까요?**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeFRVX2lldnRVU2hKazJDUWhWMF9rVDN6dzQxMWdVLVpWR29FdHlTVWgxcDRDUEVLZlNreWRvQnl4TkVYc29PZ2g5aEMyYmRrNnNMU0wyaGRkUi15TmxIbHBOai1vTU5yQVdjbHRkTC1QQ3gzOXJ5MHdDcWRQLXRtSVpzb2N1MFQ4?oc=5)
+   Reuters · 2026-02-12 23:05 KST · central-bank
+   원문: What would it take for the Fed to raise rates?
 
-3. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
+4. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
    CNBC · 2026-02-13 04:55 KST · 미국 매크로
    원문: The January CPI inflation report is due out Friday morning. Here's what it's expected to show
 
-4. [**중국과 멕시코가 관세를 둘러싼 무역 긴장 속에 회담을 열었습니다.**](https://news.google.com/rss/articles/CBMipwFBVV95cUxOSXhuWGxOMlg0YjljRi1VQ09aWktmR0hKVUV3aHJXUlp5SDlJRjlTaElRNlVRbDZWWkt2Rl92LTdQTU1rMjBhRmhJa0tEcm51VVA1Zm1tNktYOENoQkxvTU9hbWF2SjQ2UkRxRVZPTHc0OWVXbDktNEtodlV1XzFwSnJhZ3N3Nzk1ay1uQTU5NDY3YTYyT2JkTVlJQndROC1Ra21UTjVkTQ?oc=5)
-   Reuters · 2026-02-12 14:04 KST · 지정학
-   원문: China, Mexico held talks amid trade tensions over tariffs
-
-5. [**강력한 미국 일자리 데이터와 판매 중단으로 인해 금이 급락했습니다.**](https://news.google.com/rss/articles/CBMipgFBVV95cUxQd05vSnF0RUQ5cGRYRXJBQ2xjT0ppY21vTm12Rk5LUG02MVc3MTZadXZnQ2J4TS00ZnMxSkUtWm1uVFZSQkNQMjdoUzZqV2E2ZXJOYmlYTkVxanIwaUZ6TkdCV2xScGRQelhVbWR2dTVGeEN0T250TV9hN3pybDFxb2dyN0t0MXNHaEZyMjBLcTFEc0g0RDBTaDdIS0hyTnZUOTJqQkVB0gGrAUFVX3lxTE16dU5NbUVCWkVRWXk0eEh1VzVsZnN0b0hoRVF4Y0VobFNpWUxja2otY0N5MW5hZkpIVlZDMkxzckxWSGVnXzJuaVZaNXdFVEZheEhfYjF2eFc0V3hxalZpWFlGRERxdktzTi1Ic1JZMjdSV1NXOGFmVDh0OWQyN0hFejZlM21vVVhUUzJ1ZjBfX2tJNWt5SlI0QVp3eXFVZDhQNGlLaWk0ZXB5cw?oc=5)
-   CNBC · 2026-02-12 21:33 KST · 원자재
-   원문: Gold cascades down as strong US jobs data and stop-selling weigh
+5. [**연준, 다음 주 금리 논의할 것**](https://news.google.com/rss/articles/CBMi6AFBVV95cUxQcUQzRkdvSVMzbmxsM3ZvR3J2WkpfSWZmVWk4YmxaOUxUWG5GNG5wcVlBMGJhc2Z6aG9UR19mV0RYb2xzakNURmk3UWFxRWFkR3RSSHQyemNqOGEwVU1hMXBiWmtFNXVjWVJ2X0wteWFLVU5heWpJaTFnN3lQdURPekFXNURyMzVWQ2hrYVRWTFlYN3BJUko5RkxmWEFac1lDcUU3SEFTS1d3SHdocTd2aDh2ZTZrLXlwRG1wUUFJdHFJZEkyV1A5OUxNUWpZUnBpcVl2eDA4Y2ViUkJnU2ZTbG1EQWpjLVZK?oc=5)
+   10TV · 2026-02-13 00:07 KST · central-bank
+   원문: Federal Reserve to discuss interest rates next week
 
 ### 국내
 
 1. [**"코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인**](https://www.hankyung.com/article/202602133468i)
    한국경제 증권 · 2026-02-13 06:00 KST · 국내 시장
 
-2. [**[단독] 토스, 해외 코인 거래소 인수 검토…美 기관 플랫폼과 접촉**](https://www.hankyung.com/article/202602122644g)
-   한국경제 증권 · 2026-02-12 20:34 KST · 국내 시장
-
-3. [**"美 주식만 보던 부자들, 요즘 삼성전자 적극 매수"**](https://www.hankyung.com/article/202602122090i)
+2. [**"美 주식만 보던 부자들, 요즘 삼성전자 적극 매수"**](https://www.hankyung.com/article/202602122090i)
    한국경제 증권 · 2026-02-12 17:17 KST · 국내 시장
+
+3. [**[단독] 토스, 해외 코인 거래소 인수 검토…美 기관 플랫폼과 접촉**](https://www.hankyung.com/article/202602122644g)
+   한국경제 증권 · 2026-02-12 20:34 KST · 국내 시장
 
 ---
 
@@ -177,11 +177,11 @@ chartData: "/data/chart-data-2026-02-13.json"
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
 | S&P 500 ↔ BTC | +0.63 | 🟡 약한 동조 | 약한 위험선호 동조 |
-| S&P 500 ↔ 원/달러 | -0.05 | ⚪ 비동조 | 환율 독립적 |
+| S&P 500 ↔ 원/달러 | -0.09 | ⚪ 비동조 | 환율 독립적 |
 | S&P 500 ↔ 10년물 | +0.04 | ⚪ 비동조 | 독립적 |
 | VIX ↔ 금 | -0.03 | ⚪ 비동조 | 독립적 |
 | BTC ↔ 금 | +0.05 | ⚪ 비동조 | 독립적 자산 |
-| 유가 ↔ 10년물 | +0.06 | ⚪ 비동조 | 독립적 |
+| 유가 ↔ 10년물 | +0.09 | ⚪ 비동조 | 독립적 |
 
 ## 섹터 상대강도
 
@@ -215,9 +215,9 @@ chartData: "/data/chart-data-2026-02-13.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,832.76 | -1.44% | 소폭 하락 |
-| BTC | 70,555 | 66,352 | -5.96% | 급락 |
+| BTC | 70,555 | 66,188 | -6.19% | 급락 |
 | VIX | 20.37 | 20.82 | +2.21% | 불안 확대 |
-| USDKRW | 1,470.68원 | 1,447.8원 | -1.56% | 소폭 하락 |
+| USDKRW | 1,470.68원 | 1,441.51원 | -1.98% | 소폭 하락 |
 
 ## 이벤트 임팩트
 
@@ -243,7 +243,6 @@ chartData: "/data/chart-data-2026-02-13.json"
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- Open Exchange Rate API (api) | https://open.er-api.com/v6/latest/USD
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -253,7 +252,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-13 08:33:37 KST</span>
+  <span>생성 시각: 2026-02-13 08:45:49 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-13 08:33:37 KST</span>
+  <span>데이터 기준 시각: 2026-02-13 08:45:49 KST</span>
 </div>
