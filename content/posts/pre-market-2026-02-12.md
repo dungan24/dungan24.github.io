@@ -13,9 +13,9 @@ chartData: "/data/chart-data-2026-02-12.json"
 > **S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표**
 
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표
-- 변동성: VIX 17.36 (-2.42%)
+- 변동성: VIX 17.41 (-2.13%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,447.8 (-)
+- 환율: 원/달러 1,433.95 (-11.51)
 - 오늘은: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
 
 ---
@@ -25,17 +25,18 @@ chartData: "/data/chart-data-2026-02-12.json"
 ### 무슨 일이 있었나
 미국 증시는 혼조세로 마감했습니다. S&P 500 0.00%, 나스닥 +0.29%, 다우 -0.13%.
 
-주요 소식으로는 **"오늘 주식 시장: 고용 서프라이즈 이후 연준의 금리 경로에 다시 초점이 맞춰진 후 다우, S&P 500, 나스닥 선물 상승"** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"강력한 미국 일자리 보고서로 금리 인하 전망이 어두워지면서 금은 후퇴"** 이 시장의 관심을 끌었습니다.
 
-현재 S&P 선물은 현물 대비 +0.54% 반등 중이어서, 오늘 장 시작 시 갭이 발생할 수 있습니다.
+현재 S&P 선물은 현물 대비 +0.52% 반등 중이어서, 오늘 장 시작 시 갭이 발생할 수 있습니다.
 
 **한국 시장** 쪽에서는 ""美 주식만 보던 부자들, 요즘 삼성전자 적극 매수"" 소식이 눈에 띕니다.
+원/달러 환율은 5일 연속 하락하여 1,433.95원입니다.
 가상자산 시장은 공포탐욕지수 **5(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
 고용 지표가 강하게 나오면서 "좋은 뉴스가 나쁜 뉴스"가 되는 구도입니다. 경기가 탄탄하다 → 연준이 금리를 서둘러 내릴 이유가 없다 → 고금리 장기화 → 성장주에 부담이 되는 흐름입니다.
 
-공포지수(VIX)는 17.36로 5일 전(20.37) 대비 -14.78% 급변했습니다.
+공포지수(VIX)는 17.41로 5일 전(20.37) 대비 -14.53% 급변했습니다.
 
 현재 **S&P 500 ↔ BTC**의 20일 상관계수가 +0.67로 동조화 상태입니다. 약한 위험선호 동조
 
@@ -52,7 +53,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 가상자산 공포탐욕지수는 **5(극단적 공포)**. 역사적으로 이 구간에서 단기 반등 확률이 높지만, 추세 전환과는 별개입니다.
 
 ### 행동 체크포인트
-**관측**: VIX 17.36로 정상 범위 수준
+**관측**: VIX 17.41로 정상 범위 수준
 **의미**: 시장 변동성이 안정적인 흐름 유지 중
 **시사점**: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
 
@@ -72,41 +73,41 @@ chartData: "/data/chart-data-2026-02-12.json"
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
 | S&P 500 | 6,941.47 | -0.34 | 0.00% | - |
-| 나스닥 | 25,201.26 | +73.62 | +0.29% | - |
+| 나스닥 | 25,201.26 | +73.66 | +0.29% | - |
 | 다우존스 | 50,121.4 | -66.7 | -0.13% | - |
-| VIX (공포지수) | 17.36 | -0.43 | -2.42% | ↓3일 |
+| VIX (공포지수) | 17.41 | -0.38 | -2.13% | ↓3일 |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.85 | +0.02 | +0.02% | - |
+| 달러인덱스 (DXY) | 96.81 | -0.02 | -0.02% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,396 | +667.22 | +0.99% | ↑2일 |
-| 이더리움 (ETH) | 1,976.92 | +35.98 | +1.82% | - |
+| 비트코인 (BTC) | 67,558 | +736.38 | +1.09% | ↑2일 |
+| 이더리움 (ETH) | 1,981.5 | +37.65 | +1.90% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,447.8 | - | -% | ↑1일 |
+| 원/달러 (USDKRW) | 1,433.95 | -11.51 | -0.80% | ↓5일 ⚡ 하위 4% |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.54% 반등 중 (Basis: +0.54%)
+> ↗ 본장 0.00% 마감 → 선물 +0.52% 반등 중 (Basis: +0.52%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,979 | +18.5 | +0.27% |
-| 나스닥 100 선물 | 25,343.75 | +55.25 | +0.22% |
+| S&P 500 선물 | 6,977.75 | +17.25 | +0.25% |
+| 나스닥 100 선물 | 25,339 | +50.5 | +0.20% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,087.3 | -11.2 | -0.22% |
-| WTI 유가 (Oil) | 64.36 | -0.27 | -0.42% |
+| 국제 금 (Gold) | 5,087.8 | -10.7 | -0.21% |
+| WTI 유가 (Oil) | 64.39 | -0.24 | -0.37% |
 
 {{< market-charts >}}
 
@@ -116,25 +117,25 @@ chartData: "/data/chart-data-2026-02-12.json"
 
 ### 글로벌
 
-1. [**오늘 주식 시장: 고용 서프라이즈 이후 연준의 금리 경로에 다시 초점이 맞춰진 후 다우, S&P 500, 나스닥 선물 상승**](https://news.google.com/rss/articles/CBMi6gFBVV95cUxNbEhpMXdMU0dwWkh5SHoyRjVPcHUwU1F0SUtQTEV6RUY3WXNTWElTUENGU2ttcGdmRlh6Q3VMVlVSQVREQ1NCOUF5dzc2VkJFVmxuY096LWZCRXprWDl4UHN5bjBCRWdfTmZJWUFyRW9waWswSlFrZnNrMFNuREU2bnRva01ZVWlqUVBCXzZMTFlFcHo5YTV5MUZZV0pCM1hBSTRwYnJfUkNGZzN6QkszSllPUXpCLVlPbjRsSVRoNTA3T1ZGazB4eFVXNUVoUUR1UVJYODBNaHByc25SeHRMRFlXMjJfTGNQRXc?oc=5)
-   Yahoo Finance UK · 2026-02-12 18:40 KST · 시장 이벤트
-   원문: Stock market today: Dow, S&P 500, Nasdaq futures rise after jobs surprise puts focus back on Fed's rate path
+1. [**강력한 미국 일자리 보고서로 금리 인하 전망이 어두워지면서 금은 후퇴**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
+   Bloomberg · 2026-02-12 14:06 KST · 원자재
+   원문: Gold Retreats as Strong US Jobs Report Dims Rate-Cut Prospects
 
 2. [**Fed의 금리 일시 중지는 고용 데이터로 인해 강화되었지만 우려는 여전히 남아 있습니다.**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
    Reuters · 2026-02-11 22:43 KST · central-bank
    원문: Fed's interest rate pause bolstered by jobs data, but concerns linger
 
-3. [**강력한 미국 일자리 보고서로 금리 인하 전망이 어두워지면서 금은 후퇴**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
-   Bloomberg · 2026-02-12 14:06 KST · 원자재
-   원문: Gold Retreats as Strong US Jobs Report Dims Rate-Cut Prospects
-
-4. [**강한 미국 고용 지표가 연준의 금리 인하 기대를 완화함에 따라 금은 하락세를 보이고 있습니다.**](https://news.google.com/rss/articles/CBMipAFBVV95cUxPelo0N3JjSFIxdjlaWVhWTjVsNjJGbUl6N0V5UnRjNWQ5b3Y4eDhzcVZ0OEpZOUVBQjZKX0t5U2Z4LTdRS2F5Q2F1alhCdUdXTXREQ3Y1N2lnQklnLUhJbk9TdHdleThCNmdJRV9teXZmOHVab1ZQa3dVUDgzSVozOFpHUDZWS0d5RTRqRWlIT1ZmTExnODVZUlY1NGNZMDZsb2l2TA?oc=5)
+3. [**강한 미국 고용 지표가 연준의 금리 인하 기대를 완화함에 따라 금은 하락세를 보이고 있습니다.**](https://news.google.com/rss/articles/CBMipAFBVV95cUxPelo0N3JjSFIxdjlaWVhWTjVsNjJGbUl6N0V5UnRjNWQ5b3Y4eDhzcVZ0OEpZOUVBQjZKX0t5U2Z4LTdRS2F5Q2F1alhCdUdXTXREQ3Y1N2lnQklnLUhJbk9TdHdleThCNmdJRV9teXZmOHVab1ZQa3dVUDgzSVozOFpHUDZWS0d5RTRqRWlIT1ZmTExnODVZUlY1NGNZMDZsb2l2TA?oc=5)
    Reuters · 2026-02-12 11:01 KST · 원자재
    원문: Gold eases as strong US jobs data tempers Fed rate‑cut expectations
 
-5. [**중국은 희토류 원소를 전략무기로 사용한다. 트럼프는 관세로 반응한다. 지정학적 분쟁은 글로벌 기술 공급망을 위협합니다.**](https://news.google.com/rss/articles/CBMimwJBVV95cUxQUkV1V3lJdHF6TW1KQ0RuZ0ZULW03ZzVCOTd3TEhqc2JYUXhrM0lONG8xSHpXa202am5qUGZtQTlaWmw5WjF0S3ZRdGJFZmxvLU9JZ1NzaEowWWNLaUxqLU1rby1ReEJKRl9GQmxIU0tsWGtwWS1HeGtkUDRJZ0p1amNCRWR4QW5JOU91amZhaUkxTW1xU0lRUHF1VEdLalBGeEVvZGdpdWc2SzV0d2ppRUtfb2t5bHhWUFFkQWRualdEQTdCWXdIYVh0RVVwaDlrZWVxWGFSYkhZWjJ5dFQxVS1wTG1fbDhqMDJWdEpLSVV2SFRhSV9jYjdsTkpaWDFScVM3Z3ZESWJvbm83TldSV3ZfdEo2Z05YRDFz?oc=5)
-   CPG Click Petróleo e Gás · 2026-02-12 08:27 KST · 지정학
-   원문: China uses rare earth elements as a strategic weapon; Trump reacts with tariffs; and the geopolitical dispute threatens global technology supply chains.
+4. [**데이비드 아인혼(David Einhorn)은 연준이 두 배보다 '상당히 더 많은' 인하를 할 것이라고 말했습니다. 그래서 그는 금에 큰 돈을 걸고 있다**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
+   CNBC · 2026-02-12 02:42 KST · central-bank
+   원문: David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold
+
+5. [**오늘의 주식 시장: 고용 서프라이즈 이후 연준의 금리 경로에 다시 초점이 맞춰진 후에도 다우, S&P 500, 나스닥 선물은 안정되었습니다.**](https://news.google.com/rss/articles/CBMi7AFBVV95cUxQRXFZR3BpOTVRVG9nVzN3MGtGeXZNRnQ4NzZYM2FvN21kWjlCWkhiZlphRlRjTlNpNkpjZkV5WHRhbzY4Q0Y5WDMwWFZNc3UxcXlSQVNIbkVtMC1YbFhOeG9rS25JMDJFOVN2ZjZhNjYzanhSNWxEc21zMWpaMFREdWx2UkNfNkZwWFFxc1lGeTVZOUFaZnVqVGN6YWdJUExjNHk3OEtNczVVT20zSVJPWDBOR1dQaW1VSlFJdDVBT2lDeVc4cktVMHo1TENqd01Bckt4cmtQTVNoRWRDUHR2WC0yYzdWaElOd0luYw?oc=5)
+   Yahoo Finance · 2026-02-12 10:47 KST · 시장 이벤트
+   원문: Stock market today: Dow, S&P 500, Nasdaq futures steady after jobs surprise puts focus back on Fed's rate path
 
 ### 국내
 
@@ -215,9 +216,9 @@ chartData: "/data/chart-data-2026-02-12.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,941.47 | +0.13% | 보합 |
-| BTC | 70,555 | 67,396 | -4.48% | 약세 전환 |
-| VIX | 20.37 | 17.36 | -14.78% | 급격 안정 |
-| USDKRW | 1,470.68원 | 1,447.8원 | -1.56% | 소폭 하락 |
+| BTC | 70,555 | 67,558 | -4.25% | 약세 전환 |
+| VIX | 20.37 | 17.41 | -14.53% | 급격 안정 |
+| USDKRW | 1,470.68원 | 1,433.95원 | -2.50% | 약세 전환 |
 
 ## 이벤트 임팩트
 
@@ -243,7 +244,6 @@ chartData: "/data/chart-data-2026-02-12.json"
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- Open Exchange Rate API (api) | https://open.er-api.com/v6/latest/USD
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -253,7 +253,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-12 19:27:07 KST</span>
+  <span>생성 시각: 2026-02-12 19:31:47 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-12 19:27:07 KST</span>
+  <span>데이터 기준 시각: 2026-02-12 19:31:47 KST</span>
 </div>
