@@ -88,6 +88,26 @@
     }
   }
 
+  /* Light mode chart overrides */
+  :root:not(.dark) {
+    --mp-chart-card-bg: rgba(255, 255, 255, 0.95);
+    --mp-chart-border: rgba(124, 58, 237, 0.12);
+    --mp-chart-text-muted: #94A3B8;
+  }
+
+  :root:not(.dark) .market-chart-card {
+    background:
+      linear-gradient(160deg, rgba(124, 58, 237, 0.02), transparent 30%),
+      var(--mp-chart-card-bg);
+    border-color: rgba(124, 58, 237, 0.12);
+    box-shadow: 0 4px 16px -4px rgba(124, 58, 237, 0.08);
+  }
+
+  :root:not(.dark) .chart-title-compact {
+    color: #1E1E3A;
+    border-bottom-color: rgba(124, 58, 237, 0.1);
+  }
+
   @media (max-width: 768px) {
     .market-chart-card {
       margin: 1rem 0;

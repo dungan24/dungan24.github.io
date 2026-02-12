@@ -27,14 +27,22 @@ const METRIC_COLORS = {
   US10Y: '#f472b6',     /* pink-400 */
 };
 
-const GLASS_TOOLTIP = {
-  backgroundColor: 'rgba(10, 10, 26, 0.95)',
-  borderColor: 'rgba(124, 58, 237, 0.3)',
-  borderWidth: 1,
-  borderRadius: 4,
-  textStyle: { color: '#E2E8F0', fontSize: 13 },
-  extraCssText: 'box-shadow:0 0 15px rgba(124,58,237,0.2),0 8px 32px -8px rgba(0,0,0,0.5)',
-};
+function getTooltipStyle() {
+  const dark = isDarkMode();
+  return {
+    backgroundColor: dark ? 'rgba(10, 10, 26, 0.95)' : 'rgba(255, 255, 255, 0.97)',
+    borderColor: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.15)',
+    borderWidth: 1,
+    borderRadius: 4,
+    textStyle: { color: dark ? '#E2E8F0' : '#1E1E3A', fontSize: 13 },
+    extraCssText: dark
+      ? 'box-shadow:0 0 15px rgba(124,58,237,0.2),0 8px 32px -8px rgba(0,0,0,0.5)'
+      : 'box-shadow:0 4px 16px -4px rgba(124,58,237,0.1),0 2px 8px rgba(0,0,0,0.06)',
+  };
+}
+
+// backward compat — lazy reference
+const GLASS_TOOLTIP = getTooltipStyle();
 
 function isDarkMode() {
   return document.documentElement.classList.contains('dark') ||
@@ -157,7 +165,7 @@ function renderTimeSeries(data) {
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: {
-      ...GLASS_TOOLTIP,
+      ...getTooltipStyle(),
       trigger: 'axis',
       axisPointer: {
         type: 'cross',
@@ -178,7 +186,9 @@ function renderTimeSeries(data) {
           if (originalValue !== null) {
             html += '<span style="font-family:JetBrains Mono,monospace">' + originalValue.toLocaleString(undefined, {maximumFractionDigits: 2}) + '</span> ';
           }
-          html += '<span style="color:' + (changePct >= 0 ? '#FF3366' : '#3388FF') + ';font-family:JetBrains Mono,monospace">' + sign + changePct + '%</span>';
+          var upColor = isDarkMode() ? '#FF3366' : '#DC2626';
+          var downColor = isDarkMode() ? '#3388FF' : '#2563EB';
+          html += '<span style="color:' + (changePct >= 0 ? upColor : downColor) + ';font-family:JetBrains Mono,monospace">' + sign + changePct + '%</span>';
         });
         return html;
       }
@@ -233,7 +243,7 @@ function renderCorrelations(data) {
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: {
-      ...GLASS_TOOLTIP,
+      ...getTooltipStyle(),
       trigger: 'axis',
       formatter: function (params) {
         const idx = params[0].dataIndex;
@@ -406,7 +416,7 @@ function renderSingleSectorChart(chartId, items) {
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: {
-      ...GLASS_TOOLTIP,
+      ...getTooltipStyle(),
       trigger: 'axis',
       axisPointer: { type: 'shadow' },
       formatter: function(params) {
