@@ -111,7 +111,11 @@
         17.36,
         17.79,
         17.69,
+<<<<<<< Updated upstream
         17.65
+=======
+        17.53
+>>>>>>> Stashed changes
       ],
       "US10Y": [
         4.16,
@@ -155,7 +159,11 @@
         1462.4,
         1458.54,
         1445.5,
+<<<<<<< Updated upstream
         1438.76
+=======
+        1437.3
+>>>>>>> Stashed changes
       ],
       "BTC": [
         95551,
@@ -177,7 +185,11 @@
         70120,
         70120,
         66714,
+<<<<<<< Updated upstream
         67046
+=======
+        66979
+>>>>>>> Stashed changes
       ],
       "GOLD": [
         4616.3,
@@ -199,7 +211,11 @@
         5050.9,
         5050.9,
         5100.7,
+<<<<<<< Updated upstream
         5092.7
+=======
+        5083.6
+>>>>>>> Stashed changes
       ],
       "OIL": [
         59.19,
@@ -221,7 +237,11 @@
         64.36,
         64.36,
         64.95,
+<<<<<<< Updated upstream
         64.91
+=======
+        64.82
+>>>>>>> Stashed changes
       ]
     }
   },
@@ -295,7 +315,7 @@
     "signals": [
       {
         "name": "VIX",
-        "value": "17.6",
+        "value": "17.5",
         "assessment": "✅",
         "note": "안정"
       },
@@ -324,44 +344,79 @@
       {
         "name": "테크",
         "symbol": "XLK",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "금융",
         "symbol": "XLF",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "헬스케어",
         "symbol": "XLV",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "소비재",
         "symbol": "XLY",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "에너지",
         "symbol": "XLE",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "산업",
         "symbol": "XLI",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       },
       {
         "name": "반도체",
         "symbol": "SOXX",
+<<<<<<< Updated upstream
         "change": null,
         "over": null
+=======
+        "week1": null,
+        "month1": null
+>>>>>>> Stashed changes
       }
     ],
     "kr": [
@@ -417,18 +472,31 @@
     },
     {
       "metric": "BTC",
+<<<<<<< Updated upstream
       "label": "약세 전환",
       "changePct": -4.97
+=======
+      "label": "급락",
+      "changePct": -5.07
+>>>>>>> Stashed changes
     },
     {
       "metric": "VIX",
       "label": "급격 안정",
+<<<<<<< Updated upstream
       "changePct": -13.35
+=======
+      "changePct": -13.94
+>>>>>>> Stashed changes
     },
     {
       "metric": "USDKRW",
       "label": "약세 전환",
+<<<<<<< Updated upstream
       "changePct": -2.17
+=======
+      "changePct": -2.27
+>>>>>>> Stashed changes
     }
   ]
 }
