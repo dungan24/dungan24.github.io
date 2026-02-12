@@ -48,7 +48,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 실적 시즌
 - 변동성: VIX 17.65 (-0.79%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,439.52 (-5.94)
+- 환율: 원/달러 1,439.29 (-6.17)
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 <!-- OPINION_ZONE_END -->
@@ -62,8 +62,8 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
 | S&P 500 | 6,941.47 | -0.34 | 0.00% | - |
-| 나스닥 | 25,201.26 | +73.62 | +0.29% | - |
-| 다우존스 | 50,121.4 | -66.74 | -0.13% | - |
+| 나스닥 | 25,201.26 | +73.66 | +0.29% | - |
+| 다우존스 | 50,121.4 | -66.7 | -0.13% | - |
 | VIX (공포지수) | 17.65 | -0.14 | -0.79% | - |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
 | 달러인덱스 (DXY) | 96.9 | +0.07 | +0.07% | - |
@@ -72,30 +72,30 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,175 | +154.5 | +0.23% | ↑2일 |
-| 이더리움 (ETH) | 1,969.3 | +19.5 | +0.99% | - |
+| 비트코인 (BTC) | 67,145 | +228.29 | +0.34% | - |
+| 이더리움 (ETH) | 1,969.55 | +26.39 | +1.34% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,439.52 | -5.94 | -0.41% | ↓5일 |
+| 원/달러 (USDKRW) | 1,439.29 | -6.17 | -0.43% | - |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.57% 반등 중 (Basis: +0.57%)
+> ↗ 본장 0.00% 마감 → 선물 +0.58% 반등 중 (Basis: +0.58%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,981 | +20.5 | +0.29% |
-| 나스닥 100 선물 | 25,347.25 | +58.75 | +0.23% |
+| S&P 500 선물 | 6,982 | +21.5 | +0.31% |
+| 나스닥 100 선물 | 25,352.75 | +64.25 | +0.25% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,081.7 | -16.8 | -0.33% |
+| 국제 금 (Gold) | 5,081.6 | -16.9 | -0.33% |
 | WTI 유가 (Oil) | 64.84 | +0.21 | +0.32% |
 
 {{< market-charts >}}
@@ -106,25 +106,25 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 ### 글로벌
 
-1. [**Stock Market News, 2026년 2월 11일: 다우지수는 사상 최고치에서 하락하고, 나스닥과 S&P 500은 1월 일자리 데이터 이후 연속 하락세를 보였습니다. 시스코 수익 창출; 금과 은이 더 높습니다.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxNUVhBeHNJMnpMYlJDTEN5T0F4VUFtNDFMd2V5OUx2d0h1YVJWMEI0WXVla2p4WWVSTzB6NHhIUDBGV1dZRGNqSS1EMFJvOEpLYkMybGhtczZwb25wMHF3SDh3T1ExRXNJZ1dXMmtYMkVHeDgtTmxrUnhFZk9ramJnbXRjTEhnQ1FBVzRiUktHQjJxR0p5TWJNR2F2M2dNckZsSGNfSEdCX0hGUC12ZzMzNVJfS0JvbnR1NjdWQTdRNDM2cVl3YlZRU0F0dHAySWRBRWNBSmd3dW1HYlZZUE5iWS1WZFFmeWhRZ0hQX1pxV2pOUVF1bExRc0FsMTRSR1dNRjdkc0E1S2t5QlpleU9lcF9GcGdjdmRjSWw5eFhLaXdNSWhuNFF3NXQ3a0ttalhqeDdjMTFWWFZFTjhFVmIzR3hLam92eV9OQU5OM2s1N1hTUmFNbkxfaWFoR20xY2VYbm4wMjRzMGl3eDdoa2NPNFlPajMySjFWSlc2SzN2VnU4cTdkU3BaV21keXFSQmpKWUc2a0pWMm9HM2JBbGM0RXE3SUI1c0ltOTlqVUt0d0lNUGJ3LW1UQlpRelFlQQ?oc=5)
+1. [**Stock Market News, 2026년 2월 11일: 다우지수는 사상 최고치에서 하락하고, 나스닥과 S&P 500은 1월 일자리 데이터 이후 연속 하락세를 보였습니다. 시스코 수익 창출; 금과 은이 더 높습니다.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxQLUxIenUzenUtZ3o2Z0tWUUFnNDBwaU53d0VkZzVIWmozZ3JVcTlCUjNCLVJmeGZvakZTSFFjWEJ6ZDZpaXRCb2VJSU5jMVl6VFFzMGJ0ZEZHYUk4ZFlmT0pRdTNabUt3aWhYdG4yYUVEYk1NcmREaDZCMEM5RU9uY1JvbGdYblpEYXNOMnZKX0ZleUF3d29uRXozOEsxcTNnOWtSMGJPNVdabjg0RkNOdzZaNjg1eENNdDBjRzQzejlHZ1B6ZDFhZDdUbk5LQ3AwZUhUZy1YaWRpOG0zbU5UTGd0a3N1RV9pVWkzSHNwOEFfY3FMaVRtUWlLRW82dDYxNDI3N1A0MTNTbXhpMEVyX2xhTE1YemI5YVNRQlZaQVNsQi1hcGpHUWxoV2pBVDV5cFVSUlFabktaMm0tcUg0YWhGamJpVG1DcG1Nd2RrQVJ6TWtRT28tT0dVUDMtSEtYUS1pU0Q3UEpDX3BHX3VSc3hIQ1lkVE1xdnBPOW9GaG5neENIZGdCb21xVkF0dUlVX1QxWGZQWWM3VDRrYVlwcG5JdF9IaTl0WDJUWFBsYmdjaFFyUUhWcm56d3ZnQQ?oc=5)
    MarketWatch · 2026-02-12 06:17 KST · 시장 이벤트
    원문: Stock Market News, Feb. 11, 2026: Dow falls from all-time high, Nasdaq and S&P 500 see back-to-back losses after January jobs data; Cisco earnings on tap; gold and silver higher.
 
 2. [**강력한 미국 일자리 보고서로 인해 금리 인하 전망이 어두워지면서 금 하락**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
-   Bloomberg · 2026-02-12 14:06 KST · 원자재
+   Bloomberg.com · 2026-02-12 14:06 KST · 원자재
    원문: Gold Slips as Strong US Jobs Report Dims Rate-Cut Prospects
 
-3. [**오늘 주식 시장: 1월 고용 보고서 이후 다우, S&P 500, 나스닥이 흔들림**](https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYlhtQm03R2FLUmw0UlpTQnB2RWY0Z19PZUVPZ05qdThwUU5tQTA3QWJoZjBCbW4zN2F6WGg4c3lCOW1EMHoteDJ0eHBYQmNoRWowM2VaUEprWXZTaGRxcXZwc0ltaU03QU5zS2FVMklISXR4Zk5qNFFHOFpCa254N2l3bGFoZ2FCQmUyRTF3NHVTNjNkQWdTSkRlT3RySEx4aHJ4NmlTUWhVSWNXQTNZUTVGVXVOVXIydWR1M1R1SUFjLUZ3VFBRX0JsbUc4OHpPUkhUeDZHZw?oc=5)
-   Yahoo Finance · 2026-02-12 05:39 KST · 시장 이벤트
-   원문: Stock market today: Dow, S&P 500, Nasdaq waver after January jobs report smashes expectations
-
-4. [**Fed의 금리 일시 중지는 고용 데이터로 인해 강화되었지만 우려는 여전히 남아 있습니다.**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
+3. [**Fed의 금리 일시 중지는 고용 데이터로 인해 강화되었지만 우려는 여전히 남아 있습니다.**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
    Reuters · 2026-02-11 22:43 KST · central-bank
    원문: Fed's interest rate pause bolstered by jobs data, but concerns linger
 
-5. [**중국은 희토류 원소를 전략무기로 사용한다. 트럼프는 관세로 반응한다. 지정학적 분쟁은 글로벌 기술 공급망을 위협합니다.**](https://news.google.com/rss/articles/CBMimwJBVV95cUxQUkV1V3lJdHF6TW1KQ0RuZ0ZULW03ZzVCOTd3TEhqc2JYUXhrM0lONG8xSHpXa202am5qUGZtQTlaWmw5WjF0S3ZRdGJFZmxvLU9JZ1NzaEowWWNLaUxqLU1rby1ReEJKRl9GQmxIU0tsWGtwWS1HeGtkUDRJZ0p1amNCRWR4QW5JOU91amZhaUkxTW1xU0lRUHF1VEdLalBGeEVvZGdpdWc2SzV0d2ppRUtfb2t5bHhWUFFkQWRualdEQTdCWXdIYVh0RVVwaDlrZWVxWGFSYkhZWjJ5dFQxVS1wTG1fbDhqMDJWdEpLSVV2SFRhSV9jYjdsTkpaWDFScVM3Z3ZESWJvbm83TldSV3ZfdEo2Z05YRDFz?oc=5)
-   CPG Click Petróleo e Gás · 2026-02-12 08:27 KST · 지정학
-   원문: China uses rare earth elements as a strategic weapon; Trump reacts with tariffs; and the geopolitical dispute threatens global technology supply chains.
+4. [**인플레이션에 대한 워쉬의 실제 그린스펀 교훈**](https://news.google.com/rss/articles/CBMicEFVX3lxTE9KLVp0b2pLeU5OalR5ZkRJek1BYUNOUFZ0ZGllcE1SUFdfZUlWWTR6OXp4Tk5zOHJhanhJS0hWWG5kMXJIWHVDYm1kYjFCaE1MRXZXaTE0ZEg2YWpBQUJiUW5EV3hrODlGblg5YUdZWWE?oc=5)
+   Financial Times · 2026-02-12 14:00 KST · 미국 매크로
+   원문: The real Greenspan lesson for Warsh on inflation
+
+5. [**데이비드 아인혼(David Einhorn)은 연준이 두 배보다 '상당히 더 많은' 인하를 할 것이라고 말했습니다. 그래서 그는 금에 큰 돈을 걸고 있다**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
+   CNBC · 2026-02-12 02:42 KST · central-bank
+   원문: David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold
 
 ### 국내
 
@@ -187,9 +187,9 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,941.47 | +0.13% | 보합 |
-| BTC | 70,555 | 67,175 | -4.79% | 약세 전환 |
+| BTC | 70,555 | 67,145 | -4.83% | 약세 전환 |
 | VIX | 20.37 | 17.65 | -13.35% | 급격 안정 |
-| USDKRW | 1,470.68원 | 1,439.52원 | -2.12% | 약세 전환 |
+| USDKRW | 1,470.68원 | 1,439.29원 | -2.13% | 약세 전환 |
 
 ## 이벤트 임팩트
 
@@ -223,7 +223,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-12 17:04:42 KST</span>
+  <span>생성 시각: 2026-02-12 17:07:11 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-12 17:04:42 KST</span>
+  <span>데이터 기준 시각: 2026-02-12 17:07:11 KST</span>
 </div>
