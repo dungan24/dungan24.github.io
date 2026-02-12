@@ -207,7 +207,13 @@ document.addEventListener('DOMContentLoaded', function() {
             var headline = strong ? strong.textContent : (link ? link.textContent : '');
             var href = link ? link.getAttribute('href') : '#';
 
-            var textContent = li.textContent || '';
+            // blockquote 텍스트를 메타데이터 파싱에서 제외
+            var blockquote = li.querySelector('blockquote');
+            var liClone = li.cloneNode(true);
+            var bqClone = liClone.querySelector('blockquote');
+            if (bqClone) bqClone.remove();
+
+            var textContent = liClone.textContent || '';
             var headlineEnd = textContent.indexOf(headline) + headline.length;
             var metaText = textContent.substring(headlineEnd).trim();
 
@@ -216,14 +222,13 @@ document.addEventListener('DOMContentLoaded', function() {
             var time = metaParts[1] || '';
             var category = metaParts[2] || '';
 
-            var blockquote = li.querySelector('blockquote');
             var excerpt = blockquote ? blockquote.textContent.trim() : '';
 
             card.innerHTML =
               (source ? '<div class="mp-news-card__source">' + source + '</div>' : '') +
               '<div class="mp-news-card__headline"><a href="' + href + '" target="_blank" rel="noopener">' + headline + '</a></div>' +
               '<div class="mp-news-card__meta">' + [time, category].filter(Boolean).join(' \u00B7 ') + '</div>' +
-              (excerpt ? '<div class="mp-news-card__excerpt">' + excerpt.substring(0, 120) + (excerpt.length > 120 ? '...' : '') + '</div>' : '');
+              (excerpt ? '<div class="mp-news-card__excerpt"><span class="mp-news-card__kr-tag">KR</span>' + excerpt + '</div>' : '');
 
             grid.appendChild(card);
           });
