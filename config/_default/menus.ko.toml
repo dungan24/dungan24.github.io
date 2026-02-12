@@ -1,9 +1,9 @@
 [[main]]
-  name = "Briefings"
+  name = "브리핑"
   pageRef = "posts"
   weight = 10
 
 [[main]]
-  name = "Tags"
+  name = "태그"
   pageRef = "tags"
   weight = 20

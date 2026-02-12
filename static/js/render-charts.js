@@ -7,8 +7,8 @@
 
 const COLORS = {
   primary: '#7C3AED',
-  success: '#00FF88',
-  danger: '#FF3366',
+  success: '#FF3366',   // 한국식: 상승 = 빨강
+  danger: '#3388FF',    // 한국식: 하락 = 파랑
   warning: '#FFD600',
   muted: '#64748B',
   bg: '#0A0A1A',
@@ -53,8 +53,8 @@ function getTheme() {
     text: dark ? '#E2E8F0' : '#1E1E3A',
     axis: dark ? '#1E1E3A' : '#cbd5e1',
     tooltip: dark ? '#12122A' : '#ffffff',
-    success: dark ? '#00FF88' : '#059669',
-    danger: dark ? '#FF3366' : '#DC2626',
+    success: dark ? '#FF3366' : '#DC2626',   // 한국식: 상승 = 빨강
+    danger: dark ? '#3388FF' : '#2563EB',    // 한국식: 하락 = 파랑
   };
 }
 
@@ -363,10 +363,10 @@ function renderSectors(data) {
         symbolSize: 16,
         itemStyle: {
           color: function(params) {
-            return params.value > 0 ? '#00FF88CC' : '#FF3366CC';
+            return params.value > 0 ? '#FF3366CC' : '#3388FFCC';
           },
           borderColor: function(params) {
-            return params.value > 0 ? '#00FF88' : '#FF3366';
+            return params.value > 0 ? '#FF3366' : '#3388FF';
           },
           borderWidth: 2,
         },

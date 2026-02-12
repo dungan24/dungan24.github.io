@@ -59,6 +59,11 @@ code, pre, .num-cell, .terminal-data {
   --mp-neon-green: #00FF88;
   --mp-neon-pink: #FF3366;
   --mp-neon-yellow: #FFD600;
+  --mp-neon-blue: #3388FF;
+
+  /* 한국식 상승/하락 색상 (빨강=상승, 파랑=하락) */
+  --mp-color-up: var(--mp-neon-pink);    /* #FF3366 */
+  --mp-color-down: var(--mp-neon-blue);  /* #3388FF */
 
   /* Regime Dynamic Color Variables (JS overrides at runtime) */
   --regime-color: #7C3AED;
@@ -167,17 +172,17 @@ code, pre, .num-cell, .terminal-data {
   text-transform: uppercase;
 }
 
-/* --- 상승/하락 색상 강화 --- */
+/* --- 상승/하락 색상 강화 (한국식: 빨강=상승, 파랑=하락) --- */
 .num-up {
-  color: var(--mp-neon-green) !important;
+  color: var(--mp-color-up) !important;
   font-weight: 600 !important;
-  text-shadow: 0 0 6px rgba(0, 255, 136, 0.3);
+  text-shadow: 0 0 6px rgba(255, 51, 102, 0.3);
 }
 
 .num-down {
-  color: var(--mp-neon-pink) !important;
+  color: var(--mp-color-down) !important;
   font-weight: 600 !important;
-  text-shadow: 0 0 6px rgba(255, 51, 102, 0.3);
+  text-shadow: 0 0 6px rgba(51, 136, 255, 0.3);
 }
 
 .stat-highlight {
@@ -201,8 +206,8 @@ code, pre, .num-cell, .terminal-data {
 :root:not(.dark) .briefing-section h2 {
   color: #1E1E3A;
 }
-:root:not(.dark) .num-up { color: #059669 !important; text-shadow: none; }
-:root:not(.dark) .num-down { color: #DC2626 !important; text-shadow: none; }
+:root:not(.dark) .num-up { color: #DC2626 !important; text-shadow: none; }
+:root:not(.dark) .num-down { color: #2563EB !important; text-shadow: none; }
 
 /* --- Table Polish --- */
 .prose table {
