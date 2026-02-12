@@ -10,9 +10,9 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 연준 정책 주시**
+> **S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — AI 랠리**
 
-- 핵심: S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — 연준 정책 주시
+- 핵심: S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(5) — AI 랠리
 - 변동성: VIX 20.82 (+17.96%)
 - 금리: 미 10년물 4.1% (-0.07)
 - 환율: 원/달러 1,441.51 (-3.95)
@@ -25,13 +25,13 @@ chartData: "/data/chart-data-2026-02-13.json"
 ### 무슨 일이 있었나
 미국 증시는 약세로 마감했습니다. S&P 500 -1.57%, 나스닥 -2.04%, 다우 -1.34%.
 
-주요 소식으로는 **"트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다."** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"오늘의 주식 시장: AI가 스래시 주식을 두려워함에 따라 다우 지수는 670포인트 하락했고 S&P 500은 3주 만에 최악의 날을 기록했습니다. 국채수익률 하락; 금과 은이 떨어지다"** 이 시장의 관심을 끌었습니다.
 
 **한국 시장** 쪽에서는 ""코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인" 소식이 눈에 띕니다.
 가상자산 시장은 공포탐욕지수 **5(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-연준의 통화정책 방향이 시장 전체의 기류를 좌우하고 있습니다. 금리 동결/인상 기조가 이어지면 → 달러 강세 → 신흥국 자금 이탈, 인하 신호가 나오면 → 위험자산 선호 → 주식·비트코인 동반 상승 가능성입니다.
+AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 경계 수준으로 올라서 변동성 확대에 대비할 필요가 있는 상황입니다.
 
 공포지수(VIX)는 20.82로 5일 전(20.37) 대비 +2.21% 변동했습니다.
 
@@ -80,8 +80,8 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,167 | -767.54 | -1.16% | ↓1일 |
-| 이더리움 (ETH) | 1,944.16 | +2.72 | +0.14% | - |
+| 비트코인 (BTC) | 66,165 | -760.9 | -1.15% | ↓1일 |
+| 이더리움 (ETH) | 1,944.99 | +5.64 | +0.29% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -92,19 +92,19 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ### 지수 선물
 
-> ↗ 본장 -1.57% 마감 → 선물 +0.25% 반등 중 (Basis: +0.25%)
+> ↗ 본장 -1.57% 마감 → 선물 +0.30% 반등 중 (Basis: +0.30%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,850 | -1 | -0.01% |
-| 나스닥 100 선물 | 24,760.25 | -7.75 | -0.03% |
+| S&P 500 선물 | 6,853.25 | +2.25 | +0.03% |
+| 나스닥 100 선물 | 24,784 | +16 | +0.06% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,935.3 | -13.1 | -0.26% |
-| WTI 유가 (Oil) | 62.82 | -0.02 | -0.03% |
+| 국제 금 (Gold) | 4,933.4 | -15 | -0.30% |
+| WTI 유가 (Oil) | 62.84 | - | -% |
 
 {{< market-charts >}}
 
@@ -114,21 +114,21 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ### 글로벌
 
-1. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxPZ083akdLV3NldnJKcEJGSWxZUHZ4c1JJV0l5UXpnSmE4Q0pXbDFGdU85dHlhcFQ0b01OU0dfZllCZEIyWDlsb0d0ZU9RVkdHZWtabDE3Q3lDM3JQVWJ4M0hpTjF0aHEtSk9EbEE1Ri1Vdk5HcTFHcF9JUG94SG16a2xNZGtvYW1mNlVSZjdmcXlGNXBfamdtRGtEbE96NWc4NWQ3eWV0a2FoNG0zaWlsYUpZUld3UUtHbnVoUFRIWGVfOWhRTmszU3lLaWRMWVFWdUR2Ym9MREZab0Zmd2ZUTlVEUjlyZXVURGJnRUh3Ulltd2tSZ0NjV2ZrTUJyWUFlV3I2NHduNUJuVFBBVW9OeE83eHAyX3hIRmlaYUFIOTZ2TV9IN2l5ZXJ3UWFKdmNocDFEU0stRnlaak0tSU9MaGJGS1ptQ0luQXZPb2pOeDBVLTVSTnU5V3Y1NnN4M3k1bDI0a0JzT0xlTTM1YlN1dmkteFNaNDI1V2c?oc=5)
+1. [**오늘의 주식 시장: AI가 스래시 주식을 두려워함에 따라 다우 지수는 670포인트 하락했고 S&P 500은 3주 만에 최악의 날을 기록했습니다. 국채수익률 하락; 금과 은이 떨어지다**](https://news.google.com/rss/articles/CBMivANBVV95cUxQWkpTbnd6YTFyX3YzVmZiQ2ppaDhRNVNxWkZhbnJBb1h3U1ZtS3NnUk5vR2lYVVRBcnU0X3IyYTBLZFM5MXZBZ2NKeDYwT0hsT25UWktWN1FQdlhyZzNEWVMxa3BrdUU1V0R2R0ZsaDNRQTNaNy1Ha3dPMWJpbmNreHdCb1BYQzZGOUJ3TXZ1UVpwQUQzRjEtcDk2MFRTRVN4RXVZdUN3bUx5TWZyWlJ2MWYyZGROUjJmR2RlZTl5bHhWbDQwU0QwUHVBdnV4cWo1Nk8teC1SbmNNQUs1bU1IQUNSdzc2Wlgtd1h5XzNmdmlvSm0wamJnYmtaZ0RVaFNaOEZrT091VUxWRjlESHRKVHlVbnJ1aUNOVGtSWS1NZU8zdzR0RXBBVy1jclJDWWpjd1FSdzdTQzBLUmJ5WC1nQXUyZk5zOXVLb21tenRVQWhXQmNpTlVyQWExSmtJRXd5UmR1NlRTdUVTdU44VnA5ZE1ZcHJpWG9tMXdwb21MV0gwWkNLcHExeWRpb25RWnBVcTBLTEp0NEZPWkl4V3hxbjBfcHV0SV9NNHdqcmxFZTdLNnNUeWxsVHY2MjY?oc=5)
+   MarketWatch · 2026-02-13 07:25 KST · 시장 이벤트
+   원문: Stock Market Today: Dow closes 670 points lower, S&P 500 logs worst day in 3 weeks as AI fears thrash stocks; Treasury yields drop; gold and silver fall
+
+2. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxOdUJjMEJ1alphTTJnaE5yaWpJVWVJbzl6WG1hTFZUNGVpQTV2ZkRsUTNlQXoxMkV6QWkyNEZja0U4X0lRYmpXTFhzamc1YVB6MlU1ZGhvUHlqMkRiUU5HaXlBSzhCdnBVWDVHOEtYUHlBYmZQT2gzVVY2RkF6VjdQcXVVOUs1d09HTE1iYnUxNzg3bDhtNXcwSUFEM1pONV9zTGlzcENydnNQSjJIU2pKNlZ6SWxuTnh2eTA4Q2J6R2paUHVtbXdkMlVQM09ZcjE2dnVLcGxGTDhsTC1BR2FGc3FsOTFsZzV4UFNjZWh5QjVwOGpPS0N6TmkzemFoWnVJZllMSzFEV21mTEZFbEkwZjAwUmNGbnBub2Rubjl4V2NWYkszaDMtcHR6YmJEcEgwRExyRVZVU0NUelFoYXplRDZEQnRNc2tkSS1XbG1GQ0V2czJGVUZObl9ZanhTOTdLVzlXT2M0ZFFNRjVCLVMxUTV5Z2lkNU4xSnc?oc=5)
    Barron's · 2026-02-13 05:59 KST · central-bank
    원문: Trump Wants Lower Rates. The Fed Sees Little Reason to Comply.
 
-2. [**다우지수는 600포인트 하락하고, S&P 500은 AI 파괴로 인해 시장이 흔들리는 것을 두려워하여 3일 연속 하락했습니다.**](https://news.google.com/rss/articles/CBMid0FVX3lxTE9FN2VlMkQwUUxVWHdDU0E4SU41bmdRTXliZFdLc2RTZVJGeU93RVd0WVJtcmJQcWFuUXZIcXJCU2RyaEFmOUJvTGF4ck5IXzJEMTBqMWdNSGZybDAzdnQyZlpIZVRoVVJIVXB4ZkdvTjVGX3VLYnM00gF8QVVfeXFMTUJFYjdqZHI4dXI5WUdRVWpOWVlYcUc0WWRQVUF3RVlBWVBKS3ZYZjJpMktKbE9pZWV4X3BLT180ZFBsanpaWF9vTTI2QV9xcTk5VC1fR0dpb3hXbVdoNWJkZXNQT1ZnZ0hnN3pBaHdwQTVnazFXZjJWY1BkSQ?oc=5)
-   CNBC · 2026-02-13 06:27 KST · 시장 이벤트
-   원문: Dow slides 600 points, S&P 500 falls for a third day as AI disruption fears rattle markets: Live updates
-
-3. [**달러 가치 하락에 대한 월스트리트의 가장 두려운 헤지 펀드 매니저 중 한 명: 금이 '준비 자산이 되고 있다'**](https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVVF0dDNNU19odUVnLVBWaTZfeFAwbmhDYUxwRHQ0U3ZLbjQwMlUyRDMwbHM4Z283ZkROUjIxUEc2UXVJWXNtNlRvLWNHWng5UzJaNlAwc1hhbmJQcE55WDZoN2dpdnFZdFdwMDRUbXhlQTN5VmQ5S2dkNEw0cnIwZ1YxbDNCTmVHQXo0MFVxN2xjQjl3RmhIR0l1bE9UR0VvaGJBVkJSc0k1dw?oc=5)
-   Fortune · 2026-02-13 04:26 KST · 원자재
-   원문: One of Wall Street’s most feared hedge fund managers on the decline of the dollar: Gold is ‘becoming the reserve asset’
-
-4. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
+3. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
    CNBC · 2026-02-13 04:55 KST · 미국 매크로
    원문: The January CPI inflation report is due out Friday morning. Here's what it's expected to show
+
+4. [**달러 가치 하락에 대한 월스트리트의 가장 두려운 헤지 펀드 매니저 중 한 명: 금이 '준비 자산이 되고 있다'**](https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVVF0dDNNU19odUVnLVBWaTZfeFAwbmhDYUxwRHQ0U3ZLbjQwMlUyRDMwbHM4Z283ZkROUjIxUEc2UXVJWXNtNlRvLWNHWng5UzJaNlAwc1hhbmJQcE55WDZoN2dpdnFZdFdwMDRUbXhlQTN5VmQ5S2dkNEw0cnIwZ1YxbDNCTmVHQXo0MFVxN2xjQjl3RmhIR0l1bE9UR0VvaGJBVkJSc0k1dw?oc=5)
+   Fortune · 2026-02-13 04:26 KST · 원자재
+   원문: One of Wall Street’s most feared hedge fund managers on the decline of the dollar: Gold is ‘becoming the reserve asset’
 
 5. [**중국과 멕시코가 관세를 둘러싼 무역 긴장 속에 회담을 열었습니다.**](https://news.google.com/rss/articles/CBMipwFBVV95cUxOSXhuWGxOMlg0YjljRi1VQ09aWktmR0hKVUV3aHJXUlp5SDlJRjlTaElRNlVRbDZWWkt2Rl92LTdQTU1rMjBhRmhJa0tEcm51VVA1Zm1tNktYOENoQkxvTU9hbWF2SjQ2UkRxRVZPTHc0OWVXbDktNEtodlV1XzFwSnJhZ3N3Nzk1ay1uQTU5NDY3YTYyT2JkTVlJQndROC1Ra21UTjVkTQ?oc=5)
    Reuters · 2026-02-12 14:04 KST · 지정학
@@ -213,7 +213,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,832.76 | -1.44% | 소폭 하락 |
-| BTC | 70,555 | 66,167 | -6.22% | 급락 |
+| BTC | 70,555 | 66,165 | -6.22% | 급락 |
 | VIX | 20.37 | 20.82 | +2.21% | 불안 확대 |
 | USDKRW | 1,470.68원 | 1,441.51원 | -1.98% | 소폭 하락 |
 
@@ -250,7 +250,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-13 08:50:31 KST</span>
+  <span>생성 시각: 2026-02-13 08:55:06 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-13 08:50:31 KST</span>
+  <span>데이터 기준 시각: 2026-02-13 08:55:06 KST</span>
 </div>
