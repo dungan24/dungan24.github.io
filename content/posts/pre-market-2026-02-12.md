@@ -12,7 +12,7 @@ chartData: "/data/chart-data-2026-02-12.json"
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표
 - 변동성: VIX 17.65 (-0.79%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,443.11 (-2.35)
+- 환율: 원/달러 1,442.58 (-2.88)
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 ---
@@ -65,41 +65,41 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
 | S&P 500 | 6,941.47 | -0.34 | 0.00% | - |
-| 나스닥 | 25,201.26 | +73.62 | +0.29% | - |
-| 다우존스 | 50,121.4 | -66.74 | -0.13% | - |
-| VIX (공포지수) | 17.65 | -0.14 | -0.79% | - |
+| 나스닥 | 25,201.26 | +73.62 | +0.29% | ↑1일 |
+| 다우존스 | 50,121.4 | -66.74 | -0.13% | ↓1일 |
+| VIX (공포지수) | 17.65 | -0.14 | -0.79% | ↓1일 |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.78 | -0.05 | -0.05% | - |
+| 달러인덱스 (DXY) | 96.8 | -0.03 | -0.03% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,440 | -930.67 | -1.38% | ↑1일 |
-| 이더리움 (ETH) | 1,965.18 | -48.93 | -2.49% | - |
+| 비트코인 (BTC) | 67,368 | -976.84 | -1.45% | ↓1일 |
+| 이더리움 (ETH) | 1,964.09 | -46.16 | -2.35% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,443.11 | -2.35 | -0.16% | - |
+| 원/달러 (USDKRW) | 1,442.58 | -2.88 | -0.20% | ↓1일 |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.51% 반등 중 (Basis: +0.51%)
+> ↗ 본장 0.00% 마감 → 선물 +0.48% 반등 중 (Basis: +0.48%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,976.75 | +16.25 | +0.23% |
-| 나스닥 100 선물 | 25,314.5 | +26 | +0.10% |
+| S&P 500 선물 | 6,974.75 | +14.25 | +0.20% |
+| 나스닥 100 선물 | 25,305.75 | +17.25 | +0.07% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,086.5 | -12 | -0.24% |
-| WTI 유가 (Oil) | 64.94 | +0.31 | +0.48% |
+| 국제 금 (Gold) | 5,081.1 | -17.4 | -0.34% |
+| WTI 유가 (Oil) | 64.9 | +0.27 | +0.42% |
 
 <!-- FACT_ZONE_END -->
 
@@ -116,7 +116,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 근거 | 값 | 판단 |
 |------|-----|------|
 | VIX | 17.6 | ✅ 안정 |
-| SPX 20일 | -0.3% | ⚠ 횡보 |
+| SPX 20일 | +0.9% | ⚠ 횡보 |
 | US10Y 방향 | +2bp (5일) | ✅ 안정 |
 | 크립토 심리 | 5 | ✅ 극단적 공포 |
 
@@ -124,33 +124,33 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
-| S&P 500 ↔ BTC | +0.89 | 🔴 강한 동조 | 위험자산 동반 움직임 |
-| S&P 500 ↔ 원/달러 | +0.15 | ⚪ 비동조 | 환율 독립적 |
-| S&P 500 ↔ 10년물 | +0.41 | 🟡 약한 동조 | 약한 동반 상승 |
-| VIX ↔ 금 | -0.03 | ⚪ 비동조 | 독립적 |
-| BTC ↔ 금 | +0.1 | ⚪ 비동조 | 독립적 자산 |
-| 유가 ↔ 10년물 | +0.56 | 🟡 약한 동조 | 약한 인플레 시그널 |
+| S&P 500 ↔ BTC | +0.76 | 🔴 강한 동조 | 위험자산 동반 움직임 |
+| S&P 500 ↔ 원/달러 | +0.52 | 🟡 약한 동조 | 약한 미국 쏠림 |
+| S&P 500 ↔ 10년물 | +0.42 | 🟡 약한 동조 | 약한 동반 상승 |
+| VIX ↔ 금 | -0.06 | ⚪ 비동조 | 독립적 |
+| BTC ↔ 금 | +0.07 | ⚪ 비동조 | 독립적 자산 |
+| 유가 ↔ 10년물 | -0.03 | ⚪ 비동조 | 독립적 |
 
 ## 섹터 상대강도 (vs KODEX200)
 
 | 섹터 | 1주 수익률 | 1주 초과수익 | 1개월 초과수익 |
 |------|-----------|------------|--------------|
-| IT | +3.38% | +0.34% | -1.44% |
-| 반도체 | +2.7% | -0.34% | -3.19% |
-| 2차전지 | +2.37% | -0.66% | -6.95% |
-| 은행 | +2.32% | -0.72% | +14.37% |
-| 에너지 | +2.12% | -0.92% | +0.65% |
-| 자동차 | +0.29% | -2.75% | -4.64% |
-| 바이오 | 0% | -3.04% | -10.97% |
+| 바이오 | +0.46% | +0.94% | -6.12% |
+| 자동차 | -0.11% | +0.38% | +0.18% |
+| 반도체 | -0.36% | +0.12% | +0.21% |
+| IT | -0.43% | +0.05% | -0.76% |
+| 2차전지 | -0.46% | +0.03% | -10.11% |
+| 에너지 | -0.65% | -0.16% | -0.53% |
+| 은행 | -1.08% | -0.6% | +16.58% |
 
 ## 최근 흐름 (5일)
 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,940.78 | 6,941.47 | +0.01% | 보합 |
-| BTC | 66,714 | 67,440 | +1.09% | 소폭 상승 |
+| BTC | 66,714 | 67,368 | +0.98% | 소폭 상승 |
 | VIX | 17.69 | 17.65 | -0.23% | 보합 |
-| USDKRW | 1,445.5원 | 1,443.11원 | -0.17% | 보합 |
+| USDKRW | 1,445.5원 | 1,442.58원 | -0.20% | 보합 |
 
 ## 이벤트 임팩트
 
@@ -168,31 +168,35 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 1. [**Gold Retreats as Strong US Jobs Report Dims Rate-Cut Prospects**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
    Bloomberg.com · 2026-02-12 11:04 KST · 원자재
-   > 강력한 미국 고용 보고서로 금리 인하 기대가 줄면서 금값 하락
+   > 강력한 US 고용 보고서가 금리 인하 가능성을 낮추면서 금
 
-2. [**Fed's Schmid Says Restrictive Rates Needed to Cool Inflation**](https://news.google.com/rss/articles/CBMisAFBVV95cUxQaWdXb0lVLU1VWUNlVDNWLXNBYV9Wel9pYnFSNjhxRzk1VjUzWXdaSzlCOFZvU0E3Z21oSjhBSVJoQmZFS3plT2RwTHlseUNla1hXUGtVcVpoUUtlMzN2TEw0QUduRlNfc000WUV5SjRGalNwUWpyVnNtNV9xcGRESlZVLXBYdFhpOXZUZ3FmSk1yaF84QnZGT3pqVy1TY3V2WDZqTXUzVXBEX0MxQkdNYw?oc=5)
+2. [**Fed’s Schmid Says Restrictive Rates Needed to Cool Inflation**](https://news.google.com/rss/articles/CBMisAFBVV95cUxQaWdXb0lVLU1VWUNlVDNWLXNBYV9Wel9pYnFSNjhxRzk1VjUzWXdaSzlCOFZvU0E3Z21oSjhBSVJoQmZFS3plT2RwTHlseUNla1hXUGtVcVpoUUtlMzN2TEw0QUduRlNfc000WUV5SjRGalNwUWpyVnNtNV9xcGRESlZVLXBYdFhpOXZUZ3FmSk1yaF84QnZGT3pqVy1TY3V2WDZqTXUzVXBEX0MxQkdNYw?oc=5)
    Bloomberg.com · 2026-02-12 07:03 KST · 미국 매크로
-   > 연준 슈미드 위원, 인플레이션 억제 위해 긴축적 금리 유지 필요 발언
+   > 연준의 슈미드 위원은 인플레이션을 잡기 위해 현재의 높은 금리 수준을 유지해야 한다고 말했습니다.
 
-3. [**David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
-   CNBC · 2026-02-12 02:42 KST · central-bank
-   > 아인혼, 연준이 두 번보다 훨씬 더 많이 금리 인하할 것으로 보고 금에 대규모 베팅
-
-4. [**S&P 500 Is Set for Record as Solid Jobs Sink Bonds: Markets Wrap**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQZXBZTlAwLWtnRnV6RThSVlR3dG1UN3NYSkxSTGlrZTRIUTNxRjlzNzJBQi1LNl8zcDd2RTN6OUVzLUxxNzNjTXpObGVOWkc2M0F2czFHSzlTdFV5ZzFfVXl1ZFdBQUd2X3RiZ0hod0FNV1R2R3V6NFJGcGZJTUxaVmMyVzBNVVVPaWhuZGFKc3hOUGlsQkE?oc=5)
+3. [**S&P 500 Is Set for Record as Solid Jobs Sink Bonds: Markets Wrap**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQZXBZTlAwLWtnRnV6RThSVlR3dG1UN3NYSkxSTGlrZTRIUTNxRjlzNzJBQi1LNl8zcDd2RTN6OUVzLUxxNzNjTXpObGVOWkc2M0F2czFHSzlTdFV5ZzFfVXl1ZFdBQUd2X3RiZ0hod0FNV1R2R3V6NFJGcGZJTUxaVmMyVzBNVVVPaWhuZGFKc3hOUGlsQkE?oc=5)
    Bloomberg.com · 2026-02-12 06:42 KST · 시장 이벤트
-   > 탄탄한 고용 지표에 채권 하락, S&P 500 사상 최고치 도전
+   > 탄탄한 고용 지표가 채권 가격 하락을 이끌면서 S&P 500 지수가 사상 최고치를 기록할 전망입니다.
+
+4. [**David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
+   CNBC · 2026-02-12 02:42 KST · central-bank
+   > 데이비드 아인혼은 연준이 두 번보다 훨씬 더 많이 금리를 인하할 것이라고 말하며 금에 크게 베팅하고 있습니다.
 
 5. [**Fed's interest rate pause bolstered by jobs data, but concerns linger**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
    Reuters · 2026-02-11 22:43 KST · central-bank
+   > 미국 연방준비제도(Fed)의 금리 동결 결정은 고용 지표 개선에 힘입었으나, 여전히 우려되는 부분은 남아 있습니다.
 
 6. [**Powell’s parting gift from the Fed may be more rate cuts than expected, courtesy of deteriorating data**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOVk82dnctZHpQWVM1LWJWX2o2VDlCbjJlT1ZNRWtZYXp2Rm5vdTBOMDh6cjE2cGZhdllvazk3UHQxdGxNUnJySkRyR2dZRm9tci1qd3pjLU5BTGhHR1dJYkw5ek1MX2xqWURuLTh0OTFWdGNqX2dRUGVzOTRPaTBPeE1rS3RJM3M1R0FrV1JZNA?oc=5)
    Fortune · 2026-02-11 21:03 KST · central-bank
+   > 예상보다 많은 금리 인하가 파월 의장의 마지막 선물로 남을 수 있으며, 이는 악화되는 경제 지표 때문입니다.
 
 7. [**Five Oil & Gas Dividend Stocks for the Year Ahead**](https://news.google.com/rss/articles/CBMimwFBVV95cUxPb3R3TmdUZTVKamRydllTS044YjF6NDFZeFZnVjR3dEpiUGc0c0FzU1lELXlPN1RSZGpYSFhtVjZVS3A4MFpCYXplUE02S1R6UjlOS3VVLVNEV0Zwd1ltMUgzR2JqdV9Ud01xR0pISkYydjBGem11dTFsODBPbVNaUG55czhIZHptenE5ZFdUMkxTSXlhNkxlU2dod9IBoAFBVV95cUxNWUF2U1F2bTlYeDlLN2p2bHNaUF9yYXZYT0ZtRTk2YjhKcFVTRVVvNFJXeWxrY1lmSXNIYUg3VURrR0ZVYmdvMndHZ21qQWlELXNZT0JQM3d4ZnU2OUNPQWlZdGUycS1NYWc4czI2cnRBNmRfNmh5NHl2RmlQcmFqSXFYZkFCQVNKUkIyMEFGY0lJN0NyWkdvbzRjSkVsa2F2?oc=5)
    Crude Oil Prices Today | OilPrice.com · 2026-02-12 10:00 KST · 원자재
+   > 다가올 한 해를 대비해 주목해야 할 석유 및 가스 관련 배당주
 
 8. [**Dow, S&P 500 Futures Climb As House Votes To Rescind Trump Tariffs: Why VKTX, NVCR, APP, CRM, QS Are Trending After-Hours**](https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcUlUaWowOE9mYTkwczQyUUZlR1BNOGpnZ1BlNUJXWTdMUzBtclFMZ1oyZnRueFpTLXlFLWN0Y0dZLTBxMXJfWDhHVExObzVaY3luem84aHY2YzlqN0p2cmJRMjlCc2JfZUlTdVpqUTJNZUl6SGp2Y0JqbGczY3dXLWdyVVhhUlhJS3BTMF9Iemg2Q3NqOVRkMmdwX0ZWc0FJY2hpM1ZnY1MtNGU2dVF5ODFqdVBpOWU1QXhSbF9hcGJMRmxCNFRzajlpSm5WS3RXNk5RTkJZb0g?oc=5)
    Stocktwits · 2026-02-12 06:08 KST · 지정학
+   > 트럼프 관세 철회 투표에 따라 다우존스, S&P 500 선물 지수가 상승했으며, VKTX, NVCR, APP, CRM, QS 종목이 시간 외 거래에서 주목받고 있습니다.
 
 ### 국내
 
@@ -204,9 +208,11 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 3. [**"미래에셋증권, 스페이스X IPO 전까진 추가 상승 가능…목표가 상향"-유안타**](https://www.hankyung.com/article/2026021205956)
    한국경제 증권 · 2026-02-12 07:55 KST · 시장 이벤트
+   > 유안타는 미래에셋증권이 스페이스X의 IPO 전까지 추가 상승할 가능
 
 4. [**"삼성전자, 주요 메모리반도체 고객사의 수요충족률 60%에 불과"-KB**](https://www.hankyung.com/article/2026021205806)
    한국경제 증권 · 2026-02-12 07:34 KST · 국내 시장
+   > KB에 따르면, 삼성전자가 주요 메모리반도체 고객사의 주문량을 60%
 
 ---
 
@@ -240,6 +246,6 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 ---
 
-**생성 시각**: 2026-02-12 12:48:39 KST
+**생성 시각**: 2026-02-12 12:40:09 KST
 **브리핑 슬롯**: pre-market (개장전)
-**데이터 기준 시각**: 2026-02-12 12:48:39 KST
+**데이터 기준 시각**: 2026-02-12 12:40:09 KST
