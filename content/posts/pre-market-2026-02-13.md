@@ -20,7 +20,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ---
 
-## 2. 정독 해석 (Deep Dive)
+## 2. 오늘의 해석
 
 ### 무슨 일이 있었나
 미국 증시는 약세로 마감했습니다. S&P 500 -1.57%, 나스닥 -2.04%, 다우 -1.34%.
@@ -80,8 +80,8 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,178 | -754.43 | -1.14% | ↓1일 |
-| 이더리움 (ETH) | 1,944.33 | +2.92 | +0.15% | - |
+| 비트코인 (BTC) | 66,167 | -767.54 | -1.16% | ↓1일 |
+| 이더리움 (ETH) | 1,944.16 | +2.72 | +0.14% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -92,18 +92,18 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ### 지수 선물
 
-> ↗ 본장 -1.57% 마감 → 선물 +0.23% 반등 중 (Basis: +0.23%)
+> ↗ 본장 -1.57% 마감 → 선물 +0.25% 반등 중 (Basis: +0.25%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,848.5 | -2.5 | -0.04% |
-| 나스닥 100 선물 | 24,754.75 | -13.25 | -0.05% |
+| S&P 500 선물 | 6,850 | -1 | -0.01% |
+| 나스닥 100 선물 | 24,760.25 | -7.75 | -0.03% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,930.1 | -18.3 | -0.37% |
+| 국제 금 (Gold) | 4,935.3 | -13.1 | -0.26% |
 | WTI 유가 (Oil) | 62.82 | -0.02 | -0.03% |
 
 {{< market-charts >}}
@@ -114,30 +114,36 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 ### 글로벌
 
-1. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxNR0JoSktUSTRSQzRNcGVlR0o0a1hGR3F0UFV5bS1lQWJRdXc0Y0l1ckRSaWxQME1VWWFKTXNQa0h1b0dHTlQ5ck4yQk9HamlOVFpIWUNoMFRnbEdlZlJVUXA4R1FUNFhEWWRjbTY3WkhnY1pKRlh2eHE0VU95WmZLQUdxYVJhVFBCUXlSQTlEVDFEZUdCVi1vQVpWcWlURkJTb2FnYWc2VFRLMm9INlJiMkxqQ0duRm1YSVg4NElWbld2NHRVNEN1aXFueXBhV09fZEFLR3ZWcktlLVhQbkdLWGxoa0UwNlpIeTNZVl93dnY5eHh5SzNnX1IySG90MEtScXdWZTI4ZElwRDU0aENjQ1o4cjN5d2tQX1JuX1pRbmc2eVduOHlqQVJMN0loMFBCa3R6Y3lTXzNGbkRWNEw2NjhuYjQzbjJ4eGppSk1EOHFyRlNHS0RmbDk3NGJNSG55Nk5ONm5LNUN0aE1walBfV3NaRG1HQ2U1Tmc?oc=5)
+1. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxPZ083akdLV3NldnJKcEJGSWxZUHZ4c1JJV0l5UXpnSmE4Q0pXbDFGdU85dHlhcFQ0b01OU0dfZllCZEIyWDlsb0d0ZU9RVkdHZWtabDE3Q3lDM3JQVWJ4M0hpTjF0aHEtSk9EbEE1Ri1Vdk5HcTFHcF9JUG94SG16a2xNZGtvYW1mNlVSZjdmcXlGNXBfamdtRGtEbE96NWc4NWQ3eWV0a2FoNG0zaWlsYUpZUld3UUtHbnVoUFRIWGVfOWhRTmszU3lLaWRMWVFWdUR2Ym9MREZab0Zmd2ZUTlVEUjlyZXVURGJnRUh3Ulltd2tSZ0NjV2ZrTUJyWUFlV3I2NHduNUJuVFBBVW9OeE83eHAyX3hIRmlaYUFIOTZ2TV9IN2l5ZXJ3UWFKdmNocDFEU0stRnlaak0tSU9MaGJGS1ptQ0luQXZPb2pOeDBVLTVSTnU5V3Y1NnN4M3k1bDI0a0JzT0xlTTM1YlN1dmkteFNaNDI1V2c?oc=5)
    Barron's · 2026-02-13 05:59 KST · central-bank
    원문: Trump Wants Lower Rates. The Fed Sees Little Reason to Comply.
 
-2. [**1월 CPI 인플레이션 보고서는 금요일 아침에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
+2. [**다우지수는 600포인트 하락하고, S&P 500은 AI 파괴로 인해 시장이 흔들리는 것을 두려워하여 3일 연속 하락했습니다.**](https://news.google.com/rss/articles/CBMid0FVX3lxTE9FN2VlMkQwUUxVWHdDU0E4SU41bmdRTXliZFdLc2RTZVJGeU93RVd0WVJtcmJQcWFuUXZIcXJCU2RyaEFmOUJvTGF4ck5IXzJEMTBqMWdNSGZybDAzdnQyZlpIZVRoVVJIVXB4ZkdvTjVGX3VLYnM00gF8QVVfeXFMTUJFYjdqZHI4dXI5WUdRVWpOWVlYcUc0WWRQVUF3RVlBWVBKS3ZYZjJpMktKbE9pZWV4X3BLT180ZFBsanpaWF9vTTI2QV9xcTk5VC1fR0dpb3hXbVdoNWJkZXNQT1ZnZ0hnN3pBaHdwQTVnazFXZjJWY1BkSQ?oc=5)
+   CNBC · 2026-02-13 06:27 KST · 시장 이벤트
+   원문: Dow slides 600 points, S&P 500 falls for a third day as AI disruption fears rattle markets: Live updates
+
+3. [**달러 가치 하락에 대한 월스트리트의 가장 두려운 헤지 펀드 매니저 중 한 명: 금이 '준비 자산이 되고 있다'**](https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVVF0dDNNU19odUVnLVBWaTZfeFAwbmhDYUxwRHQ0U3ZLbjQwMlUyRDMwbHM4Z283ZkROUjIxUEc2UXVJWXNtNlRvLWNHWng5UzJaNlAwc1hhbmJQcE55WDZoN2dpdnFZdFdwMDRUbXhlQTN5VmQ5S2dkNEw0cnIwZ1YxbDNCTmVHQXo0MFVxN2xjQjl3RmhIR0l1bE9UR0VvaGJBVkJSc0k1dw?oc=5)
+   Fortune · 2026-02-13 04:26 KST · 원자재
+   원문: One of Wall Street’s most feared hedge fund managers on the decline of the dollar: Gold is ‘becoming the reserve asset’
+
+4. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
    CNBC · 2026-02-13 04:55 KST · 미국 매크로
    원문: The January CPI inflation report is due out Friday morning. Here's what it's expected to show
 
-3. [**오늘의 주식 시장: Dow, S&P 500, Nasdaq은 AI 혼란에 대한 우려가 커지면서 기술이 타격을 입으면서 하락합니다. 금, 비트코인 ​​싱크**](https://news.google.com/rss/articles/CBMiugFBVV95cUxOWENMQjFZYldGSkdpTHBNV2dOQ1p2Y3VxOExEa1dsaDYwakJOVGViV3JRbUZDUUYxcGhfVWQ1dTZoWGIzTXdIZ3YyTnpLbW1XN3JHaWVBN0pMRHV5bl9JSzFLb3BzaVpNQ1Y3WFF3UXNUZnRxd05kS25aOHFjQVF6VmNXb0p6NTJYdDA5cngzelhmX2wtX0dLQWI1R1FwSVhMRENjcVNldC04NHM4UzhBYllkX1k0MTNBWlE?oc=5)
-   Yahoo! Finance Canada · 2026-02-13 06:30 KST · 시장 이벤트
-   원문: Stock market today: Dow, S&P 500, Nasdaq sink as tech gets hit as AI disruption fears grow; gold, bitcoin sink
-
-4. [**중국과 멕시코가 관세를 둘러싼 무역 긴장 속에 회담을 열었습니다.**](https://news.google.com/rss/articles/CBMipwFBVV95cUxOSXhuWGxOMlg0YjljRi1VQ09aWktmR0hKVUV3aHJXUlp5SDlJRjlTaElRNlVRbDZWWkt2Rl92LTdQTU1rMjBhRmhJa0tEcm51VVA1Zm1tNktYOENoQkxvTU9hbWF2SjQ2UkRxRVZPTHc0OWVXbDktNEtodlV1XzFwSnJhZ3N3Nzk1ay1uQTU5NDY3YTYyT2JkTVlJQndROC1Ra21UTjVkTQ?oc=5)
+5. [**중국과 멕시코가 관세를 둘러싼 무역 긴장 속에 회담을 열었습니다.**](https://news.google.com/rss/articles/CBMipwFBVV95cUxOSXhuWGxOMlg0YjljRi1VQ09aWktmR0hKVUV3aHJXUlp5SDlJRjlTaElRNlVRbDZWWkt2Rl92LTdQTU1rMjBhRmhJa0tEcm51VVA1Zm1tNktYOENoQkxvTU9hbWF2SjQ2UkRxRVZPTHc0OWVXbDktNEtodlV1XzFwSnJhZ3N3Nzk1ay1uQTU5NDY3YTYyT2JkTVlJQndROC1Ra21UTjVkTQ?oc=5)
    Reuters · 2026-02-12 14:04 KST · 지정학
    원문: China, Mexico held talks amid trade tensions over tariffs
-
-5. [**연준, 다음 주 금리 논의할 것**](https://news.google.com/rss/articles/CBMi6AFBVV95cUxQcUQzRkdvSVMzbmxsM3ZvR3J2WkpfSWZmVWk4YmxaOUxUWG5GNG5wcVlBMGJhc2Z6aG9UR19mV0RYb2xzakNURmk3UWFxRWFkR3RSSHQyemNqOGEwVU1hMXBiWmtFNXVjWVJ2X0wteWFLVU5heWpJaTFnN3lQdURPekFXNURyMzVWQ2hrYVRWTFlYN3BJUko5RkxmWEFac1lDcUU3SEFTS1d3SHdocTd2aDh2ZTZrLXlwRG1wUUFJdHFJZEkyV1A5OUxNUWpZUnBpcVl2eDA4Y2ViUkJnU2ZTbG1EQWpjLVZK?oc=5)
-   10TV · 2026-02-13 00:07 KST · central-bank
-   원문: Federal Reserve to discuss interest rates next week
 
 ### 국내
 
 1. [**"코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인**](https://www.hankyung.com/article/202602133468i)
    한국경제 증권 · 2026-02-13 06:00 KST · 국내 시장
+
+2. [**"美 주식만 보던 부자들, 요즘 삼성전자 적극 매수"**](https://www.hankyung.com/article/202602122090i)
+   한국경제 증권 · 2026-02-12 17:17 KST · 국내 시장
+
+3. [**[단독] 토스, 해외 코인 거래소 인수 검토…美 기관 플랫폼과 접촉**](https://www.hankyung.com/article/202602122644g)
+   한국경제 증권 · 2026-02-12 20:34 KST · 국내 시장
 
 ---
 
@@ -207,7 +213,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,832.76 | -1.44% | 소폭 하락 |
-| BTC | 70,555 | 66,178 | -6.20% | 급락 |
+| BTC | 70,555 | 66,167 | -6.22% | 급락 |
 | VIX | 20.37 | 20.82 | +2.21% | 불안 확대 |
 | USDKRW | 1,470.68원 | 1,441.51원 | -1.98% | 소폭 하락 |
 
@@ -244,7 +250,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-13 08:49:44 KST</span>
+  <span>생성 시각: 2026-02-13 08:50:31 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-13 08:49:44 KST</span>
+  <span>데이터 기준 시각: 2026-02-13 08:50:31 KST</span>
 </div>
