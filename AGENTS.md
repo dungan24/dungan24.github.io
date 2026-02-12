@@ -17,6 +17,7 @@ Primary references:
 - `.github/workflows/hugo.yml`
 - `../market-pulse/specs/render-contract.md`
 - `../market-pulse/specs/smoke-checklist.md`
+- `../market-pulse/.aidocs/blog-workflow.md` — 교차 레포 운영 워크플로우
 
 ## 2) Source-of-Truth Commands
 

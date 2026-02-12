@@ -75,6 +75,10 @@ market-pulse (private)              market-pulse-blog (public)
 
 JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opinion` 클래스를 할당.
 
+## 운영 워크플로우
+
+교차 레포 운영 가이드: `../market-pulse/.aidocs/blog-workflow.md`
+
 ## 교차 레포 계약 동기화 원칙
 
 - 파서 규칙(`extend-footer.html`)을 변경할 때는 Writer 출력과의 호환성을 먼저 확인
