@@ -48,7 +48,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 실적 시즌
 - 변동성: VIX 17.65 (-0.79%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,439.69 (-5.77)
+- 환율: 원/달러 1,440.43 (-5.03)
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 <!-- OPINION_ZONE_END -->
@@ -66,37 +66,37 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 다우존스 | 50,121.4 | -66.74 | -0.13% | - |
 | VIX (공포지수) | 17.65 | -0.14 | -0.79% | - |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.89 | +0.05 | +0.06% | - |
+| 달러인덱스 (DXY) | 96.88 | +0.05 | +0.05% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,069 | -26.83 | -0.04% | ↑2일 |
-| 이더리움 (ETH) | 1,967.83 | +14.76 | +0.75% | - |
+| 비트코인 (BTC) | 67,103 | +87.23 | +0.13% | ↑1일 |
+| 이더리움 (ETH) | 1,967.21 | +17.11 | +0.87% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,439.69 | -5.77 | -0.40% | ↓1일 |
+| 원/달러 (USDKRW) | 1,440.43 | -5.03 | -0.35% | ↓1일 |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.58% 반등 중 (Basis: +0.58%)
+> ↗ 본장 0.00% 마감 → 선물 +0.56% 반등 중 (Basis: +0.56%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,982 | +21.5 | +0.31% |
-| 나스닥 100 선물 | 25,352 | +63.5 | +0.25% |
+| S&P 500 선물 | 6,980 | +19.5 | +0.28% |
+| 나스닥 100 선물 | 25,345 | +56.5 | +0.22% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,084.3 | -14.2 | -0.28% |
-| WTI 유가 (Oil) | 64.76 | +0.13 | +0.20% |
+| 국제 금 (Gold) | 5,078.8 | -19.7 | -0.39% |
+| WTI 유가 (Oil) | 64.86 | +0.23 | +0.36% |
 
 {{< market-charts >}}
 
@@ -106,13 +106,37 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 
 ### 글로벌
 
-1. [**Stock Market News, Feb. 11, 2026: Dow falls from all-time high, Nasdaq and S&P 500 see back-to-back losses after January jobs data; Cisco earnings on tap; gold and silver higher.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxPaVdaVW01aThGQnlqNUh1R2pKbGF0MHg2UDdKZTZpcWlfd0NWZXNiTXVkZTF6OVM3MUYweHNUazljTmhuSmhJcjgyS1hseHc4c0Vndk5EaFNGbEFSNll4OEktX1FwNDhXZ0RvUjlQMzJReV9rMXBvTHhteHhtOWlqNVRTT29xdUlVb19NU2RQN2NnRmExa0dFVkFUdUlXTjZtNjh1STRwYjJ6NEJ0V3YxVG5DZmswTVc4SnNBVERUenljR1J6WVFyTE9jV1VXeVUySEJzVUl2WmQzcFZ0a3VEODA1RzBPbGQwZzJfV0lTM1BhWWZZc1FlZ2h0QkMyb1c2SHliSTBDSWlBWG05Uk1ObHc5VjZPZlowdnFVelNZZEdTbTZ3MXkzRWRET3lRbk80NmJOSUU1UTZ0cHF0OGZOdEV3bERQVVVfbE1tRDM0WTBpQW5mekVVU3J0NU8waHJ5N1FHUDFNcHVMWUNsb3U3ekVCZ2ZwRk5jejc5UHBKOXpObTVnSUUtTmRzcmJtXzVJYUFBdzluT0JOclRvbkZjMllLN2lhYWNyNjlwRkIzUUhDb2k0MVFkcUEyWUltQQ?oc=5)
+1. [**Stock Market News, Feb. 11, 2026: Dow falls from all-time high, Nasdaq and S&P 500 see back-to-back losses after January jobs data; Cisco earnings on tap; gold and silver higher.**](https://news.google.com/rss/articles/CBMivgNBVV95cUxOWE5BVFpQbmwyMm05Zzh6bk1sSVV2OWI2a2hXSjc1Rjd6T2VsY3Rjd2Nvb1pXQlptRTh2bDZJRW83VHhMWDgzV3NuS0ZWS2dpMmcwNHVjNkhnSWRlMk4tQXVxcExZQVVlZDhBbHN3R2lxaFVPMk5jZEJKNk1KRzB0Zk9ETVUzVUhZV3AwSWJRY0lSVENQRmxuOFNHMldBV014cXRQNTZ3Wi00Z1BISGxpMXZNUnQ2R0ZEM1lGWlVsbzE4UDN2bWVOVHhjV3FrUkRHUHZVX1Q4UHFXQ1Z3dmRQWFp3dUN6SXBEVlNIbmxTaGFoeFA3c3pUZUZFeHJMalQxc3dhcUFlbmwwV0NlQ0RhaHB2UmFJN3FvdnFGVWpxQmpEb0F3RXdkdTBNU2RCMUFOMWp5Z1FRTVNyR1JwTjRxNTJORkNibHIyVl9GMG9EUV9kRDE1ajRCb3psdEVtSE03eHpfLVVORW52dGJfeTVYeHVSSVkyaFNJYkpQZmpXa01LTERfd2JBeHFxX2VjNThRV3VFVnpCRWVQbzJRUzFtdVBLT3g2UGRhRmlXb0tvUElma3R2bFdiWDZSR29TZw?oc=5)
    MarketWatch · 2026-02-12 06:17 KST · 시장 이벤트
+
+2. [**강력한 미국 일자리 보고서로 인해 금리 인하 전망이 어두워지면서 금 하락**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
+   Bloomberg.com · 2026-02-12 14:06 KST · 원자재
+   원문: Gold Slips as Strong US Jobs Report Dims Rate-Cut Prospects
+
+3. [**Fed의 금리 일시 중지는 고용 데이터로 인해 강화되었지만 우려는 여전히 남아 있습니다.**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
+   Reuters · 2026-02-11 22:43 KST · central-bank
+   원문: Fed's interest rate pause bolstered by jobs data, but concerns linger
+
+4. [**Stock market today: Dow, S&P 500, Nasdaq waver after January jobs report smashes expectations**](https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYlhtQm03R2FLUmw0UlpTQnB2RWY0Z19PZUVPZ05qdThwUU5tQTA3QWJoZjBCbW4zN2F6WGg4c3lCOW1EMHoteDJ0eHBYQmNoRWowM2VaUEprWXZTaGRxcXZwc0ltaU03QU5zS2FVMklISXR4Zk5qNFFHOFpCa254N2l3bGFoZ2FCQmUyRTF3NHVTNjNkQWdTSkRlT3RySEx4aHJ4NmlTUWhVSWNXQTNZUTVGVXVOVXIydWR1M1R1SUFjLUZ3VFBRX0JsbUc4OHpPUkhUeDZHZw?oc=5)
+   Yahoo Finance · 2026-02-12 05:39 KST · 시장 이벤트
+
+5. [**중국은 희토류 원소를 전략무기로 사용한다. 트럼프는 관세로 반응한다. 지정학적 분쟁은 글로벌 기술 공급망을 위협합니다.**](https://news.google.com/rss/articles/CBMimwJBVV95cUxQUkV1V3lJdHF6TW1KQ0RuZ0ZULW03ZzVCOTd3TEhqc2JYUXhrM0lONG8xSHpXa202am5qUGZtQTlaWmw5WjF0S3ZRdGJFZmxvLU9JZ1NzaEowWWNLaUxqLU1rby1ReEJKRl9GQmxIU0tsWGtwWS1HeGtkUDRJZ0p1amNCRWR4QW5JOU91amZhaUkxTW1xU0lRUHF1VEdLalBGeEVvZGdpdWc2SzV0d2ppRUtfb2t5bHhWUFFkQWRualdEQTdCWXdIYVh0RVVwaDlrZWVxWGFSYkhZWjJ5dFQxVS1wTG1fbDhqMDJWdEpLSVV2SFRhSV9jYjdsTkpaWDFScVM3Z3ZESWJvbm83TldSV3ZfdEo2Z05YRDFz?oc=5)
+   CPG Click Petróleo e Gás · 2026-02-12 08:27 KST · 지정학
+   원문: China uses rare earth elements as a strategic weapon; Trump reacts with tariffs; and the geopolitical dispute threatens global technology supply chains.
 
 ### 국내
 
 1. [**코스피, 사상 첫 5500선 마감…외국인 3조 순매수**](https://www.hankyung.com/article/2026021223966)
    한국경제 증권 · 2026-02-12 15:51 KST · 국내 시장
+
+2. [**'18만전자' 타진하는 삼성전자…코스피, 5500 돌파 후 숨고르기**](https://www.hankyung.com/article/2026021219196)
+   한국경제 증권 · 2026-02-12 14:15 KST · 국내 시장
+
+3. [**"실거주 안할거면 못 사!"…외국인들 서울 아파트 매수 '반토막'**](https://www.hankyung.com/article/202602122113i)
+   한국경제 증권 · 2026-02-12 14:27 KST · 국내 시장
+
+4. [**"미래에셋증권, 스페이스X IPO 전까진 추가 상승 가능…목표가 상향"-유안타**](https://www.hankyung.com/article/2026021205956)
+   한국경제 증권 · 2026-02-12 07:55 KST · 시장 이벤트
 
 ---
 
@@ -138,11 +162,11 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
 | S&P 500 ↔ BTC | +0.09 | ⚪ 비동조 | 독립적 움직임 |
-| S&P 500 ↔ 원/달러 | -0.55 | 🟡 약한 역동조 | 위험선호 확산 (이머징 동반) |
+| S&P 500 ↔ 원/달러 | +0.02 | ⚪ 비동조 | 환율 독립적 |
 | S&P 500 ↔ 10년물 | -0.07 | ⚪ 비동조 | 독립적 |
 | VIX ↔ 금 | -0.39 | 🟡 약한 역동조 | 금이 공포와 무관 |
-| BTC ↔ 금 | -0.06 | ⚪ 비동조 | 독립적 자산 |
-| 유가 ↔ 10년물 | +0.14 | ⚪ 비동조 | 독립적 |
+| BTC ↔ 금 | -0.07 | ⚪ 비동조 | 독립적 자산 |
+| 유가 ↔ 10년물 | +0.26 | ⚪ 비동조 | 독립적 |
 
 ## 섹터 상대강도 (vs KODEX200)
 
@@ -161,9 +185,9 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.47 | 6,941.47 | 0.00% | 보합 |
-| BTC | 67,109 | 67,069 | -0.06% | 보합 |
+| BTC | 67,069 | 67,103 | +0.05% | 보합 |
 | VIX | 17.65 | 17.65 | 0.00% | 보합 |
-| USDKRW | 1,439.67원 | 1,439.69원 | +0.00% | 보합 |
+| USDKRW | 1,439.69원 | 1,440.43원 | +0.05% | 보합 |
 
 ## 이벤트 임팩트
 
@@ -197,7 +221,7 @@ S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-12 16:48:08 KST</span>
+  <span>생성 시각: 2026-02-12 16:57:09 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-12 16:48:08 KST</span>
+  <span>데이터 기준 시각: 2026-02-12 16:57:09 KST</span>
 </div>
