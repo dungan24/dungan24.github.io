@@ -19,6 +19,7 @@ market-pulse (private)              market-pulse-blog (public)
 **데이터 흐름: market-pulse → market-pulse-blog (단방향)**
 - Publisher가 `content/posts/pre-market-{date}.md` + `static/data/chart-data-{date}.json` 을 push
 - 이 레포에서 코드를 수정하면, Writer/Publisher 쪽도 규약을 맞춰야 함
+- `market-pulse`의 기본 publish 타깃은 `../dungan24.github.io`; 로컬에서 이 레포를 타깃으로 쓰려면 `BLOG_REPO_PATH=../market-pulse-blog`를 설정
 
 ## 마크다운 → UI 변환 규약
 
