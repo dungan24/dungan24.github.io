@@ -292,7 +292,6 @@ code, pre, .num-cell, .terminal-data {
 .mp-heartbeat {
   font-family: 'Orbitron', sans-serif;
   color: var(--regime-color);
-  animation: pulse-glow 3s ease-in-out infinite, glitch 8s ease-in-out infinite;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -843,7 +842,207 @@ code, pre, .num-cell, .terminal-data {
   .briefing-section .mp-ticker-groups { grid-template-columns: 1fr; }
 }
 
-/* ===== Modern Redesign Animations & Fixes ===== */
+/* ===== Cyberpunk CSS Art — Neon Grid, HUD, Scanline, Glitch ===== */
+
+/* --- Perspective Neon Grid Background --- */
+.mp-home-shell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 120%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-scroll 15s linear infinite;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 35%, transparent 60%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 35%, transparent 60%);
+  transform: perspective(400px) rotateX(45deg);
+  transform-origin: center top;
+}
+
+/* --- Neon Horizon Line --- */
+.mp-home-shell::after {
+  content: '';
+  position: absolute;
+  top: 38%;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5) 20%, rgba(0, 240, 255, 0.3) 50%, rgba(124, 58, 237, 0.5) 80%, transparent);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3), 0 0 30px rgba(0, 240, 255, 0.1);
+}
+
+@keyframes grid-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 50px; }
+}
+
+/* --- HUD Corner Decoration --- */
+.mp-hud-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mp-hud-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.mp-hud-corner::before,
+.mp-hud-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+/* Horizontal bar */
+.mp-hud-corner::before {
+  height: 2px;
+  width: 100%;
+}
+
+/* Vertical bar */
+.mp-hud-corner::after {
+  width: 2px;
+  height: 100%;
+}
+
+/* Top-left */
+.mp-hud-corner--tl { top: 0; left: 0; }
+.mp-hud-corner--tl::before { top: 0; left: 0; }
+.mp-hud-corner--tl::after { top: 0; left: 0; }
+
+/* Top-right */
+.mp-hud-corner--tr { top: 0; right: 0; }
+.mp-hud-corner--tr::before { top: 0; right: 0; }
+.mp-hud-corner--tr::after { top: 0; right: 0; }
+
+/* Bottom-left */
+.mp-hud-corner--bl { bottom: 0; left: 0; }
+.mp-hud-corner--bl::before { bottom: 0; left: 0; }
+.mp-hud-corner--bl::after { bottom: 0; left: 0; }
+
+/* Bottom-right */
+.mp-hud-corner--br { bottom: 0; right: 0; }
+.mp-hud-corner--br::before { bottom: 0; right: 0; }
+.mp-hud-corner--br::after { bottom: 0; right: 0; }
+
+/* HUD System Status Text */
+.mp-hud-status {
+  position: absolute;
+  top: 12px;
+  right: 72px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--mp-neon-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  animation: hud-blink 4s ease-in-out infinite;
+}
+
+@keyframes hud-blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.2; }
+}
+
+/* --- Hero Scanline Pass (slower, more visible) --- */
+.mp-home-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 240, 255, 0.015) 50%,
+    transparent 100%
+  );
+  background-size: 100% 8px;
+  animation: hero-scanline 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes hero-scanline {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* --- Subtitle Flicker --- */
+@keyframes subtitle-flicker {
+  0%, 92%, 94%, 96%, 100% { opacity: 1; }
+  93% { opacity: 0.6; }
+  95% { opacity: 0.8; }
+}
+
+.mp-subtitle-flicker {
+  animation: subtitle-flicker 6s ease-in-out infinite;
+}
+
+/* --- Glitch Enhancement for heartbeat --- */
+@keyframes glitch-enhanced {
+  0%, 85%, 100% {
+    text-shadow: 0 0 10px rgba(var(--regime-color-rgb) / 0.5), 0 0 40px rgba(var(--regime-color-rgb) / 0.2);
+    transform: translate(0);
+  }
+  86% {
+    text-shadow: -2px 0 #00F0FF, 2px 0 #F43F5E;
+    transform: translate(-2px, 1px);
+  }
+  88% {
+    text-shadow: 2px 0 #F43F5E, -1px 0 #00F0FF;
+    transform: translate(2px, -1px);
+  }
+  90% {
+    text-shadow: -1px 0 #00F0FF, 1px 0 var(--regime-color);
+    transform: translate(1px, 0);
+  }
+  92% {
+    text-shadow: 0 0 10px rgba(var(--regime-color-rgb) / 0.5);
+    transform: translate(-1px, 1px);
+  }
+}
+
+.mp-heartbeat {
+  animation: pulse-glow 3s ease-in-out infinite, glitch-enhanced 8s ease-in-out infinite;
+}
+
+/* --- Light Mode: hide all CSS art effects --- */
+:root:not(.dark) .mp-home-shell::before { display: none; }
+:root:not(.dark) .mp-home-shell::after { display: none; }
+:root:not(.dark) .mp-hud-corners { display: none; }
+:root:not(.dark) .mp-home-content::before { display: none; }
+:root:not(.dark) .mp-subtitle-flicker { animation: none; }
+
+/* --- Mobile: simplify grid & effects --- */
+@media (max-width: 640px) {
+  .mp-home-shell::before {
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 50%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 50%);
+  }
+  .mp-home-shell::after { opacity: 0.5; }
+  .mp-hud-corner { width: 30px; height: 30px; }
+  .mp-hud-status { display: none; }
+  .mp-home-content::before { display: none; }
+}
+
+/* ===== Modern Redesign Animations & Fixes =====
 
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.3; transform: scale(1) translate(-50%, -50%); }
@@ -900,6 +1099,11 @@ html { scroll-behavior: smooth; }
     -webkit-backdrop-filter: none;
   }
   body::after { display: none; }
+  .mp-home-shell::before { animation: none; display: none; }
+  .mp-home-shell::after { display: none; }
+  .mp-home-content::before { animation: none; display: none; }
+  .mp-hud-status { animation: none; }
+  .mp-subtitle-flicker { animation: none; }
 }
 
 /* Custom TOC Scrollbar */
@@ -990,6 +1194,47 @@ html { scroll-behavior: smooth; }
 .prose table td,
 .prose table th {
   white-space: nowrap;
+}
+
+/* Briefing sections: break out of prose max-width */
+.article-content .briefing-section {
+  max-width: none;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+/* Briefing section tables: full width, auto column sizing */
+.briefing-section table {
+  display: table !important;
+  width: 100% !important;
+  font-size: 0.95rem;
+}
+
+/* Row header (first column): bold, compact */
+.briefing-section table td:first-child {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+/* Non-last columns: compact, no extra space */
+.briefing-section table th:not(:last-child),
+.briefing-section table td:not(:last-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+/* Last column: takes all remaining space, left-aligned */
+.briefing-section table th:last-child,
+.briefing-section table td:last-child {
+  text-align: left !important;
+  width: auto;
+}
+
+:root:not(.dark) .briefing-section table td:first-child {
+  color: #1E1E3A;
 }
 
 /* Mobile: horizontal scroll for wide tables */
