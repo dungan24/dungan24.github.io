@@ -28,20 +28,20 @@
         4.17
       ],
       "USDKRW": [
-        1453.99,
-        1439.92
+        1453.65,
+        1440.32
       ],
       "BTC": [
-        68008,
-        67211
+        68017,
+        67165
       ],
       "GOLD": [
-        5079.9,
-        5083.7
+        5079.4,
+        5080.9
       ],
       "OIL": [
-        64.48,
-        64.86
+        64.47,
+        64.82
       ]
     }
   },
@@ -52,7 +52,7 @@
         "S&P 500",
         "BTC"
       ],
-      "value": 0.03,
+      "value": 0.11,
       "status": "비동조",
       "meaning": "독립적 움직임"
     },
@@ -62,7 +62,7 @@
         "S&P 500",
         "원/달러"
       ],
-      "value": 0.2,
+      "value": -0.07,
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -72,9 +72,9 @@
         "S&P 500",
         "10년물"
       ],
-      "value": 0.7,
-      "status": "약한 동조",
-      "meaning": "약한 동반 상승"
+      "value": -0.11,
+      "status": "비동조",
+      "meaning": "독립적"
     },
     {
       "pair": "VIX_GOLD",
@@ -82,7 +82,7 @@
         "VIX",
         "금"
       ],
-      "value": -0.33,
+      "value": -0.4,
       "status": "약한 역동조",
       "meaning": "금이 공포와 무관"
     },
@@ -92,7 +92,7 @@
         "BTC",
         "금"
       ],
-      "value": -0.78,
+      "value": -0.77,
       "status": "강한 역동조",
       "meaning": "금↑ BTC↓ (전통 안전자산 선호)"
     },
@@ -102,7 +102,7 @@
         "유가",
         "10년물"
       ],
-      "value": 0.37,
+      "value": 0.61,
       "status": "약한 동조",
       "meaning": "약한 인플레 시그널"
     }
@@ -144,43 +144,43 @@
       "name": "2차전지",
       "sector": "TIGER_BATT",
       "week1": 0.4,
-      "month1": -1.87
+      "month1": -1.84
     },
     {
       "name": "바이오",
       "sector": "KODEX_BIO",
       "week1": 0.36,
-      "month1": -2.13
+      "month1": -2.16
     },
     {
       "name": "에너지",
       "sector": "KODEX_ENERGY",
       "week1": 0.27,
-      "month1": -0.33
+      "month1": -0.58
     },
     {
       "name": "자동차",
       "sector": "KODEX_AUTO",
       "week1": 0.07,
-      "month1": 0.43
+      "month1": -1.57
     },
     {
       "name": "IT",
       "sector": "TIGER_IT",
       "week1": -0.31,
-      "month1": -0.92
+      "month1": -0.31
     },
     {
       "name": "반도체",
       "sector": "KODEX_SEMI",
       "week1": -0.43,
-      "month1": -4.13
+      "month1": -1.84
     },
     {
       "name": "은행",
       "sector": "KODEX_BANK",
       "week1": -1.13,
-      "month1": 5.94
+      "month1": 2.74
     }
   ],
   "fiveDayComparison": [
@@ -192,12 +192,17 @@
     {
       "metric": "BTC",
       "label": "보합",
-      "changePct": 0.17
+      "changePct": -0.07
     },
     {
       "metric": "VIX",
       "label": "보합",
       "changePct": 0
+    },
+    {
+      "metric": "USDKRW",
+      "label": "보합",
+      "changePct": 0.03
     }
   ]
 }
