@@ -26,7 +26,9 @@ market-pulse (private)              market-pulse-blog (public)
 `extend-footer.html`의 JS가 마크다운을 사이버펑크 UI로 변환한다.
 **Writer가 아래 마크다운 패턴을 지켜야 UI가 정상 렌더링된다.**
 
-기준 계약 문서: `../market-pulse/specs/render-contract.md`
+기준 계약 문서:
+- 렌더 계약: `../market-pulse/specs/render-contract.md`
+- 내러티브 계약: `../market-pulse/specs/narrative-contract.md` — Deep Dive 품질 기준
 
 ### 뉴스 섹션 (글로벌)
 
