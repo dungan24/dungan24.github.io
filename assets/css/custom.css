@@ -1864,3 +1864,180 @@ html { scroll-behavior: smooth; }
   .mp-signal-badge { min-width: auto; font-size: 0.65rem; }
 }
 
+/* ========== Light Mode — Comprehensive Overrides ========== */
+
+/* --- Tables --- */
+:root:not(.dark) .prose table {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .prose thead th {
+  background: rgba(124, 58, 237, 0.06);
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .prose tbody td {
+  color: #334155;
+  border-bottom-color: rgba(124, 58, 237, 0.06);
+}
+:root:not(.dark) .prose tbody tr:hover td {
+  background: rgba(124, 58, 237, 0.04);
+}
+
+/* --- Section Headers (MARKET OVERVIEW, RECENT BRIEFINGS 등) --- */
+:root:not(.dark) .mp-section-header {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.15);
+}
+:root:not(.dark) .mp-section-header::after {
+  background: var(--mp-neon-purple);
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
+}
+
+/* --- Ticker Group Titles --- */
+:root:not(.dark) .mp-ticker-group__title {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+
+/* --- Briefing Section Labels (::before) --- */
+:root:not(.dark) .briefing-section::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+:root:not(.dark) .briefing-section--fact::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+:root:not(.dark) .briefing-section--opinion::before {
+  color: #0891B2;
+  border-color: rgba(8, 145, 178, 0.2);
+}
+
+/* --- Briefing Section Borders & Hover --- */
+:root:not(.dark) .briefing-section:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .briefing-section--fact {
+  border-left-color: var(--mp-neon-purple);
+}
+:root:not(.dark) .briefing-section--opinion {
+  border-left-color: #0891B2;
+}
+
+/* --- News Section Label --- */
+:root:not(.dark) .mp-news-section-label {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+
+/* --- Hero Title (MARKET PULSE) — soften glow --- */
+:root:not(.dark) .mp-heartbeat {
+  background: linear-gradient(135deg, #1E1E3A 0%, #7C3AED 40%, #5B21B6 60%, #1E1E3A 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+  animation: title-shimmer 6s ease-in-out infinite;
+}
+
+/* --- Hero Subtitle (// FACT-DRIVEN MARKET INTELLIGENCE) --- */
+:root:not(.dark) .mp-subtitle-text {
+  color: var(--mp-neon-purple) !important;
+  text-shadow: none !important;
+}
+
+/* --- Hero Summary & Updated --- */
+:root:not(.dark) .mp-hero-updated {
+  color: #94A3B8;
+}
+
+/* --- Regime Badge (light mode readable) --- */
+:root:not(.dark) .mp-regime-badge {
+  background: rgba(var(--regime-color-rgb) / 0.08);
+  box-shadow: none;
+}
+
+/* --- Ticker Row Hover --- */
+:root:not(.dark) .mp-ticker-row:hover {
+  background: rgba(124, 58, 237, 0.04);
+}
+:root:not(.dark) .mp-ticker-row:not(:last-child) {
+  border-bottom-color: rgba(124, 58, 237, 0.06);
+}
+
+/* --- Ticker Change Color (already set in inline style but override for 0% cases) --- */
+:root:not(.dark) .mp-ticker-change {
+  text-shadow: none;
+}
+
+/* --- Collapse Toggle Icon --- */
+:root:not(.dark) .mp-collapse-toggle__icon {
+  color: #94A3B8;
+}
+
+/* --- ECG Pulse (hide in light mode — too noisy) --- */
+:root:not(.dark) .mp-ecg-pulse {
+  opacity: 0.3;
+}
+:root:not(.dark) .mp-ecg-pulse path {
+  stroke: var(--mp-neon-purple);
+}
+
+/* --- More Link --- */
+:root:not(.dark) .mp-more-link {
+  color: var(--mp-neon-purple);
+}
+:root:not(.dark) .mp-more-link:hover {
+  color: #5B21B6;
+  text-shadow: none;
+}
+
+/* --- Scrollbar (light mode) --- */
+:root:not(.dark) ::-webkit-scrollbar-track { background: #F8FAFC; }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.2); }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.4); }
+
+/* --- Post Hero (Regime banner) --- */
+:root:not(.dark) .mp-post-hero {
+  border-left-color: var(--regime-color, var(--mp-neon-purple));
+}
+
+/* --- Briefing Meta Footer --- */
+:root:not(.dark) .mp-briefing-meta::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* --- News Card hover --- */
+:root:not(.dark) .mp-news-card:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.12);
+}
+
+/* --- News Card Source Badge --- */
+:root:not(.dark) .mp-news-card__source {
+  background: rgba(124, 58, 237, 0.06);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+
+/* --- Ticker Group hover --- */
+:root:not(.dark) .mp-ticker-group:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.1);
+}
+
+/* --- Briefing Card hover --- */
+:root:not(.dark) .mp-briefing-card:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.1);
+}
+
+/* --- Prose H1 (page titles) --- */
+:root:not(.dark) .prose h1 {
+  color: #1E1E3A;
+  text-shadow: none;
+}
+
