@@ -308,8 +308,8 @@ function renderSectors(data) {
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: { ...GLASS_TOOLTIP, trigger: 'axis', axisPointer: { type: 'shadow' } },
-    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text } },
-    grid: { left: 10, right: 10, top: 35, bottom: 10, containLabel: true },
+    legend: { data: ['1주', '1개월'], textStyle: { color: theme.text }, itemWidth: 16, itemHeight: 10 },
+    grid: { left: 10, right: 55, top: 35, bottom: 10, containLabel: true },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: theme.axis } },
@@ -332,22 +332,37 @@ function renderSectors(data) {
             borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4]
           },
         })),
-        barWidth: '40%',
+        barWidth: '45%',
+        markLine: {
+          silent: true,
+          symbol: 'none',
+          lineStyle: { color: theme.text, opacity: 0.35, type: 'solid', width: 1 },
+          data: [{ xAxis: 0 }],
+          label: { show: false },
+        },
       },
       {
         name: '1개월',
         type: 'scatter',
         data: month1,
         symbol: 'diamond',
-        symbolSize: 10,
+        symbolSize: 16,
         itemStyle: {
           color: function(params) {
-            return params.value > 0 ? '#00FF8880' : '#FF336680';
+            return params.value > 0 ? '#00FF88CC' : '#FF3366CC';
           },
           borderColor: function(params) {
             return params.value > 0 ? '#00FF88' : '#FF3366';
           },
-          borderWidth: 1,
+          borderWidth: 2,
+        },
+        label: {
+          show: true,
+          position: 'right',
+          formatter: function(p) { return p.value > 0 ? '+' + p.value.toFixed(1) + '%' : p.value.toFixed(1) + '%'; },
+          fontSize: 10,
+          color: theme.text,
+          distance: 4,
         },
       },
     ],

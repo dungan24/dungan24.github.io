@@ -103,8 +103,6 @@ S&P +0.18%, 나스닥 +0.43% 소폭 상승 마감, 크립토 극단적 공포(11
 
 <!-- FACT_ZONE_END -->
 
-{{< market-charts >}}
-
 ---
 
 <!-- FACT_ZONE_START -->
