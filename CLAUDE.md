@@ -106,6 +106,13 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 | Regime Hero | `window.__MP_PAGE.regime`으로 색상/배지 동적 생성 |
 | TOC ScrollSpy | 스크롤 위치에 따라 TOC 활성 항목 하이라이트 |
 
+## 로컬 개발 서버
+
+- **`serve.cmd`로 Hugo 서버가 이미 실행 중** — `http://localhost:1314`
+- **절대 `hugo server`를 새로 실행하지 말 것** — 이미 떠 있는 1314 포트를 그대로 사용
+- 브라우저 확인, Playwright 테스트, 스크린샷 등 모든 작업은 `http://localhost:1314` 사용
+- Hugo 서버를 직접 시작/재시작할 필요 없음 — 사용자가 직접 관리함
+
 ## 주의사항
 
 - `content/posts/` 파일은 파이프라인이 덮어쓰므로 **수동 편집 비권장** (다음 실행 시 소실)
