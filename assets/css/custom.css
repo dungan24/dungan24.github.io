@@ -1305,6 +1305,70 @@ code, pre, .num-cell, .terminal-data {
   .mp-home-content::before { display: none; }
 }
 
+/* ===== Briefing Meta Footer ===== */
+.mp-briefing-meta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0 0;
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748B;
+  letter-spacing: 0.02em;
+}
+
+.mp-briefing-meta::before {
+  content: '// META';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: rgba(10, 10, 26, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 2px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--mp-neon-purple);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.mp-briefing-meta span {
+  white-space: nowrap;
+}
+
+/* Light mode */
+:root:not(.dark) .mp-briefing-meta {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(124, 58, 237, 0.12);
+  color: #64748B;
+}
+
+:root:not(.dark) .mp-briefing-meta::before {
+  background: white;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 640px) {
+  .mp-briefing-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
 /* ===== Modern Redesign Animations & Fixes =====
 
 @keyframes pulse-slow {

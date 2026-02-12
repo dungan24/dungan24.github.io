@@ -12,14 +12,14 @@ chartData: "/data/chart-data-2026-02-12.json"
 - 핵심: S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표
 - 변동성: VIX 17.65 (-0.79%)
 - 금리: 미 10년물 4.17% (+0.03)
-- 환율: 원/달러 1,442.66 (-2.8)
+- 환율: 원/달러 1,443.11 (-2.35)
 - 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 ---
 
 ## 한줄 요약
 
-S&P는 0.00%, 나
+S&P 0.00%, 나스닥 +0.29% 혼조세 마감, 크립토 극단적 공포(5) — 고용 지표
 
 <!-- OPINION_ZONE_END -->
 
@@ -69,37 +69,37 @@ S&P는 0.00%, 나
 | 다우존스 | 50,121.4 | -66.74 | -0.13% | - |
 | VIX (공포지수) | 17.65 | -0.14 | -0.79% | - |
 | 미국 10년물 국채 | 4.17% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 96.8 | -0.03 | -0.04% | - |
+| 달러인덱스 (DXY) | 96.78 | -0.05 | -0.05% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,389 | -956.92 | -1.42% | ↑1일 |
-| 이더리움 (ETH) | 1,964.43 | -45.77 | -2.33% | - |
+| 비트코인 (BTC) | 67,440 | -930.67 | -1.38% | ↑1일 |
+| 이더리움 (ETH) | 1,965.18 | -48.93 | -2.49% | - |
 | 공포탐욕지수 | 5 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,442.66 | -2.8 | -0.19% | - |
+| 원/달러 (USDKRW) | 1,443.11 | -2.35 | -0.16% | - |
 
 ### 지수 선물
 
-> ↗ 본장 0.00% 마감 → 선물 +0.44% 반등 중 (Basis: +0.44%)
+> ↗ 본장 0.00% 마감 → 선물 +0.51% 반등 중 (Basis: +0.51%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,971.75 | +11.25 | +0.16% |
-| 나스닥 100 선물 | 25,286.5 | -2 | -0.01% |
+| S&P 500 선물 | 6,976.75 | +16.25 | +0.23% |
+| 나스닥 100 선물 | 25,314.5 | +26 | +0.10% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 5,080.9 | -17.6 | -0.35% |
-| WTI 유가 (Oil) | 64.89 | +0.26 | +0.40% |
+| 국제 금 (Gold) | 5,086.5 | -12 | -0.24% |
+| WTI 유가 (Oil) | 64.94 | +0.31 | +0.48% |
 
 <!-- FACT_ZONE_END -->
 
@@ -116,7 +116,7 @@ S&P는 0.00%, 나
 | 근거 | 값 | 판단 |
 |------|-----|------|
 | VIX | 17.6 | ✅ 안정 |
-| SPX 20일 | +0.1% | ⚠ 횡보 |
+| SPX 20일 | -0.3% | ⚠ 횡보 |
 | US10Y 방향 | +2bp (5일) | ✅ 안정 |
 | 크립토 심리 | 5 | ✅ 극단적 공포 |
 
@@ -124,33 +124,33 @@ S&P는 0.00%, 나
 
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
-| S&P 500 ↔ BTC | +0.78 | 🔴 강한 동조 | 위험자산 동반 움직임 |
-| S&P 500 ↔ 원/달러 | +0.58 | 🟡 약한 동조 | 약한 미국 쏠림 |
-| S&P 500 ↔ 10년물 | +0.45 | 🟡 약한 동조 | 약한 동반 상승 |
-| VIX ↔ 금 | +0.06 | ⚪ 비동조 | 독립적 |
-| BTC ↔ 금 | +0.18 | ⚪ 비동조 | 독립적 자산 |
-| 유가 ↔ 10년물 | +0.06 | ⚪ 비동조 | 독립적 |
+| S&P 500 ↔ BTC | +0.89 | 🔴 강한 동조 | 위험자산 동반 움직임 |
+| S&P 500 ↔ 원/달러 | +0.15 | ⚪ 비동조 | 환율 독립적 |
+| S&P 500 ↔ 10년물 | +0.41 | 🟡 약한 동조 | 약한 동반 상승 |
+| VIX ↔ 금 | -0.03 | ⚪ 비동조 | 독립적 |
+| BTC ↔ 금 | +0.1 | ⚪ 비동조 | 독립적 자산 |
+| 유가 ↔ 10년물 | +0.56 | 🟡 약한 동조 | 약한 인플레 시그널 |
 
 ## 섹터 상대강도 (vs KODEX200)
 
 | 섹터 | 1주 수익률 | 1주 초과수익 | 1개월 초과수익 |
 |------|-----------|------------|--------------|
-| IT | +3.38% | +0.35% | -3.04% |
-| 반도체 | +2.7% | -0.34% | -5.1% |
-| 은행 | +2.35% | -0.68% | +20.37% |
-| 2차전지 | +2.32% | -0.71% | -4.91% |
-| 에너지 | +2.12% | -0.91% | +1.57% |
-| 자동차 | +0.37% | -2.66% | -1.73% |
-| 바이오 | 0% | -3.03% | -7.75% |
+| IT | +3.38% | +0.34% | -1.44% |
+| 반도체 | +2.7% | -0.34% | -3.19% |
+| 2차전지 | +2.37% | -0.66% | -6.95% |
+| 은행 | +2.32% | -0.72% | +14.37% |
+| 에너지 | +2.12% | -0.92% | +0.65% |
+| 자동차 | +0.29% | -2.75% | -4.64% |
+| 바이오 | 0% | -3.04% | -10.97% |
 
 ## 최근 흐름 (5일)
 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,940.78 | 6,941.47 | +0.01% | 보합 |
-| BTC | 66,714 | 67,389 | +1.01% | 소폭 상승 |
+| BTC | 66,714 | 67,440 | +1.09% | 소폭 상승 |
 | VIX | 17.69 | 17.65 | -0.23% | 보합 |
-| USDKRW | 1,445.5원 | 1,442.66원 | -0.20% | 보합 |
+| USDKRW | 1,445.5원 | 1,443.11원 | -0.17% | 보합 |
 
 ## 이벤트 임팩트
 
@@ -168,35 +168,27 @@ S&P는 0.00%, 나
 
 1. [**Gold Retreats as Strong US Jobs Report Dims Rate-Cut Prospects**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWYxT1NoTW5hR1A2a1BjaVYzUUNfRzBhbEZZSFdZV2VTWHloU0k0OVZES2gzTW9DMUpXRHNUMU9IcjdUMW9KV2R1NVFwdEVlTzZKczcyRGx1Ungtd2RQejYyX0ZodUlraEVNMkJZZkRad0RGeDluY1dwY2N4bkJsS0RZbmx6S05zeHA3Z2FaTHhleWNJMzYzcUpjWTlPZTNQaUFTTXN3NUJUVDI2aGY0b0JjSQ?oc=5)
    Bloomberg.com · 2026-02-12 11:04 KST · 원자재
-   > 강력한 미국 고용 보고서로 인해 금리 인하 가능성이 낮아
 
-2. [**Gold, silver dip as dollar rises after strong US jobs data**](https://news.google.com/rss/articles/CBMipAFBVV95cUxPelo0N3JjSFIxdjlaWVhWTjVsNjJGbUl6N0V5UnRjNWQ5b3Y4eDhzcVZ0OEpZOUVBQjZKX0t5U2Z4LTdRS2F5Q2F1alhCdUdXTXREQ3Y1N2lnQklnLUhJbk9TdHdleThCNmdJRV9teXZmOHVab1ZQa3dVUDgzSVozOFpHUDZWS0d5RTRqRWlIT1ZmTExnODVZUlY1NGNZMDZsb2l2TA?oc=5)
-   Reuters · 2026-02-12 11:01 KST · 원자재
-   > 강력한 미국 고용 지표 발표 이후 달러 가치가 상승하면서 금과 은 가격
-
-3. [**Fed’s Schmid Says Restrictive Rates Needed to Cool Inflation**](https://news.google.com/rss/articles/CBMisAFBVV95cUxQaWdXb0lVLU1VWUNlVDNWLXNBYV9Wel9pYnFSNjhxRzk1VjUzWXdaSzlCOFZvU0E3Z21oSjhBSVJoQmZFS3plT2RwTHlseUNla1hXUGtVcVpoUUtlMzN2TEw0QUduRlNfc000WUV5SjRGalNwUWpyVnNtNV9xcGRESlZVLXBYdFhpOXZUZ3FmSk1yaF84QnZGT3pqVy1TY3V2WDZqTXUzVXBEX0MxQkdNYw?oc=5)
+2. [**Fed’s Schmid Says Restrictive Rates Needed to Cool Inflation**](https://news.google.com/rss/articles/CBMisAFBVV95cUxQaWdXb0lVLU1VWUNlVDNWLXNBYV9Wel9pYnFSNjhxRzk1VjUzWXdaSzlCOFZvU0E3Z21oSjhBSVJoQmZFS3plT2RwTHlseUNla1hXUGtVcVpoUUtlMzN2TEw0QUduRlNfc000WUV5SjRGalNwUWpyVnNtNV9xcGRESlZVLXBYdFhpOXZUZ3FmSk1yaF84QnZGT3pqVy1TY3V2WDZqTXUzVXBEX0MxQkdNYw?oc=5)
    Bloomberg.com · 2026-02-12 07:03 KST · 미국 매크로
-   > Fed의 Schmid는 물가 상승을 늦추기 위해 경제 활동을 억제하는 수준
+
+3. [**David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
+   CNBC · 2026-02-12 02:42 KST · central-bank
 
 4. [**S&P 500 Is Set for Record as Solid Jobs Sink Bonds: Markets Wrap**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQZXBZTlAwLWtnRnV6RThSVlR3dG1UN3NYSkxSTGlrZTRIUTNxRjlzNzJBQi1LNl8zcDd2RTN6OUVzLUxxNzNjTXpObGVOWkc2M0F2czFHSzlTdFV5ZzFfVXl1ZFdBQUd2X3RiZ0hod0FNV1R2R3V6NFJGcGZJTUxaVmMyVzBNVVVPaWhuZGFKc3hOUGlsQkE?oc=5)
    Bloomberg.com · 2026-02-12 06:42 KST · 시장 이벤트
-   > S&P 500이 사상 최고치 기록을 앞두고 있으며, 이는
 
-5. [**David Einhorn says the Fed will cut 'substantially more' than two times. So he's betting big on gold**](https://news.google.com/rss/articles/CBMizgFBVV95cUxQM1VBNmxjc1VTZlRoTzI4eDUtMjlFVi1WbWR1cGlJZU5taTA1Y3cwd1MweEc1LV9ManpqMzE1RVpqMnRVMnE0ckc3VWZScTA4ekx0Undka28zLVBmMWxYSlBHY3NIa19DV3NLR21GT285SkRlcFVKUTNkdTcycXE1U2oxbDNxT2FZc1pLZGdKWk9EQjBFb0JmNWlfeW00OGN5eXEwSFVOYnJKckR4UDFxM1I3UDBqamtiVGJHUWhLUm5LY3N3ekNJSWp0LThIZ9IB0wFBVV95cUxPcDNwRVExRE0yQlFhM2hjMzhiQmFhbDlqYTZtUmg4dXU5eXZfcG05d19UTWI5VzhjWEI5OU5DVk5KY3FKLWxVcExZeTNudk0wcE9nVEhfaHFzS1hNQUZ5QnptS0hFcGhDU0Fyc1gyUEpxR0xhY2NVQUVkT3p2TEV6R3VWOGdncUUzSVhDY0JZcno0WlF1UXdEbU1JOWZTamd6UkxWYzFuSExhQXczdzRDWGs4aW5tNW5ZUFZ5ZE15OVhzUDg5NUpTbWtvckdvUEsyUzRn?oc=5)
-   CNBC · 2026-02-12 02:42 KST · central-bank
-   > David Einhorn은 연방준비제도(Fed)가 금리를 두 번보다 훨씬
-
-6. [**Fed's interest rate pause bolstered by jobs data, but concerns linger**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
+5. [**Fed's interest rate pause bolstered by jobs data, but concerns linger**](https://news.google.com/rss/articles/CBMimgFBVV95cUxQa3FiMHVLTXhSU2hqb2ZuaWhEeXVEOVlMQnRtQWxWb0xyTEFYYlFQT1kwajlsQ0dyeC1adG40X3FHM0NHcWw5aHZHeUlzRjZENDNEeEJ1ZzlKb3pObDFfbnBheFE0ejJGTEJ2SzVVMWkwVUdHOGpNenVQSzhvYTVfUVI2UnQwZmt1NmxZSHRfOHpjNnhobFZSeHNn?oc=5)
    Reuters · 2026-02-11 22:43 KST · central-bank
-   > Fed의 금리 인상 중단 결정은 고용 데이터로 인해 힘을 얻었지만,
 
-7. [**Powell’s parting gift from the Fed may be more rate cuts than expected, courtesy of deteriorating data**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOVk82dnctZHpQWVM1LWJWX2o2VDlCbjJlT1ZNRWtZYXp2Rm5vdTBOMDh6cjE2cGZhdllvazk3UHQxdGxNUnJySkRyR2dZRm9tci1qd3pjLU5BTGhHR1dJYkw5ek1MX2xqWURuLTh0OTFWdGNqX2dRUGVzOTRPaTBPeE1rS3RJM3M1R0FrV1JZNA?oc=5)
+6. [**Powell’s parting gift from the Fed may be more rate cuts than expected, courtesy of deteriorating data**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOVk82dnctZHpQWVM1LWJWX2o2VDlCbjJlT1ZNRWtZYXp2Rm5vdTBOMDh6cjE2cGZhdllvazk3UHQxdGxNUnJySkRyR2dZRm9tci1qd3pjLU5BTGhHR1dJYkw5ek1MX2xqWURuLTh0OTFWdGNqX2dRUGVzOTRPaTBPeE1rS3RJM3M1R0FrV1JZNA?oc=5)
    Fortune · 2026-02-11 21:03 KST · central-bank
-   > 파월 의장의 Fed에서의 마지막 유산은 악화되는 데이터로 인해 예상보다 더
 
-8. [**Five Oil & Gas Dividend Stocks for the Year Ahead**](https://news.google.com/rss/articles/CBMimwFBVV95cUxPb3R3TmdUZTVKamRydllTS044YjF6NDFZeFZnVjR3dEpiUGc0c0FzU1lELXlPN1RSZGpYSFhtVjZVS3A4MFpCYXplUE02S1R6UjlOS3VVLVNEV0Zwd1ltMUgzR2JqdV9Ud01xR0pISkYydjBGem11dTFsODBPbVNaUG55czhIZHptenE5ZFdUMkxTSXlhNkxlU2dod9IBoAFBVV95cUxNWUF2U1F2bTlYeDlLN2p2bHNaUF9yYXZYT0ZtRTk2YjhKcFVTRVVvNFJXeWxrY1lmSXNIYUg3VURrR0ZVYmdvMndHZ21qQWlELXNZT0JQM3d4ZnU2OUNPQWlZdGUycS1NYWc4czI2cnRBNmRfNmh5NHl2RmlQcmFqSXFYZkFCQVNKUkIyMEFGY0lJN0NyWkdvbzRjSkVsa2F2?oc=5)
+7. [**Five Oil & Gas Dividend Stocks for the Year Ahead**](https://news.google.com/rss/articles/CBMimwFBVV95cUxPb3R3TmdUZTVKamRydllTS044YjF6NDFZeFZnVjR3dEpiUGc0c0FzU1lELXlPN1RSZGpYSFhtVjZVS3A4MFpCYXplUE02S1R6UjlOS3VVLVNEV0Zwd1ltMUgzR2JqdV9Ud01xR0pISkYydjBGem11dTFsODBPbVNaUG55czhIZHptenE5ZFdUMkxTSXlhNkxlU2dod9IBoAFBVV95cUxNWUF2U1F2bTlYeDlLN2p2bHNaUF9yYXZYT0ZtRTk2YjhKcFVTRVVvNFJXeWxrY1lmSXNIYUg3VURrR0ZVYmdvMndHZ21qQWlELXNZT0JQM3d4ZnU2OUNPQWlZdGUycS1NYWc4czI2cnRBNmRfNmh5NHl2RmlQcmFqSXFYZkFCQVNKUkIyMEFGY0lJN0NyWkdvbzRjSkVsa2F2?oc=5)
    Crude Oil Prices Today | OilPrice.com · 2026-02-12 10:00 KST · 원자재
-   > 다가오는 한 해를 위한 Five Oil & Gas 배당주
+
+8. [**Dow, S&P 500 Futures Climb As House Votes To Rescind Trump Tariffs: Why VKTX, NVCR, APP, CRM, QS Are Trending After-Hours**](https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcUlUaWowOE9mYTkwczQyUUZlR1BNOGpnZ1BlNUJXWTdMUzBtclFMZ1oyZnRueFpTLXlFLWN0Y0dZLTBxMXJfWDhHVExObzVaY3luem84aHY2YzlqN0p2cmJRMjlCc2JfZUlTdVpqUTJNZUl6SGp2Y0JqbGczY3dXLWdyVVhhUlhJS3BTMF9Iemg2Q3NqOVRkMmdwX0ZWc0FJY2hpM1ZnY1MtNGU2dVF5ODFqdVBpOWU1QXhSbF9hcGJMRmxCNFRzajlpSm5WS3RXNk5RTkJZb0g?oc=5)
+   Stocktwits · 2026-02-12 06:08 KST · 지정학
 
 ### 국내
 
@@ -208,11 +200,9 @@ S&P는 0.00%, 나
 
 3. [**"미래에셋증권, 스페이스X IPO 전까진 추가 상승 가능…목표가 상향"-유안타**](https://www.hankyung.com/article/2026021205956)
    한국경제 증권 · 2026-02-12 07:55 KST · 시장 이벤트
-   > 유안타는 미래에셋증권의 주가가 스페이스X IPO 전까지 추가 상승
 
 4. [**"삼성전자, 주요 메모리반도체 고객사의 수요충족률 60%에 불과"-KB**](https://www.hankyung.com/article/2026021205806)
    한국경제 증권 · 2026-02-12 07:34 KST · 국내 시장
-   > KB에 따르면 삼성전자가 주요 메모리반도체 고객사의 요청 물량 중
 
 ---
 
@@ -246,6 +236,6 @@ S&P는 0.00%, 나
 
 ---
 
-**생성 시각**: 2026-02-12 12:36:48 KST
+**생성 시각**: 2026-02-12 12:48:39 KST
 **브리핑 슬롯**: pre-market (개장전)
-**데이터 기준 시각**: 2026-02-12 12:36:48 KST
+**데이터 기준 시각**: 2026-02-12 12:48:39 KST
