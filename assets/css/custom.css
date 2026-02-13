@@ -2060,3 +2060,199 @@ html { scroll-behavior: smooth; }
   text-shadow: none;
 }
 
+/* ========== Opinion Zone — Enhanced Styling ========== */
+
+/* --- 2-A. Opinion H3 — Cyan Gradient Border --- */
+.briefing-section--opinion h3 {
+  border-left: 3px solid var(--mp-neon-cyan) !important;
+  color: #D1DBE8 !important;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.1);
+}
+
+/* Sequential H3 color variation: cyan → teal → indigo → purple */
+.briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
+  border-left-color: var(--mp-neon-cyan) !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
+  border-left-color: #2DD4BF !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
+  border-left-color: #818CF8 !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
+  border-left-color: #A78BFA !important;
+}
+
+/* --- 2-B. Blockquote — Hero Callout Card --- */
+.briefing-section--opinion blockquote {
+  position: relative;
+  border-left: 3px solid var(--mp-neon-cyan) !important;
+  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.06), rgba(0, 240, 255, 0.02) 60%, transparent) !important;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem !important;
+  margin: 1.5rem 0 !important;
+  font-style: normal !important;
+  color: #D1DBE8 !important;
+  line-height: 1.7;
+  box-shadow: 0 2px 12px -4px rgba(0, 240, 255, 0.1);
+}
+
+.briefing-section--opinion blockquote::before {
+  content: '// TL;DR';
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mp-neon-cyan);
+  margin-bottom: 0.6rem;
+  opacity: 0.7;
+}
+
+.briefing-section--opinion blockquote p {
+  margin: 0 !important;
+  font-style: normal !important;
+}
+
+/* --- 2-C. Bold Text — Cyan Inline Highlight --- */
+.briefing-section--opinion p strong,
+.briefing-section--opinion li strong {
+  color: var(--mp-neon-cyan) !important;
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.15);
+  font-weight: 700;
+}
+
+/* --- 2-D. Paragraph Spacing — Comfortable Reading --- */
+.briefing-section--opinion p {
+  line-height: 1.85;
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+  color: #CBD5E1;
+}
+
+/* --- 2-E. Action Item List — Mini Cards --- */
+.briefing-section--opinion ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0 !important;
+}
+
+.briefing-section--opinion ul > li {
+  position: relative;
+  padding: 0.65rem 1rem 0.65rem 1.75rem;
+  border-left: 2px solid var(--mp-neon-purple);
+  border-radius: 0 var(--mp-radius-sm) var(--mp-radius-sm) 0;
+  background: rgba(124, 58, 237, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.briefing-section--opinion ul > li::before {
+  content: '\25B8';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--mp-neon-purple);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.briefing-section--opinion ul > li::marker {
+  content: '' !important;
+}
+
+.briefing-section--opinion ul > li:hover {
+  background: rgba(124, 58, 237, 0.08);
+  border-left-color: var(--mp-neon-cyan);
+}
+
+/* --- 2-F. Subsection Separator (mp-opinion-sub) --- */
+.mp-opinion-sub {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+}
+
+.mp-opinion-sub:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* --- 2-G. Light Mode Overrides --- */
+:root:not(.dark) .briefing-section--opinion h3 {
+  color: #1E293B !important;
+  text-shadow: none;
+  border-left-color: #0891B2 !important;
+}
+
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
+  border-left-color: #0891B2 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
+  border-left-color: #0D9488 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
+  border-left-color: #6366F1 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
+  border-left-color: #7C3AED !important;
+}
+
+:root:not(.dark) .briefing-section--opinion blockquote {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.04), transparent 60%) !important;
+  border-left-color: #0891B2 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 12px -4px rgba(8, 145, 178, 0.08);
+}
+
+:root:not(.dark) .briefing-section--opinion blockquote::before {
+  color: #0891B2;
+}
+
+:root:not(.dark) .briefing-section--opinion p strong,
+:root:not(.dark) .briefing-section--opinion li strong {
+  color: #0891B2 !important;
+  text-shadow: none;
+}
+
+:root:not(.dark) .briefing-section--opinion p {
+  color: #334155;
+}
+
+:root:not(.dark) .briefing-section--opinion ul > li {
+  background: rgba(124, 58, 237, 0.02);
+  border-left-color: var(--mp-neon-purple);
+  color: #334155;
+}
+
+:root:not(.dark) .briefing-section--opinion ul > li:hover {
+  background: rgba(124, 58, 237, 0.05);
+  border-left-color: #0891B2;
+}
+
+:root:not(.dark) .mp-opinion-sub {
+  border-bottom-color: rgba(8, 145, 178, 0.1);
+}
+
+/* --- 2-H. Mobile Responsive --- */
+@media (max-width: 640px) {
+  .briefing-section--opinion blockquote {
+    padding: 1rem 1rem 1rem 1.25rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .briefing-section--opinion ul > li {
+    padding: 0.5rem 0.75rem 0.5rem 1.5rem;
+  }
+
+  .mp-opinion-sub {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+

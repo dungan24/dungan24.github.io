@@ -1,7 +1,7 @@
 <!-- Market Pulse: UI Polish & Intelligence -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var content = document.querySelector('.prose');
+  var content = document.querySelector('.article-content') || document.querySelector('.prose');
   if (!content) return;
 
   var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
@@ -76,6 +76,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         section.appendChild(current);
       }
+    });
+
+    // 3b. Opinion H3 Subsection Wrapping
+    var opinionSections = content.querySelectorAll('.briefing-section--opinion');
+    opinionSections.forEach(function(sec) {
+      var h3s = Array.prototype.slice.call(sec.querySelectorAll('h3'));
+      if (h3s.length === 0) return;
+
+      h3s.forEach(function(h3) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'mp-opinion-sub';
+        h3.parentNode.insertBefore(wrapper, h3);
+        wrapper.appendChild(h3);
+
+        var next = wrapper.nextSibling;
+        while (next) {
+          var current = next;
+          next = next.nextSibling;
+          if (current.nodeType === 1) {
+            var tag = current.tagName;
+            if (tag === 'H2' || tag === 'H3' || tag === 'SECTION') break;
+          }
+          wrapper.appendChild(current);
+        }
+      });
     });
 
     // === 4. Post Page Enhancements ===
