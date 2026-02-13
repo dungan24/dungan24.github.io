@@ -30,6 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
     return null;
   }
 
+  // === Zone Detection by Title (Hugo strips HTML comments) ===
+  var OPINION_TITLES = [
+    '\uD575\uC2EC \uC694\uC57D',     // 핵심 요약
+    '\uC624\uB298\uC758 \uD574\uC11D', // 오늘의 해석
+  ];
+
+  function getZoneByTitle(titleText) {
+    for (var i = 0; i < OPINION_TITLES.length; i++) {
+      if (titleText.indexOf(OPINION_TITLES[i]) !== -1) return 'opinion';
+    }
+    return 'fact';
+  }
+
   // 1. Terminal Data Cell Coloring & Formatting
   var cells = content.querySelectorAll('td');
   cells.forEach(function(td) {
@@ -57,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     h2s.forEach(function(h2) {
       if (h2.closest('.briefing-section') || h2.classList.contains('hero-subtitle')) return;
 
-      var zone = getZoneForElement(content, h2);
+      var zone = getZoneByTitle(h2.textContent.trim());
       var section = document.createElement('section');
       section.className = 'briefing-section';
       if (zone === 'opinion') section.classList.add('briefing-section--opinion');
@@ -465,36 +478,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  function getZoneForElement(container, el) {
-    var zone = null;
-    var node = container.firstChild;
-    while (node && node !== el) {
-      if (node.nodeType === 8) {
-        var v = node.textContent.trim();
-        if (v === 'FACT_ZONE_START') zone = 'fact';
-        else if (v === 'OPINION_ZONE_START') zone = 'opinion';
-        else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;
-      }
-      if (node.nodeType === 1 && node.childNodes.length > 0) {
-        var inner = scanChildComments(node);
-        if (inner !== undefined) zone = inner;
-      }
-      node = node.nextSibling;
-    }
-    return zone;
-  }
-
-  function scanChildComments(parent) {
-    var zone;
-    parent.childNodes.forEach(function(child) {
-      if (child.nodeType === 8) {
-        var v = child.textContent.trim();
-        if (v === 'FACT_ZONE_START') zone = 'fact';
-        else if (v === 'OPINION_ZONE_START') zone = 'opinion';
-        else if (v === 'FACT_ZONE_END' || v === 'OPINION_ZONE_END') zone = null;
-      }
-    });
-    return zone;
-  }
 });
 </script>
