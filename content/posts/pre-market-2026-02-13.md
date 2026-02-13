@@ -15,7 +15,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 - 핵심: S&P -1.57%, 나스닥 -2.04% 약세 마감, 크립토 극단적 공포(9) — AI 랠리
 - 변동성: VIX 20.82 (+17.96%)
 - 금리: 미 10년물 4.1% (-0.07)
-- 환율: 원/달러 1,439.37 (-2.14)
+- 환율: 원/달러 1,443.48 (+1.97)
 - 오늘은: **[USD] Core CPI m/m** 발표만 체크해도 충분해요
 
 ---
@@ -29,7 +29,7 @@ chartData: "/data/chart-data-2026-02-13.json"
 
 현재 S&P 선물은 현물 대비 +0.43% 반등 중이어서, 오늘 장 시작 시 갭이 발생할 수 있습니다.
 
-**한국 시장** 쪽에서는 ""코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인" 소식이 눈에 띕니다.
+**한국 시장** 쪽에서는 "코스피, 외국인·기관 매수에 상승 출발…18만전자·90만닉스 돌파" 소식이 눈에 띕니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
@@ -71,26 +71,26 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| S&P 500 | 6,832.76 | -108.71 | -1.57% | - ⚡ 하위 2% |
-| 나스닥 | 24,687.61 | -513.65 | -2.04% | - ⚡ 하위 3% |
-| 다우존스 | 49,451.98 | -669.42 | -1.34% | - ⚡ 하위 2% |
-| VIX (공포지수) | 20.82 | +3.17 | +17.96% | - ⚡ 상위 2% |
+| S&P 500 | 6,832.76 | -108.71 | -1.57% | ↓1일 ⚡ 하위 2% |
+| 나스닥 | 24,687.61 | -513.65 | -2.04% | ↓1일 ⚡ 하위 3% |
+| 다우존스 | 49,451.98 | -669.42 | -1.34% | ↓1일 ⚡ 하위 2% |
+| VIX (공포지수) | 20.82 | +3.17 | +17.96% | ↑1일 ⚡ 상위 2% |
 | 미국 10년물 국채 | 4.1% | -0.07 | - | - ⚡ 하위 5% |
-| 달러인덱스 (DXY) | 96.92 | +0.09 | +0.09% | - |
+| 달러인덱스 (DXY) | 97 | +0.07 | +0.07% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,335 | -729.69 | -1.10% | - |
-| 이더리움 (ETH) | 1,948.39 | +3.9 | +0.20% | - |
+| 비트코인 (BTC) | 66,437 | -1,049.7 | -1.58% | ↓1일 |
+| 이더리움 (ETH) | 1,944.47 | -16.33 | -0.84% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
-### 환율  ⚠ (일부 지연 데이터)
+### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,439.37 | -2.14 | -0.15% | ↓1일 |
+| 원/달러 (USDKRW) | 1,443.48 | +1.97 | +0.14% | ↑1일 |
 
 ### 지수 선물
 
@@ -99,14 +99,14 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
 | S&P 500 선물 | 6,862 | +11 | +0.16% |
-| 나스닥 100 선물 | 24,826.25 | +58.25 | +0.24% |
+| 나스닥 100 선물 | 24,824.5 | +56.5 | +0.23% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,934 | -14.4 | -0.29% |
-| WTI 유가 (Oil) | 62.83 | -0.01 | -0.02% |
+| 국제 금 (Gold) | 4,994.9 | +46.5 | +0.94% |
+| WTI 유가 (Oil) | 62.88 | +0.04 | +0.06% |
 
 {{< market-charts >}}
 
@@ -116,36 +116,36 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 
 ### 글로벌
 
-1. [**오늘의 주식 시장: AI가 스래시 주식을 두려워함에 따라 다우 지수는 670포인트 하락했고 S&P 500은 3주 만에 최악의 날을 기록했습니다. 국채수익률 하락; 금과 은이 떨어지다**](https://news.google.com/rss/articles/CBMivANBVV95cUxPRkkxQ0ZnbFQ2S2h2ZkZTbUJoYVZCd185VjdMTGt4YnhhWjhhOWtCa0ltTndtZlV1dnpjQmpGSnVIbWRndWRKMmxaNWRPdVBUNWc4Q0JkWThhLTRLWTdUUG9UVWxTRmhibllzWmlMTW1ueDJfRURTbjJUNzFyZUh3cWFlWGJpMjFfRHFjMVE4dk1VU3plRmF4VFhLWDdVM1BiX0NvQ1FERnFuV2FJUlBKQXR4NS02YjNNUlRqRHJHN2pQLXlNVG5uQnk0a1RLc1Q2SUtscUR0eTVwQ09MWk9qREZsOTljMVpIM1NBZVk0MVZhemp1TS1YNlJVdFpSNmR5U1Mxb1E4NDFtMXVKQlFsY0tScXduUzI1TUFKM0Vqb1U0Q3FGUmtCcU9wTmt0ek1xdzh6c2FMUkVsN0k4Y3oxYnBEOUg0ZXAxN1dhUHVkMHBOdGlTUDk3OHN2ZVB0TUZ6NTQ3UXlPQ3R4dll5YnhRaS1Hck1paXk5aF8wUXF3WHVvOThhQTNFSEdPUGFOSnlLYk1EbDNXVkdlMDR6bXFudjY2anVFMi11LVpid1l1WWxDcnRVbmRCanZ3dlU?oc=5)
+1. [**오늘의 주식 시장: AI가 스래시 주식을 두려워함에 따라 다우 지수는 670포인트 하락했고 S&P 500은 3주 만에 최악의 날을 기록했습니다. 국채수익률 하락; 금과 은이 떨어지다**](https://news.google.com/rss/articles/CBMivANBVV95cUxPWmZlTFVxdUFQX2VvZ1pPVDNrV3dTR2ZDYkJhdWZReHBFaVdfeDRGUzRJRXRBUHEzWERaNndCeWhMTTNnMG5jRGk0ZTh5MWZ3OTR3Z09RT1FzYlNwTFpKQThuUzJrRm40dGJxRWlJSWU4b19udHF3QkliVXh1UHdrTzFBeU1GcGhBZGJIUWdFb3ZTZkhEcGVpbE5Yd0M3SUx6ZG12bFQzd2lnY2tOdGxvLUs4ZXZjdnprbFhQY1Z4YldLNDhKSUtuVmthTlVnMFc3a1kwUTV0UGRPeEgtTVVLSUlzNGxWZHlubER1RmlRaUY3T0dFTC1EdWYzQXFWMHY2dS1mZkVpb0xzREZ5VzQ0QWJ0eUhvRE1Ca3NJalg4RWk4Q2hHQWtHWk5seTBoT2ZTOG52WEl3ZXpuTnBTODJwTnJReTR6RW42bmp0enRZak96THRhemFiZW5wRkc0d1BoY3ZhX294b1pHekx1RS0ydEFBb1hULTlleHZLSFd0Vmg0VlFCUHJjQThDT3JwVWxwOHJicFFmOW1fZXNvYkZtaTBaNFZySFpjOU03TkF4cnplUkxpN2NMVHRMeGU?oc=5)
    MarketWatch · 2026-02-13 07:25 KST · 시장 이벤트
    원문: Stock Market Today: Dow closes 670 points lower, S&P 500 logs worst day in 3 weeks as AI fears thrash stocks; Treasury yields drop; gold and silver fall
 
-2. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
-   CNBC · 2026-02-13 04:55 KST · 미국 매크로
-   원문: The January CPI inflation report is due out Friday morning. Here's what it's expected to show
+2. [**오늘의 주식 시장: Dow, S&P 500, Nasdaq은 AI 혼란에 대한 우려가 커지면서 기술이 타격을 입으면서 하락합니다. 금, 비트코인 ​​싱크**](https://news.google.com/rss/articles/CBMiugFBVV95cUxOWENMQjFZYldGSkdpTHBNV2dOQ1p2Y3VxOExEa1dsaDYwakJOVGViV3JRbUZDUUYxcGhfVWQ1dTZoWGIzTXdIZ3YyTnpLbW1XN3JHaWVBN0pMRHV5bl9JSzFLb3BzaVpNQ1Y3WFF3UXNUZnRxd05kS25aOHFjQVF6VmNXb0p6NTJYdDA5cngzelhmX2wtX0dLQWI1R1FwSVhMRENjcVNldC04NHM4UzhBYllkX1k0MTNBWlE?oc=5)
+   Yahoo! Finance Canada · 2026-02-13 09:58 KST · 시장 이벤트
+   원문: Stock market today: Dow, S&P 500, Nasdaq sink as tech gets hit as AI disruption fears grow; gold, bitcoin sink
 
-3. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxPNVZNM0s0dkpXVHFCTlZPaG1HV3R2QTgyeUl1WTNLTHVEYUZvLU5EWXA1dlRJNUZjUHZ1eFJXOElRUHp1WkRXQVlxUXplMmh5YlVyc3BUTjNyN2JRZjBJc1pSYW00Z0tFdXFZZjJtaC1qNENDUktDM08yZHVEellSdHBaUUYxWTRLUFB6WnpwcDZSUE92c0k2TmJjSUdvOTlmZ3JobHlCTC1POUlNUDFhUUZleGJlNlZlZXNFOFJmYlhKcVhIc292LWw1X2lKeFktQWNNMGZDV09CbnFVVWFHem5ocjRDRjRHUWYwN1JYLTFsWDR1SGdTOEUxSm9GTmt4SFlrWDJ0a0JxR3Q1LTMwTEczR05rWlhDcDFYMkQwdU8wVEhJV0FTbURxRXFTcHdBellULW9RUWdrSFg0MTlRaEpvNkFyYlRzdXVnOURPRUlaUkwwdFVlNXpEWmtybUpYVkt2ZjRzajFIZENnZ3FrRzB5NG1zY0NnSEE?oc=5)
+3. [**트럼프는 낮은 금리를 원한다. 연준은 이를 준수할 이유가 거의 없다고 봅니다.**](https://news.google.com/rss/articles/CBMi-gJBVV95cUxNaGpLbl9GQXZHT2VhbEtQR0dyZmFsSW9DYVhZc1NlNGMtQWt5VHdxUjZqekpXWUk3NFg5TUwwcWpmMUlHRnZ4ejkxX0tUSk9jejJsOWMwOThZMHBHVEkxdFV1MG0xQ3QyaTFNdkpQOExpcWNRNkNnSzl4NzhUcm1LcWpXX01HVUVid3drcWEzbkMtWFpKeTIzWmJCaDZHb2JMel9Xa2JzU1NDMFN3bFJScFF5Rm56bzlUX1Zad1pVMng4bS1EZkt6UF9zbURrc211MTB4eDBVRE1GVmZfeUR2UmVZUkYySkdyOHBXZUFTR0dEWFI2cjJJdWdlUzk3Q25KaXUtSnhaUElTOXZtMEtVVmx3V0NGNWRUZzdWelFnYTNTQ2R6c2xCM0xWeVBOdHFMckRyYTlHMUYwc0VlaUtSdm8wOHV6akZ0ODIyNnVKcFpSRkFsZEZGcW9INGN6WVdLSFlGUzBZVEVySFg1RXJMcnJsNjRlbGxKalE?oc=5)
    Barron's · 2026-02-13 05:59 KST · central-bank
    원문: Trump Wants Lower Rates. The Fed Sees Little Reason to Comply.
 
-4. [**오늘의 주식 시장: Dow, S&P 500, Nasdaq은 AI 혼란에 대한 우려가 커지면서 기술이 타격을 입으면서 하락합니다. 금, 비트코인 ​​싱크**](https://news.google.com/rss/articles/CBMiugFBVV95cUxOWENMQjFZYldGSkdpTHBNV2dOQ1p2Y3VxOExEa1dsaDYwakJOVGViV3JRbUZDUUYxcGhfVWQ1dTZoWGIzTXdIZ3YyTnpLbW1XN3JHaWVBN0pMRHV5bl9JSzFLb3BzaVpNQ1Y3WFF3UXNUZnRxd05kS25aOHFjQVF6VmNXb0p6NTJYdDA5cngzelhmX2wtX0dLQWI1R1FwSVhMRENjcVNldC04NHM4UzhBYllkX1k0MTNBWlE?oc=5)
-   Yahoo! Finance Canada · 2026-02-13 06:30 KST · 시장 이벤트
-   원문: Stock market today: Dow, S&P 500, Nasdaq sink as tech gets hit as AI disruption fears grow; gold, bitcoin sink
+4. [**1월 CPI 인플레이션 보고서는 금요일 오전에 발표됩니다. 다음은 보여줄 것으로 예상되는 내용입니다.**](https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGdjVDluVHJZWmdtektHT2FicldYR1ota2w0N3NhcDJwTWpaX2ZSOHlCODBZbTF6VFZnOVVNY1JORjJIWlVRaGZOT1NXOGMwSkdTU19IaGJxWkUxWm5wam1rUmxnOUV3cEpyV3BRNGdFSTdDM2Y5Z19LOWxsNHd2bFpuMXdTLWRnWV9jLW1LaFk0Y0pTeWg5Zk80T2pUVkdqQ1NuWWlOTVNWd1o0ckRkUEE1MklkVDVnenZ5V2FCZk4tejJlN0HSAcsBQVVfeXFMTm9zU3ZLOE5PWDZUbDVpMDdFTC03RC1IckYtYTNRaUc3R1RDV3JucDdDLTk1Q0VqMEF1Z25pXzc3YkRWNkY3UG9GZVVsalEyQmFOb1E1TWgteDI5X09xbXdacWJ3Z2FsaHNOclhqVXlRWEItOUVQN3QxeGhreE8wcU1mUmxVUDVHSjc0U0c0dXgtZy1fZUNIYXp6Zk1NSDcwOUdCYmJKdEc2UV9JcG9LdU5qRl96V0FrYTU4RGVCQWQ1TVh5anNzbWlGcFk?oc=5)
+   CNBC · 2026-02-13 04:55 KST · 미국 매크로
+   원문: The January CPI inflation report is due out Friday morning. Here's what it's expected to show
 
-5. [**중국과 멕시코가 관세를 둘러싼 무역 긴장 속에 회담을 열었습니다.**](https://news.google.com/rss/articles/CBMipwFBVV95cUxOSXhuWGxOMlg0YjljRi1VQ09aWktmR0hKVUV3aHJXUlp5SDlJRjlTaElRNlVRbDZWWkt2Rl92LTdQTU1rMjBhRmhJa0tEcm51VVA1Zm1tNktYOENoQkxvTU9hbWF2SjQ2UkRxRVZPTHc0OWVXbDktNEtodlV1XzFwSnJhZ3N3Nzk1ay1uQTU5NDY3YTYyT2JkTVlJQndROC1Ra21UTjVkTQ?oc=5)
-   Reuters · 2026-02-12 14:04 KST · 지정학
-   원문: China, Mexico held talks amid trade tensions over tariffs
+5. [**지난 몇 년간 국채 명목 금리가 그렇게 많이 인상된 이유는 무엇입니까? 연준의 신뢰성 시대에 오래된 위험이 다시 등장**](https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTURka2ZEQldLZ09XYmhpS0VSSWJZNWpIWU1tUURuRzBZZl9GTnh0WkNvdFJfQ1pwWkw0YmpmaUVqRGR2NTRtMmU4ZExHblg5bVUzak9KX0pkYTFEUHgyVjZVTGkwUG5udVU4SVg0OER3c0g3OXVjVUtKSkxvZU5PQzZzY1Vma2NjdUwxUldzUkRZS0FnMGNTZlRWUGNHa2FPOFQ2dVBFcWdQOXprUlRwc2pfeEx2Xzh3Yll0enk4Q1l4VGVMbjMyY0VETVJSdHhXcFdwcnZiMFZrZml2VS0yMnRudjlLekRS?oc=5)
+   Federal Reserve Board (.gov) · 2026-02-13 07:00 KST · central-bank
+   원문: Why have far-forward nominal Treasury rates increased so much in the past few years? Old risks reemerge in an era of Fed credibility
 
 ### 국내
 
-1. [**"코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인**](https://www.hankyung.com/article/202602133468i)
+1. [**코스피, 외국인·기관 매수에 상승 출발…18만전자·90만닉스 돌파**](https://www.hankyung.com/article/2026021340166)
+   한국경제 증권 · 2026-02-13 09:13 KST · 국내 시장
+
+2. [**'18만전자' 달성했다…삼성전자 역대 최고가**](https://www.hankyung.com/article/2026021339876)
+   한국경제 증권 · 2026-02-13 09:22 KST · 국내 시장
+
+3. [**"코스피만 샀다"…코스닥은 4590억원 팔아치운 외국인**](https://www.hankyung.com/article/202602133468i)
    한국경제 증권 · 2026-02-13 06:00 KST · 국내 시장
-
-2. [**"美 주식만 보던 부자들, 요즘 삼성전자 적극 매수"**](https://www.hankyung.com/article/202602122090i)
-   한국경제 증권 · 2026-02-12 17:17 KST · 국내 시장
-
-3. [**[단독] 토스, 해외 코인 거래소 인수 검토…美 기관 플랫폼과 접촉**](https://www.hankyung.com/article/202602122644g)
-   한국경제 증권 · 2026-02-12 20:34 KST · 국내 시장
 
 ---
 
@@ -174,9 +174,9 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 | 쌍 | 20일 상관 | 상태 | 의미 |
 |----|----------|------|------|
 | S&P 500 ↔ BTC | +0.62 | 🟡 약한 동조 | 약한 위험선호 동조 |
-| S&P 500 ↔ 원/달러 | -0.07 | ⚪ 비동조 | 환율 독립적 |
+| S&P 500 ↔ 원/달러 | -0.1 | ⚪ 비동조 | 환율 독립적 |
 | S&P 500 ↔ 10년물 | +0.04 | ⚪ 비동조 | 독립적 |
-| VIX ↔ 금 | -0.03 | ⚪ 비동조 | 독립적 |
+| VIX ↔ 금 | 0 | ⚪ 비동조 | 독립적 |
 | BTC ↔ 금 | +0.04 | ⚪ 비동조 | 독립적 자산 |
 | 유가 ↔ 10년물 | +0.09 | ⚪ 비동조 | 독립적 |
 
@@ -186,13 +186,13 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 반도체 (SOXX) | +5.74% | +16.91% |
-| 에너지 (XLE) | +2.88% | +20.92% |
-| 테크 (XLK) | +2.13% | -3.12% |
-| 산업 (XLI) | +2.10% | +11.55% |
-| 헬스케어 (XLV) | +0.24% | +0.96% |
-| 소비재 (XLY) | -1.68% | -2.56% |
-| 금융 (XLF) | -3.51% | -5.44% |
+| 반도체 (SOXX) | +6.77% | +18.21% |
+| 테크 (XLK) | +3.31% | -2.10% |
+| 에너지 (XLE) | +3.20% | +21.57% |
+| 산업 (XLI) | +1.74% | +11.31% |
+| 헬스케어 (XLV) | -1.19% | -0.47% |
+| 소비재 (XLY) | -1.89% | -2.78% |
+| 금융 (XLF) | -3.14% | -5.11% |
 
 ### 한국 섹터 (최근 흐름)
 
@@ -212,9 +212,9 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,932.3 | 6,832.76 | -1.44% | 소폭 하락 |
-| BTC | 70,555 | 66,335 | -5.98% | 급락 |
+| BTC | 70,555 | 66,437 | -5.84% | 급락 |
 | VIX | 20.37 | 20.82 | +2.21% | 불안 확대 |
-| USDKRW | 1,470.68원 | 1,439.37원 | -2.13% | 약세 전환 |
+| USDKRW | 1,470.68원 | 1,443.48원 | -1.85% | 소폭 하락 |
 
 ## 이벤트 임팩트
 
@@ -249,7 +249,7 @@ AI 랠리 관련 이슈가 시장 방향을 좌우하고 있습니다. VIX가 �
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-13 09:05:12 KST</span>
+  <span>생성 시각: 2026-02-13 11:22:00 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-13 09:05:12 KST</span>
+  <span>데이터 기준 시각: 2026-02-13 11:22:00 KST</span>
 </div>
