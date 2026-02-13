@@ -242,6 +242,7 @@ code, pre, .num-cell, .terminal-data {
   font-size: 0.9rem;
   border-bottom: 1px solid rgba(124, 58, 237, 0.08);
   color: #CBD5E1;
+  font-variant-numeric: tabular-nums;
 }
 
 .prose tbody tr:last-child td { border-bottom: none; }
@@ -252,6 +253,12 @@ code, pre, .num-cell, .terminal-data {
 .prose thead th:not(:first-child),
 .prose td:not(:first-child) {
   text-align: right !important;
+}
+
+/* 숫자 데이터 컬럼 — 모노스페이스 */
+.prose tbody td:not(:first-child) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
 }
 
 /* --- Mobile Spacing & Scaling --- */
@@ -1584,6 +1591,15 @@ html { scroll-behavior: smooth; }
   font-weight: 600;
 }
 
+/* Prose text color — 다크모드에서 본문 밝기 보정 */
+.dark .prose {
+  --tw-prose-body: #CBD5E1;          /* slate-300: 기본 본문 */
+  --tw-prose-headings: #E2E8F0;      /* slate-200: 제목 */
+  --tw-prose-bold: #E2E8F0;          /* slate-200: 볼드 */
+  --tw-prose-quotes: #CBD5E1;        /* slate-300: 인용 */
+  --tw-prose-counters: #94A3B8;      /* slate-400: 리스트 번호 */
+}
+
 /* ===== Post Page - FHD Width & Readability ===== */
 
 /* Widen outer container for XL+ (1280px+) screens */
@@ -1692,18 +1708,21 @@ html { scroll-behavior: smooth; }
 /* Briefing section h3 — cyberpunk neon style */
 .briefing-section h3 {
   font-family: 'Exo 2', sans-serif;
-  color: var(--mp-neon-cyan) !important;
+  color: #B8C5D6 !important;
   font-size: 1.1rem !important;
   font-weight: 600;
   letter-spacing: 0.02em;
   margin-top: 1.5em !important;
   margin-bottom: 0.5em !important;
-  text-shadow: 0 0 8px rgba(0, 240, 255, 0.2);
+  text-shadow: none;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--mp-neon-purple);
 }
 
 :root:not(.dark) .briefing-section h3 {
-  color: var(--mp-neon-purple) !important;
+  color: #334155 !important;
   text-shadow: none;
+  border-left-color: var(--mp-neon-purple);
 }
 
 /* ========== Regime Panel — Cyberpunk HUD ========== */
