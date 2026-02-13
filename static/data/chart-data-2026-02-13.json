@@ -161,12 +161,8 @@
         1462.4,
         1458.54,
         1445.5,
-<<<<<<< Updated upstream
-        1441.51
-=======
         1447.8,
         1439.37
->>>>>>> Stashed changes
       ],
       "BTC": [
         95551,
@@ -188,12 +184,8 @@
         70120,
         70120,
         66714,
-<<<<<<< Updated upstream
-        66165
-=======
         66352,
         66335
->>>>>>> Stashed changes
       ],
       "GOLD": [
         4616.3,
@@ -215,12 +207,8 @@
         5050.9,
         5050.9,
         5100.7,
-<<<<<<< Updated upstream
-        4933.4
-=======
         4941.4,
         4934
->>>>>>> Stashed changes
       ],
       "OIL": [
         59.19,
@@ -242,12 +230,8 @@
         64.36,
         64.36,
         64.95,
-<<<<<<< Updated upstream
-        62.84
-=======
         62.89,
         62.83
->>>>>>> Stashed changes
       ]
     }
   },
@@ -268,11 +252,7 @@
         "S&P 500",
         "원/달러"
       ],
-<<<<<<< Updated upstream
-      "value": -0.09,
-=======
       "value": -0.07,
->>>>>>> Stashed changes
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -448,11 +428,7 @@
     {
       "metric": "BTC",
       "label": "급락",
-<<<<<<< Updated upstream
-      "changePct": -6.22
-=======
       "changePct": -5.98
->>>>>>> Stashed changes
     },
     {
       "metric": "VIX",
@@ -461,13 +437,8 @@
     },
     {
       "metric": "USDKRW",
-<<<<<<< Updated upstream
-      "label": "소폭 하락",
-      "changePct": -1.98
-=======
       "label": "약세 전환",
       "changePct": -2.13
->>>>>>> Stashed changes
     }
   ]
 }
