@@ -1,0 +1,5 @@
+article:
+  reading_time:
+    one: "{{ .Count }}분 분량"
+    other: "{{ .Count }}분 분량"
+  reading_time_title: "예상 읽기 시간"
