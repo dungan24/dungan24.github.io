@@ -26,7 +26,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-시장 전반에 뚜렷한 주도 테마 없이 종목별 차별화 장세가 나타났습니다.
+S&P 500이 0.05% 상승하자 위험선호가 강화되었습니다. 이는 나스닥 100이 0.18% 상승하는 데 기여했으며, VIX 지수는 20.6으로 하락하는 결과를 낳았습니다.
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -71,8 +71,8 @@ chartData: "/data/chart-data-2026-02-14.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,639 | +1,922.04 | +2.76% | - ⚡ 상위 10% |
-| 이더리움 (ETH) | 2,075.37 | +85.51 | +4.12% | - |
+| 비트코인 (BTC) | 69,596 | +1,872.13 | +2.69% | ↓1일 ⚡ 상위 10% |
+| 이더리움 (ETH) | 2,075.34 | +85.5 | +4.12% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -160,7 +160,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,639 | -0.69% | 소폭 하락 |
+| BTC | 70,120 | 69,596 | -0.75% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -185,17 +185,17 @@ chartData: "/data/chart-data-2026-02-14.json"
 
 ## 출처
 
+- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-14 23:47:53 KST</span>
+  <span>생성 시각: 2026-02-14 23:49:52 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-14 23:47:53 KST</span>
+  <span>데이터 기준 시각: 2026-02-14 23:49:52 KST</span>
 </div>
