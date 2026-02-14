@@ -26,8 +26,10 @@ chartData: "/data/chart-data-2026-02-14.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-S&P 500이 0.05% 상승한 가운데, 나스닥 100이 0.18% 상승하면서 위험선호가 강화되었습니다.
-이러한 위험선호 강화로 인해 VIX 지수는 20.6으로 상승하고, 원/달러 환율은 1,443.3원으로 하락했습니다.
+S&P 500이 0.05% 상승하자 위험선호가 강화되면서, 시장 전반에 긍정적 흐름이 형성되었습니다.
+나스닥 종합이 0.22% 하락하면서, 종목별 차별화 장세가 나타나고 있습니다.
+VIX 지수는 20.6으로 상승하면서, 위험선호가 강화되는 모습을 보이고 있습니다.
+원/달러 환율은 1,443.3원으로 하락하면서, 시장 전반에 긍정적 영향을 미치고 있습니다.
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -186,17 +188,17 @@ S&P 500이 0.05% 상승한 가운데, 나스닥 100이 0.18% 상승하면서 위
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-14 23:51:38 KST</span>
+  <span>생성 시각: 2026-02-14 23:51:58 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-14 23:51:38 KST</span>
+  <span>데이터 기준 시각: 2026-02-14 23:51:58 KST</span>
 </div>
