@@ -69,19 +69,19 @@ chartData: "/data/chart-data-2026-02-14.json"
 ## 장후 주요 뉴스 
 
 1. [**Trump pushes Fed for interest rate cuts after new economic data**](https://news.google.com/rss/articles/CBMi2AFBVV95cUxQVkMzZVB1aENBMUkwS2tocTVjZl9Id3lRNnM3eDR5cS01OXdyRTZOeG1PaTRKVi0yUlFZWDdHLTdGWlVVN3dfWTF2NDJlWnR1N1NrdXFlWjdNcGNQODNBVXl0VzNrQlBreEpDU3VTYnk3dkNGTkhvWlFFa0VkRWhzLVhESFI4RWlqMDFhcXl2QzA0ejNXRW8tWEY5S0EyTXFEdkJSbVdaRDlVeUdCMVZpX1YtNEk5WTI3cXRTdUxRY3RMTkE0UGRIeVQyYWlqNndQbkxtazJQTy0?oc=5)
-   03:08 KST | central-bank
+   03:10 KST | central-bank
 
 2. [**Traders pivot Fed rate cut bets after CPI surprise**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
-   03:08 KST | central-bank
+   03:10 KST | central-bank
 
-3. [**January CPI Inflation: Yet Another Stock Market Positive (SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
-   03:08 KST | 미국 매크로
+3. [**Trump's Attack on Green Energy Hits Manufacturing Sector Hard**](https://news.google.com/rss/articles/CBMirAFBVV95cUxQMS0zSzNDR2lWczBlSEFJdkgxQmYxb1pkd0tEamttTkV5Y1BXWDJoeDd6d05DNEhqdGh4SHRqZWtsTXI2R1p2ZFlrdGx5MGVTZ0lZNDY1OUZuZldqcWlBR2tGV3FNaG0wdjBkTU4weDJWR1M4QjlINTRrYlc4LXBFOVFUbm0xVW16REg3ZFJKbXJZOE1YNUVuTGVuZVlRWmY2QUpVb045S2FKcy100gGyAUFVX3lxTE1jMXpwN2U0VG9Demp0TFpDYTJBbHlOSEZla3Q1ZWFkaHZEVHVVSGlmZGtldGFnYTN5RWpyaGF1ZzVLZGxpMkFFX2VxX093MlZ1NW91RWkwei1YUm9sTm5tM0l3Q2IwSVpzY1RTVV9aMjNtWVlNQVRLcjQxWDJIcDFsYXA5cmRjeFU4dUdYQzVFWlZyc3VfdG9LN2NhaEZOLVBsbG9pVWdIeUhZekJzb1BuN1E?oc=5)
+   03:10 KST | 원자재
 
-4. [**The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
-   03:08 KST | 시장 이벤트
+4. [**January CPI Inflation: Yet Another Stock Market Positive (SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
+   03:10 KST | 미국 매크로
 
-5. [**History Suggests the S&P 500 Could Plunge in 2026. Here's Why.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
-   03:08 KST | 시장 이벤트
+5. [**The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
+   03:10 KST | 시장 이벤트
 
 ---
 
@@ -117,7 +117,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 03:08:50 KST</span>
+  <span>생성 시각: 2026-02-15 03:10:52 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-15 03:08:50 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 03:10:52 KST</span>
 </div>
