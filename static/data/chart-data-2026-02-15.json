@@ -47,7 +47,7 @@
         6940.78,
         6941.47,
         6836.17,
-        null
+        6836.17
       ],
       "NDX": [
         23515.39,
@@ -70,7 +70,7 @@
         25152.61,
         25201.26,
         24732.73,
-        null
+        24732.73
       ],
       "DJI": [
         49359.33,
@@ -93,7 +93,7 @@
         50054.28,
         50121.4,
         49500.93,
-        null
+        49500.93
       ],
       "VIX": [
         15.86,
@@ -116,7 +116,7 @@
         17.69,
         17.51,
         20.6,
-        null
+        20.6
       ],
       "US10Y": [
         4.23,
@@ -139,7 +139,7 @@
         4.17,
         4.17,
         4.06,
-        null
+        4.06
       ],
       "USDKRW": [
         1468.84,
@@ -162,7 +162,7 @@
         1445.5,
         1437,
         1443.3,
-        null
+        1443.3
       ],
       "BTC": [
         95525,
@@ -185,7 +185,7 @@
         66714,
         67026,
         69851,
-        null
+        69787
       ],
       "GOLD": [
         4588.4,
@@ -208,7 +208,7 @@
         5100.7,
         5086.6,
         5046.3,
-        null
+        5046.3
       ],
       "OIL": [
         59.44,
@@ -231,15 +231,214 @@
         64.95,
         64.95,
         62.89,
-        null
+        62.89
       ]
     }
   },
-  "correlations": [],
-  "regime": null,
-  "sectorStrength": {
-    "us": [],
-    "kr": []
+  "correlations": [
+    {
+      "pair": "SPX_BTC",
+      "labels": [
+        "S&P 500",
+        "BTC"
+      ],
+      "value": 0.54,
+      "status": "약한 동조",
+      "meaning": "약한 위험선호 동조"
+    },
+    {
+      "pair": "SPX_USDKRW",
+      "labels": [
+        "S&P 500",
+        "원/달러"
+      ],
+      "value": -0.12,
+      "status": "비동조",
+      "meaning": "환율 독립적"
+    },
+    {
+      "pair": "SPX_US10Y",
+      "labels": [
+        "S&P 500",
+        "10년물"
+      ],
+      "value": 0.12,
+      "status": "비동조",
+      "meaning": "독립적"
+    },
+    {
+      "pair": "VIX_GOLD",
+      "labels": [
+        "VIX",
+        "금"
+      ],
+      "value": 0.03,
+      "status": "비동조",
+      "meaning": "독립적"
+    },
+    {
+      "pair": "BTC_GOLD",
+      "labels": [
+        "BTC",
+        "금"
+      ],
+      "value": 0.02,
+      "status": "비동조",
+      "meaning": "독립적 자산"
+    },
+    {
+      "pair": "OIL_US10Y",
+      "labels": [
+        "유가",
+        "10년물"
+      ],
+      "value": 0.15,
+      "status": "비동조",
+      "meaning": "독립적"
+    }
+  ],
+  "regime": {
+    "current": "CAUTIOUS",
+    "icon": "🟡",
+    "label": "Cautious",
+    "summary": "방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계",
+    "signals": [
+      {
+        "name": "VIX",
+        "value": "20.6",
+        "assessment": "⚠",
+        "note": "경계"
+      },
+      {
+        "name": "SPX 20일",
+        "value": "-1.5%",
+        "assessment": "⚠",
+        "note": "횡보"
+      },
+      {
+        "name": "US10Y 방향",
+        "value": "-14bp (5일)",
+        "assessment": "⚠",
+        "note": "완화 기대"
+      },
+      {
+        "name": "크립토 심리",
+        "value": "9",
+        "assessment": "⚠",
+        "note": "극단적 공포 (contrarian 반등 시그널)"
+      }
+    ]
   },
-  "fiveDayComparison": []
+  "sectorStrength": {
+    "us": [
+      {
+        "name": "에너지",
+        "symbol": "XLE",
+        "week1": 3.45,
+        "month1": 19.38
+      },
+      {
+        "name": "반도체",
+        "symbol": "SOXX",
+        "week1": 3.15,
+        "month1": 13.39
+      },
+      {
+        "name": "산업",
+        "symbol": "XLI",
+        "week1": 1.96,
+        "month1": 10.57
+      },
+      {
+        "name": "헬스케어",
+        "symbol": "XLV",
+        "week1": 1.36,
+        "month1": 1.71
+      },
+      {
+        "name": "테크",
+        "symbol": "XLK",
+        "week1": 0.27,
+        "month1": -2.96
+      },
+      {
+        "name": "소비재",
+        "symbol": "XLY",
+        "week1": -0.15,
+        "month1": -1.51
+      },
+      {
+        "name": "금융",
+        "symbol": "XLF",
+        "week1": -3.42,
+        "month1": -5.65
+      }
+    ],
+    "kr": [
+      {
+        "name": "은행",
+        "sector": "KODEX_BANK",
+        "week1": 5.06,
+        "month1": 4.13
+      },
+      {
+        "name": "IT",
+        "sector": "TIGER_IT",
+        "week1": -0.89,
+        "month1": -0.4
+      },
+      {
+        "name": "자동차",
+        "sector": "KODEX_AUTO",
+        "week1": -2.19,
+        "month1": 0.08
+      },
+      {
+        "name": "에너지",
+        "sector": "KODEX_ENERGY",
+        "week1": -2.26,
+        "month1": -5.88
+      },
+      {
+        "name": "반도체",
+        "sector": "KODEX_SEMI",
+        "week1": -3.74,
+        "month1": 4.89
+      },
+      {
+        "name": "바이오",
+        "sector": "KODEX_BIO",
+        "week1": -4.35,
+        "month1": -26.26
+      },
+      {
+        "name": "2차전지",
+        "sector": "TIGER_BATT",
+        "week1": -6.79,
+        "month1": -5.82
+      }
+    ]
+  },
+  "fiveDayComparison": [
+    {
+      "metric": "SPX",
+      "label": "소폭 하락",
+      "changePct": -1.85
+    },
+    {
+      "metric": "BTC",
+      "label": "보합",
+      "changePct": -0.47
+    },
+    {
+      "metric": "VIX",
+      "label": "급격 불안",
+      "changePct": 18.66
+    },
+    {
+      "metric": "USDKRW",
+      "label": "소폭 하락",
+      "changePct": -1.31
+    }
+  ]
 }
