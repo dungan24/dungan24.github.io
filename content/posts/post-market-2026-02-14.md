@@ -24,8 +24,11 @@ chartData: "/data/chart-data-2026-02-14.json"
 
 ### 시장 마감 흐름
 오늘은 한국 증시 2026-02-14 주말 휴장 구간이라 국내 현물 거래가 쉬어 갔습니다.
+
 코스피 -0.28%, 코스닥 -1.77% 수치는 직전 거래일 종가 기준입니다.
+
 국내 수급·프로그램 확정치는 휴장일이라 집계되지 않았습니다.
+
 미국 지수는 S&P +0.05%, 나스닥 +0.18% 흐름입니다.
 
 ### 오늘 장 핵심 동인
@@ -93,7 +96,6 @@ chartData: "/data/chart-data-2026-02-14.json"
 
 ## 출처
 
-- 한국투자증권 Open API | https://openapi.koreainvestment.com:9443
 - Yahoo Finance | https://finance.yahoo.com
 - CoinGecko | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me | https://api.alternative.me/fng/
@@ -104,7 +106,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 03:34:22 KST</span>
+  <span>생성 시각: 2026-02-15 03:35:18 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-15 03:34:22 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 03:35:18 KST</span>
 </div>
