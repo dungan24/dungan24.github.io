@@ -26,7 +26,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-S&P 500이 0.05% 상승하자 위험선호가 강화되었습니다. 이는 나스닥 100이 0.18% 상승하는 데 기여했으며, VIX 지수는 20.6으로 하락하는 결과를 낳았습니다.
+S&P 500이 0.05% 상승하자, 시장 전반의 긍정적 흐름이 강화되어 위험자산 선호가 높아졌다. 하지만 나스닥 종합이 0.22% 하락하며, 시장 전반의 주도 테마가 뚜렷하지 않아 종목별 차별화 장세가 나타났다. VIX 지수는 20.6으로 상승했으며, 원/달러 환율은 1,443.3원으로 유지되었다.
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -71,7 +71,7 @@ S&P 500이 0.05% 상승하자 위험선호가 강화되었습니다. 이는 나�
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,596 | +1,872.13 | +2.69% | ↓1일 ⚡ 상위 10% |
+| 비트코인 (BTC) | 69,596 | +1,872.13 | +2.69% | - ⚡ 상위 10% |
 | 이더리움 (ETH) | 2,075.34 | +85.5 | +4.12% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
@@ -185,17 +185,17 @@ S&P 500이 0.05% 상승하자 위험선호가 강화되었습니다. 이는 나�
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-14 23:49:52 KST</span>
+  <span>생성 시각: 2026-02-14 23:50:11 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-14 23:49:52 KST</span>
+  <span>데이터 기준 시각: 2026-02-14 23:50:11 KST</span>
 </div>
