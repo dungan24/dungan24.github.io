@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentGroup = { label: '\uBBF8\uAD6D \uC9C0\uC218', tables: [], elements: [] };
         groups.push(currentGroup);
       } else if (child.tagName === 'H3') {
-        currentGroup = { label: child.textContent.trim().replace(/\s*⚠.*$/, ''), tables: [], elements: [child] };
+        currentGroup = { label: child.textContent.trim().replace(/\s*⚠️.*$/, ''), tables: [], elements: [child] };
         groups.push(currentGroup);
       } else if (child.classList && child.classList.contains('table-wrapper')) {
         var table = child.querySelector('table');

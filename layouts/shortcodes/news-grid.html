@@ -1,0 +1,43 @@
+{{/* news-grid: 뉴스를 카드 그리드로 보여주는 쇼트코드 */}}
+<div class="mp-news-grid">
+  {{ $items := split .Inner "---" }}
+  {{ range $items }}
+    {{ $content := strings.TrimSpace . }}
+    {{ if $content }}
+      {{ $lines := split $content "\n" }}
+      {{ $headlineLine := "" }}
+      {{ $metaLine := "" }}
+      {{ $originalLine := "" }}
+      
+      {{/* 첫 번째 유효한 줄을 헤드라인으로 잡기 */}}
+      {{ range $lines }}
+        {{ if and (not $headlineLine) (strings.TrimSpace .) }}
+          {{ $headlineLine = strings.TrimSpace . }}
+        {{ else if and $headlineLine (not $metaLine) (strings.TrimSpace .) }}
+          {{ $metaLine = strings.TrimSpace . }}
+        {{ else if and $metaLine (not $originalLine) (strings.TrimSpace .) }}
+          {{ $originalLine = strings.TrimSpace . }}
+        {{ end }}
+      {{ end }}
+
+      {{ if $headlineLine }}
+      {{ $headline := $headlineLine | replaceRE `^[\d\.\s*]+` "" | strings.TrimSpace }}
+      <div class="mp-news-card" style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <div class="mp-news-card__headline" style="font-weight: 700; font-size: 1rem; line-height: 1.5; color: #E2E8F0;">
+          {{ $headline | markdownify }}
+        </div>
+        {{ if $metaLine }}
+        <div class="mp-news-card__meta" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #94A3B8;">
+          {{ $metaLine | markdownify }}
+        </div>
+        {{ end }}
+        {{ if $originalLine }}
+        <div class="mp-news-card__original" style="font-size: 0.72rem; color: #64748B; font-style: italic; border-top: 1px solid rgba(124, 58, 237, 0.1); padding-top: 0.5rem; margin-top: 0.25rem;">
+          {{ $originalLine | markdownify }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>

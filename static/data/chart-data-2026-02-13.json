@@ -306,25 +306,25 @@
       {
         "name": "VIX",
         "value": "20.8",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "경계"
       },
       {
         "name": "SPX 20일",
         "value": "-1.6%",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "횡보"
       },
       {
         "name": "US10Y 방향",
         "value": "-11bp (5일)",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "완화 기대"
       },
       {
         "name": "크립토 심리",
         "value": "9",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "극단적 공포 (contrarian 반등 시그널)"
       }
     ]

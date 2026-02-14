@@ -1,0 +1,195 @@
+<div class="mp-calendar-container" id="mp-calendar-app">
+  <div class="mp-calendar-header">
+    <div class="mp-calendar-title">
+      <span class="mp-calendar-icon">📅</span>
+      <h2 id="mp-calendar-month-year">ECONOMIC CALENDAR</h2>
+    </div>
+    <div class="mp-view-controls">
+      <button class="mp-view-btn active" data-view="list">LIST</button>
+      <button class="mp-view-btn" data-view="grid">GRID</button>
+    </div>
+    <div class="mp-calendar-filters">
+      <button class="mp-filter-btn active" data-filter="all">ALL</button>
+      <button class="mp-filter-btn" data-filter="high">🔥 HIGH</button>
+    </div>
+  </div>
+
+  <!-- Calendar Grid View -->
+  <div id="mp-grid-view" class="mp-calendar-grid-wrapper" style="display:none;">
+    <div class="mp-grid-weekdays">
+      <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+    </div>
+    <div id="mp-calendar-days" class="mp-grid-days"></div>
+  </div>
+
+  <!-- Timeline List View -->
+  <div class="mp-calendar-timeline" id="mp-event-list">
+    <div class="mp-loading">Initializing Neural Calendar...</div>
+  </div>
+</div>
+
+<div id="mp-event-modal" class="mp-modal">
+  <div class="mp-modal-content">
+    <span class="mp-modal-close">&times;</span>
+    <div id="mp-modal-body"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var events = [];
+  var currentView = 'list';
+  var currentDate = new Date(2026, 1, 15); // Base date for demo
+
+  function initCalendar(data) {
+    events = data;
+    renderAll();
+    setupControls();
+  }
+
+  function renderAll() {
+    renderMonthTitle();
+    if (currentView === 'list') {
+      document.getElementById('mp-grid-view').style.display = 'none';
+      document.getElementById('mp-event-list').style.display = 'flex';
+      renderEvents('all');
+    } else {
+      document.getElementById('mp-grid-view').style.display = 'block';
+      document.getElementById('mp-event-list').style.display = 'none';
+      renderGrid();
+    }
+  }
+
+  function renderMonthTitle() {
+    var title = document.getElementById('mp-calendar-month-year');
+    var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    title.textContent = months[currentDate.getMonth()] + " " + currentDate.getFullYear();
+  }
+
+  function renderGrid() {
+    var grid = document.getElementById('mp-calendar-days');
+    grid.innerHTML = '';
+    
+    var firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+    var daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+    
+    // Padding for first week
+    for (var i = 0; i < firstDay; i++) {
+      grid.innerHTML += '<div class="mp-grid-day empty"></div>';
+    }
+
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dateStr = currentDate.getFullYear() + "-" + 
+                    String(currentDate.getMonth() + 1).padStart(2, '0') + "-" + 
+                    String(d).padStart(2, '0');
+      
+      var dayEvents = events.filter(function(e) { return e.time.startsWith(dateStr); });
+      var hasHigh = dayEvents.some(function(e) { return e.importance === 'high'; });
+      
+      var dayClasses = 'mp-grid-day';
+      if (d === currentDate.getDate()) dayClasses += ' today';
+      if (dayEvents.length > 0) dayClasses += ' has-events';
+      if (hasHigh) dayClasses += ' high-impact';
+
+      grid.innerHTML += `
+        <div class="${dayClasses}" onclick="selectDate('${dateStr}')">
+          <span class="day-num">${d}</span>
+          <div class="day-indicators">
+            ${dayEvents.slice(0, 3).map(e => `<span class="dot imp-${e.importance}"></span>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  function renderEvents(filter) {
+    var list = document.getElementById('mp-event-list');
+    var filtered = events.filter(function(e) {
+      if (filter === 'all') return true;
+      if (filter === 'high') return e.importance === 'high';
+      if (typeof filter === 'string' && filter.includes('-')) return e.time.startsWith(filter);
+      return true;
+    });
+
+    list.innerHTML = filtered.map(function(e, idx) {
+      return `
+        <div class="mp-event-card imp-${e.importance}" onclick="window.showEventDetail(${idx})">
+          <div class="mp-event-time">
+            <span class="time">${e.time.split(' ')[1].substring(0,5)}</span>
+            <span class="date">${e.time.split(' ')[0].substring(5)}</span>
+          </div>
+          <div class="mp-event-info">
+            <div class="mp-event-meta">
+              <span class="currency">${e.currency}</span>
+              <span class="importance-dots">${'★'.repeat(e.importance === 'high' ? 3 : (e.importance === 'medium' ? 2 : 1))}</span>
+            </div>
+            <div class="mp-event-name">${e.name}</div>
+          </div>
+          <div class="mp-event-data">
+            <div class="data-item"><span class="label">FORECAST</span><span class="val">${e.forecast || '--'}</span></div>
+            <div class="data-item"><span class="label">PREV</span><span class="val">${e.previous || '--'}</span></div>
+          </div>
+        </div>
+      `;
+    }).join('') || '<div class="mp-empty">No events for this selection.</div>';
+  }
+
+  window.selectDate = function(dateStr) {
+    currentView = 'list';
+    document.querySelectorAll('.mp-view-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.view === 'list');
+    });
+    renderAll();
+    renderEvents(dateStr);
+  };
+
+  function setupControls() {
+    document.querySelectorAll('.mp-view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentView = this.dataset.view;
+        document.querySelectorAll('.mp-view-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderAll();
+      });
+    });
+
+    document.querySelectorAll('.mp-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.mp-filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderEvents(this.dataset.filter);
+      });
+    });
+  }
+
+  window.showEventDetail = function(idx) {
+    var e = events[idx];
+    var modal = document.getElementById('mp-event-modal');
+    var body = document.getElementById('mp-modal-body');
+    body.innerHTML = `
+      <div class="mp-modal-header"><span class="currency-tag">${e.currency}</span><h3>${e.name}</h3></div>
+      <div class="mp-modal-grid">
+        <div class="mp-modal-item"><label>Impact</label><div class="val importance-${e.importance}">${e.importance.toUpperCase()}</div></div>
+        <div class="mp-modal-item"><label>Time</label><div class="val">${e.time}</div></div>
+        <div class="mp-modal-item"><label>Forecast</label><div class="val highlight">${e.forecast || '--'}</div></div>
+        <div class="mp-modal-item"><label>Previous</label><div class="val">${e.previous || '--'}</div></div>
+      </div>
+    `;
+    modal.style.display = 'block';
+  };
+
+  document.querySelector('.mp-modal-close').onclick = function() { document.getElementById('mp-event-modal').style.display = 'none'; };
+
+  var mockData = [
+    { name: 'GDP m/m', currency: 'GBP', time: '2026-02-12 16:00:00 KST', importance: 'high', previous: '0.3%', forecast: '0.1%' },
+    { name: 'Unemployment Claims', currency: 'USD', time: '2026-02-14 22:30:00 KST', importance: 'high', previous: '231K', forecast: '222K' },
+    { name: 'Retail Sales m/m', currency: 'USD', time: '2026-02-15 22:30:00 KST', importance: 'high', previous: '0.4%', forecast: '0.2%' },
+    { name: 'Empire State Mfg Index', currency: 'USD', time: '2026-02-15 22:30:00 KST', importance: 'medium', previous: '-1.2', forecast: '2.5' },
+    { name: 'Core CPI m/m', currency: 'USD', time: '2026-02-16 22:30:00 KST', importance: 'high', previous: '0.2%', forecast: '0.3%' }
+  ];
+
+  setTimeout(function() { initCalendar(mockData); }, 100);
+})();
+</script>

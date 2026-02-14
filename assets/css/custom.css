@@ -29,7 +29,7 @@ body::after {
 
 /* --- Base Typography --- */
 body {
-  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.01em;
 }
@@ -1008,8 +1008,8 @@ code, pre, .num-cell, .terminal-data {
 
 /* --- TOC Hierarchy Enhancement --- */
 #TableOfContents {
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 #TableOfContents ul {
@@ -1018,136 +1018,131 @@ code, pre, .num-cell, .terminal-data {
   padding: 0;
 }
 
-/* h2 레벨 — 메인 섹션 */
 #TableOfContents > ul > li {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 #TableOfContents > ul > li > a {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.6rem;
-  color: #CBD5E1;
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.01em;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
   border-left: 2px solid transparent;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #TableOfContents > ul > li > a::before {
-  content: '▸';
+  content: '>';
+  font-family: 'JetBrains Mono', monospace;
   color: var(--mp-neon-purple);
-  font-size: 0.65rem;
-  flex-shrink: 0;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.4;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 #TableOfContents > ul > li > a:hover {
-  color: var(--mp-neon-purple);
-  background: rgba(124, 58, 237, 0.06);
-  border-left-color: rgba(124, 58, 237, 0.3);
+  color: #E2E8F0;
+  background: rgba(124, 58, 237, 0.1);
+  border-left-color: rgba(124, 58, 237, 0.4);
+  padding-left: 1rem;
 }
 
 #TableOfContents > ul > li > a:hover::before {
   opacity: 1;
+  transform: translateX(2px);
 }
 
-/* h2 Active 상태 */
-#TableOfContents > ul > li > a.active {
+/* ScrollSpy & Active states — supporting both classes Hugo/JS might use */
+#TableOfContents a.active,
+#TableOfContents a.is-active {
   color: var(--mp-neon-cyan) !important;
+  font-weight: 700;
   border-left-color: var(--mp-neon-cyan);
-  background: rgba(0, 240, 255, 0.05);
+  background: rgba(0, 240, 255, 0.08);
+  padding-left: 1.25rem;
+  box-shadow: 
+    inset 4px 0 12px -4px rgba(0, 240, 255, 0.3),
+    0 0 10px rgba(0, 240, 255, 0.1);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
 
-#TableOfContents > ul > li > a.active::before {
+#TableOfContents a.active::before,
+#TableOfContents a.is-active::before {
   color: var(--mp-neon-cyan);
   opacity: 1;
-}
-
-/* 서브섹션이 있는 h2 그룹 하단 구분선 */
-#TableOfContents > ul > li:has(ul) {
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.3rem;
-  border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+  content: '>>';
+  letter-spacing: -2px;
+  margin-right: 6px;
+  text-shadow: 0 0 5px var(--mp-neon-cyan);
 }
 
 /* h3 레벨 — 서브섹션 */
 #TableOfContents > ul > li > ul {
-  margin-left: 0.6rem;
-  padding-left: 0.65rem;
-  border-left: 1px dashed rgba(124, 58, 237, 0.15);
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(124, 58, 237, 0.15);
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 #TableOfContents > ul > li > ul > li > a {
   display: block;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   color: #64748B;
   font-weight: 400;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   text-decoration: none;
   border-left: 2px solid transparent;
-  border-radius: 0 2px 2px 0;
   transition: all 0.2s ease;
 }
 
 #TableOfContents > ul > li > ul > li > a:hover {
-  color: #94A3B8;
-  background: rgba(124, 58, 237, 0.04);
-  border-left-color: rgba(124, 58, 237, 0.2);
-}
-
-/* h3 Active 상태 */
-#TableOfContents > ul > li > ul > li > a.active {
-  color: var(--mp-neon-cyan) !important;
-  font-weight: 600;
-  border-left-color: var(--mp-neon-cyan);
-  background: rgba(0, 240, 255, 0.04);
-}
-
-/* Light mode */
-:root:not(.dark) #TableOfContents > ul > li > a {
-  color: #334155;
-}
-:root:not(.dark) #TableOfContents > ul > li > a:hover {
-  color: var(--mp-neon-purple);
-  background: rgba(124, 58, 237, 0.04);
-}
-:root:not(.dark) #TableOfContents > ul > li > ul > li > a {
-  color: #475569;
-}
-:root:not(.dark) #TableOfContents > ul > li > ul > li > a:hover {
-  color: #1E293B;
+  color: #CBD5E1;
+  background: rgba(124, 58, 237, 0.05);
 }
 
 /* --- TOCView Cyberpunk Panel --- */
 #TOCView {
-  position: relative;
-  background: var(--mp-glass-bg);
-  -webkit-backdrop-filter: var(--mp-glass-blur);
-  backdrop-filter: var(--mp-glass-blur);
-  border: 1px solid var(--mp-glass-border);
-  border-radius: var(--mp-radius-md);
-  padding: 1rem 1.25rem 1rem 1.5rem;
-  box-shadow: var(--mp-shadow-sm);
+  position: sticky;
+  top: 6rem;
+  background: rgba(10, 10, 26, 0.7);
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
+  backdrop-filter: blur(16px) saturate(1.8);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: var(--mp-radius-lg);
+  padding: 1.25rem 1.25rem 1.25rem 0.75rem;
+  box-shadow: 
+    0 4px 24px -4px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(124, 58, 237, 0.05);
   margin-left: 0;
-  padding-left: 1.5rem;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-
-#TOCView::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  overflow-y: auto;
+  max-height: calc(100vh - 10rem);
 }
 
 #TOCView::before {
-  content: '// NAV';
+  content: '// SYSTEM_NAV';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 12px;
+  border-bottom-right-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, var(--mp-neon-purple), #9333EA);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+  z-index: 10;
+}
   position: absolute;
   top: 0;
   left: 0;

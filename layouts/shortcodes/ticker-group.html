@@ -1,0 +1,32 @@
+{{/* ticker-group: 티커들을 그리드 형태로 보여주는 쇼트코드 */}}
+<div class="mp-ticker-groups">
+  {{ $lines := split .Inner "\n" }}
+  {{ range $lines }}
+    {{ $line := strings.TrimSpace . }}
+    {{ if and $line (strings.Contains $line "|") }}
+      {{ $parts := split $line "|" }}
+      {{ if ge (len $parts) 2 }}
+        {{ $name := index $parts 0 | strings.TrimSpace }}
+        {{ $price := index $parts 1 | strings.TrimSpace }}
+        {{ $change := "" }}{{ if ge (len $parts) 3 }}{{ $change = index $parts 2 | strings.TrimSpace }}{{ end }}
+        {{ $flow := "" }}{{ if ge (len $parts) 4 }}{{ $flow = index $parts 3 | strings.TrimSpace }}{{ end }}
+        
+        {{ $colorClass := "" }}
+        {{ if strings.Contains $change "+" }}{{ $colorClass = "num-up" }}{{ else if strings.Contains $change "-" }}{{ $colorClass = "num-down" }}{{ end }}
+        
+        <div class="mp-ticker-row" style="background: rgba(124, 58, 237, 0.05); padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid rgba(124, 58, 237, 0.1); display: flex; align-items: center; justify-content: space-between;">
+          <span class="mp-ticker-name" style="font-weight: 600; font-size: 0.9rem; color: #E2E8F0;">{{ $name }}</span>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+            <span class="mp-ticker-price" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #CBD5E1;">{{ $price }}</span>
+            {{ if or $change $flow }}
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="mp-ticker-change {{ $colorClass }}" style="font-size: 0.75rem;">{{ $change }}</span>
+              {{ if $flow }}<span class="mp-ticker-flow" style="font-size: 0.65rem; opacity: 0.6;">{{ $flow }}</span>{{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>

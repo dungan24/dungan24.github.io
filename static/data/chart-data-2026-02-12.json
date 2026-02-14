@@ -302,7 +302,7 @@
       {
         "name": "SPX 20일",
         "value": "-0.0%",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "횡보"
       },
       {
@@ -314,7 +314,7 @@
       {
         "name": "크립토 심리",
         "value": "5",
-        "assessment": "⚠",
+        "assessment": "⚠️",
         "note": "극단적 공포 (contrarian 반등 시그널)"
       }
     ]
