@@ -34,6 +34,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 - 기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어집니다.
 - 대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복됩니다.
 
+또한 **기술/AI/반도체** 관련 소식도 시장에 영향을 주고 있습니다. AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방
+
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
 통계적으로 미국 10년물의 최근 변동은 6개월 기준 **하위 9%** 수준으로, 평소보다 드물게 약한 움직임입니다.
@@ -84,8 +86,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,826 | +1,110.23 | +1.59% | ↓1일 |
-| 이더리움 (ETH) | 2,086.11 | +54.24 | +2.60% | - |
+| 비트코인 (BTC) | 69,795 | +1,081.82 | +1.55% | - |
+| 이더리움 (ETH) | 2,084.88 | +52.96 | +2.54% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -134,9 +136,9 @@ chartData: "/data/chart-data-2026-02-15.json"
    Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
    원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
 
-5. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
-   The Motley Fool · 2026-02-14 18:06 KST · central-bank
-   원문: A Federal Reserve Crisis of Confidence Threatens the Very Fabric of Wall Street -- and Investors May Pay the Price
+5. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
+   Investor's Business Daily · 2026-02-14 23:34 KST · 시장 이벤트
+   원문: Dow Jones Futures: How To Handle This Dangerous Market; Apple, Google, Amazon, Nvidia Hit Indexes
 
 ---
 
@@ -199,7 +201,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,826 | -0.42% | 보합 |
+| BTC | 70,120 | 69,795 | -0.46% | 보합 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -224,10 +226,10 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -237,7 +239,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:41:46 KST</span>
+  <span>생성 시각: 2026-02-15 00:42:05 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:41:46 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:42:05 KST</span>
 </div>

@@ -177,7 +177,7 @@
         66714,
         67026,
         null,
-        69826
+        69795
       ],
       "GOLD": [
         4759.6,
@@ -418,7 +418,7 @@
     {
       "metric": "BTC",
       "label": "보합",
-      "changePct": -0.42
+      "changePct": -0.46
     },
     {
       "metric": "VIX",
