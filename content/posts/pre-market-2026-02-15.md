@@ -10,12 +10,12 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **S&P +0.05%, 나스닥 -0.22% 혼조세 마감, 크립토 극단적 공포(9) — 인플레이션**
+> **S&P +0.05%, 나스닥 -0.22% 혼조세 마감, 크립토 극단적 공포(9)**
 
 - 변동성: VIX 20.6 (-1.06%)
 - 금리: 미 10년물 4.06% (-0.05)
 - 환율: 원/달러 1,443.3 (+1.79)
-- 오늘은: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
+- 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
 ---
 
@@ -23,18 +23,14 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ### 무슨 일이 있었나
 미국 증시는 혼조세로 마감했습니다. S&P 500 +0.05%, 나스닥 -0.22%, 다우 +0.10%.
-
-주요 소식으로는 **"트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"** 이 시장의 관심을 끌었습니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-- 핵심 흐름: 지수는 혼조였습니다(S&P 500 +0.05%, 나스닥 종합 -0.22%).
-- 다만 리스크 축: VIX 20.6 수준이 유지돼 방어적 대응 필요성이 남아 있습니다.
-- 그래서 오늘은: 종목별 반등 추세와 VIX 급등 재개 가능성을 먼저 점검해야 합니다.
+- 핵심 흐름: S&P 500 +0.05% 대비 나스닥 종합 -0.22%로 체감 온도차가 컸습니다.
+- 반면 리스크 축: VIX 20.6가 리스크 프리미엄의 둔화를 아직 허용하지 않고 있습니다.
+- 그래서 오늘은: 기술주 반등의 연속성과 VIX 방향 전환 신호를 동시에 체크해야 합니다.
 - 기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어집니다.
 - 대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복됩니다.
-
-또한 **기술/AI/반도체** 관련 소식도 시장에 영향을 주고 있습니다. AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -42,13 +38,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 주요 자산 간 뚜렷한 연관성이 없는 상태입니다 (최고 상관: S&P 500↔원/달러 +0.13). 각 자산이 독립적으로 움직이고 있어 종목별 대응이 필요합니다.
 
-인플레이션 뉴스 → **금융(XLF) 1주 -2.4% 약세**로 직접 연결됩니다.
-
 ### 오늘 주목할 것
-오늘 가장 주목할 이벤트는 **[USD] Unemployment Claims**입니다. 이전 231K, 예상 222K.
-예상보다 높게 나오면 경기 둔화 우려. 예상보다 낮게 나오면 경기 탄탄 → "좋은 소식이 나쁜 소식" 가능성.
-
-그 외 **[USD] Core CPI m/m**, **[USD] CPI m/m** 발표도 체크해두면 좋습니다.
+어제 VIX가 급변(17.79→20.6)했습니다. 오늘 변동성 지속 여부가 핵심입니다.
 
 현재 시장 국면은 **Cautious** 상태로, 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계
 
@@ -57,10 +48,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 ### 행동 체크포인트
 **관측**: VIX 20.6로 경계 수준
 **의미**: 시장 변동성이 점진적으로 상승 중
-**시사점**: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
+**시사점**: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
 
-- **[USD] Unemployment Claims 발표 주목** — 지표 결과에 따른 변동성 대비
-  → 발표 전후로 시장 대응 라인 재점검 권장
 - **크립토 극단적 공포(9)** — 시장 심리 바닥권 가능성
   → 역사적으로 단기 반등 확률 높으나, 추세 전환과는 별개
 
@@ -116,41 +105,15 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ---
 
-## 주요 뉴스 
+## 주요 뉴스  ⚠ (일부 지연 데이터)
 
-### 글로벌
-
-1. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
-   thestreet.com · 2026-02-14 20:33 KST · central-bank
-   원문: Traders pivot Fed rate cut bets after CPI surprise
-
-2. [**1월 CPI 인플레이션: 또 다른 주식시장 긍정적(SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
-   Seeking Alpha · 2026-02-15 00:30 KST · 미국 매크로
-   원문: January CPI Inflation: Yet Another Stock Market Positive (SPX)
-
-3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
-   Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
-   원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
-
-4. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
-   Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
-   원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
-
-5. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
-   Investor's Business Daily · 2026-02-14 23:34 KST · 시장 이벤트
-   원문: Dow Jones Futures: How To Handle This Dangerous Market; Apple, Google, Amazon, Nvidia Hit Indexes
+(주요 뉴스 없음)
 
 ---
 
-## 오늘의 일정 
+## 오늘의 일정  ⚠ (일부 지연 데이터)
 
-- **[GBP] GDP m/m** | 2026-02-12 16:00:00 KST | 중요도: high (이전: 0.3%, 예상: 0.1%)
-- **[GBP] Prelim GDP q/q** | 2026-02-12 16:00:00 KST | 중요도: medium (이전: 0.1%, 예상: 0.2%)
-- **[USD] Unemployment Claims** | 2026-02-12 22:30:00 KST | 중요도: high (이전: 231K, 예상: 222K)
-- **[USD] Core CPI m/m** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 0.2%, 예상: 0.3%)
-- **[USD] CPI m/m** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 0.3%, 예상: 0.3%)
-- **[USD] CPI y/y** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 2.7%, 예상: 2.5%)
-- **[EUR] ECB President Lagarde Speaks** | 2026-02-15 01:30:00 KST | 중요도: medium
+(예정된 이벤트 없음)
 
 ---
 
@@ -230,16 +193,13 @@ chartData: "/data/chart-data-2026-02-15.json"
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
 - 키움증권 REST API (api) | https://api.kiwoom.com
-- Google News RSS (html) | https://news.google.com/rss
-- 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
-- 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
-- ForexFactory Calendar (api) | https://www.forexfactory.com/calendar
+- Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:42:05 KST</span>
+  <span>생성 시각: 2026-02-15 00:42:28 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:42:05 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:42:28 KST</span>
 </div>
