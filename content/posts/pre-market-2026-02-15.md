@@ -26,8 +26,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-- 촉발: 나스닥 종합 -0.22%와 VIX 20.6가 동시에 흔들리며 방향 탐색이 시작됐습니다.
-- 다만 섹터 연결: 시장 전반 흐름이 에너지(XLE) 1주 +3.17% 강도와 맞물렸습니다.
+- 촉발: S&P 500 +0.05% 대비 VIX 20.6가 높게 유지돼 리스크 체감이 남았습니다.
+- 하지만 섹터 연결: 시장 전반 흐름이 에너지(XLE) 1주 +3.17% 강도와 맞물렸습니다.
 - 극단값: 미국 10년물 변동률이 6개월 백분위 하위 9%에 걸려 단기 과민 반응 구간입니다.
 - 국내 브릿지: 원/달러 1,443.3원(+1.79)과 한국 은행 1주 +5.85% 흐름이 수급 민감도를 키우고 있습니다.
 - 그래서 오늘은: 체크포인트 1) VIX 20.6가 20 아래로 내려오는지, 체크포인트 2) XLE 강도(+3.17%)가 유지되는지를 먼저 보겠습니다.
@@ -195,14 +195,14 @@ chartData: "/data/chart-data-2026-02-15.json"
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 01:13:47 KST</span>
+  <span>생성 시각: 2026-02-15 01:14:00 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 01:13:47 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 01:14:00 KST</span>
 </div>
