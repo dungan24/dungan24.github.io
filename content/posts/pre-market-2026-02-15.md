@@ -10,12 +10,12 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **S&P +0.05%, 나스닥 -0.22% 혼조세 마감, 크립토 극단적 공포(9)**
+> **S&P +0.05%, 나스닥 -0.22% 혼조세 마감, 크립토 극단적 공포(9) — 인플레이션**
 
 - 변동성: VIX 20.6 (-1.06%)
 - 금리: 미 10년물 4.06% (-0.05)
 - 환율: 원/달러 1,443.3 (+1.79)
-- 오늘은: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
+- 오늘은: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
 
 ---
 
@@ -23,14 +23,19 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ### 무슨 일이 있었나
 미국 증시는 혼조세로 마감했습니다. S&P 500 +0.05%, 나스닥 -0.22%, 다우 +0.10%.
+
+주요 소식으로는 **"트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"** 이 시장의 관심을 끌었습니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-- 핵심 흐름: S&P 500 +0.05% 대비 나스닥 종합 -0.22%로 체감 온도차가 컸습니다.
-- 반면 리스크 축: VIX 20.6가 리스크 프리미엄의 둔화를 아직 허용하지 않고 있습니다.
-- 그래서 오늘은: 기술주 반등의 연속성과 VIX 방향 전환 신호를 동시에 체크해야 합니다.
-- 기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어집니다.
-- 대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복됩니다.
+- 촉발: "트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"를 계기로 S&P 500 +0.05%와 VIX 20.6의 괴리가 커졌습니다.
+- 하지만 섹터 연결: 인플레이션 흐름이 금융(XLF) 1주 -2.40% 강도와 맞물렸습니다.
+- 극단값: 미국 10년물가 6개월 백분위 하위 9%에 걸려 단기 과민 반응 구간입니다.
+- 국내 브릿지: 원/달러 1,443.3원(+1.79)과 한국 은행 1주 +5.85% 흐름이 수급 민감도를 키우고 있습니다.
+- 그래서 오늘은: 체크포인트 1) VIX 20.6가 20 아래로 내려오는지, 체크포인트 2) XLF 강도(-2.40%)가 유지되는지를 먼저 보겠습니다.
+- 무효화 조건: VIX가 20 아래로 내려오고 나스닥 종합이 플러스로 돌아서면 방어 해석은 약해집니다.
+- 기준 시나리오: 변동성 경계가 이어지며 방어 섹터와 현금흐름 중심 대응이 유리합니다.
+- 대안 시나리오: VIX 진정과 함께 기술주 반등 폭이 커지면 위험자산 선호가 빠르게 회복됩니다.
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -38,8 +43,13 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 주요 자산 간 뚜렷한 연관성이 없는 상태입니다 (최고 상관: S&P 500↔원/달러 +0.13). 각 자산이 독립적으로 움직이고 있어 종목별 대응이 필요합니다.
 
+인플레이션 뉴스 → **금융(XLF) 1주 -2.4% 약세**로 직접 연결됩니다.
+
 ### 오늘 주목할 것
-어제 VIX가 급변(17.79→20.6)했습니다. 오늘 변동성 지속 여부가 핵심입니다.
+오늘 가장 주목할 이벤트는 **[USD] Unemployment Claims**입니다. 이전 231K, 예상 222K.
+예상보다 높게 나오면 경기 둔화 우려. 예상보다 낮게 나오면 경기 탄탄 → "좋은 소식이 나쁜 소식" 가능성.
+
+그 외 **[USD] Core CPI m/m**, **[USD] CPI m/m** 발표도 체크해두면 좋습니다.
 
 현재 시장 국면은 **Cautious** 상태로, 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계
 
@@ -48,8 +58,10 @@ chartData: "/data/chart-data-2026-02-15.json"
 ### 행동 체크포인트
 **관측**: VIX 20.6로 경계 수준
 **의미**: 시장 변동성이 점진적으로 상승 중
-**시사점**: 심리 지표가 낮아 과매도 구간인지 가볍게 체크해두면 좋아요
+**시사점**: **[USD] Unemployment Claims** 발표만 체크해도 충분해요
 
+- **[USD] Unemployment Claims 발표 주목** — 지표 결과에 따른 변동성 대비
+  → 발표 전후로 시장 대응 라인 재점검 권장
 - **크립토 극단적 공포(9)** — 시장 심리 바닥권 가능성
   → 역사적으로 단기 반등 확률 높으나, 추세 전환과는 별개
 
@@ -75,8 +87,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,825 | +1,110.22 | +1.59% | - |
-| 이더리움 (ETH) | 2,086.42 | +54.46 | +2.61% | - |
+| 비트코인 (BTC) | 69,704 | +634.31 | +0.91% | ↓1일 |
+| 이더리움 (ETH) | 2,084.01 | +30.43 | +1.46% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -105,15 +117,41 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ---
 
-## 주요 뉴스  ⚠ (일부 지연 데이터)
+## 주요 뉴스 
 
-(주요 뉴스 없음)
+### 글로벌
+
+1. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
+   thestreet.com · 2026-02-14 20:33 KST · central-bank
+   원문: Traders pivot Fed rate cut bets after CPI surprise
+
+2. [**1월 CPI 인플레이션: 또 다른 주식시장 긍정적(SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
+   Seeking Alpha · 2026-02-15 00:30 KST · 미국 매크로
+   원문: January CPI Inflation: Yet Another Stock Market Positive (SPX)
+
+3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
+   Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
+   원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
+
+4. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
+   Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
+   원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
+
+5. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
+   The Motley Fool · 2026-02-14 18:06 KST · central-bank
+   원문: A Federal Reserve Crisis of Confidence Threatens the Very Fabric of Wall Street -- and Investors May Pay the Price
 
 ---
 
-## 오늘의 일정  ⚠ (일부 지연 데이터)
+## 오늘의 일정 
 
-(예정된 이벤트 없음)
+- **[GBP] GDP m/m** | 2026-02-12 16:00:00 KST | 중요도: high (이전: 0.3%, 예상: 0.1%)
+- **[GBP] Prelim GDP q/q** | 2026-02-12 16:00:00 KST | 중요도: medium (이전: 0.1%, 예상: 0.2%)
+- **[USD] Unemployment Claims** | 2026-02-12 22:30:00 KST | 중요도: high (이전: 231K, 예상: 222K)
+- **[USD] Core CPI m/m** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 0.2%, 예상: 0.3%)
+- **[USD] CPI m/m** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 0.3%, 예상: 0.3%)
+- **[USD] CPI y/y** | 2026-02-13 22:30:00 KST | 중요도: high (이전: 2.7%, 예상: 2.5%)
+- **[EUR] ECB President Lagarde Speaks** | 2026-02-15 01:30:00 KST | 중요도: medium
 
 ---
 
@@ -164,7 +202,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,825 | -0.42% | 보합 |
+| BTC | 70,120 | 69,704 | -0.59% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -193,13 +231,17 @@ chartData: "/data/chart-data-2026-02-15.json"
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- Static Economic Calendar (file) | file://static-calendar.json
+- 키움증권 REST API (api) | https://api.kiwoom.com
+- Google News RSS (html) | https://news.google.com/rss
+- 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
+- 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
+- ForexFactory Calendar (api) | https://www.forexfactory.com/calendar
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:44:24 KST</span>
+  <span>생성 시각: 2026-02-15 01:10:01 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:44:24 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 01:10:01 KST</span>
 </div>
