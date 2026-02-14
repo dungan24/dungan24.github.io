@@ -75,8 +75,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,795 | +1,081.82 | +1.55% | - |
-| 이더리움 (ETH) | 2,084.88 | +52.96 | +2.54% | - |
+| 비트코인 (BTC) | 69,825 | +1,110.22 | +1.59% | - |
+| 이더리움 (ETH) | 2,086.42 | +54.46 | +2.61% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -164,7 +164,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,795 | -0.46% | 보합 |
+| BTC | 70,120 | 69,825 | -0.42% | 보합 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -189,17 +189,17 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 출처
 
+- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:42:28 KST</span>
+  <span>생성 시각: 2026-02-15 00:44:24 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:42:28 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:44:24 KST</span>
 </div>
