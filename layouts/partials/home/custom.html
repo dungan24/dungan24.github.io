@@ -134,15 +134,26 @@
     return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  function calcChangePct(current, prev) {
+    if (typeof current !== 'number' || typeof prev !== 'number' || prev === 0) return null;
+    var pct = ((current - prev) / prev) * 100;
+    return Number.isFinite(pct) ? pct : null;
+  }
+
   function fmtChange(pct) {
+    if (pct === null || !Number.isFinite(pct)) return '—';
     var sign = pct >= 0 ? '+' : '';
     return sign + pct.toFixed(2) + '%';
   }
 
   // ── Sparkline SVG (pure, no CDN) ──
   function generateSparkline(data, color) {
-    if (!data || data.length < 2) return '';
-    var pts = data.slice(-15);
+    if (!data) return '';
+    var pts = data.slice(-15).filter(function(v) { 
+      return v !== null && typeof v === 'number' && Number.isFinite(v); 
+    });
+    if (pts.length < 2) return '';
+    
     var min = Math.min.apply(null, pts);
     var max = Math.max.apply(null, pts);
     var range = max - min || 1;
@@ -175,17 +186,23 @@
       for (var t = 0; t < group.tickers.length; t++) {
         var ticker = group.tickers[t];
         var s = ts.series[ticker.key];
-        if (!s || s.length < 2) continue;
+        if (!s || s.length < 1) continue;
 
-        hasData = true;
         var current = s[s.length - 1];
         var prev = s[s.length - 2];
-        var changePct = ((current - prev) / prev) * 100;
 
-        var isPositive = ticker.invertColor ? changePct < 0 : changePct >= 0;
-        var changeColor = changePct === 0 ? 'rgb(var(--color-neutral-400))'
+        // Skip if current price is invalid
+        if (current === null || typeof current !== 'number' || !Number.isFinite(current)) continue;
+
+        hasData = true;
+        var changePct = calcChangePct(current, prev);
+
+        var isNeutral = changePct === null || changePct === 0;
+        var isPositive = !isNeutral && (ticker.invertColor ? changePct < 0 : changePct >= 0);
+
+        var changeColor = isNeutral ? 'rgb(var(--color-neutral-400))'
           : isPositive ? '#00FF88' : '#FF3366';
-        var sparkColor = changePct === 0 ? '#64748B' : isPositive ? '#00FF88' : '#FF3366';
+        var sparkColor = isNeutral ? '#64748B' : isPositive ? '#00FF88' : '#FF3366';
 
         rows += '<div class="mp-ticker-row">' +
           '<span class="mp-ticker-name">' + ticker.name + '</span>' +
@@ -248,14 +265,22 @@
     }
   }
 
-  // ── Data fetch (today → yesterday fallback) ──
+  // ── Data fetch (today → recent N trading/available days fallback) ──
   function fetchData() {
-    var today = new Date();
-    var fmt = function(d) { return d.toISOString().split('T')[0]; };
-    var urls = [
-      '/data/chart-data-' + fmt(today) + '.json',
-      '/data/chart-data-' + fmt(new Date(today.getTime() - 86400000)) + '.json'
-    ];
+    var now = new Date();
+    var fmt = function(d) {
+      return new Intl.DateTimeFormat('sv-SE', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).format(d);
+    };
+    var lookbackDays = 7; // weekend + long holiday buffer
+    var urls = [];
+    for (var i = 0; i <= lookbackDays; i++) {
+      urls.push('/data/chart-data-' + fmt(new Date(now.getTime() - 86400000 * i)) + '.json');
+    }
     tryFetch(urls, 0);
   }
 
