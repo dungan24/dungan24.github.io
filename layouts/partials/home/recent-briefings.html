@@ -1,4 +1,4 @@
-{{/* Recent Briefings - regime-colored cards with summary & tags */}}
+{{/* Recent Briefings - Categorized cards with distinctive styles */}}
 <h3 class="mp-section-header">Recent Briefings</h3>
 <div class="mp-briefing-cards">
 {{ $pages := first 6 (where .Site.RegularPages "Section" "posts") }}
@@ -7,24 +7,35 @@
   {{ $regimeIcon := .Params.regimeIcon | default "⚪" }}
   {{ $summary := .Params.summary }}
   {{ if not $summary }}{{ $summary = .Summary | plainify | truncate 80 }}{{ end }}
-  {{ $borderColor := "#6b7280" }}
-  {{ if eq $regime "RISK_ON" }}{{ $borderColor = "#4ade80" }}{{ end }}
-  {{ if eq $regime "CAUTIOUS" }}{{ $borderColor = "#fbbf24" }}{{ end }}
-  {{ if eq $regime "RISK_OFF" }}{{ $borderColor = "#f87171" }}{{ end }}
-  {{ if eq $regime "PANIC" }}{{ $borderColor = "#ef4444" }}{{ end }}
+  
+  {{/* Detect Briefing Type */}}
+  {{ $type := "default" }}
+  {{ if in .File.BaseFileName "pre-market" }}{{ $type = "pre" }}{{ end }}
+  {{ if in .File.BaseFileName "mid-day" }}{{ $type = "mid" }}{{ end }}
+  {{ if in .File.BaseFileName "post-market" }}{{ $type = "post" }}{{ end }}
 
-  <a href="{{ .RelPermalink }}" class="mp-briefing-card" style="border-left-color: {{ $borderColor }}">
+  {{ $regimeColor := "#6b7280" }}
+  {{ if eq $regime "RISK_ON" }}{{ $regimeColor = "#00FF88" }}{{ end }}
+  {{ if eq $regime "CAUTIOUS" }}{{ $regimeColor = "#FFD600" }}{{ end }}
+  {{ if eq $regime "RISK_OFF" }}{{ $regimeColor = "#FF3366" }}{{ end }}
+  {{ if eq $regime "PANIC" }}{{ $regimeColor = "#FF0040" }}{{ end }}
+
+  <a href="{{ .RelPermalink }}" class="mp-briefing-card mp-card--{{ $type }}" data-regime="{{ $regime }}">
+    <div class="mp-briefing-card__type-tag">{{ upper $type }}</div>
     <div class="mp-briefing-card__header">
-      <span>{{ $regimeIcon }}</span>
       <span class="mp-briefing-card__title">{{ .Title }}</span>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
     </div>
     <p class="mp-briefing-card__summary">{{ $summary }}</p>
-    {{ with .Params.tags }}
-    <div class="mp-briefing-card__tags">
-      {{ range . }}<span class="mp-briefing-card__tag">#{{ . }}</span>{{ end }}
+    <div class="mp-briefing-card__footer">
+      <span class="mp-briefing-card__regime" style="color: {{ $regimeColor }}">{{ $regimeIcon }} {{ $regime }}</span>
+      {{ with .Params.tags }}
+      <div class="mp-briefing-card__tags">
+        {{ range first 2 . }}<span class="mp-briefing-card__tag">#{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
   </a>
 {{ end }}
 </div>
+
