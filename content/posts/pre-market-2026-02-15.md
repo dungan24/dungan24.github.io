@@ -189,17 +189,17 @@ S&P 500은 +0.05%, 나스닥 종합은 -0.22%로 엇갈리며 종목별 차별�
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:18:22 KST</span>
+  <span>생성 시각: 2026-02-15 00:18:43 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:18:22 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:18:43 KST</span>
 </div>
