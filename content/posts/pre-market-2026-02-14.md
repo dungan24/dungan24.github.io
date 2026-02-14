@@ -28,7 +28,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-**인플레이션** 이슈가 시장의 핵심 변수로 작용하고 있습니다 (관련 뉴스 3건). CPI 예상 상회 → 연준 긴축 기조 유지 → 금리 민감 자산 하방 압력
+**인플레이션** 이슈가 시장의 핵심 변수로 작용하고 있습니다 (관련 뉴스 2건). CPI 예상 상회 → 연준 긴축 기조 유지 → 금리 민감 자산 하방 압력
 
 또한 **고용** 관련 소식도 시장에 영향을 주고 있습니다. 고용 지표 강세 → "좋은 뉴스가 나쁜 뉴스" → 고금리 장기화 → 성장주 부담
 
@@ -37,6 +37,8 @@ chartData: "/data/chart-data-2026-02-14.json"
 통계적으로 비트코인의 최근 변동은 6개월 기준 **상위 92%** 수준으로, 평소보다 드물게 강한 움직임입니다.
 
 주요 자산 간 뚜렷한 연관성이 없는 상태입니다 (최고 상관: S&P 500↔원/달러 +0.13). 각 자산이 독립적으로 움직이고 있어 종목별 대응이 필요합니다.
+
+인플레이션 뉴스 → **금융(XLF) 1주 -2.4% 약세**로 직접 연결됩니다.
 
 ### 오늘 주목할 것
 오늘 가장 주목할 이벤트는 **[USD] Unemployment Claims**입니다. 이전 231K, 예상 222K.
@@ -80,8 +82,8 @@ chartData: "/data/chart-data-2026-02-14.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,398 | +2,317.89 | +3.34% | - ⚡ 상위 8% |
-| 이더리움 (ETH) | 2,071.68 | +110.01 | +5.31% | - |
+| 비트코인 (BTC) | 69,420 | +2,346.4 | +3.38% | - ⚡ 상위 8% |
+| 이더리움 (ETH) | 2,072.88 | +111.31 | +5.37% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -118,27 +120,23 @@ chartData: "/data/chart-data-2026-02-14.json"
    thestreet.com · 2026-02-14 20:33 KST · central-bank
    원문: Traders pivot Fed rate cut bets after CPI surprise
 
-2. [**라이브: 1월 미국 CPI 보고서 분석**](https://news.google.com/rss/articles/CBMiekFVX3lxTE5vcXIxQkROQVI1Xy1yVDQ1azlRYVBfMlZydXl1RGNIRjVad2kxOU9Kb0MycFdmRk5hMVhxNFlIS2dKNWxGUE1DdFd3NXB6OEdvcUZHT1hGeGU2RTBHVGxVQXBEZ2xYSi1pTU5TZG9URmRGRXJySm1weWVB?oc=5)
-   Bloomberg.com · 2026-02-14 12:13 KST · 미국 매크로
-   원문: Live: Analysis of US CPI Report for January
-
-3. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
+2. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
    Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
    원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
 
-4. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
-   Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
+3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMilwFBVV95cUxQU3oxRnk3SFpXOEZNY21pMDBPb21ra1JGZEJlVDctRzhYTTBFRTdObkRzRGc5UVJhVjJHNEpxOHlxdF9tdXBnd1l2MzI4bEtnbW9wc3Nfd2JUNlRlQzRfeFNqb0s3c1NENkhsMGh1VUt4QnBoeHJrc0tGV2FrbGI4NjBtSk1lMHlQdU5VN0w2azY4THZpUEJr?oc=5)
+   The Motley Fool · 2026-02-14 17:06 KST · 시장 이벤트
    원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
 
-5. [**트럼프, 일자리 호조로 연준 금리 인하 압박 강화**](https://news.google.com/rss/articles/CBMib0FVX3lxTE5wdXZDMWhzXzloeFBreVpLWDFucWhPYThLYVBqWXJWaU9yN1Eyem9KdG1qQ0UtZWRaWjJPRV8yeThzYkkzWnlRTV9fWGxZMThnSktwWEx2aTJ0cUw4NGdmMENveE9teHFmTWxEUFlvY9IBdEFVX3lxTE5pTkh0a0ZrSlpHVHZGMzI1WHdKTi1vV1BxM1BvTzlwZWhIaXVDa3pBQ2w4S3FDRjctM2c4RG5hSU1CSkozOFRVbExDMlVZeVBFYWJIakZsT2FlMTNXUENfbmdkSk5yaFRXQ1FRVkd1S3V0UC1P?oc=5)
+4. [**트럼프, 일자리 호조로 연준 금리 인하 압박 강화**](https://news.google.com/rss/articles/CBMib0FVX3lxTE5wdXZDMWhzXzloeFBreVpLWDFucWhPYThLYVBqWXJWaU9yN1Eyem9KdG1qQ0UtZWRaWjJPRV8yeThzYkkzWnlRTV9fWGxZMThnSktwWEx2aTJ0cUw4NGdmMENveE9teHFmTWxEUFlvY9IBdEFVX3lxTE5pTkh0a0ZrSlpHVHZGMzI1WHdKTi1vV1BxM1BvTzlwZWhIaXVDa3pBQ2w4S3FDRjctM2c4RG5hSU1CSkozOFRVbExDMlVZeVBFYWJIakZsT2FlMTNXUENfbmdkSk5yaFRXQ1FRVkd1S3V0UC1P?oc=5)
    The Hill · 2026-02-14 20:00 KST · central-bank
    원문: Trump ramps up Fed rate cut pressure after strong jobs, inflation reports
 
-6. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
+5. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
    Investor's Business Daily · 2026-02-14 13:03 KST · 시장 이벤트
    원문: Dow Jones Futures: How To Handle This Dangerous Market; Apple, Google, Amazon, Nvidia Hit Indexes
 
-7. [**Goldman Sachs, CPI 폭탄 이후 PCE 인플레이션 목표 재설정**](https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZelUzLXlZVGZiYlB0SV9vUjdQMnNtNGt4TWJRbGp6TlM4aGFUNjFqeWpYV1RWNVA1U3RKZjQ0amFWSGhvSFFBam9oME9JM3ZJWmxNRmx1V25CZVdtVF90VlBxSnlnRXV0UGczbG5ZWTd0dGRMYmxoLQ?oc=5)
+6. [**Goldman Sachs, CPI 폭탄 이후 PCE 인플레이션 목표 재설정**](https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZelUzLXlZVGZiYlB0SV9vUjdQMnNtNGt4TWJRbGp6TlM4aGFUNjFqeWpYV1RWNVA1U3RKZjQ0amFWSGhvSFFBam9oME9JM3ZJWmxNRmx1V25CZVdtVF90VlBxSnlnRXV0UGczbG5ZWTd0dGRMYmxoLQ?oc=5)
    thestreet.com · 2026-02-14 13:13 KST · 미국 매크로
    원문: Goldman Sachs resets PCE inflation target after CPI bombshell
 
@@ -203,7 +201,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,398 | -1.03% | 소폭 하락 |
+| BTC | 70,120 | 69,420 | -1.00% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -242,7 +240,7 @@ chartData: "/data/chart-data-2026-02-14.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-14 23:04:36 KST</span>
+  <span>생성 시각: 2026-02-14 23:06:38 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-14 23:04:36 KST</span>
+  <span>데이터 기준 시각: 2026-02-14 23:06:38 KST</span>
 </div>
