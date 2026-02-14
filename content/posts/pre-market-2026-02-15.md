@@ -28,10 +28,9 @@ chartData: "/data/chart-data-2026-02-15.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 커졌다.
-이는 CPI 예상 상회로 연준 긴축 기조가 유지된 결과로 보인다.
-하지만 나스닥 100은 0.18% 상승하며, VIX가 20.6으로 상승한 가운데도 기회를 찾아내려는 움직임을 보였다.
-그래서 오늘은: S&P 500의 하락과 VIX의 상승을 주의 깊게 관찰해야 하며, 나스닥 100의 상승을 기회로 삼아야 한다.
+S&P 500이 0.05% 상승한 가운데, 나스닥 종합과 나스닥 100은 각각 -0.22%와 +0.18%로 반전했다.
+하지만 VIX 지수는 20.6으로 상승해 금리 민감 자산의 하방 압력을 유지했다.
+그래서 오늘은: S&P 500의 상승과 나스닥의 반전이 주목할만한 점이며, VIX 지수의 상승은 금리 민감 자산의 하방 압력을 유지한다는 점을 확인해야 합니다.
 기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어집니다.
 대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복됩니다.
 
@@ -87,8 +86,8 @@ S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 �
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,641 | +1,288.36 | +1.85% | ↓1일 |
-| 이더리움 (ETH) | 2,082.26 | +70.59 | +3.39% | - |
+| 비트코인 (BTC) | 69,603 | +1,371.18 | +1.97% | ↓1일 |
+| 이더리움 (ETH) | 2,081.65 | +65.78 | +3.16% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -125,13 +124,13 @@ S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 �
    thestreet.com · 2026-02-14 20:33 KST · central-bank
    원문: Traders pivot Fed rate cut bets after CPI surprise
 
-2. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
-   Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
-   원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
-
-3. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
+2. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
    Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
    원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
+
+3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
+   Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
+   원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
 
 4. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
    The Motley Fool · 2026-02-14 18:06 KST · central-bank
@@ -202,7 +201,7 @@ S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 �
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,641 | -0.68% | 소폭 하락 |
+| BTC | 70,120 | 69,603 | -0.74% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -227,7 +226,6 @@ S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 �
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
@@ -241,7 +239,7 @@ S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 �
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:16:22 KST</span>
+  <span>생성 시각: 2026-02-15 00:16:44 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:16:22 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:16:44 KST</span>
 </div>
