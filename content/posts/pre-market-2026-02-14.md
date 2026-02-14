@@ -24,19 +24,19 @@ chartData: "/data/chart-data-2026-02-14.json"
 ### 무슨 일이 있었나
 미국 증시는 혼조세로 마감했습니다. S&P 500 +0.05%, 나스닥 -0.22%, 다우 +0.10%.
 
-주요 소식으로는 **"트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"라이브: 1월 미국 CPI 보고서 분석"** 이 시장의 관심을 끌었습니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데, 금리 민감 자산이 하방 압력을 받고 있다. 뉴스에 따르면, 투자자들은 연준의 금리 인상 가능성을 낮추고 있다. S&P 500은 0.05% 상승했지만, 나스닥 종합은 0.22% 하락하고 나스닥 100은 0.18% 상승했다. VIX 지수는 20.6으로 상승했다. 원/달러 환율은 1,443.3원으로 하락했다.
+S&P 500과 나스닥 종합의 등락률은 +0.05%와 -0.22%로 나타났고, VIX 지수는 20.6으로 상승했다. 이는 금리 민감 자산의 하방 압력을 키운 결과로, 금융(XLF) 섹터는 1주간 -3.3%의 등락률을 기록했다.
 
-공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
+공포지수(VIX)는 20.6로 5일 전(17.36) 대비 +18.66% 급변했습니다.
 
-통계적으로 비트코인의 최근 변동은 6개월 기준 **상위 92%** 수준으로, 평소보다 드물게 강한 움직임입니다.
+통계적으로 미국 10년물의 최근 변동은 6개월 기준 **하위 9%** 수준으로, 평소보다 드물게 약한 움직임입니다.
 
-주요 자산 간 뚜렷한 연관성이 없는 상태입니다 (최고 상관: S&P 500↔원/달러 +0.13). 각 자산이 독립적으로 움직이고 있어 종목별 대응이 필요합니다.
+주요 자산 간 뚜렷한 연관성이 없는 상태입니다 (최고 상관: S&P 500↔원/달러 +0.11). 각 자산이 독립적으로 움직이고 있어 종목별 대응이 필요합니다.
 
-인플레이션 뉴스 → **금융(XLF) 1주 -2.4% 약세**로 직접 연결됩니다.
+인플레이션 뉴스 → **금융(XLF) 1주 -3.3% 약세**로 직접 연결됩니다.
 
 ### 오늘 주목할 것
 오늘 가장 주목할 이벤트는 **[USD] Unemployment Claims**입니다. 이전 231K, 예상 222K.
@@ -70,9 +70,9 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 |------|------|------|--------|------|
 | S&P 500 | 6,836.17 | +3.41 | +0.05% | - |
 | 나스닥 | 22,546.67 | -50.48 | -0.22% | - |
-| 나스닥 100 | 24,732.73 | +45.12 | +0.18% | - |
-| 다우존스 | 49,500.93 | +48.95 | +0.10% | - |
-| VIX (공포지수) | 20.6 | -0.22 | -1.06% | - |
+| 나스닥 100 | 24,732.73 | +45.12 | +0.18% | ↑1일 |
+| 다우존스 | 49,500.93 | +48.95 | +0.10% | ↑1일 |
+| VIX (공포지수) | 20.6 | -0.22 | -1.06% | ↑1일 |
 | 미국 10년물 국채 | 4.06% | -0.05 | - | - ⚡ 하위 9% |
 | 달러인덱스 (DXY) | 96.88 | -0.03 | -0.03% | - |
 
@@ -80,15 +80,15 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,477 | +2,334.43 | +3.36% | ↓1일 ⚡ 상위 8% |
-| 이더리움 (ETH) | 2,072.7 | +110.47 | +5.33% | - |
+| 비트코인 (BTC) | 69,638 | +1,915.05 | +2.75% | ↑2일 ⚡ 상위 10% |
+| 이더리움 (ETH) | 2,075 | +85.07 | +4.10% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,443.3 | +1.79 | +0.12% | - |
+| 원/달러 (USDKRW) | 1,443.3 | +1.79 | +0.12% | ↑1일 |
 
 ### 지수 선물
 
@@ -114,21 +114,21 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 
 ### 글로벌
 
-1. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
-   thestreet.com · 2026-02-14 20:33 KST · central-bank
-   원문: Traders pivot Fed rate cut bets after CPI surprise
-
-2. [**라이브: 1월 미국 CPI 보고서 분석**](https://news.google.com/rss/articles/CBMiekFVX3lxTE5vcXIxQkROQVI1Xy1yVDQ1azlRYVBfMlZydXl1RGNIRjVad2kxOU9Kb0MycFdmRk5hMVhxNFlIS2dKNWxGUE1DdFd3NXB6OEdvcUZHT1hGeGU2RTBHVGxVQXBEZ2xYSi1pTU5TZG9URmRGRXJySm1weWVB?oc=5)
+1. [**라이브: 1월 미국 CPI 보고서 분석**](https://news.google.com/rss/articles/CBMiekFVX3lxTE5vcXIxQkROQVI1Xy1yVDQ1azlRYVBfMlZydXl1RGNIRjVad2kxOU9Kb0MycFdmRk5hMVhxNFlIS2dKNWxGUE1DdFd3NXB6OEdvcUZHT1hGeGU2RTBHVGxVQXBEZ2xYSi1pTU5TZG9URmRGRXJySm1weWVB?oc=5)
    Bloomberg.com · 2026-02-14 12:13 KST · 미국 매크로
    원문: Live: Analysis of US CPI Report for January
 
-3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
+2. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
+   thestreet.com · 2026-02-14 20:33 KST · central-bank
+   원문: Traders pivot Fed rate cut bets after CPI surprise
+
+3. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
+   Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
+   원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
+
+4. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
    Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
    원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
-
-4. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
-   The Motley Fool · 2026-02-14 18:06 KST · central-bank
-   원문: A Federal Reserve Crisis of Confidence Threatens the Very Fabric of Wall Street -- and Investors May Pay the Price
 
 5. [**Goldman Sachs, CPI 폭탄 이후 PCE 인플레이션 목표 재설정**](https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZelUzLXlZVGZiYlB0SV9vUjdQMnNtNGt4TWJRbGp6TlM4aGFUNjFqeWpYV1RWNVA1U3RKZjQ0amFWSGhvSFFBam9oME9JM3ZJWmxNRmx1V25CZVdtVF90VlBxSnlnRXV0UGczbG5ZWTd0dGRMYmxoLQ?oc=5)
    thestreet.com · 2026-02-14 13:13 KST · 미국 매크로
@@ -155,8 +155,8 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 | 근거 | 값 | 판단 |
 |------|-----|------|
 | VIX | 20.6 | ⚠ 경계 |
-| SPX 20일 | +0.6% | ⚠ 횡보 |
-| US10Y 방향 | -9bp (5일) | ✅ 완화 기대 |
+| SPX 20일 | -1.5% | ⚠ 횡보 |
+| US10Y 방향 | -14bp (5일) | ⚠ 완화 기대 |
 | 크립토 심리 | 9 | ⚠ 극단적 공포 (contrarian 반등 시그널) |
 
 ## 시장 동조화(연관성 높은 지수들의 패턴 매칭)
@@ -169,35 +169,35 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 에너지 (XLE) | +3.17% | +16.86% |
-| 헬스케어 (XLV) | +2.71% | +2.65% |
-| 반도체 (SOXX) | +2.38% | +12.46% |
-| 산업 (XLI) | +2.12% | +9.91% |
-| 소비재 (XLY) | +0.68% | -2.47% |
-| 테크 (XLK) | -0.80% | -2.54% |
-| 금융 (XLF) | -2.40% | -7.03% |
+| 에너지 (XLE) | +2.81% | +18.62% |
+| 반도체 (SOXX) | +2.29% | +12.43% |
+| 산업 (XLI) | +1.19% | +9.72% |
+| 헬스케어 (XLV) | +0.35% | +0.69% |
+| 테크 (XLK) | +0.08% | -3.15% |
+| 소비재 (XLY) | -0.14% | -1.50% |
+| 금융 (XLF) | -3.30% | -5.52% |
 
 ### 한국 섹터 (최근 흐름)
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 은행 | +5.85% | +7.22% |
-| 자동차 | -0.51% | +4.70% |
-| IT | -1.79% | -0.78% |
-| 에너지 | -2.18% | -4.43% |
-| 바이오 | -3.79% | -23.78% |
-| 반도체 | -4.30% | +3.50% |
-| 2차전지 | -5.07% | -4.37% |
+| 은행 | +5.15% | +4.21% |
+| IT | -0.85% | -0.34% |
+| 에너지 | -2.44% | -6.14% |
+| 자동차 | -3.07% | -0.96% |
+| 반도체 | -3.86% | +4.85% |
+| 바이오 | -5.00% | -27.15% |
+| 2차전지 | -6.71% | -5.70% |
 
 
 ## 최근 흐름 (5일)
 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
-| SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,477 | -0.92% | 소폭 하락 |
-| VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
-| USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
+| SPX | 6,964.82 | 6,836.17 | -1.85% | 소폭 하락 |
+| BTC | 70,120 | 69,638 | -0.69% | 소폭 하락 |
+| VIX | 17.36 | 20.6 | +18.66% | 급격 불안 |
+| USDKRW | 1,462.4원 | 1,443.3원 | -1.31% | 소폭 하락 |
 
 ## 이벤트 임팩트
 
@@ -224,7 +224,6 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 키움증권 REST API (api) | https://api.kiwoom.com
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -234,7 +233,7 @@ CPI가 예상을 상회하면서 연준 긴축 기조가 유지되는 가운데,
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-14 23:25:29 KST</span>
+  <span>생성 시각: 2026-02-14 23:47:11 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-14 23:25:29 KST</span>
+  <span>데이터 기준 시각: 2026-02-14 23:47:11 KST</span>
 </div>
