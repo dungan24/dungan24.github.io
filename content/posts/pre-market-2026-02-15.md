@@ -79,8 +79,8 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,733 | +718.25 | +1.03% | - |
-| 이더리움 (ETH) | 2,081.28 | +27.68 | +1.33% | - |
+| 비트코인 (BTC) | 69,713 | +669.24 | +0.96% | - |
+| 이더리움 (ETH) | 2,080.9 | +25.8 | +1.24% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율 
@@ -121,17 +121,17 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
    thestreet.com · 2026-02-14 20:33 KST · central-bank
    원문: Traders pivot Fed rate cut bets after CPI surprise
 
-3. [**1월 CPI 인플레이션: 또 다른 주식시장 긍정적(SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
-   Seeking Alpha · 2026-02-15 00:30 KST · 미국 매크로
-   원문: January CPI Inflation: Yet Another Stock Market Positive (SPX)
+3. [**녹색 에너지에 대한 트럼프의 공격으로 제조업 부문에 큰 타격**](https://news.google.com/rss/articles/CBMirAFBVV95cUxQMS0zSzNDR2lWczBlSEFJdkgxQmYxb1pkd0tEamttTkV5Y1BXWDJoeDd6d05DNEhqdGh4SHRqZWtsTXI2R1p2ZFlrdGx5MGVTZ0lZNDY1OUZuZldqcWlBR2tGV3FNaG0wdjBkTU4weDJWR1M4QjlINTRrYlc4LXBFOVFUbm0xVW16REg3ZFJKbXJZOE1YNUVuTGVuZVlRWmY2QUpVb045S2FKcy100gGyAUFVX3lxTE1jMXpwN2U0VG9Demp0TFpDYTJBbHlOSEZla3Q1ZWFkaHZEVHVVSGlmZGtldGFnYTN5RWpyaGF1ZzVLZGxpMkFFX2VxX093MlZ1NW91RWkwei1YUm9sTm5tM0l3Q2IwSVpzY1RTVV9aMjNtWVlNQVRLcjQxWDJIcDFsYXA5cmRjeFU4dUdYQzVFWlZyc3VfdG9LN2NhaEZOLVBsbG9pVWdIeUhZekJzb1BuN1E?oc=5)
+   Crude Oil Prices Today | OilPrice.com · 2026-02-15 03:00 KST · 원자재
+   원문: Trump's Attack on Green Energy Hits Manufacturing Sector Hard
 
 4. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
    Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
    원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
 
-5. [**녹색 에너지에 대한 트럼프의 공격으로 제조업 부문에 큰 타격**](https://news.google.com/rss/articles/CBMirAFBVV95cUxQMS0zSzNDR2lWczBlSEFJdkgxQmYxb1pkd0tEamttTkV5Y1BXWDJoeDd6d05DNEhqdGh4SHRqZWtsTXI2R1p2ZFlrdGx5MGVTZ0lZNDY1OUZuZldqcWlBR2tGV3FNaG0wdjBkTU4weDJWR1M4QjlINTRrYlc4LXBFOVFUbm0xVW16REg3ZFJKbXJZOE1YNUVuTGVuZVlRWmY2QUpVb045S2FKcy100gGyAUFVX3lxTE1jMXpwN2U0VG9Demp0TFpDYTJBbHlOSEZla3Q1ZWFkaHZEVHVVSGlmZGtldGFnYTN5RWpyaGF1ZzVLZGxpMkFFX2VxX093MlZ1NW91RWkwei1YUm9sTm5tM0l3Q2IwSVpzY1RTVV9aMjNtWVlNQVRLcjQxWDJIcDFsYXA5cmRjeFU4dUdYQzVFWlZyc3VfdG9LN2NhaEZOLVBsbG9pVWdIeUhZekJzb1BuN1E?oc=5)
-   Crude Oil Prices Today | OilPrice.com · 2026-02-15 03:00 KST · 원자재
-   원문: Trump's Attack on Green Energy Hits Manufacturing Sector Hard
+5. [**1월 CPI 인플레이션: 또 다른 주식시장 긍정적(SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
+   Seeking Alpha · 2026-02-15 00:30 KST · 미국 매크로
+   원문: January CPI Inflation: Yet Another Stock Market Positive (SPX)
 
 ---
 
@@ -201,7 +201,7 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,733 | -0.55% | 소폭 하락 |
+| BTC | 70,120 | 69,713 | -0.58% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -226,6 +226,7 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 
 ## 출처
 
+- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
@@ -239,7 +240,7 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 03:28:25 KST</span>
+  <span>생성 시각: 2026-02-15 03:32:15 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 03:28:25 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 03:32:15 KST</span>
 </div>
