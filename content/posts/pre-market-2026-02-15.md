@@ -28,7 +28,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 ### 왜 그런가
 - 촉발: S&P 500 +0.05%, 나스닥 종합 -0.22% 온도차가 오늘 해석의 출발점입니다.
 - 반면 섹터 연결: 시장 전반 흐름이 에너지(XLE) 1주 +3.17% 강도와 맞물렸습니다.
-- 극단값: 미국 10년물가 6개월 백분위 하위 9%에 걸려 단기 과민 반응 구간입니다.
+- 극단값: 미국 10년물 변동률이 6개월 백분위 하위 9%에 걸려 단기 과민 반응 구간입니다.
 - 국내 브릿지: 원/달러 1,443.3원(+1.79)과 한국 은행 1주 +5.85% 흐름이 수급 민감도를 키우고 있습니다.
 - 그래서 오늘은: 체크포인트 1) VIX 20.6가 20 아래로 내려오는지, 체크포인트 2) XLE 강도(+3.17%)가 유지되는지를 먼저 보겠습니다.
 - 무효화 조건: VIX가 20 아래로 내려오고 나스닥 종합이 플러스로 돌아서면 방어 해석은 약해집니다.
@@ -78,8 +78,8 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,701 | +634.28 | +0.91% | - |
-| 이더리움 (ETH) | 2,083.36 | +29.79 | +1.43% | - |
+| 비트코인 (BTC) | 69,661 | +675.71 | +0.97% | ↓1일 |
+| 이더리움 (ETH) | 2,082.23 | +33.52 | +1.61% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -167,7 +167,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,701 | -0.60% | 소폭 하락 |
+| BTC | 70,120 | 69,661 | -0.65% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -192,17 +192,17 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 출처
 
+- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 키움증권 REST API (api) | https://api.kiwoom.com
 - Static Economic Calendar (file) | file://static-calendar.json
 - Yahoo Finance Historical (api) | https://finance.yahoo.com
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 01:11:19 KST</span>
+  <span>생성 시각: 2026-02-15 01:12:07 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 01:11:19 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 01:12:07 KST</span>
 </div>
