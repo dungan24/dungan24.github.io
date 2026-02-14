@@ -24,16 +24,18 @@ chartData: "/data/chart-data-2026-02-15.json"
 ### 무슨 일이 있었나
 미국 증시는 혼조세로 마감했습니다. S&P 500 +0.05%, 나스닥 -0.22%, 다우 +0.10%.
 
-주요 소식으로는 **"라이브: 1월 미국 CPI 보고서 분석"** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"** 이 시장의 관심을 끌었습니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-오늘 변동성 관리가 핵심이 됐다.
-S&P 500이 0.05% 상승하였지만 나스닥 종합은 0.22% 하락함에 따라 위험 선호가 살아났습니다.
-하지만 미국 10년물 변동률 하위 9%를 기록한 가운데 금리 민감 자산의 하방 압력도 우려된다.
-그래서 오늘은: 위험 선호가 살아난 가운데 연준 긴축 기조 유지에 따른 금리 민감 자산의 하방 압력을 확인해야 한다.
-기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어진다.
-대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복된다.
+S&P 500이 0.05% 하락한 가운데, 금리 민감 자산의 하방 압력이 커졌다.
+이는 CPI 예상 상회로 연준 긴축 기조가 유지된 결과로 보인다.
+하지만 나스닥 100은 0.18% 상승하며, VIX가 20.6으로 상승한 가운데도 기회를 찾아내려는 움직임을 보였다.
+그래서 오늘은: S&P 500의 하락과 VIX의 상승을 주의 깊게 관찰해야 하며, 나스닥 100의 상승을 기회로 삼아야 한다.
+기준 시나리오: 변동성 경계가 유지되며 종목별 차별화가 이어집니다.
+대안 시나리오: 변동성 진정과 함께 위험자산 선호가 회복됩니다.
+
+또한 **기술/AI/반도체** 관련 소식도 시장에 영향을 주고 있습니다. AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -85,8 +87,8 @@ S&P 500이 0.05% 상승하였지만 나스닥 종합은 0.22% 하락함에 따�
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,721 | +1,763.94 | +2.53% | - |
-| 이더리움 (ETH) | 2,084.84 | +73.18 | +3.51% | - |
+| 비트코인 (BTC) | 69,641 | +1,288.36 | +1.85% | ↓1일 |
+| 이더리움 (ETH) | 2,082.26 | +70.59 | +3.39% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율  ⚠ (일부 지연 데이터)
@@ -119,25 +121,25 @@ S&P 500이 0.05% 상승하였지만 나스닥 종합은 0.22% 하락함에 따�
 
 ### 글로벌
 
-1. [**라이브: 1월 미국 CPI 보고서 분석**](https://news.google.com/rss/articles/CBMiekFVX3lxTE5vcXIxQkROQVI1Xy1yVDQ1azlRYVBfMlZydXl1RGNIRjVad2kxOU9Kb0MycFdmRk5hMVhxNFlIS2dKNWxGUE1DdFd3NXB6OEdvcUZHT1hGeGU2RTBHVGxVQXBEZ2xYSi1pTU5TZG9URmRGRXJySm1weWVB?oc=5)
-   Bloomberg.com · 2026-02-14 12:13 KST · 미국 매크로
-   원문: Live: Analysis of US CPI Report for January
-
-2. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
+1. [**트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회**](https://news.google.com/rss/articles/CBMingFBVV95cUxNNTluSV9XNXl2SEgtVUcxaUNZT3U2N2hvdVIzUFNXcGZZTXF2NTZFVmdGcldBUmZfZ0Y1MHFndXJUQ1NBNTFrWjRpNFl6dEdGRk50VUdQODZ1SF9zSXdWR0ZmME83SGN2UHJLWHNzTVlIZkZWWlRuQ21KY0VSTUM5aFdwd0FEdF9KcUMyNkR6TjJHZTVzR1VaazdnaFlxQQ?oc=5)
    thestreet.com · 2026-02-14 20:33 KST · central-bank
    원문: Traders pivot Fed rate cut bets after CPI surprise
 
-3. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
+2. [**주식시장과 채권시장, 수십년 만에 경고 경고. 역사는 S&P 500이 다음 단계에 이를 것이라고 말합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0RUaUxlTUx4dDNSY3Q2Y0hPZkRsRGlydDdRaHBYOWJXeEhyRXpjU0FYbC1USnVzb3I3emVKUWhCYlM1VW5wd0tpc2RfcnNMWk9MTGIwS2Z4ajVlejlXZnN5ZGlSVUcyUUlhaThZc21TbU1WUWtZWFVzMDRDMUFYOHdkWDk2MHVIVzBlVVJERks3N2MwQ1p4emw3c2pOMUkwZUFDcm5qdXRwVERlRGhaQzBvdzk3RmxybXQwNQ?oc=5)
    Nasdaq · 2026-02-14 17:26 KST · 시장 이벤트
    원문: The Stock Market and Bond Market Flash Warnings Not Seen in Decades. History Says the S&P 500 Will Do This Next.
+
+3. [**역사는 S&P 500이 2026년에 급락할 수 있다고 제안합니다. 그 이유는 다음과 같습니다.**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaODZwRTQwMW13c3BRTW82QTU3VUNnQXF4TFVvcmM2Z1V0akRxX2xkS0dNYjFLZ25vc0pvMVRmUGQ3OVBWNDNYZkxSNFQweUJWbFctMmt4aDhFekZHUHhMQmtuTFBlM0JTNlFObTg4N29abmVPMTJHc1gwREJxblE?oc=5)
+   Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
+   원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
 
 4. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
    The Motley Fool · 2026-02-14 18:06 KST · central-bank
    원문: A Federal Reserve Crisis of Confidence Threatens the Very Fabric of Wall Street -- and Investors May Pay the Price
 
-5. [**Goldman Sachs, CPI 폭탄 이후 PCE 인플레이션 목표 재설정**](https://news.google.com/rss/articles/CBMieEFVX3lxTE9ZelUzLXlZVGZiYlB0SV9vUjdQMnNtNGt4TWJRbGp6TlM4aGFUNjFqeWpYV1RWNVA1U3RKZjQ0amFWSGhvSFFBam9oME9JM3ZJWmxNRmx1V25CZVdtVF90VlBxSnlnRXV0UGczbG5ZWTd0dGRMYmxoLQ?oc=5)
-   thestreet.com · 2026-02-14 13:13 KST · 미국 매크로
-   원문: Goldman Sachs resets PCE inflation target after CPI bombshell
+5. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
+   Investor's Business Daily · 2026-02-14 13:03 KST · 시장 이벤트
+   원문: Dow Jones Futures: How To Handle This Dangerous Market; Apple, Google, Amazon, Nvidia Hit Indexes
 
 ---
 
@@ -200,7 +202,7 @@ S&P 500이 0.05% 상승하였지만 나스닥 종합은 0.22% 하락함에 따�
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,721 | -0.57% | 소폭 하락 |
+| BTC | 70,120 | 69,641 | -0.68% | 소폭 하락 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -239,7 +241,7 @@ S&P 500이 0.05% 상승하였지만 나스닥 종합은 0.22% 하락함에 따�
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 00:10:49 KST</span>
+  <span>생성 시각: 2026-02-15 00:16:22 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 00:10:49 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 00:16:22 KST</span>
 </div>
