@@ -28,14 +28,16 @@ chartData: "/data/chart-data-2026-02-15.json"
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
 ### 왜 그런가
-- 촉발: "트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회"를 계기로 S&P 500 +0.05%와 VIX 20.6의 괴리가 커졌습니다.
-- 하지만 섹터 연결: 인플레이션 흐름이 금융(XLF) 1주 -2.40% 강도와 맞물렸습니다.
+- 촉발: "트레이더들은 CPI 깜짝 이후 연준 금리 인하 베팅을 선회" 이후 S&P 500 +0.05%, 나스닥 종합 -0.22%로 출발선이 갈렸습니다.
+- 반면 섹터 연결: 인플레이션 흐름이 금융(XLF) 1주 -2.40% 강도와 맞물렸습니다.
 - 극단값: 미국 10년물가 6개월 백분위 하위 9%에 걸려 단기 과민 반응 구간입니다.
 - 국내 브릿지: 원/달러 1,443.3원(+1.79)과 한국 은행 1주 +5.85% 흐름이 수급 민감도를 키우고 있습니다.
 - 그래서 오늘은: 체크포인트 1) VIX 20.6가 20 아래로 내려오는지, 체크포인트 2) XLF 강도(-2.40%)가 유지되는지를 먼저 보겠습니다.
 - 무효화 조건: VIX가 20 아래로 내려오고 나스닥 종합이 플러스로 돌아서면 방어 해석은 약해집니다.
 - 기준 시나리오: 변동성 경계가 이어지며 방어 섹터와 현금흐름 중심 대응이 유리합니다.
 - 대안 시나리오: VIX 진정과 함께 기술주 반등 폭이 커지면 위험자산 선호가 빠르게 회복됩니다.
+
+또한 **기술/AI/반도체** 관련 소식도 시장에 영향을 주고 있습니다. AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방
 
 공포지수(VIX)는 20.6로 5일 전(17.79) 대비 +15.80% 급변했습니다.
 
@@ -87,7 +89,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,704 | +634.31 | +0.91% | ↓1일 |
+| 비트코인 (BTC) | 69,704 | +634.31 | +0.91% | - |
 | 이더리움 (ETH) | 2,084.01 | +30.43 | +1.46% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
@@ -137,9 +139,9 @@ chartData: "/data/chart-data-2026-02-15.json"
    Yahoo Finance · 2026-02-14 22:20 KST · 시장 이벤트
    원문: History Suggests the S&P 500 Could Plunge in 2026. Here's Why.
 
-5. [**연준의 신뢰 위기는 월스트리트의 구조 자체를 위협하고 투자자들은 대가를 지불할 수도 있습니다**](https://news.google.com/rss/articles/CBMilgFBVV95cUxQV3N6XzBCelo4N1RVY1NjdmkzMi1hNUFXVGpZcWpydG1KZTJYWmVlUWFPVjBPR1lVcEMyR3cwS1lJYktNeFFsZWFKbWhDckpkbTh2UDNNbkZJRzVNVDVhV1o1QnhJSkU4UGZHYzV2eEJKWElmejhiVldpYll0ZmlZOVVUQ3BiV3hnYXVLY2V6RjRSVEFJRkE?oc=5)
-   The Motley Fool · 2026-02-14 18:06 KST · central-bank
-   원문: A Federal Reserve Crisis of Confidence Threatens the Very Fabric of Wall Street -- and Investors May Pay the Price
+5. [**다우존스 선물: 이 위험한 시장을 다루는 방법; Apple, Google, Amazon, Nvidia 히트 지수**](https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVBpX18tdkg0dVlvVHJFZmxGZjBYT2h4MnhnX0pQalMwR01lTXlDdWJCNWFESmtWaTZUUExFb0l5Njl5dG94MXJBWDRWYURlQTJDTlFmV3hEcjU3NlQxVHlWbkJDaWM0bzBNYzJMQWZOaGpVQURQaDBmN2NUdU9OYnhPSmxnUC1LdGFPSS1VbVNMcWVhOGhVQ3hmNnB1dHBSb2RpVG9pR1p6VFMyNDdRZEVpTkhjdlVrekdZTmtYbnFWNTVTYjhLZ3BjTTlSMDQ2?oc=5)
+   Investor's Business Daily · 2026-02-14 23:34 KST · 시장 이벤트
+   원문: Dow Jones Futures: How To Handle This Dangerous Market; Apple, Google, Amazon, Nvidia Hit Indexes
 
 ---
 
@@ -227,7 +229,6 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
@@ -241,7 +242,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 01:10:01 KST</span>
+  <span>생성 시각: 2026-02-15 01:10:12 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 01:10:01 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 01:10:12 KST</span>
 </div>
