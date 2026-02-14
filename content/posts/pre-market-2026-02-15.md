@@ -202,7 +202,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 01:14:00 KST</span>
+  <span>생성 시각: 2026-02-15 01:14:13 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 01:14:00 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 01:14:13 KST</span>
 </div>
