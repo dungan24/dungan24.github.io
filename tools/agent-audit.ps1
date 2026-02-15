@@ -14,6 +14,14 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 Push-Location $repoRoot
 
 try {
+  function Normalize-GitPath {
+    param([string]$PathValue)
+    if ($null -eq $PathValue) { return "" }
+    $normalized = $PathValue.Trim()
+    if (-not $normalized) { return "" }
+    return $normalized.Replace("\", "/")
+  }
+
   $trackedFiles = git ls-files
   if ($LASTEXITCODE -ne 0) {
     throw "Failed to read tracked files via git ls-files."
@@ -22,9 +30,12 @@ try {
   if ($LASTEXITCODE -ne 0) {
     throw "Failed to read untracked files via git ls-files --others --exclude-standard."
   }
-  $trackedExistingFilesOnly = @($trackedFiles | Where-Object { Test-Path -Path $_ -PathType Leaf })
-  $auditCandidates = @($trackedFiles + $untrackedFiles | Sort-Object -Unique)
-  $trackedExistingFiles = @($auditCandidates | Where-Object { Test-Path -Path $_ -PathType Leaf })
+  $normalizedTrackedFiles = @($trackedFiles | ForEach-Object { Normalize-GitPath $_ } | Where-Object { $_ })
+  $normalizedUntrackedFiles = @($untrackedFiles | ForEach-Object { Normalize-GitPath $_ } | Where-Object { $_ })
+
+  $trackedExistingFilesOnly = @($normalizedTrackedFiles | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })
+  $auditCandidates = @($normalizedTrackedFiles + $normalizedUntrackedFiles | Sort-Object -Unique)
+  $trackedExistingFiles = @($auditCandidates | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })
 
   $textExtensions = @(
     ".css", ".scss", ".js", ".ts", ".html", ".md", ".toml", ".yaml", ".yml",
@@ -50,8 +61,16 @@ try {
   $inlineTemplateFindings = @()
 
   foreach ($file in $trackedExistingFiles) {
+    if (-not (Test-Path -LiteralPath $file -PathType Leaf)) {
+      continue
+    }
+
     $ext = [System.IO.Path]::GetExtension($file).ToLowerInvariant()
-    $item = Get-Item -Path $file
+    try {
+      $item = Get-Item -LiteralPath $file
+    } catch {
+      continue
+    }
 
     if ($textExtensions -notcontains $ext) {
       $isExcludedBinaryPath = $false
@@ -93,7 +112,7 @@ try {
       $lineThreshold = [Math]::Min($lineThreshold, $TemplateThresholdLines)
     }
 
-    $lineCount = (Get-Content -Path $file | Measure-Object -Line).Lines
+    $lineCount = (Get-Content -LiteralPath $file | Measure-Object -Line).Lines
     if ($lineCount -ge $lineThreshold) {
       $largeSourceFindings += [PSCustomObject]@{
         Path = $file
@@ -103,7 +122,7 @@ try {
     }
 
     if ($ext -eq ".html" -and $file.StartsWith("layouts/") -and ($inlineTemplateAllowlist -notcontains $file)) {
-      $raw = Get-Content -Path $file -Raw
+      $raw = Get-Content -LiteralPath $file -Raw
       $hasInlineStyle = [regex]::IsMatch($raw, "(?is)<style[^>]*>")
       $hasInlineScript = [regex]::IsMatch($raw, "(?is)<script(?![^>]*\bsrc=)[^>]*>")
 
