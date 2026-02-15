@@ -450,95 +450,63 @@
   border: 1px solid transparent;
 }
 
+/* Status & Importance Chips (Korean Optimized) */
+.mp-status-chip,
+.mp-importance,
+.mp-dday-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-family: 'Pretendard Variable', 'Pretendard', 'SUIT Variable', 'Noto Sans KR', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
 .mp-status-chip::before {
   content: '';
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
+/* Status: Released */
 .mp-status-chip.is-released { 
-  color: #10b981; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); 
+  color: #10b981; background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); 
 }
-.mp-status-chip.is-released::before { background: #10b981; box-shadow: 0 0 5px #10b981; }
+.mp-status-chip.is-released::before { background: #10b981; box-shadow: 0 0 6px rgba(16, 185, 129, 0.6); }
 
+/* Status: Scheduled */
 .mp-status-chip.is-scheduled { 
-  color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); 
+  color: #38bdf8; background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.25); 
 }
-.mp-status-chip.is-scheduled::before { background: #38bdf8; box-shadow: 0 0 5px #38bdf8; }
+.mp-status-chip.is-scheduled::before { background: #38bdf8; box-shadow: 0 0 6px rgba(56, 189, 248, 0.6); }
 
+/* Status: Closed */
 .mp-status-chip.is-closed { 
-  color: #94a3b8; background: rgba(148, 163, 184, 0.1); border-color: rgba(148, 163, 184, 0.2); 
+  color: #94a3b8; background: rgba(148, 163, 184, 0.08); border-color: rgba(148, 163, 184, 0.25); 
 }
 .mp-status-chip.is-closed::before { background: #94a3b8; }
 
-@media (max-width: 640px) {
-  .mp-upcoming__item { gap: 0.75rem; }
-  .mp-upcoming__time-axis { min-width: 45px; }
-  .mp-upcoming__content { padding: 0.8rem 1rem; }
-  .mp-upcoming__event { font-size: 0.8rem; }
-  .mp-filter-group { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-}
-
+/* Importance Badges */
 .mp-importance {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  font-weight: 700;
-  padding: 0.08rem 0.38rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  border-radius: 4px; /* 중요도는 사각형 포인트 유지 */
+  font-family: 'JetBrains Mono', 'Pretendard', sans-serif;
+  padding: 0.12rem 0.45rem;
 }
+.mp-importance.is-high { color: #f43f5e; border-color: rgba(244, 63, 94, 0.3); background: rgba(244, 63, 94, 0.08); }
+.mp-importance.is-medium { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+.mp-importance.is-low { color: #94a3b8; border-color: rgba(148, 163, 184, 0.2); background: rgba(148, 163, 184, 0.08); }
 
-.mp-importance.is-high {
-  color: #fb7185;
-  border-color: rgba(251, 113, 133, 0.45);
-  background: rgba(251, 113, 133, 0.13);
-}
-
-.mp-importance.is-medium {
-  color: #f59e0b;
-  border-color: rgba(245, 158, 11, 0.45);
-  background: rgba(245, 158, 11, 0.13);
-}
-
-.mp-importance.is-low {
-  color: #94a3b8;
-  border-color: rgba(148, 163, 184, 0.35);
-  background: rgba(148, 163, 184, 0.12);
-}
-
-.mp-status-chip,
+/* D-Day Chip */
 .mp-dday-chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.61rem;
-  font-weight: 700;
-  padding: 0.08rem 0.34rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  color: #c084fc; border-color: rgba(192, 132, 252, 0.3); background: rgba(192, 132, 252, 0.08);
 }
 
-.mp-status-chip.is-scheduled {
-  color: #22d3ee;
-  border-color: rgba(34, 211, 238, 0.42);
-  background: rgba(34, 211, 238, 0.12);
-}
-
-.mp-status-chip.is-released {
-  color: #22c55e;
-  border-color: rgba(34, 197, 94, 0.42);
-  background: rgba(34, 197, 94, 0.12);
-}
-
-.mp-status-chip.is-closed {
-  color: #94a3b8;
-  border-color: rgba(148, 163, 184, 0.35);
-  background: rgba(148, 163, 184, 0.12);
-}
-
-.mp-dday-chip {
-  color: #c084fc;
-  border-color: rgba(192, 132, 252, 0.42);
-  background: rgba(192, 132, 252, 0.12);
-}
