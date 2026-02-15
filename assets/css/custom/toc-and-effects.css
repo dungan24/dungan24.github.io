@@ -620,27 +620,27 @@ html { scroll-behavior: smooth; }
 
 /* Prose heading hierarchy */
 .prose h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.55rem !important;
   line-height: 1.4;
   margin-top: 3rem !important;
   margin-bottom: 1.25rem !important;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   color: var(--tw-prose-headings);
 }
 .prose h3 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.2rem !important;
   line-height: 1.5;
   margin-top: 2.5rem !important;
   margin-bottom: 0.75rem !important;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--tw-prose-headings);
 }
 .prose h4 {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.05rem !important;
   line-height: 1.5;
   font-weight: 700;
@@ -650,16 +650,17 @@ html { scroll-behavior: smooth; }
 
 /* Specific styling for briefing sections where hierarchy is crucial */
 .briefing-section h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   margin-top: 0 !important;
   margin-bottom: 1.5rem !important;
   font-size: 1.55rem !important;
   border-bottom: 2px solid var(--mp-border);
   padding-bottom: 0.75rem;
   color: #F8FAFC;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   position: relative;
+  font-weight: 900 !important;
 }
 
 .briefing-section h2::after {
@@ -674,11 +675,11 @@ html { scroll-behavior: smooth; }
 }
 
 .briefing-section h3 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   color: #E2E8F0 !important;
   font-size: 1.15rem !important;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   margin-top: 2rem !important;
   margin-bottom: 0.75rem !important;
   padding-left: 0.85rem;
