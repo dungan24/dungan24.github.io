@@ -1,22 +1,29 @@
 /* --- Event Calendar (Month Grid + Upcoming) --- */
+/* === Integrated Market Calendar (Fintech Style) === */
+
 .mp-calendar {
-  margin-top: 0.6rem;
-  margin-bottom: 1.1rem;
-  padding: 0.8rem;
-  border: 1px solid rgba(124, 58, 237, 0.28);
-  border-radius: 12px;
-  background:
-    linear-gradient(180deg, rgba(124, 58, 237, 0.08), rgba(10, 10, 36, 0.2)),
-    radial-gradient(120% 120% at 100% 0%, rgba(0, 240, 255, 0.08), transparent 55%);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  box-shadow: var(--mp-shadow-sm);
+  position: relative;
 }
 
 .mp-calendar__title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--mp-neon-cyan);
-  margin-bottom: 0.55rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+  text-transform: uppercase;
 }
 
 .mp-calendar__grid {
@@ -25,223 +32,466 @@
   gap: 0.4rem;
 }
 
-.mp-calendar__weekday,
-.mp-calendar__cell {
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  border-radius: 8px;
-  background: rgba(8, 10, 38, 0.65);
-}
-
+/* 요일 타이포그래피 (사이트 톤앤매너 통합) */
 .mp-calendar__weekday {
   text-align: center;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: #94a3b8;
-  padding: 0.32rem 0.1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #64748B;
+  padding: 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.mp-calendar__weekday.is-sun {
-  color: #fb7185;
-}
-
-.mp-calendar__weekday.is-sat {
-  color: #60a5fa;
-}
+.mp-calendar__weekday.is-sun { color: #f43f5e; }
+.mp-calendar__weekday.is-sat { color: #3b82f6; }
 
 .mp-calendar__cell {
-  min-height: 56px;
-  padding: 0.34rem 0.4rem;
+  min-height: 52px;
+  padding: 0.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: var(--mp-radius-sm);
+  background: rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  position: relative;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .mp-calendar__cell:hover {
-  border-color: rgba(0, 240, 255, 0.38);
-  background: rgba(15, 22, 54, 0.9);
-  box-shadow: 0 0 18px rgba(0, 240, 255, 0.12);
-  z-index: 20;
+  background: rgba(0, 240, 255, 0.05);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
+  z-index: 10;
 }
 
 .mp-calendar__cell.is-outside {
-  background: rgba(71, 85, 105, 0.22);
-  border-color: rgba(100, 116, 139, 0.28);
-}
-
-.mp-calendar__cell.is-outside .mp-calendar__day {
-  color: #64748b;
-}
-
-.mp-calendar__cell.is-sun .mp-calendar__day,
-.mp-calendar__cell.is-holiday .mp-calendar__day {
-  color: #fb7185;
-  font-weight: 700;
-}
-
-.mp-calendar__cell.is-sat .mp-calendar__day {
-  color: #60a5fa;
-  font-weight: 700;
+  opacity: 0.25;
+  background: transparent;
 }
 
 .mp-calendar__cell.is-today {
-  border-color: rgba(0, 240, 255, 0.62);
-  box-shadow: inset 0 0 0 1px rgba(0, 240, 255, 0.38), 0 0 20px rgba(0, 240, 255, 0.14);
+  border-color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.06);
 }
 
 .mp-calendar__day {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #cbd5e1;
+  font-weight: 600;
+  color: #94a3b8;
 }
 
-.mp-calendar__dot {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.64rem;
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 999px;
-  padding: 0.05rem 0.34rem;
-  background: rgba(56, 189, 248, 0.1);
+.mp-calendar__cell.is-sun .mp-calendar__day { color: #f43f5e; }
+.mp-calendar__cell.is-sat .mp-calendar__day { color: #3b82f6; }
+.mp-calendar__cell.is-holiday .mp-calendar__day { color: #f43f5e; }
+
+/* 일정 표시기 (사이트 요소를 닮은 마커) */
+.mp-calendar__markers {
+  display: flex;
+  gap: 2px;
+  margin-top: 0.2rem;
 }
 
-.mp-calendar__dot.is-high {
-  color: #f97316;
-  border-color: rgba(249, 115, 22, 0.42);
-  background: rgba(249, 115, 22, 0.14);
+.mp-calendar__marker {
+  height: 2px;
+  flex: 1;
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 1px;
 }
 
-.mp-calendar__tooltip {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 0.45rem);
-  width: min(560px, calc(100vw - 1.5rem));
-  transform: translate(-50%, 4px);
-  z-index: 14;
-  padding: 0.55rem 0.65rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 240, 255, 0.35);
-  background: rgba(8, 12, 34, 0.97);
-  box-shadow: 0 10px 28px rgba(2, 8, 20, 0.45);
+.mp-calendar__marker.is-high {
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 5px var(--mp-neon-cyan);
+}
+
+.mp-calendar__cell.has-high-importance {
+  background: rgba(0, 240, 255, 0.02);
+}
+
+/* --- Integrated Shared Tooltip (Floating) --- */
+.mp-calendar__tooltip-shared {
+  position: fixed;
+  width: 280px;
+  z-index: 9999;
+  padding: 0;
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity 0.15s ease;
+  overflow: hidden;
 }
 
-.mp-calendar__cell:hover .mp-calendar__tooltip,
-.mp-calendar__cell:focus-within .mp-calendar__tooltip {
+.mp-calendar__tooltip-shared.is-active {
   opacity: 1;
-  transform: translate(-50%, 0);
 }
 
-.mp-calendar__tooltip-line {
-  color: #cbd5e1;
+.mp-calendar__tooltip-header {
+  padding: 0.6rem 0.8rem;
+  background: rgba(0, 240, 255, 0.08);
+  border-bottom: 1px solid var(--mp-glass-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--mp-neon-cyan);
+}
+
+.mp-calendar__tooltip-holiday {
+  padding: 0.4rem 0.8rem;
+  background: rgba(244, 63, 94, 0.08);
+  color: #f43f5e;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mp-calendar__tooltip-list {
+  padding: 0.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mp-calendar__tooltip-item {
+  padding: 0.6rem;
+  border-radius: var(--mp-radius-sm);
+  margin-bottom: 0.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mp-calendar__tooltip-item.is-high {
+  border-left: 3px solid var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.04);
+}
+
+.mp-calendar__tooltip-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.mp-calendar__tooltip-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+
+.mp-calendar__tooltip-country {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--mp-neon-cyan);
+}
+
+.mp-calendar__tooltip-name {
+  font-size: 0.78rem;
+  color: #E2E8F0;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.mp-calendar__tooltip-status {
+  display: flex;
+  gap: 0.3rem;
+}
+
+/* Light Mode Overrides */
+:root:not(.dark) .mp-calendar__tooltip-shared { 
+  background: rgba(255, 255, 255, 0.98); 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+:root:not(.dark) .mp-calendar__tooltip-name { color: #1E293B; }
+:root:not(.dark) .mp-calendar__tooltip-item { background: #f8fafc; }
+
+@media (max-width: 640px) {
+  .mp-calendar__tooltip-shared { 
+    display: none !important; 
+  }
+}
+
+.mp-calendar__tooltip-list {
+  padding: 0.5rem;
+}
+
+.mp-calendar__tooltip-item {
+  padding: 0.5rem;
+  border-radius: var(--mp-radius-sm);
+  margin-bottom: 0.3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mp-calendar__tooltip-item.is-high {
+  border-left: 2px solid var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.03);
+}
+
+.mp-calendar__tooltip-name {
   font-size: 0.75rem;
-  line-height: 1.5;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  color: #E2E8F0;
+  line-height: 1.4;
+  font-weight: 600;
 }
 
-.mp-calendar__tooltip-line:not(:last-child) {
-  margin-bottom: 0.18rem;
-  padding-bottom: 0.18rem;
-  border-bottom: 1px dashed rgba(148, 163, 184, 0.22);
+/* Light Mode Overrides */
+:root:not(.dark) .mp-calendar { background: rgba(255, 255, 255, 0.95); }
+:root:not(.dark) .mp-calendar__day { color: #475569; }
+:root:not(.dark) .mp-calendar__tooltip { background: white; }
+:root:not(.dark) .mp-calendar__tooltip-name { color: #1E293B; }
+
+@media (max-width: 640px) {
+  .mp-calendar { padding: 0.8rem; }
+  .mp-calendar__grid { gap: 0.2rem; }
+  .mp-calendar__cell { min-height: 48px; }
+  .mp-calendar__day { font-size: 0.65rem; }
+  .mp-calendar__tooltip { width: 220px; }
 }
 
 .mp-upcoming {
-  margin-top: 0.9rem;
+  margin-top: 1.2rem;
 }
 
 .mp-upcoming__title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #a5f3fc;
-  margin-bottom: 0.55rem;
-}
-
-.mp-upcoming__list {
-  display: grid;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
+.mp-upcoming__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(165, 243, 252, 0.3), transparent);
+}
+
+/* --- Filtering UI (Hip Pills) --- */
 .mp-upcoming__filters {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.55rem;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 12px;
 }
 
-.mp-upcoming__filter-select {
-  background: rgba(15, 23, 42, 0.72);
-  border: 1px solid rgba(56, 189, 248, 0.32);
-  color: #cbd5e1;
+.mp-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.mp-filter-group__label {
   font-size: 0.68rem;
-  border-radius: 8px;
-  padding: 0.22rem 0.4rem;
-  min-width: 120px;
+  font-weight: 700;
+  color: #94a3b8;
+  min-width: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
+.mp-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 
-.mp-upcoming__item,
-.mp-upcoming__empty {
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  border-radius: 10px;
-  background: rgba(10, 10, 36, 0.68);
-  padding: 0.55rem 0.7rem;
+.mp-filter-pill {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.mp-filter-pill:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #e2e8f0;
+}
+
+.mp-filter-pill.is-active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+/* --- Timeline Layout --- */
+.mp-upcoming__list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mp-upcoming__date-divider {
+  margin: 1rem 0 0.6rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mp-upcoming__date-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.1rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  z-index: 2;
+}
+
+.mp-upcoming__date-divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent);
+  z-index: 1;
+}
+
+.mp-upcoming__item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  position: relative;
+}
+
+.mp-upcoming__time-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+}
+
+.mp-upcoming__time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 0.4rem;
+}
+
+.mp-upcoming__dot-line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(180deg, #38bdf8, rgba(56, 189, 248, 0.1));
+  position: relative;
+}
+
+.mp-upcoming__dot-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -2px);
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.mp-upcoming__content {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.mp-upcoming__item:hover .mp-upcoming__content {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateX(4px);
 }
 
 .mp-upcoming__head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.3rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .mp-upcoming__event {
-  color: #e2e8f0;
-  font-size: 0.84rem;
-  font-weight: 600;
-}
-
-.mp-upcoming__badges {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  color: #f8fafc;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .mp-upcoming__meta {
   color: #94a3b8;
-  font-size: 0.73rem;
-  line-height: 1.45;
-}
-
-.mp-upcoming__impact,
-.mp-upcoming__watch {
-  margin-top: 0.25rem;
   font-size: 0.72rem;
-  line-height: 1.4;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 0.5rem;
 }
 
 .mp-upcoming__translation {
-  margin-top: 0.22rem;
+  font-size: 0.75rem;
   color: #7dd3fc;
-  font-size: 0.71rem;
+  margin-bottom: 0.4rem;
   line-height: 1.4;
 }
 
 .mp-upcoming__impact {
+  font-size: 0.72rem;
   color: #cbd5e1;
+  line-height: 1.5;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-.mp-upcoming__watch {
-  color: #94a3b8;
+@media (max-width: 640px) {
+  .mp-upcoming__filters {
+    padding: 0.6rem;
+  }
+  
+  .mp-filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .mp-upcoming__item {
+    gap: 0.6rem;
+  }
+
+  .mp-upcoming__time-axis {
+    min-width: 40px;
+  }
+
+  .mp-upcoming__content {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .mp-upcoming__event {
+    font-size: 0.82rem;
+  }
 }
 
 .mp-importance {
@@ -306,67 +556,3 @@
   border-color: rgba(192, 132, 252, 0.42);
   background: rgba(192, 132, 252, 0.12);
 }
-
-@media (max-width: 640px) {
-  .mp-calendar {
-    padding: 0.56rem;
-  }
-
-  .mp-calendar__grid {
-    gap: 0.28rem;
-  }
-
-  .mp-calendar__weekday {
-    font-size: 0.65rem;
-    padding: 0.26rem 0.05rem;
-  }
-
-  .mp-calendar__cell {
-    min-height: 48px;
-    padding: 0.26rem 0.28rem;
-  }
-
-  .mp-calendar__day {
-    font-size: 0.7rem;
-  }
-
-  .mp-calendar__dot {
-    font-size: 0.57rem;
-    padding: 0.03rem 0.25rem;
-  }
-
-  .mp-calendar__tooltip {
-    width: min(440px, calc(100vw - 1rem));
-    padding: 0.42rem 0.48rem;
-  }
-
-  .mp-calendar__tooltip-line {
-    font-size: 0.69rem;
-  }
-
-  .mp-upcoming__head {
-    align-items: flex-start;
-  }
-
-  .mp-upcoming__filters {
-    gap: 0.28rem;
-  }
-
-  .mp-upcoming__filter-select {
-    font-size: 0.64rem;
-    min-width: 108px;
-    padding: 0.2rem 0.34rem;
-  }
-
-  .mp-upcoming__event {
-    font-size: 0.78rem;
-  }
-
-  .mp-upcoming__meta,
-  .mp-upcoming__translation,
-  .mp-upcoming__impact,
-  .mp-upcoming__watch {
-    font-size: 0.67rem;
-  }
-}
-
