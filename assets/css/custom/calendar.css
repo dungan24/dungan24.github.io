@@ -253,150 +253,134 @@
 }
 
 .mp-upcoming {
-  margin-top: 1.2rem;
+  margin-top: 2rem;
 }
 
 .mp-upcoming__title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #a5f3fc;
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--mp-neon-purple);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.mp-upcoming__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(165, 243, 252, 0.3), transparent);
-}
-
-/* --- Filtering UI (Hip Pills) --- */
+/* --- Filtering UI (Design System Applied) --- */
 .mp-upcoming__filters {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 1.2rem;
-  padding: 0.8rem;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  border-radius: 12px;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.2);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
 }
 
 .mp-filter-group {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .mp-filter-group__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #94a3b8;
-  min-width: 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #64748B;
+  min-width: 45px;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
 }
 
 .mp-filter-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .mp-filter-pill {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  color: #94a3b8;
-  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--mp-glass-border);
+  color: #94A3B8;
+  font-size: 0.65rem;
   font-weight: 600;
-  padding: 0.22rem 0.65rem;
-  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
 .mp-filter-pill:hover {
-  background: rgba(51, 65, 85, 0.8);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #e2e8f0;
+  border-color: var(--mp-neon-cyan);
+  color: var(--mp-neon-cyan);
 }
 
 .mp-filter-pill.is-active {
-  background: rgba(56, 189, 248, 0.15);
-  border-color: #38bdf8;
-  color: #38bdf8;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+  background: rgba(0, 240, 255, 0.08);
+  border-color: var(--mp-neon-cyan);
+  color: var(--mp-neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
 }
 
-/* --- Timeline Layout --- */
-.mp-upcoming__list {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
+/* --- Timeline Layout (Polished) --- */
 .mp-upcoming__date-divider {
-  margin: 1rem 0 0.6rem;
-  position: relative;
+  margin: 1.5rem 0 1rem;
   display: flex;
   align-items: center;
 }
 
 .mp-upcoming__date-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #38bdf8;
-  background: rgba(15, 23, 42, 0.9);
-  padding: 0.1rem 0.6rem;
+  color: var(--mp-neon-cyan);
+  background: var(--mp-glass-bg);
+  padding: 0.15rem 0.75rem;
   border-radius: 4px;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid var(--mp-glass-border);
   z-index: 2;
 }
 
 .mp-upcoming__date-divider::after {
   content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
+  flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent);
-  z-index: 1;
+  background: linear-gradient(90deg, var(--mp-glass-border), transparent);
+  margin-left: 1rem;
 }
 
 .mp-upcoming__item {
   display: flex;
-  gap: 1rem;
-  padding: 0.8rem 0;
-  position: relative;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
 }
 
 .mp-upcoming__time-axis {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 48px;
+  min-width: 50px;
+  padding-top: 0.75rem;
 }
 
 .mp-upcoming__time {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  color: #cbd5e1;
-  margin-bottom: 0.4rem;
+  color: #64748B;
+  margin-bottom: 0.5rem;
 }
 
 .mp-upcoming__dot-line {
   flex: 1;
-  width: 2px;
-  background: linear-gradient(180deg, #38bdf8, rgba(56, 189, 248, 0.1));
+  width: 1px;
+  background: var(--mp-glass-border);
   position: relative;
 }
 
@@ -406,92 +390,94 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, -2px);
-  width: 8px;
-  height: 8px;
-  background: #38bdf8;
+  width: 5px;
+  height: 5px;
+  background: var(--mp-neon-cyan);
   border-radius: 50%;
-  box-shadow: 0 0 8px #38bdf8;
+  box-shadow: 0 0 5px var(--mp-neon-cyan);
 }
 
+/* 카드 디자인: mp-news-card 디자인 계승 */
 .mp-upcoming__content {
   flex: 1;
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  border-radius: 12px;
-  padding: 0.8rem 1rem;
-  transition: transform 0.2s ease, background 0.2s ease;
-  backdrop-filter: blur(4px);
+  background: var(--mp-glass-bg);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--mp-shadow-sm);
+  transition: all 0.25s ease;
 }
 
 .mp-upcoming__item:hover .mp-upcoming__content {
-  background: rgba(30, 41, 59, 0.6);
   border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
   transform: translateX(4px);
 }
 
-.mp-upcoming__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-bottom: 0.4rem;
-}
-
 .mp-upcoming__event {
-  color: #f8fafc;
-  font-size: 0.88rem;
+  color: #F8FAFC;
+  font-size: 0.85rem;
   font-weight: 700;
-  line-height: 1.3;
-}
-
-.mp-upcoming__meta {
-  color: #94a3b8;
-  font-size: 0.72rem;
-  font-family: 'JetBrains Mono', monospace;
-  margin-bottom: 0.5rem;
-}
-
-.mp-upcoming__translation {
-  font-size: 0.75rem;
-  color: #7dd3fc;
-  margin-bottom: 0.4rem;
   line-height: 1.4;
 }
 
-.mp-upcoming__impact {
-  font-size: 0.72rem;
-  color: #cbd5e1;
-  line-height: 1.5;
-  padding-top: 0.4rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.1);
+.mp-upcoming__meta {
+  color: #64748B;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
+.mp-upcoming__impact {
+  font-size: 0.75rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+/* Status Badges Integration */
+.mp-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.mp-status-chip::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.mp-status-chip.is-released { 
+  color: #10b981; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); 
+}
+.mp-status-chip.is-released::before { background: #10b981; box-shadow: 0 0 5px #10b981; }
+
+.mp-status-chip.is-scheduled { 
+  color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); 
+}
+.mp-status-chip.is-scheduled::before { background: #38bdf8; box-shadow: 0 0 5px #38bdf8; }
+
+.mp-status-chip.is-closed { 
+  color: #94a3b8; background: rgba(148, 163, 184, 0.1); border-color: rgba(148, 163, 184, 0.2); 
+}
+.mp-status-chip.is-closed::before { background: #94a3b8; }
+
 @media (max-width: 640px) {
-  .mp-upcoming__filters {
-    padding: 0.6rem;
-  }
-  
-  .mp-filter-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .mp-upcoming__item {
-    gap: 0.6rem;
-  }
-
-  .mp-upcoming__time-axis {
-    min-width: 40px;
-  }
-
-  .mp-upcoming__content {
-    padding: 0.65rem 0.8rem;
-  }
-
-  .mp-upcoming__event {
-    font-size: 0.82rem;
-  }
+  .mp-upcoming__item { gap: 0.75rem; }
+  .mp-upcoming__time-axis { min-width: 45px; }
+  .mp-upcoming__content { padding: 0.8rem 1rem; }
+  .mp-upcoming__event { font-size: 0.8rem; }
+  .mp-filter-group { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
 
 .mp-importance {
