@@ -30,11 +30,11 @@
       var weekday = ['일', '월', '화', '수', '목', '금', '토'];
 
       var calendar = document.createElement('div');
-      calendar.className = 'mp-calendar';
+      calendar.className = 'mp-calendar mp-glass-card';
 
       var title = document.createElement('div');
-      title.className = 'mp-calendar__title';
-      title.textContent = anchor.year + '-' + String(anchor.month).padStart(2, '0');
+      title.className = 'mp-calendar__title mp-section-label';
+      title.textContent = '// MARKET CALENDAR :: ' + anchor.year + '-' + String(anchor.month).padStart(2, '0');
       calendar.appendChild(title);
 
       var grid = document.createElement('div');
@@ -48,6 +48,64 @@
         head.textContent = w;
         grid.appendChild(head);
       });
+
+      // 공유 툴팁 요소 생성 (없으면 생성)
+      var sharedTooltip = document.getElementById('mp-shared-tooltip');
+      if (!sharedTooltip) {
+        sharedTooltip = document.createElement('div');
+        sharedTooltip.id = 'mp-shared-tooltip';
+        sharedTooltip.className = 'mp-calendar__tooltip-shared';
+        document.body.appendChild(sharedTooltip);
+      }
+
+      function updateTooltip(c, e) {
+        if (!c.tooltipData || (!c.tooltipData.events.length && !c.isHoliday)) {
+          sharedTooltip.classList.remove('is-active');
+          return;
+        }
+
+        var html = '<div class="mp-calendar__tooltip-header">' + c.key + '</div>';
+        
+        if (c.isHoliday) {
+          html += '<div class="mp-calendar__tooltip-holiday">🇰🇷 KR 휴장 (국내 증시 휴장)</div>';
+        }
+
+        html += '<div class="mp-calendar__tooltip-list">';
+        c.tooltipData.events.forEach(function(ev) {
+          html += '<div class="mp-calendar__tooltip-item is-' + ev.importance + '">' +
+                  '<div class="mp-calendar__tooltip-top">' +
+                  '<span class="mp-calendar__tooltip-time">' + ev.time + '</span>' +
+                  '<span class="mp-calendar__tooltip-country">[' + ev.country + ']</span>' +
+                  '</div>' +
+                  '<div class="mp-calendar__tooltip-name">' + (ev.nameKo || ev.name) + '</div>' +
+                  '<div class="mp-calendar__tooltip-status">' +
+                  '<span class="mp-status-chip is-mini is-' + model.getStatusBadgeClass(ev.status) + '">' + ev.status + '</span>' +
+                  '<span class="mp-importance is-mini is-' + ev.importance + '">' + ev.importance.toUpperCase() + '</span>' +
+                  '</div></div>';
+        });
+        html += '</div>';
+
+        sharedTooltip.innerHTML = html;
+        sharedTooltip.classList.add('is-active');
+        moveTooltip(e);
+      }
+
+      function moveTooltip(e) {
+        var x = e.clientX + 15;
+        var y = e.clientY + 15;
+        
+        // 화면 밖으로 나가는 거 방지
+        var tw = sharedTooltip.offsetWidth;
+        var th = sharedTooltip.offsetHeight;
+        var ww = window.innerWidth;
+        var wh = window.innerHeight;
+
+        if (x + tw > ww) x = e.clientX - tw - 15;
+        if (y + th > wh) y = e.clientY - th - 15;
+
+        sharedTooltip.style.left = x + 'px';
+        sharedTooltip.style.top = y + 'px';
+      }
 
       cells.forEach(function(c) {
         var cell = document.createElement('div');
@@ -64,24 +122,23 @@
         cell.appendChild(day);
 
         if (c.eventCount > 0) {
-          var dot = document.createElement('span');
-          dot.className = 'mp-calendar__dot';
-          if (c.highCount > 0) dot.classList.add('is-high');
-          dot.textContent = c.highCount > 0 ? ('H' + c.highCount) : String(c.eventCount);
-          cell.appendChild(dot);
+          var markers = document.createElement('div');
+          markers.className = 'mp-calendar__markers';
+          if (c.highCount > 0) cell.classList.add('has-high-importance');
+          var displayCount = Math.min(c.eventCount, 3);
+          for (var m = 0; m < displayCount; m++) {
+            var marker = document.createElement('span');
+            marker.className = 'mp-calendar__marker';
+            if (m < c.highCount) marker.classList.add('is-high');
+            markers.appendChild(marker);
+          }
+          cell.appendChild(markers);
         }
 
-        if (c.tooltipLines && c.tooltipLines.length > 0) {
-          var tip = document.createElement('div');
-          tip.className = 'mp-calendar__tooltip';
-          c.tooltipLines.forEach(function(line) {
-            var tipLine = document.createElement('div');
-            tipLine.className = 'mp-calendar__tooltip-line';
-            tipLine.textContent = line;
-            tip.appendChild(tipLine);
-          });
-          cell.appendChild(tip);
-        }
+        // 마우스 이벤트 리스너 추가
+        cell.addEventListener('mouseenter', function(e) { updateTooltip(c, e); });
+        cell.addEventListener('mousemove', function(e) { moveTooltip(e); });
+        cell.addEventListener('mouseleave', function() { sharedTooltip.classList.remove('is-active'); });
 
         grid.appendChild(cell);
       });
@@ -112,22 +169,55 @@
       var filterBar = document.createElement('div');
       filterBar.className = 'mp-upcoming__filters';
 
-      var importanceSelect = document.createElement('select');
-      importanceSelect.className = 'mp-upcoming__filter-select';
-      importanceSelect.innerHTML = '<option value="high">중요도: 상</option><option value="high-medium">중요도: 상+중</option><option value="all">중요도: 전체</option>';
-      importanceSelect.value = 'high';
-      filterBar.appendChild(importanceSelect);
+      function createFilterGroup(label, options, key) {
+        var group = document.createElement('div');
+        group.className = 'mp-filter-group';
+        
+        var labelEl = document.createElement('span');
+        labelEl.className = 'mp-filter-group__label';
+        labelEl.textContent = label;
+        group.appendChild(labelEl);
 
-      var periodSelect = document.createElement('select');
-      periodSelect.className = 'mp-upcoming__filter-select';
-      periodSelect.innerHTML = '<option value="pm10">기간: -10일~+10일</option><option value="pm20">기간: -20일~+20일</option><option value="pm30">기간: -30일~+30일</option><option value="all">기간: 전체</option>';
-      periodSelect.value = 'pm10';
-      filterBar.appendChild(periodSelect);
+        var pills = document.createElement('div');
+        pills.className = 'mp-filter-pills';
 
-      var countrySelect = document.createElement('select');
-      countrySelect.className = 'mp-upcoming__filter-select';
-      countrySelect.innerHTML = '<option value="all">국가: 전체</option><option value="us">국가: 미국</option><option value="kr">국가: 한국</option>';
-      filterBar.appendChild(countrySelect);
+        options.forEach(function(opt) {
+          var pill = document.createElement('button');
+          pill.className = 'mp-filter-pill';
+          if (filterState[key] === opt.value) pill.classList.add('is-active');
+          pill.textContent = opt.label;
+          pill.addEventListener('click', function() {
+            filterState[key] = opt.value;
+            group.querySelectorAll('.mp-filter-pill').forEach(function(p) {
+              p.classList.remove('is-active');
+            });
+            pill.classList.add('is-active');
+            renderUpcomingList();
+          });
+          pills.appendChild(pill);
+        });
+        group.appendChild(pills);
+        return group;
+      }
+
+      filterBar.appendChild(createFilterGroup('중요도', [
+        { label: '상', value: 'high' },
+        { label: '상+중', value: 'high-medium' },
+        { label: '전체', value: 'all' }
+      ], 'importance'));
+
+      filterBar.appendChild(createFilterGroup('기간', [
+        { label: '±10일', value: 'pm10' },
+        { label: '±20일', value: 'pm20' },
+        { label: '전체', value: 'all' }
+      ], 'period'));
+
+      filterBar.appendChild(createFilterGroup('국가', [
+        { label: '전체', value: 'all' },
+        { label: '미국', value: 'us' },
+        { label: '한국', value: 'kr' }
+      ], 'country'));
+
       upcomingWrap.appendChild(filterBar);
 
       function renderUpcomingList() {
@@ -148,14 +238,37 @@
         if (visible.length === 0) {
           var emptyFiltered = document.createElement('div');
           emptyFiltered.className = 'mp-upcoming__empty';
-          emptyFiltered.textContent = '필터 조건에 맞는 일정이 없습니다. 기간/국가/중요도 필터를 조정해 보세요.';
+          emptyFiltered.textContent = '필터 조건에 맞는 일정이 없습니다.';
           upcomingList.appendChild(emptyFiltered);
           return;
         }
 
+        var lastDateStr = '';
+
         visible.forEach(function(e) {
+          var currentDateStr = e.dateTime.toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit', weekday: 'short' });
+          
+          if (currentDateStr !== lastDateStr) {
+            var dateDivider = document.createElement('div');
+            dateDivider.className = 'mp-upcoming__date-divider';
+            dateDivider.innerHTML = '<span class="mp-upcoming__date-text">' + currentDateStr + '</span>';
+            upcomingList.appendChild(dateDivider);
+            lastDateStr = currentDateStr;
+          }
+
           var card = document.createElement('div');
           card.className = 'mp-upcoming__item';
+
+          var timeAxis = document.createElement('div');
+          timeAxis.className = 'mp-upcoming__time-axis';
+          var timeStr = e.dateTime.getHours() === 0 && e.dateTime.getMinutes() === 0 
+            ? '--:--' 
+            : String(e.dateTime.getHours()).padStart(2, '0') + ':' + String(e.dateTime.getMinutes()).padStart(2, '0');
+          timeAxis.innerHTML = '<span class="mp-upcoming__time">' + timeStr + '</span><span class="mp-upcoming__dot-line"></span>';
+          card.appendChild(timeAxis);
+
+          var content = document.createElement('div');
+          content.className = 'mp-upcoming__content';
 
           var head = document.createElement('div');
           head.className = 'mp-upcoming__head';
@@ -187,56 +300,33 @@
           }
 
           head.appendChild(badges);
+          content.appendChild(head);
 
           var meta = document.createElement('div');
           meta.className = 'mp-upcoming__meta';
-          var pieces = [parser.formatKst(e.dateTime), '상태: ' + status];
+          var pieces = [];
           if (e.previous) pieces.push('이전: ' + e.previous);
           if (e.consensus) pieces.push('예상: ' + e.consensus);
           if (e.actual) pieces.push('실제: ' + e.actual);
-          meta.textContent = pieces.join('  ·  ');
+          meta.textContent = pieces.join(' · ');
+          if (pieces.length > 0) content.appendChild(meta);
 
-          var translation = null;
           if (e.nameKo && e.nameKo !== e.name) {
-            translation = document.createElement('div');
+            var translation = document.createElement('div');
             translation.className = 'mp-upcoming__translation';
             translation.textContent = e.nameKo;
+            content.appendChild(translation);
           }
 
           var impact = document.createElement('div');
           impact.className = 'mp-upcoming__impact';
-          impact.textContent = e.impact
-            ? ('영향: ' + e.impact)
-            : '영향: 발표 전후 금리·달러·지수선물 반응 점검';
+          impact.textContent = e.impact || '발표 전후 시장 반응 점검';
+          content.appendChild(impact);
 
-          var watch = document.createElement('div');
-          watch.className = 'mp-upcoming__watch';
-          var watchText = (e.watchAssets && e.watchAssets.length > 0)
-            ? e.watchAssets.join(', ')
-            : '미국채10년, DXY, 나스닥100선물';
-          watch.textContent = '체크: ' + watchText;
-
-          card.appendChild(head);
-          card.appendChild(meta);
-          if (translation) card.appendChild(translation);
-          card.appendChild(impact);
-          card.appendChild(watch);
+          card.appendChild(content);
           upcomingList.appendChild(card);
         });
       }
-
-      importanceSelect.addEventListener('change', function() {
-        filterState.importance = importanceSelect.value;
-        renderUpcomingList();
-      });
-      periodSelect.addEventListener('change', function() {
-        filterState.period = periodSelect.value;
-        renderUpcomingList();
-      });
-      countrySelect.addEventListener('change', function() {
-        filterState.country = countrySelect.value;
-        renderUpcomingList();
-      });
 
       renderUpcomingList();
       upcomingWrap.appendChild(upcomingList);

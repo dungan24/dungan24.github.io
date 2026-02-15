@@ -154,12 +154,20 @@
         var krHolidaySet = parser.getKrxHolidaySet(cellYear);
         var holiday = krHolidaySet.has(key) || dayEvents.some(function(e) { return e.isHoliday; });
 
-        var lines = [];
-        if (holiday) lines.push('KR 휴장');
-        dayEvents.forEach(function(e) {
-          var st = getEventStatus(e, now);
-          lines.push('[' + st + '] ' + parser.formatKst(e.dateTime) + ' · [' + e.country + '] ' + e.name + (e.importance ? ' (' + e.importance + ')' : ''));
-        });
+        var tooltipData = {
+          date: key,
+          isHoliday: holiday,
+          events: dayEvents.map(function(e) {
+            return {
+              name: e.name,
+              nameKo: e.nameKo,
+              importance: e.importance,
+              status: getEventStatus(e, now),
+              time: parser.formatKst(e.dateTime).split(' ')[1], // HH:mm만 추출
+              country: e.country
+            };
+          })
+        };
 
         cells.push({
           key: key,
@@ -170,7 +178,7 @@
           highCount: highCount,
           isHoliday: holiday,
           isToday: key === parser.kstYmd(now),
-          tooltipLines: lines
+          tooltipData: tooltipData
         });
       }
 
