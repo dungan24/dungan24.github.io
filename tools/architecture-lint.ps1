@@ -54,7 +54,9 @@ try {
       "js/calendar/renderer.js",
       "js/market-pulse-calendar.js",
       "js/briefing/calendar-loader.js",
-      "js/market-pulse-enhancements.js"
+      "js/market-pulse-enhancements.js",
+      "js/branding-patch.js",
+      "js/footer-clock.js"
     )
 
     $actualLoaderOrder = @()

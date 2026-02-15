@@ -141,8 +141,8 @@
         var isNeutral = changePct === null || changePct === 0;
         var isPositive = !isNeutral && (ticker.invertColor ? changePct < 0 : changePct >= 0);
 
-        var changeColor = isNeutral ? 'rgb(var(--color-neutral-400))' : (isPositive ? '#00FF88' : '#FF3366');
-        var sparkColor = isNeutral ? '#64748B' : (isPositive ? '#00FF88' : '#FF3366');
+        var changeColor = isNeutral ? 'rgb(var(--color-neutral-400))' : (isPositive ? 'var(--mp-ticker-up)' : 'var(--mp-ticker-down)');
+        var sparkColor = isNeutral ? '#64748B' : (isPositive ? 'var(--mp-ticker-up-spark)' : 'var(--mp-ticker-down-spark)');
 
         rows += '<div class="mp-ticker-row">' +
           '<span class="mp-ticker-name">' + ticker.name + '</span>' +

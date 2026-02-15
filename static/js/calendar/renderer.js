@@ -34,7 +34,7 @@
 
       var title = document.createElement('div');
       title.className = 'mp-calendar__title mp-section-label';
-      title.textContent = '// MARKET CALENDAR :: ' + anchor.year + '-' + String(anchor.month).padStart(2, '0');
+      title.textContent = 'Market Calendar — ' + anchor.year + '.' + String(anchor.month).padStart(2, '0');
       calendar.appendChild(title);
 
       var grid = document.createElement('div');

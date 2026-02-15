@@ -470,15 +470,19 @@
 /* Sequential H3 color variation: cyan → teal → indigo → purple */
 .briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
   border-left-color: var(--mp-neon-cyan) !important;
+  color: var(--mp-neon-cyan) !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
-  border-left-color: #2DD4BF !important;
+  border-left-color: #2DD4BF !important; /* Teal-400 */
+  color: #2DD4BF !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
-  border-left-color: #818CF8 !important;
+  border-left-color: #818CF8 !important; /* Indigo-400 */
+  color: #818CF8 !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
-  border-left-color: #A78BFA !important;
+  border-left-color: #A78BFA !important; /* Violet-400 */
+  color: #A78BFA !important;
 }
 
 /* --- 2-B. Blockquote — Hero Callout Card --- */
@@ -653,4 +657,3 @@
     margin-bottom: 1rem;
   }
 }
-
