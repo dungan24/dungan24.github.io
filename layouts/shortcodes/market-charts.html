@@ -1,7 +1,7 @@
 {{ if .Page.Params.chartData }}
 {{ if not (.Page.Scratch.Get "chartsRendered") }}
 {{ .Page.Scratch.Set "chartsRendered" true }}
-<div class="w-full" id="market-charts-root">
+<div class="w-full" id="market-charts-root" data-chart-data-url="{{ .Page.Params.chartData }}">
   <div class="market-chart-card" id="charts-status-container" data-label="Loading">
     <div class="chart-loading-state" id="charts-loading-ui">
       <div class="chart-spinner"></div>
@@ -41,60 +41,6 @@
 </div>
 
 <script src="/js/render-charts.js"></script>
-<script>
-  (function() {
-    if (window.__MP_CHARTS_RENDERED) return;
-    window.__MP_CHARTS_RENDERED = true;
-
-    var chartDataUrl = '{{ .Page.Params.chartData }}';
-    if (!chartDataUrl) return;
-
-    var statusContainer = document.getElementById('charts-status-container');
-    var loadingUI = document.getElementById('charts-loading-ui');
-    var content = document.getElementById('charts-content');
-
-    function showError(msg) {
-      if (statusContainer) statusContainer.dataset.label = 'Error';
-      if (loadingUI) {
-        loadingUI.innerHTML = '<div style="text-align:center;color:#FF3366">'
-          + '<div style="font-weight:700;margin-bottom:0.5rem;font-family:Orbitron,sans-serif;letter-spacing:0.1em">[ DATA_UNAVAILABLE ]</div>'
-          + '<div style="font-size:12px;opacity:0.9;font-family:JetBrains Mono,monospace;color:#64748B">' + msg + '</div></div>';
-      }
-    }
-
-    // 15초 타임아웃: 무한 로딩 방지
-    var timeoutId = setTimeout(function() {
-      if (statusContainer && statusContainer.dataset.label === 'Loading') {
-        showError('REQUEST TIMEOUT — RELOAD TO RETRY');
-      }
-    }, 15000);
-
-    fetch(chartDataUrl)
-      .then(function(r) {
-        if (!r.ok) throw new Error('HTTP_' + r.status);
-        return r.json();
-      })
-      .then(function(data) {
-        window.__MP_CHART_DATA = data;
-        document.dispatchEvent(new CustomEvent('mp:chart-data-ready', { detail: data }));
-        clearTimeout(timeoutId);
-        // 로딩 UI 제거 → 차트 컨텐츠 표시
-        if (statusContainer) statusContainer.style.display = 'none';
-        if (content) {
-          content.classList.remove('hidden');
-          void content.offsetHeight;
-        }
-        renderAllCharts(data);
-        if (statusContainer) statusContainer.dataset.label = 'Charts';
-      })
-      .catch(function(err) {
-        clearTimeout(timeoutId);
-        console.error('Chart data load failed:', err);
-        showError(err.message === 'HTTP_404'
-          ? 'MARKET DATA NOT YET PUBLISHED'
-          : 'FAILED TO LOAD MARKET DATA');
-      });
-  })();
-</script>
+<script src="/js/market-charts-loader.js"></script>
 {{ end }}
 {{ end }}

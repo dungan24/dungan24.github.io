@@ -35,6 +35,15 @@ market-pulse (private)              market-pulse-blog (public)
 
 콘텐츠는 쌍둥이 레포 `market-pulse`의 파이프라인이 자동 생성·발행합니다.
 
+### Rendering Structure
+
+- `layouts/partials/extend-footer.html` — JS loader only
+- `static/js/briefing/*.js` — post-page transformation modules
+- `static/js/market-pulse-enhancements.js` — module orchestrator
+- `static/js/calendar/*.js` — calendar parser/model/renderer modules
+- `static/js/market-pulse-calendar.js` — calendar converter entrypoint
+- `assets/css/custom.css` + `assets/css/custom/*.css` — semantic style layers
+
 ## Tech Stack
 
 | Layer | Tech |
@@ -53,6 +62,27 @@ market-pulse (private)              market-pulse-blog (public)
 serve.cmd
 # → http://localhost:1314
 ```
+
+## Agent Workflow
+
+```bash
+# 빠른 구조/용량 점검
+pwsh -File tools/agent-audit.ps1
+
+# 점검 + 프로덕션 빌드 검증
+pwsh -File tools/agent-preflight.ps1 -RunBuild
+
+# 캘린더 필터 브라우저 스모크 (importance/period/country)
+pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
+
+# 아키텍처 규칙 위반 점검
+pwsh -File tools/architecture-lint.ps1 -FailOnFindings
+```
+
+- `.ignore`는 에이전트 탐색 시 대용량 바이너리/벤더 경로를 기본 제외합니다.
+- 벤더 파일이나 스크린샷까지 전체 검색이 필요하면 `rg --no-ignore`를 사용합니다.
+- 디버깅 스크린샷은 `docs/screenshots/` 아카이브로 관리합니다.
+- `tools/agent-audit.ps1`는 도메인별 파일 길이 임계값과 `layouts/` 인라인 `<script>/<style>` 규칙을 점검합니다.
 
 ## License
 

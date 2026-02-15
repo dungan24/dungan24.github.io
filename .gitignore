@@ -1,6 +1,7 @@
 /public/
 /resources/_gen/
 /.hugo_build.lock
+node_modules/
 
 # AI 작업 파일
 .aidocs/
@@ -9,9 +10,21 @@
 # 개발용 스크린샷
 screenshots/
 post-current-full.png
+docs/screenshots/*.png
+docs/screenshots/*.jpg
+docs/screenshots/*.jpeg
+docs/screenshots/*.webp
+docs/screenshots/*.gif
+
+# 임시/실험 파일
+_tmp-*
+lsp-test.ts
+toc-snapshot.txt
 
 # Playwright MCP 로그
 .playwright-mcp/
+playwright-report/
+test-results/
 
 # 크래시 덤프
 *.stackdump

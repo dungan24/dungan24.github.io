@@ -1,0 +1,656 @@
+/* ===== Post Page - FHD Width & Readability ===== */
+
+/* Widen outer container for XL+ (1280px+) screens */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    max-width: 96rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+
+  /* Wider post content area (default: 65ch ~740px → 56rem ~896px) */
+  .article-content,
+  #single_header,
+  article > footer {
+    max-width: 56rem !important;
+  }
+}
+
+/* Table: prevent cell text wrapping for data readability (desktop) */
+.prose table td,
+.prose table th {
+  white-space: nowrap;
+}
+
+/* Mobile: allow wrapping for last column */
+@media (max-width: 640px) {
+  .prose table td:last-child,
+  .prose table th:last-child {
+    white-space: normal;
+    min-width: 60px;
+  }
+}
+/* Briefing sections: break out of prose max-width */
+.article-content .briefing-section {
+  max-width: none;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+/* Briefing section tables: full width, auto column sizing */
+.briefing-section table {
+  display: table !important;
+  width: 100% !important;
+  font-size: 0.875rem;
+}
+
+/* Row header (first column): bold, compact */
+.briefing-section table td:first-child {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+/* Non-last columns: compact, no extra space */
+.briefing-section table th:not(:last-child),
+.briefing-section table td:not(:last-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+/* Last column: takes all remaining space, left-aligned */
+.briefing-section table th:last-child,
+.briefing-section table td:last-child {
+  text-align: left !important;
+  width: auto;
+}
+
+:root:not(.dark) .briefing-section table td:first-child {
+  color: #1E1E3A;
+}
+
+/* Mobile: horizontal scroll for wide tables + fade hint */
+@media (max-width: 768px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Scroll fade hint on right edge */
+  .briefing-section {
+    --table-fade: linear-gradient(to right, transparent 85%, rgba(10, 10, 26, 0.85));
+  }
+
+  .briefing-section table {
+    font-size: 0.8rem;
+  }
+
+  .briefing-section table td,
+  .briefing-section table th {
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Briefing section breakout 해제 (모바일) */
+  .article-content .briefing-section {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Briefing section h3 — cyberpunk neon style */
+.briefing-section h3 {
+  font-family: 'Exo 2', sans-serif;
+  color: #B8C5D6 !important;
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+  text-shadow: none;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--mp-neon-purple);
+}
+
+:root:not(.dark) .briefing-section h3 {
+  color: #334155 !important;
+  text-shadow: none;
+  border-left-color: var(--mp-neon-purple);
+}
+
+/* ========== Regime Panel — Cyberpunk HUD ========== */
+.mp-regime-panel {
+  position: relative;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background:
+    linear-gradient(160deg, rgba(124, 58, 237, 0.08), transparent 40%),
+    var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  overflow: hidden;
+}
+
+/* 상단 네온 라인 */
+.mp-regime-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.mp-regime--risk-on::before  { background: linear-gradient(90deg, #00FF88 0%, transparent 70%); }
+.mp-regime--cautious::before { background: linear-gradient(90deg, #FFD600 0%, transparent 70%); }
+.mp-regime--risk-off::before { background: linear-gradient(90deg, #FF3366 0%, transparent 70%); }
+.mp-regime--panic::before    { background: linear-gradient(90deg, #FF0040 0%, transparent 70%); }
+
+/* 헤더 */
+.mp-regime-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mp-regime-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: mp-regime-pulse 2s ease-in-out infinite;
+}
+.mp-regime--risk-on  .mp-regime-dot { background: #00FF88; box-shadow: 0 0 10px #00FF88; }
+.mp-regime--cautious .mp-regime-dot { background: #FFD600; box-shadow: 0 0 10px #FFD600; }
+.mp-regime--risk-off .mp-regime-dot { background: #FF3366; box-shadow: 0 0 10px #FF3366; }
+.mp-regime--panic    .mp-regime-dot { background: #FF0040; box-shadow: 0 0 10px #FF0040; }
+
+@keyframes mp-regime-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.mp-regime-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.mp-regime--risk-on  .mp-regime-label { color: #00FF88; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
+.mp-regime--cautious .mp-regime-label { color: #FFD600; text-shadow: 0 0 15px rgba(255,214,0,0.3); }
+.mp-regime--risk-off .mp-regime-label { color: #FF3366; text-shadow: 0 0 15px rgba(255,51,102,0.3); }
+.mp-regime--panic    .mp-regime-label { color: #FF0040; text-shadow: 0 0 15px rgba(255,0,64,0.3); }
+
+.mp-regime-summary {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* 시그널 행 */
+.mp-regime-signals {
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-signal {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+  gap: 0.75rem;
+}
+.mp-signal:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mp-signal-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mp-signal[data-level="ok"]     .mp-signal-indicator { background: #00FF88; box-shadow: 0 0 6px rgba(0,255,136,0.5); }
+.mp-signal[data-level="warn"]   .mp-signal-indicator { background: #FFD600; box-shadow: 0 0 6px rgba(255,214,0,0.5); }
+.mp-signal[data-level="danger"] .mp-signal-indicator { background: #FF3366; box-shadow: 0 0 6px rgba(255,51,102,0.5); }
+
+.mp-signal-name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.mp-signal-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  min-width: 70px;
+  text-align: right;
+}
+
+.mp-signal-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  min-width: 75px;
+  text-align: center;
+}
+.mp-signal[data-level="ok"] .mp-signal-badge {
+  color: #00FF88;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+.mp-signal[data-level="warn"] .mp-signal-badge {
+  color: #FFD600;
+  background: rgba(255, 214, 0, 0.08);
+  border: 1px solid rgba(255, 214, 0, 0.2);
+}
+.mp-signal[data-level="danger"] .mp-signal-badge {
+  color: #FF3366;
+  background: rgba(255, 51, 102, 0.08);
+  border: 1px solid rgba(255, 51, 102, 0.2);
+}
+
+/* 라이트 모드 */
+:root:not(.dark) .mp-regime-panel {
+  background: rgba(248, 250, 252, 0.95);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+:root:not(.dark) .mp-regime-summary { color: #64748B; }
+:root:not(.dark) .mp-signal-name { color: #64748B; }
+:root:not(.dark) .mp-signal-value { color: #1E1E3A; }
+
+@media (max-width: 640px) {
+  .mp-regime-panel { padding: 1rem; }
+  .mp-signal { flex-wrap: wrap; gap: 0.4rem; }
+  .mp-signal-value { min-width: auto; }
+  .mp-signal-badge { min-width: auto; font-size: 0.65rem; }
+}
+
+/* ========== Light Mode — Comprehensive Overrides ========== */
+
+/* --- Tables --- */
+:root:not(.dark) .prose table {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .prose thead th {
+  background: rgba(124, 58, 237, 0.06);
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .prose tbody td {
+  color: #334155;
+  border-bottom-color: rgba(124, 58, 237, 0.06);
+}
+:root:not(.dark) .prose tbody tr:hover td {
+  background: rgba(124, 58, 237, 0.04);
+}
+
+/* --- Section Headers (MARKET OVERVIEW, RECENT BRIEFINGS 등) --- */
+:root:not(.dark) .mp-section-header {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.15);
+}
+:root:not(.dark) .mp-section-header::after {
+  background: var(--mp-neon-purple);
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
+}
+
+/* --- Ticker Group Titles --- */
+:root:not(.dark) .mp-ticker-group__title {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+
+/* --- Briefing Section Labels (::before) --- */
+:root:not(.dark) .briefing-section::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+:root:not(.dark) .briefing-section--fact::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+:root:not(.dark) .briefing-section--opinion::before {
+  color: #0891B2;
+  border-color: rgba(8, 145, 178, 0.2);
+}
+
+/* --- Briefing Section Borders & Hover --- */
+:root:not(.dark) .briefing-section:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.12);
+}
+:root:not(.dark) .briefing-section--fact {
+  border-left-color: var(--mp-neon-purple);
+}
+:root:not(.dark) .briefing-section--opinion {
+  border-left-color: #0891B2;
+}
+
+/* --- News Section Label --- */
+:root:not(.dark) .mp-news-section-label {
+  color: var(--mp-neon-purple);
+  border-bottom-color: rgba(124, 58, 237, 0.12);
+}
+
+/* --- Hero Title (MARKET PULSE) — soften glow --- */
+:root:not(.dark) .mp-heartbeat {
+  background: linear-gradient(135deg, #1E1E3A 0%, #7C3AED 40%, #5B21B6 60%, #1E1E3A 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+  animation: title-shimmer 6s ease-in-out infinite;
+}
+
+/* --- Hero Subtitle (// FACT-DRIVEN MARKET INTELLIGENCE) --- */
+:root:not(.dark) .mp-subtitle-text {
+  color: var(--mp-neon-purple) !important;
+  text-shadow: none !important;
+}
+
+/* --- Hero Summary & Updated --- */
+:root:not(.dark) .mp-hero-updated {
+  color: #94A3B8;
+}
+
+/* --- Regime Badge (light mode readable) --- */
+:root:not(.dark) .mp-regime-badge {
+  background: rgba(var(--regime-color-rgb) / 0.08);
+  box-shadow: none;
+}
+
+/* --- Ticker Row Hover --- */
+:root:not(.dark) .mp-ticker-row:hover {
+  background: rgba(124, 58, 237, 0.04);
+}
+:root:not(.dark) .mp-ticker-row:not(:last-child) {
+  border-bottom-color: rgba(124, 58, 237, 0.06);
+}
+
+/* --- Ticker Change Color (already set in inline style but override for 0% cases) --- */
+:root:not(.dark) .mp-ticker-change {
+  text-shadow: none;
+}
+
+/* --- Collapse Toggle Icon --- */
+:root:not(.dark) .mp-collapse-toggle__icon {
+  color: #94A3B8;
+}
+
+/* --- ECG Pulse (hide in light mode — too noisy) --- */
+:root:not(.dark) .mp-ecg-pulse {
+  opacity: 0.3;
+}
+:root:not(.dark) .mp-ecg-pulse path {
+  stroke: var(--mp-neon-purple);
+}
+
+/* --- More Link --- */
+:root:not(.dark) .mp-more-link {
+  color: var(--mp-neon-purple);
+}
+:root:not(.dark) .mp-more-link:hover {
+  color: #5B21B6;
+  text-shadow: none;
+}
+
+/* --- Scrollbar (light mode) --- */
+:root:not(.dark) ::-webkit-scrollbar-track { background: #F8FAFC; }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.2); }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.4); }
+
+/* --- Post Hero (Regime banner) --- */
+:root:not(.dark) .mp-post-hero {
+  border-left-color: var(--regime-color, var(--mp-neon-purple));
+}
+
+/* --- Briefing Meta Footer --- */
+:root:not(.dark) .mp-briefing-meta::before {
+  color: var(--mp-neon-purple);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* --- News Card hover --- */
+:root:not(.dark) .mp-news-card:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.12);
+}
+
+/* --- News Card Source Badge --- */
+:root:not(.dark) .mp-news-card__source {
+  background: rgba(124, 58, 237, 0.06);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+
+/* --- Ticker Group hover --- */
+:root:not(.dark) .mp-ticker-group:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.1);
+}
+
+/* --- Briefing Card hover --- */
+:root:not(.dark) .mp-briefing-card:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.1);
+}
+
+/* --- Prose H1 (page titles) --- */
+:root:not(.dark) .prose h1 {
+  color: #1E1E3A;
+  text-shadow: none;
+}
+
+/* ========== Opinion Zone — Enhanced Styling ========== */
+
+/* --- 2-A. Opinion H3 — Cyan Gradient Border --- */
+.briefing-section--opinion h3 {
+  border-left: 3px solid var(--mp-neon-cyan) !important;
+  color: #D1DBE8 !important;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.1);
+}
+
+/* Sequential H3 color variation: cyan → teal → indigo → purple */
+.briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
+  border-left-color: var(--mp-neon-cyan) !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
+  border-left-color: #2DD4BF !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
+  border-left-color: #818CF8 !important;
+}
+.briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
+  border-left-color: #A78BFA !important;
+}
+
+/* --- 2-B. Blockquote — Hero Callout Card --- */
+.briefing-section--opinion blockquote {
+  position: relative;
+  border-left: 3px solid var(--mp-neon-cyan) !important;
+  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.06), rgba(0, 240, 255, 0.02) 60%, transparent) !important;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem !important;
+  margin: 1.5rem 0 !important;
+  font-style: normal !important;
+  color: #D1DBE8 !important;
+  line-height: 1.7;
+  box-shadow: 0 2px 12px -4px rgba(0, 240, 255, 0.1);
+}
+
+.briefing-section--opinion blockquote::before {
+  content: '// TL;DR';
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mp-neon-cyan);
+  margin-bottom: 0.6rem;
+  opacity: 0.7;
+}
+
+.briefing-section--opinion blockquote p {
+  margin: 0 !important;
+  font-style: normal !important;
+}
+
+/* --- 2-C. Bold Text — Cyan Inline Highlight --- */
+.briefing-section--opinion p strong,
+.briefing-section--opinion li strong {
+  color: var(--mp-neon-cyan) !important;
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.15);
+  font-weight: 700;
+}
+
+/* --- 2-D. Paragraph Spacing — Comfortable Reading --- */
+.briefing-section--opinion p {
+  line-height: 1.85;
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+  color: #CBD5E1;
+}
+
+/* --- 2-E. Action Item List — Mini Cards --- */
+.briefing-section--opinion ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0 !important;
+}
+
+.briefing-section--opinion ul > li {
+  position: relative;
+  padding: 0.65rem 1rem 0.65rem 1.75rem;
+  border-left: 2px solid var(--mp-neon-purple);
+  border-radius: 0 var(--mp-radius-sm) var(--mp-radius-sm) 0;
+  background: rgba(124, 58, 237, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.briefing-section--opinion ul > li::before {
+  content: '\25B8';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--mp-neon-purple);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.briefing-section--opinion ul > li::marker {
+  content: '' !important;
+}
+
+.briefing-section--opinion ul > li:hover {
+  background: rgba(124, 58, 237, 0.08);
+  border-left-color: var(--mp-neon-cyan);
+}
+
+/* --- 2-F. Subsection Separator (mp-opinion-sub) --- */
+.mp-opinion-sub {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+}
+
+.mp-opinion-sub:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* --- 2-G. Light Mode Overrides --- */
+:root:not(.dark) .briefing-section--opinion h3 {
+  color: #1E293B !important;
+  text-shadow: none;
+  border-left-color: #0891B2 !important;
+}
+
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
+  border-left-color: #0891B2 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
+  border-left-color: #0D9488 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
+  border-left-color: #6366F1 !important;
+}
+:root:not(.dark) .briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
+  border-left-color: #7C3AED !important;
+}
+
+:root:not(.dark) .briefing-section--opinion blockquote {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.04), transparent 60%) !important;
+  border-left-color: #0891B2 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 12px -4px rgba(8, 145, 178, 0.08);
+}
+
+:root:not(.dark) .briefing-section--opinion blockquote::before {
+  color: #0891B2;
+}
+
+:root:not(.dark) .briefing-section--opinion p strong,
+:root:not(.dark) .briefing-section--opinion li strong {
+  color: #0891B2 !important;
+  text-shadow: none;
+}
+
+:root:not(.dark) .briefing-section--opinion p {
+  color: #334155;
+}
+
+:root:not(.dark) .briefing-section--opinion ul > li {
+  background: rgba(124, 58, 237, 0.02);
+  border-left-color: var(--mp-neon-purple);
+  color: #334155;
+}
+
+:root:not(.dark) .briefing-section--opinion ul > li:hover {
+  background: rgba(124, 58, 237, 0.05);
+  border-left-color: #0891B2;
+}
+
+:root:not(.dark) .mp-opinion-sub {
+  border-bottom-color: rgba(8, 145, 178, 0.1);
+}
+
+/* --- 2-H. Mobile Responsive --- */
+@media (max-width: 640px) {
+  .briefing-section--opinion blockquote {
+    padding: 1rem 1rem 1rem 1.25rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .briefing-section--opinion ul > li {
+    padding: 0.5rem 0.75rem 0.5rem 1.5rem;
+  }
+
+  .mp-opinion-sub {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+

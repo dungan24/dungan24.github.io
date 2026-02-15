@@ -1,0 +1,109 @@
+.mp-home-shell {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mp-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.mp-ambient-orb--left {
+  top: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent 70%);
+}
+
+.mp-ambient-orb--right {
+  top: 40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.12), transparent 70%);
+}
+
+.mp-home-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mp-home-hero {
+  text-align: center;
+}
+
+.mp-subtitle-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #00f0ff;
+  letter-spacing: 0.15em;
+  margin: 0.5rem 0 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.mp-loading-inline {
+  opacity: 0.4;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+}
+
+.mp-data-timestamp {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.mp-more-wrap {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mp-ecg-line {
+  stroke-dasharray: 269;
+  stroke-dashoffset: 269;
+  animation: ecg-draw 3.5s ease-in-out infinite;
+}
+
+.mp-ecg-line--right {
+  animation-delay: 0.3s;
+}
+
+@keyframes ecg-draw {
+  0% {
+    stroke-dashoffset: 269;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+  90% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 269;
+    opacity: 0;
+  }
+}
+
+.mp-calendar-shortcode__empty {
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}

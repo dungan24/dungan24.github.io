@@ -1,0 +1,701 @@
+/* --- TOC Typography --- */
+.toc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.toc a {
+  padding: 0.2rem 0;
+}
+
+/* --- TOC ScrollSpy --- */
+.toc a.is-active {
+  color: var(--regime-color, var(--mp-neon-cyan)) !important;
+  font-weight: 600;
+  border-left: 2px solid var(--regime-color, var(--mp-neon-cyan));
+  padding-left: 0.5rem;
+}
+
+/* --- TOC Hierarchy Enhancement --- */
+#TableOfContents {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#TableOfContents > ul > li {
+  margin-bottom: 0.25rem;
+}
+
+#TableOfContents > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#TableOfContents > ul > li > a::before {
+  content: '>';
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--mp-neon-purple);
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.4;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#TableOfContents > ul > li > a:hover {
+  color: #E2E8F0;
+  background: rgba(124, 58, 237, 0.1);
+  border-left-color: rgba(124, 58, 237, 0.4);
+  padding-left: 1rem;
+}
+
+#TableOfContents > ul > li > a:hover::before {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* ScrollSpy & Active states — supporting both classes Hugo/JS might use */
+#TableOfContents a.active,
+#TableOfContents a.is-active {
+  color: var(--mp-neon-cyan) !important;
+  font-weight: 700;
+  border-left-color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  padding-left: 1.25rem;
+  box-shadow: 
+    inset 4px 0 12px -4px rgba(0, 240, 255, 0.3),
+    0 0 10px rgba(0, 240, 255, 0.1);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+#TableOfContents a.active::before,
+#TableOfContents a.is-active::before {
+  color: var(--mp-neon-cyan);
+  opacity: 1;
+  content: '>>';
+  letter-spacing: -2px;
+  margin-right: 6px;
+  text-shadow: 0 0 5px var(--mp-neon-cyan);
+}
+
+/* h3 레벨 — 서브섹션 */
+#TableOfContents > ul > li > ul {
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(124, 58, 237, 0.15);
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  color: #64748B;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+#TableOfContents > ul > li > ul > li > a:hover {
+  color: #CBD5E1;
+  background: rgba(124, 58, 237, 0.05);
+}
+
+/* --- TOCView Cyberpunk Panel --- */
+#TOCView {
+  position: sticky;
+  top: 6rem;
+  background: rgba(10, 10, 26, 0.7);
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
+  backdrop-filter: blur(16px) saturate(1.8);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: var(--mp-radius-lg);
+  padding: 1.25rem 1.25rem 1.25rem 0.75rem;
+  box-shadow: 
+    0 4px 24px -4px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(124, 58, 237, 0.05);
+  margin-left: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 10rem);
+}
+
+#TOCView::before {
+  content: '// SYSTEM_NAV';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 12px;
+  border-bottom-right-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, var(--mp-neon-purple), #9333EA);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+  z-index: 10;
+}
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 10px;
+  border-bottom-right-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--mp-neon-purple);
+  z-index: 1;
+}
+
+#TOCView > div {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+:root:not(.dark) #TOCView {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(124, 58, 237, 0.12);
+  box-shadow: 0 4px 16px -4px rgba(124, 58, 237, 0.08);
+}
+
+/* --- Post Page Responsive --- */
+@media (max-width: 768px) {
+  .mp-news-grid { grid-template-columns: 1fr; }
+  .mp-chart-dashboard { grid-template-columns: 1fr; }
+  .mp-post-hero { margin: 1rem -0.5rem 1.5rem; border-radius: 0; }
+}
+
+@media (max-width: 640px) {
+  .mp-post-hero__top { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .briefing-section .mp-ticker-groups { grid-template-columns: 1fr; }
+}
+
+/* ===== Cyberpunk CSS Art — Neon Grid, HUD, Scanline, Glitch ===== */
+
+/* --- Perspective Neon Grid Background --- */
+.mp-home-shell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 120%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-scroll 15s linear infinite;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 70%, transparent 85%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 70%, transparent 85%);
+  transform: perspective(400px) rotateX(45deg);
+  transform-origin: center top;
+}
+
+/* --- Neon Horizon Line --- */
+.mp-home-shell::after {
+  content: '';
+  position: absolute;
+  top: 38%;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.7) 20%, rgba(0, 240, 255, 0.5) 50%, rgba(124, 58, 237, 0.7) 80%, transparent);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(0, 240, 255, 0.2), 0 0 60px rgba(124, 58, 237, 0.1);
+}
+
+@keyframes grid-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 50px; }
+}
+
+/* --- HUD Corner Decoration --- */
+.mp-hud-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mp-hud-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.mp-hud-corner::before,
+.mp-hud-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 25px rgba(0, 240, 255, 0.4), 0 0 50px rgba(0, 240, 255, 0.15);
+}
+
+/* Horizontal bar */
+.mp-hud-corner::before {
+  height: 2px;
+  width: 100%;
+}
+
+/* Vertical bar */
+.mp-hud-corner::after {
+  width: 2px;
+  height: 100%;
+}
+
+/* Top-left */
+.mp-hud-corner--tl { top: 0; left: 0; }
+.mp-hud-corner--tl::before { top: 0; left: 0; }
+.mp-hud-corner--tl::after { top: 0; left: 0; }
+
+/* Top-right */
+.mp-hud-corner--tr { top: 0; right: 0; }
+.mp-hud-corner--tr::before { top: 0; right: 0; }
+.mp-hud-corner--tr::after { top: 0; right: 0; }
+
+/* Bottom-left */
+.mp-hud-corner--bl { bottom: 0; left: 0; }
+.mp-hud-corner--bl::before { bottom: 0; left: 0; }
+.mp-hud-corner--bl::after { bottom: 0; left: 0; }
+
+/* Bottom-right */
+.mp-hud-corner--br { bottom: 0; right: 0; }
+.mp-hud-corner--br::before { bottom: 0; right: 0; }
+.mp-hud-corner--br::after { bottom: 0; right: 0; }
+
+/* HUD System Status Text */
+.mp-hud-status {
+  position: absolute;
+  top: 12px;
+  right: 72px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--mp-neon-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  animation: hud-blink 4s ease-in-out infinite;
+}
+
+@keyframes hud-blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.2; }
+}
+
+/* --- Hero Scanline Pass (slower, more visible) --- */
+.mp-home-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 240, 255, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 100% 8px;
+  animation: hero-scanline 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes hero-scanline {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* --- Subtitle Flicker --- */
+@keyframes subtitle-flicker {
+  0%, 92%, 94%, 96%, 100% { opacity: 1; }
+  93% { opacity: 0.6; }
+  95% { opacity: 0.8; }
+}
+
+.mp-subtitle-flicker {
+  animation: subtitle-flicker 6s ease-in-out infinite;
+}
+
+/* --- Glitch Enhancement for heartbeat --- */
+@keyframes glitch-enhanced {
+  0%, 85%, 100% {
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.5), 0 0 40px rgba(124, 58, 237, 0.2);
+    transform: translate(0);
+  }
+  86% {
+    text-shadow: -2px 0 #00F0FF, 2px 0 #F43F5E;
+    transform: translate(-2px, 1px);
+  }
+  88% {
+    text-shadow: 2px 0 #F43F5E, -1px 0 #00F0FF;
+    transform: translate(2px, -1px);
+  }
+  90% {
+    text-shadow: -1px 0 #00F0FF, 1px 0 #7C3AED;
+    transform: translate(1px, 0);
+  }
+  92% {
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+    transform: translate(-1px, 1px);
+  }
+}
+
+.mp-heartbeat {
+  animation: pulse-glow 3s ease-in-out infinite, glitch-enhanced 8s ease-in-out infinite;
+}
+
+/* --- Light Mode: hide all CSS art effects --- */
+:root:not(.dark) .mp-home-shell::before { display: none; }
+:root:not(.dark) .mp-home-shell::after { display: none; }
+:root:not(.dark) .mp-hud-corners { display: none; }
+:root:not(.dark) .mp-home-content::before { display: none; }
+:root:not(.dark) .mp-subtitle-flicker { animation: none; }
+
+/* --- Mobile: simplify grid & effects --- */
+@media (max-width: 640px) {
+  .mp-home-shell::before {
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 40%, transparent 60%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 40%, transparent 60%);
+  }
+  .mp-home-shell::after { opacity: 0.5; }
+  .mp-hud-corner { width: 30px; height: 30px; }
+  .mp-hud-status { display: none; }
+  .mp-home-content::before { display: none; }
+}
+
+/* ===== Briefing Meta Footer ===== */
+.mp-briefing-meta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0 0;
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border);
+  border-radius: var(--mp-radius-md);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748B;
+  letter-spacing: 0.02em;
+}
+
+.mp-briefing-meta::before {
+  content: '// META';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: rgba(10, 10, 26, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 2px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--mp-neon-purple);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.mp-briefing-meta span {
+  white-space: nowrap;
+}
+
+/* Light mode */
+:root:not(.dark) .mp-briefing-meta {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(124, 58, 237, 0.12);
+  color: #64748B;
+}
+
+:root:not(.dark) .mp-briefing-meta::before {
+  background: white;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 640px) {
+  .mp-briefing-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ===== Modern Redesign Animations & Fixes =====
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1) translate(-50%, -50%); }
+  50% { opacity: 0.5; transform: scale(1.15) translate(-50%, -50%); }
+}
+@keyframes pulse-slower {
+  0%, 100% { opacity: 0.2; transform: scale(1) translate(0, 50%); }
+  50% { opacity: 0.4; transform: scale(1.2) translate(0, 50%); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slower {
+  animation: pulse-slower 12s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.briefing-section,
+.mp-ticker-group {
+  animation: fade-in-up 0.6s ease both;
+}
+
+.mp-ticker-group:nth-child(1),
+.briefing-section:nth-child(1) { animation-delay: 0.08s; }
+.mp-ticker-group:nth-child(2),
+.briefing-section:nth-child(2) { animation-delay: 0.16s; }
+.mp-ticker-group:nth-child(3),
+.briefing-section:nth-child(3) { animation-delay: 0.24s; }
+.mp-ticker-group:nth-child(4),
+.briefing-section:nth-child(4) { animation-delay: 0.32s; }
+.mp-ticker-group:nth-child(5),
+.briefing-section:nth-child(5) { animation-delay: 0.4s; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+  .briefing-section,
+  .mp-ticker-group,
+  .mp-briefing-card,
+  .mp-news-card,
+  .mp-post-hero {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  body::after { display: none; }
+  .mp-home-shell::before { animation: none; display: none; }
+  .mp-home-shell::after { display: none; }
+  .mp-home-content::before { animation: none; display: none; }
+  .mp-hud-status { animation: none; }
+  .mp-subtitle-flicker { animation: none; }
+}
+
+/* Custom TOC Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.3);
+  border-radius: 20px;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+}
+
+/* TOC Active State */
+.toc-custom a {
+  display: block;
+  padding: 0.25rem 0;
+  color: #64748B;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+}
+.dark .toc-custom a { color: #64748B; }
+.toc-custom a:hover {
+  color: var(--mp-neon-purple);
+  border-left-color: rgba(124, 58, 237, 0.3);
+}
+.dark .toc-custom a:hover {
+  color: var(--mp-neon-purple);
+  border-left-color: rgba(124, 58, 237, 0.3);
+}
+.toc-custom a.active {
+  color: var(--mp-neon-cyan);
+  font-weight: 600;
+  border-left-color: var(--mp-neon-cyan);
+}
+.dark .toc-custom a.active {
+  color: var(--mp-neon-cyan);
+  border-left-color: var(--mp-neon-cyan);
+}
+.toc-custom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.toc-custom li ul {
+  padding-left: 1rem;
+}
+
+/* Group Hover Fix for Feature Image */
+.group-img:hover .group-img-hover\:opacity-100 {
+  opacity: 1;
+}
+
+/* Prose overrides for better reading experience */
+.prose {
+  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.05rem; /* Slightly larger for better readability */
+  line-height: 1.8;
+}
+
+.prose blockquote {
+  font-family: 'Exo 2', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-left-width: 4px;
+  border-left-color: var(--mp-neon-purple);
+  background: rgba(124, 58, 237, 0.05);
+  padding: 1.5rem 1.75rem;
+  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
+  color: #CBD5E1;
+  margin: 2.5rem 0;
+  quotes: none;
+}
+
+.prose blockquote p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.prose blockquote strong {
+  color: #F8FAFC;
+  font-weight: 600;
+}
+
+.briefing-section--opinion blockquote {
+  border-left-color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Prose heading hierarchy */
+.prose h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.55rem !important;
+  line-height: 1.4;
+  margin-top: 3rem !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--tw-prose-headings);
+}
+.prose h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem !important;
+  line-height: 1.5;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--tw-prose-headings);
+}
+.prose h4 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.05rem !important;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Specific styling for briefing sections where hierarchy is crucial */
+.briefing-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.55rem !important;
+  border-bottom: 2px solid var(--mp-border);
+  padding-bottom: 0.75rem;
+  color: #F8FAFC;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.briefing-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 10px var(--mp-neon-cyan);
+}
+
+.briefing-section h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #E2E8F0 !important;
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 2rem !important;
+  margin-bottom: 0.75rem !important;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--mp-neon-purple);
+  text-transform: none;
+}
+
+.mp-opinion-sub h3 {
+  border-left-color: var(--mp-neon-cyan);
+}
+
+/* Prose text color — 다크모드에서 본문 밝기 보정 */
+.dark .prose {
+  --tw-prose-body: #CBD5E1;          /* slate-300: 기본 본문 */
+  --tw-prose-headings: #E2E8F0;      /* slate-200: 제목 */
+  --tw-prose-bold: #E2E8F0;          /* slate-200: 볼드 */
+  --tw-prose-quotes: #CBD5E1;        /* slate-300: 인용 */
+  --tw-prose-counters: #94A3B8;      /* slate-400: 리스트 번호 */
+}
+

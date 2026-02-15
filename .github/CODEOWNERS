@@ -1,0 +1,13 @@
+# Default owner
+* @dungan24
+
+# Architecture and policy-critical files
+/AGENTS.md @dungan24
+/CLAUDE.md @dungan24
+/tools/* @dungan24
+/layouts/partials/extend-footer.html @dungan24
+/static/js/market-pulse-enhancements.js @dungan24
+/static/js/market-pulse-calendar.js @dungan24
+/static/js/calendar/* @dungan24
+/.github/workflows/quality-gate.yml @dungan24
+/.github/pull_request_template.md @dungan24

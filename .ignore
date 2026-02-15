@@ -1,0 +1,35 @@
+# Agent search defaults for rg/fd.
+# Use `--no-ignore` if you intentionally need excluded paths.
+
+# Hugo build outputs
+public/
+resources/
+.hugo_build.lock
+node_modules/
+
+# Local scratch files
+_tmp-*
+lsp-test.ts
+toc-snapshot.txt
+*.stackdump
+playwright-report/
+test-results/
+
+# Root debug screenshots (non-runtime artifacts)
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.gif
+docs/screenshots/*.png
+docs/screenshots/*.jpg
+docs/screenshots/*.jpeg
+docs/screenshots/*.webp
+docs/screenshots/*.gif
+
+# Vendored heavy paths in Blowfish theme
+themes/blowfish/exampleSite/
+themes/blowfish/assets/icons/
+themes/blowfish/assets/lib/
+themes/blowfish/images/
+themes/blowfish/i18n/

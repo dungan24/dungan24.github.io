@@ -82,6 +82,14 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 
 교차 레포 운영 가이드: `../market-pulse/.aidocs/blog-workflow.md`
 
+품질 게이트 명령:
+
+```bash
+pwsh -File tools/architecture-lint.ps1 -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
+```
+
 ## 교차 레포 계약 동기화 원칙
 
 - 파서 규칙(`extend-footer.html`)을 변경할 때는 Writer 출력과의 호환성을 먼저 확인
@@ -92,13 +100,29 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 
 ## CSS 체계
 
-- `assets/css/custom.css` — 모든 커스텀 스타일
+- `assets/css/custom.css` — 기본 토큰/공통 레이어
+- `assets/css/custom/*.css` — 도메인별 분리 스타일
+  - `briefing-sections.css`, `calendar.css`, `toc-and-effects.css`
+  - `layout-overrides.css`, `chart-cards.css`, `home-market-overview.css`
 - CSS 변수: `--mp-glass-bg`, `--mp-glass-border`, `--mp-neon-purple`, `--mp-neon-cyan` 등
 - 폰트: Orbitron (제목), Exo 2 (본문), JetBrains Mono (데이터/코드)
 - 다크모드 기본, 라이트모드 `:root:not(.dark)` 오버라이드
 - 모바일 반응형: 640px, 768px, 1024px 브레이크포인트
 
 ## JS 변환 (extend-footer.html)
+
+`extend-footer.html`은 로더만 담당하고, 실제 변환은 아래 파일에서 수행한다.
+
+- `static/js/briefing/*.js` — 도메인별 변환 모듈
+- `static/js/market-pulse-enhancements.js` — 변환 오케스트레이터
+- `static/js/calendar/*.js` — 일정 parser/model/renderer
+- `static/js/market-pulse-calendar.js` — 캘린더 컨버터 엔트리포인트 (호환용 export)
+
+아키텍처 규칙:
+- `extend-footer.html`에는 로더 `<script src=...>`만 둔다.
+- 캘린더 구현은 `static/js/calendar/*.js`에만 둔다.
+- `static/js/market-pulse-calendar.js`는 어댑터 역할만 유지한다.
+- `layouts/`에는 신규 인라인 `<script>/<style>`를 추가하지 않는다.
 
 | 기능 | 설명 |
 |------|------|
@@ -109,6 +133,7 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 | Collapsible 섹션 | 용어 설명/출처 등 접기 가능 |
 | Regime Hero | `window.__MP_PAGE.regime`으로 색상/배지 동적 생성 |
 | TOC ScrollSpy | 스크롤 위치에 따라 TOC 활성 항목 하이라이트 |
+| Event Calendar | 본문 일정 리스트/쇼트코드를 월력 + 주요 일정 카드로 변환 |
 | ECharts 차트 (4종) | Trend(전체폭) → Correlation+Regime(2col) → Sectors(전체폭) |
 
 ## 로컬 개발 서버
@@ -123,3 +148,4 @@ JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opin
 - `content/posts/` 파일은 파이프라인이 덮어쓰므로 **수동 편집 비권장** (다음 실행 시 소실)
 - UI/CSS/JS 변경 시 Writer 출력 마크다운 패턴과 호환성 확인 필수
 - `hello-world.md`는 `draft: true` — 네비게이션에서 제외됨
+- PR 전 필수 확인: `.github/pull_request_template.md` 체크리스트, `.github/workflows/quality-gate.yml` 통과, `CODEOWNERS` 리뷰 반영

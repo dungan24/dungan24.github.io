@@ -1,0 +1,372 @@
+/* --- Event Calendar (Month Grid + Upcoming) --- */
+.mp-calendar {
+  margin-top: 0.6rem;
+  margin-bottom: 1.1rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(124, 58, 237, 0.28);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(124, 58, 237, 0.08), rgba(10, 10, 36, 0.2)),
+    radial-gradient(120% 120% at 100% 0%, rgba(0, 240, 255, 0.08), transparent 55%);
+}
+
+.mp-calendar__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mp-neon-cyan);
+  margin-bottom: 0.55rem;
+}
+
+.mp-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.mp-calendar__weekday,
+.mp-calendar__cell {
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 8px;
+  background: rgba(8, 10, 38, 0.65);
+}
+
+.mp-calendar__weekday {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  padding: 0.32rem 0.1rem;
+}
+
+.mp-calendar__weekday.is-sun {
+  color: #fb7185;
+}
+
+.mp-calendar__weekday.is-sat {
+  color: #60a5fa;
+}
+
+.mp-calendar__cell {
+  min-height: 56px;
+  padding: 0.34rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-calendar__cell:hover {
+  border-color: rgba(0, 240, 255, 0.38);
+  background: rgba(15, 22, 54, 0.9);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.12);
+  z-index: 20;
+}
+
+.mp-calendar__cell.is-outside {
+  background: rgba(71, 85, 105, 0.22);
+  border-color: rgba(100, 116, 139, 0.28);
+}
+
+.mp-calendar__cell.is-outside .mp-calendar__day {
+  color: #64748b;
+}
+
+.mp-calendar__cell.is-sun .mp-calendar__day,
+.mp-calendar__cell.is-holiday .mp-calendar__day {
+  color: #fb7185;
+  font-weight: 700;
+}
+
+.mp-calendar__cell.is-sat .mp-calendar__day {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.mp-calendar__cell.is-today {
+  border-color: rgba(0, 240, 255, 0.62);
+  box-shadow: inset 0 0 0 1px rgba(0, 240, 255, 0.38), 0 0 20px rgba(0, 240, 255, 0.14);
+}
+
+.mp-calendar__day {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.mp-calendar__dot {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  padding: 0.05rem 0.34rem;
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.mp-calendar__dot.is-high {
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.42);
+  background: rgba(249, 115, 22, 0.14);
+}
+
+.mp-calendar__tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.45rem);
+  width: min(560px, calc(100vw - 1.5rem));
+  transform: translate(-50%, 4px);
+  z-index: 14;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  background: rgba(8, 12, 34, 0.97);
+  box-shadow: 0 10px 28px rgba(2, 8, 20, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mp-calendar__cell:hover .mp-calendar__tooltip,
+.mp-calendar__cell:focus-within .mp-calendar__tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.mp-calendar__tooltip-line {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.mp-calendar__tooltip-line:not(:last-child) {
+  margin-bottom: 0.18rem;
+  padding-bottom: 0.18rem;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.22);
+}
+
+.mp-upcoming {
+  margin-top: 0.9rem;
+}
+
+.mp-upcoming__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #a5f3fc;
+  margin-bottom: 0.55rem;
+}
+
+.mp-upcoming__list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.mp-upcoming__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.mp-upcoming__filter-select {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  color: #cbd5e1;
+  font-size: 0.68rem;
+  border-radius: 8px;
+  padding: 0.22rem 0.4rem;
+  min-width: 120px;
+}
+
+
+.mp-upcoming__item,
+.mp-upcoming__empty {
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 10px;
+  background: rgba(10, 10, 36, 0.68);
+  padding: 0.55rem 0.7rem;
+}
+
+.mp-upcoming__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.mp-upcoming__event {
+  color: #e2e8f0;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.mp-upcoming__badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.mp-upcoming__meta {
+  color: #94a3b8;
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.mp-upcoming__impact,
+.mp-upcoming__watch {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.mp-upcoming__translation {
+  margin-top: 0.22rem;
+  color: #7dd3fc;
+  font-size: 0.71rem;
+  line-height: 1.4;
+}
+
+.mp-upcoming__impact {
+  color: #cbd5e1;
+}
+
+.mp-upcoming__watch {
+  color: #94a3b8;
+}
+
+.mp-importance {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 0.08rem 0.38rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.mp-importance.is-high {
+  color: #fb7185;
+  border-color: rgba(251, 113, 133, 0.45);
+  background: rgba(251, 113, 133, 0.13);
+}
+
+.mp-importance.is-medium {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.13);
+}
+
+.mp-importance.is-low {
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.mp-status-chip,
+.mp-dday-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.61rem;
+  font-weight: 700;
+  padding: 0.08rem 0.34rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.mp-status-chip.is-scheduled {
+  color: #22d3ee;
+  border-color: rgba(34, 211, 238, 0.42);
+  background: rgba(34, 211, 238, 0.12);
+}
+
+.mp-status-chip.is-released {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.42);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.mp-status-chip.is-closed {
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.mp-dday-chip {
+  color: #c084fc;
+  border-color: rgba(192, 132, 252, 0.42);
+  background: rgba(192, 132, 252, 0.12);
+}
+
+@media (max-width: 640px) {
+  .mp-calendar {
+    padding: 0.56rem;
+  }
+
+  .mp-calendar__grid {
+    gap: 0.28rem;
+  }
+
+  .mp-calendar__weekday {
+    font-size: 0.65rem;
+    padding: 0.26rem 0.05rem;
+  }
+
+  .mp-calendar__cell {
+    min-height: 48px;
+    padding: 0.26rem 0.28rem;
+  }
+
+  .mp-calendar__day {
+    font-size: 0.7rem;
+  }
+
+  .mp-calendar__dot {
+    font-size: 0.57rem;
+    padding: 0.03rem 0.25rem;
+  }
+
+  .mp-calendar__tooltip {
+    width: min(440px, calc(100vw - 1rem));
+    padding: 0.42rem 0.48rem;
+  }
+
+  .mp-calendar__tooltip-line {
+    font-size: 0.69rem;
+  }
+
+  .mp-upcoming__head {
+    align-items: flex-start;
+  }
+
+  .mp-upcoming__filters {
+    gap: 0.28rem;
+  }
+
+  .mp-upcoming__filter-select {
+    font-size: 0.64rem;
+    min-width: 108px;
+    padding: 0.2rem 0.34rem;
+  }
+
+  .mp-upcoming__event {
+    font-size: 0.78rem;
+  }
+
+  .mp-upcoming__meta,
+  .mp-upcoming__translation,
+  .mp-upcoming__impact,
+  .mp-upcoming__watch {
+    font-size: 0.67rem;
+  }
+}
+

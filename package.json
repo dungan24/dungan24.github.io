@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "test:calendar-smoke": "playwright test tools/calendar-filters.smoke.spec.js --reporter=line --workers=1",
+    "test:calendar-smoke:install-browser": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
