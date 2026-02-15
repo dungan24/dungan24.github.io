@@ -470,15 +470,19 @@
 /* Sequential H3 color variation: cyan → teal → indigo → purple */
 .briefing-section--opinion .mp-opinion-sub:nth-child(1) h3 {
   border-left-color: var(--mp-neon-cyan) !important;
+  color: var(--mp-neon-cyan) !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(2) h3 {
-  border-left-color: #2DD4BF !important;
+  border-left-color: #2DD4BF !important; /* Teal-400 */
+  color: #2DD4BF !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(3) h3 {
-  border-left-color: #818CF8 !important;
+  border-left-color: #818CF8 !important; /* Indigo-400 */
+  color: #818CF8 !important;
 }
 .briefing-section--opinion .mp-opinion-sub:nth-child(4) h3 {
-  border-left-color: #A78BFA !important;
+  border-left-color: #A78BFA !important; /* Violet-400 */
+  color: #A78BFA !important;
 }
 
 /* --- 2-B. Blockquote — Hero Callout Card --- */
@@ -654,3 +658,145 @@
   }
 }
 
+/* ===== Mobile Optimizations (Global) ===== */
+@media (max-width: 640px) {
+  /* Smaller H1 for mobile */
+  .prose h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  /* Briefing Card adjustments */
+  .mp-briefing-card {
+    padding: 1.75rem 1.25rem 1.25rem !important; /* Increase padding */
+    margin-bottom: 0.5rem;
+  }
+  
+  .mp-briefing-card__title {
+    font-size: 1.05rem !important;
+  }
+
+  .mp-briefing-cards {
+    gap: 1.25rem !important; /* Better gap between cards */
+    padding: 0 0.5rem; /* Add side padding to grid container */
+  }
+  
+  .mp-briefing-card__footer {
+    padding-top: 1rem !important;
+  }
+  
+  /* Footer adjustments */
+  #site-footer .flex-col {
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Hide orb effects completely on mobile to save battery/perf and clean up look */
+  .mp-ambient-orb, .mp-ambient-orbs {
+    display: none !important;
+  }
+
+  .mp-section-header {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ===== Light Mode Critical Fixes ===== */
+:root:not(.dark) body {
+  background-color: #F8FAFC !important; /* Slate-50 */
+  color: #334155 !important; /* Slate-700 */
+}
+
+/* Force light backgrounds on glass elements if not already set */
+:root:not(.dark) .mp-glass-bg,
+:root:not(.dark) .briefing-section,
+:root:not(.dark) .mp-briefing-card,
+:root:not(.dark) .market-chart-card,
+:root:not(.dark) .mp-ticker-group,
+:root:not(.dark) .mp-news-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Fix text colors in light mode */
+:root:not(.dark) .mp-briefing-card__title,
+:root:not(.dark) .mp-ticker-name,
+:root:not(.dark) .mp-news-card__headline {
+  color: #1E293B !important; /* Slate-800 */
+}
+
+:root:not(.dark) .mp-briefing-card__summary,
+:root:not(.dark) .mp-ticker-price,
+:root:not(.dark) .mp-news-card__excerpt {
+  color: #475569 !important; /* Slate-600 */
+}
+
+/* Remove heavy text shadows in light mode */
+:root:not(.dark) * {
+  text-shadow: none !important;
+}
+
+/* Re-add subtle shadows for key elements if needed, but keep it clean */
+:root:not(.dark) .mp-heartbeat {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: none !important;
+}
+
+/* ===== Hero Section Contrast Fixes (Light Mode) ===== */
+:root:not(.dark) .mp-hero-summary {
+  color: #334155 !important; /* Slate-800: Much darker for readability */
+  font-weight: 500;
+}
+
+:root:not(.dark) .mp-hero-updated {
+  color: #64748B !important; /* Slate-500 */
+}
+
+/* ECG Line Visibility in Light Mode */
+:root:not(.dark) .mp-ecg-pulse {
+  opacity: 0.6 !important;
+  filter: saturate(1.5);
+}
+
+/* Specific Fix for Yellow Badge (Caution) in Light Mode */
+:root:not(.dark) .mp-regime-badge {
+  border-width: 2px !important;
+  background: rgba(255, 214, 0, 0.15) !important;
+  /* If it's yellow/amber, force a darker text color */
+  color: #854D0E !important; /* Dark Amber */
+  border-color: #EAB308 !important; /* Golden Yellow */
+  box-shadow: none !important;
+}
+
+/* Force dark text for other regime colors in light mode if they are too bright */
+:root:not(.dark) .mp-regime-badge[style*="--regime-color: #00FF88"] { color: #065F46 !important; border-color: #10B981 !important; } /* Green */
+:root:not(.dark) .mp-regime-badge[style*="--regime-color: #FF3366"] { color: #9F1239 !important; border-color: #F43F5E !important; } /* Rose */
+
+/* Mobile Light Mode Specifics */
+@media (max-width: 640px) {
+  :root:not(.dark) .mp-briefing-card {
+    background: #FFFFFF !important; /* Solid white on mobile for better perf/contrast */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* ===== Priority Insight & Blockquote Fixes ===== */
+:root:not(.dark) .prose blockquote p {
+  color: #1E293B !important;
+  text-shadow: none !important;
+}
+:root:not(.dark) .prose blockquote {
+  background: rgba(124, 58, 237, 0.05) !important;
+  border-left-color: var(--mp-neon-purple) !important;
+  border-right-color: rgba(124, 58, 237, 0.1);
+  border-top-color: rgba(124, 58, 237, 0.05);
+  border-bottom-color: rgba(124, 58, 237, 0.05);
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,0.05);
+}

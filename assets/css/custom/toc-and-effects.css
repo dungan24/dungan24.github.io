@@ -579,13 +579,13 @@ html { scroll-behavior: smooth; }
 
 /* Prose overrides for better reading experience */
 .prose {
-  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.05rem; /* Slightly larger for better readability */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.05rem;
   line-height: 1.8;
 }
 
 .prose blockquote {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   border-left-width: 4px;
@@ -597,6 +597,7 @@ html { scroll-behavior: smooth; }
   margin: 2.5rem 0;
   quotes: none;
 }
+
 
 .prose blockquote p {
   margin: 0;
@@ -640,7 +641,7 @@ html { scroll-behavior: smooth; }
   color: var(--tw-prose-headings);
 }
 .prose h4 {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Orbitron', sans-serif !important;
   font-size: 1.05rem !important;
   line-height: 1.5;
   font-weight: 700;
