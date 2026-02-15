@@ -30,9 +30,9 @@ const METRIC_COLORS = {
 };
 
 function isDarkMode() {
+  // Strictly check for class presence to respect manual toggle
   return document.documentElement.classList.contains('dark') ||
-    document.body.classList.contains('dark') ||
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.classList.contains('dark');
 }
 
 function isMobile() {
@@ -193,10 +193,10 @@ function renderTimeSeries(data) {
           html += `<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin:4px 0">
                     <span style="display:flex;align-items:center;gap:6px">
                       <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${p.color};box-shadow:0 0 5px ${p.color}"></span>
-                      <b style="color:#E2E8F0">${p.seriesName}</b>
+                      <b style="color:${theme.text}">${p.seriesName}</b>
                     </span>
                     <span style="font-family:JetBrains Mono">
-                      <span style="color:#94A3B8;font-size:11px">${val.toLocaleString(undefined, {maximumFractionDigits:1})}</span>
+                      <span style="color:${dark ? '#94A3B8' : '#64748B'};font-size:11px">${val.toLocaleString(undefined, {maximumFractionDigits:1})}</span>
                       <b style="color:${color};margin-left:6px;font-size:13px">${pct > 0 ? '+' : ''}${pct}%</b>
                     </span>
                    </div>`;
@@ -412,10 +412,10 @@ function renderRegime(data) {
             shadowColor: regimeColor,
           }
         },
-        axisTick: { distance: -18, length: 6, lineStyle: { color: 'rgba(255,255,255,0.2)', width: 1 } },
-        splitLine: { distance: -20, length: 10, lineStyle: { color: 'rgba(255,255,255,0.35)', width: 1 } },
+        axisTick: { distance: -18, length: 6, lineStyle: { color: dark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)', width: 1 } },
+        splitLine: { distance: -20, length: 10, lineStyle: { color: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.15)', width: 1 } },
         axisLabel: { 
-          distance: -40, color: '#94A3B8', fontSize: 9, fontFamily: 'JetBrains Mono',
+          distance: -40, color: dark ? '#94A3B8' : '#64748B', fontSize: 9, fontFamily: 'JetBrains Mono',
           formatter: function(v) {
             return v % 25 === 0 ? v : '';
           }
@@ -509,56 +509,59 @@ function renderSingleSectorChart(chartId, items) {
                 <span style="font-family:JetBrains Mono;color:#94A3B8">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
       }
     },
-    legend: {
-      data: ['1주', '1개월'],
-      textStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 11 },
-      top: 0, right: 10, icon: 'roundRect'
-    },
-    grid: { left: '4%', right: '14%', top: '15%', bottom: '5%', containLabel: true },
-    xAxis: {
-      type: 'value',
-      axisLine: { show: false },
-      axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, formatter: '{value}%' },
-      splitLine: { lineStyle: { color: theme.grid, type: 'dashed' } }
-    },
-    yAxis: {
-      type: 'category', data: names, inverse: true,
-      axisLine: { lineStyle: { color: theme.axis } },
-      axisTick: { show: false },
-      axisLabel: { color: theme.text, fontSize: 12, fontWeight: 500, margin: 15 }
-    },
-    series: [
-      {
-        name: '1개월',
-        type: 'bar',
-        data: month1.map(v => ({
-          value: v,
-          itemStyle: {
-            color: dark ? 'rgba(124,58,237,0.12)' : 'rgba(124,58,237,0.06)',
-            borderColor: dark ? 'rgba(124,58,237,0.24)' : 'rgba(124,58,237,0.16)',
-            borderWidth: 1,
-            borderRadius: [0, 2, 2, 0],
-          }
-        })),
-        silent: true,
-        z: 1,
-        barWidth: '65%',
-        barGap: '-100%',
-      },
-      {
-        name: '1주',
-        type: 'bar',
-        data: week1.map(v => ({
-          value: v,
-          itemStyle: {
-            color: v >= 0 ? theme.success : theme.danger,
-            borderRadius: [0, 4, 4, 0],
-            shadowBlur: dark ? 12 : 0,
-            shadowColor: v >= 0 ? theme.success : theme.danger,
-          }
-        })),
-        barWidth: '42%',
-        z: 2,
+        legend: {
+          data: [
+            { name: '1주', itemStyle: { color: COLORS.primary } },
+            { name: '1개월', itemStyle: { color: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)' } }
+          ],
+          textStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 11 },
+          top: 0, right: 10, icon: 'roundRect'
+        },
+        grid: { left: '4%', right: '14%', top: '15%', bottom: '5%', containLabel: true },
+        xAxis: {
+          type: 'value',
+          axisLine: { show: false },
+          axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, formatter: '{value}%' },
+          splitLine: { lineStyle: { color: theme.grid, type: 'dashed' } }
+        },
+        yAxis: {
+          type: 'category', data: names, inverse: true,
+          axisLine: { lineStyle: { color: theme.axis } },
+          axisTick: { show: false },
+          axisLabel: { color: theme.text, fontSize: 12, fontWeight: 500, margin: 15 }
+        },
+        series: [
+          {
+            name: '1개월',
+            type: 'bar',
+            data: month1.map(v => ({
+              value: v,
+              itemStyle: {
+                color: dark ? 'rgba(124, 58, 237, 0.15)' : 'rgba(124, 58, 237, 0.12)',
+                borderColor: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)',
+                borderWidth: 1,
+                borderRadius: v >= 0 ? [0, 2, 2, 0] : [2, 0, 0, 2],
+              }
+            })),
+            silent: true,
+            z: 1,
+            barWidth: '60%',
+            barGap: '-100%',
+          },
+          {
+            name: '1주',
+            type: 'bar',
+            data: week1.map(v => ({
+              value: v,
+              itemStyle: {
+                color: v >= 0 ? theme.success : theme.danger,
+                borderRadius: v >= 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
+                shadowBlur: dark ? 12 : 0,
+                shadowColor: v >= 0 ? theme.success : theme.danger,
+              }
+            })),
+            barWidth: '35%',
+            z: 2,
         label: {
           show: true, position: 'right',
           fontFamily: 'JetBrains Mono', fontSize: 11, fontWeight: 'bold',
