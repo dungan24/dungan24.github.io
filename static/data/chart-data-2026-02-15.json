@@ -3,7 +3,6 @@
   "version": "v1",
   "timeSeries": {
     "dates": [
-      "2026-01-16",
       "2026-01-20",
       "2026-01-21",
       "2026-01-22",
@@ -27,7 +26,6 @@
     ],
     "series": {
       "SPX": [
-        6940.01,
         6796.86,
         6875.62,
         6913.35,
@@ -50,7 +48,6 @@
         6836.17
       ],
       "NDX": [
-        23515.39,
         22954.32,
         23224.82,
         23436.02,
@@ -73,7 +70,6 @@
         24732.73
       ],
       "DJI": [
-        49359.33,
         48488.59,
         49077.23,
         49384.01,
@@ -96,7 +92,6 @@
         49500.93
       ],
       "VIX": [
-        15.86,
         20.09,
         16.9,
         15.64,
@@ -119,7 +114,6 @@
         20.6
       ],
       "US10Y": [
-        4.23,
         4.3,
         4.25,
         4.25,
@@ -142,7 +136,6 @@
         4.06
       ],
       "USDKRW": [
-        1468.84,
         1471.52,
         1477.78,
         1464.83,
@@ -165,7 +158,6 @@
         1443.3
       ],
       "BTC": [
-        95525,
         88310,
         89376,
         89462,
@@ -185,10 +177,9 @@
         66714,
         67026,
         null,
-        69789
+        69493
       ],
       "GOLD": [
-        4588.4,
         4759.6,
         4831.8,
         4908.8,
@@ -211,7 +202,6 @@
         5046.3
       ],
       "OIL": [
-        59.44,
         60.34,
         60.62,
         59.36,
@@ -242,7 +232,7 @@
         "S&P 500",
         "BTC"
       ],
-      "value": -0.08,
+      "value": -0.07,
       "status": "비동조",
       "meaning": "독립적 움직임"
     },
@@ -252,7 +242,7 @@
         "S&P 500",
         "원/달러"
       ],
-      "value": 0.11,
+      "value": 0.13,
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -262,7 +252,7 @@
         "S&P 500",
         "10년물"
       ],
-      "value": -0.04,
+      "value": -0.03,
       "status": "비동조",
       "meaning": "독립적"
     },
@@ -272,7 +262,7 @@
         "VIX",
         "금"
       ],
-      "value": 0.07,
+      "value": 0.06,
       "status": "비동조",
       "meaning": "독립적"
     },
@@ -282,7 +272,7 @@
         "BTC",
         "금"
       ],
-      "value": 0.04,
+      "value": 0.03,
       "status": "비동조",
       "meaning": "독립적 자산"
     },
@@ -311,14 +301,14 @@
       },
       {
         "name": "SPX 20일",
-        "value": "-1.5%",
+        "value": "+0.6%",
         "assessment": "⚠",
         "note": "횡보"
       },
       {
         "name": "US10Y 방향",
-        "value": "-14bp (5일)",
-        "assessment": "⚠",
+        "value": "-9bp (5일)",
+        "assessment": "✅",
         "note": "완화 기대"
       },
       {
@@ -334,88 +324,88 @@
       {
         "name": "에너지",
         "symbol": "XLE",
-        "week1": 2.81,
-        "month1": 18.62
-      },
-      {
-        "name": "반도체",
-        "symbol": "SOXX",
-        "week1": 2.29,
-        "month1": 12.43
-      },
-      {
-        "name": "산업",
-        "symbol": "XLI",
-        "week1": 1.19,
-        "month1": 9.72
+        "week1": 3.17,
+        "month1": 16.86
       },
       {
         "name": "헬스케어",
         "symbol": "XLV",
-        "week1": 0.35,
-        "month1": 0.69
+        "week1": 2.71,
+        "month1": 2.65
       },
       {
-        "name": "테크",
-        "symbol": "XLK",
-        "week1": 0.08,
-        "month1": -3.15
+        "name": "반도체",
+        "symbol": "SOXX",
+        "week1": 2.38,
+        "month1": 12.46
+      },
+      {
+        "name": "산업",
+        "symbol": "XLI",
+        "week1": 2.12,
+        "month1": 9.91
       },
       {
         "name": "소비재",
         "symbol": "XLY",
-        "week1": -0.14,
-        "month1": -1.5
+        "week1": 0.68,
+        "month1": -2.47
+      },
+      {
+        "name": "테크",
+        "symbol": "XLK",
+        "week1": -0.8,
+        "month1": -2.54
       },
       {
         "name": "금융",
         "symbol": "XLF",
-        "week1": -3.3,
-        "month1": -5.52
+        "week1": -2.4,
+        "month1": -7.03
       }
     ],
     "kr": [
       {
         "name": "은행",
         "sector": "KODEX_BANK",
-        "week1": 5.15,
-        "month1": 4.21
-      },
-      {
-        "name": "IT",
-        "sector": "TIGER_IT",
-        "week1": -0.85,
-        "month1": -0.34
-      },
-      {
-        "name": "에너지",
-        "sector": "KODEX_ENERGY",
-        "week1": -2.44,
-        "month1": -6.14
+        "week1": 5.85,
+        "month1": 7.22
       },
       {
         "name": "자동차",
         "sector": "KODEX_AUTO",
-        "week1": -3.07,
-        "month1": -0.96
+        "week1": -0.51,
+        "month1": 4.7
       },
       {
-        "name": "반도체",
-        "sector": "KODEX_SEMI",
-        "week1": -3.86,
-        "month1": 4.85
+        "name": "IT",
+        "sector": "TIGER_IT",
+        "week1": -1.79,
+        "month1": -0.78
+      },
+      {
+        "name": "에너지",
+        "sector": "KODEX_ENERGY",
+        "week1": -2.18,
+        "month1": -4.43
       },
       {
         "name": "바이오",
         "sector": "KODEX_BIO",
-        "week1": -5,
-        "month1": -27.15
+        "week1": -3.79,
+        "month1": -23.78
+      },
+      {
+        "name": "반도체",
+        "sector": "KODEX_SEMI",
+        "week1": -4.3,
+        "month1": 3.5
       },
       {
         "name": "2차전지",
         "sector": "TIGER_BATT",
-        "week1": -6.71,
-        "month1": -5.7
+        "week1": -5.07,
+        "month1": -4.37
       }
     ]
   },
@@ -423,22 +413,293 @@
     {
       "metric": "SPX",
       "label": "소폭 하락",
-      "changePct": -1.85
+      "changePct": -1.52
     },
     {
       "metric": "BTC",
-      "label": "보합",
-      "changePct": -0.47
+      "label": "소폭 하락",
+      "changePct": -0.89
     },
     {
       "metric": "VIX",
       "label": "급격 불안",
-      "changePct": 18.66
+      "changePct": 15.8
     },
     {
       "metric": "USDKRW",
       "label": "소폭 하락",
-      "changePct": -1.31
+      "changePct": -1.04
+    }
+  ],
+  "keyEvents": [
+    {
+      "eventName": "[USD] ISM Services PMI",
+      "eventNameKo": "[USD] ISM 서비스업 구매관리자지수(PMI)",
+      "eventTimeKst": "2026-02-10 00:00:00 KST",
+      "dday": "D-6",
+      "country": "미국",
+      "importance": "medium",
+      "status": "마감",
+      "previousValue": "53.1",
+      "consensus": "52.8",
+      "impactGuide": "서비스 경기 둔화/확장 신호에 따라 미국채 금리와 달러, 성장주 민감도가 바뀔 수 있습니다.",
+      "watchAssets": [
+        "미국채10년",
+        "DXY",
+        "나스닥100선물"
+      ]
+    },
+    {
+      "eventName": "[USD] Consumer Price Index (CPI) - January",
+      "eventNameKo": "[USD] 소비자물가지수(CPI) - January",
+      "eventTimeKst": "2026-02-11 22:30:00 KST",
+      "dday": "D-4",
+      "country": "미국",
+      "importance": "high",
+      "status": "마감",
+      "previousValue": "3.1%",
+      "consensus": "3.0%",
+      "impactGuide": "예상 상회 시 연준 인하 기대 후퇴로 금리·달러 상방, 기술주 변동성 확대 가능성이 큽니다.",
+      "watchAssets": [
+        "미국채10년",
+        "DXY",
+        "나스닥100선물",
+        "원/달러"
+      ]
+    },
+    {
+      "eventName": "[USD] FOMC Meeting Minutes",
+      "eventNameKo": "[USD] 연준(FOMC) 의사록",
+      "eventTimeKst": "2026-02-13 04:00:00 KST",
+      "dday": "D-3",
+      "country": "미국",
+      "importance": "high",
+      "status": "마감",
+      "impactGuide": "의사록 문구가 매파/비둘기파로 해석되면 금리와 지수 선물의 방향이 빠르게 바뀔 수 있습니다.",
+      "watchAssets": [
+        "미국채10년",
+        "DXY",
+        "S&P500선물",
+        "VIX"
+      ]
+    },
+    {
+      "eventName": "[USD] Producer Price Index (PPI) - January",
+      "eventNameKo": "[USD] 생산자물가지수(PPI) - January",
+      "eventTimeKst": "2026-02-13 22:30:00 KST",
+      "dday": "D-2",
+      "country": "미국",
+      "importance": "medium",
+      "status": "마감",
+      "previousValue": "3.3%",
+      "consensus": "3.2%",
+      "impactGuide": "생산자물가가 높게 나오면 기업 마진 압박과 금리 상방 재료로 해석될 수 있습니다.",
+      "watchAssets": [
+        "미국채10년",
+        "DXY",
+        "S&P500선물"
+      ]
+    },
+    {
+      "eventName": "[USD] Retail Sales - January",
+      "eventNameKo": "[USD] 소매판매 - January",
+      "eventTimeKst": "2026-02-14 22:30:00 KST",
+      "dday": "D-1",
+      "country": "미국",
+      "importance": "medium",
+      "status": "마감",
+      "previousValue": "0.4%",
+      "consensus": "0.2%",
+      "impactGuide": "소비 둔화/회복 신호가 실적 기대와 금리 경로를 동시에 자극할 수 있습니다.",
+      "watchAssets": [
+        "소매섹터선물",
+        "미국채10년",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[KRW] Korea Unemployment Rate",
+      "eventNameKo": "[KRW] 한국 실업률",
+      "eventTimeKst": "2026-02-18 08:00:00 KST",
+      "dday": "D+2",
+      "country": "한국",
+      "importance": "medium",
+      "status": "예정",
+      "impactGuide": "고용지표 변화는 내수경기 기대를 통해 원화·금리·내수주 센티먼트에 영향을 줄 수 있습니다.",
+      "watchAssets": [
+        "원/달러",
+        "KOSPI200선물",
+        "국고채3년"
+      ]
+    },
+    {
+      "eventName": "[USD] Initial Jobless Claims",
+      "eventNameKo": "[USD] 신규 실업수당 청구건수",
+      "eventTimeKst": "2026-02-19 22:30:00 KST",
+      "dday": "D+4",
+      "country": "미국",
+      "importance": "medium",
+      "status": "예정",
+      "previousValue": "224K",
+      "consensus": "228K",
+      "impactGuide": "고용 둔화/견조 신호에 따라 연준 경로 기대가 바뀌며 금리와 성장주가 민감하게 반응할 수 있습니다.",
+      "watchAssets": [
+        "미국채2년",
+        "나스닥100선물",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[USD] S&P Global Manufacturing PMI (Flash)",
+      "eventNameKo": "[USD] S&P Global 제조업 구매관리자지수(PMI) (Flash)",
+      "eventTimeKst": "2026-02-20 23:45:00 KST",
+      "dday": "D+5",
+      "country": "미국",
+      "importance": "medium",
+      "status": "예정",
+      "previousValue": "51.9",
+      "consensus": "52.1",
+      "impactGuide": "경기 확장/둔화 시그널에 따라 경기민감주와 방어주 간 회전 가능성이 있습니다.",
+      "watchAssets": [
+        "S&P500선물",
+        "러셀2000선물",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[KRW] Korea Producer Price Index (PPI) y/y",
+      "eventNameKo": "[KRW] 한국 생산자물가지수(PPI) 전년동월비",
+      "eventTimeKst": "2026-02-21 06:00:00 KST",
+      "dday": "D+5",
+      "country": "한국",
+      "importance": "medium",
+      "status": "예정",
+      "impactGuide": "생산자물가 압력은 국내 기업 마진과 통화정책 기대에 영향을 줄 수 있습니다.",
+      "watchAssets": [
+        "원/달러",
+        "국고채3년",
+        "KOSPI200선물"
+      ]
+    },
+    {
+      "eventName": "[KRW] Korea Consumer Confidence",
+      "eventNameKo": "[KRW] 한국 소비자신뢰지수",
+      "eventTimeKst": "2026-02-25 06:00:00 KST",
+      "dday": "D+9",
+      "country": "한국",
+      "importance": "low",
+      "status": "예정",
+      "impactGuide": "심리지표 방향은 유통·소비재 중심의 단기 수급 심리에 영향을 줄 수 있습니다.",
+      "watchAssets": [
+        "KOSPI200선물",
+        "원/달러"
+      ]
+    },
+    {
+      "eventName": "[USD] Consumer Confidence",
+      "eventNameKo": "[USD] 소비자신뢰지수",
+      "eventTimeKst": "2026-02-26 00:00:00 KST",
+      "dday": "D+10",
+      "country": "미국",
+      "importance": "medium",
+      "status": "예정",
+      "impactGuide": "심리지표 변화는 소비경기 기대를 통해 금리·달러·내수소비 섹터 변동성에 영향을 줄 수 있습니다.",
+      "watchAssets": [
+        "S&P500선물",
+        "미국채10년",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[USD] Durable Goods Orders m/m",
+      "eventNameKo": "[USD] 내구재 주문 전월비",
+      "eventTimeKst": "2026-02-27 22:30:00 KST",
+      "dday": "D+12",
+      "country": "미국",
+      "importance": "high",
+      "status": "예정",
+      "impactGuide": "내구재 주문은 제조업 투자와 경기 민감주 전망에 연결되어 지수 변동성을 키울 수 있습니다.",
+      "watchAssets": [
+        "러셀2000선물",
+        "미국채10년",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[KRW] Korea Industrial Production m/m",
+      "eventNameKo": "[KRW] 한국 산업생산 전월비",
+      "eventTimeKst": "2026-03-01 08:00:00 KST",
+      "dday": "D+13",
+      "country": "한국",
+      "importance": "high",
+      "status": "예정",
+      "impactGuide": "생산지표는 반도체/수출 경기 기대를 바꿔 코스피 주도 섹터 변동성을 키울 수 있습니다.",
+      "watchAssets": [
+        "KOSPI200선물",
+        "원/달러",
+        "국고채3년"
+      ]
+    },
+    {
+      "eventName": "[USD] ISM Manufacturing PMI",
+      "eventNameKo": "[USD] ISM 제조업 구매관리자지수(PMI)",
+      "eventTimeKst": "2026-03-03 00:00:00 KST",
+      "dday": "D+15",
+      "country": "미국",
+      "importance": "high",
+      "status": "예정",
+      "impactGuide": "제조업 체감경기 변화는 경기민감주·금리 기대를 동시에 움직일 수 있습니다.",
+      "watchAssets": [
+        "S&P500선물",
+        "미국채10년",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[USD] ADP Employment Change",
+      "eventNameKo": "[USD] ADP 민간고용 변화",
+      "eventTimeKst": "2026-03-04 22:15:00 KST",
+      "dday": "D+17",
+      "country": "미국",
+      "importance": "medium",
+      "status": "예정",
+      "impactGuide": "민간고용 선행 신호가 NFP 기대를 바꿔 금리·성장주 변동성에 선반영될 수 있습니다.",
+      "watchAssets": [
+        "나스닥100선물",
+        "미국채2년",
+        "DXY"
+      ]
+    },
+    {
+      "eventName": "[KRW] Korea Consumer Price Index (CPI) y/y",
+      "eventNameKo": "[KRW] 한국 소비자물가지수(CPI) 전년동월비",
+      "eventTimeKst": "2026-03-06 08:00:00 KST",
+      "dday": "D+18",
+      "country": "한국",
+      "importance": "high",
+      "status": "예정",
+      "impactGuide": "물가 상회/하회는 한국 금리 경로 기대와 원화 방향을 바꿔 증시 섹터 회전에 영향을 줄 수 있습니다.",
+      "watchAssets": [
+        "원/달러",
+        "국고채3년",
+        "KOSPI200선물"
+      ]
+    },
+    {
+      "eventName": "[USD] Non-Farm Payrolls",
+      "eventNameKo": "[USD] 비농업 고용지표(NFP)",
+      "eventTimeKst": "2026-03-06 22:30:00 KST",
+      "dday": "D+19",
+      "country": "미국",
+      "importance": "high",
+      "status": "예정",
+      "impactGuide": "고용지표는 연준 금리 경로 기대를 직접 흔들어 지수·달러·금리의 동시 변동을 유발할 수 있습니다.",
+      "watchAssets": [
+        "나스닥100선물",
+        "미국채2년",
+        "DXY",
+        "원/달러"
+      ]
     }
   ]
 }
