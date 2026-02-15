@@ -320,8 +320,16 @@
 
           var impact = document.createElement('div');
           impact.className = 'mp-upcoming__impact';
-          impact.textContent = e.impact || '발표 전후 시장 반응 점검';
+          impact.textContent = '영향: ' + (e.impact || '발표 전후 시장 반응 및 변동성 점검');
           content.appendChild(impact);
+
+          var watch = document.createElement('div');
+          watch.className = 'mp-upcoming__watch';
+          var watchAssets = (e.watchAssets && e.watchAssets.length > 0)
+            ? e.watchAssets.join(', ')
+            : '미국채10년, DXY, 나스닥100선물';
+          watch.textContent = '체크: ' + watchAssets;
+          content.appendChild(watch);
 
           card.appendChild(content);
           upcomingList.appendChild(card);

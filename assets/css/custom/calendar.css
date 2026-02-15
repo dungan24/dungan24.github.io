@@ -435,19 +435,13 @@
   line-height: 1.6;
   padding-top: 0.75rem;
   border-top: 1px solid rgba(148, 163, 184, 0.08);
+  margin-bottom: 0.25rem;
 }
 
-/* Status Badges Integration */
-.mp-status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  font-weight: 700;
-  border: 1px solid transparent;
+.mp-upcoming__watch {
+  font-size: 0.7rem;
+  color: #64748B;
+  line-height: 1.5;
 }
 
 /* Status & Importance Chips (Korean Optimized) */
