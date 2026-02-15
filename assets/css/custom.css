@@ -738,19 +738,21 @@ code, pre, .num-cell, .terminal-data {
 }
 
 /* List Items: Data Log Style (Briefing Sections Only) */
-.briefing-section ul {
+.briefing-section ul:not(.mp-regime-signals) {
   list-style: none !important;
-  padding-left: 1rem !important;
+  padding-left: 0 !important;
+  margin: 1.5rem 0 !important;
 }
 
-.briefing-section ul li {
+.briefing-section ul:not(.mp-regime-signals) li {
   position: relative;
   padding-left: 1.5rem !important;
   margin-bottom: 0.75rem !important;
   line-height: 1.7;
 }
 
-.briefing-section ul li::before {
+/* Standard Fact/Opinion List Bullet (Neon Bar) */
+.briefing-section ul:not(.mp-regime-signals) li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -759,11 +761,36 @@ code, pre, .num-cell, .terminal-data {
   height: 2px;
   background: var(--mp-neon-cyan);
   box-shadow: 0 0 8px var(--mp-neon-cyan);
+  z-index: 1;
 }
 
-.briefing-section--opinion ul li::before {
+.briefing-section--opinion ul:not(.mp-regime-signals) li::before {
   background: var(--mp-neon-purple);
   box-shadow: 0 0 8px var(--mp-neon-purple);
+}
+
+/* === Specialized Opinion Action Item List (Mini Cards) === */
+.briefing-section--opinion ul > li {
+  padding: 1rem 1.25rem !important; /* Balanced padding without bullet */
+  border-left: 3px solid var(--mp-neon-purple) !important;
+  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
+  background: rgba(124, 58, 237, 0.06) !important;
+  margin-bottom: 0.75rem !important;
+  border-bottom: none !important;
+  line-height: 1.6 !important;
+}
+
+/* Hide bullets for Mini Cards */
+.briefing-section--opinion ul > li::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+
+.briefing-section--opinion ul > li:hover {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-left-color: var(--mp-neon-cyan) !important;
 }
 
 
