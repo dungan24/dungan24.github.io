@@ -79,8 +79,8 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 69,418 | +492.87 | +0.71% | ↓1일 |
-| 이더리움 (ETH) | 2,052.9 | +2.46 | +0.12% | - |
+| 비트코인 (BTC) | 70,000 | +1,148 | +1.64% | ↑3일 |
+| 이더리움 (ETH) | 2,068.09 | +15.51 | +0.75% | - |
 | 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 ### 환율 
@@ -117,21 +117,21 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
    Fortune · 2026-02-15 03:53 KST · central-bank
    원문: US debt spiral could start soon as interest rate on borrowing tops GDP growth
 
-2. [**에너지 저장 경쟁에 Ford와 GM이 Tesla에 합류**](https://news.google.com/rss/articles/CBMingFBVV95cUxOZG1ya0tRN05OeTlBUnBCUFA0TTZWcDl0cWxmT2tPMHE5S0c0SXhnOVY1WWdTSHRfVEJzaGZwOFE3ZjdybEp5WmM4V01MUmtaQ1pqakxGdHBNclpUWnVuWEdUaGM0eGFhNXlnQjIxUVVReVFFRFRRZEZVS3duVURpNUd5UUI4RGdnS1RiNDdXQWsyR0FseWFOeFk4VTVCd9IBowFBVV95cUxPc05mc1hVSTYwYnFxcnBaYVJwMzNNZlNkdTJaamRxQW96TTRUSzNHOW9mRkFfMl81bC0xbEhPVG9kZjEzVmd5cGkyT2EyMWh3QXBNbXdVSFpyamN5a0dhS2d3SG1LZHloNmd0bkRhMWhjVWxvX2hjUkMwZ2NTQkk0MG9CanFMTTRSdVJfWS1pVDltSHhXckp3NjM4UlZzbHBFZDVn?oc=5)
-   Crude Oil Prices Today | OilPrice.com · 2026-02-15 07:00 KST · 원자재
-   원문: Ford and GM Join Tesla in the Energy Storage Race
-
-3. [**1월 CPI 인플레이션: 또 다른 주식시장 긍정적(SPX)**](https://news.google.com/rss/articles/CBMinAFBVV95cUxQeDRvRWU5d3hVV3NVR204X2s1RUJiNlVhb0RQOXN5MHZidjFQVUxWTHozUFlWeHdvbFdaQUtMaTlELWV0Uk5Eb0dtdGhGT3hkbHFZUTlCUFpVcldqMi0zNFotdTFvUHB6VVQ3dUkxM2E3UzF5dUkxYlBtMy1xd191ZEJTVmFyUEwtMVVzNW5pOVdYaldZWVJSUWJfTTA?oc=5)
-   Seeking Alpha · 2026-02-15 00:30 KST · 미국 매크로
-   원문: January CPI Inflation: Yet Another Stock Market Positive (SPX)
-
-4. [**트럼프, 새로운 경제 데이터 발표 후 연준에 금리 인하 촉구**](https://news.google.com/rss/articles/CBMi2AFBVV95cUxQVkMzZVB1aENBMUkwS2tocTVjZl9Id3lRNnM3eDR5cS01OXdyRTZOeG1PaTRKVi0yUlFZWDdHLTdGWlVVN3dfWTF2NDJlWnR1N1NrdXFlWjdNcGNQODNBVXl0VzNrQlBreEpDU3VTYnk3dkNGTkhvWlFFa0VkRWhzLVhESFI4RWlqMDFhcXl2QzA0ejNXRW8tWEY5S0EyTXFEdkJSbVdaRDlVeUdCMVZpX1YtNEk5WTI3cXRTdUxRY3RMTkE0UGRIeVQyYWlqNndQbkxtazJQTy0?oc=5)
+2. [**트럼프, 새로운 경제 데이터 발표 후 연준에 금리 인하 촉구**](https://news.google.com/rss/articles/CBMi2AFBVV95cUxQVkMzZVB1aENBMUkwS2tocTVjZl9Id3lRNnM3eDR5cS01OXdyRTZOeG1PaTRKVi0yUlFZWDdHLTdGWlVVN3dfWTF2NDJlWnR1N1NrdXFlWjdNcGNQODNBVXl0VzNrQlBreEpDU3VTYnk3dkNGTkhvWlFFa0VkRWhzLVhESFI4RWlqMDFhcXl2QzA0ejNXRW8tWEY5S0EyTXFEdkJSbVdaRDlVeUdCMVZpX1YtNEk5WTI3cXRTdUxRY3RMTkE0UGRIeVQyYWlqNndQbkxtazJQTy0?oc=5)
    MSN · 2026-02-15 07:41 KST · central-bank
    원문: Trump pushes Fed for interest rate cuts after new economic data
 
-5. [**억만장자 레이 달리오(Ray Dalio)는 주식 시장의 경보 벨이 울리는 것과 마찬가지로 월스트리트에 "약세 세력"을 경고합니다.**](https://news.google.com/rss/articles/CBMivAFBVV95cUxOQnBISXhnb3R4Tkc5Zmx3YnlHVmRlcTdPdDNQZ3E1eTRqY0ZPUkptbk0yTXVscF9jOW9WSlJoNHZFNHAzTi1pYnE2SVR4a1VTVGJIa2NmUmJOMGlIUjF1QThtbks0Y0FtN0VJdFEyMW4tNG1ZdmJ6cG1zR3lQTlB4WmdDYnNUYWpiOTBOZEo0bGlBMUFTRVBNVFUyQjJCWDh3aVZvTWRDc0lMTnV0VlB1UXRGWlRORE4zdFFDbQ?oc=5)
-   Nasdaq · 2026-02-15 06:35 KST · 시장 이벤트
-   원문: Billionaire Ray Dalio Warns Wall Street of a "Bearish Force" Just as This Stock Market Alarm Bell Rings.
+3. [**녹색 에너지에 대한 트럼프의 공격으로 제조업 부문에 큰 타격**](https://news.google.com/rss/articles/CBMirAFBVV95cUxQMS0zSzNDR2lWczBlSEFJdkgxQmYxb1pkd0tEamttTkV5Y1BXWDJoeDd6d05DNEhqdGh4SHRqZWtsTXI2R1p2ZFlrdGx5MGVTZ0lZNDY1OUZuZldqcWlBR2tGV3FNaG0wdjBkTU4weDJWR1M4QjlINTRrYlc4LXBFOVFUbm0xVW16REg3ZFJKbXJZOE1YNUVuTGVuZVlRWmY2QUpVb045S2FKcy100gGyAUFVX3lxTE1jMXpwN2U0VG9Demp0TFpDYTJBbHlOSEZla3Q1ZWFkaHZEVHVVSGlmZGtldGFnYTN5RWpyaGF1ZzVLZGxpMkFFX2VxX093MlZ1NW91RWkwei1YUm9sTm5tM0l3Q2IwSVpzY1RTVV9aMjNtWVlNQVRLcjQxWDJIcDFsYXA5cmRjeFU4dUdYQzVFWlZyc3VfdG9LN2NhaEZOLVBsbG9pVWdIeUhZekJzb1BuN1E?oc=5)
+   Crude Oil Prices Today | OilPrice.com · 2026-02-15 03:00 KST · 원자재
+   원문: Trump's Attack on Green Energy Hits Manufacturing Sector Hard
+
+4. [**주식 시장 주간: SCOTUS 관세 와일드카드, 설날**](https://news.google.com/rss/articles/CBMirgFBVV95cUxPTWQyTlVxV25UcnNBaURMUTBDa3pVclphaDIwdGx1N0hnR0FKelc4WHB1REhCSzVIUWNZWUNJWkpQdDBrZXhIaE1MZ29YQ0REdTI1ZUhEU1lFeUdWZ2s0UktJcXRtQ0s2Wlh4OUdGUTlkSkJ1SzcwNzlibWdWbnVhUTJaWHVlbUoteUppM0dNc1IzVG1YOXNHOTVWMXI0NjBCTHdtZW9fMkRqbEQ4MFE?oc=5)
+   Investor's Business Daily · 2026-02-15 02:24 KST · 지정학
+   원문: Stock Market Week: The SCOTUS Tariffs Wildcard, Lunar New Year
+
+5. [**에너지 저장 경쟁에 Ford와 GM이 Tesla에 합류**](https://news.google.com/rss/articles/CBMingFBVV95cUxOZG1ya0tRN05OeTlBUnBCUFA0TTZWcDl0cWxmT2tPMHE5S0c0SXhnOVY1WWdTSHRfVEJzaGZwOFE3ZjdybEp5WmM4V01MUmtaQ1pqakxGdHBNclpUWnVuWEdUaGM0eGFhNXlnQjIxUVVReVFFRFRRZEZVS3duVURpNUd5UUI4RGdnS1RiNDdXQWsyR0FseWFOeFk4VTVCd9IBowFBVV95cUxPc05mc1hVSTYwYnFxcnBaYVJwMzNNZlNkdTJaamRxQW96TTRUSzNHOW9mRkFfMl81bC0xbEhPVG9kZjEzVmd5cGkyT2EyMWh3QXBNbXdVSFpyamN5a0dhS2d3SG1LZHloNmd0bkRhMWhjVWxvX2hjUkMwZ2NTQkk0MG9CanFMTTRSdVJfWS1pVDltSHhXckp3NjM4UlZzbHBFZDVn?oc=5)
+   Crude Oil Prices Today | OilPrice.com · 2026-02-15 07:00 KST · 원자재
+   원문: Ford and GM Join Tesla in the Energy Storage Race
 
 ---
 
@@ -341,7 +341,7 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | SPX | 6,941.81 | 6,836.17 | -1.52% | 소폭 하락 |
-| BTC | 70,120 | 69,418 | -1.00% | 소폭 하락 |
+| BTC | 70,120 | 70,000 | -0.17% | 보합 |
 | VIX | 17.79 | 20.6 | +15.80% | 급격 불안 |
 | USDKRW | 1,458.54원 | 1,443.3원 | -1.04% | 소폭 하락 |
 
@@ -369,7 +369,6 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 키움증권 REST API (api) | https://api.kiwoom.com
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -380,7 +379,7 @@ S&P 500이 +0.05% 상승하고 나스닥이 -0.22% 하락한 가운데 VIX는 20
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 12:35:28 KST</span>
+  <span>생성 시각: 2026-02-15 13:08:35 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-15 12:35:28 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 13:08:35 KST</span>
 </div>
