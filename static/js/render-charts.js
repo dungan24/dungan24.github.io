@@ -335,56 +335,111 @@ function renderRegime(data) {
   
   const regimeScore = { 'RISK_ON': 85, 'CAUTIOUS': 55, 'RISK_OFF': 30, 'PANIC': 10 };
   const score = regimeScore[regime.current] || 50;
+  const dark = isDarkMode();
+  const regimeColor = score >= 75
+    ? COLORS.green
+    : score >= 50
+      ? COLORS.yellow
+      : score >= 25
+        ? COLORS.pink
+        : '#ff0040';
+  const gaugeScale = 0.8;
+  const mainGaugeRadius = `${Math.round(93 * gaugeScale)}%`;
+  const frameGaugeRadius = `${Math.round(100 * gaugeScale)}%`;
 
   chart.setOption({
     backgroundColor: 'transparent',
+    tooltip: {
+      ...getTooltipStyle(),
+      trigger: 'item',
+      formatter: function() {
+        const signals = (regime.signals || []).slice(0, 3);
+        const lines = signals.map(function(s) {
+          return `- ${s.name}: ${s.value} (${s.assessment})`;
+        }).join('<br/>');
+        return `<b style="color:${COLORS.cyan}">${regime.label}</b><br/>
+                <span style="font-family:JetBrains Mono">Risk Score: <b>${score}</b>/100</span><br/>
+                ${lines ? `<div style="margin-top:6px;color:#94A3B8;font-size:11px">${lines}</div>` : ''}`;
+      }
+    },
     series: [
       {
         type: 'gauge',
         startAngle: 210, endAngle: -30,
         min: 0, max: 100,
         splitNumber: 4,
-        radius: '92%',
+        radius: mainGaugeRadius,
         center: ['50%', '65%'],
         axisLine: {
           lineStyle: {
-            width: 12,
+            width: 9,
             color: [
-              [0.2, COLORS.pink],
-              [0.4, COLORS.yellow],
-              [0.7, COLORS.muted],
-              [1, COLORS.green]
+              [0.2, 'rgba(255,51,102,0.55)'],
+              [0.4, 'rgba(255,214,0,0.55)'],
+              [0.7, 'rgba(100,116,139,0.45)'],
+              [1, 'rgba(0,255,136,0.55)']
             ]
+          }
+        },
+        progress: {
+          show: true,
+          roundCap: true,
+          width: 9,
+          itemStyle: {
+            color: regimeColor,
+            shadowBlur: dark ? 6 : 0,
+            shadowColor: regimeColor,
           }
         },
         pointer: {
           icon: 'path://M12.8,0.7l12,20.1c0.1,0.2,0,0.4-0.2,0.5c-0.1,0-0.1,0-0.2,0H1.6c-0.2,0-0.4-0.1-0.5-0.3c-0.1-0.1-0.1-0.2,0-0.2l12-20.1C13.2,0.5,13.4,0.5,13.5,0.6C13.5,0.6,13.5,0.7,12.8,0.7z',
-          length: '15%', width: 20, offsetCenter: [0, '-62%'],
-          itemStyle: { color: 'auto', shadowBlur: 15, shadowColor: 'rgba(0,240,255,0.5)' }
+          length: '13%',
+          width: 14,
+          offsetCenter: [0, '-62%'],
+          itemStyle: {
+            color: regimeColor,
+            shadowBlur: dark ? 4 : 0,
+            shadowColor: regimeColor,
+          }
         },
-        axisTick: { distance: -20, length: 8, lineStyle: { color: 'rgba(255,255,255,0.3)', width: 1 } },
-        splitLine: { distance: -22, length: 15, lineStyle: { color: 'rgba(255,255,255,0.6)', width: 2 } },
+        anchor: {
+          show: true,
+          showAbove: true,
+          size: 7,
+          itemStyle: {
+            color: regimeColor,
+            shadowBlur: dark ? 4 : 0,
+            shadowColor: regimeColor,
+          }
+        },
+        axisTick: { distance: -18, length: 6, lineStyle: { color: 'rgba(255,255,255,0.2)', width: 1 } },
+        splitLine: { distance: -20, length: 10, lineStyle: { color: 'rgba(255,255,255,0.35)', width: 1 } },
         axisLabel: { 
-          distance: -45, color: '#94A3B8', fontSize: 10, fontFamily: 'Orbitron',
+          distance: -40, color: '#94A3B8', fontSize: 9, fontFamily: 'JetBrains Mono',
           formatter: function(v) {
-            if (v === 0) return 'PANIC';
-            if (v === 25) return 'OFF';
-            if (v === 75) return 'CAUT';
-            if (v === 100) return 'ON';
-            return '';
+            return v % 25 === 0 ? v : '';
           }
         },
         detail: {
           valueAnimation: true,
-          offsetCenter: [0, '25%'],
-          formatter: () => `{icon|${regime.icon}}\n{label|${regime.label.toUpperCase()}}`,
+          offsetCenter: [0, '28%'],
+          formatter: () => `{icon|${regime.icon}}\n{label|${regime.label}}\n{score|${score}/100}`,
           rich: {
-            icon: { fontSize: 32, padding: [0, 0, 10, 0] },
+            icon: { fontSize: 26, padding: [0, 0, 6, 0] },
             label: { 
-              fontSize: 22, fontWeight: 900, color: '#fff', 
-              fontFamily: 'Orbitron', letterSpacing: 2,
-              textShadowBlur: 10, textShadowColor: 'rgba(0,240,255,0.5)'
-            }
+              fontSize: 16,
+              fontWeight: 700,
+              color: theme.text,
+              fontFamily: 'Orbitron',
+              letterSpacing: 1
+            },
+            score: {
+              fontSize: 11,
+              fontWeight: 500,
+              color: '#94A3B8',
+              fontFamily: 'JetBrains Mono',
+              padding: [4, 0, 0, 0]
+            },
           }
         },
         data: [{ value: score }]
@@ -392,9 +447,23 @@ function renderRegime(data) {
       // 바깥쪽 테두리 장식
       {
         type: 'gauge',
-        startAngle: 215, endAngle: -35, radius: '100%', center: ['50%', '65%'],
-        axisLine: { lineStyle: { width: 1, color: [[1, 'rgba(0,240,255,0.15)']] } },
+        startAngle: 215, endAngle: -35, radius: frameGaugeRadius, center: ['50%', '65%'],
+        axisLine: { lineStyle: { width: 1, color: [[1, dark ? 'rgba(148,163,184,0.2)' : 'rgba(71,85,105,0.18)']] } },
         axisTick: { show: false }, splitLine: { show: false }, axisLabel: { show: false }
+      }
+    ],
+    graphic: [
+      {
+        type: 'text',
+        left: 'center',
+        top: 6,
+        style: {
+          text: 'Regime',
+          fill: dark ? '#94A3B8' : '#475569',
+          font: '500 11px JetBrains Mono',
+          letterSpacing: 0.5,
+          opacity: 0.9,
+        }
       }
     ]
   });
@@ -412,15 +481,33 @@ function renderSingleSectorChart(chartId, items) {
   const dark = isDarkMode();
 
   const names = items.map(s => s.name);
-  const week1 = items.map(s => s.week1);
-  const month1 = items.map(s => s.month1);
+  const week1 = items.map(s => (s.week1 == null ? null : Number(s.week1)));
+  const month1 = items.map((s, i) => {
+    if (s.month1 == null) return week1[i];
+    return Number(s.month1);
+  });
 
   chart.setOption({
     backgroundColor: 'transparent',
     tooltip: { 
       ...getTooltipStyle(), 
       trigger: 'axis', 
-      axisPointer: { type: 'shadow', shadowStyle: { color: 'rgba(124,58,237,0.05)' } } 
+      axisPointer: {
+        type: 'shadow',
+        shadowStyle: { color: dark ? 'rgba(124,58,237,0.09)' : 'rgba(124,58,237,0.05)' }
+      },
+      formatter: function(params) {
+        const week = params.find(function(p) { return p.seriesName === '1주'; }) || params[0];
+        const idx = week ? week.dataIndex : 0;
+        const name = names[idx] || '';
+        const w = week1[idx];
+        const m = month1[idx];
+        const spread = (w != null && m != null) ? (w - m) : null;
+        return `<b style="color:${COLORS.cyan}">${name}</b><br/>
+                <span style="font-family:JetBrains Mono">1주: <b>${w != null ? (w > 0 ? '+' : '') + w.toFixed(2) + '%' : '-'}</b></span><br/>
+                <span style="font-family:JetBrains Mono">1개월: <b>${m != null ? (m > 0 ? '+' : '') + m.toFixed(2) + '%' : '-'}</b></span><br/>
+                <span style="font-family:JetBrains Mono;color:#94A3B8">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
+      }
     },
     legend: {
       data: ['1주', '1개월'],
@@ -442,40 +529,54 @@ function renderSingleSectorChart(chartId, items) {
     },
     series: [
       {
-        name: '1개월', // 배경 고스트 바
+        name: '1개월',
         type: 'bar',
         data: month1.map(v => ({
           value: v,
-          itemStyle: { 
-            color: dark ? 'rgba(124,58,237,0.1)' : 'rgba(124,58,237,0.05)', 
-            borderColor: 'rgba(124,58,237,0.2)',
+          itemStyle: {
+            color: dark ? 'rgba(124,58,237,0.12)' : 'rgba(124,58,237,0.06)',
+            borderColor: dark ? 'rgba(124,58,237,0.24)' : 'rgba(124,58,237,0.16)',
             borderWidth: 1,
-            borderRadius: [0, 2, 2, 0]
+            borderRadius: [0, 2, 2, 0],
           }
         })),
+        silent: true,
+        z: 1,
         barWidth: '65%',
-        barGap: '-100%', // 겹치기
-        silent: true
+        barGap: '-100%',
       },
       {
-        name: '1주', // 메인 바
+        name: '1주',
         type: 'bar',
         data: week1.map(v => ({
           value: v,
           itemStyle: {
-            color: v > 0 ? theme.success : theme.danger,
+            color: v >= 0 ? theme.success : theme.danger,
             borderRadius: [0, 4, 4, 0],
             shadowBlur: dark ? 12 : 0,
-            shadowColor: v > 0 ? theme.success : theme.danger
+            shadowColor: v >= 0 ? theme.success : theme.danger,
           }
         })),
-        barWidth: '40%',
+        barWidth: '42%',
+        z: 2,
         label: {
           show: true, position: 'right',
           fontFamily: 'JetBrains Mono', fontSize: 11, fontWeight: 'bold',
           color: theme.text,
-          formatter: p => (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '%',
+          formatter: p => `${p.value > 0 ? '+' : ''}${p.value.toFixed(1)}%`,
           distance: 10
+        }
+      },
+      {
+        type: 'line',
+        data: [],
+        silent: true,
+        lineStyle: { opacity: 0 },
+        markLine: {
+          symbol: 'none',
+          label: { show: false },
+          lineStyle: { color: 'rgba(148,163,184,0.38)', type: 'dashed', width: 1 },
+          data: [{ xAxis: 0 }]
         }
       }
     ]
@@ -510,5 +611,3 @@ function renderAllCharts(data) {
   });
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 })();
-
-

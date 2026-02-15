@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
     'PANIC': '239 68 68',
   };
 
+  // Mirror of market-pulse KRX holiday table (ssot/tools/market-calendar.ts)
+  var KRX_PUBLIC_HOLIDAYS = {
+    2024: ['2024-01-01', '2024-02-09', '2024-02-10', '2024-02-12', '2024-03-01', '2024-05-06', '2024-05-15', '2024-06-06', '2024-08-15', '2024-09-16', '2024-09-17', '2024-09-18', '2024-10-03', '2024-10-09', '2024-12-25'],
+    2025: ['2025-01-01', '2025-01-28', '2025-01-29', '2025-01-30', '2025-03-01', '2025-05-05', '2025-06-06', '2025-08-15', '2025-10-03', '2025-10-06', '2025-10-07', '2025-10-08', '2025-10-09', '2025-12-25'],
+    2026: ['2026-01-01', '2026-02-16', '2026-02-17', '2026-02-18', '2026-03-01', '2026-05-05', '2026-05-24', '2026-06-06', '2026-08-15', '2026-09-24', '2026-09-25', '2026-09-26', '2026-10-03', '2026-10-09', '2026-12-25'],
+    2027: ['2027-01-01', '2027-02-06', '2027-02-08', '2027-02-09', '2027-03-01', '2027-05-05', '2027-05-13', '2027-06-06', '2027-08-15', '2027-09-14', '2027-09-15', '2027-09-16', '2027-10-03', '2027-10-09', '2027-12-25'],
+    2028: ['2028-01-01', '2028-01-26', '2028-01-27', '2028-01-28', '2028-03-01', '2028-05-02', '2028-05-05', '2028-06-06', '2028-08-15', '2028-10-02', '2028-10-03', '2028-10-04', '2028-10-09', '2028-12-25'],
+    2029: ['2029-01-01', '2029-02-12', '2029-02-13', '2029-02-14', '2029-03-01', '2029-05-07', '2029-05-20', '2029-06-06', '2029-08-15', '2029-09-21', '2029-09-22', '2029-09-24', '2029-10-03', '2029-10-09', '2029-12-25'],
+    2030: ['2030-01-01', '2030-02-02', '2030-02-04', '2030-02-05', '2030-03-01', '2030-05-06', '2030-05-09', '2030-06-06', '2030-08-15', '2030-09-11', '2030-09-12', '2030-09-13', '2030-10-03', '2030-10-09', '2030-12-25']
+  };
+
   // === Helper: Find briefing-section by H2 text ===
   function findSectionByTitle(titleText) {
     var sections = content.querySelectorAll('.briefing-section');
@@ -301,6 +312,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
+    // 4c-2. Calendar Timeline Transformation ("주요 일정" -> 월력 + 주요 일정 카드)
+    var calendarSection =
+      findSectionByTitle('\uC8FC\uC694 \uC77C\uC815') || // 주요 일정
+      findSectionByTitle('\uC624\uB298\uC758 \uC77C\uC815') || // 오늘의 일정 (legacy)
+      findSectionByTitle('\uC774\uBCA4\uD2B8 \uCE98\uB9B0\uB354'); // 이벤트 캘린더
+    if (calendarSection) {
+      try {
+        convertScheduleToCalendar(calendarSection);
+        document.addEventListener('mp:chart-data-ready', function onChartReady() {
+          try {
+            convertScheduleToCalendar(calendarSection);
+          } catch (innerErr) {
+            console.warn('Calendar re-render failed after chart data ready:', innerErr);
+          }
+          document.removeEventListener('mp:chart-data-ready', onChartReady);
+        });
+      } catch (e) {
+        console.warn('Calendar transformation failed, keeping original:', e);
+      }
+    }
+
     // 4d. Ticker Card Transformation — convert tables in "핵심 수치" to ticker cards
     var keyDataSection = findSectionByTitle('\uD575\uC2EC \uC218\uCE58'); // 핵심 수치
     if (keyDataSection) {
@@ -323,11 +355,722 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
+    // 4d-3. MD 원본 테이블의 "판단" 컬럼도 상태 배지로 통일
+    // (티커 카드 변환 대상이 아닌 섹션 포함)
+    try {
+      enhanceAssessmentCells(content);
+    } catch (e) {
+      console.warn('Assessment badge enhancement failed:', e);
+    }
+
     // 4e. TOC ScrollSpy
     initScrollSpy();
   }
 
   // === Ticker Card Conversion ===
+  function parseAssessmentStatus(text, context) {
+    if (!text) return null;
+    var cleaned = String(text).trim().replace(/^\-\s*/, '');
+    var m = cleaned.match(/^(✅|⚠️?|❌|🟢|🟡|🔴|⚪)\s*(.*)$/);
+    if (!m) return null;
+
+    var token = m[1];
+    var label = (m[2] || '').trim();
+    var tone = 'neutral';
+
+    if (token === '✅' || token === '🟢') tone = 'ok';
+    else if (token === '⚠' || token === '⚠️' || token === '🟡') tone = 'warn';
+    else if (token === '❌' || token === '🔴') tone = 'danger';
+    var finalLabel = label || cleaned.replace(/^(✅|⚠️?|❌|🟢|🟡|🔴|⚪)\s*/, '');
+
+    // 개별 신호의 의미를 반영해 warn 계열을 세분화
+    if (tone === 'warn') {
+      var metricName = context && context.metricName ? String(context.metricName) : '';
+      var valueText = context && context.valueText ? String(context.valueText) : '';
+      if (/완화 기대/.test(finalLabel) || (/US10Y/.test(metricName) && /^-/.test(valueText))) {
+        tone = 'info';
+      } else if (/횡보/.test(finalLabel)) {
+        tone = 'neutral';
+      } else if (/극단적 공포|contrarian|탐욕|괴리/.test(finalLabel)) {
+        tone = 'accent';
+      }
+    }
+
+    return { tone: tone, label: finalLabel };
+  }
+
+  function buildStatusBadge(status) {
+    var badge = document.createElement('span');
+    badge.className = 'mp-status-badge is-' + status.tone;
+
+    var dot = document.createElement('span');
+    dot.className = 'mp-status-dot';
+    badge.appendChild(dot);
+
+    var label = document.createElement('span');
+    label.className = 'mp-status-label';
+    label.textContent = status.label || '-';
+    badge.appendChild(label);
+
+    return badge;
+  }
+
+  function parseKstDateTime(text) {
+    if (!text) return null;
+    var normalized = String(text).trim().replace(' ', 'T');
+    if (!/T\d{2}:\d{2}(:\d{2})?$/.test(normalized)) return null;
+    return new Date(normalized + '+09:00');
+  }
+
+  function pad2(v) {
+    return String(v).padStart(2, '0');
+  }
+
+  function fmtYmd(year, month, day) {
+    return String(year) + '-' + pad2(month) + '-' + pad2(day);
+  }
+
+  function kstYmd(date) {
+    if (!date || isNaN(date.getTime())) return '';
+    var p = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Seoul',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).formatToParts(date).reduce(function(acc, cur) {
+      acc[cur.type] = cur.value;
+      return acc;
+    }, {});
+    return p.year + '-' + p.month + '-' + p.day;
+  }
+
+  function krxYearEndClosure(year) {
+    var d = new Date(Date.UTC(year, 11, 31));
+    while (d.getUTCDay() === 0 || d.getUTCDay() === 6) {
+      d = new Date(d.getTime() - 86400_000);
+    }
+    return fmtYmd(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate());
+  }
+
+  function getKrxHolidaySet(year) {
+    var list = KRX_PUBLIC_HOLIDAYS[year] || [];
+    var set = new Set(list);
+    set.add(krxYearEndClosure(year));
+    return set;
+  }
+
+  function formatKst(date) {
+    if (!date || isNaN(date.getTime())) return '-';
+    var p = new Intl.DateTimeFormat('ko-KR', {
+      timeZone: 'Asia/Seoul',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    }).formatToParts(date).reduce(function(acc, cur) {
+      acc[cur.type] = cur.value;
+      return acc;
+    }, {});
+    return p.year + '-' + p.month + '-' + p.day + ' ' + p.hour + ':' + p.minute + ' KST';
+  }
+
+  function getKstNow() {
+    return new Date();
+  }
+
+  function normalizeImportanceToken(token) {
+    var t = String(token || '').trim().toLowerCase();
+    if (t === '상' || t === 'high') return 'high';
+    if (t === '중' || t === 'medium') return 'medium';
+    if (t === '하' || t === 'low') return 'low';
+    return 'medium';
+  }
+
+  function hasChartKeyEventsPayload() {
+    var chartData = window.__MP_CHART_DATA;
+    return !!(chartData && Array.isArray(chartData.keyEvents));
+  }
+
+  function parseKeyEventsFromChartData() {
+    var chartData = window.__MP_CHART_DATA;
+    if (!chartData || !Array.isArray(chartData.keyEvents)) return [];
+    return chartData.keyEvents.map(function(item) {
+      var eventTimeRaw = String(item.eventTimeKst || '').replace(/\s*KST$/, '').trim();
+      var eventTime = parseKstDateTime(eventTimeRaw);
+      var name = String(item.eventName || '').trim();
+      var bracketCountry = (name.match(/^\[([A-Z]{2,5})\]/) || [])[1] || '';
+      return {
+        country: String(item.country || bracketCountry || 'GLOBAL').trim(),
+        name: name,
+        nameKo: String(item.eventNameKo || '').trim(),
+        dateTime: eventTime,
+        importance: normalizeImportanceToken(item.importance),
+        previous: String(item.previousValue || '').trim(),
+        consensus: String(item.consensus || '').trim(),
+        actual: String(item.actualValue || '').trim(),
+        status: String(item.status || '').trim(),
+        dday: String(item.dday || '').trim(),
+        impact: String(item.impactGuide || '').trim(),
+        watchAssets: Array.isArray(item.watchAssets) ? item.watchAssets.map(function(v) { return String(v).trim(); }).filter(Boolean) : [],
+        isHoliday: /휴장|holiday|closed|공휴일|대체휴일/i.test(name),
+        raw: name
+      };
+    }).filter(function(e) {
+      return e.name && e.dateTime && !isNaN(e.dateTime.getTime());
+    });
+  }
+
+  function parseScheduleItem(text) {
+    var raw = String(text || '').replace(/\s+/g, ' ').trim();
+
+    // Compact multiline format (mid-day/post-market writer):
+    // [중][USD][D-6] [USD] Event 시각: ... KST | 상태: ... 데이터: ... 영향: ... 체크: ...
+    var compactHead = raw.match(/^\[(상|중|하|high|medium|low)\]\[([^\]]+)\]\[(D(?:[+\-]\d+|ay))\]\s*(?:\[[A-Z]{2,5}\]\s*)?(.+?)\s+시각:\s*/i);
+    var compactTime = raw.match(/시각:\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST/i);
+    if (compactHead && compactTime) {
+      var compactImportance = normalizeImportanceToken(compactHead[1]);
+      var compactCountry = compactHead[2].trim();
+      var compactName = compactHead[4].trim();
+      var compactDateTime = parseKstDateTime(compactTime[1]);
+      var compactStatusMatch = raw.match(/상태:\s*(예정|발표|마감)/);
+        var compactImpactMatch = raw.match(/영향:\s*(.+?)(?:\s+체크:|$)/);
+        var compactWatchMatch = raw.match(/체크:\s*(.+?)$/);
+        var compactDataMatch = raw.match(/데이터:\s*(.+?)(?:\s+영향:|$)/);
+        var compactNameKoMatch = raw.match(/번역:\s*(.+?)(?:\s+데이터:|$)/);
+      if (!compactNameKoMatch) {
+        compactNameKoMatch = raw.match(/상태:\s*(?:예정|발표|마감)\s+(.+?)\s+데이터:/);
+      }
+      var compactPrevious = '';
+      var compactConsensus = '';
+      var compactActual = '';
+      if (compactDataMatch) {
+        var compactDataText = compactDataMatch[1];
+        var compactPrevMatch = compactDataText.match(/이전\s*([^|]+)/);
+        var compactConsMatch = compactDataText.match(/예상\s*([^|]+)/);
+        var compactActMatch = compactDataText.match(/실제\s*([^|]+)/);
+        compactPrevious = compactPrevMatch ? compactPrevMatch[1].trim() : '';
+        compactConsensus = compactConsMatch ? compactConsMatch[1].trim() : '';
+        compactActual = compactActMatch ? compactActMatch[1].trim() : '';
+      }
+      return {
+        country: compactCountry,
+        name: compactName,
+        nameKo: compactNameKoMatch ? compactNameKoMatch[1].trim() : '',
+        dateTime: compactDateTime,
+        importance: compactImportance,
+        previous: compactPrevious,
+        consensus: compactConsensus,
+        actual: compactActual,
+        status: compactStatusMatch ? compactStatusMatch[1] : '',
+        dday: compactHead[3],
+        impact: compactImpactMatch ? compactImpactMatch[1].trim() : '',
+        watchAssets: compactWatchMatch ? compactWatchMatch[1].split(',').map(function(v) { return v.trim(); }).filter(Boolean) : [],
+        isHoliday: /휴장|holiday|closed|공휴일|대체휴일/i.test(compactName),
+        raw: raw
+      };
+    }
+
+    // New key-event multiline format:
+    // [상] [미국] [USD] CPI m/m (D-2) | 시각: ... KST | 상태: ... | 데이터: ... | 영향: ... | 체크: ...
+    var modernHead = raw.match(/\[(상|중|하|high|medium|low)\]\s*\[([^\]]+)\]\s*(?:\[[A-Z]{2,5}\]\s*)?(.+?)\s*\((D(?:[+\-]\d+|ay))\)/i);
+    var modernTime = raw.match(/시각:\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST/i);
+    if (modernHead && modernTime) {
+      var modernImportance = normalizeImportanceToken(modernHead[1]);
+      var modernCountry = modernHead[2].trim();
+      var modernName = modernHead[3].trim();
+      var modernDateTime = parseKstDateTime(modernTime[1]);
+      var statusMatch = raw.match(/상태:\s*(예정|발표|마감)/);
+      var impactMatch = raw.match(/영향:\s*(.+?)(?:\s+체크:|$)/);
+      var watchMatch = raw.match(/체크:\s*(.+?)$/);
+      var dataMatch = raw.match(/데이터:\s*(.+?)(?:\s+영향:|$)/);
+      var nameKoMatch = raw.match(/번역:\s*(.+?)(?:\s+데이터:|$)/);
+      if (!nameKoMatch) {
+        nameKoMatch = raw.match(/상태:\s*(?:예정|발표|마감)\s+(.+?)\s+데이터:/);
+      }
+      var previous = '';
+      var consensus = '';
+      var actual = '';
+      if (dataMatch) {
+        var dataText = dataMatch[1];
+        var prevMatch = dataText.match(/이전\s*([^|]+)/);
+        var consMatch = dataText.match(/예상\s*([^|]+)/);
+        var actMatch = dataText.match(/실제\s*([^|]+)/);
+        previous = prevMatch ? prevMatch[1].trim() : '';
+        consensus = consMatch ? consMatch[1].trim() : '';
+        actual = actMatch ? actMatch[1].trim() : '';
+      }
+
+      return {
+        country: modernCountry,
+        name: modernName,
+        nameKo: nameKoMatch ? nameKoMatch[1].trim() : '',
+        dateTime: modernDateTime,
+        importance: modernImportance,
+        previous: previous,
+        consensus: consensus,
+        actual: actual,
+        status: statusMatch ? statusMatch[1] : '',
+        dday: modernHead[4],
+        impact: impactMatch ? impactMatch[1].trim() : '',
+        watchAssets: watchMatch ? watchMatch[1].split(',').map(function(v) { return v.trim(); }).filter(Boolean) : [],
+        isHoliday: /휴장|holiday|closed|공휴일|대체휴일/i.test(modernName),
+        raw: raw
+      };
+    }
+
+    // Legacy single-line format
+    var re = /^\[([A-Z]{2,5})\]\s*(.+?)\s*\|\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST\s*\|\s*중요도:\s*(high|medium|low)(?:\s*\((.*)\))?$/i;
+    var m = raw.match(re);
+    if (!m) return null;
+    var country = m[1].toUpperCase();
+    var name = m[2].trim();
+    var dateTime = parseKstDateTime(m[3]);
+    var importance = m[4].toLowerCase();
+    var extra = (m[5] || '').trim();
+    var prev = '';
+    var consensus = '';
+    var actual = '';
+    if (extra) {
+      var prevMatch = extra.match(/이전:\s*([^,\)]+)/);
+      var consMatch = extra.match(/예상:\s*([^,\)]+)/);
+      var actMatch = extra.match(/실제:\s*([^,\)]+)/);
+      prev = prevMatch ? prevMatch[1].trim() : '';
+      consensus = consMatch ? consMatch[1].trim() : '';
+      actual = actMatch ? actMatch[1].trim() : '';
+    }
+    var holiday = /휴장|holiday|closed|공휴일|대체휴일/i.test(name);
+    return {
+      country: country,
+      name: name,
+      nameKo: '',
+      dateTime: dateTime,
+      importance: importance,
+      previous: prev,
+      consensus: consensus,
+      actual: actual,
+      status: '',
+      dday: '',
+      impact: '',
+      watchAssets: [],
+      isHoliday: holiday,
+      raw: raw
+    };
+  }
+
+  function getEventStatus(event, now) {
+    if (event.status === '예정' || event.status === '발표' || event.status === '마감') {
+      return event.status;
+    }
+    if (!event.dateTime || isNaN(event.dateTime.getTime())) return '예정';
+    if (event.actual) return '발표';
+    return event.dateTime.getTime() <= now.getTime() ? '마감' : '예정';
+  }
+
+  function getStatusBadgeClass(status) {
+    if (status === '발표') return 'released';
+    if (status === '마감') return 'closed';
+    return 'scheduled';
+  }
+
+  function isKoreanScheduleEvent(event) {
+    var country = String(event && event.country ? event.country : '').trim().toUpperCase();
+    if (country === 'KR' || country === 'KOR' || country === 'KRW' || country === '한국') return true;
+    var raw = String(event && event.raw ? event.raw : '');
+    return /^\[(KR|KOR|KRW)\]/i.test(raw) || /\[한국\]/.test(raw);
+  }
+
+  function selectUpcomingEvents(events, limit) {
+    if (!Array.isArray(events) || events.length <= limit) return events || [];
+    var selected = events.slice(0, limit);
+    var hasKorean = selected.some(function(e) { return isKoreanScheduleEvent(e); });
+    if (!hasKorean) {
+      var koreanCandidate = events.find(function(e) { return isKoreanScheduleEvent(e); });
+      if (koreanCandidate) {
+        selected[selected.length - 1] = koreanCandidate;
+        selected.sort(function(a, b) {
+          return a.dateTime.getTime() - b.dateTime.getTime();
+        });
+      }
+    }
+    return selected;
+  }
+
+  function normalizeCountryBucket(country) {
+    var c = String(country || '').trim().toUpperCase();
+    if (c === '미국' || c === 'USD' || c === 'US') return 'us';
+    if (c === '한국' || c === 'KR' || c === 'KOR' || c === 'KRW') return 'kr';
+    return 'other';
+  }
+
+  function getKstDayDiff(eventDate, now) {
+    var eventYmd = kstYmd(eventDate || now);
+    var nowYmd = kstYmd(now);
+    var e = new Date(eventYmd + 'T00:00:00Z');
+    var n = new Date(nowYmd + 'T00:00:00Z');
+    return Math.round((e.getTime() - n.getTime()) / (24 * 60 * 60 * 1000));
+  }
+
+  function matchesUpcomingFilter(event, filterState, now) {
+    if (filterState.importance === 'high' && event.importance !== 'high') return false;
+    if (filterState.importance === 'high-medium' && event.importance === 'low') return false;
+    var periodDiff = getKstDayDiff(event.dateTime, now);
+    if (filterState.period === 'pm10' && (periodDiff < -10 || periodDiff > 10)) return false;
+    if (filterState.period === 'pm20' && (periodDiff < -20 || periodDiff > 20)) return false;
+    if (filterState.period === 'pm30' && (periodDiff < -30 || periodDiff > 30)) return false;
+    if (filterState.country !== 'all' && normalizeCountryBucket(event.country) !== filterState.country) return false;
+    return true;
+  }
+
+  function getMonthAnchor(events, now) {
+    if (!events || events.length === 0) return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+    var valid = events.filter(function(e) { return e.dateTime && !isNaN(e.dateTime.getTime()); });
+    if (valid.length === 0) return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+    var nearest = valid[0];
+    var minDiff = Math.abs(nearest.dateTime.getTime() - now.getTime());
+    valid.forEach(function(e) {
+      var diff = Math.abs(e.dateTime.getTime() - now.getTime());
+      if (diff < minDiff) {
+        minDiff = diff;
+        nearest = e;
+      }
+    });
+    var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit' })
+      .formatToParts(nearest.dateTime)
+      .reduce(function(acc, cur) { acc[cur.type] = cur.value; return acc; }, {});
+    return { year: Number(p.year), month: Number(p.month) };
+  }
+
+  function buildCalendarModel(year, month, events, now) {
+    var firstWeekday = new Date(Date.UTC(year, month - 1, 1)).getUTCDay(); // 0=Sun
+    var daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
+    var prevMonthDays = new Date(Date.UTC(year, month - 1, 0)).getUTCDate();
+    var eventMap = {};
+    events.forEach(function(e) {
+      if (!e.dateTime || isNaN(e.dateTime.getTime())) return;
+      var parts = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).formatToParts(e.dateTime).reduce(function(acc, cur) { acc[cur.type] = cur.value; return acc; }, {});
+      var key = parts.year + '-' + parts.month + '-' + parts.day;
+      if (!eventMap[key]) eventMap[key] = [];
+      eventMap[key].push(e);
+    });
+
+    var cells = [];
+    for (var i = 0; i < 42; i++) {
+      var dayNum = i - firstWeekday + 1;
+      var cellYear = year;
+      var cellMonth = month;
+      var inCurrent = true;
+      if (dayNum <= 0) {
+        inCurrent = false;
+        cellMonth = month - 1;
+        if (cellMonth <= 0) { cellMonth = 12; cellYear -= 1; }
+        dayNum = prevMonthDays + dayNum;
+      } else if (dayNum > daysInMonth) {
+        inCurrent = false;
+        cellMonth = month + 1;
+        if (cellMonth >= 13) { cellMonth = 1; cellYear += 1; }
+        dayNum = dayNum - daysInMonth;
+      }
+      var mm = String(cellMonth).padStart(2, '0');
+      var dd = String(dayNum).padStart(2, '0');
+      var key = String(cellYear) + '-' + mm + '-' + dd;
+      var dayEvents = (eventMap[key] || []).slice().sort(function(a, b) {
+        return a.dateTime.getTime() - b.dateTime.getTime();
+      });
+      var highCount = dayEvents.filter(function(e) { return e.importance === 'high'; }).length;
+      var krHolidaySet = getKrxHolidaySet(cellYear);
+      var holiday = krHolidaySet.has(key) || dayEvents.some(function(e) { return e.isHoliday; });
+      var lines = [];
+      if (holiday) lines.push('KR 휴장');
+      dayEvents.forEach(function(e) {
+        var st = getEventStatus(e, now);
+        lines.push('[' + st + '] ' + formatKst(e.dateTime) + ' · [' + e.country + '] ' + e.name + (e.importance ? ' (' + e.importance + ')' : ''));
+      });
+      var dow = i % 7;
+      cells.push({
+        key: key,
+        day: dayNum,
+        dow: dow,
+        inCurrent: inCurrent,
+        eventCount: dayEvents.length,
+        highCount: highCount,
+        isHoliday: holiday,
+        isToday: key === kstYmd(now),
+        tooltipLines: lines
+      });
+    }
+    return cells;
+  }
+
+  function convertScheduleToCalendar(section) {
+    var hasChartPayload = hasChartKeyEventsPayload();
+    var events = parseKeyEventsFromChartData();
+    if (!hasChartPayload && events.length === 0) {
+      var listItems = section.querySelectorAll('li');
+      if (!listItems || listItems.length === 0) return;
+      listItems.forEach(function(li) {
+        var parsed = parseScheduleItem(li.textContent || '');
+        if (parsed) events.push(parsed);
+      });
+    }
+    if (events.length === 0 && !hasChartPayload) return;
+
+    events.sort(function(a, b) {
+      var at = a.dateTime ? a.dateTime.getTime() : 0;
+      var bt = b.dateTime ? b.dateTime.getTime() : 0;
+      return at - bt;
+    });
+
+    var now = getKstNow();
+    var anchor = getMonthAnchor(events, now);
+    var cells = buildCalendarModel(anchor.year, anchor.month, events, now);
+    var weekday = ['일', '월', '화', '수', '목', '금', '토'];
+
+    var calendar = document.createElement('div');
+    calendar.className = 'mp-calendar';
+    var title = document.createElement('div');
+    title.className = 'mp-calendar__title';
+    title.textContent = anchor.year + '-' + String(anchor.month).padStart(2, '0');
+    calendar.appendChild(title);
+
+    var grid = document.createElement('div');
+    grid.className = 'mp-calendar__grid';
+
+    weekday.forEach(function(w, idx) {
+      var head = document.createElement('div');
+      head.className = 'mp-calendar__weekday';
+      if (idx === 0) head.classList.add('is-sun');
+      if (idx === 6) head.classList.add('is-sat');
+      head.textContent = w;
+      grid.appendChild(head);
+    });
+
+    cells.forEach(function(c) {
+      var cell = document.createElement('div');
+      cell.className = 'mp-calendar__cell';
+      if (!c.inCurrent) cell.classList.add('is-outside');
+      if (c.dow === 0) cell.classList.add('is-sun');
+      if (c.dow === 6) cell.classList.add('is-sat');
+      if (c.isHoliday) cell.classList.add('is-holiday');
+      if (c.isToday) cell.classList.add('is-today');
+
+      var day = document.createElement('span');
+      day.className = 'mp-calendar__day';
+      day.textContent = String(c.day);
+      cell.appendChild(day);
+
+      if (c.eventCount > 0) {
+        var dot = document.createElement('span');
+        dot.className = 'mp-calendar__dot';
+        if (c.highCount > 0) dot.classList.add('is-high');
+        dot.textContent = c.highCount > 0 ? ('H' + c.highCount) : String(c.eventCount);
+        cell.appendChild(dot);
+      }
+
+      if (c.tooltipLines && c.tooltipLines.length > 0) {
+        var tip = document.createElement('div');
+        tip.className = 'mp-calendar__tooltip';
+        c.tooltipLines.forEach(function(line) {
+          var tipLine = document.createElement('div');
+          tipLine.className = 'mp-calendar__tooltip-line';
+          tipLine.textContent = line;
+          tip.appendChild(tipLine);
+        });
+        cell.appendChild(tip);
+      }
+      grid.appendChild(cell);
+    });
+    calendar.appendChild(grid);
+
+    var upcomingWrap = document.createElement('div');
+    upcomingWrap.className = 'mp-upcoming';
+    var upcomingTitle = document.createElement('div');
+    upcomingTitle.className = 'mp-upcoming__title';
+    upcomingTitle.textContent = '주요 일정 (최근)';
+    upcomingWrap.appendChild(upcomingTitle);
+
+    var upcomingList = document.createElement('div');
+    upcomingList.className = 'mp-upcoming__list';
+    var filterState = {
+      importance: 'high',
+      period: 'pm10',
+      country: 'all'
+    };
+    var upcomingEvents = events.filter(function(e) {
+      return e.dateTime && !isNaN(e.dateTime.getTime());
+    });
+
+    var filterBar = document.createElement('div');
+    filterBar.className = 'mp-upcoming__filters';
+
+    var importanceSelect = document.createElement('select');
+    importanceSelect.className = 'mp-upcoming__filter-select';
+    importanceSelect.innerHTML = '<option value="high">중요도: 상</option><option value="high-medium">중요도: 상+중</option><option value="all">중요도: 전체</option>';
+    importanceSelect.value = 'high';
+    filterBar.appendChild(importanceSelect);
+
+    var periodSelect = document.createElement('select');
+    periodSelect.className = 'mp-upcoming__filter-select';
+    periodSelect.innerHTML = '<option value="pm10">기간: -10일~+10일</option><option value="pm20">기간: -20일~+20일</option><option value="pm30">기간: -30일~+30일</option><option value="all">기간: 전체</option>';
+    periodSelect.value = 'pm10';
+    filterBar.appendChild(periodSelect);
+
+    var countrySelect = document.createElement('select');
+    countrySelect.className = 'mp-upcoming__filter-select';
+    countrySelect.innerHTML = '<option value="all">국가: 전체</option><option value="us">국가: 미국</option><option value="kr">국가: 한국</option>';
+    filterBar.appendChild(countrySelect);
+    upcomingWrap.appendChild(filterBar);
+
+    function renderUpcomingList() {
+      upcomingList.innerHTML = '';
+      if (upcomingEvents.length === 0) {
+        var empty = document.createElement('div');
+        empty.className = 'mp-upcoming__empty';
+        empty.textContent = '표시할 주요 일정 데이터가 없습니다.';
+        upcomingList.appendChild(empty);
+        return;
+      }
+
+      var filtered = upcomingEvents.filter(function(e) { return matchesUpcomingFilter(e, filterState, now); });
+      var visible = selectUpcomingEvents(filtered, 20);
+      if (visible.length === 0) {
+        var emptyFiltered = document.createElement('div');
+        emptyFiltered.className = 'mp-upcoming__empty';
+        emptyFiltered.textContent = '필터 조건에 맞는 일정이 없습니다. 기간/국가/중요도 필터를 조정해 보세요.';
+        upcomingList.appendChild(emptyFiltered);
+        return;
+      }
+
+      visible.forEach(function(e) {
+        var card = document.createElement('div');
+        card.className = 'mp-upcoming__item';
+
+        var head = document.createElement('div');
+        head.className = 'mp-upcoming__head';
+        var left = document.createElement('span');
+        left.className = 'mp-upcoming__event';
+        left.textContent = '[' + e.country + '] ' + e.name;
+        head.appendChild(left);
+
+        var badges = document.createElement('div');
+        badges.className = 'mp-upcoming__badges';
+
+        var imp = document.createElement('span');
+        imp.className = 'mp-importance is-' + e.importance;
+        imp.textContent = e.importance.toUpperCase();
+        badges.appendChild(imp);
+
+        var st = getEventStatus(e, now);
+        var statusBadge = document.createElement('span');
+        statusBadge.className = 'mp-status-chip is-' + getStatusBadgeClass(st);
+        statusBadge.textContent = st;
+        badges.appendChild(statusBadge);
+
+        if (e.dday) {
+          var ddayBadge = document.createElement('span');
+          ddayBadge.className = 'mp-dday-chip';
+          ddayBadge.textContent = e.dday;
+          badges.appendChild(ddayBadge);
+        }
+
+        head.appendChild(badges);
+
+        var meta = document.createElement('div');
+        meta.className = 'mp-upcoming__meta';
+        var pieces = [formatKst(e.dateTime), '상태: ' + st];
+        if (e.previous) pieces.push('이전: ' + e.previous);
+        if (e.consensus) pieces.push('예상: ' + e.consensus);
+        if (e.actual) pieces.push('실제: ' + e.actual);
+        meta.textContent = pieces.join('  ·  ');
+
+        var translation = null;
+        if (e.nameKo && e.nameKo !== e.name) {
+          translation = document.createElement('div');
+          translation.className = 'mp-upcoming__translation';
+          translation.textContent = e.nameKo;
+        }
+
+        var impact = document.createElement('div');
+        impact.className = 'mp-upcoming__impact';
+        impact.textContent = e.impact ? ('영향: ' + e.impact) : '영향: 발표 전후 금리·달러·지수선물 반응 점검';
+
+        var watch = document.createElement('div');
+        watch.className = 'mp-upcoming__watch';
+        var watchText = (e.watchAssets && e.watchAssets.length > 0) ? e.watchAssets.join(', ') : '미국채10년, DXY, 나스닥100선물';
+        watch.textContent = '체크: ' + watchText;
+
+        card.appendChild(head);
+        card.appendChild(meta);
+        if (translation) card.appendChild(translation);
+        card.appendChild(impact);
+        card.appendChild(watch);
+        upcomingList.appendChild(card);
+      });
+    }
+
+    importanceSelect.addEventListener('change', function() {
+      filterState.importance = importanceSelect.value;
+      renderUpcomingList();
+    });
+    periodSelect.addEventListener('change', function() {
+      filterState.period = periodSelect.value;
+      renderUpcomingList();
+    });
+    countrySelect.addEventListener('change', function() {
+      filterState.country = countrySelect.value;
+      renderUpcomingList();
+    });
+    renderUpcomingList();
+    upcomingWrap.appendChild(upcomingList);
+
+    var h2 = section.querySelector('h2');
+    if (!h2) return;
+    while (h2.nextSibling) section.removeChild(h2.nextSibling);
+    section.appendChild(calendar);
+    section.appendChild(upcomingWrap);
+  }
+
+  function enhanceAssessmentCells(root) {
+    if (!root) return;
+    var tables = root.querySelectorAll('table');
+    tables.forEach(function(table) {
+      var headers = table.querySelectorAll('thead th');
+      if (!headers || headers.length === 0) return;
+
+      var assessmentIdx = -1;
+      for (var i = 0; i < headers.length; i++) {
+        var h = (headers[i].textContent || '').trim();
+        if (h === '판단' || h.indexOf('판단') !== -1) {
+          assessmentIdx = i;
+          break;
+        }
+      }
+      if (assessmentIdx < 0) return;
+
+      var rows = table.querySelectorAll('tbody tr');
+      rows.forEach(function(tr) {
+        var cells = tr.querySelectorAll('td');
+        if (!cells || cells.length <= assessmentIdx) return;
+        var cell = cells[assessmentIdx];
+        var raw = (cell.textContent || '').trim();
+        var metricName = cells[0] ? (cells[0].textContent || '').trim() : '';
+        var valueText = cells[1] ? (cells[1].textContent || '').trim() : '';
+        var status = parseAssessmentStatus(raw, { metricName: metricName, valueText: valueText });
+        if (!status) return;
+
+        cell.textContent = '';
+        cell.classList.add('mp-assessment-cell');
+        cell.appendChild(buildStatusBadge(status));
+      });
+    });
+  }
+
   function convertTablesToTickerCards(section) {
     // Identify groups: H2 direct table = first group, H3 = subsequent groups
     var groups = [];
@@ -395,13 +1138,18 @@ document.addEventListener('DOMContentLoaded', function() {
           change.className = 'mp-ticker-change';
           // Use change% (col 3) if available, else change (col 2)
           var changeText = tds.length >= 4 ? tds[3].textContent.trim() : tds[2].textContent.trim();
-          change.textContent = changeText;
-
-          // Color coding
-          if (/^\+/.test(changeText) || /\u2191/.test(changeText)) {
-            change.classList.add('num-up');
-          } else if (/^-/.test(changeText) && changeText !== '-') {
-            change.classList.add('num-down');
+          var status = parseAssessmentStatus(changeText, { metricName: name.textContent.trim(), valueText: price.textContent.trim() });
+          if (status) {
+            change.classList.add('is-status');
+            change.appendChild(buildStatusBadge(status));
+          } else {
+            change.textContent = changeText;
+            // Color coding
+            if (/^\+/.test(changeText) || /\u2191/.test(changeText)) {
+              change.classList.add('num-up');
+            } else if (/^-/.test(changeText) && changeText !== '-') {
+              change.classList.add('num-down');
+            }
           }
 
           tickerRow.appendChild(name);
@@ -409,17 +1157,23 @@ document.addEventListener('DOMContentLoaded', function() {
           tickerRow.appendChild(change);
 
           // Flow column (col 4) if exists
+          var flowSpan = document.createElement('span');
+          flowSpan.className = 'mp-ticker-flow';
           if (tds.length >= 5) {
-            var flow = tds[4].textContent.trim();
+            var rawFlow = tds[4].textContent.trim();
+            // "- ⚡ 하위 9%" 형태의 leading dash는 시각적으로 중복되어 제거
+            var flow = rawFlow.replace(/^\-\s*/, '');
             if (flow && flow !== '-') {
-              var flowSpan = document.createElement('span');
-              flowSpan.className = 'mp-ticker-flow';
               flowSpan.textContent = flow;
               if (/\u2191/.test(flow)) flowSpan.classList.add('num-up');
               else if (/\u2193/.test(flow)) flowSpan.classList.add('num-down');
-              tickerRow.appendChild(flowSpan);
+            } else {
+              flowSpan.classList.add('is-empty');
             }
+          } else {
+            flowSpan.classList.add('is-empty');
           }
+          tickerRow.appendChild(flowSpan);
 
           card.appendChild(tickerRow);
         });

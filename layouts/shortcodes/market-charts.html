@@ -75,6 +75,8 @@
         return r.json();
       })
       .then(function(data) {
+        window.__MP_CHART_DATA = data;
+        document.dispatchEvent(new CustomEvent('mp:chart-data-ready', { detail: data }));
         clearTimeout(timeoutId);
         // 로딩 UI 제거 → 차트 컨텐츠 표시
         if (statusContainer) statusContainer.style.display = 'none';

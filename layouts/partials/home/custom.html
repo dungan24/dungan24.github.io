@@ -140,6 +140,27 @@
     return Number.isFinite(pct) ? pct : null;
   }
 
+  function getLatestValidPair(series) {
+    if (!Array.isArray(series) || series.length === 0) {
+      return { current: null, prev: null };
+    }
+
+    var current = null;
+    var prev = null;
+    for (var i = series.length - 1; i >= 0; i--) {
+      var v = series[i];
+      if (v === null || typeof v !== 'number' || !Number.isFinite(v)) continue;
+      if (current === null) {
+        current = v;
+      } else {
+        prev = v;
+        break;
+      }
+    }
+
+    return { current: current, prev: prev };
+  }
+
   function fmtChange(pct) {
     if (pct === null || !Number.isFinite(pct)) return '—';
     var sign = pct >= 0 ? '+' : '';
@@ -188,11 +209,12 @@
         var s = ts.series[ticker.key];
         if (!s || s.length < 1) continue;
 
-        var current = s[s.length - 1];
-        var prev = s[s.length - 2];
+        var pair = getLatestValidPair(s);
+        var current = pair.current;
+        var prev = pair.prev;
 
         // Skip if current price is invalid
-        if (current === null || typeof current !== 'number' || !Number.isFinite(current)) continue;
+        if (current === null) continue;
 
         hasData = true;
         var changePct = calcChangePct(current, prev);
