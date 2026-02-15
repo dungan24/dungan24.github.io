@@ -737,20 +737,20 @@ code, pre, .num-cell, .terminal-data {
   opacity: 0.7;
 }
 
-/* List Items: Data Log Style (Exclude TOC) */
-.prose ul:not(.toc ul):not(#TableOfContents ul) {
+/* List Items: Data Log Style (Briefing Sections Only) */
+.briefing-section ul {
   list-style: none !important;
   padding-left: 1rem !important;
 }
 
-.prose ul:not(.toc ul):not(#TableOfContents ul) li {
+.briefing-section ul li {
   position: relative;
   padding-left: 1.5rem !important;
   margin-bottom: 0.75rem !important;
   line-height: 1.7;
 }
 
-.prose ul:not(.toc ul):not(#TableOfContents ul) li::before {
+.briefing-section ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -760,6 +760,12 @@ code, pre, .num-cell, .terminal-data {
   background: var(--mp-neon-cyan);
   box-shadow: 0 0 8px var(--mp-neon-cyan);
 }
+
+.briefing-section--opinion ul li::before {
+  background: var(--mp-neon-purple);
+  box-shadow: 0 0 8px var(--mp-neon-purple);
+}
+
 
 
 /* Strong Text within Lists: Semantic Tags */
