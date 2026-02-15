@@ -269,6 +269,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 
 ## 출처
 
+- 한국투자증권 Open API | https://openapi.koreainvestment.com:9443
 - Yahoo Finance | https://finance.yahoo.com
 - CoinGecko | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me | https://api.alternative.me/fng/
@@ -283,7 +284,7 @@ chartData: "/data/chart-data-2026-02-15.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-15 12:30:17 KST</span>
+  <span>생성 시각: 2026-02-15 12:31:21 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-15 12:30:17 KST</span>
+  <span>데이터 기준 시각: 2026-02-15 12:31:21 KST</span>
 </div>
