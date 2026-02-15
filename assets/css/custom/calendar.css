@@ -556,3 +556,78 @@
   border-color: rgba(192, 132, 252, 0.42);
   background: rgba(192, 132, 252, 0.12);
 }
+
+/* ===== Light Mode Overrides for Calendar ===== */
+:root:not(.dark) .mp-upcoming__filters {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+:root:not(.dark) .mp-filter-pill {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  color: #64748B;
+}
+
+:root:not(.dark) .mp-filter-pill:hover {
+  background: #F8FAFC;
+  border-color: #38bdf8;
+  color: #0F172A;
+}
+
+:root:not(.dark) .mp-filter-pill.is-active {
+  background: #E0F2FE;
+  border-color: #0EA5E9;
+  color: #0284C7;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.2);
+}
+
+:root:not(.dark) .mp-upcoming__date-text {
+  background: #E0F2FE;
+  color: #0369A1;
+  border-color: #BAE6FD;
+}
+
+:root:not(.dark) .mp-upcoming__time {
+  color: #475569;
+}
+
+:root:not(.dark) .mp-upcoming__content {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+:root:not(.dark) .mp-upcoming__item:hover .mp-upcoming__content {
+  background: #F8FAFC;
+  border-color: #38BDF8;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+:root:not(.dark) .mp-upcoming__event {
+  color: #1E293B;
+}
+
+:root:not(.dark) .mp-upcoming__meta {
+  color: #64748B;
+}
+
+:root:not(.dark) .mp-upcoming__translation {
+  color: #0284C7;
+}
+
+:root:not(.dark) .mp-upcoming__impact {
+  color: #334155;
+  border-top-color: #E2E8F0;
+}
+
+/* Additional Visibility Fixes */
+:root:not(.dark) .mp-filter-group__label {
+  color: #334155 !important;
+  font-weight: 800;
+}
+
+:root:not(.dark) .mp-calendar__title {
+  color: #1E293B !important;
+  border-bottom-color: #E2E8F0;
+}

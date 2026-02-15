@@ -61,10 +61,18 @@
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
   background: rgba(0, 240, 255, 0.1);
-  padding: 1px 6px;
-  border-radius: 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
   border: 1px solid rgba(0, 240, 255, 0.2);
   margin-right: 4px;
+  letter-spacing: -0.02em;
+}
+
+/* Light Mode Overrides for Strong Tags */
+:root:not(.dark) .prose li strong {
+  color: #0E7490 !important; /* Cyan-700: Darker for readability */
+  background: #ECFEFF; /* Cyan-50 */
+  border-color: #A5F3FC; /* Cyan-200 */
 }
 
 /* Paragraph Flow & Hierarchical Indentation */
@@ -105,8 +113,15 @@
 }
 
 :root:not(.dark) .briefing-section p strong {
-  color: var(--mp-neon-purple) !important;
-  text-shadow: none;
+  color: #0E7490 !important; /* Darker Cyan */
+  text-shadow: none !important;
+  background: linear-gradient(to top, rgba(165, 243, 252, 0.4) 40%, transparent 40%);
+}
+
+:root:not(.dark) .briefing-section--opinion p strong {
+  color: #6D28D9 !important; /* Purple-700 */
+  text-shadow: none !important;
+  background: linear-gradient(to top, rgba(221, 214, 254, 0.4) 40%, transparent 40%);
 }
 
 
