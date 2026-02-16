@@ -31,18 +31,18 @@ Exit Criteria
 
 ### 1.1 설정 스키마 도입
 
-- [x] `config/_default/params.market-pulse.toml` 추가
+- [x] `config/_default/params.toml` 내 `[market_pulse]` 섹션으로 통합 (확실한 로딩 보장)
 - [x] 섹션 타이틀 alias, 라벨, 컬러맵, 시간대 상수 이관
 
 ### 1.2 런타임 주입
 
-- [x] `layouts/partials/extend-head-uncached.html`에 `window.__MP_CONFIG` 주입
+- [x] `layouts/partials/extend-head-uncached.html`에 `window.__MP_CONFIG` 주입 (키: `market_pulse`)
 - [x] `static/js/mp-config.js` 생성(기본값 + 주입값 merge)
 - [x] `layouts/partials/extend-footer.html` 로더 순서에 `mp-config.js` 등록
 
 Exit Criteria
 
-- [x] 설정 변경 시 JS 코드 수정 없이 동작 변경 가능
+- [x] 설정 변경 시 JS 코드 수정 없이 동작 변경 가능 (검증 완료: `window.__MP_CONFIG` 주입 확인)
 - [x] 기존 페이지 렌더/동작 회귀 없음
 
 ## Stage 2 - DRY Refactor (Logic)

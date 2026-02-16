@@ -7,7 +7,7 @@
 {{ end }}
 
 <script>
-  window.__MP_CONFIG = {{ index .Site.Params "market-pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
+  window.__MP_CONFIG = {{ index .Site.Params "market_pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
 </script>
 
 {{ if .Params.regime }}
