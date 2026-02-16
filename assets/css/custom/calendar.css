@@ -15,7 +15,7 @@
 }
 
 .mp-calendar__title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -35,7 +35,7 @@
 /* 요일 타이포그래피 (사이트 톤앤매너 통합) */
 .mp-calendar__weekday {
   text-align: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.65rem;
   font-weight: 700;
   color: #64748B;
@@ -77,7 +77,7 @@
 }
 
 .mp-calendar__day {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   color: #94a3b8;
@@ -136,7 +136,7 @@
   padding: 0.6rem 0.8rem;
   background: rgba(0, 240, 255, 0.08);
   border-bottom: 1px solid var(--mp-glass-border);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.65rem;
   font-weight: 800;
   color: var(--mp-neon-cyan);
@@ -176,7 +176,7 @@
 }
 
 .mp-calendar__tooltip-time {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.65rem;
   color: #94a3b8;
 }
@@ -257,7 +257,7 @@
 }
 
 .mp-upcoming__title {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--mp-font-display);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -350,7 +350,7 @@
 }
 
 .mp-upcoming__date-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   color: #38bdf8;
@@ -386,7 +386,7 @@
 }
 
 .mp-upcoming__time {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   color: #cbd5e1;
@@ -447,7 +447,7 @@
 .mp-upcoming__meta {
   color: #94a3b8;
   font-size: 0.72rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   margin-bottom: 0.5rem;
 }
 
@@ -495,7 +495,7 @@
 }
 
 .mp-importance {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.62rem;
   font-weight: 700;
   padding: 0.08rem 0.38rem;
@@ -524,7 +524,7 @@
 
 .mp-status-chip,
 .mp-dday-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.61rem;
   font-weight: 700;
   padding: 0.08rem 0.34rem;

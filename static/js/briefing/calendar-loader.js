@@ -45,8 +45,15 @@
     sections.forEach(function(section) {
       var h2 = section.querySelector('h2');
       if (!h2) {
+        var config = window.MP_CONFIG || {};
+        var defaultTitle = '\uC774\uBCA4\uD2B8 \uCE98\uB9B0\uB354';
+        if (config.sections && config.sections.calendar) {
+          defaultTitle = Array.isArray(config.sections.calendar) 
+            ? config.sections.calendar[config.sections.calendar.length - 1] 
+            : config.sections.calendar;
+        }
         h2 = document.createElement('h2');
-        h2.textContent = '\uC774\uBCA4\uD2B8 \uCE98\uB9B0\uB354';
+        h2.textContent = defaultTitle;
         section.insertBefore(h2, section.firstChild);
       }
       ns.transformCalendarSection(section, convertScheduleToCalendar);

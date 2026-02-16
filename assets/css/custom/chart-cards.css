@@ -54,7 +54,7 @@
   border-top: none;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -68,7 +68,7 @@
   margin: 0.5rem 0 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(124, 58, 237, 0.15);
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--mp-font-display);
   font-size: 0.9rem;
   font-weight: 600;
   color: #e2e8f0;
@@ -85,6 +85,10 @@
   min-height: 280px;
 }
 
+.chart-box.is-timeseries { height: 350px; }
+.chart-box.is-correlation { height: 300px; }
+.chart-box.is-regime { height: 300px; }
+
 .chart-loading-state {
   min-height: 300px;
   display: flex;
@@ -93,7 +97,7 @@
   justify-content: center;
   gap: 1rem;
   color: var(--mp-chart-cyan);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -158,10 +162,8 @@
 
 @media (max-width: 768px) {
   .market-chart-card {
-    margin: 1.5rem -1rem;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+    margin: 1.5rem 0;
+    border-radius: var(--mp-radius-md);
     padding: 1rem;
   }
 

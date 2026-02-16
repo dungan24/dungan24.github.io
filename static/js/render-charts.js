@@ -62,7 +62,7 @@ function getTooltipStyle() {
     textStyle: { 
       color: dark ? '#E2E8F0' : '#1E1E3A', 
       fontSize: 12,
-      fontFamily: 'JetBrains Mono, monospace',
+      fontFamily: 'Noto Sans KR, sans-serif',
       lineHeight: 18
     },
     extraCssText: dark
@@ -180,10 +180,10 @@ function renderTimeSeries(data) {
       axisPointer: {
         type: 'cross',
         lineStyle: { color: COLORS.cyan, opacity: 0.3, type: 'dashed' },
-        label: { backgroundColor: COLORS.primary, color: '#fff', fontFamily: 'JetBrains Mono', fontSize: 10 }
+        label: { backgroundColor: COLORS.primary, color: '#fff', fontFamily: 'Noto Sans KR', fontSize: 10 }
       },
       formatter: function(params) {
-        let html = `<div style="margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:6px;font-family:Orbitron;letter-spacing:1px">
+        let html = `<div style="margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:6px;font-family:Noto Sans KR,sans-serif;letter-spacing:1px">
                       <b style="color:${COLORS.cyan}">${params[0].axisValue}</b>
                     </div>`;
         params.sort((a, b) => b.value - a.value).forEach(p => {
@@ -195,7 +195,7 @@ function renderTimeSeries(data) {
                       <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${p.color};box-shadow:0 0 5px ${p.color}"></span>
                       <b style="color:${theme.text}">${p.seriesName}</b>
                     </span>
-                    <span style="font-family:JetBrains Mono">
+                    <span style="font-family:Noto Sans KR,sans-serif">
                       <span style="color:${dark ? '#94A3B8' : '#64748B'};font-size:11px">${val.toLocaleString(undefined, {maximumFractionDigits:1})}</span>
                       <b style="color:${color};margin-left:6px;font-size:13px">${pct > 0 ? '+' : ''}${pct}%</b>
                     </span>
@@ -205,7 +205,7 @@ function renderTimeSeries(data) {
       }
     },
     legend: {
-      textStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 11, fontWeight: 500 },
+      textStyle: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 11, fontWeight: 500 },
       itemWidth: 12, itemHeight: 12, itemGap: 20, top: 0, icon: 'rect'
     },
     grid: { left: '2%', right: '2%', bottom: '5%', top: '15%', containLabel: true },
@@ -213,7 +213,7 @@ function renderTimeSeries(data) {
       type: 'category',
       data: dates,
       axisLine: { lineStyle: { color: theme.axis } },
-      axisLabel: { color: theme.text, fontSize: 10, fontFamily: 'JetBrains Mono', margin: 12 },
+      axisLabel: { color: theme.text, fontSize: 10, fontFamily: 'Noto Sans KR', margin: 12 },
       axisTick: { show: false },
       splitLine: { show: false }
     },
@@ -221,17 +221,17 @@ function renderTimeSeries(data) {
       {
         type: 'value',
         name: 'INDEX %',
-        nameTextStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, padding: [0, 0, 0, 40] },
+        nameTextStyle: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10, padding: [0, 0, 0, 40] },
         axisLine: { show: false },
-        axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, formatter: '{value}%' },
+        axisLabel: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10, formatter: '{value}%' },
         splitLine: { lineStyle: { color: theme.grid, type: 'dashed', opacity: 0.5 } }
       },
       {
         type: 'value',
         name: 'VIX %',
-        nameTextStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, padding: [0, 40, 0, 0] },
+        nameTextStyle: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10, padding: [0, 40, 0, 0] },
         axisLine: { show: false },
-        axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, formatter: '{value}%' },
+        axisLabel: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10, formatter: '{value}%' },
         splitLine: { show: false }
       }
     ],
@@ -244,7 +244,7 @@ function renderTimeSeries(data) {
       handleSize: '80%',
       dataBackground: { lineStyle: { color: COLORS.cyan }, areaStyle: { color: COLORS.cyan, opacity: 0.1 } },
       selectedDataBackground: { lineStyle: { color: COLORS.pink }, areaStyle: { color: COLORS.pink, opacity: 0.2 } },
-      textStyle: { color: theme.text, fontFamily: 'JetBrains Mono' }
+      textStyle: { color: theme.text, fontFamily: 'Noto Sans KR' }
     }]
   });
 
@@ -275,7 +275,7 @@ function renderCorrelations(data) {
       formatter: function(params) {
         const d = items[params[0].dataIndex];
         return `<b style="color:${COLORS.cyan}">${d.labels[0]} ↔ ${d.labels[1]}</b><br/>
-                <span style="font-family:JetBrains Mono;font-size:14px">Correlation: <b>${d.value > 0 ? '+' : ''}${d.value}</b></span><br/>
+                <span style="font-family:Noto Sans KR,sans-serif;font-size:14px">Correlation: <b>${d.value > 0 ? '+' : ''}${d.value}</b></span><br/>
                 <div style="margin-top:4px;color:#94A3B8;font-size:11px">${d.status}: ${d.meaning}</div>`;
       }
     },
@@ -283,14 +283,14 @@ function renderCorrelations(data) {
     xAxis: {
       type: 'value', min: -1, max: 1, interval: 0.5,
       axisLine: { show: false },
-      axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10 },
+      axisLabel: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10 },
       splitLine: { lineStyle: { color: theme.grid, type: 'dashed' } }
     },
     yAxis: {
       type: 'category', data: labels, inverse: true,
       axisLine: { lineStyle: { color: theme.axis } },
       axisTick: { show: false },
-      axisLabel: { color: theme.text, fontSize: 11, fontFamily: 'JetBrains Mono', margin: 15 }
+      axisLabel: { color: theme.text, fontSize: 11, fontFamily: 'Noto Sans KR', margin: 15 }
     },
     series: [{
       type: 'bar',
@@ -307,7 +307,7 @@ function renderCorrelations(data) {
       label: {
         show: true,
         position: 'right',
-        fontFamily: 'JetBrains Mono',
+        fontFamily: 'Noto Sans KR',
         fontWeight: 'bold',
         fontSize: 12,
         formatter: p => (p.value > 0 ? '+' : '') + p.value.toFixed(2),
@@ -358,7 +358,7 @@ function renderRegime(data) {
           return `- ${s.name}: ${s.value} (${s.assessment})`;
         }).join('<br/>');
         return `<b style="color:${COLORS.cyan}">${regime.label}</b><br/>
-                <span style="font-family:JetBrains Mono">Risk Score: <b>${score}</b>/100</span><br/>
+                <span style="font-family:Noto Sans KR,sans-serif">Risk Score: <b>${score}</b>/100</span><br/>
                 ${lines ? `<div style="margin-top:6px;color:#94A3B8;font-size:11px">${lines}</div>` : ''}`;
       }
     },
@@ -415,7 +415,7 @@ function renderRegime(data) {
         axisTick: { distance: -18, length: 6, lineStyle: { color: dark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)', width: 1 } },
         splitLine: { distance: -20, length: 10, lineStyle: { color: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.15)', width: 1 } },
         axisLabel: { 
-          distance: -40, color: dark ? '#94A3B8' : '#64748B', fontSize: 9, fontFamily: 'JetBrains Mono',
+          distance: -40, color: dark ? '#94A3B8' : '#64748B', fontSize: 9, fontFamily: 'Noto Sans KR',
           formatter: function(v) {
             return v % 25 === 0 ? v : '';
           }
@@ -430,14 +430,14 @@ function renderRegime(data) {
               fontSize: 16,
               fontWeight: 700,
               color: theme.text,
-              fontFamily: 'Orbitron',
+              fontFamily: 'Noto Sans KR',
               letterSpacing: 1
             },
             score: {
               fontSize: 11,
               fontWeight: 500,
               color: '#94A3B8',
-              fontFamily: 'JetBrains Mono',
+              fontFamily: 'Noto Sans KR',
               padding: [4, 0, 0, 0]
             },
           }
@@ -460,7 +460,7 @@ function renderRegime(data) {
         style: {
           text: 'Regime',
           fill: dark ? '#94A3B8' : '#475569',
-          font: '500 11px JetBrains Mono',
+          font: '500 11px "Noto Sans KR"',
           letterSpacing: 0.5,
           opacity: 0.9,
         }
@@ -504,9 +504,9 @@ function renderSingleSectorChart(chartId, items) {
         const m = month1[idx];
         const spread = (w != null && m != null) ? (w - m) : null;
         return `<b style="color:${COLORS.cyan}">${name}</b><br/>
-                <span style="font-family:JetBrains Mono">1주: <b>${w != null ? (w > 0 ? '+' : '') + w.toFixed(2) + '%' : '-'}</b></span><br/>
-                <span style="font-family:JetBrains Mono">1개월: <b>${m != null ? (m > 0 ? '+' : '') + m.toFixed(2) + '%' : '-'}</b></span><br/>
-                <span style="font-family:JetBrains Mono;color:#94A3B8">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
+                <span style="font-family:Noto Sans KR,sans-serif">1주: <b>${w != null ? (w > 0 ? '+' : '') + w.toFixed(2) + '%' : '-'}</b></span><br/>
+                <span style="font-family:Noto Sans KR,sans-serif">1개월: <b>${m != null ? (m > 0 ? '+' : '') + m.toFixed(2) + '%' : '-'}</b></span><br/>
+                <span style="font-family:Noto Sans KR,sans-serif;color:#94A3B8">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
       }
     },
         legend: {
@@ -514,14 +514,14 @@ function renderSingleSectorChart(chartId, items) {
             { name: '1주', itemStyle: { color: COLORS.primary } },
             { name: '1개월', itemStyle: { color: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)' } }
           ],
-          textStyle: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 11 },
+          textStyle: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 11 },
           top: 0, right: 10, icon: 'roundRect'
         },
         grid: { left: '4%', right: '14%', top: '15%', bottom: '5%', containLabel: true },
         xAxis: {
           type: 'value',
           axisLine: { show: false },
-          axisLabel: { color: theme.text, fontFamily: 'JetBrains Mono', fontSize: 10, formatter: '{value}%' },
+          axisLabel: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 10, formatter: '{value}%' },
           splitLine: { lineStyle: { color: theme.grid, type: 'dashed' } }
         },
         yAxis: {
@@ -564,7 +564,7 @@ function renderSingleSectorChart(chartId, items) {
             z: 2,
         label: {
           show: true, position: 'right',
-          fontFamily: 'JetBrains Mono', fontSize: 11, fontWeight: 'bold',
+          fontFamily: 'Noto Sans KR', fontSize: 11, fontWeight: 'bold',
           color: theme.text,
           formatter: p => `${p.value > 0 ? '+' : ''}${p.value.toFixed(1)}%`,
           distance: 10

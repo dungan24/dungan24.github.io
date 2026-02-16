@@ -1,0 +1,31 @@
+[colors]
+  [colors.regime]
+    RISK_ON = "#4ade80"
+    CAUTIOUS = "#fbbf24"
+    RISK_OFF = "#f87171"
+    PANIC = "#ef4444"
+  [colors.regime_rgb]
+    RISK_ON = "74 222 128"
+    CAUTIOUS = "251 191 36"
+    RISK_OFF = "248 113 113"
+    PANIC = "239 68 68"
+
+[sections]
+  news = "주요 뉴스"
+  calendar = ["주요 일정", "오늘의 일정", "이벤트 캘린더"]
+  key_data = "핵심 수치"
+  sector = "섹터 상대강도"
+
+[labels]
+  original_source = "원문:"
+  en_tag = "EN"
+  kr_tag = "KR"
+  market_calendar_title = "Market Calendar"
+  upcoming_events_title = "주요 일정 (최근)"
+  empty_events = "표시할 주요 일정 데이터가 없습니다."
+  empty_filtered = "필터 조건에 맞는 일정이 없습니다."
+  holiday_label = "🇰🇷 KR 휴장 (국내 증시 휴장)"
+
+[calendar]
+  timezone = "Asia/Seoul"
+  weekdays = ["일", "월", "화", "수", "목", "금", "토"]

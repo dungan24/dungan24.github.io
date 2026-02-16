@@ -1,4 +1,4 @@
-<footer id="site-footer" class="print:hidden" style="margin-top: 120px; padding: 80px 0 60px; background: transparent; position: relative;">
+<footer id="site-footer" class="print:hidden">
   
   <div class="mp-terminal-footer">
     <div class="mp-hud-edge mp-hud-tl"></div>
@@ -11,7 +11,7 @@
       <div class="mp-f-brand">
         <div class="mp-f-logo">Market Pulse</div>
         <div class="mp-f-clock" id="mp-footer-clock">SYS_TIME: 00:00:00</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #94A3B8; letter-spacing: 0.1em; line-height: 1.8;">
+        <div class="mp-f-metadata">
           // PRECISION_INTEL_TERM_V4.2<br>
           // AUTH_LEVEL: ROOT_ACCESS<br>
           // ENCRYPTION: AES_256_ACTIVE
@@ -20,23 +20,23 @@
 
       <!-- System Status -->
       <div class="mp-f-metrics">
-        <div style="font-size: 10px; color: #7C3AED; font-weight: 800; margin-bottom: 15px; letter-spacing: 0.2em;">[ CORE_METRICS ]</div>
+        <div class="mp-f-metrics-label">[ CORE_METRICS ]</div>
         <div class="mp-f-metric-item"><span>KERNEL</span> <span>Blowfish_v4.8</span></div>
-        <div class="mp-f-metric-item"><span>NETWORK</span> <span style="color: #10B981;">STABLE</span></div>
-        <div class="mp-f-metric-item"><span>UPLINK</span> <span style="color: #00F0FF;">1.2GBPS</span></div>
+        <div class="mp-f-metric-item"><span>NETWORK</span> <span class="mp-f-status-stable">STABLE</span></div>
+        <div class="mp-f-metric-item"><span>UPLINK</span> <span class="mp-f-status-uplink">1.2GBPS</span></div>
         <div class="mp-f-metric-item"><span>LOCALE</span> <span>KR_SEOUL</span></div>
       </div>
 
       <!-- Copyright & Links -->
       <div class="mp-f-links">
-        <div style="font-family: 'Orbitron', sans-serif; font-size: 12px; color: #1E293B; letter-spacing: 0.1em; margin-bottom: 5px;" class="dark:text-white">
+        <div class="mp-f-copyright dark:text-white">
           &copy; 2026 MARKET PULSE
         </div>
         <a href="#" class="mp-f-link">/SECURITY_PROTOCOL</a>
         <a href="#" class="mp-f-link">/DATA_CONSENT</a>
         <a href="#" class="mp-f-link">/API_DOCUMENTATION</a>
-        <div style="margin-top: 15px; opacity: 0.4;">
-           <svg width="80" height="20" style="float: right;">
+        <div class="mp-f-visual-root">
+           <svg width="80" height="20" class="mp-f-visual-svg">
               <rect x="0" y="5" width="4" height="10" fill="#7C3AED"></rect>
               <rect x="8" y="2" width="4" height="16" fill="#7C3AED"></rect>
               <rect x="16" y="8" width="4" height="7" fill="#7C3AED"></rect>
@@ -49,6 +49,7 @@
       </div>
     </div>
   </div>
+
 
   {{/* Keep essential scripts */}}
   {{ $jsProcess := resources.Get "js/process.js" }}

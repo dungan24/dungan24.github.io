@@ -42,7 +42,9 @@ try {
   $extendFooterPath = "layouts/partials/extend-footer.html"
   if (Test-Path -Path $extendFooterPath -PathType Leaf) {
     $expectedLoaderOrder = @(
+      "js/mp-config.js",
       "js/briefing/dom-utils.js",
+
       "js/briefing/section-wrapping.js",
       "js/briefing/regime-hero.js",
       "js/briefing/collapsible.js",

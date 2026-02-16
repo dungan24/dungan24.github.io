@@ -19,8 +19,8 @@
     if (statusContainer) statusContainer.dataset.label = 'Error';
     if (loadingUI) {
       loadingUI.innerHTML = '<div style="text-align:center;color:#FF3366">'
-        + '<div style="font-weight:700;margin-bottom:0.5rem;font-family:Orbitron,sans-serif;letter-spacing:0.1em">[ DATA_UNAVAILABLE ]</div>'
-        + '<div style="font-size:12px;opacity:0.9;font-family:JetBrains Mono,monospace;color:#64748B">' + msg + '</div></div>';
+        + '<div style="font-weight:700;margin-bottom:0.5rem;font-family:Noto Sans KR,sans-serif;letter-spacing:0.1em">[ DATA_UNAVAILABLE ]</div>'
+        + '<div style="font-size:12px;opacity:0.9;font-family:Noto Sans KR,sans-serif;color:#64748B">' + msg + '</div></div>';
     }
   }
 
