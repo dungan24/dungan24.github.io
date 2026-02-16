@@ -3,8 +3,20 @@ name: Quality Gate
 on:
   pull_request:
     branches: ["main"]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.github/**'
+      - '!.github/workflows/quality-gate.yml' # 이 파일 자체 수정은 체크
+      - '!content/**' # 컨텐츠 수정은 빌드 체크 필요
   push:
     branches: ["main"]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.github/**'
+      - '!.github/workflows/quality-gate.yml'
+      - '!content/**'
   workflow_dispatch:
 
 permissions:
