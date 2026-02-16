@@ -4,25 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
   var content = document.querySelector('.article-content') || document.querySelector('.prose');
   var ns = window.MPBriefing || {};
   var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  var config = window.MP_CONFIG || {};
 
-  var REGIME_COLOR_MAP = {
-    'RISK_ON': '#4ade80',
-    'CAUTIOUS': '#fbbf24',
-    'RISK_OFF': '#f87171',
-    'PANIC': '#ef4444'
-  };
-  var REGIME_COLOR_RGB_MAP = {
-    'RISK_ON': '74 222 128',
-    'CAUTIOUS': '251 191 36',
-    'RISK_OFF': '248 113 113',
-    'PANIC': '239 68 68'
-  };
+  var REGIME_COLOR_MAP = config.colors.regime;
+  var REGIME_COLOR_RGB_MAP = config.colors.regime_rgb;
 
   function findSectionByTitle(titleText) {
     if (typeof ns.findSectionByTitle === 'function') {
       return ns.findSectionByTitle(content, titleText);
     }
     return null;
+  }
+
+  function findSection(aliases) {
+    if (!aliases) return null;
+    if (Array.isArray(aliases)) {
+      for (var i = 0; i < aliases.length; i++) {
+        var s = findSectionByTitle(aliases[i]);
+        if (s) return s;
+      }
+      return null;
+    }
+    return findSectionByTitle(aliases);
   }
 
   if (typeof ns.colorizeTableCells === 'function') ns.colorizeTableCells(content);
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof ns.enableCollapsibleSections === 'function') ns.enableCollapsibleSections(content);
     if (typeof ns.enableHashAutoOpen === 'function') ns.enableHashAutoOpen();
 
-    var newsSection = findSectionByTitle('\uC8FC\uC694 \uB274\uC2A4');
+    var newsSection = findSection(config.sections.news);
     if (newsSection && typeof ns.transformNewsSection === 'function') {
       try {
         ns.transformNewsSection(newsSection);
@@ -64,10 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    var calendarSection =
-      findSectionByTitle('\uC8FC\uC694 \uC77C\uC815') ||
-      findSectionByTitle('\uC624\uB298\uC758 \uC77C\uC815') ||
-      findSectionByTitle('\uC774\uBCA4\uD2B8 \uCE98\uB9B0\uB354');
+    var calendarSection = findSection(config.sections.calendar);
     if (calendarSection && convertScheduleToCalendar) {
       if (typeof ns.transformCalendarSection === 'function') {
         ns.transformCalendarSection(calendarSection, convertScheduleToCalendar);
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    var keyDataSection = findSectionByTitle('\uD575\uC2EC \uC218\uCE58');
+    var keyDataSection = findSection(config.sections.key_data);
     if (keyDataSection && typeof ns.convertTablesToTickerCards === 'function') {
       try {
         ns.convertTablesToTickerCards(keyDataSection);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    var sectorSection = findSectionByTitle('\uC139\uD130 \uC0C1\uB300\uAC15\uB3C4');
+    var sectorSection = findSection(config.sections.sector);
     if (sectorSection && typeof ns.convertTablesToTickerCards === 'function') {
       try {
         var sectorTarget = sectorSection.querySelector('.mp-collapsible') || sectorSection;

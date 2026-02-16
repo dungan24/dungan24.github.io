@@ -5,7 +5,12 @@
 
   ns.createRenderer = function(parser, model) {
     function convertScheduleToCalendar(section) {
+      var config = window.MP_CONFIG || {};
+      var labels = config.labels || {};
+      var calConfig = config.calendar || {};
+
       var hasChartPayload = parser.hasChartKeyEventsPayload();
+
       var events = parser.parseKeyEventsFromChartData();
 
       if (!hasChartPayload && events.length === 0) {
@@ -27,15 +32,16 @@
       var now = parser.getKstNow();
       var anchor = model.getMonthAnchor(events, now);
       var cells = model.buildCalendarModel(anchor.year, anchor.month, events, now);
-      var weekday = ['일', '월', '화', '수', '목', '금', '토'];
+      var weekday = calConfig.weekdays || ['일', '월', '화', '수', '목', '금', '토'];
 
       var calendar = document.createElement('div');
       calendar.className = 'mp-calendar mp-glass-card';
 
       var title = document.createElement('div');
       title.className = 'mp-calendar__title mp-section-label';
-      title.textContent = 'Market Calendar — ' + anchor.year + '.' + String(anchor.month).padStart(2, '0');
+      title.textContent = (labels.market_calendar_title || 'Market Calendar') + ' — ' + anchor.year + '.' + String(anchor.month).padStart(2, '0');
       calendar.appendChild(title);
+
 
       var grid = document.createElement('div');
       grid.className = 'mp-calendar__grid';
@@ -67,10 +73,11 @@
         var html = '<div class="mp-calendar__tooltip-header">' + c.key + '</div>';
         
         if (c.isHoliday) {
-          html += '<div class="mp-calendar__tooltip-holiday">🇰🇷 KR 휴장 (국내 증시 휴장)</div>';
+          html += '<div class="mp-calendar__tooltip-holiday">' + (labels.holiday_label || '🇰🇷 KR 휴장 (국내 증시 휴장)') + '</div>';
         }
 
         html += '<div class="mp-calendar__tooltip-list">';
+
         c.tooltipData.events.forEach(function(ev) {
           html += '<div class="mp-calendar__tooltip-item is-' + ev.importance + '">' +
                   '<div class="mp-calendar__tooltip-top">' +
@@ -150,10 +157,11 @@
 
       var upcomingTitle = document.createElement('div');
       upcomingTitle.className = 'mp-upcoming__title';
-      upcomingTitle.textContent = '주요 일정 (최근)';
+      upcomingTitle.textContent = labels.upcoming_events_title || '주요 일정 (최근)';
       upcomingWrap.appendChild(upcomingTitle);
 
       var upcomingList = document.createElement('div');
+
       upcomingList.className = 'mp-upcoming__list';
 
       var filterState = {
@@ -225,7 +233,7 @@
         if (upcomingEvents.length === 0) {
           var empty = document.createElement('div');
           empty.className = 'mp-upcoming__empty';
-          empty.textContent = '표시할 주요 일정 데이터가 없습니다.';
+          empty.textContent = labels.empty_events || '표시할 주요 일정 데이터가 없습니다.';
           upcomingList.appendChild(empty);
           return;
         }
@@ -238,10 +246,11 @@
         if (visible.length === 0) {
           var emptyFiltered = document.createElement('div');
           emptyFiltered.className = 'mp-upcoming__empty';
-          emptyFiltered.textContent = '필터 조건에 맞는 일정이 없습니다.';
+          emptyFiltered.textContent = labels.empty_filtered || '필터 조건에 맞는 일정이 없습니다.';
           upcomingList.appendChild(emptyFiltered);
           return;
         }
+
 
         var lastDateStr = '';
 

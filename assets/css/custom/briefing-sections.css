@@ -1,7 +1,12 @@
 .briefing-section ul:not(.mp-regime-signals) {
   list-style: none !important;
+  list-style-type: none !important;
   padding-left: 0 !important;
   margin: 1.5rem 0 !important;
+}
+
+.briefing-section ul:not(.mp-regime-signals) > li::marker {
+  content: "" !important;
 }
 
 .briefing-section ul:not(.mp-regime-signals) li {
@@ -29,36 +34,10 @@
   box-shadow: 0 0 8px var(--mp-neon-purple);
 }
 
-/* === Specialized Opinion Action Item List (Mini Cards) === */
-.briefing-section--opinion ul > li {
-  padding: 1rem 1.25rem !important; /* Balanced padding without bullet */
-  border-left: 3px solid var(--mp-neon-purple) !important;
-  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
-  background: rgba(124, 58, 237, 0.06) !important;
-  margin-bottom: 0.75rem !important;
-  border-bottom: none !important;
-  line-height: 1.6 !important;
-}
-
-/* Hide bullets for Mini Cards */
-.briefing-section--opinion ul > li::before {
-  content: none !important;
-  display: none !important;
-}
-
-
-
-.briefing-section--opinion ul > li:hover {
-  background: rgba(124, 58, 237, 0.12) !important;
-  border-left-color: var(--mp-neon-cyan) !important;
-}
-
-
-
 /* Strong Text within Lists: Semantic Tags */
 .prose li strong {
   color: var(--mp-neon-cyan) !important;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-weight: 700;
   background: rgba(0, 240, 255, 0.1);
   padding: 2px 6px;
@@ -90,20 +69,11 @@
   border-left-color: rgba(0, 240, 255, 0.1);
 }
 
-.briefing-section--opinion p {
-  border-left-color: rgba(124, 58, 237, 0.1);
-}
-
 /* Strong Text within Paragraphs: Neon Highlights */
 .briefing-section p strong {
   color: var(--mp-neon-cyan) !important;
   font-weight: 700;
   text-shadow: 0 0 8px rgba(0, 240, 255, 0.25);
-}
-
-.briefing-section--opinion p strong {
-  color: var(--mp-neon-purple) !important;
-  text-shadow: 0 0 8px rgba(124, 58, 237, 0.25);
 }
 
 /* Light Mode Paragraph Overrides */
@@ -117,15 +87,6 @@
   text-shadow: none !important;
   background: linear-gradient(to top, rgba(165, 243, 252, 0.4) 40%, transparent 40%);
 }
-
-:root:not(.dark) .briefing-section--opinion p strong {
-  color: #6D28D9 !important; /* Purple-700 */
-  text-shadow: none !important;
-  background: linear-gradient(to top, rgba(221, 214, 254, 0.4) 40%, transparent 40%);
-}
-
-
-
 
 /* ===== Post Page - Regime Hero & Enhanced Layout ===== */
 
@@ -181,7 +142,7 @@
 
 .mp-collapse-toggle__icon {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.85rem;
   color: rgb(var(--color-neutral-400));
   transition: transform 0.2s ease;
@@ -246,6 +207,9 @@
 }
 
 .mp-news-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   background: var(--mp-glass-bg);
   -webkit-backdrop-filter: var(--mp-glass-blur);
   backdrop-filter: var(--mp-glass-blur);
@@ -256,6 +220,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
+
 .mp-news-card:hover {
   transform: translateY(-1px);
   border-color: rgba(0, 240, 255, 0.4);
@@ -264,7 +229,7 @@
 
 .mp-news-card__source {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -278,12 +243,12 @@
 }
 
 .mp-news-card__headline {
-  font-weight: 600;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 0.4rem;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #E2E8F0;
 }
+
 
 .mp-news-card__headline a { color: inherit; text-decoration: none; }
 .mp-news-card__headline a:hover {
@@ -293,10 +258,11 @@
 }
 
 .mp-news-card__meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #64748B;
+  font-family: var(--mp-font-sans);
+  font-size: 0.75rem;
+  color: #94A3B8;
 }
+
 
 .mp-news-card__excerpt {
   margin-top: 0.75rem;
@@ -311,7 +277,7 @@
 
 .mp-news-card__kr-tag {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.55rem;
   font-weight: 700;
   color: var(--mp-neon-cyan);
@@ -340,15 +306,19 @@
 }
 
 .mp-news-card__original {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: #64748B;
-  margin-bottom: 0.4rem;
+  font-style: italic;
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
   line-height: 1.4;
 }
 
+
 .mp-news-card__en-tag {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.55rem;
   font-weight: 700;
   color: var(--mp-neon-purple);
@@ -421,7 +391,7 @@
 }
 
 .mp-more-link {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--mp-font-display);
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--mp-neon-cyan);
@@ -440,7 +410,7 @@
 
 /* --- News Section Sub-Headers --- */
 .mp-news-section-label {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--mp-font-display);
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--mp-neon-cyan);
@@ -492,7 +462,7 @@
 }
 
 .mp-ticker-flow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.7rem;
   color: rgb(var(--color-neutral-400));
   min-width: 48px;
@@ -507,6 +477,37 @@
   min-width: 0;
 }
 
+@media (max-width: 1024px) {
+  .briefing-section .mp-ticker-groups {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .briefing-section .mp-ticker-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .briefing-section .mp-ticker-row {
+    grid-template-columns: minmax(0, 1fr) auto minmax(56px, max-content) minmax(64px, max-content);
+    column-gap: 0.45rem;
+  }
+
+  .briefing-section .mp-ticker-price,
+  .briefing-section .mp-ticker-change,
+  .briefing-section .mp-ticker-flow {
+    min-width: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .briefing-section .mp-ticker-row {
+    grid-template-columns: minmax(0, 1fr) auto 52px 56px;
+    column-gap: 0.35rem;
+  }
+}
+
 .mp-status-badge {
   display: inline-flex;
   align-items: center;
@@ -514,7 +515,7 @@
   gap: 0.4rem;
   padding: 0.16rem 0.52rem;
   border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -530,7 +531,7 @@
 }
 
 .mp-status-label {
-  font-family: 'Pretendard Variable', 'Pretendard', 'SUIT Variable', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  font-family: var(--mp-font-sans);
   font-size: 0.8rem;
   font-weight: 650;
   letter-spacing: -0.01em;
@@ -598,4 +599,50 @@
 .mp-assessment-cell {
   white-space: nowrap;
 }
+
+/* --- Ticker Shortcode Card Style (Replaces Inline Styles) --- */
+.mp-ticker-row.is-card {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(124, 58, 237, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.mp-ticker-row.is-card .mp-ticker-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #E2E8F0;
+}
+
+.mp-ticker-row.is-card .mp-ticker-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.mp-ticker-row.is-card .mp-ticker-price {
+  font-family: var(--mp-font-sans); /* Overrides default mono */
+  font-size: 0.85rem;
+  color: #CBD5E1;
+}
+
+.mp-ticker-row.is-card .mp-ticker-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mp-ticker-row.is-card .mp-ticker-change {
+  font-size: 0.75rem;
+}
+
+.mp-ticker-row.is-card .mp-ticker-flow {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
 

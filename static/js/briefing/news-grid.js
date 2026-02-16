@@ -6,6 +6,10 @@
   ns.transformNewsSection = function(newsSection) {
     if (!newsSection) return;
 
+    var config = window.MP_CONFIG || {};
+    var labels = config.labels || {};
+    var originalSourcePrefix = labels.original_source || '원문:';
+
     var subHeaders = newsSection.querySelectorAll('h3');
     var newsContainer = document.createElement('div');
 
@@ -39,9 +43,9 @@
 
         var textContent = liClone.textContent || '';
         var originalHeadline = '';
-        var originalIdx = textContent.indexOf('\uC6D0\uBB38:');
+        var originalIdx = textContent.indexOf(originalSourcePrefix);
         if (originalIdx !== -1) {
-          var afterOriginal = textContent.substring(originalIdx + 3).trim();
+          var afterOriginal = textContent.substring(originalIdx + originalSourcePrefix.length).trim();
           var nextMeta = afterOriginal.search(/[\s\S]*?\u00B7/);
           if (nextMeta === -1) {
             originalHeadline = afterOriginal;
@@ -64,9 +68,9 @@
         card.innerHTML =
           (source ? '<div class="mp-news-card__source">' + source + '</div>' : '') +
           '<div class="mp-news-card__headline"><a href="' + href + '" target="_blank" rel="noopener">' + headline + '</a></div>' +
-          (originalHeadline ? '<div class="mp-news-card__original"><span class="mp-news-card__en-tag">EN</span>' + originalHeadline + '</div>' : '') +
+          (originalHeadline ? '<div class="mp-news-card__original"><span class="mp-news-card__en-tag">' + (labels.en_tag || 'EN') + '</span>' + originalHeadline + '</div>' : '') +
           '<div class="mp-news-card__meta">' + [time, category].filter(Boolean).join(' \u00B7 ') + '</div>' +
-          (excerpt ? '<div class="mp-news-card__excerpt"><span class="mp-news-card__kr-tag">KR</span>' + excerpt + '</div>' : '');
+          (excerpt ? '<div class="mp-news-card__excerpt"><span class="mp-news-card__kr-tag">' + (labels.kr_tag || 'KR') + '</span>' + excerpt + '</div>' : '');
 
         grid.appendChild(card);
       });

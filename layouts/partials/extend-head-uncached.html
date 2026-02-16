@@ -6,7 +6,12 @@
   {{ end }}
 {{ end }}
 
+<script>
+  window.__MP_CONFIG = {{ index .Site.Params "market_pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
+</script>
+
 {{ if .Params.regime }}
+
 <script>
   window.__MP_PAGE = {{ dict "regime" .Params.regime "regimeIcon" .Params.regimeIcon "summary" .Params.summary "chartData" .Params.chartData | jsonify | safeJS }};
 </script>

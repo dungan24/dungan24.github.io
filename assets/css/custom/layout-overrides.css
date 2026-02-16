@@ -30,14 +30,16 @@
     min-width: 60px;
   }
 }
-/* Briefing sections: break out of prose max-width */
-.article-content .briefing-section {
-  max-width: none;
-  width: calc(100% + 6rem);
-  margin-left: -3rem;
-  margin-right: -3rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+/* Briefing sections: break out of prose max-width (large screens only) */
+@media (min-width: 1024px) {
+  .article-content .briefing-section {
+    max-width: none;
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Briefing section tables: full width, auto column sizing */
@@ -79,6 +81,12 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  .briefing-section table {
+    display: block !important;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
   /* Scroll fade hint on right edge */
   .briefing-section {
     --table-fade: linear-gradient(to right, transparent 85%, rgba(10, 10, 26, 0.85));
@@ -93,7 +101,7 @@
     padding: 0.5rem 0.6rem;
   }
 
-  /* Briefing section breakout 해제 (모바일) */
+  /* Briefing section breakout 해제 (모바일/태블릿) */
   .article-content .briefing-section {
     width: auto;
     margin-left: 0;
@@ -101,26 +109,6 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-}
-
-/* Briefing section h3 — cyberpunk neon style */
-.briefing-section h3 {
-  font-family: 'Exo 2', sans-serif;
-  color: #B8C5D6 !important;
-  font-size: 1.1rem !important;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-top: 1.5em !important;
-  margin-bottom: 0.5em !important;
-  text-shadow: none;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--mp-neon-purple);
-}
-
-:root:not(.dark) .briefing-section h3 {
-  color: #334155 !important;
-  text-shadow: none;
-  border-left-color: var(--mp-neon-purple);
 }
 
 /* ========== Regime Panel — Cyberpunk HUD ========== */
@@ -176,7 +164,7 @@
 }
 
 .mp-regime-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -231,7 +219,7 @@
 }
 
 .mp-signal-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.85rem;
   font-weight: 600;
   color: #E2E8F0;
@@ -240,7 +228,7 @@
 }
 
 .mp-signal-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.7rem;
   padding: 2px 10px;
   border-radius: 3px;
@@ -502,7 +490,7 @@
 .briefing-section--opinion blockquote::before {
   content: '// TL;DR';
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -554,16 +542,21 @@
   color: #CBD5E1;
 }
 
-.briefing-section--opinion ul > li::before {
+.briefing-section.briefing-section--opinion ul:not(.mp-regime-signals) > li::before {
   content: '\25B8';
   position: absolute;
   left: 0.5rem;
+  top: 0.1rem;
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
   color: var(--mp-neon-purple);
   font-size: 0.75rem;
   line-height: 1.6;
 }
 
-.briefing-section--opinion ul > li::marker {
+.briefing-section.briefing-section--opinion ul:not(.mp-regime-signals) > li::marker {
   content: '' !important;
 }
 

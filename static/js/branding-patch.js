@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerTitle = document.querySelector('.main-menu > a.text-base');
   if (headerTitle) {
     headerTitle.textContent = 'MARKET PULSE';
-    headerTitle.style.fontFamily = "'Orbitron', sans-serif";
+    headerTitle.style.fontFamily = "'Noto Sans KR', sans-serif";
     headerTitle.style.textTransform = "uppercase";
     headerTitle.style.fontWeight = "700";
     headerTitle.style.letterSpacing = "0.05em";

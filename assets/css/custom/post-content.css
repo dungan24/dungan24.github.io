@@ -21,7 +21,7 @@
   left: 10px;
   background: var(--mp-neon-purple);
   color: white;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono);
   font-size: 0.65rem;
   font-weight: 800;
   padding: 2px 8px;
@@ -40,7 +40,7 @@
 
 /* H3/H4: Section Identification */
 .briefing-section h3 {
-  font-family: 'Orbitron', sans-serif !important;
+  font-family: var(--mp-font-display) !important;
   font-size: 1.15rem !important;
   color: var(--mp-neon-cyan) !important;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 }
 
 .briefing-section h4 {
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: var(--mp-font-mono) !important;
   font-size: 0.95rem !important;
   color: var(--mp-neon-purple) !important;
   margin-top: 1.75rem !important;

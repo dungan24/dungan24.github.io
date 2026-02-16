@@ -51,11 +51,12 @@
 :root:not(.dark) .market-chart-card,
 :root:not(.dark) .mp-ticker-group,
 :root:not(.dark) .mp-news-card {
-  background: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(148, 163, 184, 0.2) !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
-  backdrop-filter: blur(8px) !important;
+  background: var(--mp-glass-bg) !important;
+  border-color: var(--mp-glass-border) !important;
+  box-shadow: var(--mp-shadow-sm) !important;
+  backdrop-filter: var(--mp-glass-blur) !important;
 }
+
 
 /* Fix text colors in light mode */
 :root:not(.dark) .mp-briefing-card__title,
