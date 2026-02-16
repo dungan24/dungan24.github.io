@@ -53,6 +53,26 @@ jobs:
       - name: Install JS deps
         run: npm ci
 
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
+
       - name: Run Quality Gate (audit + architecture + build)
         shell: pwsh
         run: pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+
+      - name: Start Preview Server
+        shell: bash
+        run: |
+          hugo server --port 1314 --bind 0.0.0.0 &
+          echo "Waiting for server..."
+          # Wait up to 30s for server
+          for i in {1..30}; do
+            curl -s http://localhost:1314 >/dev/null && echo "Server up" && break
+            echo "..."
+            sleep 1
+          done
+
+      - name: Run Smoke Tests (Calendar + UI Viewport)
+        if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'run-smoke') }}
+        shell: pwsh
+        run: pwsh -File tools/agent-preflight.ps1 -RunCalendarSmoke -RunUiViewportSmoke -FailOnFindings

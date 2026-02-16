@@ -1,0 +1,25 @@
+/* === Reading Progress Bar === */
+.mp-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg,
+      var(--regime-color, var(--mp-neon-purple)) 0%,
+      var(--mp-neon-cyan) 100%);
+  box-shadow: 0 0 10px rgba(var(--regime-color-rgb, 124 58 237) / 0.5);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* 라이트 모드 */
+:root:not(.dark) .mp-reading-progress {
+  box-shadow: 0 0 6px rgba(var(--regime-color-rgb, 124 58 237) / 0.3);
+}
+
+/* 홈페이지에서는 숨김 */
+.mp-reading-progress--hidden {
+  display: none;
+}

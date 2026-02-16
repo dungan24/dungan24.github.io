@@ -1,71 +1,95 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const { test } = require('playwright/test');
+const { test, expect } = require('@playwright/test');
 
-const VIEWPORTS = [
-  { name: 'fhd', width: 1920, height: 1080 },
-  { name: 'tablet', width: 768, height: 1024 },
-  { name: 'mobile', width: 390, height: 844 }
-];
+// Basic UI Smoke Tests
+// These tests verify that critical UI elements are rendered and responsive
+// They require the Hugo server to be running (default: http://localhost:1314)
 
-function resolveLatestPreMarketPath() {
-  const postsDir = path.join(process.cwd(), 'content', 'posts');
-  if (!fs.existsSync(postsDir)) {
-    throw new Error(`Posts directory not found: ${postsDir}`);
-  }
+const BASE_URL = process.env.MP_BASE_URL || 'http://localhost:1314';
 
-  const files = fs.readdirSync(postsDir)
-    .filter((name) => /^pre-market-\d{4}-\d{2}-\d{2}\.md$/.test(name))
-    .sort()
-    .reverse();
-
-  if (files.length === 0) {
-    throw new Error('No pre-market post files found for UI checks.');
-  }
-
-  const matched = files[0].match(/\d{4}-\d{2}-\d{2}/);
-  if (!matched) {
-    throw new Error(`Could not parse date from file: ${files[0]}`);
-  }
-
-  return `/posts/pre-market-${matched[0]}/`;
-}
-
-function buildTargetUrl(pathname) {
-  const baseUrl = process.env.MP_BASE_URL || 'http://localhost:1314';
-  return new URL(pathname, baseUrl).toString();
-}
-
-function ensureOutputDir() {
-  const outDir = path.join(process.cwd(), 'docs', 'screenshots', 'ui-checks');
-  fs.mkdirSync(outDir, { recursive: true });
-  return outDir;
-}
-
-async function captureViewports(page, slug) {
-  const outDir = ensureOutputDir();
-
-  for (const viewport of VIEWPORTS) {
-    await page.setViewportSize({ width: viewport.width, height: viewport.height });
-    await page.reload({ waitUntil: 'networkidle' });
-    await page.waitForTimeout(500);
-
-    const fileName = `${slug}-${viewport.name}.png`;
-    await page.screenshot({
-      path: path.join(outDir, fileName),
-      fullPage: true
-    });
-  }
-}
-
-test.describe('ui viewport captures', () => {
-  test('home + latest pre-market', async ({ page }) => {
-    test.setTimeout(120_000);
-
-    await page.goto(buildTargetUrl('/'), { waitUntil: 'networkidle' });
-    await captureViewports(page, 'home');
-
-    await page.goto(buildTargetUrl(resolveLatestPreMarketPath()), { waitUntil: 'networkidle' });
-    await captureViewports(page, 'pre-market');
+test.describe('Market Pulse UI Smoke', () => {
+  
+  test('Homepage loads with critical sections', async ({ page }) => {
+    await page.goto(BASE_URL);
+    
+    // Check Hero
+    await expect(page.locator('.mp-heartbeat-title')).toBeVisible();
+    
+    // Check Ticker Groups
+    const tickers = page.locator('.mp-ticker-groups');
+    await expect(tickers).toBeVisible();
+    
+    // Check Briefing Cards
+    const cards = page.locator('.mp-briefing-card');
+    // Expect at least one card
+    expect(await cards.count()).toBeGreaterThan(0);
   });
+
+  test('Mobile view shows bottom nav', async ({ page }) => {
+    // iPhone 12 viewport
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(BASE_URL);
+    
+    // Check Bottom Nav
+    const bottomNav = page.locator('#mp-mobile-bottom-nav');
+    await expect(bottomNav).toBeVisible();
+    
+    // Check Horizontal Scroll on Cards
+    const cardContainer = page.locator('.mp-briefing-cards');
+    await expect(cardContainer).toHaveCSS('overflow-x', 'auto');
+  });
+
+  test('Desktop view hides bottom nav', async ({ page }) => {
+    // Desktop viewport
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(BASE_URL);
+    
+    const bottomNav = page.locator('#mp-mobile-bottom-nav');
+    await expect(bottomNav).toBeHidden();
+  });
+
+  test('Article page loads with enhancements', async ({ page }) => {
+    await page.goto(BASE_URL);
+    
+    // Click first briefing card
+    const firstCard = page.locator('.mp-briefing-card').first();
+    await expect(firstCard).toBeVisible();
+    await Promise.all([
+      page.waitForURL(/\/posts\//),
+      firstCard.click()
+    ]);
+    
+    // Post hero is shown only when front matter contains regime
+    const hasRegime = await page.evaluate(() => Boolean(window.__MP_PAGE && window.__MP_PAGE.regime));
+    const postHero = page.locator('.mp-post-hero');
+    if (hasRegime) {
+      await expect(postHero).toBeVisible();
+    } else {
+      await expect(postHero).toHaveCount(0);
+    }
+    
+    // Check Reading Progress Bar exists (might be 0 width)
+    const progressBar = page.locator('#mp-reading-progress');
+    // It is injected by JS, wait for it
+    await expect(progressBar).toBeAttached();
+  });
+
+  test('Theme toggle works', async ({ page }) => {
+    await page.goto(BASE_URL);
+    
+    // Check initial state (should be dark by default in our config usually, but check class)
+    // Actually Blowfish defaults to auto or config. We just check if toggle does something.
+    
+    const html = page.locator('html');
+    
+    // Find toggle
+    const toggle = page.locator('#appearance-switcher').first();
+    if (await toggle.isVisible()) {
+      await toggle.click();
+      // Wait for transition class to appear or disappear
+      // Just check if class changed or if transition class was added
+      // Our transition script adds 'theme-transition'
+      await expect(html).toHaveClass(/theme-transition/);
+    }
+  });
+
 });

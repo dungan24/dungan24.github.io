@@ -4,16 +4,16 @@
   var defaultConfig = {
     colors: {
       regime: {
-        RISK_ON: '#4ade80',
-        CAUTIOUS: '#fbbf24',
-        RISK_OFF: '#f87171',
-        PANIC: '#ef4444'
+        RISK_ON: '#00FF88',
+        CAUTIOUS: '#FFD600',
+        RISK_OFF: '#FF3366',
+        PANIC: '#FF0040'
       },
       regime_rgb: {
-        RISK_ON: '74 222 128',
-        CAUTIOUS: '251 191 36',
-        RISK_OFF: '248 113 113',
-        PANIC: '239 68 68'
+        RISK_ON: '0 255 136',
+        CAUTIOUS: '255 214 0',
+        RISK_OFF: '255 51 102',
+        PANIC: '255 0 64'
       }
     },
     sections: {

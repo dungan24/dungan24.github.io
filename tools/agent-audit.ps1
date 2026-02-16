@@ -199,7 +199,54 @@ try {
   }
   Write-Host ""
 
+  # T-806: Check for unlinked assets
+  Write-Host "[5/5] Unlinked JS/CSS Assets (Unreferenced in layouts)"
+  $unlinkedFindings = @()
+  
+  # Scan only our custom assets
+  $assetCandidates = @($trackedExistingFilesOnly | Where-Object { 
+    ($_ -match "^static/js/.*\.js$" -or $_ -match "^assets/css/custom/.*\.css$") -and
+    $_ -notmatch "market-charts-loader" -and # Exception: shortcode
+    $_ -notmatch "footer-clock" # Exception: footer
+  })
+
+  # Very basic grep across layouts to find references
+  # We look for partial filename match
+  foreach ($asset in $assetCandidates) {
+    $fileName = Split-Path $asset -Leaf
+    $baseName = $fileName -replace "\.(js|css)$", ""
+    
+    # We grep all layout files
+    $grep = git grep -q --fixed-strings $fileName layouts/
+    if ($LASTEXITCODE -ne 0) {
+       # Try finding by js/name.js or css/custom/name.css short path used in hugo
+       $shortPath = ""
+       if ($asset -match "^static/js/(.*)$") { $shortPath = $matches[1] }
+       if ($asset -match "^assets/(.*)$") { $shortPath = $matches[1] }
+       
+       if ($shortPath) {
+         git grep -q --fixed-strings $shortPath layouts/
+         if ($LASTEXITCODE -ne 0) {
+            $unlinkedFindings += $asset
+         }
+       } else {
+         $unlinkedFindings += $asset
+       }
+    }
+  }
+
+  if ($unlinkedFindings.Count -eq 0) {
+    Write-Host "  OK: no findings."
+  } else {
+    $unlinkedFindings | ForEach-Object { Write-Host "  - Unlinked Asset? $_" }
+    # Only WARN, do not count towards failure yet as false positives are possible with dynamic loading
+    Write-Host "  (Note: Verify if these are truly unused or dynamically loaded)"
+  }
+  Write-Host ""
+
   $findingCount = $largeBinaryFindings.Count + $largeSourceFindings.Count + $inlineTemplateFindings.Count + $scratchTracked.Count
+  # $unlinkedFindings intentionally excluded from failure count for now to be non-blocking
+  
   if ($findingCount -eq 0) {
     Write-Host "Result: PASS (no findings)"
     exit 0

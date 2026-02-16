@@ -4,11 +4,15 @@
   var root = document.getElementById('mp-ticker-groups');
   if (!root) return;
 
+  var config = window.MP_CONFIG || {};
+  var c = (config.colors && config.colors.regime) || {};
+  var r = (config.colors && config.colors.regime_rgb) || {};
+
   var REGIME_COLORS = {
-    'RISK_ON': { hex: '#00FF88', rgb: '0 255 136' },
-    'CAUTIOUS': { hex: '#FFD600', rgb: '255 214 0' },
-    'RISK_OFF': { hex: '#FF3366', rgb: '255 51 102' },
-    'PANIC': { hex: '#FF0040', rgb: '255 0 64' }
+    'RISK_ON': { hex: c.RISK_ON || '#00FF88', rgb: r.RISK_ON || '0 255 136' },
+    'CAUTIOUS': { hex: c.CAUTIOUS || '#FFD600', rgb: r.CAUTIOUS || '255 214 0' },
+    'RISK_OFF': { hex: c.RISK_OFF || '#FF3366', rgb: r.RISK_OFF || '255 51 102' },
+    'PANIC': { hex: c.PANIC || '#FF0040', rgb: r.PANIC || '255 0 64' }
   };
 
   var GROUPS = [
@@ -144,10 +148,25 @@
         var changeColor = isNeutral ? 'rgb(var(--color-neutral-400))' : (isPositive ? 'var(--mp-ticker-up)' : 'var(--mp-ticker-down)');
         var sparkColor = isNeutral ? '#64748B' : (isPositive ? 'var(--mp-ticker-up-spark)' : 'var(--mp-ticker-down-spark)');
 
+        // Bar Gauge Calculation
+        // Cap width at 100% for ~3% move (scale factor 33) or ~5% (scale 20)
+        // Let's use scale 20 (5% move = 100% width) for visibility
+        var barWidth = 0;
+        if (changePct !== null && Number.isFinite(changePct)) {
+           barWidth = Math.min(Math.abs(changePct) * 20, 100);
+        }
+        var barHtml = '<div class="mp-ticker-bar-container">' +
+          '<div class="mp-ticker-bar" style="width:' + barWidth + '%; background-color:' + changeColor + '"></div>' +
+          '</div>';
+
+        // T-601: count-up animation hooks (no external dependency)
+        var valueHtml = '<span class="mp-ticker-price mp-animate-num" data-val="' + current + '" data-fmt="' + ticker.fmt + '">' + fmtPrice(current, ticker.fmt) + '</span>';
+
         rows += '<div class="mp-ticker-row">' +
           '<span class="mp-ticker-name">' + ticker.name + '</span>' +
-          '<span class="mp-ticker-price">' + fmtPrice(current, ticker.fmt) + '</span>' +
+          valueHtml +
           '<span class="mp-ticker-change" style="color:' + changeColor + '">' + fmtChange(changePct) + '</span>' +
+          barHtml +
           generateSparkline(s, sparkColor) +
           '</div>';
       }
@@ -161,6 +180,45 @@
 
     container.innerHTML = html ||
       '<span class="mp-loading-inline">\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+      
+    // Trigger animations after render
+    animateNumbers(container);
+  }
+
+  // Simple count-up implementation
+  function animateNumbers(container) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    var elements = container.querySelectorAll('.mp-animate-num');
+    elements.forEach(function(el) {
+      var endVal = parseFloat(el.getAttribute('data-val'));
+      var fmt = el.getAttribute('data-fmt');
+      if (isNaN(endVal)) return;
+
+      var startVal = endVal * 0.95; // Start from 95%
+      var duration = 1000;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        // Ease out quart
+        var ease = 1 - Math.pow(1 - progress, 4);
+        
+        var currentVal = startVal + (endVal - startVal) * ease;
+        el.textContent = fmtPrice(currentVal, fmt); // Re-use existing formatter logic if possible, or simple toLocaleString
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = fmtPrice(endVal, fmt); // Ensure final value is exact
+        }
+      }
+      
+      window.requestAnimationFrame(step);
+    });
   }
 
   function render(data) {
@@ -171,10 +229,24 @@
 
     document.documentElement.style.setProperty('--regime-color', color.hex);
     document.documentElement.style.setProperty('--regime-color-rgb', color.rgb);
+    
+    // Dynamic Orb Colors (T-303)
+    document.documentElement.style.setProperty('--mp-orb-color-primary', color.rgb);
+    // Secondary orb: use regime color but maybe softer or mixed?
+    // For now use same color for unified atmosphere.
+    document.documentElement.style.setProperty('--mp-orb-color-secondary', color.rgb);
 
     var badge = document.getElementById('mp-regime-badge');
+    var stickyBadge = document.getElementById('mp-sticky-regime');
+    
     if (badge && regime) {
-      badge.textContent = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
+      var text = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
+      badge.textContent = text;
+      
+      if (stickyBadge) {
+        var stickyText = stickyBadge.querySelector('.mp-sticky-regime-text');
+        if (stickyText) stickyText.textContent = text;
+      }
     }
 
     var summary = document.getElementById('mp-hero-summary');
@@ -193,6 +265,22 @@
     if (ts && data.date) {
       ts.textContent = '\uB370\uC774\uD130 \uAE30\uC900: ' + data.date;
     }
+
+    // Update Status Dot
+    var statusDot = document.getElementById('mp-live-status');
+    if (statusDot) {
+      statusDot.className = 'mp-live-status';
+      var nowKST = new Intl.DateTimeFormat('sv-SE', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric', month: '2-digit', day: '2-digit'
+      }).format(new Date());
+
+      if (data.date === nowKST) {
+        statusDot.classList.add('is-fresh');
+      } else {
+        statusDot.classList.add('is-stale');
+      }
+    }
   }
 
   function tryFetch(urls, idx) {
@@ -203,6 +291,11 @@
       var tg = document.getElementById('mp-ticker-groups');
       if (tg) {
         tg.innerHTML = '<span class="mp-loading-inline">\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+      }
+
+      var statusDot = document.getElementById('mp-live-status');
+      if (statusDot) {
+        statusDot.className = 'mp-live-status is-error';
       }
       return;
     }
@@ -239,5 +332,27 @@
     tryFetch(urls, 0);
   }
 
+  // T-403: Sticky Regime Badge Logic
+  function initStickyBadge() {
+    var heroBadge = document.getElementById('mp-regime-badge');
+    var stickyBadge = document.getElementById('mp-sticky-regime');
+    
+    if (!heroBadge || !stickyBadge) return;
+
+    // Use IntersectionObserver to toggle visibility
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          stickyBadge.classList.add('is-visible');
+        } else {
+          stickyBadge.classList.remove('is-visible');
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(heroBadge);
+  }
+
   fetchData();
+  initStickyBadge();
 })();

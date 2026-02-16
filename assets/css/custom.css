@@ -80,6 +80,21 @@ code, pre, .num-cell, .terminal-data {
   --regime-color-rgb: 124 58 237;
 }
 
+/* Light Mode Variables */
+:root:not(.dark) {
+  --mp-glass-bg: rgba(255, 255, 255, 0.9);
+  --mp-glass-border: rgba(124, 58, 237, 0.15);
+  --mp-shadow-sm: 0 4px 16px -4px rgba(124, 58, 237, 0.1);
+  --mp-neon-cyan: #0891B2; /* Cyan-600 */
+  --mp-neon-purple: #7C3AED; /* Violet-600 */
+  --mp-color-up: #DC2626; /* Red-600 */
+  --mp-color-down: #2563EB; /* Blue-600 */
+  --mp-ticker-up: #047857;
+  --mp-ticker-down: #B91C1C;
+  --mp-ticker-up-spark: #059669;
+  --mp-ticker-down-spark: #DC2626;
+}
+
 /* --- Homepage Hero Polish --- */
 .prose h1 {
   font-family: var(--mp-font-display);

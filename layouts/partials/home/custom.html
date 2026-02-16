@@ -14,6 +14,11 @@
   </div>
 
   <div class="mp-home-content">
+    <!-- Sticky Regime Badge (T-403) -->
+    <div id="mp-sticky-regime" class="mp-sticky-regime">
+      <span class="mp-sticky-regime-text">--</span>
+    </div>
+
     <div class="mp-home-hero">
       <div class="mp-hero-title-row">
         <svg class="mp-ecg-pulse mp-ecg-pulse--left" viewBox="0 0 200 40" fill="none">
@@ -62,13 +67,24 @@
       </p>
 
       <div id="mp-regime-badge" class="mp-regime-badge">--</div>
-      <p id="mp-hero-summary" class="mp-hero-summary">Loading...</p>
+      <p id="mp-hero-summary" class="mp-hero-summary">
+        <span class="mp-skeleton mp-skeleton--text mp-skeleton--hero-line"></span>
+        <span class="mp-skeleton mp-skeleton--text-short mp-skeleton--hero-line-short"></span>
+      </p>
       <p id="mp-hero-updated" class="mp-hero-updated"></p>
     </div>
 
-    <h3 class="mp-section-header">Market Overview</h3>
+    <h3 class="mp-section-header">Market Overview <span id="mp-live-status" class="mp-live-status"></span></h3>
     <div id="mp-ticker-groups" class="mp-ticker-groups">
-      <span class="mp-loading-inline">Loading market data...</span>
+      {{/* Skeleton Loading State */}}
+      {{ range seq 3 }}
+      <div class="mp-ticker-group">
+        <div class="mp-skeleton mp-skeleton--text-short mp-skeleton--group-title"></div>
+        <div class="mp-skeleton mp-skeleton--ticker-row"></div>
+        <div class="mp-skeleton mp-skeleton--ticker-row"></div>
+        <div class="mp-skeleton mp-skeleton--ticker-row"></div>
+      </div>
+      {{ end }}
     </div>
     <p id="mp-data-timestamp" class="mp-hero-updated mp-data-timestamp"></p>
 

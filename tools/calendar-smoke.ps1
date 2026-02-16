@@ -42,9 +42,18 @@ try {
   }
 
   Write-Host "Running calendar filter smoke test against $BaseUrl"
-  npx --yes playwright test tools/calendar-filters.smoke.spec.js --reporter=line --workers=1
-  if ($LASTEXITCODE -ne 0) {
-    exit $LASTEXITCODE
+  
+  try {
+    npx --yes playwright test tools/calendar-filters.smoke.spec.js --reporter=line --workers=1
+    if ($LASTEXITCODE -ne 0) {
+      throw "Playwright test failed with exit code $LASTEXITCODE. Check console output above."
+    }
+  } catch {
+    Write-Error "Calendar Smoke Test Failed!"
+    Write-Error "Target: $BaseUrl"
+    if ($PagePath) { Write-Error "Explicit Path: $PagePath" }
+    Write-Error "Tip: Verify the page contains '#mp-calendar-container' and the calendar JS is loading."
+    exit 1
   }
 
   Write-Host "Calendar filter smoke passed."

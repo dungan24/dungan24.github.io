@@ -49,7 +49,7 @@ hugo --gc --minify
 
 ```bash
 pwsh -File tools/agent-preflight.ps1
-pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunBuild -RunUiViewportSmoke -FailOnFindings
 pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 ```

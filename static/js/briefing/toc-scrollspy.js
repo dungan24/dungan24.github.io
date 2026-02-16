@@ -29,9 +29,9 @@
       rootMargin: '-20% 0px -80% 0px'
     });
 
-    var headings = content.querySelectorAll('h2[id]');
-    headings.forEach(function(h2) {
-      observer.observe(h2);
+    var headings = content.querySelectorAll('h2[id], h3[id]');
+    headings.forEach(function(h) {
+      observer.observe(h);
     });
   };
 })();

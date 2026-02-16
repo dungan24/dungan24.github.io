@@ -1,3 +1,24 @@
+/* --- Briefing Section Scroll Reveal (T-603) --- */
+.briefing-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.briefing-section.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .briefing-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* --- TOC Typography --- */
 .toc {
   font-size: 0.8rem;
@@ -445,7 +466,7 @@
   }
 }
 
-/* ===== Modern Redesign Animations & Fixes =====
+/* ===== Modern Redesign Animations & Fixes ===== */
 
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.3; transform: scale(1) translate(-50%, -50%); }

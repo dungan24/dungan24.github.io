@@ -70,3 +70,23 @@
   font-weight: 800;
   opacity: 0.7;
 }
+
+/* Light Mode Overrides */
+:root:not(.dark) .briefing-section h3 {
+  color: #0E7490 !important;
+  border-left-color: #0891B2;
+  background: linear-gradient(90deg, rgba(8, 145, 178, 0.05), transparent);
+}
+
+:root:not(.dark) .briefing-section h4 {
+  color: #7C3AED !important;
+}
+
+/* Cyberpunk Divider Light Mode */
+:root:not(.dark) .mp-cyber-divider {
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.15), transparent);
+}
+:root:not(.dark) .mp-cyber-divider::after {
+  background: var(--regime-color, #7C3AED);
+  box-shadow: none;
+}

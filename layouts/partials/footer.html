@@ -59,4 +59,24 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
+
+  <!-- Mobile Bottom Nav -->
+  <nav id="mp-mobile-bottom-nav">
+    <a href="/" class="mp-nav-item {{ if .IsHome }}active{{ end }}">
+      <span class="mp-nav-icon">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="/posts/" class="mp-nav-item {{ if eq .Section "posts" }}active{{ end }}">
+      <span class="mp-nav-icon">📰</span>
+      <span>Briefing</span>
+    </a>
+    <a href="/tags/" class="mp-nav-item {{ if eq .Section "tags" }}active{{ end }}">
+      <span class="mp-nav-icon">🏷️</span>
+      <span>Tags</span>
+    </a>
+    <a href="#" data-scroll-top="true" class="mp-nav-item mp-nav-item--top">
+      <span class="mp-nav-icon">⬆️</span>
+      <span>Top</span>
+    </a>
+  </nav>
 </footer>
