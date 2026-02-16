@@ -10,9 +10,10 @@ Owner: Battlecruiser
 
 ## Phase 1: Typography & Color Polish (기초 공사)
 
-- [ ] **폰트 검증**: `Noto Sans KR` 적용이 누락된 곳(특히 모바일, Safari 등) 전수 조사 및 수정.
-- [ ] **네온 팔레트 재정비**: `custom.css`의 `--mp-neon-*` 변수들을 더 선명하고 일관된 Cyberpunk 톤으로 조정.
-- [ ] **가독성 튜닝**: 글래스모피즘 배경의 불투명도와 블러 값을 조정하여 본문 가독성 확보.
+- [x] **폰트 검증**: `Noto Sans KR` 적용이 누락된 곳 전수 조사 및 수정 완료.
+- [x] **네온 팔레트 재정비**: `custom.css`의 `--mp-neon-*` 변수들을 더 선명하고 일관된 Cyberpunk 톤으로 조정.
+- [x] **가독성 튜닝**: 글래스모피즘 배경의 불투명도와 블러 값을 조정하여 본문 가독성 확보.
+- [x] **변수 통합**: 주요 CSS 파일(`layout-overrides`, `briefing-sections`, `calendar`)의 하드코딩 색상을 변수로 치환.
 
 ## Phase 2: Core Components Overhaul (핵심 무기 강화)
 

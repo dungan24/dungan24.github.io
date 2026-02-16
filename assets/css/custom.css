@@ -530,8 +530,48 @@ code, pre, .num-cell, .terminal-data {
 }
 
 .mp-ticker-row:hover {
-  background: rgba(124, 58, 237, 0.08);
+  background: rgba(124, 58, 237, 0.12);
+  /* box-shadow: inset 2px 0 0 var(--mp-neon-cyan);  <-- Removed for cleaner look */
 }
+
+.mp-ticker-row:not(:last-child) {
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.mp-ticker-name {
+  flex: 1;
+  color: var(--mp-gray-200);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  font-size: 0.95rem;
+}
+
+.mp-ticker-price {
+  font-family: var(--mp-font-mono);
+  color: var(--mp-gray-300);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mp-ticker-change {
+  font-family: var(--mp-font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 60px;
+  text-align: right;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Light Mode Ticker Row Hover */
+:root:not(.dark) .mp-ticker-row:hover {
+  background: rgba(124, 58, 237, 0.06);
+  /* box-shadow: inset 2px 0 0 var(--mp-neon-cyan); <-- Removed */
+}
+
 
 .mp-ticker-row:not(:last-child) {
   border-bottom: 1px solid rgba(124, 58, 237, 0.06);

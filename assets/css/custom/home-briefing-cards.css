@@ -36,12 +36,32 @@
 }
 
 .mp-briefing-card:hover {
-  border-color: rgba(0, 240, 255, 0.4);
+  border-color: rgba(0, 240, 255, 0.6);
   box-shadow: 
-    0 0 20px rgba(0, 240, 255, 0.1),
-    0 10px 40px -10px rgba(0, 0, 0, 0.6);
-  transform: translateY(-2px);
+    0 0 25px rgba(0, 240, 255, 0.15),
+    0 10px 40px -10px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px) scale(1.01);
 }
+
+.mp-briefing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(0, 240, 255, 0.3), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mp-briefing-card:hover::before {
+  opacity: 1;
+}
+
 
 .mp-briefing-card__type-tag {
   position: absolute;
@@ -63,25 +83,29 @@
 
 /* Type Themes - Enhanced Visibility */
 .mp-card--pre .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
+  background: var(--mp-black); 
   color: var(--mp-neon-cyan); 
-  border-color: var(--mp-neon-cyan); 
+  border-color: var(--mp-neon-cyan);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
 }
 .mp-card--mid .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
+  background: var(--mp-black); 
   color: var(--mp-neon-green); 
-  border-color: var(--mp-neon-green); 
+  border-color: var(--mp-neon-green);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 .mp-card--post .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
-  color: #C084FC; /* Brighter purple */
-  border-color: #A855F7; 
+  background: var(--mp-black); 
+  color: var(--mp-neon-purple); /* Brighter purple */
+  border-color: var(--mp-neon-purple);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
 }
 
 /* Light Mode Type Tag Overrides - Make them Pop */
-:root:not(.dark) .mp-card--pre .mp-briefing-card__type-tag { background: #0891B2; color: #FFFFFF; border-color: #0891B2; }
-:root:not(.dark) .mp-card--mid .mp-briefing-card__type-tag { background: #059669; color: #FFFFFF; border-color: #059669; }
-:root:not(.dark) .mp-card--post .mp-briefing-card__type-tag { background: #7C3AED; color: #FFFFFF; border-color: #7C3AED; }
+:root:not(.dark) .mp-card--pre .mp-briefing-card__type-tag { background: #0891B2; color: #FFFFFF; border-color: #0891B2; box-shadow: none; }
+:root:not(.dark) .mp-card--mid .mp-briefing-card__type-tag { background: #059669; color: #FFFFFF; border-color: #059669; box-shadow: none; }
+:root:not(.dark) .mp-card--post .mp-briefing-card__type-tag { background: #7C3AED; color: #FFFFFF; border-color: #7C3AED; box-shadow: none; }
+
 
 /* Remove colored top borders, rely on the tag and hover state */
 .mp-card--pre, .mp-card--mid, .mp-card--post {
