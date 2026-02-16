@@ -110,6 +110,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof ns.initScrollSpy === 'function') ns.initScrollSpy(content);
   }
 
+  // Phase 4: Scroll Reveal Effect
+  if ('IntersectionObserver' in window) {
+    var observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    var revealObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    var revealTargets = document.querySelectorAll('.briefing-section, .mp-briefing-card, .market-chart-card, .mp-post-hero');
+    revealTargets.forEach(function(target) {
+      target.classList.add('reveal-on-scroll');
+      revealObserver.observe(target);
+    });
+  }
+
   if (convertScheduleToCalendar && typeof ns.transformCalendarShortcodes === 'function') {
     ns.transformCalendarShortcodes(document, convertScheduleToCalendar);
   }

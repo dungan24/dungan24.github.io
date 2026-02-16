@@ -16,7 +16,28 @@
   }
 }
 
-/* Table: prevent cell text wrapping for data readability (desktop) */
+/* Scroll Reveal Animation */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .prose table td,
 .prose table th {
   white-space: nowrap;
@@ -87,14 +108,20 @@
     max-width: 100%;
   }
 
-  /* Scroll fade hint on right edge */
+  /* Scroll fade hint on right edge (Mobile) */
   .briefing-section {
-    --table-fade: linear-gradient(to right, transparent 85%, rgba(10, 10, 26, 0.85));
+    position: relative;
   }
 
   .briefing-section table {
-    font-size: 0.8rem;
+    display: block !important;
+    overflow-x: auto;
+    max-width: 100%;
+    /* Gradient mask for scroll hint */
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
   }
+
 
   .briefing-section table td,
   .briefing-section table th {
@@ -104,12 +131,28 @@
   /* Briefing section breakout 해제 (모바일/태블릿) */
   .article-content .briefing-section {
     width: auto;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* Extra Small Devices (iPhone SE, Galaxy Fold cover) */
+@media (max-width: 390px) {
+  .article-content .briefing-section {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  .prose {
+    font-size: 0.9rem;
+  }
 }
+
 
 /* ========== Regime Panel — Cyberpunk HUD ========== */
 .mp-regime-panel {

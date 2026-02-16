@@ -13,10 +13,12 @@ body::after {
     rgba(0, 0, 0, 0.03) 0px,
     rgba(0, 0, 0, 0.03) 1px,
     transparent 1px,
-    transparent 3px
+    transparent 4px
   );
-  opacity: 0.4;
+  opacity: 0.25; /* Softer scanlines */
+  mix-blend-mode: overlay;
 }
+
 
 :root:not(.dark) body::after {
   opacity: 0;
