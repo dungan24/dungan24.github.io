@@ -45,12 +45,18 @@
 
 - **전역 폰트 변경**:
     - 모든 폰트를 `Noto Sans KR`로 통일 (`custom.css`).
-- **사이버펑크 UI/UX**:
-    - 터미널 스타일 푸터 (`terminal-footer.css`, `footer.html`).
-    - 네온 그리드, HUD 코너, 스캔라인 등 시각 효과 (`toc-and-effects.css`).
-    - 글래스모피즘 기반 카드 UI (`briefing-sections.css`, `chart-cards.css` 등).
+- **사이버펑크 UI/UX (Operation Neon Overhaul)**:
+    - **네온 팔레트**: `--mp-neon-*` 변수 기반의 고채도 형광 컬러 시스템 도입 (`custom.css`).
+    - **글래스모피즘 카드**: `Briefing Card`, `Ticker`, `Calendar` 등 주요 UI에 통일된 유리 효과 및 네온 호버 인터랙션 적용.
+    - **터미널 푸터**: 스캔라인(`::after`) 및 이퀄라이저 애니메이션(`mp-f-visual-svg`)이 적용된 터미널 스타일 푸터 (`terminal-footer.css`).
+    - **시각 효과 (FX)**:
+        - `Scroll Reveal`: 스크롤 시 섹션이 부드럽게 떠오르는 등장 애니메이션 (`layout-overrides.css` + JS).
+        - `Scanline`: 전체 화면에 은은한 스캔라인 오버레이 적용 (`custom.css`).
 - **레이아웃 확장**:
     - FHD 환경에서 본문 폭을 확장하고, 특정 섹션(`briefing-section`)이 화면 전체 폭을 사용하도록 오버라이드 (`layout-overrides.css`).
+- **모바일 최적화**:
+    - `390px` (iPhone) 기준 여백 최적화.
+    - 테이블 좌우 스크롤 시 우측 페이드아웃(`mask-image`) 효과로 가독성 개선.
 - **홈페이지 커스터마이징**:
     - `custom.html` 레이아웃을 사용하여 직접 만든 컴포넌트(시장 현황, 최근 브리핑 카드)를 렌더링.
 - **라이트/다크 모드 개선**:
