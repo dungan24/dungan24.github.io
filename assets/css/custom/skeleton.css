@@ -1,0 +1,77 @@
+/* === Skeleton Loading Shimmer === */
+
+/* 기본 skeleton 블록 */
+.mp-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.08) 25%,
+    rgba(124, 58, 237, 0.18) 50%,
+    rgba(124, 58, 237, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: mp-shimmer 1.8s ease-in-out infinite;
+  border-radius: var(--mp-radius-sm, 4px);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+/* shimmer 애니메이션 */
+@keyframes mp-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Skeleton 변형: 텍스트 라인 */
+.mp-skeleton--text {
+  height: 1rem;
+  width: 60%;
+  margin: 0.5rem 0;
+}
+
+.mp-skeleton--text-short {
+  height: 0.85rem;
+  width: 40%;
+  margin: 0.4rem 0;
+}
+
+/* Skeleton 변형: 티커 행 */
+.mp-skeleton--ticker-row {
+  height: 2.5rem;
+  width: 100%;
+  margin: 0.35rem 0;
+}
+
+/* Skeleton 변형: 카드 (regime badge 영역) */
+.mp-skeleton--badge {
+  height: 2rem;
+  width: 120px;
+  margin: 0.5rem auto;
+}
+
+.mp-skeleton--hero-line {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mp-skeleton--hero-line-short {
+  display: block;
+  width: 40%;
+  margin: 0.5rem auto;
+}
+
+.mp-skeleton--group-title {
+  width: 40%;
+  margin-bottom: 1rem;
+}
+
+/* 라이트 모드 */
+:root:not(.dark) .mp-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.04) 25%,
+    rgba(124, 58, 237, 0.1) 50%,
+    rgba(124, 58, 237, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: mp-shimmer 1.8s ease-in-out infinite;
+}

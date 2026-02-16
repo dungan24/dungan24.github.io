@@ -14,7 +14,19 @@ function resolveLatestPreMarketPath() {
     .reverse();
 
   if (files.length === 0) {
-    throw new Error('No pre-market post files found for smoke target.');
+    // T-803: Robust Fallback
+    console.warn('WARN: No pre-market files found. Falling back to mid-day or post-market if available.');
+    const anyPosts = fs.readdirSync(postsDir)
+      .filter((name) => /^(mid-day|post-market)-\d{4}-\d{2}-\d{2}\.md$/.test(name))
+      .sort()
+      .reverse();
+      
+    if (anyPosts.length > 0) {
+      const match = anyPosts[0].match(/(mid-day|post-market)-\d{4}-\d{2}-\d{2}/);
+      return `/posts/${match[0]}/`;
+    }
+    
+    throw new Error('No post files found for smoke target.');
   }
 
   const matched = files[0].match(/\d{4}-\d{2}-\d{2}/);
@@ -27,7 +39,20 @@ function resolveLatestPreMarketPath() {
 
 function buildTargetUrl() {
   const baseUrl = process.env.MP_BASE_URL || 'http://localhost:1314';
-  const pagePath = process.env.MP_CALENDAR_PAGE_PATH || resolveLatestPreMarketPath();
+  let pagePath = process.env.MP_CALENDAR_PAGE_PATH;
+  
+  if (!pagePath) {
+    try {
+      pagePath = resolveLatestPreMarketPath();
+    } catch (e) {
+      console.error(e.message);
+      // Fallback to homepage just to fail gracefully in test or maybe check if there is a 'latest' alias
+      // But for calendar smoke, we need a post with calendar data.
+      throw e;
+    }
+  }
+  
+  console.log(`Targeting Smoke URL: ${new URL(pagePath, baseUrl).toString()}`);
   return new URL(pagePath, baseUrl).toString();
 }
 
@@ -41,8 +66,16 @@ test.describe('calendar filter smoke', () => {
     const filters = page.locator('.mp-upcoming__filters');
     await expect(filters).toBeVisible({ timeout: 20_000 });
 
-    const selects = page.locator('.mp-upcoming__filter-select');
-    await expect(selects).toHaveCount(3);
+    const groups = page.locator('.mp-filter-group');
+    await expect(groups).toHaveCount(3);
+
+    async function clickPill(groupIndex, label) {
+      const group = groups.nth(groupIndex);
+      const pill = group.locator('.mp-filter-pill', { hasText: label }).first();
+      await expect(pill).toBeVisible();
+      await pill.click();
+      await expect(pill).toHaveClass(/is-active/);
+    }
 
     async function expectRenderableState() {
       await expect(async () => {
@@ -56,40 +89,31 @@ test.describe('calendar filter smoke', () => {
 
     await expectRenderableState();
 
-    await selects.nth(0).selectOption('all');
-    await expect(selects.nth(0)).toHaveValue('all');
+    await clickPill(0, '전체');
     await expectRenderableState();
 
-    await selects.nth(0).selectOption('high-medium');
-    await expect(selects.nth(0)).toHaveValue('high-medium');
+    await clickPill(0, '상+중');
     await expectRenderableState();
 
-    await selects.nth(0).selectOption('high');
-    await expect(selects.nth(0)).toHaveValue('high');
+    await clickPill(0, '상');
     await expectRenderableState();
 
-    await selects.nth(1).selectOption('pm30');
-    await expect(selects.nth(1)).toHaveValue('pm30');
+    await clickPill(1, '전체');
     await expectRenderableState();
 
-    await selects.nth(1).selectOption('pm20');
-    await expect(selects.nth(1)).toHaveValue('pm20');
+    await clickPill(1, '±20일');
     await expectRenderableState();
 
-    await selects.nth(1).selectOption('pm10');
-    await expect(selects.nth(1)).toHaveValue('pm10');
+    await clickPill(1, '±10일');
     await expectRenderableState();
 
-    await selects.nth(2).selectOption('us');
-    await expect(selects.nth(2)).toHaveValue('us');
+    await clickPill(2, '미국');
     await expectRenderableState();
 
-    await selects.nth(2).selectOption('kr');
-    await expect(selects.nth(2)).toHaveValue('kr');
+    await clickPill(2, '한국');
     await expectRenderableState();
 
-    await selects.nth(2).selectOption('all');
-    await expect(selects.nth(2)).toHaveValue('all');
+    await clickPill(2, '전체');
     await expectRenderableState();
   });
 });

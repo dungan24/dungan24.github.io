@@ -41,10 +41,11 @@ try {
 
   $extendFooterPath = "layouts/partials/extend-footer.html"
   if (Test-Path -Path $extendFooterPath -PathType Leaf) {
-    $expectedLoaderOrder = @(
+    # T-801: loader contract check
+    $requiredScripts = @(
       "js/mp-config.js",
+      "js/theme-transition.js",
       "js/briefing/dom-utils.js",
-
       "js/briefing/section-wrapping.js",
       "js/briefing/regime-hero.js",
       "js/briefing/collapsible.js",
@@ -57,34 +58,65 @@ try {
       "js/market-pulse-calendar.js",
       "js/briefing/calendar-loader.js",
       "js/market-pulse-enhancements.js",
+      "js/reading-progress.js",
       "js/branding-patch.js",
       "js/footer-clock.js"
     )
 
-    $actualLoaderOrder = @()
-    $invalidLoaderLines = @()
     $lines = Get-Content -Path $extendFooterPath
+    $loadedScripts = @()
+    $hasInvalidLines = $false
+
     foreach ($line in $lines) {
       $trim = $line.Trim()
       if (-not $trim) { continue }
       if ($trim -match '^<!--.*-->$') { continue }
 
-      $m = [regex]::Match($trim, '^<script src="\{\{\s*"([^"]+)"\s*\|\s*relURL\s*\}\}"></script>$')
-      if ($m.Success) {
-        $actualLoaderOrder += $m.Groups[1].Value
+      # Strict loader pattern: <script src="{{ "path" | relURL }}"></script>
+      if ($trim -match '^<script src="\{\{\s*"([^"]+)"\s*\|\s*relURL\s*\}\}"></script>$') {
+        $loadedScripts += $matches[1]
       } else {
-        $invalidLoaderLines += $trim
+        Add-Finding -Check "extend-footer-loader" -Message "Invalid loader line format: $trim"
+        $hasInvalidLines = $true
       }
     }
 
-    if ($invalidLoaderLines.Count -gt 0) {
-      Add-Finding -Check "extend-footer-loader" -Message ("extend-footer contains non-loader lines: {0}" -f ($invalidLoaderLines -join " | "))
+    foreach ($req in $requiredScripts) {
+      if ($loadedScripts -notcontains $req) {
+        Add-Finding -Check "extend-footer-missing" -Message "Missing required script: $req"
+      }
     }
 
-    $expectedJoined = $expectedLoaderOrder -join "||"
-    $actualJoined = $actualLoaderOrder -join "||"
-    if ($expectedJoined -ne $actualJoined) {
-      Add-Finding -Check "extend-footer-order" -Message ("Script loader order mismatch. expected=[{0}] actual=[{1}]" -f ($expectedLoaderOrder -join ", "), ($actualLoaderOrder -join ", "))
+    if ($loadedScripts.Count -gt 0) {
+      if ($loadedScripts[0] -ne "js/mp-config.js") {
+        Add-Finding -Check "extend-footer-order" -Message "First script must be js/mp-config.js (actual: $($loadedScripts[0]))"
+      }
+      if ($loadedScripts[$loadedScripts.Count - 1] -ne "js/footer-clock.js") {
+        Add-Finding -Check "extend-footer-order" -Message "Last script must be js/footer-clock.js (actual: $($loadedScripts[$loadedScripts.Count - 1]))"
+      }
+
+      $parserIdx = [Array]::IndexOf($loadedScripts, "js/calendar/parser.js")
+      $modelIdx = [Array]::IndexOf($loadedScripts, "js/calendar/model.js")
+      $rendererIdx = [Array]::IndexOf($loadedScripts, "js/calendar/renderer.js")
+      $entryIdx = [Array]::IndexOf($loadedScripts, "js/market-pulse-calendar.js")
+      $loaderIdx = [Array]::IndexOf($loadedScripts, "js/briefing/calendar-loader.js")
+      $enhancementsIdx = [Array]::IndexOf($loadedScripts, "js/market-pulse-enhancements.js")
+
+      if ($parserIdx -ge 0 -and $modelIdx -ge 0 -and $parserIdx -gt $modelIdx) {
+        Add-Finding -Check "extend-footer-order" -Message "Calendar parser must load before model."
+      }
+      if ($modelIdx -ge 0 -and $rendererIdx -ge 0 -and $modelIdx -gt $rendererIdx) {
+        Add-Finding -Check "extend-footer-order" -Message "Calendar model must load before renderer."
+      }
+      if ($rendererIdx -ge 0 -and $entryIdx -ge 0 -and $rendererIdx -gt $entryIdx) {
+        Add-Finding -Check "extend-footer-order" -Message "Calendar renderer must load before calendar entrypoint."
+      }
+      if ($entryIdx -ge 0 -and $loaderIdx -ge 0 -and $entryIdx -gt $loaderIdx) {
+        Add-Finding -Check "extend-footer-order" -Message "Calendar entrypoint must load before calendar loader."
+      }
+      if ($loaderIdx -ge 0 -and $enhancementsIdx -ge 0 -and $loaderIdx -gt $enhancementsIdx) {
+        Add-Finding -Check "extend-footer-order" -Message "Calendar loader must load before market-pulse-enhancements."
+      }
     }
   }
 

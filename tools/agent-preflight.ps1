@@ -1,6 +1,7 @@
 param(
   [switch]$RunBuild,
   [switch]$RunCalendarSmoke,
+  [switch]$RunUiViewportSmoke,
   [switch]$FailOnFindings,
   [int]$LargeBinaryThresholdKB = 300,
   [int]$LargeSourceThresholdLines = 800,
@@ -40,7 +41,7 @@ if ($LASTEXITCODE -ne 0) {
   exit $LASTEXITCODE
 }
 
-if (-not $RunBuild -and -not $RunCalendarSmoke) {
+if (-not $RunBuild -and -not $RunCalendarSmoke -and -not $RunUiViewportSmoke) {
   Write-Host "Preflight completed (audit + architecture lint only)."
   exit 0
 }
@@ -72,10 +73,28 @@ if ($RunCalendarSmoke) {
   }
 }
 
-if ($RunBuild -and $RunCalendarSmoke) {
-  Write-Host "Preflight completed (audit + architecture lint + build + calendar smoke)."
-} elseif ($RunBuild) {
-  Write-Host "Preflight completed (audit + architecture lint + build)."
-} elseif ($RunCalendarSmoke) {
-  Write-Host "Preflight completed (audit + architecture lint + calendar smoke)."
+if ($RunUiViewportSmoke) {
+  # Placeholder for UI Viewport Smoke - will be implemented via npm script for now or node call
+  # This requires node and playwright dependencies installed
+  Write-Host "Running UI Viewport Smoke Test..."
+  
+  # Check if server is running on port 1314 (basic check)
+  try {
+    $conn = Test-NetConnection -ComputerName localhost -Port 1314 -WarningAction SilentlyContinue
+    if (-not $conn.TcpTestSucceeded) {
+      throw "Server is not running on http://localhost:1314. Please start 'hugo server --port 1314' before running UI smoke tests."
+    }
+  } catch {
+    # If Test-NetConnection fails (some environments), just warn
+    Write-Warning "Could not verify if server is running. Proceeding with smoke test..."
+  }
+
+  npm run test:ui-smoke
+  if ($LASTEXITCODE -ne 0) {
+    Write-Error "UI Viewport Smoke Test Failed."
+    exit $LASTEXITCODE
+  }
 }
+
+Write-Host "Preflight completed successfully."
+

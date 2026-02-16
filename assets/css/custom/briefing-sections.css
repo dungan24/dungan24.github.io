@@ -9,6 +9,35 @@
   content: "" !important;
 }
 
+/* Cyberpunk Divider (T-504) */
+.mp-cyber-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--mp-glass-border), transparent);
+  margin: 3rem 0;
+  position: relative;
+  overflow: visible;
+  border: none;
+}
+
+.mp-cyber-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 4px;
+  background: var(--regime-color, var(--mp-neon-purple));
+  box-shadow: 0 0 10px var(--regime-color, var(--mp-neon-purple));
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-cyber-divider::after {
+    box-shadow: none;
+  }
+}
+
 .briefing-section ul:not(.mp-regime-signals) li {
   position: relative;
   padding-left: 1.5rem !important;
