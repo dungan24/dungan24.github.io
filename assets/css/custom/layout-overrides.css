@@ -133,10 +133,10 @@
   top: 0; left: 0; right: 0;
   height: 2px;
 }
-.mp-regime--risk-on::before  { background: linear-gradient(90deg, #00FF88 0%, transparent 70%); }
-.mp-regime--cautious::before { background: linear-gradient(90deg, #FFD600 0%, transparent 70%); }
-.mp-regime--risk-off::before { background: linear-gradient(90deg, #FF3366 0%, transparent 70%); }
-.mp-regime--panic::before    { background: linear-gradient(90deg, #FF0040 0%, transparent 70%); }
+.mp-regime--risk-on::before  { background: linear-gradient(90deg, var(--mp-neon-green) 0%, transparent 70%); }
+.mp-regime--cautious::before { background: linear-gradient(90deg, var(--mp-neon-yellow) 0%, transparent 70%); }
+.mp-regime--risk-off::before { background: linear-gradient(90deg, var(--mp-neon-pink) 0%, transparent 70%); }
+.mp-regime--panic::before    { background: linear-gradient(90deg, var(--mp-neon-rose) 0%, transparent 70%); }
 
 /* 헤더 */
 .mp-regime-header {
@@ -153,10 +153,10 @@
   flex-shrink: 0;
   animation: mp-regime-pulse 2s ease-in-out infinite;
 }
-.mp-regime--risk-on  .mp-regime-dot { background: #00FF88; box-shadow: 0 0 10px #00FF88; }
-.mp-regime--cautious .mp-regime-dot { background: #FFD600; box-shadow: 0 0 10px #FFD600; }
-.mp-regime--risk-off .mp-regime-dot { background: #FF3366; box-shadow: 0 0 10px #FF3366; }
-.mp-regime--panic    .mp-regime-dot { background: #FF0040; box-shadow: 0 0 10px #FF0040; }
+.mp-regime--risk-on  .mp-regime-dot { background: var(--mp-neon-green); box-shadow: 0 0 10px var(--mp-neon-green); }
+.mp-regime--cautious .mp-regime-dot { background: var(--mp-neon-yellow); box-shadow: 0 0 10px var(--mp-neon-yellow); }
+.mp-regime--risk-off .mp-regime-dot { background: var(--mp-neon-pink); box-shadow: 0 0 10px var(--mp-neon-pink); }
+.mp-regime--panic    .mp-regime-dot { background: var(--mp-neon-rose); box-shadow: 0 0 10px var(--mp-neon-rose); }
 
 @keyframes mp-regime-pulse {
   0%, 100% { opacity: 1; }
@@ -170,13 +170,13 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
-.mp-regime--risk-on  .mp-regime-label { color: #00FF88; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
-.mp-regime--cautious .mp-regime-label { color: #FFD600; text-shadow: 0 0 15px rgba(255,214,0,0.3); }
-.mp-regime--risk-off .mp-regime-label { color: #FF3366; text-shadow: 0 0 15px rgba(255,51,102,0.3); }
-.mp-regime--panic    .mp-regime-label { color: #FF0040; text-shadow: 0 0 15px rgba(255,0,64,0.3); }
+.mp-regime--risk-on  .mp-regime-label { color: var(--mp-neon-green); text-shadow: 0 0 15px rgba(0,255,136,0.3); }
+.mp-regime--cautious .mp-regime-label { color: var(--mp-neon-yellow); text-shadow: 0 0 15px rgba(255,214,0,0.3); }
+.mp-regime--risk-off .mp-regime-label { color: var(--mp-neon-pink); text-shadow: 0 0 15px rgba(255,51,102,0.3); }
+.mp-regime--panic    .mp-regime-label { color: var(--mp-neon-rose); text-shadow: 0 0 15px rgba(255,0,64,0.3); }
 
 .mp-regime-summary {
-  color: #94a3b8;
+  color: var(--mp-gray-400);
   font-size: 0.85rem;
   line-height: 1.5;
   margin: 0 0 1.25rem;
@@ -208,21 +208,21 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-.mp-signal[data-level="ok"]     .mp-signal-indicator { background: #00FF88; box-shadow: 0 0 6px rgba(0,255,136,0.5); }
-.mp-signal[data-level="warn"]   .mp-signal-indicator { background: #FFD600; box-shadow: 0 0 6px rgba(255,214,0,0.5); }
-.mp-signal[data-level="danger"] .mp-signal-indicator { background: #FF3366; box-shadow: 0 0 6px rgba(255,51,102,0.5); }
+.mp-signal[data-level="ok"]     .mp-signal-indicator { background: var(--mp-neon-green); box-shadow: 0 0 6px rgba(0,255,136,0.5); }
+.mp-signal[data-level="warn"]   .mp-signal-indicator { background: var(--mp-neon-yellow); box-shadow: 0 0 6px rgba(255,214,0,0.5); }
+.mp-signal[data-level="danger"] .mp-signal-indicator { background: var(--mp-neon-pink); box-shadow: 0 0 6px rgba(255,51,102,0.5); }
 
 .mp-signal-name {
   flex: 1;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--mp-gray-400);
 }
 
 .mp-signal-value {
   font-family: var(--mp-font-mono);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #E2E8F0;
+  color: var(--mp-gray-200);
   min-width: 70px;
   text-align: right;
 }
@@ -238,17 +238,17 @@
   text-align: center;
 }
 .mp-signal[data-level="ok"] .mp-signal-badge {
-  color: #00FF88;
+  color: var(--mp-neon-green);
   background: rgba(0, 255, 136, 0.08);
   border: 1px solid rgba(0, 255, 136, 0.2);
 }
 .mp-signal[data-level="warn"] .mp-signal-badge {
-  color: #FFD600;
+  color: var(--mp-neon-yellow);
   background: rgba(255, 214, 0, 0.08);
   border: 1px solid rgba(255, 214, 0, 0.2);
 }
 .mp-signal[data-level="danger"] .mp-signal-badge {
-  color: #FF3366;
+  color: var(--mp-neon-pink);
   background: rgba(255, 51, 102, 0.08);
   border: 1px solid rgba(255, 51, 102, 0.2);
 }
@@ -258,9 +258,10 @@
   background: rgba(248, 250, 252, 0.95);
   border-color: rgba(124, 58, 237, 0.15);
 }
-:root:not(.dark) .mp-regime-summary { color: #64748B; }
-:root:not(.dark) .mp-signal-name { color: #64748B; }
-:root:not(.dark) .mp-signal-value { color: #1E1E3A; }
+:root:not(.dark) .mp-regime-summary { color: var(--mp-gray-500); }
+:root:not(.dark) .mp-signal-name { color: var(--mp-gray-500); }
+:root:not(.dark) .mp-signal-value { color: var(--mp-gray-800); }
+
 
 @media (max-width: 640px) {
   .mp-regime-panel { padding: 1rem; }

@@ -45,11 +45,11 @@ code, pre, .num-cell, .terminal-data {
   --mp-font-subtitle: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
   --mp-font-mono: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
   --mp-border: rgba(124, 58, 237, 0.15);
-  --mp-glass-bg: rgba(18, 18, 42, 0.72);
-  --mp-glass-border: rgba(124, 58, 237, 0.25);
-  --mp-glass-blur: blur(14px) saturate(1.4);
-  --mp-accent-fact: #7C3AED;
-  --mp-accent-opinion: #00F0FF;
+  --mp-glass-bg: rgba(10, 10, 30, 0.65);
+  --mp-glass-border: rgba(124, 58, 237, 0.3);
+  --mp-glass-blur: blur(20px) saturate(1.6);
+  --mp-accent-fact: var(--mp-neon-purple);
+  --mp-accent-opinion: var(--mp-neon-cyan);
   --mp-shadow-sm: 0 2px 12px -2px rgba(124, 58, 237, 0.2);
   --mp-shadow-md: 0 8px 24px -8px rgba(124, 58, 237, 0.3);
   --mp-shadow-lg: 0 16px 48px -12px rgba(124, 58, 237, 0.4);
@@ -57,28 +57,46 @@ code, pre, .num-cell, .terminal-data {
   --mp-radius-sm: 4px;
   --mp-radius-md: 8px;
   --mp-radius-lg: 12px;
-  --mp-neon-purple: #7C3AED;
-  --mp-neon-cyan: #00F0FF;
+  
+  /* Cyberpunk Neon Palette (High Saturation) */
+  --mp-neon-purple: #8B5CF6; /* Violet-500 -> 600 slightly brighter */
+  --mp-neon-cyan: #06B6D4;   /* Cyan-500 -> More readable than #00F0FF */
   --mp-neon-rose: #F43F5E;
-  --mp-neon-green: #00FF88;
-  --mp-neon-pink: #FF3366;
-  --mp-neon-yellow: #FFD600;
-  --mp-neon-blue: #3388FF;
+  --mp-neon-green: #10B981;  /* Emerald-500 */
+  --mp-neon-pink: #EC4899;   /* Pink-500 */
+  --mp-neon-yellow: #F59E0B; /* Amber-500 */
+  --mp-neon-blue: #3B82F6;   /* Blue-500 */
+  --mp-neon-laser: #00F0FF;  /* Pure Cyan for effects */
+
+  /* Neutral Scale (Slate based) */
+  --mp-white: #FFFFFF;
+  --mp-gray-50: #F8FAFC;
+  --mp-gray-100: #F1F5F9;
+  --mp-gray-200: #E2E8F0;
+  --mp-gray-300: #CBD5E1;
+  --mp-gray-400: #94A3B8;
+  --mp-gray-500: #64748B;
+  --mp-gray-600: #475569;
+  --mp-gray-700: #334155;
+  --mp-gray-800: #1E293B;
+  --mp-gray-900: #0F172A;
+  --mp-black: #020617;
 
   /* Ticker Colors (Up/Down) */
-  --mp-ticker-up: #00FF88;
-  --mp-ticker-down: #FF3366;
-  --mp-ticker-up-spark: #00FF88;
-  --mp-ticker-down-spark: #FF3366;
+  --mp-ticker-up: var(--mp-neon-green);
+  --mp-ticker-down: var(--mp-neon-rose);
+  --mp-ticker-up-spark: var(--mp-neon-green);
+  --mp-ticker-down-spark: var(--mp-neon-rose);
 
   /* 한국식 상승/하락 색상 (빨강=상승, 파랑=하락) */
-  --mp-color-up: var(--mp-neon-pink);    /* #FF3366 */
-  --mp-color-down: var(--mp-neon-blue);  /* #3388FF */
+  --mp-color-up: var(--mp-neon-rose);    /* Red/Rose for KR Up */
+  --mp-color-down: var(--mp-neon-blue);  /* Blue for KR Down */
 
   /* Regime Dynamic Color Variables (JS overrides at runtime) */
-  --regime-color: #7C3AED;
-  --regime-color-rgb: 124 58 237;
+  --regime-color: var(--mp-neon-purple);
+  --regime-color-rgb: 139 92 246;
 }
+
 
 /* --- Homepage Hero Polish --- */
 .prose h1 {
@@ -137,18 +155,18 @@ code, pre, .num-cell, .terminal-data {
   position: absolute;
   top: -12px;
   left: 20px;
-  background: #0A0A1A;
+  background: var(--mp-black);
   padding: 4px 14px;
   font-family: var(--mp-font-mono);
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--mp-neon-cyan);
   letter-spacing: 0.15em;
-  border: 1px solid rgba(0, 240, 255, 0.5);
+  border: 1px solid rgba(6, 182, 212, 0.5);
   border-radius: 4px;
   text-transform: uppercase;
   z-index: 10;
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
 }
 
 .briefing-section--fact {
@@ -156,7 +174,7 @@ code, pre, .num-cell, .terminal-data {
 }
 .briefing-section--fact::before {
   color: var(--mp-neon-purple);
-  border-color: rgba(124, 58, 237, 0.6);
+  border-color: rgba(139, 92, 246, 0.6);
   content: "// DATA :: MARKET_FACTS";
 }
 
@@ -165,9 +183,10 @@ code, pre, .num-cell, .terminal-data {
 }
 .briefing-section--opinion::before {
   color: var(--mp-neon-cyan);
-  border-color: rgba(0, 240, 255, 0.6);
+  border-color: rgba(6, 182, 212, 0.6);
   content: "// ANALYST :: INTELLIGENCE";
 }
+
 
 /* --- 상승/하락 색상 강화 (한국식: 빨강=상승, 파랑=하락) --- */
 .num-up {
@@ -193,17 +212,28 @@ code, pre, .num-cell, .terminal-data {
 
 /* Light Mode — Minimal Cyberpunk */
 :root:not(.dark) {
-  --mp-glass-bg: rgba(255, 255, 255, 0.9);
-  --mp-glass-border: rgba(124, 58, 237, 0.15);
-  --mp-shadow-sm: 0 4px 16px -4px rgba(124, 58, 237, 0.1);
-  --mp-neon-cyan: #0891B2; /* Cyan-600: Darker for light mode */
+  --mp-glass-bg: rgba(255, 255, 255, 0.92);
+  --mp-glass-border: rgba(139, 92, 246, 0.15);
+  --mp-shadow-sm: 0 4px 16px -4px rgba(139, 92, 246, 0.1);
+  
+  /* Light Mode Palette Overrides (Darker for readability) */
   --mp-neon-purple: #7C3AED; /* Violet-600 */
-  --mp-color-up: #DC2626; /* Red-600 */
-  --mp-color-down: #2563EB; /* Blue-600 */
-  --mp-ticker-up: #047857;
-  --mp-ticker-down: #B91C1C;
+  --mp-neon-cyan: #0891B2;   /* Cyan-600 */
+  --mp-neon-rose: #E11D48;   /* Rose-600 */
+  --mp-neon-green: #059669;  /* Emerald-600 */
+  --mp-neon-pink: #DB2777;   /* Pink-600 */
+  --mp-neon-yellow: #D97706; /* Amber-600 */
+  --mp-neon-blue: #2563EB;   /* Blue-600 */
+  --mp-neon-laser: #06B6D4;  /* Cyan-500 */
+
+  /* Light Mode Ticker */
+  --mp-ticker-up: #047857;   /* Emerald-700 */
+  --mp-ticker-down: #BE123C; /* Rose-700 */
   --mp-ticker-up-spark: #059669;
-  --mp-ticker-down-spark: #DC2626;
+  --mp-ticker-down-spark: #E11D48;
+  
+  --mp-color-up: #BE123C;    /* Rose-700 */
+  --mp-color-down: #1D4ED8;  /* Blue-700 */
 }
 
 :root:not(.dark) .briefing-section {
@@ -213,14 +243,15 @@ code, pre, .num-cell, .terminal-data {
 }
 
 :root:not(.dark) .briefing-section::before {
-  background: white;
+  background: var(--mp-white);
 }
 
 :root:not(.dark) .briefing-section h2 {
-  color: #1E1E3A;
+  color: var(--mp-gray-800);
 }
-:root:not(.dark) .num-up { color: #DC2626 !important; text-shadow: none; }
-:root:not(.dark) .num-down { color: #2563EB !important; text-shadow: none; }
+:root:not(.dark) .num-up { color: var(--mp-color-up) !important; text-shadow: none; }
+:root:not(.dark) .num-down { color: var(--mp-color-down) !important; text-shadow: none; }
+
 
 /* --- Table Polish --- */
 .prose table {
