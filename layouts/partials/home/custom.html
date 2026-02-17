@@ -1,4 +1,9 @@
 {{/* Market Pulse Homepage - Hero + Tickers + Briefings */}}
+{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $paths := index $mp "paths" | default dict }}
+{{ $postsPath := index $paths "posts" | default "posts/" }}
+{{ $chartDataPrefix := index $paths "chart_data_prefix" | default "data/chart-data-" }}
+
 <div class="mp-home-shell">
   <div class="mp-ambient-orbs">
     <div class="mp-ambient-orb mp-ambient-orb--left animate-pulse-slow"></div>
@@ -75,7 +80,7 @@
     </div>
 
     <h3 class="mp-section-header">Market Overview <span id="mp-live-status" class="mp-live-status"></span></h3>
-    <div id="mp-ticker-groups" class="mp-ticker-groups">
+    <div id="mp-ticker-groups" class="mp-ticker-groups" data-chart-data-prefix="{{ $chartDataPrefix | relURL }}">
       {{/* Skeleton Loading State */}}
       {{ range seq 3 }}
       <div class="mp-ticker-group">
@@ -91,7 +96,7 @@
     {{ partial "home/recent-briefings.html" . }}
 
     <div class="mp-more-wrap">
-      <a href="/posts/" class="mp-more-link">
+      <a href="{{ $postsPath | relURL }}" class="mp-more-link">
         전체 브리핑 보기 &rarr;
       </a>
     </div>

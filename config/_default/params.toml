@@ -52,6 +52,93 @@ enableCodeCopy = true
 # Market Pulse Configuration (Refactoring Stage 1)
 # ==========================================
 [market_pulse]
+  [market_pulse.paths]
+    home = ""
+    posts = "posts/"
+    tags = "tags/"
+    chart_data_prefix = "data/chart-data-"
+
+  [market_pulse.external]
+    echarts_cdn = "https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"
+    fonts_css_url = "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+
+  [market_pulse.behavior]
+    reading_progress_initial_delay_ms = 100
+    theme_transition_duration_ms = 500
+
+  [market_pulse.branding]
+    header_title = "MARKET PULSE"
+    header_font_family = "'Noto Sans KR', sans-serif"
+    header_text_transform = "uppercase"
+    header_font_weight = "700"
+    header_letter_spacing = "0.05em"
+    header_color_dark = "#A78BFA"
+    header_color_light = "#7C3AED"
+    header_shadow_dark = "0 0 15px rgba(124, 58, 237, 0.4)"
+    header_shadow_light = "none"
+
+  [market_pulse.home]
+    lookback_days = 7
+    [market_pulse.home.live]
+      fresh_status_class = "is-fresh"
+      stale_status_class = "is-stale"
+
+  [market_pulse.regime]
+    default_status = "CAUTIOUS"
+    default_label = "Cautious"
+
+  [[market_pulse.home.regime_filters]]
+    value = "ALL"
+    label = "ALL"
+  [[market_pulse.home.regime_filters]]
+    value = "RISK_ON"
+    label = "RISK ON"
+  [[market_pulse.home.regime_filters]]
+    value = "CAUTIOUS"
+    label = "CAUTIOUS"
+  [[market_pulse.home.regime_filters]]
+    value = "RISK_OFF"
+    label = "RISK OFF"
+  [[market_pulse.home.regime_filters]]
+    value = "PANIC"
+    label = "PANIC"
+
+  [market_pulse.charts]
+    load_timeout_ms = 15000
+    theme_rerender_delay_ms = 150
+    mobile_breakpoint = 640
+    [market_pulse.charts.regime_score]
+      RISK_ON = 85
+      CAUTIOUS = 55
+      RISK_OFF = 30
+      PANIC = 10
+    [market_pulse.charts.palette]
+      primary = "#7C3AED"
+      cyan = "#00F0FF"
+      pink = "#FF3366"
+      blue = "#3388FF"
+      yellow = "#FFD600"
+      green = "#00FF88"
+      muted = "#64748B"
+      bg = "#0A0A1A"
+      text = "#E2E8F0"
+      text_light = "#94A3B8"
+      text_dark = "#1E1E3A"
+      border_light = "#cbd5e1"
+      grid_light = "#f1f5f9"
+      danger_light = "#2563EB"
+      success_light = "#DC2626"
+    [market_pulse.charts.metric_colors]
+      SPX = "#00F0FF"
+      NDX = "#7C3AED"
+      DJI = "#34d399"
+      VIX = "#f87171"
+      BTC = "#fbbf24"
+      USDKRW = "#06b6d4"
+      GOLD = "#eab308"
+      OIL = "#a8a29e"
+      US10Y = "#f472b6"
+
   [market_pulse.colors]
     [market_pulse.colors.regime]
       RISK_ON = "#4ade80"
@@ -79,7 +166,34 @@ enableCodeCopy = true
     empty_events = "표시할 주요 일정 데이터가 없습니다."
     empty_filtered = "필터 조건에 맞는 일정이 없습니다."
     holiday_label = "🇰🇷 KR 휴장 (국내 증시 휴장)"
+    filter_importance = "중요도"
+    filter_period = "기간"
+    filter_country = "국가"
+    filter_all = "전체"
+    filter_high = "상"
+    filter_high_medium = "상+중"
+    filter_pm10 = "±10일"
+    filter_pm20 = "±20일"
+    filter_pm30 = "±30일"
+    filter_country_us = "미국"
+    filter_country_kr = "한국"
+    chart_data_unavailable = "[ DATA_UNAVAILABLE ]"
+    chart_request_timeout = "REQUEST TIMEOUT — RELOAD TO RETRY"
+    chart_not_published = "MARKET DATA NOT YET PUBLISHED"
+    chart_load_failed = "FAILED TO LOAD MARKET DATA"
+    chart_renderer_missing = "CHART RENDERER NOT AVAILABLE"
 
   [market_pulse.calendar]
     timezone = "Asia/Seoul"
+    timezone_label = "KST"
+    utc_offset = "+09:00"
+    locale = "ko-KR"
     weekdays = ["일", "월", "화", "수", "목", "금", "토"]
+    default_importance_filter = "high"
+    default_period_filter = "pm10"
+    default_country_filter = "all"
+    upcoming_limit = 20
+    [market_pulse.calendar.period_days]
+      pm10 = 10
+      pm20 = 20
+      pm30 = 30

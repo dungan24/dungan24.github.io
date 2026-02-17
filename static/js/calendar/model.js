@@ -4,6 +4,11 @@
   var ns = window.MPCalendar = window.MPCalendar || {};
 
   ns.createModel = function(parser) {
+    var config = window.MP_CONFIG || {};
+    var calConfig = config.calendar || {};
+    var timeZone = calConfig.timezone || 'Asia/Seoul';
+    var periodDays = calConfig.period_days || { pm10: 10, pm20: 20, pm30: 30 };
+
     function getEventStatus(event, now) {
       if (event.status === '예정' || event.status === '발표' || event.status === '마감') {
         return event.status;
@@ -61,9 +66,8 @@
       if (filterState.importance === 'high' && event.importance !== 'high') return false;
       if (filterState.importance === 'high-medium' && event.importance === 'low') return false;
       var periodDiff = getKstDayDiff(event.dateTime, now);
-      if (filterState.period === 'pm10' && (periodDiff < -10 || periodDiff > 10)) return false;
-      if (filterState.period === 'pm20' && (periodDiff < -20 || periodDiff > 20)) return false;
-      if (filterState.period === 'pm30' && (periodDiff < -30 || periodDiff > 30)) return false;
+      var periodLimit = Number(periodDays[filterState.period]);
+      if (Number.isFinite(periodLimit) && (periodDiff < -periodLimit || periodDiff > periodLimit)) return false;
       if (filterState.country !== 'all' && normalizeCountryBucket(event.country) !== filterState.country) return false;
       return true;
     }
@@ -84,7 +88,7 @@
       });
 
       var p = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Seoul',
+        timeZone: timeZone,
         year: 'numeric',
         month: '2-digit'
       }).formatToParts(nearest.dateTime).reduce(function(acc, cur) {
@@ -103,7 +107,7 @@
       events.forEach(function(e) {
         if (!e.dateTime || isNaN(e.dateTime.getTime())) return;
         var parts = new Intl.DateTimeFormat('en-CA', {
-          timeZone: 'Asia/Seoul',
+          timeZone: timeZone,
           year: 'numeric',
           month: '2-digit',
           day: '2-digit'

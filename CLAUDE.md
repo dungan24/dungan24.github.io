@@ -105,7 +105,7 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
   - `briefing-sections.css`, `calendar.css`, `toc-and-effects.css`
   - `layout-overrides.css`, `chart-cards.css`, `home-market-overview.css`
 - CSS 변수: `--mp-glass-bg`, `--mp-glass-border`, `--mp-neon-purple`, `--mp-neon-cyan` 등
-- 폰트: Orbitron (제목), Exo 2 (본문), JetBrains Mono (데이터/코드)
+- 폰트: `Noto Sans KR` 단일 스택(`--mp-font-display/sans/subtitle/mono`) 사용
 - 다크모드 기본, 라이트모드 `:root:not(.dark)` 오버라이드
 - 모바일 반응형: 640px, 768px, 1024px 브레이크포인트
 
@@ -123,6 +123,7 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 - 캘린더 구현은 `static/js/calendar/*.js`에만 둔다.
 - `static/js/market-pulse-calendar.js`는 어댑터 역할만 유지한다.
 - `layouts/`에는 신규 인라인 `<script>/<style>`를 추가하지 않는다.
+- 예외: `layouts/partials/extend-head-uncached.html`의 데이터 브리지 인라인 스크립트(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`)는 허용한다.
 
 | 기능 | 설명 |
 |------|------|

@@ -175,7 +175,7 @@ try {
     if ($raw -notmatch "data-chart-data-url=") {
       Add-Finding -Check "market-charts-contract" -Message "Missing data-chart-data-url attribute in $chartsShortcode"
     }
-    if ($raw -notmatch '<script src="/js/market-charts-loader\.js"></script>') {
+    if ($raw -notmatch '<script src="(?:/js/market-charts-loader\.js|\{\{\s*"js/market-charts-loader\.js"\s*\|\s*relURL\s*\}\})"></script>') {
       Add-Finding -Check "market-charts-loader" -Message "Missing external loader script in $chartsShortcode"
     }
   }

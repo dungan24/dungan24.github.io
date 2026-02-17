@@ -8,6 +8,11 @@
       var config = window.MP_CONFIG || {};
       var labels = config.labels || {};
       var calConfig = config.calendar || {};
+      var locale = calConfig.locale || 'ko-KR';
+      var defaultImportanceFilter = calConfig.default_importance_filter || 'high';
+      var defaultPeriodFilter = calConfig.default_period_filter || 'pm10';
+      var defaultCountryFilter = calConfig.default_country_filter || 'all';
+      var upcomingLimit = Number(calConfig.upcoming_limit || 20);
 
       var hasChartPayload = parser.hasChartKeyEventsPayload();
 
@@ -165,9 +170,9 @@
       upcomingList.className = 'mp-upcoming__list';
 
       var filterState = {
-        importance: 'high',
-        period: 'pm10',
-        country: 'all'
+        importance: defaultImportanceFilter,
+        period: defaultPeriodFilter,
+        country: defaultCountryFilter
       };
 
       var upcomingEvents = events.filter(function(e) {
@@ -208,22 +213,23 @@
         return group;
       }
 
-      filterBar.appendChild(createFilterGroup('중요도', [
-        { label: '상', value: 'high' },
-        { label: '상+중', value: 'high-medium' },
-        { label: '전체', value: 'all' }
+      filterBar.appendChild(createFilterGroup(labels.filter_importance || '중요도', [
+        { label: labels.filter_high || '상', value: 'high' },
+        { label: labels.filter_high_medium || '상+중', value: 'high-medium' },
+        { label: labels.filter_all || '전체', value: 'all' }
       ], 'importance'));
 
-      filterBar.appendChild(createFilterGroup('기간', [
-        { label: '±10일', value: 'pm10' },
-        { label: '±20일', value: 'pm20' },
-        { label: '전체', value: 'all' }
+      filterBar.appendChild(createFilterGroup(labels.filter_period || '기간', [
+        { label: labels.filter_pm10 || '±10일', value: 'pm10' },
+        { label: labels.filter_pm20 || '±20일', value: 'pm20' },
+        { label: labels.filter_pm30 || '±30일', value: 'pm30' },
+        { label: labels.filter_all || '전체', value: 'all' }
       ], 'period'));
 
-      filterBar.appendChild(createFilterGroup('국가', [
-        { label: '전체', value: 'all' },
-        { label: '미국', value: 'us' },
-        { label: '한국', value: 'kr' }
+      filterBar.appendChild(createFilterGroup(labels.filter_country || '국가', [
+        { label: labels.filter_all || '전체', value: 'all' },
+        { label: labels.filter_country_us || '미국', value: 'us' },
+        { label: labels.filter_country_kr || '한국', value: 'kr' }
       ], 'country'));
 
       upcomingWrap.appendChild(filterBar);
@@ -241,7 +247,7 @@
         var filtered = upcomingEvents.filter(function(e) {
           return model.matchesUpcomingFilter(e, filterState, now);
         });
-        var visible = model.selectUpcomingEvents(filtered, 20);
+        var visible = model.selectUpcomingEvents(filtered, upcomingLimit);
 
         if (visible.length === 0) {
           var emptyFiltered = document.createElement('div');
@@ -255,7 +261,7 @@
         var lastDateStr = '';
 
         visible.forEach(function(e) {
-          var currentDateStr = e.dateTime.toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit', weekday: 'short' });
+          var currentDateStr = e.dateTime.toLocaleDateString(locale, { month: '2-digit', day: '2-digit', weekday: 'short' });
           
           if (currentDateStr !== lastDateStr) {
             var dateDivider = document.createElement('div');

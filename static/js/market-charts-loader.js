@@ -2,6 +2,10 @@
   'use strict';
 
   if (window.__MP_CHARTS_RENDERED) return;
+  var config = window.MP_CONFIG || {};
+  var labels = config.labels || {};
+  var charts = config.charts || {};
+  var loadTimeoutMs = Number(charts.load_timeout_ms || 15000);
 
   var root = document.getElementById('market-charts-root');
   if (!root) return;
@@ -15,20 +19,36 @@
 
   window.__MP_CHARTS_RENDERED = true;
 
+  function buildErrorNode(msg) {
+    var wrap = document.createElement('div');
+    wrap.className = 'mp-chart-error';
+
+    var title = document.createElement('div');
+    title.className = 'mp-chart-error__title';
+    title.textContent = labels.chart_data_unavailable || '[ DATA_UNAVAILABLE ]';
+    wrap.appendChild(title);
+
+    var body = document.createElement('div');
+    body.className = 'mp-chart-error__message';
+    body.textContent = msg;
+    wrap.appendChild(body);
+
+    return wrap;
+  }
+
   function showError(msg) {
     if (statusContainer) statusContainer.dataset.label = 'Error';
     if (loadingUI) {
-      loadingUI.innerHTML = '<div style="text-align:center;color:#FF3366">'
-        + '<div style="font-weight:700;margin-bottom:0.5rem;font-family:Noto Sans KR,sans-serif;letter-spacing:0.1em">[ DATA_UNAVAILABLE ]</div>'
-        + '<div style="font-size:12px;opacity:0.9;font-family:Noto Sans KR,sans-serif;color:#64748B">' + msg + '</div></div>';
+      loadingUI.textContent = '';
+      loadingUI.appendChild(buildErrorNode(msg));
     }
   }
 
   var timeoutId = setTimeout(function() {
     if (statusContainer && statusContainer.dataset.label === 'Loading') {
-      showError('REQUEST TIMEOUT \u2014 RELOAD TO RETRY');
+      showError(labels.chart_request_timeout || 'REQUEST TIMEOUT \u2014 RELOAD TO RETRY');
     }
-  }, 15000);
+  }, loadTimeoutMs);
 
   fetch(chartDataUrl)
     .then(function(response) {
@@ -50,7 +70,7 @@
         renderAllCharts(data);
       } else {
         console.error('renderAllCharts is not available.');
-        showError('CHART RENDERER NOT AVAILABLE');
+        showError(labels.chart_renderer_missing || 'CHART RENDERER NOT AVAILABLE');
       }
 
       if (statusContainer) statusContainer.dataset.label = 'Charts';
@@ -58,8 +78,10 @@
     .catch(function(err) {
       clearTimeout(timeoutId);
       console.error('Chart data load failed:', err);
-      showError(err.message === 'HTTP_404'
-        ? 'MARKET DATA NOT YET PUBLISHED'
-        : 'FAILED TO LOAD MARKET DATA');
+      showError(
+        err.message === 'HTTP_404'
+          ? (labels.chart_not_published || 'MARKET DATA NOT YET PUBLISHED')
+          : (labels.chart_load_failed || 'FAILED TO LOAD MARKET DATA')
+      );
     });
 })();

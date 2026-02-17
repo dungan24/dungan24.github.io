@@ -1,5 +1,5 @@
 param(
-  [string]$BaseUrl = "http://localhost:1314",
+  [string]$BaseUrl = "",
   [string]$PagePath = "",
   [switch]$InstallBrowser
 )
@@ -11,6 +11,13 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 Push-Location $repoRoot
 
 try {
+  $smokeConfig = Join-Path $PSScriptRoot "smoke-config.ps1"
+  if (-not (Test-Path -Path $smokeConfig -PathType Leaf)) {
+    throw "Missing smoke config script: $smokeConfig"
+  }
+  . $smokeConfig
+  $BaseUrl = Get-SmokeBaseUrl -Explicit $BaseUrl
+
   $spec = Join-Path $PSScriptRoot "calendar-filters.smoke.spec.js"
   if (-not (Test-Path -Path $spec -PathType Leaf)) {
     throw "Missing smoke spec: $spec"

@@ -4,11 +4,27 @@
   var ns = window.MPCalendar = window.MPCalendar || {};
 
   ns.createParser = function(KRX_PUBLIC_HOLIDAYS) {
+    var config = window.MP_CONFIG || {};
+    var calConfig = config.calendar || {};
+    var timeZone = calConfig.timezone || 'Asia/Seoul';
+    var timeZoneLabel = calConfig.timezone_label || 'KST';
+    var utcOffset = calConfig.utc_offset || '+09:00';
+    var locale = calConfig.locale || 'ko-KR';
+
+    function escapeRegex(text) {
+      return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    var escapedTimeZoneLabel = escapeRegex(timeZoneLabel);
+    var timeTokenRegex = new RegExp('\\s*' + escapedTimeZoneLabel + '$', 'i');
+    var scheduleTimeRegex = new RegExp('시각:\\s*(\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}(?::\\d{2})?)\\s*' + escapedTimeZoneLabel, 'i');
+    var legacyScheduleRegex = new RegExp('^\\[([A-Z]{2,5})\\]\\s*(.+?)\\s*\\|\\s*(\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}(?::\\d{2})?)\\s*' + escapedTimeZoneLabel + '\\s*\\|\\s*중요도:\\s*(high|medium|low)(?:\\s*\\((.*)\\))?$', 'i');
+
     function parseKstDateTime(text) {
       if (!text) return null;
       var normalized = String(text).trim().replace(' ', 'T');
       if (!/T\d{2}:\d{2}(:\d{2})?$/.test(normalized)) return null;
-      return new Date(normalized + '+09:00');
+      return new Date(normalized + utcOffset);
     }
 
     function pad2(v) {
@@ -22,7 +38,7 @@
     function kstYmd(date) {
       if (!date || isNaN(date.getTime())) return '';
       var p = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Seoul',
+        timeZone: timeZone,
         year: 'numeric',
         month: '2-digit',
         day: '2-digit'
@@ -50,8 +66,8 @@
 
     function formatKst(date) {
       if (!date || isNaN(date.getTime())) return '-';
-      var p = new Intl.DateTimeFormat('ko-KR', {
-        timeZone: 'Asia/Seoul',
+      var p = new Intl.DateTimeFormat(locale, {
+        timeZone: timeZone,
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
@@ -62,7 +78,7 @@
         acc[cur.type] = cur.value;
         return acc;
       }, {});
-      return p.year + '-' + p.month + '-' + p.day + ' ' + p.hour + ':' + p.minute + ' KST';
+      return p.year + '-' + p.month + '-' + p.day + ' ' + p.hour + ':' + p.minute + ' ' + timeZoneLabel;
     }
 
     function getKstNow() {
@@ -86,7 +102,7 @@
       var chartData = window.__MP_CHART_DATA;
       if (!chartData || !Array.isArray(chartData.keyEvents)) return [];
       return chartData.keyEvents.map(function(item) {
-        var eventTimeRaw = String(item.eventTimeKst || '').replace(/\s*KST$/, '').trim();
+        var eventTimeRaw = String(item.eventTimeKst || '').replace(timeTokenRegex, '').trim();
         var eventTime = parseKstDateTime(eventTimeRaw);
         var name = String(item.eventName || '').trim();
         var bracketCountry = (name.match(/^\[([A-Z]{2,5})\]/) || [])[1] || '';
@@ -117,7 +133,7 @@
       var raw = String(text || '').replace(/\s+/g, ' ').trim();
 
       var compactHead = raw.match(/^\[(상|중|하|high|medium|low)\]\[([^\]]+)\]\[(D(?:[+\-]\d+|ay))\]\s*(?:\[[A-Z]{2,5}\]\s*)?(.+?)\s+시각:\s*/i);
-      var compactTime = raw.match(/시각:\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST/i);
+      var compactTime = raw.match(scheduleTimeRegex);
       if (compactHead && compactTime) {
         var compactImportance = normalizeImportanceToken(compactHead[1]);
         var compactCountry = compactHead[2].trim();
@@ -166,7 +182,7 @@
       }
 
       var modernHead = raw.match(/\[(상|중|하|high|medium|low)\]\s*\[([^\]]+)\]\s*(?:\[[A-Z]{2,5}\]\s*)?(.+?)\s*\((D(?:[+\-]\d+|ay))\)/i);
-      var modernTime = raw.match(/시각:\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST/i);
+      var modernTime = raw.match(scheduleTimeRegex);
       if (modernHead && modernTime) {
         var modernImportance = normalizeImportanceToken(modernHead[1]);
         var modernCountry = modernHead[2].trim();
@@ -212,8 +228,7 @@
         };
       }
 
-      var re = /^\[([A-Z]{2,5})\]\s*(.+?)\s*\|\s*(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)\s*KST\s*\|\s*중요도:\s*(high|medium|low)(?:\s*\((.*)\))?$/i;
-      var m = raw.match(re);
+      var m = raw.match(legacyScheduleRegex);
       if (!m) return null;
 
       var country = m[1].toUpperCase();

@@ -8,12 +8,18 @@ param(
   [int]$JsThresholdLines = 600,
   [int]$CssThresholdLines = 700,
   [int]$TemplateThresholdLines = 350,
-  [string]$CalendarSmokeBaseUrl = "http://localhost:1314",
+  [string]$CalendarSmokeBaseUrl = "",
   [string]$CalendarSmokePagePath = ""
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+
+$smokeConfig = Join-Path $PSScriptRoot "smoke-config.ps1"
+if (-not (Test-Path -Path $smokeConfig -PathType Leaf)) {
+  throw "Missing smoke config script: $smokeConfig"
+}
+. $smokeConfig
 
 $auditScript = Join-Path $PSScriptRoot "agent-audit.ps1"
 if (-not (Test-Path -Path $auditScript -PathType Leaf)) {
@@ -65,8 +71,9 @@ if ($RunCalendarSmoke) {
     throw "Missing calendar smoke script: $calendarSmokeScript"
   }
 
+  $resolvedCalendarBaseUrl = Get-SmokeBaseUrl -Explicit $CalendarSmokeBaseUrl
   & $calendarSmokeScript `
-    -BaseUrl $CalendarSmokeBaseUrl `
+    -BaseUrl $resolvedCalendarBaseUrl `
     -PagePath $CalendarSmokePagePath
   if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
@@ -78,11 +85,17 @@ if ($RunUiViewportSmoke) {
   # This requires node and playwright dependencies installed
   Write-Host "Running UI Viewport Smoke Test..."
   
-  # Check if server is running on port 1314 (basic check)
+  $uiSmokeBaseUrl = Get-SmokeBaseUrl -Explicit $CalendarSmokeBaseUrl
+  $env:MP_BASE_URL = $uiSmokeBaseUrl
+
+  # Check if target server is reachable (basic TCP check)
   try {
-    $conn = Test-NetConnection -ComputerName localhost -Port 1314 -WarningAction SilentlyContinue
+    $uri = [Uri]$uiSmokeBaseUrl
+    $targetHost = $uri.Host
+    $targetPort = if ($uri.IsDefaultPort) { if ($uri.Scheme -eq "https") { 443 } else { 80 } } else { $uri.Port }
+    $conn = Test-NetConnection -ComputerName $targetHost -Port $targetPort -WarningAction SilentlyContinue
     if (-not $conn.TcpTestSucceeded) {
-      throw "Server is not running on http://localhost:1314. Please start 'hugo server --port 1314' before running UI smoke tests."
+      throw "Server is not running on $uiSmokeBaseUrl. Start the Hugo server before running UI smoke tests."
     }
   } catch {
     # If Test-NetConnection fails (some environments), just warn
@@ -97,4 +110,3 @@ if ($RunUiViewportSmoke) {
 }
 
 Write-Host "Preflight completed successfully."
-

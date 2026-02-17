@@ -1,10 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const { resolveBaseUrl } = require('./smoke-config');
 
 // Basic UI Smoke Tests
 // These tests verify that critical UI elements are rendered and responsive
-// They require the Hugo server to be running (default: http://localhost:1314)
+// They require the Hugo server to be running (MP_BASE_URL or local default)
 
-const BASE_URL = process.env.MP_BASE_URL || 'http://localhost:1314';
+const BASE_URL = resolveBaseUrl();
 
 test.describe('Market Pulse UI Smoke', () => {
   

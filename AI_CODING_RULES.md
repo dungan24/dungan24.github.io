@@ -120,6 +120,12 @@
 - `MUST`: 선행 모듈이 필요하면 주석/설명으로 의존성 명시
 - `MUST NOT`: 엔트리포인트 파일에 parser/model/renderer 코어 로직 혼합
 
+### 6.3 Layout Inline Policy
+
+- `MUST NOT`: `layouts/`에 신규 인라인 `<script>/<style>` 블록 추가
+- `MAY` (허용 예외): `layouts/partials/extend-head-uncached.html`의 데이터 브리지 인라인 스크립트(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`) 유지
+- `MUST`: 위 예외 범위를 벗어나는 인라인 블록이 필요하면 9장 예외 처리 절차를 먼저 적용
+
 ## 7. AI 변경 작업 프로토콜
 
 1. `MUST`: 기존 패턴 탐색(동일/유사 기능 파일 먼저 확인)

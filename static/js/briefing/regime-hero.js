@@ -6,12 +6,15 @@
   ns.injectRegimeHero = function(content, findSectionByTitle, regimeColorMap, regimeColorRgbMap) {
     if (!content || !window.__MP_PAGE || !window.__MP_PAGE.regime) return;
 
+    var config = window.MP_CONFIG || {};
+    var defaultRegimeColors = (config.colors && config.colors.regime) || {};
+    var defaultRegimeRgb = (config.colors && config.colors.regime_rgb) || {};
     var mp = window.__MP_PAGE;
     var colorMap = regimeColorMap || {};
     var rgbMap = regimeColorRgbMap || {};
 
-    var regimeColor = colorMap[mp.regime] || '#fbbf24';
-    var regimeRgb = rgbMap[mp.regime] || '251 191 36';
+    var regimeColor = colorMap[mp.regime] || defaultRegimeColors.CAUTIOUS || '#fbbf24';
+    var regimeRgb = rgbMap[mp.regime] || defaultRegimeRgb.CAUTIOUS || '251 191 36';
 
     document.documentElement.style.setProperty('--regime-color', regimeColor);
     document.documentElement.style.setProperty('--regime-color-rgb', regimeRgb);

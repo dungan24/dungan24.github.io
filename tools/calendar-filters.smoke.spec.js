@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { test, expect } = require('playwright/test');
+const { resolveBaseUrl } = require('./smoke-config');
 
 function resolveLatestPreMarketPath() {
   const postsDir = path.join(process.cwd(), 'content', 'posts');
@@ -38,7 +39,7 @@ function resolveLatestPreMarketPath() {
 }
 
 function buildTargetUrl() {
-  const baseUrl = process.env.MP_BASE_URL || 'http://localhost:1314';
+  const baseUrl = resolveBaseUrl();
   let pagePath = process.env.MP_CALENDAR_PAGE_PATH;
   
   if (!pagePath) {
