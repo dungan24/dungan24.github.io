@@ -49,7 +49,9 @@ hugo --gc --minify
 
 ```bash
 pwsh -File tools/agent-preflight.ps1
-pwsh -File tools/agent-preflight.ps1 -RunBuild -RunUiViewportSmoke -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunCalendarSmoke -CalendarSmokeBaseUrl http://localhost:1314 -FailOnFindings
 pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 ```
@@ -65,6 +67,7 @@ pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 - Keep `static/js/market-pulse-calendar.js` as an entrypoint/adapter only (no parser/model/renderer implementation)
 - Keep visual updates in `assets/css/custom.css` and semantic split files under `assets/css/custom/`
 - Prefer no inline `<script>/<style>` in `layouts/`; use external assets
+- Allowed exception: `layouts/partials/extend-head-uncached.html` config bridge (`window.__MP_CONFIG`, conditional `window.__MP_PAGE`)
 - Preserve mobile behavior across 640px, 768px, 1024px breakpoints
 
 ## 4) Contribution Guardrails for Agents
@@ -88,6 +91,7 @@ pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 
 Validation checklist before finishing:
 - Run `pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings`
+- Run `pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke -FailOnFindings` (server required)
 - Run `pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314`
 - Run local Hugo server and verify `/posts/pre-market-YYYY-MM-DD/`
 - Confirm news cards (`.mp-news-card`) parse headline/meta/excerpt separately

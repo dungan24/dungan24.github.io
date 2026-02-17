@@ -51,7 +51,7 @@ market-pulse (private)              market-pulse-blog (public)
 | SSG | Hugo |
 | Theme | Blowfish |
 | Styling | Custom CSS (Cyberpunk) |
-| Fonts | Orbitron · Exo 2 · JetBrains Mono |
+| Fonts | Noto Sans KR (display/sans/mono unified) |
 | Charts | ECharts |
 | Deploy | GitHub Pages |
 
@@ -69,13 +69,19 @@ serve.cmd
 # 빠른 구조/용량 점검
 pwsh -File tools/agent-audit.ps1
 
+# 기본 정적 점검(audit + architecture lint)
+pwsh -File tools/agent-preflight.ps1 -FailOnFindings
+
 # 점검 + 프로덕션 빌드 검증
-pwsh -File tools/agent-preflight.ps1 -RunBuild
+pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+
+# UI viewport 브라우저 스모크
+pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke -FailOnFindings
 
 # 캘린더 필터 브라우저 스모크 (importance/period/country)
 pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 
-# 아키텍처 규칙 위반 점검
+# 아키텍처 규칙만 단독 점검
 pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 ```
 
@@ -83,6 +89,7 @@ pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 - 벤더 파일이나 스크린샷까지 전체 검색이 필요하면 `rg --no-ignore`를 사용합니다.
 - 디버깅 스크린샷은 `docs/screenshots/` 아카이브로 관리합니다.
 - `tools/agent-audit.ps1`는 도메인별 파일 길이 임계값과 `layouts/` 인라인 `<script>/<style>` 규칙을 점검합니다.
+- 인라인 예외는 `layouts/partials/extend-head-uncached.html`의 데이터 브리지(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`)만 허용됩니다.
 
 ## License
 

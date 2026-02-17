@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var content = document.querySelector('.article-content') || document.querySelector('.prose');
   var ns = window.MPBriefing || {};
-  var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
   var config = window.MP_CONFIG || {};
+  var paths = config.paths || {};
+  var rawHomePath = paths.home || '/';
+  var homePath = rawHomePath.charAt(0) === '/' ? rawHomePath : ('/' + rawHomePath);
+  var normalizedHomePath = homePath.endsWith('/') ? homePath : (homePath + '/');
+  var normalizedIndexPath = normalizedHomePath + 'index.html';
+  var isHomePage = window.location.pathname === normalizedHomePath || window.location.pathname === normalizedIndexPath;
 
   var REGIME_COLOR_MAP = config.colors.regime;
   var REGIME_COLOR_RGB_MAP = config.colors.regime_rgb;

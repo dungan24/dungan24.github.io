@@ -1,5 +1,9 @@
 (function () {
   'use strict';
+  var config = window.MP_CONFIG || {};
+  var behavior = config.behavior || {};
+  var transitionDurationMs = Number(behavior.theme_transition_duration_ms || 500);
+
   // Blowfish의 appearance switcher 버튼 감지 (Desktop & Mobile)
   const switchers = document.querySelectorAll('#appearance-switcher, #appearance-switcher-mobile');
   if (!switchers.length) return;
@@ -10,7 +14,7 @@
       // transition 끝나면 클래스 제거 (성능)
       setTimeout(function () {
         document.documentElement.classList.remove('theme-transition');
-      }, 500);
+      }, transitionDurationMs);
     });
   });
 })();

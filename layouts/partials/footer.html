@@ -1,3 +1,9 @@
+{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $paths := index $mp "paths" | default dict }}
+{{ $homePath := index $paths "home" | default "" }}
+{{ $postsPath := index $paths "posts" | default "posts/" }}
+{{ $tagsPath := index $paths "tags" | default "tags/" }}
+
 <footer id="site-footer" class="print:hidden">
   
   <div class="mp-terminal-footer">
@@ -62,15 +68,15 @@
 
   <!-- Mobile Bottom Nav -->
   <nav id="mp-mobile-bottom-nav">
-    <a href="/" class="mp-nav-item {{ if .IsHome }}active{{ end }}">
+    <a href="{{ $homePath | relURL }}" class="mp-nav-item {{ if .IsHome }}active{{ end }}">
       <span class="mp-nav-icon">🏠</span>
       <span>Home</span>
     </a>
-    <a href="/posts/" class="mp-nav-item {{ if eq .Section "posts" }}active{{ end }}">
+    <a href="{{ $postsPath | relURL }}" class="mp-nav-item {{ if eq .Section "posts" }}active{{ end }}">
       <span class="mp-nav-icon">📰</span>
       <span>Briefing</span>
     </a>
-    <a href="/tags/" class="mp-nav-item {{ if eq .Section "tags" }}active{{ end }}">
+    <a href="{{ $tagsPath | relURL }}" class="mp-nav-item {{ if eq .Section "tags" }}active{{ end }}">
       <span class="mp-nav-icon">🏷️</span>
       <span>Tags</span>
     </a>

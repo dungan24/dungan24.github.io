@@ -1,10 +1,21 @@
 # Market Pulse UI/UX Implementation Plan (LLM-Lite Friendly)
 
-Last Updated: 2026-02-16
+Last Updated: 2026-02-17
 Repo: `market-pulse-blog`
 Branch: `ui/enhanced`
 Owner: AI Agent
 Plan Mode: One-task-at-a-time (한 번에 1개 카드만 `DOING`)
+
+## 0) 2026-02-17 규칙 준수 재점검 (Addendum)
+
+- [x] 규칙 점검 명령 PASS
+  - `pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings`
+  - `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
+  - `pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314`
+  - `npm run test:ui-smoke`
+- [x] 문서-코드 정합성 갱신
+  - 폰트 표기를 `Noto Sans KR` 단일 스택 기준으로 통일
+  - 템플릿 인라인 정책 예외(`layouts/partials/extend-head-uncached.html` 데이터 브리지)를 명시
 
 ## 1) 목표
 
@@ -94,7 +105,7 @@ Notes:
   - `content/posts/pre-market-*.md`
   - `static/data/chart-data-*.json`
 - 스타일은 `assets/css/custom/`에, 동작은 `static/js/`에 위치
-- 인라인 `<script>/<style>` 추가 금지
+- 인라인 `<script>/<style>` 신규 추가 금지 (예외: `layouts/partials/extend-head-uncached.html` 데이터 브리지)
 - 모바일 브레이크포인트 유지: `640px`, `768px`, `1024px`
 - 가능한 한 기존 모듈에 통합하고, 새 파일 추가는 최소화
 
@@ -829,7 +840,9 @@ Notes:
 - 2026-02-16 | T-804 | DONE | Updated CI workflow to include smoke tests | PASS
 - 2026-02-16 | T-805 | DONE | Updated README/AGENTS/PROJECT_MAP docs | PASS
 - 2026-02-16 | T-806 | DONE | Added unlinked asset check to audit tool | PASS
+- 2026-02-17 | DOC-901 | DONE | Rule-compliance re-audit + docs sync (fonts/inline policy) | PASS
 
 ## 10) Change Log
 
 - 2026-02-16: 기존 개략 계획을 코드베이스 실측 기반의 상세 Task Board + 상태관리형 계획으로 전면 교체
+- 2026-02-17: 규칙 준수 재점검 결과를 반영해 문서 정합성(폰트/인라인 예외/검증 명령)을 최신화

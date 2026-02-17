@@ -1,12 +1,22 @@
 {{/* Recent Briefings - Categorized cards with distinctive styles */}}
+{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $homeCfg := index $mp "home" | default dict }}
+{{ $filtersDefault := slice
+  (dict "value" "ALL" "label" "ALL")
+  (dict "value" "RISK_ON" "label" "RISK ON")
+  (dict "value" "CAUTIOUS" "label" "CAUTIOUS")
+  (dict "value" "RISK_OFF" "label" "RISK OFF")
+  (dict "value" "PANIC" "label" "PANIC")
+}}
+{{ $filters := index $homeCfg "regime_filters" | default $filtersDefault }}
 <div class="mp-section-header-row">
   <h3 class="mp-section-header">Recent Briefings</h3>
   <div class="mp-regime-filter" id="mp-regime-filter">
-    <button class="mp-filter-chip is-active" data-filter="ALL">ALL</button>
-    <button class="mp-filter-chip" data-filter="RISK_ON">RISK ON</button>
-    <button class="mp-filter-chip" data-filter="CAUTIOUS">CAUTIOUS</button>
-    <button class="mp-filter-chip" data-filter="RISK_OFF">RISK OFF</button>
-    <button class="mp-filter-chip" data-filter="PANIC">PANIC</button>
+    {{ range $idx, $f := $filters }}
+    {{ $value := index $f "value" | default "ALL" }}
+    {{ $label := index $f "label" | default $value }}
+    <button class="mp-filter-chip{{ if eq $idx 0 }} is-active{{ end }}" data-filter="{{ $value }}">{{ $label }}</button>
+    {{ end }}
   </div>
 </div>
 <div class="mp-briefing-cards" id="mp-briefing-cards-container">

@@ -1,56 +1,61 @@
-/**
- * Market Pulse - ECharts 렌더링 (4종 차트: Trend, Correlation, Regime, Sectors)
- * Cyberpunk HUD Edition - Internal Optimization
- */
-
+/* Market Pulse - ECharts 렌더링 (Trend/Correlation/Regime/Sectors) */
 /* globals echarts */
-
+const MP_CONFIG = window.MP_CONFIG || {};
+const CHART_CONFIG = MP_CONFIG.charts || {};
+const PALETTE = CHART_CONFIG.palette || {};
+const METRIC_PALETTE = CHART_CONFIG.metric_colors || {};
+const REGIME_SCORE_MAP = CHART_CONFIG.regime_score || {};
+const MOBILE_BREAKPOINT = Number(CHART_CONFIG.mobile_breakpoint || 640);
+const THEME_RERENDER_DELAY_MS = Number(CHART_CONFIG.theme_rerender_delay_ms || 150);
 const COLORS = {
-  primary: '#7C3AED',   /* Purple */
-  cyan: '#00F0FF',      /* Neon Cyan */
-  pink: '#FF3366',      /* Neon Pink (Up) */
-  blue: '#3388FF',      /* Neon Blue (Down) */
-  yellow: '#FFD600',    /* Neon Yellow */
-  green: '#00FF88',     /* Neon Green */
-  muted: '#64748B',     /* Slate */
-  bg: '#0A0A1A',        /* Dark BG */
-  text: '#E2E8F0',      /* Light Text */
+  primary: PALETTE.primary || '#7C3AED',
+  cyan: PALETTE.cyan || '#00F0FF',
+  pink: PALETTE.pink || '#FF3366',
+  blue: PALETTE.blue || '#3388FF',
+  yellow: PALETTE.yellow || '#FFD600',
+  green: PALETTE.green || '#00FF88',
+  muted: PALETTE.muted || '#64748B',
+  bg: PALETTE.bg || '#0A0A1A',
+  text: PALETTE.text || '#E2E8F0',
+  textLight: PALETTE.text_light || '#94A3B8',
+  textDark: PALETTE.text_dark || '#1E1E3A',
+  borderLight: PALETTE.border_light || '#cbd5e1',
+  gridLight: PALETTE.grid_light || '#f1f5f9',
+  successLight: PALETTE.success_light || '#DC2626',
+  dangerLight: PALETTE.danger_light || '#2563EB',
+  panic: PALETTE.panic || '#ff0040',
+  white: PALETTE.white || '#fff',
+  headerDark: PALETTE.header_dark || '#475569'
 };
-
 const METRIC_COLORS = {
-  SPX: '#00F0FF',
-  NDX: '#7C3AED',
-  DJI: '#34d399',
-  VIX: '#f87171',
-  BTC: '#fbbf24',
-  USDKRW: '#06b6d4',
-  GOLD: '#eab308',
-  OIL: '#a8a29e',
-  US10Y: '#f472b6',
+  SPX: METRIC_PALETTE.SPX || '#00F0FF',
+  NDX: METRIC_PALETTE.NDX || '#7C3AED',
+  DJI: METRIC_PALETTE.DJI || '#34d399',
+  VIX: METRIC_PALETTE.VIX || '#f87171',
+  BTC: METRIC_PALETTE.BTC || '#fbbf24',
+  USDKRW: METRIC_PALETTE.USDKRW || '#06b6d4',
+  GOLD: METRIC_PALETTE.GOLD || '#eab308',
+  OIL: METRIC_PALETTE.OIL || '#a8a29e',
+  US10Y: METRIC_PALETTE.US10Y || '#f472b6'
 };
-
 function isDarkMode() {
-  // Strictly check for class presence to respect manual toggle
   return document.documentElement.classList.contains('dark') ||
     document.body.classList.contains('dark');
 }
-
 function isMobile() {
-  return window.innerWidth <= 640;
+  return window.innerWidth <= MOBILE_BREAKPOINT;
 }
-
 function getTheme() {
   const dark = isDarkMode();
   return {
     bg: 'transparent',
-    text: dark ? '#E2E8F0' : '#1E1E3A',
-    axis: dark ? 'rgba(124, 58, 237, 0.25)' : '#cbd5e1',
-    grid: dark ? 'rgba(124, 58, 237, 0.1)' : '#f1f5f9',
-    success: dark ? COLORS.pink : '#DC2626',
-    danger: dark ? COLORS.blue : '#2563EB',
+    text: dark ? COLORS.text : COLORS.textDark,
+    axis: dark ? 'rgba(124, 58, 237, 0.25)' : COLORS.borderLight,
+    grid: dark ? 'rgba(124, 58, 237, 0.1)' : COLORS.gridLight,
+    success: dark ? COLORS.pink : COLORS.successLight,
+    danger: dark ? COLORS.blue : COLORS.dangerLight,
   };
 }
-
 function getTooltipStyle() {
   const dark = isDarkMode();
   return {
@@ -60,7 +65,7 @@ function getTooltipStyle() {
     borderRadius: 4,
     padding: 12,
     textStyle: { 
-      color: dark ? '#E2E8F0' : '#1E1E3A', 
+      color: dark ? COLORS.text : COLORS.textDark,
       fontSize: 12,
       fontFamily: 'Noto Sans KR, sans-serif',
       lineHeight: 18
@@ -70,7 +75,6 @@ function getTooltipStyle() {
       : 'box-shadow: 0 8px 24px rgba(0,0,0,0.12);',
   };
 }
-
 function createChart(id) {
   const el = document.getElementById(id);
   if (!el) return null;
@@ -78,36 +82,28 @@ function createChart(id) {
   if (existing) existing.dispose();
   return echarts.init(el, isDarkMode() ? 'dark' : null);
 }
-
 function hexToRgba(hex, alpha) {
   var r = parseInt(hex.slice(1, 3), 16);
   var g = parseInt(hex.slice(3, 5), 16);
   var b = parseInt(hex.slice(5, 7), 16);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
-
-// ===== 차트 1: 주요 지표 추이 (Precision Line) =====
 function renderTimeSeries(data) {
   const chart = createChart('chart-timeseries');
   if (!chart || !data.timeSeries) return;
-
   const { dates, series } = data.timeSeries;
   const theme = getTheme();
   const dark = isDarkMode();
-
   function normalizeToPercent(arr) {
     if (!arr || arr.length === 0) return arr;
     const base = arr[0];
     return arr.map(v => +((v - base) / base * 100).toFixed(2));
   }
-
   const leftKeys = ['SPX', 'NDX', 'DJI'];
   const rightKeys = ['VIX'];
   const originalSeries = {};
   [...leftKeys, ...rightKeys].forEach(k => { if(series[k]) originalSeries[k] = series[k]; });
-
   const seriesConfig = [];
-  
   leftKeys.forEach(key => {
     if (!series[key]) return;
     const normData = normalizeToPercent(series[key]);
@@ -127,7 +123,7 @@ function renderTimeSeries(data) {
         shadowBlur: dark ? 12 : 0,
         shadowColor: color,
       },
-      itemStyle: { color: color, borderColor: '#fff', borderWidth: 1 },
+      itemStyle: { color: color, borderColor: COLORS.white, borderWidth: 1 },
       areaStyle: {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           { offset: 0, color: hexToRgba(color, 0.18) },
@@ -148,14 +144,13 @@ function renderTimeSeries(data) {
           color: color, 
           shadowBlur: 15, 
           shadowColor: color,
-          borderColor: '#fff',
+          borderColor: COLORS.white,
           borderWidth: 2
         },
         label: { show: false }
       }
     });
   });
-
   rightKeys.forEach(key => {
     if (!series[key]) return;
     const color = METRIC_COLORS[key];
@@ -180,7 +175,7 @@ function renderTimeSeries(data) {
       axisPointer: {
         type: 'cross',
         lineStyle: { color: COLORS.cyan, opacity: 0.3, type: 'dashed' },
-        label: { backgroundColor: COLORS.primary, color: '#fff', fontFamily: 'Noto Sans KR', fontSize: 10 }
+        label: { backgroundColor: COLORS.primary, color: COLORS.white, fontFamily: 'Noto Sans KR', fontSize: 10 }
       },
       formatter: function(params) {
         let html = `<div style="margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:6px;font-family:Noto Sans KR,sans-serif;letter-spacing:1px">
@@ -196,7 +191,7 @@ function renderTimeSeries(data) {
                       <b style="color:${theme.text}">${p.seriesName}</b>
                     </span>
                     <span style="font-family:Noto Sans KR,sans-serif">
-                      <span style="color:${dark ? '#94A3B8' : '#64748B'};font-size:11px">${val.toLocaleString(undefined, {maximumFractionDigits:1})}</span>
+                      <span style="color:${dark ? COLORS.textLight : COLORS.muted};font-size:11px">${val.toLocaleString(undefined, {maximumFractionDigits:1})}</span>
                       <b style="color:${color};margin-left:6px;font-size:13px">${pct > 0 ? '+' : ''}${pct}%</b>
                     </span>
                    </div>`;
@@ -276,7 +271,7 @@ function renderCorrelations(data) {
         const d = items[params[0].dataIndex];
         return `<b style="color:${COLORS.cyan}">${d.labels[0]} ↔ ${d.labels[1]}</b><br/>
                 <span style="font-family:Noto Sans KR,sans-serif;font-size:14px">Correlation: <b>${d.value > 0 ? '+' : ''}${d.value}</b></span><br/>
-                <div style="margin-top:4px;color:#94A3B8;font-size:11px">${d.status}: ${d.meaning}</div>`;
+                <div style="margin-top:4px;color:${COLORS.textLight};font-size:11px">${d.status}: ${d.meaning}</div>`;
       }
     },
     grid: { left: '4%', right: '10%', top: '5%', bottom: '5%', containLabel: true },
@@ -333,7 +328,12 @@ function renderRegime(data) {
   const regime = data.regime;
   const theme = getTheme();
   
-  const regimeScore = { 'RISK_ON': 85, 'CAUTIOUS': 55, 'RISK_OFF': 30, 'PANIC': 10 };
+  const regimeScore = {
+    RISK_ON: Number(REGIME_SCORE_MAP.RISK_ON || 85),
+    CAUTIOUS: Number(REGIME_SCORE_MAP.CAUTIOUS || 55),
+    RISK_OFF: Number(REGIME_SCORE_MAP.RISK_OFF || 30),
+    PANIC: Number(REGIME_SCORE_MAP.PANIC || 10)
+  };
   const score = regimeScore[regime.current] || 50;
   const dark = isDarkMode();
   const regimeColor = score >= 75
@@ -342,7 +342,7 @@ function renderRegime(data) {
       ? COLORS.yellow
       : score >= 25
         ? COLORS.pink
-        : '#ff0040';
+        : COLORS.panic;
   const gaugeScale = 0.8;
   const mainGaugeRadius = `${Math.round(93 * gaugeScale)}%`;
   const frameGaugeRadius = `${Math.round(100 * gaugeScale)}%`;
@@ -359,7 +359,7 @@ function renderRegime(data) {
         }).join('<br/>');
         return `<b style="color:${COLORS.cyan}">${regime.label}</b><br/>
                 <span style="font-family:Noto Sans KR,sans-serif">Risk Score: <b>${score}</b>/100</span><br/>
-                ${lines ? `<div style="margin-top:6px;color:#94A3B8;font-size:11px">${lines}</div>` : ''}`;
+                ${lines ? `<div style="margin-top:6px;color:${COLORS.textLight};font-size:11px">${lines}</div>` : ''}`;
       }
     },
     series: [
@@ -415,7 +415,7 @@ function renderRegime(data) {
         axisTick: { distance: -18, length: 6, lineStyle: { color: dark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)', width: 1 } },
         splitLine: { distance: -20, length: 10, lineStyle: { color: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.15)', width: 1 } },
         axisLabel: { 
-          distance: -40, color: dark ? '#94A3B8' : '#64748B', fontSize: 9, fontFamily: 'Noto Sans KR',
+          distance: -40, color: dark ? COLORS.textLight : COLORS.muted, fontSize: 9, fontFamily: 'Noto Sans KR',
           formatter: function(v) {
             return v % 25 === 0 ? v : '';
           }
@@ -436,7 +436,7 @@ function renderRegime(data) {
             score: {
               fontSize: 11,
               fontWeight: 500,
-              color: '#94A3B8',
+              color: COLORS.textLight,
               fontFamily: 'Noto Sans KR',
               padding: [4, 0, 0, 0]
             },
@@ -459,7 +459,7 @@ function renderRegime(data) {
         top: 6,
         style: {
           text: 'Regime',
-          fill: dark ? '#94A3B8' : '#475569',
+          fill: dark ? COLORS.textLight : COLORS.headerDark,
           font: '500 11px "Noto Sans KR"',
           letterSpacing: 0.5,
           opacity: 0.9,
@@ -506,7 +506,7 @@ function renderSingleSectorChart(chartId, items) {
         return `<b style="color:${COLORS.cyan}">${name}</b><br/>
                 <span style="font-family:Noto Sans KR,sans-serif">1주: <b>${w != null ? (w > 0 ? '+' : '') + w.toFixed(2) + '%' : '-'}</b></span><br/>
                 <span style="font-family:Noto Sans KR,sans-serif">1개월: <b>${m != null ? (m > 0 ? '+' : '') + m.toFixed(2) + '%' : '-'}</b></span><br/>
-                <span style="font-family:Noto Sans KR,sans-serif;color:#94A3B8">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
+                <span style="font-family:Noto Sans KR,sans-serif;color:${COLORS.textLight}">스프레드: <b>${spread != null ? (spread > 0 ? '+' : '') + spread.toFixed(2) + '%p' : '-'}</b></span>`;
       }
     },
         legend: {
@@ -585,7 +585,6 @@ function renderSingleSectorChart(chartId, items) {
     ]
   });
 }
-
 function renderSectors(data) {
   if (!data.sectorStrength) return;
   const ss = data.sectorStrength;
@@ -594,10 +593,8 @@ function renderSectors(data) {
     renderSingleSectorChart('chart-sectors-kr', (ss.kr || []).filter(s => s.week1 != null));
   }
 }
-
 // ===== 메인 렌더링 함수 =====
 let __mpChartData = null;
-
 function renderAllCharts(data) {
   __mpChartData = data;
   renderTimeSeries(data);
@@ -605,11 +602,10 @@ function renderAllCharts(data) {
   renderRegime(data);
   renderSectors(data);
 }
-
 (function() {
   const observer = new MutationObserver(() => {
     if (__mpChartData) {
-      setTimeout(() => renderAllCharts(__mpChartData), 150);
+      setTimeout(() => renderAllCharts(__mpChartData), THEME_RERENDER_DELAY_MS);
     }
   });
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });

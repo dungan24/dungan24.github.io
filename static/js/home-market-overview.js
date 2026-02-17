@@ -5,42 +5,33 @@
   if (!root) return;
 
   var config = window.MP_CONFIG || {};
+  var labels = config.labels || {};
+  var calendar = config.calendar || {};
+  var home = config.home || {};
+  var chartCfg = config.charts || {};
+  var paths = config.paths || {};
   var c = (config.colors && config.colors.regime) || {};
   var r = (config.colors && config.colors.regime_rgb) || {};
+  var palette = chartCfg.palette || {};
+  var timeZone = calendar.timezone || 'Asia/Seoul';
+  var lookbackDays = Number(home.lookback_days || 7);
+  var barScale = Number(home.bar_scale_pct || 20);
+  var liveClasses = home.live || {};
+  var neutralSparkColor = palette.muted || 'var(--color-neutral-500)';
+  var chartDataPrefix = root.getAttribute('data-chart-data-prefix') || '';
+  if (!chartDataPrefix) {
+    var cfgPrefix = paths.chart_data_prefix || 'data/chart-data-';
+    chartDataPrefix = cfgPrefix.charAt(0) === '/' ? cfgPrefix : ('/' + cfgPrefix);
+  }
 
   var REGIME_COLORS = {
-    'RISK_ON': { hex: c.RISK_ON || '#00FF88', rgb: r.RISK_ON || '0 255 136' },
-    'CAUTIOUS': { hex: c.CAUTIOUS || '#FFD600', rgb: r.CAUTIOUS || '255 214 0' },
-    'RISK_OFF': { hex: c.RISK_OFF || '#FF3366', rgb: r.RISK_OFF || '255 51 102' },
-    'PANIC': { hex: c.PANIC || '#FF0040', rgb: r.PANIC || '255 0 64' }
+    'RISK_ON': { hex: c.RISK_ON, rgb: r.RISK_ON },
+    'CAUTIOUS': { hex: c.CAUTIOUS, rgb: r.CAUTIOUS },
+    'RISK_OFF': { hex: c.RISK_OFF, rgb: r.RISK_OFF },
+    'PANIC': { hex: c.PANIC, rgb: r.PANIC }
   };
 
-  var GROUPS = [
-    {
-      title: 'US INDICES',
-      tickers: [
-        { key: 'SPX', name: 'S&P 500', fmt: 'index' },
-        { key: 'NDX', name: 'Nasdaq', fmt: 'index' },
-        { key: 'DJI', name: 'Dow Jones', fmt: 'index' }
-      ]
-    },
-    {
-      title: 'RISK METRICS',
-      tickers: [
-        { key: 'VIX', name: 'VIX', fmt: 'decimal', invertColor: true },
-        { key: 'US10Y', name: 'US 10Y Bond', fmt: 'decimal' },
-        { key: 'USDKRW', name: 'USD/KRW', fmt: 'decimal' }
-      ]
-    },
-    {
-      title: 'ALTERNATIVES',
-      tickers: [
-        { key: 'BTC', name: 'Bitcoin', fmt: 'dollar' },
-        { key: 'GOLD', name: 'Gold', fmt: 'dollar' },
-        { key: 'OIL', name: 'WTI Oil', fmt: 'dollar' }
-      ]
-    }
-  ];
+  var GROUPS = Array.isArray(home.overview_groups) ? home.overview_groups : [];
 
   function fmtPrice(val, fmt) {
     if (fmt === 'index') {
@@ -146,14 +137,14 @@
         var isPositive = !isNeutral && (ticker.invertColor ? changePct < 0 : changePct >= 0);
 
         var changeColor = isNeutral ? 'rgb(var(--color-neutral-400))' : (isPositive ? 'var(--mp-ticker-up)' : 'var(--mp-ticker-down)');
-        var sparkColor = isNeutral ? '#64748B' : (isPositive ? 'var(--mp-ticker-up-spark)' : 'var(--mp-ticker-down-spark)');
+        var sparkColor = isNeutral ? neutralSparkColor : (isPositive ? 'var(--mp-ticker-up-spark)' : 'var(--mp-ticker-down-spark)');
 
         // Bar Gauge Calculation
         // Cap width at 100% for ~3% move (scale factor 33) or ~5% (scale 20)
         // Let's use scale 20 (5% move = 100% width) for visibility
         var barWidth = 0;
         if (changePct !== null && Number.isFinite(changePct)) {
-           barWidth = Math.min(Math.abs(changePct) * 20, 100);
+           barWidth = Math.min(Math.abs(changePct) * barScale, 100);
         }
         var barHtml = '<div class="mp-ticker-bar-container">' +
           '<div class="mp-ticker-bar" style="width:' + barWidth + '%; background-color:' + changeColor + '"></div>' +
@@ -179,7 +170,7 @@
     }
 
     container.innerHTML = html ||
-      '<span class="mp-loading-inline">\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+      '<span class="mp-loading-inline">' + (labels.empty_events || '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4') + '</span>';
       
     // Trigger animations after render
     animateNumbers(container);
@@ -225,7 +216,8 @@
     if (!data) return;
 
     var regime = data.regime;
-    var color = REGIME_COLORS[regime && regime.current] || REGIME_COLORS.CAUTIOUS;
+    var fallbackColor = { hex: 'var(--regime-color)', rgb: '124 58 237' };
+    var color = REGIME_COLORS[regime && regime.current] || REGIME_COLORS.CAUTIOUS || fallbackColor;
 
     document.documentElement.style.setProperty('--regime-color', color.hex);
     document.documentElement.style.setProperty('--regime-color-rgb', color.rgb);
@@ -271,14 +263,14 @@
     if (statusDot) {
       statusDot.className = 'mp-live-status';
       var nowKST = new Intl.DateTimeFormat('sv-SE', {
-        timeZone: 'Asia/Seoul',
+        timeZone: timeZone,
         year: 'numeric', month: '2-digit', day: '2-digit'
       }).format(new Date());
 
       if (data.date === nowKST) {
-        statusDot.classList.add('is-fresh');
+        statusDot.classList.add(liveClasses.fresh_status_class || 'is-fresh');
       } else {
-        statusDot.classList.add('is-stale');
+        statusDot.classList.add(liveClasses.stale_status_class || 'is-stale');
       }
     }
   }
@@ -286,11 +278,11 @@
   function tryFetch(urls, idx) {
     if (idx >= urls.length) {
       var el = document.getElementById('mp-hero-summary');
-      if (el) el.textContent = 'Data unavailable';
+      if (el) el.textContent = labels.chart_load_failed || 'Data unavailable';
 
       var tg = document.getElementById('mp-ticker-groups');
       if (tg) {
-        tg.innerHTML = '<span class="mp-loading-inline">\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4</span>';
+        tg.innerHTML = '<span class="mp-loading-inline">' + (labels.empty_events || '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4') + '</span>';
       }
 
       var statusDot = document.getElementById('mp-live-status');
@@ -317,17 +309,16 @@
     var now = new Date();
     var fmt = function(d) {
       return new Intl.DateTimeFormat('sv-SE', {
-        timeZone: 'Asia/Seoul',
+        timeZone: timeZone,
         year: 'numeric',
         month: '2-digit',
         day: '2-digit'
       }).format(d);
     };
 
-    var lookbackDays = 7;
     var urls = [];
     for (var i = 0; i <= lookbackDays; i++) {
-      urls.push('/data/chart-data-' + fmt(new Date(now.getTime() - 86400000 * i)) + '.json');
+      urls.push(chartDataPrefix + fmt(new Date(now.getTime() - 86400000 * i)) + '.json');
     }
     tryFetch(urls, 0);
   }

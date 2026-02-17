@@ -31,6 +31,7 @@ Goal: improve maintainability and agent execution speed without changing briefin
   - `layouts/partials/home/custom.html` uses external JS/CSS assets
   - `layouts/shortcodes/market-calendar.html` removed inline demo script
   - `layouts/partials/extend-head-uncached.html` removed inline chart style block
+  - `layouts/partials/extend-head-uncached.html` keeps only data-bridge inline scripts (`window.__MP_CONFIG`, conditional `window.__MP_PAGE`)
 - Screenshot archive (`docs/screenshots/`): keep as non-runtime evidence only.
 
 ## Next Low-Risk Refactors

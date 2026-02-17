@@ -103,6 +103,25 @@
   text-transform: uppercase;
 }
 
+.mp-chart-error {
+  text-align: center;
+  color: var(--mp-neon-pink);
+}
+
+.mp-chart-error__title {
+  margin-bottom: 0.5rem;
+  font-family: var(--mp-font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.mp-chart-error__message {
+  font-size: 12px;
+  opacity: 0.9;
+  font-family: var(--mp-font-sans);
+  color: var(--mp-chart-text-muted);
+}
+
 .chart-spinner {
   width: 40px;
   height: 40px;

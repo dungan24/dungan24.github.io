@@ -1,6 +1,6 @@
 # 🗺️ 프로젝트 상황판 (PROJECT_MAP.md)
 
-**최종 업데이트**: 2026-02-16
+**최종 업데이트**: 2026-02-17
 **담당 에이전트**: Battlecruiser
 
 ---
@@ -61,6 +61,9 @@
     - `custom.html` 레이아웃을 사용하여 직접 만든 컴포넌트(시장 현황, 최근 브리핑 카드)를 렌더링.
 - **라이트/다크 모드 개선**:
     - 다크 모드를 기본으로 하되, 라이트 모드 가독성을 높이기 위해 변수 기반 오버라이드 적용 (`custom.css`, `theme-fixes.css`).
+- **템플릿 인라인 정책**:
+    - 원칙: `layouts/`에 신규 인라인 `<script>/<style>` 추가 금지.
+    - 예외: `layouts/partials/extend-head-uncached.html`의 데이터 브리지(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`) 인라인 스크립트만 허용.
 
 ### 3.2. 기능 및 로직 (JS & Shortcodes)
 

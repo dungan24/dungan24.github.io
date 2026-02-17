@@ -1,8 +1,16 @@
 (function () {
   'use strict';
 
+  var config = window.MP_CONFIG || {};
+  var paths = config.paths || {};
+  var behavior = config.behavior || {};
+  var rawHomePath = paths.home || '/';
+  var homePath = rawHomePath.charAt(0) === '/' ? rawHomePath : ('/' + rawHomePath);
+  var normalizedHomePath = homePath.endsWith('/') ? homePath : (homePath + '/');
+  var normalizedIndexPath = normalizedHomePath + 'index.html';
+
   // Do not run on Homepage
-  if (window.location.pathname === '/' || window.location.pathname === '/index.html') return;
+  if (window.location.pathname === normalizedHomePath || window.location.pathname === normalizedIndexPath) return;
 
   var bar = document.getElementById('mp-reading-progress');
   
@@ -27,5 +35,5 @@
 
   window.addEventListener('scroll', updateProgress, { passive: true });
   // Initial calculation
-  setTimeout(updateProgress, 100);
+  setTimeout(updateProgress, Number(behavior.reading_progress_initial_delay_ms || 100));
 })();
