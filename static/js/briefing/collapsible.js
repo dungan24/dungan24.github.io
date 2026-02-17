@@ -24,7 +24,9 @@
       var h2 = sec.querySelector('h2');
       if (!h2) return;
       var title = (h2.textContent || '').trim();
+      var forceCollapsed = sec.dataset && sec.dataset.mpCollapsed === 'true';
       var shouldCollapse = titles.some(function(t) { return title.indexOf(t) !== -1; });
+      if (forceCollapsed) shouldCollapse = true;
       if (!shouldCollapse) return;
 
       var toggleBtn = document.createElement('button');
@@ -46,8 +48,12 @@
       }
       sec.appendChild(collapsible);
 
-      collapsible.classList.add('is-open');
-      toggleBtn.classList.add('is-open');
+      var startOpen = !forceCollapsed;
+      collapsible.classList.toggle('is-open', startOpen);
+      toggleBtn.classList.toggle('is-open', startOpen);
+      if (!startOpen) {
+        collapsible.style.maxHeight = '0';
+      }
 
       toggleBtn.addEventListener('click', function() {
         var isOpen = collapsible.classList.toggle('is-open');
