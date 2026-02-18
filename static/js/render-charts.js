@@ -512,7 +512,7 @@ function renderSingleSectorChart(chartId, items) {
         legend: {
           data: [
             { name: '1주', itemStyle: { color: COLORS.primary } },
-            { name: '1개월', itemStyle: { color: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)' } }
+            { name: '1개월', itemStyle: { color: dark ? 'rgba(124, 58, 237, 0.55)' : 'rgba(124, 58, 237, 0.42)' } }
           ],
           textStyle: { color: theme.text, fontFamily: 'Noto Sans KR', fontSize: 11 },
           top: 0, right: 10, icon: 'roundRect'
@@ -537,15 +537,15 @@ function renderSingleSectorChart(chartId, items) {
             data: month1.map(v => ({
               value: v,
               itemStyle: {
-                color: dark ? 'rgba(124, 58, 237, 0.15)' : 'rgba(124, 58, 237, 0.12)',
-                borderColor: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)',
-                borderWidth: 1,
+                color: dark ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.22)',
+                borderColor: dark ? 'rgba(124, 58, 237, 0.62)' : 'rgba(124, 58, 237, 0.46)',
+                borderWidth: 1.2,
                 borderRadius: v >= 0 ? [0, 2, 2, 0] : [2, 0, 0, 2],
               }
             })),
             silent: true,
             z: 1,
-            barWidth: '60%',
+            barWidth: '72%',
             barGap: '-100%',
           },
           {
