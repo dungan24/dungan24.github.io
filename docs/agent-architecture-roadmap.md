@@ -1,19 +1,23 @@
 # Agent Architecture Roadmap
 
-This note captures the structural refactor baseline for agent-first maintenance.
-Goal: improve maintainability and agent execution speed without changing briefing semantics.
+This document tracks structural refactors for agent-first maintenance.
+Goal: reduce regression risk and improve change velocity without changing briefing semantics.
 
-## Current Structure (Implemented)
+## 1) Current Baseline (Implemented)
 
-- CSS split by semantic domains:
+- CSS is split by semantic domains:
   - `assets/css/custom.css`
   - `assets/css/custom/briefing-sections.css`
   - `assets/css/custom/calendar.css`
+  - `assets/css/custom/calendar-polish.css`
   - `assets/css/custom/toc-and-effects.css`
   - `assets/css/custom/layout-overrides.css`
   - `assets/css/custom/chart-cards.css`
   - `assets/css/custom/home-market-overview.css`
-- Post enhancement JS split by feature modules:
+  - `assets/css/custom/home-briefing-cards.css`
+  - `assets/css/custom/terminal-footer.css`
+  - `assets/css/custom/theme-fixes.css`
+- Post enhancement JS is split into feature modules:
   - `static/js/briefing/dom-utils.js`
   - `static/js/briefing/section-wrapping.js`
   - `static/js/briefing/regime-hero.js`
@@ -23,25 +27,37 @@ Goal: improve maintainability and agent execution speed without changing briefin
   - `static/js/briefing/toc-scrollspy.js`
   - `static/js/briefing/calendar-loader.js`
   - `static/js/market-pulse-enhancements.js` (orchestrator)
+- Calendar architecture is modular:
   - `static/js/calendar/parser.js`
   - `static/js/calendar/model.js`
   - `static/js/calendar/renderer.js`
-  - `static/js/market-pulse-calendar.js` (calendar converter entrypoint)
+  - `static/js/market-pulse-calendar.js` (adapter/entrypoint)
 - Template hygiene:
-  - `layouts/partials/home/custom.html` uses external JS/CSS assets
-  - `layouts/shortcodes/market-calendar.html` removed inline demo script
-  - `layouts/partials/extend-head-uncached.html` removed inline chart style block
-  - `layouts/partials/extend-head-uncached.html` keeps only data-bridge inline scripts (`window.__MP_CONFIG`, conditional `window.__MP_PAGE`)
-- Screenshot archive (`docs/screenshots/`): keep as non-runtime evidence only.
+  - `extend-footer.html` remains loader-only
+  - `extend-head-uncached.html` keeps only config/data bridge inline scripts
+  - no runtime implementation logic inside layout partials
 
-## Next Low-Risk Refactors
+## 2) Contract Compatibility Status
 
-1. Add smoke snapshot checks for news/ticker/calendar transformations
-2. Remove residual inline style attributes from chart/home templates where practical
-3. Expand browser smoke coverage to news-card and ticker-card transformations
+- Implemented:
+  - `MP_BLOCK_START` metadata parsing and section dataset mapping
+  - calendar range filters (importance/period/country)
+  - `MP_KEY_EVENTS_*` and `MP_KEY_EVENT_*` markers are parseable via list fallback
+- Pending cross-repo alignment:
+  - upstream publisher full front matter fields (`slot`, `generatedAt`, `asOfTime`, `summary`, `regime`)
+  - optional SO WHAT dedicated parser rules (icon prefixes/semantic styling)
+  - chart key naming consistency checks for correlation payloads
 
-## Working Rules
+## 3) Next Low-Risk Refactors
+
+1. Add smoke checks for SO WHAT section rendering contract.
+2. Add contract assertion for front matter completeness in preflight.
+3. Add parser fallback tests for missing/partial news excerpts.
+4. Add schema guard for chart payload key compatibility (`correlation` vs `correlations`).
+
+## 4) Working Rules
 
 - Run `pwsh -File tools/agent-audit.ps1` before and after structural changes.
-- If parser behavior changes, sync render contract updates in `../market-pulse`.
-- Prefer feature-level extraction over broad rewrites to minimize regression risk.
+- If parser behavior changes, sync contract updates in `../market-pulse/specs/render-contract.md`.
+- Prefer feature-level extraction over broad rewrites.
+- Keep runtime modules small enough for targeted fixes, but avoid over-fragmentation.

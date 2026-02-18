@@ -1,82 +1,73 @@
-# 🗺️ 프로젝트 상황판 (PROJECT_MAP.md)
+# PROJECT_MAP.md
 
-**최종 업데이트**: 2026-02-17
-**담당 에이전트**: Battlecruiser
+**최종 업데이트**: 2026-02-18  
+**목적**: 이 레포의 현재 운영 구조를 빠르게 파악하기 위한 실행 지도
 
----
+## 1) 프로젝트 정의
 
-> **"이 문서는 AI 에이전트가 이 프로젝트에서 작업을 시작하기 전 가장 먼저 읽어야 할 '작전 지도'다. 모든 작업은 이 지도를 기준으로 수행한다."**
+- 저장소: `market-pulse-blog` (`dungan24.github.io`)
+- 역할: `market-pulse`가 생성한 브리핑 콘텐츠를 렌더링/발행
+- 범위: 렌더링/표현 계층 (사실 생성 파이프라인 아님)
 
-## 1. 프로젝트 개요 (Project Overview)
+## 2) 현재 핵심 구조
 
-- **프로젝트명**: `market-pulse-blog` (dungan24.github.io)
-- **목적**:
-    1.  **IT 엔지니어 포트폴리오**: Hugo, CSS, JS 커스터마이징 및 자동화 파이프라인 구축 역량을 보여주는 기술 쇼케이스.
-    2.  **둥안티콘 브랜딩**: '둥안티콘'이라는 캐릭터 IP를 활용하여 기술 블로그에 독창적인 정체성을 부여.
-- **기술 스택**: Hugo (Blowfish 테마 기반) + Vanilla JS + Custom CSS
+- 콘텐츠 입력:
+  - `content/posts/{pre-market|mid-day|post-market}-{date}.md`
+  - `static/data/chart-data-{date}.json`
+- 렌더링 로더:
+  - `layouts/partials/extend-head-uncached.html` (config/data bridge)
+  - `layouts/partials/extend-footer.html` (script loader)
+- 런타임 JS:
+  - `static/js/briefing/*.js`
+  - `static/js/market-pulse-enhancements.js`
+  - `static/js/calendar/{parser,model,renderer}.js`
+  - `static/js/market-pulse-calendar.js`
+  - `static/js/render-charts.js`, `static/js/market-charts-loader.js`
+- 스타일:
+  - `assets/css/custom.css`
+  - `assets/css/custom/*.css`
 
-## 2. 핵심 파일 위치 (Key File Locations)
+## 3) 운영 문서 우선순위
 
-- **로고 및 브랜딩**:
-    - **메인 로고**: `themes/blowfish/logo.png` (테마 기본값)
-    - **홈페이지 히어로 이미지**: `assets/img/hero.svg` (커스텀)
-    - **파비콘**: `themes/blowfish/static/favicon.ico` (및 관련 파일)
-- **메인 CSS**:
-    - **진입점**: `assets/css/custom.css`
-    - **모듈**: `assets/css/custom/*.css` (기능별로 분리된 CSS 파일들)
-- **콘텐츠 (글)**:
-    - **저장소**: `content/posts/`
-    - **주요 형식**: `pre-market-YYYY-MM-DD.md` 형식의 마크다운 파일.
-- **커스텀 JS**:
-    - **전체 경로**: `static/js/`
-    - **핵심 로직**: `market-pulse-enhancements.js`, `market-pulse-calendar.js`
-    - **모듈**: `briefing/`, `calendar/` 등 하위 디렉토리 참고.
-- **AI 관리 파일**:
-    - **최고 우선순위**: `CLAUDE.md`
-    - **에이전트 규칙**: `AGENTS.md`
-    - **코딩 규칙**: `AI_CODING_RULES.md`
-    - **작업 계획**: `PLAN.md`
+1. `AGENTS.md` (에이전트 작업 규칙)
+2. `CLAUDE.md` (렌더 계약/구조 가이드)
+3. `README.md` (개요/실행/품질 게이트)
+4. `docs/agent-architecture-roadmap.md` (리팩터 상태)
 
-## 3. 주요 커스터마이징 내역 (Major Customizations)
+## 4) 계약 민감 포인트
 
-> ⚠️ **주의**: 아래 목록은 Blowfish 테마 원본에서 우리가 직접 수정하거나 추가한 기능들이다. 향후 테마 업데이트 시 이 부분들이 깨지지 않는지 반드시 확인해야 한다.
+- Cross-repo contract:
+  - `../market-pulse/specs/render-contract.md`
+  - `../market-pulse/specs/narrative-contract.md`
+- 특히 깨지기 쉬운 포인트:
+  - 뉴스 카드 메타/excerpt 포맷
+  - 캘린더 이벤트 마커(`MP_KEY_EVENTS_*`, `MP_KEY_EVENT_*`)
+  - 블록 메타(`MP_BLOCK_START` / `mp-block-v2`)
+  - 메타 푸터(`mp-briefing-meta`) 구조
 
-### 3.1. 스타일 및 레이아웃 (CSS & Layouts)
+## 5) 최근 UI/IA 상태
 
-- **전역 폰트 변경**:
-    - 모든 폰트를 `Noto Sans KR`로 통일 (`custom.css`).
-- **사이버펑크 UI/UX (Operation Neon Overhaul)**:
-    - **네온 팔레트**: `--mp-neon-*` 변수 기반의 고채도 형광 컬러 시스템 도입 (`custom.css`).
-    - **글래스모피즘 카드**: `Briefing Card`, `Ticker`, `Calendar` 등 주요 UI에 통일된 유리 효과 및 네온 호버 인터랙션 적용.
-    - **터미널 푸터**: 스캔라인(`::after`) 및 이퀄라이저 애니메이션(`mp-f-visual-svg`)이 적용된 터미널 스타일 푸터 (`terminal-footer.css`).
-    - **시각 효과 (FX)**:
-        - `Scroll Reveal`: 스크롤 시 섹션이 부드럽게 떠오르는 등장 애니메이션 (`layout-overrides.css` + JS).
-        - `Scanline`: 전체 화면에 은은한 스캔라인 오버레이 적용 (`custom.css`).
-- **레이아웃 확장**:
-    - FHD 환경에서 본문 폭을 확장하고, 특정 섹션(`briefing-section`)이 화면 전체 폭을 사용하도록 오버라이드 (`layout-overrides.css`).
-- **모바일 최적화**:
-    - `390px` (iPhone) 기준 여백 최적화.
-    - 테이블 좌우 스크롤 시 우측 페이드아웃(`mask-image`) 효과로 가독성 개선.
-- **홈페이지 커스터마이징**:
-    - `custom.html` 레이아웃을 사용하여 직접 만든 컴포넌트(시장 현황, 최근 브리핑 카드)를 렌더링.
-- **라이트/다크 모드 개선**:
-    - 다크 모드를 기본으로 하되, 라이트 모드 가독성을 높이기 위해 변수 기반 오버라이드 적용 (`custom.css`, `theme-fixes.css`).
-- **템플릿 인라인 정책**:
-    - 원칙: `layouts/`에 신규 인라인 `<script>/<style>` 추가 금지.
-    - 예외: `layouts/partials/extend-head-uncached.html`의 데이터 브리지(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`) 인라인 스크립트만 허용.
+- 홈:
+  - `Market Overview` + `Recent Briefings` 카드형 구조
+  - Regime filter 칩(ALL/RISK_ON/CAUTIOUS/RISK_OFF/PANIC)
+  - 모바일 하단 고정 내비게이션
+- 정보 페이지:
+  - 메뉴: `투자 전략`, `마켓 캘린더`, `About`
+  - 푸터 링크: `Security Protocol`, `Data Consent`, `API Documentation`
 
-### 3.2. 기능 및 로직 (JS & Shortcodes)
+## 6) 실행/검증 명령
 
-- **설정 외부화 시스템**:
-    - `params.toml`의 `[market_pulse]` 섹션에 주요 설정(섹션 제목, 라벨, 색상 등)을 정의.
-    - `mp-config.js`가 이 설정을 런타임에 주입하여 JS 코드 수정 없이 동작을 변경할 수 있도록 설계.
-- **동적 콘텐츠 렌더링**:
-    - 마크다운 테이블을 동적으로 티커 카드(`ticker-cards.js`)나 뉴스 카드(`news-grid.js`)로 변환.
-    - `pre-market-*.md`의 특정 섹션을 분석하여 시장 레짐 히어로 배너(`regime-hero.js`), 접기/펴기 기능(`collapsible.js`) 등을 동적으로 추가.
-- **인터랙티브 캘린더**:
-    - 마크다운 리스트를 파싱하여 인터랙티브한 이벤트 캘린더로 렌더링 (`market-pulse-calendar.js` 및 하위 모듈).
-- **커스텀 숏코드**:
-    - `market-charts`, `news-grid`, `ticker-group` 등 복잡한 UI를 마크다운에서 간단히 호출할 수 있도록 숏코드 다수 제작.
+```bash
+hugo server --port 1314 --bind 0.0.0.0 --navigateToChanged
+hugo --gc --minify
+pwsh -File tools/architecture-lint.ps1 -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
+```
 
----
-**"상황판 브리핑 끝. 작전 개시 전 반드시 숙지하도록."**
+## 7) 작업 원칙
+
+- 파이프라인 산출물(`content/posts/*`, `static/data/chart-data-*`) 직접 수정 지양
+- 파서/표현 규칙 변경 시 계약 문서와 동기화
+- `layouts/` 신규 인라인 `<script>/<style>` 금지 (데이터 브리지 예외만 허용)
+- 변경 후 build + lint + smoke 결과를 남겨 재현 가능 상태로 종료

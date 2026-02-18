@@ -2,151 +2,150 @@
 
 ## 프로젝트 개요
 
-Market Pulse 브리핑의 **프론트엔드 블로그**. Hugo + Blowfish 테마 + 사이버펑크 커스텀 CSS.
-콘텐츠는 쌍둥이 레포 `../market-pulse`의 파이프라인(Writer → Publisher)이 자동 생성·발행한다.
+Market Pulse 브리핑의 프론트엔드 블로그 저장소입니다.
+Hugo + Blowfish 테마 위에서 마크다운/JSON 산출물을 UI로 렌더링합니다.
+
+- 런타임: Hugo static site
+- 렌더 핵심: `layouts/partials/extend-footer.html` + `static/js/briefing/*.js`
+- 캘린더 핵심: `static/js/calendar/{parser,model,renderer}.js`
+- 스타일: `assets/css/custom.css` + `assets/css/custom/*.css`
 
 ## 쌍둥이 레포 관계
 
 ```
-market-pulse (private)              market-pulse-blog (public)
-├── ssot/writer/     → 마크다운 생성    ├── content/posts/   ← 마크다운 수신
-├── ssot/publisher/  → git push        ├── static/data/     ← chart-data JSON
-└── templates/pre-market.md           ├── assets/css/custom.css
-                                      ├── layouts/partials/extend-footer.html  ← JS 변환
-                                      └── https://dungan24.github.io
+market-pulse (private)                 market-pulse-blog (public)
+├── writer/composer/publisher  ---->   ├── content/posts/*.md
+└── chart-data extractor        ---->   ├── static/data/chart-data-*.json
+                                       └── Hugo + JS 렌더링
 ```
 
-**데이터 흐름: market-pulse → market-pulse-blog (단방향)**
-- Publisher가 `content/posts/pre-market-{date}.md` + `static/data/chart-data-{date}.json` 을 push
-- 이 레포에서 코드를 수정하면, Writer/Publisher 쪽도 규약을 맞춰야 함
-- `market-pulse`의 기본 publish 타깃은 `../dungan24.github.io`; 로컬에서 이 레포를 타깃으로 쓰려면 `BLOG_REPO_PATH=../market-pulse-blog`를 설정
+데이터 흐름은 단방향(`market-pulse -> market-pulse-blog`)입니다.
+이 레포는 사실 생성이 아니라 렌더링/표현 계층을 담당합니다.
 
-## 마크다운 → UI 변환 규약
+## 계약 문서 (Cross-Repo SSOT)
 
-`extend-footer.html`의 JS가 마크다운을 사이버펑크 UI로 변환한다.
-**Writer가 아래 마크다운 패턴을 지켜야 UI가 정상 렌더링된다.**
-
-기준 계약 문서:
 - 렌더 계약: `../market-pulse/specs/render-contract.md`
-- 내러티브 계약: `../market-pulse/specs/narrative-contract.md` — Deep Dive 품질 기준
+- 내러티브 계약: `../market-pulse/specs/narrative-contract.md`
+- 슬롯 계약: `../market-pulse/specs/mid-day-slot-contract-v1.md`
 
-### 뉴스 섹션 (글로벌)
+### 현재 계약 핵심 (요약)
+
+- Front matter 계약 타깃:
+  - `slot`, `generatedAt`, `asOfTime`, `regime`, `summary`, `tags`, `chartData`
+- 뉴스 카드:
+  - 메타 구분자 `·` 고정
+  - `blockquote(>)` excerpt 필수
+- 캘린더:
+  - `MP_KEY_EVENTS_START/END`, `MP_KEY_EVENT_START/END` 마커
+- 블록 스키마 v2:
+  - `MP_BLOCK_START {"schema_version":"mp-block-v2", ...}`
+- 메타 푸터:
+  - `mp-briefing-meta` div 구조 유지
+
+참고: 현재 upstream publisher가 front matter 전체 필드를 항상 채우지 않는 구간이 있을 수 있습니다.
+blog는 카드/필터 렌더에서 fallback 로직으로 화면 안정성을 유지합니다.
+
+## 마크다운 -> UI 변환 규약
+
+`extend-footer.html`은 로더만 수행하고, 실제 변환은 JS 모듈이 담당합니다.
+
+### 뉴스 섹션
 
 ```markdown
 1. [**한국어 번역 제목**](https://...)
    Source · 2026-02-12 11:04 KST · 카테고리
    원문: English Original Headline
-   > 한국어 요약 (선택)
+   > 한줄 요약/발췌
 ```
 
-- **한국어 번역 제목**: `[**bold**](url)` — 번역된 헤드라인이 카드 타이틀
-- **메타 라인**: `출처 · 시각 · 카테고리` — `·` (middle dot) 구분자 3개
-- **원문 라인** (선택): `원문: English Headline` — JS가 `EN` 태그를 붙여 서브라인으로 표시
-- **번역 (blockquote `>`)**: 선택. JS가 `KR` 태그를 붙여 별도 스타일링
+- `원문:` 라인은 번역 제목이 있을 때만 사용
+- excerpt는 blockquote 라인으로 분리
 
-### 뉴스 섹션 (국내)
+### 존 분리
 
 ```markdown
-1. [**한글 제목**](https://...)
-   출처 · 2026-02-12 09:20 KST · 카테고리
-   > 요약 (선택)
+<!-- FACT_ZONE_START --> ... <!-- FACT_ZONE_END -->
+<!-- OPINION_ZONE_START --> ... <!-- OPINION_ZONE_END -->
 ```
 
-### 메타 푸터 (문서 끝)
+### 블록 메타 (v2)
+
+```markdown
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-18 20:14:42","max_items":8} -->
+...
+<!-- MP_BLOCK_END -->
+```
+
+### 캘린더 이벤트 마커
+
+```markdown
+<!-- MP_KEY_EVENTS_START -->
+<!-- MP_KEY_EVENT_START -->
+- ...
+<!-- MP_KEY_EVENT_END -->
+<!-- MP_KEY_EVENTS_END -->
+```
+
+### 메타 푸터
 
 ```html
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-12 12:36:48 KST</span>
-  <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-12 12:36:48 KST</span>
+  <span>생성 시각: {{GENERATED_AT}}</span>
+  <span>브리핑 슬롯: {{SLOT_ID}} ({{SLOT_LABEL}})</span>
+  <span>데이터 기준 시각: {{AS_OF_TIME}}</span>
 </div>
 ```
 
-**`**생성 시각**:` bold 마크다운 금지** — 반드시 위 HTML div 사용.
+## 런타임 구조
 
-### 팩트/의견 영역 구분
+- Loader:
+  - `layouts/partials/extend-footer.html`
+- Data bridge:
+  - `layouts/partials/extend-head-uncached.html` (`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`)
+- Post transform:
+  - `static/js/briefing/*.js`
+  - `static/js/market-pulse-enhancements.js`
+- Calendar:
+  - `static/js/calendar/*.js`
+  - `static/js/market-pulse-calendar.js` (adapter only)
+- Charts:
+  - `static/js/market-charts-loader.js`
+  - `static/js/render-charts.js`
 
-```markdown
-<!-- FACT_ZONE_START -->
-(팩트 내용 — 보라색 좌측 보더)
-<!-- FACT_ZONE_END -->
+## 로컬 개발/검증
 
-<!-- OPINION_ZONE_START -->
-(해석 내용 — 시안 좌측 보더)
-<!-- OPINION_ZONE_END -->
+개발 서버:
+
+```bash
+hugo server --port 1314 --bind 0.0.0.0 --navigateToChanged
 ```
 
-JS가 HTML 주석을 읽어 `.briefing-section--fact` / `.briefing-section--opinion` 클래스를 할당.
+또는:
 
-## 운영 워크플로우
+```bash
+serve.cmd
+```
 
-교차 레포 운영 가이드: `../market-pulse/.aidocs/blog-workflow.md`
-
-품질 게이트 명령:
+검증 명령:
 
 ```bash
 pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke -FailOnFindings
 pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 ```
 
-## 교차 레포 계약 동기화 원칙
+## 변경 원칙
 
-- 파서 규칙(`extend-footer.html`)을 변경할 때는 Writer 출력과의 호환성을 먼저 확인
-- 블로그 쪽에서 추가 데이터/포맷이 필요하면, 먼저 계약 문서(`render-contract.md`)에 요구사항 명시
-- 계약 변경 시 양쪽 문서 동시 업데이트:
-  - `market-pulse`: `CLAUDE.md`, `AGENTS.md`
-  - `market-pulse-blog`: `CLAUDE.md`, `AGENTS.md`
+- `content/posts/`는 파이프라인 산출물이므로 수동 편집을 지양
+- 파서/렌더 규칙 변경 시 계약 문서와 동기화
+- `layouts/`에 신규 인라인 `<script>/<style>` 추가 금지
+  - 예외: `extend-head-uncached.html`의 데이터 브리지 인라인 스크립트
+- 모바일(640/768/1024)에서 렌더 회귀 확인 필수
 
-## CSS 체계
+## 교차 레포 문서 동기화
 
-- `assets/css/custom.css` — 기본 토큰/공통 레이어
-- `assets/css/custom/*.css` — 도메인별 분리 스타일
-  - `briefing-sections.css`, `calendar.css`, `toc-and-effects.css`
-  - `layout-overrides.css`, `chart-cards.css`, `home-market-overview.css`
-- CSS 변수: `--mp-glass-bg`, `--mp-glass-border`, `--mp-neon-purple`, `--mp-neon-cyan` 등
-- 폰트: `Noto Sans KR` 단일 스택(`--mp-font-display/sans/subtitle/mono`) 사용
-- 다크모드 기본, 라이트모드 `:root:not(.dark)` 오버라이드
-- 모바일 반응형: 640px, 768px, 1024px 브레이크포인트
+계약/운영 변경 시 같은 세션에서 함께 업데이트:
 
-## JS 변환 (extend-footer.html)
-
-`extend-footer.html`은 로더만 담당하고, 실제 변환은 아래 파일에서 수행한다.
-
-- `static/js/briefing/*.js` — 도메인별 변환 모듈
-- `static/js/market-pulse-enhancements.js` — 변환 오케스트레이터
-- `static/js/calendar/*.js` — 일정 parser/model/renderer
-- `static/js/market-pulse-calendar.js` — 캘린더 컨버터 엔트리포인트 (호환용 export)
-
-아키텍처 규칙:
-- `extend-footer.html`에는 로더 `<script src=...>`만 둔다.
-- 캘린더 구현은 `static/js/calendar/*.js`에만 둔다.
-- `static/js/market-pulse-calendar.js`는 어댑터 역할만 유지한다.
-- `layouts/`에는 신규 인라인 `<script>/<style>`를 추가하지 않는다.
-- 예외: `layouts/partials/extend-head-uncached.html`의 데이터 브리지 인라인 스크립트(`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`)는 허용한다.
-
-| 기능 | 설명 |
-|------|------|
-| briefing-section wrapping | H2별로 `.briefing-section` div 생성 |
-| 뉴스 카드 그리드 | `<ol>` → `.mp-news-grid` > `.mp-news-card` 2열 카드 |
-| 티커 카드 | 핵심 수치 `<table>` → `.mp-ticker-groups` 카드 |
-| 섹터 상대강도 티커 | `## 섹터 상대강도` 테이블 → `.mp-ticker-groups` 카드 (US/KR) |
-| Collapsible 섹션 | 용어 설명/출처 등 접기 가능 |
-| Regime Hero | `window.__MP_PAGE.regime`으로 색상/배지 동적 생성 |
-| TOC ScrollSpy | 스크롤 위치에 따라 TOC 활성 항목 하이라이트 |
-| Event Calendar | 본문 일정 리스트/쇼트코드를 월력 + 주요 일정 카드로 변환 |
-| ECharts 차트 (4종) | Trend(전체폭) → Correlation+Regime(2col) → Sectors(전체폭) |
-
-## 로컬 개발 서버
-
-- **`serve.cmd`로 Hugo 서버가 이미 실행 중** — `http://localhost:1314`
-- **절대 `hugo server`를 새로 실행하지 말 것** — 이미 떠 있는 1314 포트를 그대로 사용
-- 브라우저 확인, Playwright 테스트, 스크린샷 등 모든 작업은 `http://localhost:1314` 사용
-- Hugo 서버를 직접 시작/재시작할 필요 없음 — 사용자가 직접 관리함
-
-## 주의사항
-
-- `content/posts/` 파일은 파이프라인이 덮어쓰므로 **수동 편집 비권장** (다음 실행 시 소실)
-- UI/CSS/JS 변경 시 Writer 출력 마크다운 패턴과 호환성 확인 필수
-- `hello-world.md`는 `draft: true` — 네비게이션에서 제외됨
-- PR 전 필수 확인: `.github/pull_request_template.md` 체크리스트, `.github/workflows/quality-gate.yml` 통과, `CODEOWNERS` 리뷰 반영
+- `market-pulse`: `AGENTS.md`, `CLAUDE.md`, 계약 문서
+- `market-pulse-blog`: `AGENTS.md`, `CLAUDE.md`, 필요 시 `README.md`
