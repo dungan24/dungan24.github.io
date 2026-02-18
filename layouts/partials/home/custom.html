@@ -103,4 +103,5 @@
   </div>
 </div>
 
-<script src="{{ "js/home-market-overview.js" | relURL }}" defer></script>
+{{ $overviewJs := "js/home-market-overview.js" | relURL }}
+<script src="{{ printf "%s?v=%d" $overviewJs now.Unix }}" defer></script>
