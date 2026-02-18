@@ -9,15 +9,19 @@
   (dict "value" "PANIC" "label" "PANIC")
 }}
 {{ $filters := index $homeCfg "regime_filters" | default $filtersDefault }}
-<div class="mp-section-header-row">
-  <h3 class="mp-section-header">Recent Briefings</h3>
-  <div class="mp-regime-filter" id="mp-regime-filter">
+{{ $regimeCfg := index $mp "regime" | default dict }}
+{{ $defaultRegime := index $regimeCfg "default_status" | default "CAUTIOUS" }}
+<h3 class="mp-section-header">Recent Briefings</h3>
+<div class="mp-regime-filter-wrap" id="mp-regime-filter-wrap">
+  <p class="mp-regime-filter-label">Market Regime Filter</p>
+  <div class="mp-regime-filter" id="mp-regime-filter" role="tablist" aria-label="Filter briefings by market regime">
     {{ range $idx, $f := $filters }}
-    {{ $value := index $f "value" | default "ALL" }}
-    {{ $label := index $f "label" | default $value }}
-    <button class="mp-filter-chip{{ if eq $idx 0 }} is-active{{ end }}" data-filter="{{ $value }}">{{ $label }}</button>
+      {{ $value := index $f "value" | default "ALL" }}
+      {{ $label := index $f "label" | default $value }}
+      <button class="mp-filter-chip{{ if eq $idx 0 }} is-active{{ end }}" data-filter="{{ $value }}">{{ $label }}</button>
     {{ end }}
   </div>
+  <p class="mp-regime-filter-note" id="mp-regime-filter-note" hidden>Filters activate automatically once multiple regimes are available.</p>
 </div>
 <div class="mp-briefing-cards" id="mp-briefing-cards-container">
 {{ $pages := first 6 (where .Site.RegularPages "Section" "posts") }}
@@ -29,11 +33,28 @@
   <div class="mp-date-group" data-date="{{ $date }}">
     <div class="mp-date-label">{{ $displayDate }}</div>
     {{ range .Pages }}
-      {{ $regime := .Params.regime | default "NEUTRAL" }}
-      {{ $regimeIcon := .Params.regimeIcon | default "⚪" }}
-      {{ $summary := .Params.summary }}
-      {{ if not $summary }}{{ $summary = .Summary | plainify | truncate 80 }}{{ end }}
-      
+      {{ $regime := .Params.regime | default $defaultRegime }}
+      {{ $regime = upper $regime }}
+      {{ $regimeIcon := .Params.regimeIcon }}
+      {{ if not $regimeIcon }}
+        {{ if eq $regime "RISK_ON" }}{{ $regimeIcon = "🟢" }}{{ end }}
+        {{ if eq $regime "CAUTIOUS" }}{{ $regimeIcon = "🟡" }}{{ end }}
+        {{ if eq $regime "RISK_OFF" }}{{ $regimeIcon = "🔴" }}{{ end }}
+        {{ if eq $regime "PANIC" }}{{ $regimeIcon = "🚨" }}{{ end }}
+      {{ end }}
+      {{ if not $regimeIcon }}{{ $regimeIcon = "⚪" }}{{ end }}
+
+      {{ $summary := .Params.summary | default .Description }}
+      {{ if not $summary }}
+        {{ $plain := .Plain | replaceRE `\s+` " " | trim " " }}
+        {{ if $plain }}{{ $summary = $plain | truncate 140 }}{{ end }}
+      {{ end }}
+      {{ if not $summary }}
+        {{ $rawFallback := .RawContent | replaceRE `<!--[\s\S]*?-->` " " | replaceRE `#{1,6}\s*` "" | replaceRE `\s+` " " | trim " " }}
+        {{ if $rawFallback }}{{ $summary = $rawFallback | truncate 140 }}{{ end }}
+      {{ end }}
+      {{ if not $summary }}{{ $summary = "핵심 데이터와 시나리오를 담은 브리핑입니다. 본문에서 자세히 확인하세요." }}{{ end }}
+
       {{/* Detect Briefing Type */}}
       {{ $type := "default" }}
       {{ $typeIcon := "" }}
@@ -50,6 +71,17 @@
         {{ $typeIcon = "🌙" }}
       {{ end }}
 
+      {{ $rawTime := .Date.Format "15:04" }}
+      {{ $timeLabel := $rawTime }}
+      {{ if eq $rawTime "00:00" }}
+        {{ if eq $type "pre" }}{{ $timeLabel = "PRE" }}{{ end }}
+        {{ if eq $type "mid" }}{{ $timeLabel = "MID" }}{{ end }}
+        {{ if eq $type "post" }}{{ $timeLabel = "POST" }}{{ end }}
+        {{ if eq $type "default" }}{{ $timeLabel = "DAILY" }}{{ end }}
+      {{ end }}
+      {{ $timeClass := "" }}
+      {{ if ne $timeLabel $rawTime }}{{ $timeClass = "is-slot" }}{{ end }}
+
       {{ $isToday := false }}
       {{ $nowKST := now.UTC.Add (duration "hour" 9) }}
       {{ $postKST := .Date.UTC.Add (duration "hour" 9) }}
@@ -64,7 +96,7 @@
         </div>
         <div class="mp-briefing-card__header">
           <span class="mp-briefing-card__title">{{ .Title }}</span>
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "15:04" }}</time>
+          <time class="{{ $timeClass }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .Date.Format "2006-01-02" }} KST">{{ $timeLabel }}</time>
         </div>
         <p class="mp-briefing-card__summary">{{ $summary }}</p>
         <div class="mp-briefing-card__footer">

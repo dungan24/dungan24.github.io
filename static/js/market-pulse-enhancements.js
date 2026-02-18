@@ -185,12 +185,35 @@
     enhanceSummaries();
 
     // T-701: Regime Filter Logic
+    var filterWrap = document.getElementById('mp-regime-filter-wrap');
     var filterContainer = document.getElementById('mp-regime-filter');
+    var filterNote = document.getElementById('mp-regime-filter-note');
     var cardsContainer = document.getElementById('mp-briefing-cards-container');
 
     if (filterContainer && cardsContainer) {
       var chips = filterContainer.querySelectorAll('.mp-filter-chip');
       var cards = cardsContainer.querySelectorAll('.mp-briefing-card');
+
+      var uniqueRegimes = new Set();
+      cards.forEach(function (card) {
+        var regime = card.getAttribute('data-regime');
+        if (regime) uniqueRegimes.add(regime);
+      });
+
+      var disableFilters = cards.length < 4 || uniqueRegimes.size <= 1;
+      if (disableFilters) {
+        if (filterWrap) {
+          filterWrap.classList.add('is-disabled');
+        }
+        if (filterNote) {
+          filterNote.hidden = false;
+        }
+        chips.forEach(function (chip) {
+          chip.disabled = true;
+          chip.setAttribute('aria-disabled', 'true');
+        });
+        return;
+      }
 
       chips.forEach(function (chip) {
         chip.addEventListener('click', function () {

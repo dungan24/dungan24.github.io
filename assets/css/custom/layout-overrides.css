@@ -438,7 +438,7 @@
 
 /* --- Hero Title (MARKET PULSE) — soften glow --- */
 :root:not(.dark) .mp-heartbeat {
-  background: linear-gradient(135deg, #1E1E3A 0%, #7C3AED 40%, #5B21B6 60%, #1E1E3A 100%);
+  background: linear-gradient(135deg, #1E1E3A 0%, var(--mp-brand-color) 45%, #1E1E3A 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
