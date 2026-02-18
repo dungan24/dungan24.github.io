@@ -12,14 +12,15 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **달러인덱스 97.71(+0.58%) 급등, 원/달러 1,440.86원, 크립토 극단적 공포(8) — 금리/연준**
+> **달러인덱스 97.71(+0.57%) 급등, 원/달러 1,440.86원, 크립토 극단적 공포(8) — 에너지/OPEC**
 
-- **달러**: DXY 97.71 (+0.58%) ↑ ⚡
+- **달러**: DXY 97.71 (+0.57%) ↑ ⚡
 - **크립토**: Fear & Greed 8 (극단적 공포) ⚠️
 - 변동성: VIX 19.62 (-3.30%)
 - 금리: 미 10년물 4.08% (+0.03)
 
-
+> **오늘 달라진 것**
+> - 비트코인 4일 연속 ↓
 
 ---
 
@@ -36,23 +37,19 @@ chartData: "/data/chart-data-2026-02-19.json"
 오늘 한국장은 원/달러 1,440.86원(상승)과 한국 2차전지 1주 약세(-2.7%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
-미국 10년물 금리 상승은 연준의 매파적 발언과 맞물려 시장의 긴장감을 높였다.
-금리 상승은 곧 할인율 상승으로 이어져 성장주에 대한 투자 심리를 위축시키는 동시에, 달러 강세 요인으로 작용했다.
-달러 강세는 필연적으로 원화 약세를 초래하며, 신흥국 자금 이탈 압력을 가중시켰다.
+미국 10년물 금리 상승은 투자 심리를 위축시킬 수 있지만, 기술주 중심의 강세가 이를 상쇄하는 모습을 보였다.
+유가 안정과 기업 원가 부담 완화가 소비 여력 증가로 이어지면서 경기 지지 기대감이 형성된 결과, 나스닥 100 지수가 S&P 500 지수보다 높은 상승폭을 기록했다.
+다만, 달러인덱스가 97.7로 소폭 상승하면서 원/달러 환율이 1,440.86원으로 상승한 점은 변동성을 키울 수 있다.
 
-하지만 나스닥 100 지수가 0.80% 상승한 점은 기술주에 대한 긍정적인 전망이 여전히 존재함을 시사한다.
-특히 엔비디아와 아마존의 강세는 AI 및 이커머스 분야의 성장 기대감을 반영한 결과로 보인다.
-다만, 연준의 추가 금리 인상 가능성이 완전히 해소되지 않은 만큼, 오늘 시장은 미국 10년물 금리 추이와 연준 관계자들의 발언에 주목하며 변동성을 경계해야 할 것이다.
-- 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 금융(XLF) 1주 +0.58% 강도가 유지되는지를 먼저 보겠습니다.
+오늘 시장은 VIX 지수(19.62)의 추이와 미국 10년물 금리의 추가 상승 여부를 주시하며, 기술주 강세가 지속될지 확인해야 합니다.
+- 그래서 오늘은: 에너지/OPEC 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 에너지(XLE) 1주 +0.50% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 지수 혼조와 종목별 차별화가 이어지며 추세 확인 장세가 지속됩니다. 대안 시나리오: 한 방향 모멘텀이 강화되면 혼조 구간이 종료되고 추세 매매 구간으로 전환됩니다.
 
-또한 **에너지/OPEC** 관련 소식도 시장에 영향을 주고 있습니다. 유가 안정/하락 → 기업 원가 부담 완화 → 소비 여력 증가 → 경기 지지
+또한 **금리/연준** 관련 소식도 시장에 영향을 주고 있습니다. 연준 매파적 발언 → 금리 동결/인상 기조 → 달러 강세 → 신흥국 자금 이탈
 
 공포지수(VIX)는 19.62대로 안정 수준입니다.
 
-달러인덱스(DXY)는 97.71로 +0.58% 상승했습니다.
-
-통계적으로 유가의 최근 변동은 6개월 기준 **상위 99%** 수준으로, 평소보다 드물게 강한 움직임입니다.
+달러인덱스(DXY)는 97.71로 +0.57% 상승했습니다.
 
 현재 **유가 ↔ 10년물**가 비동조(r=+0.14)로, 독립적인 흐름입니다. 독립적
 또한 **S&P 500 ↔ BTC**도 r=-0.1 수준입니다. 독립적 움직임
@@ -111,14 +108,14 @@ chartData: "/data/chart-data-2026-02-19.json"
 | 다우존스 | 49,662.66 | +129.47 | +0.26% | - |
 | VIX (공포지수) | 19.62 | -0.67 | -3.30% | - |
 | 미국 10년물 국채 | 4.08% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 97.71 | +0.56 | +0.58% | - |
+| 달러인덱스 (DXY) | 97.71 | +0.56 | +0.57% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,392 | -1,274.73 | -1.92% | - |
-| 이더리움 (ETH) | 1,946.16 | -52.55 | -2.70% | - |
+| 비트코인 (BTC) | 66,322 | -1,167.27 | -1.76% | ↓4일 |
+| 이더리움 (ETH) | 1,947.6 | -44.21 | -2.27% | - |
 | 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 ### 환율 
@@ -140,8 +137,8 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,996.1 | +90.2 | +1.84% |
-| WTI 유가 (Oil) | 64.94 | +2.68 | +4.30% |
+| 국제 금 (Gold) | 4,996.1 | -13.4 | -0.27% |
+| WTI 유가 (Oil) | 64.94 | -0.11 | -0.17% |
 
 {{< market-charts >}}
 
@@ -149,10 +146,10 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 07:44:43","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 08:05:27","max_items":8} -->
 ### 글로벌
 
-1. [**Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxQQzgyMnUwdGM4X0llMW1ncURucXV3SDBEOUFEMkxLT19sX01BWnlTdGUtMU5wcXRYV0dBdkoxSFBuT004WXRhU3pRczE3YUFvVUk4MG80X1JjeGdUTEdBRVBncmdILVVzWjgtNnpDNkVwNlpnOVppd0prX0xZSnNOY3ZLNkZXQzhKTG5xMkNlY2hVTUI3bmdDYWszektoZ2xEbXR5bzBjY295R2UxYng4Nk4zTnB3NHd0bHZWaVN0MnUwZktJOXkwN2MxNGVLcXdvajRHUjRZQ0o0VjBSUElLbWRSOWE1QXFsdnBYZW1mUGJJUFlqSW1KZ2pkeHNUaDkxcTRQVHE5Q01hVUhpOUNpcHlQQm9qcHNPODEwRkJFNnBZT2FGVUVwckJWV1FfaG05azM4NnRDTmF4aEM1RjE2NjZpUlpkcDVxRXg1ZWc2UDJrWlpWb0VlaDVlc2dhcW53Y2V0Wno0RUpRS2JXWlZmQlZtWW5hVmdqYW00WmdUbkozQkFoUjVXMmV3ZGI0M3pBRTNudEVnUzIxblZiM1pacmFaTzNvN3J3REYyVmlfcl9rWlM1MnV0bmhSV1lmSFk?oc=5)
+1. [**Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxPSUVHQ2NNVjZyLVhsWkJITkxhbFJDS2g2SEE4YTRIU3AxM2t1U0ZQSHdEMTZIcllRZmlGRVZrWDBINmFXWlE4aWtUVjFZZXM1Y0pPUjZxMmpjcWN3VEhzYXdpMTlOU1ZtLWtUMDdZZ2lsS2JqRjhPVEVTVDZ0cVVZRFVGR3V0bG9Pc3k1YUNzbWdkS2dNWUloUFAyZUtNR2hHUnZ5OUM5SHNKVGQwVFEybUJ0Zmo1dm1aaXUyczY3Wk85ZlFMRl84dUVQbnhzR3FBbXBzdmUtc0I2cnk0V1AxSDJiSTZudGNxRFBDXzM3S05BblpGaWsyLWZUanhxMXM5N0dHbWppejRWMjc0N2ZFZjNJUkVxa0VqWFdUYVI3cHgzRHBRR082djM2c0t3RXF2U24tTkZjSFlUSkgxSm83a2pWdHdaTlhyQk15Wm15d0hDM2NDcXFBem5NeDE4b2ZsNVBPQWFWV2pCemZFTjBSQmk0QjlteTRsVzBNeGdON0QwTGxTcVh2SkVocnMxaWU4NnQ2ZFA3SFlnMGJmU1NzN2xwM2pyTVhFbURSZEFLYzBHMGFkM2JfNEhnRVNsSEk?oc=5)
    MarketWatch · 2026-02-19 06:15 KST · 시장 이벤트
    원문: Stock Market News, Feb. 18, 2026: Dow, S&P 500 secure third straight session of gains, Nasdaq rises as AI and tech turmoil eases; crude oil spikes by more than 4.5%.
    왜 중요한가: 유가 급변은 인플레이션과 에너지 의존 기업 실적에 직접 영향을 미칩니다.
@@ -172,10 +169,10 @@ chartData: "/data/chart-data-2026-02-19.json"
    원문: Federal Reserve officials warn progress towards inflation goal will be ‘uneven’
    왜 중요한가: 물가 지표에 10년물 4.08%(상승) 반응. 금리 경로 재조정 가능성.
 
-5. [**Global Payments 주식은 S&P 500에서 최고의 성과를 내는 주식입니다. 이익을 창출하는 요인은 무엇입니까?**](https://news.google.com/rss/articles/CBMiigNBVV95cUxNUnlqY2NRQ0J2QlJFQjJBd0tZbm5BRW1fMmtrRjA1UU9Pa2xMOS03ZTROekFlWFNRQ0JKS1V6bFl6OHJCWGN4Rkk3WHBnVnNRdWFrSU9KM1A0c0NCR0Nud1pqbUNxRVYtOUhiWVl0NGExVVJCRmtMaUZrR1pQNkZNZHhfRDY1eWhhcVBQLTJfdS1zZHFGVG9kdXFKRl8tR1VtcVNMSEtLbDFJT1RsSHB3UV9wT25vajV6el9oT09PcGx4U1Y4TWpxM3BDejh1blZmd2JsME5CMDMwZDRoSDhOa0twVGJmaUZ6WWNuay1zeUdyRUIydzNOakZjU3Y4M1FaOFZOV2NLNTQyeWZUS1AxQTlKYUs4dlNXVzBsYWtycTktbkZ0NHFSWWhxNWp0ZkpabHRyUDJVZEhrLWgzTXpOaWswZzhZb1Y1d3FjVVNqWVBNZkZ2M0RZdWlWbUlGT2ZBSFdxcjF5WnZ4ODR0NE5BSXhHS2NIMmdNanJNVGFVYzIwdnl1UHE4OGpn?oc=5)
-   Barron's · 2026-02-19 00:11 KST · 시장 이벤트
-   원문: Global Payments Stock Is the Top S&P 500 Performer. What’s Fueling the Gains.
-   왜 중요한가: 섹터 순환과 수급 변화의 방향을 확인하는 중간 강도의 신호입니다.
+5. [**오늘의 시장: Moderna의 반등; 석유와 금의 점프**](https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ1kyX3BZdHRXYXFQZkxZb0hGZm1aR1ZqeGZPOGFWRk5wall4Mkw3T1ZsTjF1ZHYwZzdvS0UxNzVFbC16b0wzbEQxeWhWLWVLSUQySXJRelRoenM2SU9TV09CWjkzVk5DSDhVaDFZbTk4SUdJd1hYanI4ckZVb0FDak9SaHNFeWhkVmZJYWdxcw?oc=5)
+   GuruFocus · 2026-02-19 07:41 KST · 원자재
+   원문: Market Today: Moderna rebounds; oil and gold jump
+   왜 중요한가: 에너지 섹터 수급 변화와 원가 압박 여부를 확인합니다.
 
 ### 국내
 
@@ -193,7 +190,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 07:44:43","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 08:05:27","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [영국] [GBP] CPI y/y** (D-Day)
@@ -352,7 +349,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-19 07:44:43 KST</span>
+  <span>생성 시각: 2026-02-19 08:05:27 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-19 07:44:43 KST</span>
+  <span>데이터 기준 시각: 2026-02-19 08:05:27 KST</span>
 </div>
