@@ -16,12 +16,11 @@ chartData: "/data/chart-data-2026-02-18.json"
 
 - 한국 증시는 2026-02-18 휴장일 상태로 현물 거래가 없습니다.
 - **크립토**: Fear & Greed 8 (극단적 공포) ⚠️
-- 변동성: VIX 19.47 (-8.16%)
+- 변동성: VIX 19.48 (-8.11%)
 - 금리: 미 10년물 4.05% (0)
 
 > **오늘 달라진 것**
-> - VIX 5일 전 17.51 → 현재 19.47 (**+11.19%** 급등)
-> - 비트코인 3일 연속 ↓
+> - VIX 5일 전 17.51 → 현재 19.48 (**+11.25%** 급등)
 
 ---
 
@@ -31,16 +30,16 @@ chartData: "/data/chart-data-2026-02-18.json"
 한국 증시는 2026-02-18 휴장일 구간으로 현물 거래가 없습니다.
 미국 증시는 소폭 상승으로 마감했습니다. S&P 500 +0.10%, 나스닥 +0.14%, 다우 +0.07%.
 
-핵심 뉴스로는 **"오늘의 주식 시장: 다우, S&P 500, 나스닥은 AI 기술 혼란이 완화되면서 상승세를 보였습니다. 국채 수익률은 수주 최저 수준에 가깝습니다. Palo Alto 주가 하락세; 탭에 분을 제공합니다."** 이 확인됐습니다.
+핵심 뉴스로는 **"트럼프 백악관은 연준의 모델이 틀렸다고 생각한다. 연준은 이에 동의하지 않습니다."** 이 확인됐습니다.
 
-원/달러 환율은 1,445.45원으로 상승했습니다.
+원/달러 환율은 1,446.01원으로 상승했습니다.
 
 ### 왜 그런가
-S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19.47 수준을 유지했습니다.
+S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19.48 수준을 유지했습니다.
 
 한국 증시가 2026-02-18 휴장일이라 국내 가격 발견 기능이 멈춰, 해외 반응이 다음 거래일 심리에 더 직접 전이됩니다.
 
-핵심 뉴스("오늘의 주식 시장: 다우, S&P 500, 나스닥은 …") 반응이 다음 거래일 투자심리를 선행할 가능성이 큽니다.
+핵심 뉴스("트럼프 백악관은 연준의 모델이 틀렸다고 생각한다. 연…") 반응이 다음 거래일 투자심리를 선행할 가능성이 큽니다.
 
 그래서 **[USD] 소비자물가지수(CPI) - January** 전후 미국 선물과 원/달러 방향을 먼저 확인해야 합니다.
 
@@ -52,7 +51,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 가상자산 공포탐욕지수는 **8(극단적 공포)**로, 위험자산 심리의 과열/과매도 신호를 함께 점검할 필요가 있습니다.
 
 ### 행동 체크포인트
-**관측**: VIX 19.47로 정상 범위
+**관측**: VIX 19.48로 정상 범위
 **의미**: 시장 변동성이 안정적인 흐름 유지 중
 **시사점**: 휴장일 구간이라 미국장·환율·다음 거래일 일정만 확인해도 충분해요
 
@@ -64,8 +63,8 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
   - 상황: [USD] 소비자물가지수(CPI) - January 결과가 예상과 괴리
   - 대응: 발표 직후 미국 선물·달러 반응 확인 → 다음 거래일 갭 예측
   - 해제 기준: 예상 범위 내 결과는 갭 변동성 제한
-- **원/달러 1,445.45원**
-  - 상황: 원/달러가 1,445.45원에서 급변(일중 ±6원 이상)
+- **원/달러 1,446.01원**
+  - 상황: 원/달러가 1,446.01원에서 급변(일중 ±6원 이상)
   - 대응: 환율 급변 시 재개장 초반 외국인 수급 영향 큼. 관망 우선
   - 해제 기준: 일중 변동 ±3원 이내면 안정적 흐름
 
@@ -83,7 +82,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 | 나스닥 | 22,578.38 | +31.71 | +0.14% | - |
 | 나스닥 100 | 24,701.6 | -31.13 | -0.13% | - |
 | 다우존스 | 49,533.19 | +32.26 | +0.07% | - |
-| VIX (공포지수) | 19.47 | -1.73 | -8.16% | ↑1일 ⚡ 하위 9% |
+| VIX (공포지수) | 19.48 | -1.72 | -8.11% | ↑1일 ⚡ 하위 9% |
 | 미국 10년물 국채 | 4.05% | 0 | - | - |
 | 달러인덱스 (DXY) | 97.3 | +0.15 | +0.15% | - |
 
@@ -91,31 +90,31 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,168 | -678.4 | -1.01% | ↓3일 |
-| 이더리움 (ETH) | 1,978.65 | +8.9 | +0.45% | - |
+| 비트코인 (BTC) | 67,226 | -618.48 | -0.92% | ↑1일 |
+| 이더리움 (ETH) | 1,979.65 | +9.9 | +0.50% | - |
 | 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,445.45 | +4.69 | +0.33% | ↑2일 |
+| 원/달러 (USDKRW) | 1,446.01 | +5.25 | +0.36% | - |
 
 ### 지수 선물
 
-> ↗ 본장 +0.10% 마감 → 선물 +0.80% 반등 중 (Basis: +0.80%)
+> ↗ 본장 +0.10% 마감 → 선물 +0.78% 반등 중 (Basis: +0.78%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,898 | +37.5 | +0.55% |
-| 나스닥 100 선물 | 24,922 | +154.25 | +0.62% |
+| S&P 500 선물 | 6,896.5 | +36 | +0.52% |
+| 나스닥 100 선물 | 24,914.25 | +146.5 | +0.59% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,933.1 | +27.2 | +0.55% |
-| WTI 유가 (Oil) | 63 | +0.74 | +1.19% |
+| 국제 금 (Gold) | 4,933.6 | +27.7 | +0.56% |
+| WTI 유가 (Oil) | 63.04 | +0.78 | +1.25% |
 
 {{< market-charts >}}
 
@@ -123,32 +122,32 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-18 20:13:05","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-18 20:14:42","max_items":8} -->
 ### 글로벌
 
-1. [**오늘의 주식 시장: 다우, S&P 500, 나스닥은 AI 기술 혼란이 완화되면서 상승세를 보였습니다. 국채 수익률은 수주 최저 수준에 가깝습니다. Palo Alto 주가 하락세; 탭에 분을 제공합니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxQd2FxWDUwWTl6cVVteXprZG9NaTM0anFtRDVDdUxBdTBvY2FfbXdZRFpXUmUzdHZ2LTAyb3pWMmJ1NWdELW1jMGRLZW04dHZLcnFteUF1c2c1bUJ0akpfVnZTWDNRS1NEWTV6dzNzUE41LTdkdXBjVmNhSjQ2bkxnbUZWMVhFazVoaWEwU0NrN0tGR0JxNl9TaFM1bjZNRXZXWWxFNFBPaTBadTFDRGN2alY4bmpDOEx6UlNiNE1EdUtzODBSUmRTa2tjX2J6M0Z1TTlZSk43cFBDRkhnYXg0QWhfdndSSFZHMzFQMTYxZE5qSXpXZTR3R3RTWmktcXV5TFoyT3FKeVFQTFBNa1RXR1YyelNsZi1nbnNnU2Q0cDZuVVlaNFRxWmNQZ1RwaVNpSU1aRnc4dWpid1FhblpFM09mWk1JNFRmN0MtV0JnVGhUME5BbXpqeHNkYkdfY01jVmlQb3BVY1ZHZ1NIa0oyRUozLWtqVml4and0cTVXdzVob1VOZ04weEVwTC1HX0NhZkVBMDRHZDRkdG1mTU5wWWtna2E2LV9ZZG9iU3dVQjg3S2kwU2s0REdjUHhuUTg?oc=5)
-   MarketWatch · 2026-02-18 18:47 KST · 시장 이벤트
-   원문: Stock Market Today: Dow, S&P 500 and Nasdaq called higher as AI tech turmoil eases; Treasury yields near multi-week low; Palo Alto shares dip; Fed minutes on tap.
-   왜 중요한가: 금리 정책에 VIX 19.47로 반응. 변동성 확대 시 방어적 접근.
-
-2. [**트럼프 백악관은 연준의 모델이 틀렸다고 생각한다. 연준은 이에 동의하지 않습니다.**](https://news.google.com/rss/articles/CBMirANBVV95cUxQdnJWNlB6YzNlVnBTRU1SZGl4QjRTNkVHRG1teGlma1dTdHpLR1ROaVBBSHFYTndLaVV6Wkl0T1pqS0FXLTBud1Z4blRoaTJBa2VJRzRtQ0ljRDAyTlZaUWEyM0RvNzFnQzg1SUNJbFdRTVpqY0ZHNEgxRGJzamt1aWU2NzJzY1dZeW5NX2xZSHhlU012U2gwZ3dueGRQcUl3TjJ3RXdWZG5QS01XYThYVFlfX3RTb1luZlNrRGgxaDlnbnFJT2VFbzdyWW9Oc3YyWEtRRDZMa29RamIzU0E3TzVVd2xCSWcyNkRIZlAxZjdSaUlQWUgtVTIzejJYNnlCZmlmZ1BNSFA5bXQyZ2Z3bGduRjFSQU9IOVlQNnpOUUhBeHBldi1KbkdzVVJoazd2NnRtVWxUX3U4bGZrVXZfOXNfeVBfOHdwWVEwRHhNMTgyZGZvaVJFelFZMG9jeHk1bFNBTUgwdzVObHpHcjB5b1BxVXdzVEN4SXFkUVJKZkpyN2RjeTJMbzJXZldBNDdSc1dmLTVsaFhTLUdkeVRmdFUzQ1hNRVd6bE1hcg?oc=5)
+1. [**트럼프 백악관은 연준의 모델이 틀렸다고 생각한다. 연준은 이에 동의하지 않습니다.**](https://news.google.com/rss/articles/CBMirANBVV95cUxNRnZiTlZlMTk3MEswSVJyOG9nRng1b1RMNXFVYURabXVYSnpaRHN6ak1qVk1yWTFDZHVFdTNLOThVcHNCOWZJRWxDZk5MTTJuTGQxX3BGbG0xUDItekVCLWtPalU1OWE2amJLMXREdGNRSFlOS0lHQlpLVWJPeFFiN2JNbmV1Z3Q5a2x0ODJaZlBoZ0Z2UUg4RzllYXJJRWM5eTJuQUQ4YUh3Q0lOUjlIYk9SaExRS0pid2NIZ01LZkUtcy1TSi1JLVktZlI3bjl0ZXZUZEE0a3h3REZkeTFiTzk2UEc4eGFpcVplMmpMNEk0eEVHQVlpdE1RYXlZeTgyTlg4WGdybThwbG9nZkpXOGdxZ0JzZGpCaFFjNVJvTUxoNDNxY29vRDNaOGZRSTJaV29qc0t2Zk0tNnFHMnZLNE9XUDlCemZEQ0tzLTVfSlUxMVlRQllpTnItQ0xPUkxfMlhCNGdSa3ZHQ2VHOHkyOHNMWHNzWFpqSFgzcGtnTmF6Y0p5TGk5TVdhVXh6bTdfMjdzY3FPN0IxRHE0VDVXY0JGbXN1YjRqcEF2Rw?oc=5)
    Barron's · 2026-02-18 15:30 KST · central-bank
    원문: Trump White House Thinks the Fed’s Models Are Wrong. The Fed Disagrees.
-   왜 중요한가: 금리 정책에 VIX 19.47로 반응. 변동성 확대 시 방어적 접근.
+   왜 중요한가: 금리 정책에 VIX 19.48로 반응. 변동성 확대 시 방어적 접근.
 
-3. [**인플레이션이 3%로 떨어지면서 3월 금리 인하에 대한 희망이 높아졌습니다.**](https://news.google.com/rss/articles/CBMijAFBVV95cUxNeTV4RUJZcFR5Y2JVMEE5ZDNXOUdEZnZBVXlxc0lfdExHWGp0RURfc1ZxR3BhUmhpQ000RFBycGdXTnNiWGFUc2kyVDdRSjdEMHVjT3ZwczM1UGJicEM0WjdmYTg2bW41VTFHdnhMSlBOZ2RRTjdwaTYxQnh5QjU4WnEtUjVFdkE0WF9Ncw?oc=5)
+2. [**인플레이션이 3%로 떨어지면서 3월 금리 인하에 대한 희망이 높아졌습니다.**](https://news.google.com/rss/articles/CBMijAFBVV95cUxNeTV4RUJZcFR5Y2JVMEE5ZDNXOUdEZnZBVXlxc0lfdExHWGp0RURfc1ZxR3BhUmhpQ000RFBycGdXTnNiWGFUc2kyVDdRSjdEMHVjT3ZwczM1UGJicEM0WjdmYTg2bW41VTFHdnhMSlBOZ2RRTjdwaTYxQnh5QjU4WnEtUjVFdkE0WF9Ncw?oc=5)
    Forbes · 2026-02-18 19:51 KST · central-bank
    원문: Hopes Rise For March Interest Rate Cut As Inflation Tumbles To 3%
    왜 중요한가: 물가 지표에 10년물 4.05%(보합) 반응. 금리 경로 재조정 가능성.
+
+3. [**투자자들이 미 연준 회의록을 기다리면서 금값 상승**](https://news.google.com/rss/articles/CBMilAFBVV95cUxQbnUwMmhlNW1LRnViRHZKUmhEOTlZT3lBVFlpOHhwSFpDMFVEdzNyYzZZd2p0aG90bjBhTE8yRnItUU81N3dUREFncjExNTkxdzdfSmpDNWl5cFlEVmtlS3N0cm5wVnh0aXNxVjU2eGFmU2FpN09wVlBZVE5tdDlQLUtwa3RwTHNPMm5Hb2Q3RnpvU0Zm?oc=5)
+   Reuters · 2026-02-18 13:38 KST · 원자재
+   원문: Gold rises as investors await US Fed minutes
+   왜 중요한가: 금리 정책에 VIX 19.48로 반응. 변동성 확대 시 방어적 접근.
 
 4. [**Apple, AI '두더지잡기' 그립 시장으로 나스닥에서 분리**](https://news.google.com/rss/articles/CBMigwFBVV95cUxQc3ZPY2hTcHBmTk1zRXI2czJhSnEwaDRONDl3SmhXbEVOZWdEd3FJdkNBVDc2Q0lPalVFY0FZbGNLNkRla1BoNHFybTF0ZGkydVNkTmRRbjNMMjkyYlhwTTJnVER3TjdzUTVsd3N2QWtCWDdDZ0xGNjNpQ0dnaVpRcThjRQ?oc=5)
    Yahoo Finance · 2026-02-18 18:39 KST · 시장 이벤트
    원문: Apple Decouples From Nasdaq as AI ‘Whack-a-Mole’ Grips Market
    왜 중요한가: AI/반도체 이슈에 나스닥이 -0.13% 반응. 국내 반도체 섹터 영향 주시.
 
-5. [**제재, 공급 이동 및 전략적 비축으로 인해 슈퍼 탱커 요금이 급등**](https://news.google.com/rss/articles/CBMiwAFBVV95cUxNd3dHMnB4V1B0d1o4S2lqeE12UDFSdjAtSWQxRG1lRFJqcURURU9oeUlCaUkyLWo0UUpMSHpWWllaNXdKZVRsNmN6LVBGRXUtc1E5a1VMd0FndFNDMTZkRVVLM2NUNUhXcm4ybDJ1bHhtLVo2aXFGSXNqWWtYYzE4UXZxbFJabDlNUGRMbkJaa3pNRGZMMWxtaFBvRjNMSEt5b2dEMWhLdjlJcW84RjcyMFE0dDljWHFhbWJTZnFDY1_SAcYBQVVfeXFMUDBtd05oRzAwU3lCVlFhY09wanF2bUVVTWM2TnVLbjctbm8xWjhVaHBSSngwYmstcTF0OWRlVjUtOFdwOURLdmktdUdTQ1hKd1d6dnZMRzRLb01Wd1Jtc0pEREpyeU84ZGVBbGpwcHo2bktja1J2MHZBLUc2RlhWYUd6OVh2amxja2tWZklfeW9GY2wtMGJFaVc0X2tTVTFaMnRhVGxYR2t5eVA0VTFzcE5OS2RtUEJnb3VidkhsMXhEbl9CRUVn?oc=5)
-   Crude Oil Prices Today | OilPrice.com · 2026-02-18 09:00 KST · 지정학
-   원문: Super Tanker Rates Soar Amid Sanctions, Supply Shifts, and Strategic Hoarding
+5. [**기술이 추진력을 회복함에 따라 녹색 주가지수 선물(SPX:)**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNUFaX0x0SWJQdk1zb2JfY2RZM0I3ckNodEs3dEd4ZlpLWV9FSWlWcmJBdVUxd19CcXh5bktSdWVQczQ4aldIWkNhaFJhT21ZMWdMYmRBdW9tdEV5N2JSekwxSUt2Q083c0JqZWRxajFrWXZ2U1QwdndTUk92WXRqcnQ2azJlUXgw?oc=5)
+   Seeking Alpha · 2026-02-18 18:31 KST · 시장 이벤트
+   원문: Stock index futures in green as tech regains momentum (SPX:)
    왜 중요한가: 섹터 순환과 수급 변화의 방향을 확인하는 중간 강도의 신호입니다.
 
 ### 국내
@@ -173,7 +172,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-18 20:13:05","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-18 20:14:42","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [영국] [GBP] CPI y/y** (D-Day)
@@ -297,9 +296,9 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | S&P 500 | 6,941.47 | 6,843.22 | -1.42% | 소폭 하락 |
-| 비트코인 | 67,026 | 67,168 | +0.21% | 보합 |
-| VIX | 17.51 | 19.47 | +11.19% | 급격 불안 |
-| 원/달러 | 1,437원 | 1,445.45원 | +0.59% | 소폭 상승 |
+| 비트코인 | 67,026 | 67,226 | +0.30% | 보합 |
+| VIX | 17.51 | 19.48 | +11.25% | 급격 불안 |
+| 원/달러 | 1,437원 | 1,446.01원 | +0.63% | 소폭 상승 |
 
 ## 이벤트 임팩트
 
@@ -326,6 +325,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -336,7 +336,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-18 20:13:05 KST</span>
+  <span>생성 시각: 2026-02-18 20:14:42 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-18 20:13:05 KST</span>
+  <span>데이터 기준 시각: 2026-02-18 20:14:42 KST</span>
 </div>
