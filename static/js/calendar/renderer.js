@@ -273,6 +273,9 @@
 
           var card = document.createElement('div');
           card.className = 'mp-upcoming__item';
+          if (e.importance) {
+            card.classList.add('is-' + e.importance);
+          }
 
           var timeAxis = document.createElement('div');
           timeAxis.className = 'mp-upcoming__time-axis';
@@ -302,6 +305,7 @@
           badges.appendChild(imp);
 
           var status = model.getEventStatus(e, now);
+          card.classList.add('is-status-' + model.getStatusBadgeClass(status));
           var statusBadge = document.createElement('span');
           statusBadge.className = 'mp-status-chip is-' + model.getStatusBadgeClass(status);
           statusBadge.textContent = status;

@@ -1,0 +1,338 @@
+/* --- Calendar UI coherence refresh (Unified with Briefing Card) --- */
+
+/* 0. Rendering Quality Core */
+.mp-calendar, .mp-upcoming, .mp-upcoming * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent subpixel blur on animated dot only */
+.mp-upcoming__dot-line::before {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Main container: align with briefing-section glass language */
+.mp-calendar.mp-glass-card {
+  background: var(--mp-glass-bg);
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border);
+  box-shadow: var(--mp-shadow-sm);
+  border-radius: var(--mp-radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.mp-calendar.mp-glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: var(--mp-shadow-md);
+}
+
+.mp-calendar.mp-glass-card::before {
+  display: none;
+}
+
+.mp-calendar__grid {
+  gap: 0.25rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+/* Calendar cells: subtle, consistent interaction */
+.mp-calendar__cell {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  border-radius: var(--mp-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.mp-calendar__cell:hover {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
+}
+
+.mp-calendar__cell.is-today {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: var(--mp-neon-purple);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+  animation: none;
+}
+
+/* Upcoming area: extension of the same card, not separate widget */
+.mp-upcoming {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: rgba(18, 18, 42, 0.3);
+  border-top: 1px solid var(--mp-glass-border);
+  box-shadow: inset 0 4px 12px -4px rgba(0, 0, 0, 0.2);
+}
+
+.mp-upcoming::before {
+  display: none;
+}
+
+.mp-upcoming__title {
+  color: var(--mp-neon-cyan);
+  font-family: var(--mp-font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: none;
+  margin-bottom: 1rem;
+}
+
+/* Filters: Grouped "Control Deck" Style */
+.mp-upcoming__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0.25rem 0;
+  margin-bottom: 1.15rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.mp-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mp-filter-group__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #a8b8cf);
+  opacity: 0.95;
+}
+
+.mp-filter-pills {
+  display: inline-flex;
+  background: rgba(15, 23, 42, 0.56);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 1px;
+}
+
+.mp-filter-pill {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  padding: 0.16rem 0.64rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+}
+
+.mp-filter-pill:hover {
+  background: rgba(124, 58, 237, 0.24);
+  color: #f8fafc;
+}
+
+.mp-filter-pill:focus-visible {
+  outline: none;
+  color: var(--mp-neon-cyan);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mp-filter-pill.is-active {
+  background: rgba(124, 58, 237, 0.88);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(124, 58, 237, 0.24);
+}
+
+/* Upcoming items: less card-heavy, more readable timeline */
+.mp-upcoming__item {
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mp-upcoming__item:last-child {
+  border-bottom: none;
+}
+
+.mp-upcoming__dot-line {
+  background: rgba(148, 163, 184, 0.2);
+  width: 1px;
+}
+
+.mp-upcoming__dot-line::before {
+  background: var(--mp-neon-purple);
+  box-shadow: 0 0 6px var(--mp-neon-purple);
+  width: 7px;
+  height: 7px;
+  left: -3px;
+  transition: transform 0.2s ease;
+}
+
+.mp-upcoming__content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  transform: none;
+  transition: background-color 0.2s ease;
+}
+
+.mp-upcoming__item:hover .mp-upcoming__content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.mp-upcoming__time {
+  color: #d8e1ee;
+  font-weight: 700;
+}
+
+.mp-upcoming__event {
+  color: #ebf1f8;
+  font-weight: 700;
+}
+
+.mp-upcoming__meta {
+  color: #bcc9db;
+}
+
+.mp-upcoming__translation {
+  color: #b2dbf2;
+}
+
+.mp-upcoming__impact {
+  color: #ccd7e8;
+  border-top-color: rgba(148, 163, 184, 0.18);
+}
+
+.mp-upcoming__item:hover .mp-upcoming__event {
+  color: #f3f6fb;
+}
+
+.mp-upcoming__item:hover .mp-upcoming__meta,
+.mp-upcoming__item:hover .mp-upcoming__impact {
+  color: #e2e8f0;
+}
+
+.mp-upcoming__item:hover .mp-upcoming__dot-line::before {
+  transform: scale(1.4);
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 10px var(--mp-neon-cyan);
+}
+
+.mp-upcoming__item.is-high .mp-upcoming__dot-line::before {
+  background: var(--mp-neon-rose);
+  box-shadow: 0 0 8px var(--mp-neon-rose);
+}
+
+.mp-upcoming__item.is-medium .mp-upcoming__dot-line::before {
+  background: var(--mp-neon-yellow);
+  box-shadow: 0 0 8px var(--mp-neon-yellow);
+}
+
+.mp-upcoming__empty {
+  background: transparent;
+  border: 1px dashed rgba(148, 163, 184, 0.2);
+  color: #64748b;
+  border-radius: var(--mp-radius-md);
+}
+
+@media (max-width: 640px) {
+  .mp-calendar__grid {
+    padding: 1rem;
+  }
+
+  .mp-upcoming {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-calendar__cell,
+  .mp-filter-pill,
+  .mp-upcoming__content,
+  .mp-upcoming__dot-line::before {
+    transition: none;
+  }
+}
+
+/* Light mode: clean and neutral */
+:root:not(.dark) .mp-filter-pills {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+:root:not(.dark) .mp-filter-pill {
+  color: #526276;
+}
+
+:root:not(.dark) .mp-filter-pill:hover {
+  color: #273246;
+  background: rgba(124, 58, 237, 0.12);
+}
+
+:root:not(.dark) .mp-filter-pill.is-active {
+  background: var(--mp-neon-purple);
+  color: #ffffff;
+  box-shadow: 0 1px 6px rgba(124, 58, 237, 0.25);
+}
+
+:root:not(.dark) .mp-calendar.mp-glass-card {
+  background: var(--mp-glass-bg);
+  border-color: var(--mp-glass-border);
+  box-shadow: var(--mp-shadow-sm);
+}
+
+:root:not(.dark) .mp-calendar__cell {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+:root:not(.dark) .mp-calendar__cell:hover {
+  background: rgba(124, 58, 237, 0.05);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+:root:not(.dark) .mp-calendar__cell.is-today {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--mp-neon-purple);
+}
+
+:root:not(.dark) .mp-upcoming {
+  background: rgba(0, 0, 0, 0.02);
+  border-top-color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+:root:not(.dark) .mp-upcoming__title {
+  color: #334155;
+}
+
+:root:not(.dark) .mp-upcoming__time,
+:root:not(.dark) .mp-upcoming__event {
+  color: #273246;
+}
+
+:root:not(.dark) .mp-upcoming__meta {
+  color: #5a6a7f;
+}
+
+:root:not(.dark) .mp-upcoming__translation {
+  color: #0369a1;
+}
+
+:root:not(.dark) .mp-upcoming__impact {
+  color: #435266;
+  border-top-color: rgba(148, 163, 184, 0.35);
+}
+
+/* Light mode overrides handled in main block via .mp-filter-pill selectors above */
