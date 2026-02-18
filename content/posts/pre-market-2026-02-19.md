@@ -37,11 +37,12 @@ chartData: "/data/chart-data-2026-02-19.json"
 오늘 한국장은 원/달러 1,440.86원(상승)과 한국 2차전지 1주 약세(-2.7%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
-미국 10년물 금리 상승은 투자 심리를 위축시킬 수 있지만, 기술주 중심의 강세가 이를 상쇄하는 모습을 보였다.
-유가 안정과 기업 원가 부담 완화가 소비 여력 증가로 이어지면서 경기 지지 기대감이 형성된 결과, 나스닥 100 지수가 S&P 500 지수보다 높은 상승폭을 기록했다.
-다만, 달러인덱스가 97.7로 소폭 상승하면서 원/달러 환율이 1,440.86원으로 상승한 점은 변동성을 키울 수 있다.
+미국 10년물 금리 상승은 투자 심리를 위축시킬 수 있지만, 뉴스에서 언급된 것처럼 AI 및 기술주 혼란이 완화되면서 나스닥 100 지수가 상대적으로 강한 상승세를 보였다.
+다만, 달러인덱스가 97.7로 소폭 상승하면서 원/달러 환율이 1,440.86원으로 상승한 점은 국내 투자 심리에 부담을 줄 수 있다.
+유가 상승(4.5% 이상)은 에너지 섹터(XLE)에 긍정적으로 작용하면서 기업 원가 부담을 완화하고 소비 여력을 증가시켜 경기 지지 효과를 가져왔다.
 
-오늘 시장은 VIX 지수(19.62)의 추이와 미국 10년물 금리의 추가 상승 여부를 주시하며, 기술주 강세가 지속될지 확인해야 합니다.
+하지만 VIX 지수가 19.62로 안정적인 수준을 유지하고 있어, 시장의 변동성 확대 가능성은 제한적이다.
+오늘 확인할 체크포인트는 미국 10년물 금리 추이와 달러인덱스 변화를 주시하며, 성장주와 가치주 간의 상대 강도 변화를 살펴볼 필요가 있다.
 - 그래서 오늘은: 에너지/OPEC 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 에너지(XLE) 1주 +0.50% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 지수 혼조와 종목별 차별화가 이어지며 추세 확인 장세가 지속됩니다. 대안 시나리오: 한 방향 모멘텀이 강화되면 혼조 구간이 종료되고 추세 매매 구간으로 전환됩니다.
 
@@ -98,12 +99,12 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 <!-- FACT_ZONE_START -->
 
-## 핵심 수치  ⚠ (일부 지연 데이터)
+## 핵심 수치 
 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
 | S&P 500 | 6,881.31 | +38.09 | +0.56% | - |
-| 나스닥 | 22,753.64 | +175.26 | +0.78% | - |
+| 나스닥 | 22,753.63 | +175.25 | +0.78% | - |
 | 나스닥 100 | 24,898.87 | +197.27 | +0.80% | - |
 | 다우존스 | 49,662.66 | +129.47 | +0.26% | - |
 | VIX (공포지수) | 19.62 | -0.67 | -3.30% | - |
@@ -114,8 +115,8 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,322 | -1,167.27 | -1.76% | ↓4일 |
-| 이더리움 (ETH) | 1,947.6 | -44.21 | -2.27% | - |
+| 비트코인 (BTC) | 66,271 | -1,186.25 | -1.79% | ↓4일 |
+| 이더리움 (ETH) | 1,946.03 | -45.73 | -2.35% | - |
 | 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 ### 환율 
@@ -130,15 +131,15 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,892 | +31.5 | +0.46% |
-| 나스닥 100 선물 | 24,936.5 | +168.75 | +0.68% |
+| S&P 500 선물 | 6,892.5 | -1.75 | -0.03% |
+| 나스닥 100 선물 | 24,947.75 | -8.25 | -0.03% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,996.1 | -13.4 | -0.27% |
-| WTI 유가 (Oil) | 64.94 | -0.11 | -0.17% |
+| 국제 금 (Gold) | 4,996 | -13.5 | -0.27% |
+| WTI 유가 (Oil) | 64.9 | -0.15 | -0.23% |
 
 {{< market-charts >}}
 
@@ -146,7 +147,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 08:05:27","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 08:10:09","max_items":8} -->
 ### 글로벌
 
 1. [**Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxPSUVHQ2NNVjZyLVhsWkJITkxhbFJDS2g2SEE4YTRIU3AxM2t1U0ZQSHdEMTZIcllRZmlGRVZrWDBINmFXWlE4aWtUVjFZZXM1Y0pPUjZxMmpjcWN3VEhzYXdpMTlOU1ZtLWtUMDdZZ2lsS2JqRjhPVEVTVDZ0cVVZRFVGR3V0bG9Pc3k1YUNzbWdkS2dNWUloUFAyZUtNR2hHUnZ5OUM5SHNKVGQwVFEybUJ0Zmo1dm1aaXUyczY3Wk85ZlFMRl84dUVQbnhzR3FBbXBzdmUtc0I2cnk0V1AxSDJiSTZudGNxRFBDXzM3S05BblpGaWsyLWZUanhxMXM5N0dHbWppejRWMjc0N2ZFZjNJUkVxa0VqWFdUYVI3cHgzRHBRR082djM2c0t3RXF2U24tTkZjSFlUSkgxSm83a2pWdHdaTlhyQk15Wm15d0hDM2NDcXFBem5NeDE4b2ZsNVBPQWFWV2pCemZFTjBSQmk0QjlteTRsVzBNeGdON0QwTGxTcVh2SkVocnMxaWU4NnQ2ZFA3SFlnMGJmU1NzN2xwM2pyTVhFbURSZEFLYzBHMGFkM2JfNEhnRVNsSEk?oc=5)
@@ -190,7 +191,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 08:05:27","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 08:10:09","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [영국] [GBP] CPI y/y** (D-Day)
@@ -335,10 +336,10 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 출처
 
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
+- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -349,7 +350,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-19 08:05:27 KST</span>
+  <span>생성 시각: 2026-02-19 08:10:09 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-19 08:05:27 KST</span>
+  <span>데이터 기준 시각: 2026-02-19 08:10:09 KST</span>
 </div>
