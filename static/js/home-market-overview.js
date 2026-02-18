@@ -4,7 +4,9 @@
   var root = document.getElementById('mp-ticker-groups');
   if (!root) return;
 
-  var config = window.MP_CONFIG || {};
+  // MP_CONFIG is normally initialized by /js/mp-config.js in footer.
+  // Use __MP_CONFIG fallback in case of script ordering differences.
+  var config = window.MP_CONFIG || window.__MP_CONFIG || {};
   var labels = config.labels || {};
   var calendar = config.calendar || {};
   var home = config.home || {};
@@ -31,7 +33,36 @@
     'PANIC': { hex: c.PANIC, rgb: r.PANIC }
   };
 
-  var GROUPS = Array.isArray(home.overview_groups) ? home.overview_groups : [];
+  var DEFAULT_OVERVIEW_GROUPS = [
+    {
+      title: 'US INDICES',
+      tickers: [
+        { key: 'SPX', name: 'S&P 500', fmt: 'index' },
+        { key: 'NDX', name: 'Nasdaq', fmt: 'index' },
+        { key: 'DJI', name: 'Dow Jones', fmt: 'index' }
+      ]
+    },
+    {
+      title: 'RISK METRICS',
+      tickers: [
+        { key: 'VIX', name: 'VIX', fmt: 'decimal', invertColor: true },
+        { key: 'US10Y', name: 'US 10Y Bond', fmt: 'decimal' },
+        { key: 'USDKRW', name: 'USD/KRW', fmt: 'decimal' }
+      ]
+    },
+    {
+      title: 'ALTERNATIVES',
+      tickers: [
+        { key: 'BTC', name: 'Bitcoin', fmt: 'dollar' },
+        { key: 'GOLD', name: 'Gold', fmt: 'dollar' },
+        { key: 'OIL', name: 'WTI Oil', fmt: 'dollar' }
+      ]
+    }
+  ];
+
+  var GROUPS = (Array.isArray(home.overview_groups) && home.overview_groups.length > 0)
+    ? home.overview_groups
+    : DEFAULT_OVERVIEW_GROUPS;
 
   function fmtPrice(val, fmt) {
     if (fmt === 'index') {
