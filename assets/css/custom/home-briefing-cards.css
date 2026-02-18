@@ -1,29 +1,41 @@
-/* Section Header Row with Filters */
-.mp-section-header-row {
+/* Regime Filter */
+.mp-regime-filter-wrap {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 4rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-  padding-bottom: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: -0.35rem 0 1rem;
 }
 
-.mp-section-header-row .mp-section-header {
-  margin: 0 !important;
-  border-bottom: none !important;
-  padding-bottom: 0 !important;
-}
-.mp-section-header-row .mp-section-header::after {
-  display: none;
+.mp-regime-filter-label {
+  margin: 0;
+  font-family: var(--mp-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #64748b;
 }
 
 .mp-regime-filter {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.mp-regime-filter-wrap.is-disabled .mp-regime-filter {
+  opacity: 0.55;
+}
+
+.mp-regime-filter-wrap.is-disabled .mp-filter-chip {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.mp-regime-filter-note {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #64748b;
 }
 
 .mp-filter-chip {
@@ -53,13 +65,14 @@
 }
 
 /* Light Mode */
-:root:not(.dark) .mp-section-header-row {
-  border-bottom-color: rgba(124, 58, 237, 0.15);
-}
 :root:not(.dark) .mp-filter-chip {
   background: rgba(255, 255, 255, 0.8);
   border-color: rgba(124, 58, 237, 0.2);
   color: #64748B;
+}
+:root:not(.dark) .mp-regime-filter-label,
+:root:not(.dark) .mp-regime-filter-note {
+  color: #475569;
 }
 :root:not(.dark) .mp-filter-chip:hover {
   border-color: #0891B2;
@@ -74,16 +87,15 @@
 
 /* Mobile adjustments */
 @media (max-width: 640px) {
-  .mp-section-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-top: 2.5rem;
+  .mp-regime-filter-wrap {
+    margin-top: -0.15rem;
+    margin-bottom: 0.8rem;
   }
+
   .mp-regime-filter {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 0.5rem; /* Scrollbar space */
+    padding-bottom: 0.5rem;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
@@ -96,16 +108,24 @@
 .mp-briefing-cards {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1.6rem;
+  margin-top: 0.65rem;
 }
 
 /* Timeline Date Group */
 .mp-date-group {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.2rem;
   position: relative;
+}
+
+.mp-date-group > .mp-briefing-card {
+  grid-column: span 6;
+}
+
+.mp-date-group > .mp-briefing-card:last-child:nth-child(even) {
+  grid-column: 1 / -1;
 }
 
 .mp-date-label {
@@ -128,33 +148,24 @@
 /* Mobile Scroll Snap Adjustments */
 @media (max-width: 768px) {
   .mp-briefing-cards {
-    gap: 1.5rem;
+    gap: 1.2rem;
+    overflow-x: auto;
   }
 
   .mp-date-group {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
     gap: 1rem;
-    padding-bottom: 1rem;
-    margin-right: -1rem;
-    padding-right: 1rem;
-    -webkit-overflow-scrolling: touch;
   }
   
   .mp-date-label {
-    position: sticky;
-    left: 0;
     margin-bottom: 0.5rem;
-    width: 100%;
-    flex-shrink: 0;
   }
 
-  /* Force cards to be items in flex container */
-  .mp-briefing-card {
-    flex: 0 0 85%;
-    width: 85%;
-    scroll-snap-align: start;
+  .mp-date-group > .mp-briefing-card,
+  .mp-date-group > .mp-briefing-card:last-child:nth-child(even) {
+    grid-column: auto;
+    width: 100%;
   }
 }
 
@@ -267,6 +278,14 @@
   margin-top: 0.2rem;
 }
 
+.mp-briefing-card__header time.is-slot {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
 .mp-briefing-card__summary {
   font-size: 0.95rem;
   color: #94A3B8;
@@ -320,24 +339,11 @@
 :root:not(.dark) .mp-briefing-card__summary { color: #475569; }
 
 @media (max-width: 768px) {
-  .mp-briefing-cards {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
-    padding-bottom: 1rem; /* Space for scrollbar/shadow */
-    margin-right: -1rem; /* Break out of container padding */
-    padding-right: 1rem; /* End padding */
-    -webkit-overflow-scrolling: touch;
-  }
-  
   .mp-briefing-card {
-    flex: 0 0 85%; /* Show part of next card */
-    width: 85%;
-    scroll-snap-align: start;
+    width: 100%;
     padding: 1.5rem 1.25rem 1rem;
   }
-  
+
   .mp-briefing-card__title { font-size: 1rem; }
 }
 

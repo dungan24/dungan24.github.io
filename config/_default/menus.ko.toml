@@ -4,6 +4,21 @@
   weight = 10
 
 [[main]]
+  name = "투자 전략"
+  pageRef = "investment-strategy"
+  weight = 20
+
+[[main]]
+  name = "마켓 캘린더"
+  pageRef = "market-calendar"
+  weight = 30
+
+[[main]]
   name = "태그"
   pageRef = "tags"
-  weight = 20
+  weight = 40
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 50

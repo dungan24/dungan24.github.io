@@ -3,6 +3,9 @@
 {{ $homePath := index $paths "home" | default "" }}
 {{ $postsPath := index $paths "posts" | default "posts/" }}
 {{ $tagsPath := index $paths "tags" | default "tags/" }}
+{{ $securityPath := index $paths "security_protocol" | default "security-protocol/" }}
+{{ $consentPath := index $paths "data_consent" | default "data-consent/" }}
+{{ $apiDocsPath := index $paths "api_documentation" | default "api-documentation/" }}
 
 <footer id="site-footer" class="print:hidden">
   
@@ -38,9 +41,9 @@
         <div class="mp-f-copyright dark:text-white">
           &copy; 2026 MARKET PULSE
         </div>
-        <a href="#" class="mp-f-link">/SECURITY_PROTOCOL</a>
-        <a href="#" class="mp-f-link">/DATA_CONSENT</a>
-        <a href="#" class="mp-f-link">/API_DOCUMENTATION</a>
+        <a href="{{ $securityPath | relURL }}" class="mp-f-link">/SECURITY_PROTOCOL</a>
+        <a href="{{ $consentPath | relURL }}" class="mp-f-link">/DATA_CONSENT</a>
+        <a href="{{ $apiDocsPath | relURL }}" class="mp-f-link">/API_DOCUMENTATION</a>
         <div class="mp-f-visual-root">
            <svg width="80" height="20" class="mp-f-visual-svg">
               <rect x="0" y="5" width="4" height="10" fill="#7C3AED"></rect>

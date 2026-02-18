@@ -1,7 +1,7 @@
 .mp-home-shell {
   max-width: 72rem;
   margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+  padding: 1.6rem 1rem 2.25rem;
   position: relative;
   overflow: hidden;
 }
@@ -49,6 +49,7 @@
 
 .mp-home-hero {
   text-align: center;
+  margin-bottom: 0.8rem;
 }
 
 .mp-subtitle-text {
@@ -71,12 +72,12 @@
 
 .mp-data-timestamp {
   text-align: right;
-  margin-top: 0.5rem;
+  margin-top: 0.35rem;
 }
 
 .mp-more-wrap {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .mp-ecg-line {
@@ -196,54 +197,3 @@
   color: var(--mp-neon-pink);
   box-shadow: 0 0 8px var(--mp-neon-pink);
 }
-
-/* Sticky Regime Badge (Mobile) */
-.mp-sticky-regime {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(10, 10, 26, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-  z-index: 9990; /* Below mobile nav (9999) */
-  transform: translateY(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none; /* Allow clicks through to content underneath if needed, or set auto */
-}
-
-.mp-sticky-regime.is-visible {
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.mp-sticky-regime-text {
-  font-family: var(--mp-font-mono);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--regime-color);
-  text-shadow: 0 0 10px rgba(var(--regime-color-rgb) / 0.4);
-  padding: 0.25rem 1rem;
-  border-radius: 999px;
-  background: rgba(var(--regime-color-rgb) / 0.1);
-  border: 1px solid rgba(var(--regime-color-rgb) / 0.3);
-}
-
-/* Hide on desktop if preferred, or keep for all */
-@media (min-width: 768px) {
-  .mp-sticky-regime {
-    display: none;
-  }
-}
-
-:root:not(.dark) .mp-sticky-regime {
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom-color: rgba(124, 58, 237, 0.1);
-}
-

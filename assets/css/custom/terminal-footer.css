@@ -1,7 +1,7 @@
 .mp-terminal-footer {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 32px;
   position: relative;
   background: rgba(10, 10, 26, 0.4);
   border: 1px solid rgba(124, 58, 237, 0.1);
@@ -10,8 +10,8 @@
 }
 
 #site-footer {
-  margin-top: 120px;
-  padding: 80px 0 60px;
+  margin-top: 56px;
+  padding: 34px 0 44px;
   background: transparent;
   position: relative;
 }
@@ -79,11 +79,11 @@
   font-size: 28px;
   font-weight: 900;
   letter-spacing: 0.3em;
-  color: #7C3AED;
+  color: var(--mp-brand-color);
   text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  text-shadow: 0 0 15px rgba(var(--mp-brand-color-rgb) / 0.35);
 }
-.dark .mp-f-logo { color: #A78BFA; text-shadow: 0 0 20px rgba(167, 139, 250, 0.4); }
+.dark .mp-f-logo { color: var(--mp-brand-color); text-shadow: 0 0 20px rgba(var(--mp-brand-color-rgb) / 0.4); }
 
 .mp-f-clock {
   font-family: var(--mp-font-mono);
@@ -119,11 +119,12 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-.mp-f-link:hover { color: #7C3AED; }
-.dark .mp-f-link:hover { color: #00F0FF; }
+.mp-f-link:hover { color: var(--mp-brand-color); }
+.dark .mp-f-link:hover { color: var(--mp-brand-color); }
 
 @media (max-width: 1024px) {
-  .mp-f-grid { grid-template-columns: 1fr; gap: 40px; }
+  .mp-terminal-footer { padding: 24px; }
+  .mp-f-grid { grid-template-columns: 1fr; gap: 28px; }
   .mp-f-metrics { border-left: none; border-top: 1px solid rgba(124, 58, 237, 0.1); padding: 20px 0 0; }
   .mp-f-links { text-align: left; }
 }

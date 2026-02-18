@@ -21,7 +21,7 @@
 
 /* Re-add subtle shadows for key elements if needed, but keep it clean */
 :root:not(.dark) .mp-heartbeat {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #1E1E3A 0%, var(--mp-brand-color) 45%, #1E1E3A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: none !important;

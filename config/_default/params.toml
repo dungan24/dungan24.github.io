@@ -56,6 +56,12 @@ enableCodeCopy = true
     home = ""
     posts = "posts/"
     tags = "tags/"
+    investment_strategy = "investment-strategy/"
+    market_calendar = "market-calendar/"
+    about = "about/"
+    security_protocol = "security-protocol/"
+    data_consent = "data-consent/"
+    api_documentation = "api-documentation/"
     chart_data_prefix = "data/chart-data-"
 
   [market_pulse.external]

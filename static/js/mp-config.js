@@ -6,6 +6,12 @@
       home: '',
       posts: 'posts/',
       tags: 'tags/',
+      investment_strategy: 'investment-strategy/',
+      market_calendar: 'market-calendar/',
+      about: 'about/',
+      security_protocol: 'security-protocol/',
+      data_consent: 'data-consent/',
+      api_documentation: 'api-documentation/',
       chart_data_prefix: 'data/chart-data-'
     },
     external: {
@@ -46,15 +52,15 @@
           tickers: [
             { key: 'SPX', name: 'S&P 500', fmt: 'index' },
             { key: 'NDX', name: 'Nasdaq', fmt: 'index' },
-            { key: 'DJI', name: 'Dow Jones', fmt: 'index' }
+            { key: 'DJI', name: 'Dow Jones Industrial Average', shortName: 'DJI', fullName: 'Dow Jones Industrial Average', fmt: 'index' }
           ]
         },
         {
           title: 'RISK METRICS',
           tickers: [
             { key: 'VIX', name: 'VIX', fmt: 'decimal', invertColor: true },
-            { key: 'US10Y', name: 'US 10Y Bond', fmt: 'decimal' },
-            { key: 'USDKRW', name: 'USD/KRW', fmt: 'decimal' }
+            { key: 'US10Y', name: 'US 10Y Treasury Note', shortName: 'T-Note 10Y', fullName: 'US 10Y Treasury Note', fmt: 'decimal' },
+            { key: 'USDKRW', name: 'USD/KRW Exchange Rate', shortName: 'USD/KRW', fullName: 'USD/KRW Exchange Rate', fmt: 'decimal' }
           ]
         },
         {

@@ -10,7 +10,6 @@
     heroSummary: document.getElementById('mp-hero-summary'),
     heroUpdated: document.getElementById('mp-hero-updated'),
     regimeBadge: document.getElementById('mp-regime-badge'),
-    stickyRegime: document.getElementById('mp-sticky-regime'),
     dataTimestamp: document.getElementById('mp-data-timestamp'),
     liveStatus: document.getElementById('mp-live-status')
   };
@@ -46,6 +45,14 @@
 
   // WHY: mp-config.js의 defaultConfig가 이미 fallback을 제공하므로 중복 불필요
   var GROUPS = home.overview_groups || [];
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
 
   function fmtPrice(val, fmt) {
     if (fmt === 'index') {
@@ -166,9 +173,11 @@
 
         // T-601: count-up animation hooks (no external dependency)
         var valueHtml = '<span class="mp-ticker-price mp-animate-num" data-val="' + current + '" data-fmt="' + ticker.fmt + '">' + fmtPrice(current, ticker.fmt) + '</span>';
+        var tickerLabel = ticker.shortName || ticker.name;
+        var tickerTitle = ticker.fullName || ticker.name;
 
         rows += '<div class="mp-ticker-row">' +
-          '<span class="mp-ticker-name">' + ticker.name + '</span>' +
+          '<span class="mp-ticker-name" title="' + escapeHtml(tickerTitle) + '">' + escapeHtml(tickerLabel) + '</span>' +
           valueHtml +
           '<span class="mp-ticker-change" style="color:' + changeColor + '">' + fmtChange(changePct) + '</span>' +
           barHtml +
@@ -243,16 +252,9 @@
     document.documentElement.style.setProperty('--mp-orb-color-secondary', color.rgb);
 
     var badge = DOM.regimeBadge;
-    var stickyBadge = DOM.stickyRegime;
-
     if (badge && regime) {
       var text = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
       badge.textContent = text;
-
-      if (stickyBadge) {
-        var stickyText = stickyBadge.querySelector('.mp-sticky-regime-text');
-        if (stickyText) stickyText.textContent = text;
-      }
     }
 
     var summary = DOM.heroSummary;
@@ -337,27 +339,5 @@
     tryFetch(urls, 0);
   }
 
-  // T-403: Sticky Regime Badge Logic
-  function initStickyBadge() {
-    var heroBadge = DOM.regimeBadge;
-    var stickyBadge = DOM.stickyRegime;
-
-    if (!heroBadge || !stickyBadge) return;
-
-    // Use IntersectionObserver to toggle visibility
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          stickyBadge.classList.add('is-visible');
-        } else {
-          stickyBadge.classList.remove('is-visible');
-        }
-      });
-    }, { threshold: 0 });
-
-    observer.observe(heroBadge);
-  }
-
   fetchData();
-  initStickyBadge();
 })();

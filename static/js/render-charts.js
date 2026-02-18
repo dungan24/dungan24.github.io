@@ -122,19 +122,24 @@
 
     var leftKeys = ['SPX', 'NDX', 'DJI'];
     var rightKeys = ['VIX'];
+    // series는 { SPX: [...], NDX: [...] } 형태의 객체
+    var seriesKeys = Object.keys(series).filter(function (k) {
+      return (leftKeys.indexOf(k) > -1) || (rightKeys.indexOf(k) > -1);
+    });
     var chartSeries = [];
 
-    series.forEach(function (s) {
-      if (!s.data || s.data.length === 0) return;
-      var isRight = (rightKeys.indexOf(s.key) > -1);
-      var color = METRIC_COLORS[s.key] || COLORS.primary;
-      var isArea = (leftKeys.indexOf(s.key) > -1);
+    seriesKeys.forEach(function (key) {
+      var data = series[key];
+      if (!data || data.length === 0) return;
+      var isRight = (rightKeys.indexOf(key) > -1);
+      var color = METRIC_COLORS[key] || COLORS.primary;
+      var isArea = (leftKeys.indexOf(key) > -1);
 
       var seriesObj = {
-        name: s.name,
+        name: key,
         type: 'line',
         yAxisIndex: isRight ? 1 : 0,
-        data: normalizeToPercent(s.data),
+        data: normalizeToPercent(data),
         showSymbol: false,
         smooth: true,
         lineStyle: { width: isRight ? 1.5 : 2, color: color },
@@ -172,7 +177,7 @@
       backgroundColor: theme.bg,
       tooltip: tooltipStyle,
       legend: {
-        data: series.map(function (s) { return s.name; }),
+        data: seriesKeys,
         bottom: 0,
         textStyle: { color: theme.text, fontSize: 10 },
         itemWidth: 12,
