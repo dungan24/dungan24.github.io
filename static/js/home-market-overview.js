@@ -1,8 +1,19 @@
-(function() {
+(function () {
   'use strict';
 
   var root = document.getElementById('mp-ticker-groups');
   if (!root) return;
+
+  // DOM Caching (T-1006)
+  var DOM = {
+    tickerGroups: root,
+    heroSummary: document.getElementById('mp-hero-summary'),
+    heroUpdated: document.getElementById('mp-hero-updated'),
+    regimeBadge: document.getElementById('mp-regime-badge'),
+    stickyRegime: document.getElementById('mp-sticky-regime'),
+    dataTimestamp: document.getElementById('mp-data-timestamp'),
+    liveStatus: document.getElementById('mp-live-status')
+  };
 
   // MP_CONFIG is normally initialized by /js/mp-config.js in footer.
   // Use __MP_CONFIG fallback in case of script ordering differences.
@@ -33,36 +44,8 @@
     'PANIC': { hex: c.PANIC, rgb: r.PANIC }
   };
 
-  var DEFAULT_OVERVIEW_GROUPS = [
-    {
-      title: 'US INDICES',
-      tickers: [
-        { key: 'SPX', name: 'S&P 500', fmt: 'index' },
-        { key: 'NDX', name: 'Nasdaq', fmt: 'index' },
-        { key: 'DJI', name: 'Dow Jones', fmt: 'index' }
-      ]
-    },
-    {
-      title: 'RISK METRICS',
-      tickers: [
-        { key: 'VIX', name: 'VIX', fmt: 'decimal', invertColor: true },
-        { key: 'US10Y', name: 'US 10Y Bond', fmt: 'decimal' },
-        { key: 'USDKRW', name: 'USD/KRW', fmt: 'decimal' }
-      ]
-    },
-    {
-      title: 'ALTERNATIVES',
-      tickers: [
-        { key: 'BTC', name: 'Bitcoin', fmt: 'dollar' },
-        { key: 'GOLD', name: 'Gold', fmt: 'dollar' },
-        { key: 'OIL', name: 'WTI Oil', fmt: 'dollar' }
-      ]
-    }
-  ];
-
-  var GROUPS = (Array.isArray(home.overview_groups) && home.overview_groups.length > 0)
-    ? home.overview_groups
-    : DEFAULT_OVERVIEW_GROUPS;
+  // WHY: mp-config.js의 defaultConfig가 이미 fallback을 제공하므로 중복 불필요
+  var GROUPS = home.overview_groups || [];
 
   function fmtPrice(val, fmt) {
     if (fmt === 'index') {
@@ -116,7 +99,7 @@
 
   function generateSparkline(data, color) {
     if (!data) return '';
-    var pts = data.slice(-15).filter(function(v) {
+    var pts = data.slice(-15).filter(function (v) {
       return v !== null && typeof v === 'number' && Number.isFinite(v);
     });
     if (pts.length < 2) return '';
@@ -141,7 +124,7 @@
   }
 
   function renderTickerGroups(ts) {
-    var container = document.getElementById('mp-ticker-groups');
+    var container = DOM.tickerGroups;
     if (!container || !ts || !ts.series) return;
 
     var html = '';
@@ -175,7 +158,7 @@
         // Let's use scale 20 (5% move = 100% width) for visibility
         var barWidth = 0;
         if (changePct !== null && Number.isFinite(changePct)) {
-           barWidth = Math.min(Math.abs(changePct) * barScale, 100);
+          barWidth = Math.min(Math.abs(changePct) * barScale, 100);
         }
         var barHtml = '<div class="mp-ticker-bar-container">' +
           '<div class="mp-ticker-bar" style="width:' + barWidth + '%; background-color:' + changeColor + '"></div>' +
@@ -202,7 +185,7 @@
 
     container.innerHTML = html ||
       '<span class="mp-loading-inline">' + (labels.empty_events || '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4') + '</span>';
-      
+
     // Trigger animations after render
     animateNumbers(container);
   }
@@ -214,7 +197,7 @@
     }
 
     var elements = container.querySelectorAll('.mp-animate-num');
-    elements.forEach(function(el) {
+    elements.forEach(function (el) {
       var endVal = parseFloat(el.getAttribute('data-val'));
       var fmt = el.getAttribute('data-fmt');
       if (isNaN(endVal)) return;
@@ -228,7 +211,7 @@
         var progress = Math.min((timestamp - startTime) / duration, 1);
         // Ease out quart
         var ease = 1 - Math.pow(1 - progress, 4);
-        
+
         var currentVal = startVal + (endVal - startVal) * ease;
         el.textContent = fmtPrice(currentVal, fmt); // Re-use existing formatter logic if possible, or simple toLocaleString
 
@@ -238,7 +221,7 @@
           el.textContent = fmtPrice(endVal, fmt); // Ensure final value is exact
         }
       }
-      
+
       window.requestAnimationFrame(step);
     });
   }
@@ -252,45 +235,45 @@
 
     document.documentElement.style.setProperty('--regime-color', color.hex);
     document.documentElement.style.setProperty('--regime-color-rgb', color.rgb);
-    
+
     // Dynamic Orb Colors (T-303)
     document.documentElement.style.setProperty('--mp-orb-color-primary', color.rgb);
     // Secondary orb: use regime color but maybe softer or mixed?
     // For now use same color for unified atmosphere.
     document.documentElement.style.setProperty('--mp-orb-color-secondary', color.rgb);
 
-    var badge = document.getElementById('mp-regime-badge');
-    var stickyBadge = document.getElementById('mp-sticky-regime');
-    
+    var badge = DOM.regimeBadge;
+    var stickyBadge = DOM.stickyRegime;
+
     if (badge && regime) {
       var text = (regime.icon || '\uD83D\uDFE1') + ' ' + (regime.label || regime.current);
       badge.textContent = text;
-      
+
       if (stickyBadge) {
         var stickyText = stickyBadge.querySelector('.mp-sticky-regime-text');
         if (stickyText) stickyText.textContent = text;
       }
     }
 
-    var summary = document.getElementById('mp-hero-summary');
+    var summary = DOM.heroSummary;
     if (summary && regime && regime.summary) {
       summary.textContent = regime.summary;
     }
 
-    var updated = document.getElementById('mp-hero-updated');
+    var updated = DOM.heroUpdated;
     if (updated && data.date) {
       updated.textContent = '\uAE30\uC900: ' + data.date;
     }
 
     if (data.timeSeries) renderTickerGroups(data.timeSeries);
 
-    var ts = document.getElementById('mp-data-timestamp');
-    if (ts && data.date) {
-      ts.textContent = '\uB370\uC774\uD130 \uAE30\uC900: ' + data.date;
+    var tsDisplay = DOM.dataTimestamp;
+    if (tsDisplay && data.date) {
+      tsDisplay.textContent = '\uB370\uC774\uD130 \uAE30\uC900: ' + data.date;
     }
 
     // Update Status Dot
-    var statusDot = document.getElementById('mp-live-status');
+    var statusDot = DOM.liveStatus;
     if (statusDot) {
       statusDot.className = 'mp-live-status';
       var nowKST = new Intl.DateTimeFormat('sv-SE', {
@@ -308,15 +291,15 @@
 
   function tryFetch(urls, idx) {
     if (idx >= urls.length) {
-      var el = document.getElementById('mp-hero-summary');
+      var el = DOM.heroSummary;
       if (el) el.textContent = labels.chart_load_failed || 'Data unavailable';
 
-      var tg = document.getElementById('mp-ticker-groups');
+      var tg = DOM.tickerGroups;
       if (tg) {
         tg.innerHTML = '<span class="mp-loading-inline">' + (labels.empty_events || '\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4') + '</span>';
       }
 
-      var statusDot = document.getElementById('mp-live-status');
+      var statusDot = DOM.liveStatus;
       if (statusDot) {
         statusDot.className = 'mp-live-status is-error';
       }
@@ -324,21 +307,21 @@
     }
 
     fetch(urls[idx])
-      .then(function(r) {
+      .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         render(data);
       })
-      .catch(function() {
+      .catch(function () {
         tryFetch(urls, idx + 1);
       });
   }
 
   function fetchData() {
     var now = new Date();
-    var fmt = function(d) {
+    var fmt = function (d) {
       return new Intl.DateTimeFormat('sv-SE', {
         timeZone: timeZone,
         year: 'numeric',
@@ -356,14 +339,14 @@
 
   // T-403: Sticky Regime Badge Logic
   function initStickyBadge() {
-    var heroBadge = document.getElementById('mp-regime-badge');
-    var stickyBadge = document.getElementById('mp-sticky-regime');
-    
+    var heroBadge = DOM.regimeBadge;
+    var stickyBadge = DOM.stickyRegime;
+
     if (!heroBadge || !stickyBadge) return;
 
     // Use IntersectionObserver to toggle visibility
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (!entry.isIntersecting) {
           stickyBadge.classList.add('is-visible');
         } else {

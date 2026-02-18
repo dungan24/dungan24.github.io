@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   if (window.__MP_CHARTS_RENDERED) return;
@@ -44,18 +44,18 @@
     }
   }
 
-  var timeoutId = setTimeout(function() {
+  var timeoutId = setTimeout(function () {
     if (statusContainer && statusContainer.dataset.label === 'Loading') {
       showError(labels.chart_request_timeout || 'REQUEST TIMEOUT \u2014 RELOAD TO RETRY');
     }
   }, loadTimeoutMs);
 
   fetch(chartDataUrl)
-    .then(function(response) {
+    .then(function (response) {
       if (!response.ok) throw new Error('HTTP_' + response.status);
       return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       window.__MP_CHART_DATA = data;
       document.dispatchEvent(new CustomEvent('mp:chart-data-ready', { detail: data }));
       clearTimeout(timeoutId);
@@ -66,16 +66,22 @@
         void content.offsetHeight;
       }
 
-      if (typeof renderAllCharts === 'function') {
+      // WHY: render-charts.js가 선행 로드되어야 MPCharts.renderAllCharts가 전역에 존재함.
+      // CONSTRAINT: extend-head-uncached.html에서 echarts CDN 로드 후,
+      //             render-charts.js가 market-charts-loader.js보다 먼저 실행되어야 함.
+      if (window.MPCharts && typeof window.MPCharts.renderAllCharts === 'function') {
+        window.MPCharts.renderAllCharts(data);
+      } else if (typeof renderAllCharts === 'function') {
+        // Fallback for shim
         renderAllCharts(data);
       } else {
-        console.error('renderAllCharts is not available.');
+        console.error('MPCharts.renderAllCharts is not available.');
         showError(labels.chart_renderer_missing || 'CHART RENDERER NOT AVAILABLE');
       }
 
       if (statusContainer) statusContainer.dataset.label = 'Charts';
     })
-    .catch(function(err) {
+    .catch(function (err) {
       clearTimeout(timeoutId);
       console.error('Chart data load failed:', err);
       showError(

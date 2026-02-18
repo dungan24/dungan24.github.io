@@ -1,55 +1,74 @@
-# Market Pulse UI/UX Implementation Plan (LLM-Lite Friendly)
+# Market Pulse — Code Quality & Improvement Plan
 
-Last Updated: 2026-02-17
-Repo: `market-pulse-blog`
-Branch: `ui/enhanced`
+Last Updated: 2026-02-18
+Repo: `dungan24.github.io`
+Branch: `main` (feature 브랜치 → PR → merge 방식)
 Owner: AI Agent
 Plan Mode: One-task-at-a-time (한 번에 1개 카드만 `DOING`)
 
-## 0) 2026-02-17 규칙 준수 재점검 (Addendum)
+---
 
-- [x] 규칙 점검 명령 PASS
-  - `pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings`
-  - `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
-  - `pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314`
-  - `npm run test:ui-smoke`
-- [x] 문서-코드 정합성 갱신
-  - 폰트 표기를 `Noto Sans KR` 단일 스택 기준으로 통일
-  - 템플릿 인라인 정책 예외(`layouts/partials/extend-head-uncached.html` 데이터 브리지)를 명시
+## 0) 이전 계획 완료 요약 (2026-02-16 ~ 2026-02-17)
 
-## 1) 목표
+UI/UX 개선 Phase 1 (M0~M8) 전체 완료. 주요 달성 항목:
 
-홈/브리핑/아티클 UI를 "실시간 마켓 대시보드" 수준으로 개선하되,
-저비용 모델도 작업 순서와 상태를 잃지 않고 구현할 수 있게
-작업 단위를 작게 쪼개고, 상태 전이를 엄격하게 관리합니다.
+- **M0** Baseline Hardening: preflight/lint/build 게이트 확립
+- **M1** Homepage Market Overview: 레짐 색상, 바 게이지, pulse dot, skeleton
+- **M2** Briefing Cards: 시간대 아이콘, NEW 배지, 수치 하이라이트, hover 효과
+- **M3** Theme: 라이트/다크 일관성, 부드러운 전환, 동적 ambient orb
+- **M4** Mobile UX: scroll-snap 카드, 하단 nav, sticky regime badge
+- **M5** Article Page: reading progress bar, TOC scrollspy, post hero, section divider
+- **M6** Micro Interactions: count-up 애니메이션, skeleton 로딩, scroll reveal
+- **M7** Search/Filter UX: regime 필터, 날짜 그룹 타임라인, 검색 모달 스타일
+- **M8** Tooling & CI: architecture lint, preflight, calendar smoke, CI quality gate
 
-## 2) 현재 코드베이스 점검 결과 (2026-02-16 기준)
+---
 
-- [x] 기본 품질 게이트 통과
-  - `pwsh -File tools/agent-preflight.ps1` PASS
-  - `hugo --gc --minify` PASS
-- [x] 홈/브리핑/아티클의 주요 커스텀 진입점 존재
-  - `layouts/partials/home/custom.html`
-  - `layouts/partials/home/recent-briefings.html`
-  - `static/js/home-market-overview.js`
-  - `static/js/market-pulse-enhancements.js`
-  - `static/js/briefing/*.js`
-  - `assets/css/custom/*.css`
-- [~] 일부 기능 초안 파일은 존재하지만 로더 미연결
-  - `static/js/theme-transition.js`
-  - `static/js/reading-progress.js`
-  - `assets/css/custom/reading-progress.css`
-  - `assets/css/custom/post-hero.css`
-  - `assets/css/custom/skeleton.css`
-- [!] CSS 리스크 확인
-  - `assets/css/custom/toc-and-effects.css`에서 `/* ===== Modern Redesign...` 코멘트 시작 후 닫힘(`*/`) 누락 의심
-  - 해당 지점 이후 스타일이 무효화될 가능성 있음
-- [!] 아키텍처 제약 확인
-  - `layouts/partials/extend-footer.html` 스크립트 로더 순서는 `tools/architecture-lint.ps1`에서 고정 검사됨
-  - 새 JS 추가 시 로더/린트 규칙을 함께 갱신하거나, 기존 로드 파일에 통합해야 함
-  - CSS는 `layouts/partials/extend-head-uncached.html`의 명시 목록에 없으면 로드되지 않음
+## 1) 현재 목표 (2026-02-18 기준)
 
-## 3) 상태관리 규칙 (필수)
+**2026-02-18 코드베이스 전체 best practice 점검** 결과를 기반으로,
+코드 품질·일관성·안전성을 개선한다.
+
+우선순위:
+1. 🔴 **MUST-FIX**: 규칙 위반 + 버그 리스크 (즉시 수정)
+2. 🟡 **SHOULD-FIX**: Best practice 위반 (이번 사이클 내 수정)
+3. 🟢 **MAY-FIX**: 코드 품질 개선 (여유 시 수정)
+
+---
+
+## 2) 2026-02-18 점검 결과 요약
+
+### 🔴 MUST-FIX
+
+| # | 파일 | 문제 |
+|---|------|------|
+| A | `static/js/render-charts.js` | ES5/ES6 문법 혼용 (`const`/`let`/화살표함수 vs `var`) |
+| B | `assets/css/custom/calendar.css` | 동일 셀렉터 중복 선언 (L113~165 vs L217~239, 값 불일치) |
+| C | `static/js/home-market-overview.js` | `DEFAULT_OVERVIEW_GROUPS` 중복 하드코딩 (mp-config.js와 DRY 위반) |
+| D | `static/js/market-charts-loader.js` | `renderAllCharts` 전역 함수 암묵적 의존 (주석/명시 없음, 규칙 6.2 위반) |
+
+### 🟡 SHOULD-FIX
+
+| # | 파일 | 문제 |
+|---|------|------|
+| E | `static/js/calendar/renderer.js` | `innerHTML`에 외부 데이터 직접 삽입 (XSS 위험) |
+| F | `static/js/calendar/renderer.js` | `getHours()`로 시간 포맷 (로컬 시간 의존, KST 불일치 버그) |
+| G | `static/js/mp-config.js` | `mergeDeep`에서 `hasOwnProperty` 미체크 |
+| H | `static/js/market-pulse-enhancements.js` | `'use strict'` 위치 불일치 (콜백 내부, 타 파일과 패턴 다름) |
+| I | `assets/css/custom/calendar-polish.css` | `calendar.css` 로딩 순서 의존성 주석 미명시 (규칙 6.1 위반) |
+| J | `static/js/home-market-overview.js` | `mp-ticker-groups` DOM 중복 조회 (L4 vs L144) |
+
+### 🟢 MAY-FIX
+
+| # | 파일 | 문제 |
+|---|------|------|
+| K | `static/js/calendar/parser.js` | `parseScheduleItem` compact/modern 블록 로직 중복 |
+| L | `static/js/render-charts.js` | `__mpChartData` 전역 변수 네이밍 (네임스페이스 미사용) |
+| M | `assets/css/custom/calendar.css` | `!important` 남용 (L626, L631) |
+
+---
+
+## 3) 상태관리 규칙
 
 ### 3.1 상태 코드
 
@@ -62,42 +81,38 @@ Plan Mode: One-task-at-a-time (한 번에 1개 카드만 `DOING`)
 
 ### 3.2 작업 카드 필드 템플릿
 
-모든 작업은 아래 필드를 반드시 유지합니다.
-
 ```md
 ### T-000
 Status: TODO | DOING | REVIEW | DONE | BLOCKED | SKIPPED
 Priority: P0 | P1 | P2
-Owner: AI Agent
+Severity: 🔴 MUST | 🟡 SHOULD | 🟢 MAY
 DependsOn: -
 Files:
 - path/a
-- path/b
 Steps:
 1. ...
-2. ...
 DoD:
 - ...
 Verify:
-- command 1
-- command 2
+- command
 Notes:
 - ...
 ```
 
 ### 3.3 상태 전이 규칙
 
-1. 작업 시작 직전에 `TODO -> DOING`
-2. 코드 수정 후 `DOING -> REVIEW`
-3. 검증 통과 시 `REVIEW -> DONE`
-4. 실패 시 `REVIEW -> DOING` 또는 `DOING -> BLOCKED`
+1. 작업 시작 직전 `TODO → DOING`
+2. 코드 수정 후 `DOING → REVIEW`
+3. 검증 통과 시 `REVIEW → DONE`
+4. 실패 시 `REVIEW → DOING` 또는 `DOING → BLOCKED`
 5. `BLOCKED`는 차단 원인과 해제 조건을 반드시 `Notes`에 기록
 
 ### 3.4 실행 로그 규칙
 
-- 각 작업 종료 시 `## 9) Execution Log`에 한 줄 추가
-- 형식:
-  - `YYYY-MM-DD | T-### | STATUS | 핵심 결과 | 검증 결과`
+- 각 작업 종료 시 `## 8) Execution Log`에 한 줄 추가
+- 형식: `YYYY-MM-DD | T-### | STATUS | 핵심 결과 | 검증 결과`
+
+---
 
 ## 4) 전역 제약조건
 
@@ -105,712 +120,543 @@ Notes:
   - `content/posts/pre-market-*.md`
   - `static/data/chart-data-*.json`
 - 스타일은 `assets/css/custom/`에, 동작은 `static/js/`에 위치
-- 인라인 `<script>/<style>` 신규 추가 금지 (예외: `layouts/partials/extend-head-uncached.html` 데이터 브리지)
+- 인라인 `<script>/<style>` 신규 추가 금지 (예외: `extend-head-uncached.html` 데이터 브리지)
 - 모바일 브레이크포인트 유지: `640px`, `768px`, `1024px`
-- 가능한 한 기존 모듈에 통합하고, 새 파일 추가는 최소화
+- 최소 변경 원칙: 관련 없는 파일/포맷 변경 금지
+- JS 파일 전체는 ES5 스타일(`var`, `function`) 통일 유지 (`render-charts.js` 예외 수정 후)
+
+---
 
 ## 5) 마일스톤
 
-- `M0` Baseline Hardening
-- `M1` Homepage: Market Overview
-- `M2` Briefing Cards
-- `M3` Theme (Dark/Light)
-- `M4` Mobile UX
-- `M5` Article Page
-- `M6` Micro Interactions
-- `M7` Search/Filter UX
-- `M8` Tooling & CI Alignment
+- `M9` Code Quality — MUST-FIX (🔴 4건)
+- `M10` Code Quality — SHOULD-FIX (🟡 6건)
+- `M11` Code Quality — MAY-FIX (🟢 3건)
+- `M12` CSS Architecture — calendar.css 구조 정리
+- `M13` 다음 기능 개선 (TBD)
+
+---
 
 ## 6) Task Board (SSOT)
 
-### M0 - Baseline Hardening
+---
 
-### T-000
+### M9 — Code Quality: MUST-FIX
+
+---
+
+### T-901
 Status: DONE
 Priority: P0
-Owner: AI Agent
+Severity: 🔴 MUST
 DependsOn: -
 Files:
-- `tools/agent-preflight.ps1`
-- `tools/architecture-lint.ps1`
+- `static/js/render-charts.js`
 Steps:
-1. 베이스라인 검증 명령 실행
-2. 결과를 계획 문서에 반영
+1. 파일 전체에서 `const` → `var`, `let` → `var` 치환
+2. 화살표 함수(`=>`) → `function` 키워드로 전환
+   - `normalizeToPercent`, `formatter`, `getCorrColor` 등 내부 함수 포함
+   - ECharts 옵션 내 `=>` 콜백도 모두 변환
+3. 템플릿 리터럴(`` ` ``) → 문자열 연결(`+`)로 변환
+4. 스프레드 연산자(`...`) → `Object.assign()` 또는 명시적 복사로 변환
+   - `...getTooltipStyle()` 패턴 처리
+5. `let __mpChartData` → `var __mpChartData` 변환 (T-L과 연계)
+6. `hugo --gc --minify` 빌드 확인
 DoD:
-- 현재 기준 PASS/FAIL 상태가 문서에 기록됨
-Verify:
-- `pwsh -File tools/agent-preflight.ps1`
-- `hugo --gc --minify`
-Notes:
-- 2026-02-16 실행 완료, PASS
-
-### T-001
-Status: DONE
-Priority: P0
-Owner: AI Agent
-DependsOn: T-000
-Files:
-- `assets/css/custom/toc-and-effects.css`
-Steps:
-1. 미종결 코멘트(`/* ...`)를 정상 코멘트로 정리
-2. 해당 구간 애니메이션/접근성 CSS가 실제 적용되는지 확인
-DoD:
-- CSS 파싱 에러 없이 의도한 스타일 규칙이 활성화됨
+- `render-charts.js` 내 ES6+ 문법 0건
+- 차트 렌더링 동작 유지 (시각 확인)
+- 빌드 PASS
 Verify:
 - `hugo --gc --minify`
-- `pwsh -File tools/agent-preflight.ps1 -FailOnFindings`
+- `pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings`
+- 홈/포스트 페이지에서 차트 4종 렌더 확인
 Notes:
-- 라인 기준: 약 `448` 부근부터 점검
+- 파일 크기가 크므로(613줄) 섹션별로 나눠서 처리
+- ECharts API는 ES5 호환이므로 동작 변화 없음
+- `hexToRgba` 함수의 템플릿 리터럴도 변환 대상
 
-### T-002
+---
+
+### T-902
 Status: DONE
 Priority: P0
-Owner: AI Agent
-DependsOn: T-000
+Severity: 🔴 MUST
+DependsOn: -
 Files:
-- `static/js/theme-transition.js`
-- `static/js/reading-progress.js`
-- `assets/css/custom/reading-progress.css`
-- `assets/css/custom/post-hero.css`
-- `assets/css/custom/skeleton.css`
-- `layouts/partials/extend-head-uncached.html`
-- `layouts/partials/extend-footer.html`
-- `tools/architecture-lint.ps1`
+- `assets/css/custom/calendar.css`
 Steps:
-1. 미연결 WIP 파일을 "채택" 또는 "폐기"로 결정
-2. 채택 시 로더/린트 규칙까지 함께 정합성 맞춤
-3. 폐기 시 중복 기능을 기존 파일로 흡수
+1. L113~165 구간과 L217~239 구간의 중복 셀렉터 식별
+   - `.mp-calendar__tooltip-list` (2회)
+   - `.mp-calendar__tooltip-item` (2회)
+   - `.mp-calendar__tooltip-item.is-high` (2회)
+   - `.mp-calendar__tooltip-name` (2회)
+2. 두 선언을 병합하여 최종 의도한 값으로 단일화
+   - `max-height: 400px; overflow-y: auto;` → 첫 번째 선언에 유지
+   - `border-left` 두께: 3px vs 2px → 의도 확인 후 단일값 결정
+   - `font-size` 0.78rem vs 0.75rem → 의도 확인 후 단일값 결정
+3. 중복 선언 제거 후 L217~239 구간 삭제
+4. 라이트 모드 오버라이드 블록도 중복 없는지 재확인
 DoD:
-- 미연결 파일 상태가 명확히 정리됨
-- 린트/빌드가 계획된 구조와 일치
+- 동일 셀렉터 중복 선언 0건
+- 툴팁 스크롤 (`max-height`) 정상 동작
+- 다크/라이트 모드 툴팁 시각 확인
 Verify:
-- `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
 - `hugo --gc --minify`
+- 캘린더 툴팁 hover 확인 (다크/라이트)
 Notes:
-- 로더 순서 변경 시 아키텍처 린트 동시 수정 필요
+- 두 번째 선언이 첫 번째를 덮어쓰므로 현재는 `max-height`가 무효화된 상태
+- 병합 기준: 두 번째 선언의 값이 "의도적 수정"인지 확인 필요
 
-### T-003
+---
+
+### T-903
 Status: DONE
 Priority: P0
-Owner: AI Agent
-DependsOn: T-002
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. 카드 footer의 인라인 색상(`style="color:..."`) 제거
-2. `data-regime` 또는 클래스 기반 스타일로 전환
-DoD:
-- 템플릿 인라인 스타일 0건
-- 레짐 색상 표현 유지
-Verify:
-- `pwsh -File tools/agent-preflight.ps1 -FailOnFindings`
-- 홈 화면 수동 확인
-Notes:
-- AGENTS 가이드의 "inline style 최소화"와 일치
-
-### M1 - Homepage: Market Overview
-
-### T-101
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-002
+Severity: 🔴 MUST
+DependsOn: -
 Files:
 - `static/js/home-market-overview.js`
+Steps:
+1. L36~65의 `DEFAULT_OVERVIEW_GROUPS` 하드코딩 블록 제거
+2. `GROUPS` 변수를 `config.home.overview_groups`에서 직접 읽도록 변경
+   ```js
+   // 변경 전
+   var DEFAULT_OVERVIEW_GROUPS = [ ... ]; // 중복 하드코딩
+   var GROUPS = (Array.isArray(home.overview_groups) && ...) ? home.overview_groups : DEFAULT_OVERVIEW_GROUPS;
+
+   // 변경 후
+   // WHY: mp-config.js의 defaultConfig가 이미 fallback을 제공하므로 중복 불필요
+   var GROUPS = home.overview_groups || [];
+   ```
+3. `GROUPS`가 빈 배열일 때 렌더링 skip 로직 확인 (L196 `if (!hasData) continue;`)
+4. 동작 확인: 홈 Market Overview 섹션 정상 렌더
+DoD:
+- `DEFAULT_OVERVIEW_GROUPS` 하드코딩 제거
+- `mp-config.js`가 단일 진실 공급원(SSOT)으로 동작
+- 홈 Market Overview 정상 렌더
+Verify:
+- `hugo --gc --minify`
+- 홈 Market Overview 3개 그룹 렌더 확인
+Notes:
+- `mp-config.js`의 `defaultConfig.home.overview_groups`가 이미 동일 데이터를 가짐
+- `window.__MP_CONFIG`로 오버라이드 시에도 정상 동작해야 함
+
+---
+
+### T-904
+Status: DONE
+Priority: P0
+Severity: 🔴 MUST
+DependsOn: -
+Files:
+- `static/js/market-charts-loader.js`
+- `layouts/partials/extend-head-uncached.html` (주석 확인용)
+Steps:
+1. `market-charts-loader.js` L69 위에 의존성 주석 추가
+   ```js
+   // WHY: render-charts.js가 선행 로드되어야 renderAllCharts가 전역에 존재함.
+   // CONSTRAINT: extend-head-uncached.html에서 echarts CDN 로드 후,
+   //             render-charts.js가 market-charts-loader.js보다 먼저 실행되어야 함.
+   if (typeof renderAllCharts === 'function') {
+   ```
+2. `extend-head-uncached.html`에서 스크립트 로딩 순서 확인
+   - `render-charts.js`가 `market-charts-loader.js`보다 먼저 로드되는지 검증
+   - 현재 구조: `extend-head-uncached.html`에서 echarts CDN만 로드, 나머지는 `extend-footer.html`
+   - `market-charts-loader.js`는 `extend-footer.html`에 없음 → 로드 경로 추적 필요
+3. 로딩 경로가 불명확하면 `extend-footer.html`에 명시적 순서 주석 추가
+DoD:
+- 의존성이 코드 주석으로 명시됨
+- 로딩 순서가 문서/주석으로 추적 가능
+Verify:
+- `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
+- 포스트 페이지에서 차트 정상 렌더 확인
+Notes:
+- `market-charts-loader.js`의 실제 로드 경로 먼저 파악 필요
+- 포스트 템플릿에서 직접 `<script src>` 태그로 로드할 가능성 있음
+
+---
+
+### M10 — Code Quality: SHOULD-FIX
+
+---
+
+### T-1001
+Status: DONE
+Priority: P1
+Severity: 🟡 SHOULD
+DependsOn: -
+Files:
+- `static/js/calendar/renderer.js`
+Steps:
+1. `updateTooltip` 함수 내 `innerHTML` 사용 부분 식별 (L78~100)
+2. 외부 데이터(`ev.name`, `ev.nameKo`, `ev.country`, `c.key`)를 escape 처리
+3. `escapeHtml` 헬퍼 함수 추가
+   ```js
+   function escapeHtml(str) {
+     return String(str || '')
+       .replace(/&/g, '&amp;')
+       .replace(/</g, '&lt;')
+       .replace(/>/g, '&gt;')
+       .replace(/"/g, '&quot;');
+   }
+   ```
+4. `innerHTML` 문자열 내 모든 외부 데이터 변수에 `escapeHtml()` 적용
+5. 툴팁 렌더 동작 확인
+DoD:
+- 외부 데이터가 `innerHTML`에 삽입되기 전 escape 처리됨
+- 툴팁 정상 렌더
+Verify:
+- `hugo --gc --minify`
+- 캘린더 툴팁 hover 확인
+Notes:
+- 정적 사이트라 현재 실제 XSS 위험은 낮지만, 데이터 파이프라인 변경 시 즉시 위험해짐
+- `ev.status`는 `model.getStatusBadgeClass()`를 거치므로 안전
+
+---
+
+### T-1002
+Status: DONE
+Priority: P1
+Severity: 🟡 SHOULD
+DependsOn: -
+Files:
+- `static/js/calendar/renderer.js`
+Steps:
+1. L282~284 시간 포맷 코드 식별
+   ```js
+   // 현재 (로컬 시간 의존)
+   var timeStr = e.dateTime.getHours() === 0 && e.dateTime.getMinutes() === 0
+     ? '--:--'
+     : String(e.dateTime.getHours()).padStart(2, '0') + ':' + String(e.dateTime.getMinutes()).padStart(2, '0');
+   ```
+2. `parser.formatKst()`를 활용하거나 `Intl.DateTimeFormat`으로 KST 기준 시간 추출
+   ```js
+   // 변경 후 (KST 기준)
+   // WHY: getHours()는 브라우저 로컬 시간 기준이므로 해외 접속 시 KST와 불일치
+   var kstFormatted = parser.formatKst(e.dateTime); // "YYYY-MM-DD HH:mm KST"
+   var timePart = kstFormatted.split(' ')[1]; // "HH:mm"
+   var isAllDay = timePart === '00:00';
+   var timeStr = isAllDay ? '--:--' : timePart;
+   ```
+3. 자정(00:00) 판정 로직도 KST 기준으로 동작하는지 확인
+DoD:
+- 시간 표시가 KST 기준으로 일관됨
+- 해외 시간대에서도 동일한 시간 표시
+Verify:
+- `hugo --gc --minify`
+- 캘린더 upcoming 이벤트 시간 표시 확인
+Notes:
+- `parser.formatKst()`는 `"YYYY-MM-DD HH:mm KST"` 형식 반환
+- split(' ')[1]로 HH:mm 추출 가능
+
+---
+
+### T-1003
+Status: DONE
+Priority: P1
+Severity: 🟡 SHOULD
+DependsOn: -
+Files:
 - `static/js/mp-config.js`
 Steps:
-1. `REGIME_COLORS` 하드코딩을 `MP_CONFIG` 기반으로 전환
-2. hex/rgb fallback만 코드에 유지
+1. `mergeDeep` 함수 L180의 `for...in` 루프에 `hasOwnProperty` 가드 추가
+   ```js
+   // 변경 전
+   for (var key in source) {
+     if (source[key] && typeof source[key] === 'object' ...) { ... }
+   }
+
+   // 변경 후
+   // WHY: for...in은 프로토타입 체인까지 순회하므로 오염된 환경에서 예상치 못한 동작 방지
+   for (var key in source) {
+     if (!Object.prototype.hasOwnProperty.call(source, key)) continue;
+     if (source[key] && typeof source[key] === 'object' ...) { ... }
+   }
+   ```
 DoD:
-- 레짐 색상 변경이 설정 중심으로 동작
+- `mergeDeep`에서 프로토타입 체인 속성 무시
+- 기존 config merge 동작 유지
 Verify:
 - `hugo --gc --minify`
-- 홈에서 레짐별 색상 반영 확인
+- 홈 Market Overview 정상 동작 확인
 Notes:
-- 기존 `MP_CONFIG.colors.regime` 재사용
+- `Object.prototype.hasOwnProperty.call(source, key)` 패턴이 안전한 방식
 
-### T-102
+---
+
+### T-1004
 Status: DONE
 Priority: P1
-Owner: AI Agent
-DependsOn: T-101
+Severity: 🟡 SHOULD
+DependsOn: -
 Files:
-- `static/js/home-market-overview.js`
-- `assets/css/custom/home-market-overview.css`
+- `static/js/market-pulse-enhancements.js`
 Steps:
-1. 각 ticker row에 미니 gauge/bar 마크업 추가
-2. 등락률 기반 width 계산 및 clamping 적용
-3. 모바일 축소 스타일 포함
+1. L1~2의 패턴 변경
+   ```js
+   // 변경 전
+   document.addEventListener('DOMContentLoaded', function() {
+     'use strict';
+
+   // 변경 후
+   // WHY: 타 파일과 동일하게 IIFE + 'use strict' 패턴으로 통일
+   (function() {
+     'use strict';
+     document.addEventListener('DOMContentLoaded', function() {
+   ```
+2. 파일 끝 닫는 괄호도 IIFE 패턴에 맞게 조정 (`})();`)
+3. 내부 변수 스코프 영향 없는지 확인 (이미 함수 스코프 내부이므로 동일)
 DoD:
-- 모든 그룹 카드에 시각 지표 표시
-- 텍스트만 있을 때보다 스캔 속도 개선
+- `'use strict'` 위치가 IIFE 최상단으로 이동
+- 타 파일과 동일한 패턴
+- 동작 변화 없음
 Verify:
-- 홈 데스크톱/모바일 수동 확인
 - `hugo --gc --minify`
+- 홈/포스트 페이지 JS 기능 정상 동작 확인
 Notes:
-- gauge는 단순 바 형태로 시작 (복잡 SVG 금지)
+- 단순 패턴 변경이므로 동작 영향 없음
 
-### T-103
+---
+
+### T-1005
 Status: DONE
 Priority: P1
-Owner: AI Agent
-DependsOn: T-101
+Severity: 🟡 SHOULD
+DependsOn: T-902
 Files:
-- `layouts/partials/home/custom.html`
-- `assets/css/custom/home-market-overview.css`
-- `static/js/home-market-overview.js`
+- `assets/css/custom/calendar-polish.css`
 Steps:
-1. `Market Overview` 헤더 옆 pulse dot 마크업 추가
-2. 데이터 fetch 성공/실패/오래됨 상태를 색상으로 구분
+1. 파일 최상단에 로딩 순서 의존성 주석 추가
+   ```css
+   /*
+    * WHY: 이 파일은 calendar.css의 스타일을 의도적으로 override합니다.
+    * CONSTRAINT: extend-head-uncached.html에서 반드시 calendar.css 이후에 로드되어야 합니다.
+    *             로딩 순서: calendar.css → calendar-polish.css
+    * COMPAT: calendar.css의 .mp-filter-pills, .mp-filter-pill, .mp-filter-group 등을
+    *         더 세련된 "Control Deck" 스타일로 교체합니다.
+    */
+   ```
+2. `extend-head-uncached.html`에서 실제 로딩 순서 확인 및 주석 추가
+   ```html
+   {{/* calendar-polish.css는 calendar.css override 목적으로 반드시 뒤에 위치해야 함 */}}
+   ```
 DoD:
-- pulse dot이 데이터 신선도를 명확히 표시
-Verify:
-- 홈 화면 수동 확인
-- 네트워크 실패 시 fallback 색상 확인
-Notes:
-- 상태값: `fresh`, `stale`, `error`
-
-### T-104
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-102
-Files:
-- `assets/css/custom/home-market-overview.css`
-- `assets/css/custom/skeleton.css`
-- `static/js/home-market-overview.js`
-Steps:
-1. `Loading...` 텍스트를 skeleton 블록으로 대체
-2. 데이터 도착 시 skeleton 제거
-DoD:
-- 로딩 체감 개선, 레이아웃 점프 최소화
-Verify:
-- 캐시 비활성화 후 홈 로드 테스트
-Notes:
-- `prefers-reduced-motion`에서 shimmer 완화
-
-### M2 - Briefing Cards
-
-### T-201
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-003
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. 시간대별 아이콘(Pre/Mid/Post) 표시 추가
-2. 타입 태그 대비를 다크/라이트 모두에서 보장
-DoD:
-- 카드 타입 식별이 텍스트 없이 가능
-Verify:
-- 홈 카드 6개 수동 확인
-Notes:
-- 아이콘 매핑: `pre=🌅`, `mid=☀️`, `post=🌙`
-
-### T-202
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-201
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. 오늘 발행 카드에 `NEW` 배지 추가
-2. 기준 시간대는 `Asia/Seoul`로 고정
-DoD:
-- 오늘 카드가 즉시 식별 가능
-Verify:
-- 오늘/어제 포스트 각각 배지 표시 검증
-Notes:
-- Hugo 템플릿 날짜 비교 로직 단순 유지
-
-### T-203
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-201
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. summary에서 `%`, `bp`, `+/-숫자` 패턴 강조
-2. 강조 과도 적용 방지를 위해 최대 2개만 하이라이트
-DoD:
-- 핵심 수치가 summary 내에서 눈에 띔
-Verify:
-- 한글/영문 summary 샘플 확인
-Notes:
-- 템플릿 처리 어려우면 JS 후처리 방식 사용
-
-### T-204
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-003
-Files:
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. hover 시 regime 기반 그라데이션 오버레이 추가
-2. 라이트 모드에서 대비(텍스트 가독성) 유지
-DoD:
-- hover 효과가 regime 문맥과 일치
-Verify:
-- 마우스 hover 스크린 확인
-Notes:
-- `data-regime` 속성 기반 selector 사용
-
-### M3 - Theme (Dark/Light)
-
-### T-301
-Status: DOING
-Priority: P1
-Owner: AI Agent
-DependsOn: T-001
-Files:
-- `assets/css/custom/theme-fixes.css`
-- `assets/css/custom/layout-overrides.css`
-- `assets/css/custom/home-market-overview.css`
-Steps:
-1. 라이트 모드 중복 규칙 통합
-2. glassmorphism 강도(배경/보더/그림자) 최소 세트 정의
-DoD:
-- 라이트/다크 모두에서 같은 컴포넌트가 일관된 위계를 가짐
-Verify:
-- 테마 토글 전후 시각 비교
-Notes:
-- `!important` 남용 규칙 정리 포함
-
-### T-302
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-002
-Files:
-- `static/js/theme-transition.js` (채택 시)
-- `assets/css/custom/theme-fixes.css`
-- `themes/blowfish/layouts/partials/header/components/desktop-menu.html`
-- `themes/blowfish/layouts/partials/header/components/mobile-menu.html`
-Steps:
-1. 테마 전환 transition 클래스를 데스크톱/모바일 스위처에 모두 적용
-2. 전환 flash 완화용 CSS transition 범위 지정
-DoD:
-- 전환 시 즉시 깜빡임 감소
-Verify:
-- 데스크톱/모바일 스위처 각각 3회 토글
-Notes:
-- 테마 코어 로직은 Blowfish 기존 동작 유지
-
-### T-303
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-101
-Files:
-- `assets/css/custom/home-market-overview.css`
-- `static/js/home-market-overview.js`
-Steps:
-1. 라이트 모드 ambient orb 팔레트 재설정
-2. regime에 따라 orb 색상/투명도 동적 연동
-DoD:
-- 라이트 모드에서도 orb가 흐리거나 탁하지 않음
-Verify:
-- 레짐 4종 시각 비교
-Notes:
-- 과도한 blur/채도 방지
-
-### M4 - Mobile UX
-
-### T-401
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-201
-Files:
-- `assets/css/custom/home-briefing-cards.css`
-- `layouts/partials/home/recent-briefings.html`
-Steps:
-1. 모바일에서 카드 영역을 horizontal scroll-snap으로 전환
-2. 카드 폭/간격/스냅 포인트 최적화
-DoD:
-- 손가락 스와이프로 카드 탐색 가능
-Verify:
-- 390px, 430px 뷰포트 수동 확인
-Notes:
-- JS 캐러셀 대신 CSS scroll-snap 우선
-
-### T-402
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-401
-Files:
-- `layouts/partials/footer.html` 또는 `layouts/partials/home/custom.html`
-- `assets/css/custom/layout-overrides.css`
-Steps:
-1. 모바일 전용 bottom nav 추가
-2. 브리핑/태그/상단 이동 앵커 연결
-DoD:
-- 모바일 핵심 이동 동선 단축
-Verify:
-- 홈/포스트 페이지에서 동작 확인
-Notes:
-- 데스크톱에서는 숨김
-
-### T-403
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-103
-Files:
-- `layouts/partials/home/custom.html`
-- `assets/css/custom/home-market-overview.css`
-- `static/js/home-market-overview.js`
-Steps:
-1. 스크롤 시 상단 고정되는 regime badge 추가
-2. sticky 상태 전환 클래스를 JS로 제어
-DoD:
-- 스크롤 중 현재 시장 상태를 지속 노출
-Verify:
-- 모바일 스크롤 3회 이상 반복 확인
-Notes:
-- 기존 `#mp-regime-badge` 재사용 가능
-
-### M5 - Article Page
-
-### T-501
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-002
-Files:
-- `themes/blowfish/layouts/_default/single.html`
-- `static/js/reading-progress.js` (채택 시)
-- `assets/css/custom/reading-progress.css` (채택 시)
-- `layouts/partials/extend-head-uncached.html`
-Steps:
-1. 아티클 상단 progress bar DOM 추가
-2. 스크롤 기반 width 업데이트 연결
-3. 홈에서는 비활성 처리
-DoD:
-- 읽기 진행률이 상단에 실시간 반영
-Verify:
-- 긴 포스트에서 0% -> 100% 확인
-Notes:
-- 기존 untracked 초안 재사용 우선. JS에서 동적 주입으로 처리하여 테마 파일 오버라이드 최소화.
-
-### T-502
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-001
-Files:
-- `static/js/briefing/toc-scrollspy.js`
-- `assets/css/custom/toc-and-effects.css`
-Steps:
-1. scrollspy 대상에 `h3` 포함 옵션 추가
-2. active 상태 시각 강조를 한 단계 강화
-DoD:
-- 현재 섹션 인지가 빠름
-Verify:
-- TOC가 깊은 문서에서 active 추적 확인
-Notes:
-- `IntersectionObserver` rootMargin 미세 조정 포함
-
-### T-503
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-501
-Files:
-- `static/js/briefing/regime-hero.js`
-- `assets/css/custom/briefing-sections.css`
-- `assets/css/custom/post-hero.css` (채택 시)
-Steps:
-1. post hero에 quick-view 메트릭 슬롯 추가
-2. 레짐 색상과 일관된 그라데이션 적용
-DoD:
-- 아티클 상단에서 핵심 상태를 즉시 파악 가능
-Verify:
-- pre/mid/post 샘플 포스트 1개씩 확인
-Notes:
-- 데이터 없으면 슬롯 자동 숨김
-
-### T-504
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-001
-Files:
-- `assets/css/custom/briefing-sections.css`
-- `assets/css/custom/post-content.css`
-Steps:
-1. 섹션 사이 cyberpunk divider 추가
-2. 과도한 장식으로 본문 가독성 저하되지 않게 조정
-DoD:
-- 섹션 경계 인식이 개선됨
-Verify:
-- 다크/라이트 비교
-Notes:
-- `prefers-reduced-motion` 고려
-
-### M6 - Micro Interactions
-
-### T-601
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-102
-Files:
-- `static/js/home-market-overview.js`
-- `assets/css/custom/home-market-overview.css`
-Steps:
-1. 핵심 숫자 count-up 애니메이션 추가
-2. 값 변동이 없으면 애니메이션 생략
-DoD:
-- 숫자 로딩 체감 개선
-Verify:
-- 홈 최초 로딩 시 동작 확인
-Notes:
-- 성능 위해 표시 중인 소수 요소만 적용
-
-### T-602
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-104
-Files:
-- `assets/css/custom/skeleton.css`
-- `static/js/home-market-overview.js`
-- `static/js/market-pulse-enhancements.js`
-Steps:
-1. 뉴스/카드/티커의 로딩 텍스트를 skeleton으로 치환
-2. 로딩 실패 시 사용자 친화 문구로 fallback
-DoD:
-- "Loading..." 직접 노출 최소화
-Verify:
-- 네트워크 지연 시 화면 확인
-Notes:
-- skeleton class 표준화
-
-### T-603
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-001
-Files:
-- `static/js/market-pulse-enhancements.js`
-- `assets/css/custom/toc-and-effects.css`
-Steps:
-1. scroll reveal 대상을 briefing 섹션 전체로 확대
-2. 뷰포트 진입 시 fade-in 트리거 통일
-DoD:
-- 섹션 등장 전환이 자연스럽고 일관됨
-Verify:
-- 긴 포스트 스크롤 테스트
-Notes:
-- reduced-motion 환경에서는 비활성
-
-### M7 - Search/Filter UX
-
-### T-701
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-201
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `static/js/market-pulse-enhancements.js`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. regime 필터 칩 UI 추가
-2. 카드 `data-regime` 기반 클라이언트 필터링 구현
-DoD:
-- 선택한 regime 카드만 표시 가능
-Verify:
-- 4개 regime 필터 수동 확인
-Notes:
-- 초기값 `ALL`
-
-### T-702
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-701
-Files:
-- `layouts/partials/home/recent-briefings.html`
-- `assets/css/custom/home-briefing-cards.css`
-Steps:
-1. 최근 브리핑을 날짜 그룹 타임라인 형태로 렌더
-2. 기존 카드 재사용으로 구현 복잡도 최소화
-DoD:
-- 날짜 흐름 기반 탐색이 가능
-Verify:
-- 날짜 그룹 헤더/카드 정렬 확인
-Notes:
-- 데이터 소스는 기존 `.Site.RegularPages` 유지
-
-### T-703
-Status: DONE
-Priority: P2
-Owner: AI Agent
-DependsOn: T-301
-Files:
-- `themes/blowfish/layouts/partials/search.html`
-- `assets/css/custom/layout-overrides.css`
-- `assets/css/custom/theme-fixes.css`
-Steps:
-1. Blowfish 기본 검색 모달을 프로젝트 톤에 맞게 스타일링
-2. 접근성(대비/포커스 링) 유지
-DoD:
-- 검색 UI가 사이트 스타일과 일관됨
-Verify:
-- 검색 모달 열기/닫기/키보드 포커스 확인
-Notes:
-- 구조 변경보다 스타일 우선. CSS 오버라이드로 처리.
-
-### M8 - Tooling & CI Alignment
-
-### T-801
-Status: DONE
-Priority: P0
-Owner: AI Agent
-DependsOn: T-002
-Files:
-- `tools/architecture-lint.ps1`
-- `layouts/partials/extend-footer.html`
-Steps:
-1. JS 로더 순서 검증 로직을 "하드코딩 배열"에서 유지보수 가능한 형태로 개선
-2. 새 런타임 파일 추가 시 lint 수정 포인트를 단일화
-DoD:
-- 로더 변경 시 lint 정책과 실제 로더가 쉽게 동기화됨
+- 로딩 순서 의존성이 CSS 파일과 로더 파일 양쪽에 명시됨
+- 규칙 6.1 준수
 Verify:
 - `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
 Notes:
-- 현재는 로더 순서가 스크립트 내부 상수에 강결합됨
+- 실제 동작 변경 없음, 문서화 작업
 
-### T-802
-Status: DONE
-Priority: P0
-Owner: AI Agent
-DependsOn: T-000
-Files:
-- `tools/agent-preflight.ps1`
-- `tools/ui-viewport.smoke.spec.js`
-- `package.json`
-Steps:
-1. preflight에 UI viewport smoke 실행 옵션 추가 (`-RunUiViewportSmoke`)
-2. npm script로 UI smoke 명령을 표준화
-DoD:
-- preflight 단일 명령으로 구조/빌드/브라우저 스모크 실행 가능
-Verify:
-- `pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke`
-- `npm run test:ui-smoke`
-Notes:
-- 서버 필요 조건(`http://localhost:1314`)을 명확한 에러로 안내
+---
 
-### T-803
+### T-1006
 Status: DONE
 Priority: P1
-Owner: AI Agent
-DependsOn: T-802
+Severity: 🟡 SHOULD
+DependsOn: T-903
 Files:
-- `tools/calendar-smoke.ps1`
-- `tools/calendar-filters.smoke.spec.js`
+- `static/js/home-market-overview.js`
 Steps:
-1. 실패 메시지에 대상 URL/페이지 경로/선택자 상태를 포함해 디버깅성 강화
-2. 최신 pre-market 탐색 실패 시 대체 페이지 경로 처리 로직 보강
+1. L144의 `document.getElementById('mp-ticker-groups')` 중복 조회 제거
+   ```js
+   // 변경 전 (L144)
+   function renderTickerGroups(ts) {
+     var container = document.getElementById('mp-ticker-groups'); // 중복!
+
+   // 변경 후
+   function renderTickerGroups(ts) {
+     var container = root; // WHY: 파일 최상단 L4에서 이미 조회한 root 변수 재사용
+   ```
+2. `root`가 null인 경우 이미 L5에서 early return하므로 추가 null 체크 불필요
 DoD:
-- 캘린더 스모크 실패 원인이 로그에서 즉시 식별됨
+- DOM 중복 조회 제거
+- `renderTickerGroups` 동작 유지
 Verify:
+- `hugo --gc --minify`
+- 홈 Market Overview 티커 렌더 확인
+Notes:
+- 단순 변수 참조 변경, 동작 영향 없음
+
+---
+
+### M11 — Code Quality: MAY-FIX
+
+---
+
+### T-1101
+Status: DONE
+Priority: P2
+Severity: 🟢 MAY
+DependsOn: T-901
+Files:
+- `static/js/calendar/parser.js`
+Steps:
+1. `parseScheduleItem` 함수 내 compact/modern 파싱 블록의 공통 로직 추출
+2. 데이터 추출 헬퍼 함수 `extractScheduleFields(raw)` 작성
+   - `statusMatch`, `impactMatch`, `watchMatch`, `dataMatch`, `nameKoMatch` 추출
+   - `previous`, `consensus`, `actual` 파싱
+3. compact 블록과 modern 블록에서 헬퍼 함수 호출로 대체
+4. 반환 객체 구조는 동일하게 유지 (COMPAT)
+DoD:
+- 중복 코드 제거
+- `parseScheduleItem` 동작 유지
+- 캘린더 렌더 정상 동작
+Verify:
+- `hugo --gc --minify`
 - `pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314`
 Notes:
-- flaky 원인 추적 시간 단축 목적
+- 리팩토링이므로 동작 변화 없어야 함
+- 테스트 후 smoke 확인 필수
 
-### T-804
-Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-802
-Files:
-- `.github/workflows/quality-gate.yml`
-- `tools/agent-preflight.ps1`
-Steps:
-1. CI quality gate에 선택적 UI smoke 스텝 추가(조건부/야간/라벨 기반)
-2. CI 시간 증가를 최소화하는 실행 조건 설계
-DoD:
-- CI에서 핵심 브라우저 회귀를 자동 감지 가능
-Verify:
-- PR에서 quality workflow green 확인
-Notes:
-- 전체 PR 강제 실행 대신 조건부 실행 권장. `agent-preflight.ps1`에 통합됨.
+---
 
-### T-805
+### T-1102
 Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-802
+Priority: P2
+Severity: 🟢 MAY
+DependsOn: T-901
 Files:
-- `README.md`
-- `AGENTS.md`
-- `PROJECT_MAP.md`
+- `static/js/render-charts.js`
 Steps:
-1. tools 명령(로컬/CI)과 실제 스크립트 옵션 문서를 동기화
-2. 새 smoke 명령과 사용 조건을 문서에 반영
+1. T-901 완료 후 `var __mpChartData = null;` 네이밍 개선
+2. 전역 네임스페이스 오염 최소화를 위해 IIFE 스코프 변수로 유지하되,
+   외부 접근이 필요하면 `window.MPCharts = window.MPCharts || {}; window.MPCharts._data = null;` 패턴 적용
+3. `renderAllCharts` 함수도 동일하게 네임스페이스 정리 고려
 DoD:
-- 문서의 실행 명령이 실제와 1:1로 일치
+- 전역 변수 네이밍이 규칙 3.3 준수
+- 차트 렌더 동작 유지
 Verify:
-- 문서 명령을 복붙 실행하여 동작 확인
+- `hugo --gc --minify`
+- 포스트 페이지 차트 4종 렌더 확인
 Notes:
-- 신규 에이전트 온보딩 정확도 개선 목적
+- `market-charts-loader.js`에서 `renderAllCharts`를 참조하므로 네임스페이스 변경 시 연동 수정 필요
 
-### T-806
+---
+
+### T-1103
 Status: DONE
-Priority: P1
-Owner: AI Agent
-DependsOn: T-801
+Priority: P2
+Severity: 🟢 MAY
+DependsOn: T-902
 Files:
-- `tools/agent-audit.ps1`
+- `assets/css/custom/calendar.css`
 Steps:
-1. 감사 리포트에 "미연결 자산(생성됐지만 로드되지 않는 CSS/JS)" 점검 항목 추가
-2. 결과를 WARN으로 표시하고 FailOnFindings 대응
+1. L626, L631의 `!important` 제거
+2. 셀렉터 specificity를 높여 동일 효과 달성
+   ```css
+   /* 변경 전 */
+   :root:not(.dark) .mp-filter-group__label {
+     color: #334155 !important;
+   }
+
+   /* 변경 후 */
+   :root:not(.dark) .mp-upcoming__filters .mp-filter-group__label {
+     color: #334155;
+   }
+   ```
+3. 라이트 모드에서 시각 확인
 DoD:
-- 죽은 파일/미연결 파일이 preflight에서 조기에 탐지됨
+- `!important` 0건 (calendar.css 내)
+- 라이트 모드 스타일 동일하게 유지
 Verify:
-- `pwsh -File tools/agent-audit.ps1 -FailOnFindings`
+- `hugo --gc --minify`
+- 라이트 모드 캘린더 필터 레이블 색상 확인
 Notes:
-- 현재 문제였던 untracked/WIP 파일 정리를 자동화하는 목적
+- specificity 충돌이 있어서 `!important`가 필요했던 것이므로, 원인 셀렉터 파악 후 수정
+
+---
+
+### M12 — CSS Architecture: calendar.css 구조 정리
+
+---
+
+### T-1201
+Status: TODO
+Priority: P2
+Severity: 🟡 SHOULD
+DependsOn: T-902, T-1005, T-1103
+Files:
+- `assets/css/custom/calendar.css`
+- `assets/css/custom/calendar-polish.css`
+Steps:
+1. T-902 완료 후 두 파일의 셀렉터 중복 현황 재점검
+2. `calendar.css`에서 `calendar-polish.css`가 완전히 override하는 규칙 식별
+3. 완전히 override되는 규칙은 `calendar.css`에서 제거 (dead code 정리)
+4. 두 파일의 역할 명확히 분리:
+   - `calendar.css`: 구조/레이아웃/기본 토큰
+   - `calendar-polish.css`: 시각적 polish/override
+5. 각 파일 상단에 역할 주석 추가
+DoD:
+- 두 파일 간 불필요한 중복 제거
+- 역할 분리가 주석으로 명시됨
+- 캘린더 시각 동일하게 유지
+Verify:
+- `hugo --gc --minify`
+- 다크/라이트 모드 캘린더 전체 확인
+Notes:
+- T-902, T-1005, T-1103 완료 후 진행
+- 대규모 CSS 정리이므로 신중하게 진행
+
+---
 
 ## 7) 실행 순서 (권장)
 
-1. `M0 + M8` 완료 후 기능 확장 시작 (기준선 + 도구 정합성 선확보)
-2. 가시 효과가 큰 `M1 -> M2 -> M3` 순서 진행
-3. UX 확장은 `M4 -> M5 -> M6 -> M7` 순서로 마무리
+### Phase 1: MUST-FIX (M9) — 즉시 처리
+```
+T-902 (calendar.css 중복 선언) → 독립적, 먼저 처리
+T-903 (DEFAULT_OVERVIEW_GROUPS 중복) → 독립적
+T-904 (암묵적 의존성 주석) → 독립적
+T-901 (render-charts.js ES5 통일) → 가장 큰 파일, 마지막
+```
+
+### Phase 2: SHOULD-FIX (M10) — 이번 사이클
+```
+T-1003 (hasOwnProperty) → 독립적, 빠름
+T-1004 ('use strict' 위치) → 독립적, 빠름
+T-1006 (DOM 중복 조회) → T-903 이후
+T-1005 (로딩 순서 주석) → T-902 이후
+T-1002 (KST 시간 포맷) → 독립적
+T-1001 (innerHTML escape) → 독립적
+```
+
+### Phase 3: MAY-FIX + CSS 정리 (M11, M12) — 여유 시
+```
+T-1101 (parser.js 중복 제거)
+T-1102 (전역 변수 네이밍)
+T-1103 (!important 제거)
+T-1201 (calendar CSS 구조 정리) → 위 3개 완료 후
+```
+
+---
 
 ## 8) 검증 게이트
 
-각 마일스톤 종료 시 아래를 실행합니다.
+각 마일스톤 종료 시 실행:
 
-- `hugo --gc --minify`
-- `pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings`
-- `pwsh -File tools/architecture-lint.ps1 -FailOnFindings`
-- `pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314` (서버 실행 후)
-- 수동 확인:
-  - `/`
-  - `/posts/`
-  - `/posts/pre-market-YYYY-MM-DD/`
-  - 모바일(390px) + 태블릿(768px) + 데스크톱(1280px)
+```bash
+hugo --gc --minify
+pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
+pwsh -File tools/architecture-lint.ps1 -FailOnFindings
+pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
+```
+
+수동 확인:
+- `/` (홈: Market Overview, 브리핑 카드)
+- `/posts/pre-market-YYYY-MM-DD/` (캘린더, 차트, TOC)
+- 다크/라이트 모드 각각
+- 모바일(390px) + 데스크톱(1280px)
+
+---
 
 ## 9) Execution Log
 
+### 이전 Phase (2026-02-16 ~ 2026-02-17)
 - 2026-02-16 | T-000 | DONE | preflight/build 베이스라인 확보 | PASS
-- 2026-02-16 | T-001 | DONE | assets/css/custom/toc-and-effects.css comment fixed | PASS
+- 2026-02-16 | T-001 | DONE | toc-and-effects.css comment fixed | PASS
 - 2026-02-16 | T-002 | DONE | Adopted reading-progress, skeleton, post-hero; updated loader | PASS
 - 2026-02-16 | T-003 | DONE | Removed inline styles from briefing cards | PASS
-- 2026-02-16 | T-101 | DONE | Migrated REGIME_COLORS to MP_CONFIG and updated MP_CONFIG | PASS
+- 2026-02-16 | T-101 | DONE | Migrated REGIME_COLORS to MP_CONFIG | PASS
 - 2026-02-16 | T-102 | DONE | Added mini bar gauge to ticker rows | PASS
 - 2026-02-16 | T-103 | DONE | Added pulse dot to Market Overview header | PASS
 - 2026-02-16 | T-104 | DONE | Implemented skeleton loading for tickers | PASS
@@ -834,15 +680,31 @@ Notes:
 - 2026-02-16 | T-701 | DONE | Implemented client-side regime filtering | PASS
 - 2026-02-16 | T-702 | DONE | Grouped recent briefings by date in timeline view | PASS
 - 2026-02-16 | T-703 | DONE | Styled search modal with cyberpunk aesthetic | PASS
-- 2026-02-16 | T-801 | DONE | Updated architecture lint to be more flexible with JS loaders | PASS
+- 2026-02-16 | T-801 | DONE | Updated architecture lint | PASS
 - 2026-02-16 | T-802 | DONE | Added UI Viewport Smoke Test support to preflight | PASS
-- 2026-02-16 | T-803 | DONE | Improved calendar smoke test robustness and fallback | PASS
+- 2026-02-16 | T-803 | DONE | Improved calendar smoke test robustness | PASS
 - 2026-02-16 | T-804 | DONE | Updated CI workflow to include smoke tests | PASS
 - 2026-02-16 | T-805 | DONE | Updated README/AGENTS/PROJECT_MAP docs | PASS
 - 2026-02-16 | T-806 | DONE | Added unlinked asset check to audit tool | PASS
-- 2026-02-17 | DOC-901 | DONE | Rule-compliance re-audit + docs sync (fonts/inline policy) | PASS
+- 2026-02-17 | DOC-901 | DONE | Rule-compliance re-audit + docs sync | PASS
+- 2026-02-18 | AUDIT-001 | DONE | 전체 코드베이스 best practice 점검 완료 | 13건 발견
+
+### 현재 Phase (2026-02-18~)
+- 2026-02-18 | T-902 | DONE | calendar.css 중복 셀렉터 제거 및 선언 병합 | PASS
+- 2026-02-18 | T-903 | DONE | home-market-overview.js 중복 하드코딩 제거 | PASS
+- 2026-02-18 | T-904 | DONE | market-charts-loader.js 의존성 주석 추가 | PASS
+- 2026-02-18 | T-901 | DONE | render-charts.js ES5 문법으로 전면 재작성 | PASS
+- 2026-02-18 | T-1005 | DONE | calendar-polish.css 로딩 순서 의존성 주석 추가 | PASS
+- 2026-02-18 | T-1006 | DONE | home-market-overview.js DOM 중복 조회 확인 및 제거 | PASS
+- 2026-02-18 | T-1101 | DONE | parser.js parseScheduleItem 중복 로직 리팩토링 | PASS
+- 2026-02-18 | T-1102 | DONE | render-charts.js 네임스페이스(MPCharts) 적용 | PASS
+- 2026-02-18 | T-1103 | DONE | calendar.css !important 제거 및 specificity 상향 | PASS
+<!-- 작업 완료 시 여기에 추가 -->
+
+---
 
 ## 10) Change Log
 
 - 2026-02-16: 기존 개략 계획을 코드베이스 실측 기반의 상세 Task Board + 상태관리형 계획으로 전면 교체
-- 2026-02-17: 규칙 준수 재점검 결과를 반영해 문서 정합성(폰트/인라인 예외/검증 명령)을 최신화
+- 2026-02-17: 규칙 준수 재점검 결과를 반영해 문서 정합성 최신화
+- 2026-02-18: 전체 코드베이스 best practice 점검 결과를 기반으로 M9~M12 신규 계획 수립 (기존 완료 내용 요약 보존)

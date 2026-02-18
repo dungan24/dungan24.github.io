@@ -44,8 +44,13 @@
   letter-spacing: 0.05em;
 }
 
-.mp-calendar__weekday.is-sun { color: #f43f5e; }
-.mp-calendar__weekday.is-sat { color: #3b82f6; }
+.mp-calendar__weekday.is-sun {
+  color: #f43f5e;
+}
+
+.mp-calendar__weekday.is-sat {
+  color: #3b82f6;
+}
 
 .mp-calendar__cell {
   min-height: 52px;
@@ -83,9 +88,17 @@
   color: #94a3b8;
 }
 
-.mp-calendar__cell.is-sun .mp-calendar__day { color: #f43f5e; }
-.mp-calendar__cell.is-sat .mp-calendar__day { color: #3b82f6; }
-.mp-calendar__cell.is-holiday .mp-calendar__day { color: #f43f5e; }
+.mp-calendar__cell.is-sun .mp-calendar__day {
+  color: #f43f5e;
+}
+
+.mp-calendar__cell.is-sat .mp-calendar__day {
+  color: #3b82f6;
+}
+
+.mp-calendar__cell.is-holiday .mp-calendar__day {
+  color: #f43f5e;
+}
 
 /* 일정 표시기 (사이트 요소를 닮은 마커) */
 .mp-calendar__markers {
@@ -157,9 +170,9 @@
 }
 
 .mp-calendar__tooltip-item {
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-radius: var(--mp-radius-sm);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -188,7 +201,7 @@
 }
 
 .mp-calendar__tooltip-name {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #E2E8F0;
   line-height: 1.4;
   font-weight: 600;
@@ -200,56 +213,63 @@
   gap: 0.3rem;
 }
 
-/* Light Mode Overrides */
-:root:not(.dark) .mp-calendar__tooltip-shared { 
-  background: rgba(255, 255, 255, 0.98); 
+/* Light Mode Overrides (Shared Tooltip) */
+:root:not(.dark) .mp-calendar__tooltip-shared {
+  background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
-:root:not(.dark) .mp-calendar__tooltip-name { color: #1E293B; }
-:root:not(.dark) .mp-calendar__tooltip-item { background: #f8fafc; }
+
+:root:not(.dark) .mp-calendar__tooltip-name {
+  color: #1E293B;
+}
+
+:root:not(.dark) .mp-calendar__tooltip-item {
+  background: #f8fafc;
+}
 
 @media (max-width: 640px) {
-  .mp-calendar__tooltip-shared { 
-    display: none !important; 
+  .mp-calendar__tooltip-shared {
+    display: none !important;
   }
 }
 
-.mp-calendar__tooltip-list {
-  padding: 0.5rem;
+/* Light Mode Overrides (Calendar Core) */
+:root:not(.dark) .mp-calendar {
+  background: rgba(255, 255, 255, 0.95);
 }
 
-.mp-calendar__tooltip-item {
-  padding: 0.5rem;
-  border-radius: var(--mp-radius-sm);
-  margin-bottom: 0.3rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+:root:not(.dark) .mp-calendar__day {
+  color: #475569;
 }
 
-.mp-calendar__tooltip-item.is-high {
-  border-left: 2px solid var(--mp-neon-cyan);
-  background: rgba(0, 240, 255, 0.03);
+:root:not(.dark) .mp-calendar__tooltip {
+  background: white;
 }
 
-.mp-calendar__tooltip-name {
-  font-size: 0.75rem;
-  color: #E2E8F0;
-  line-height: 1.4;
-  font-weight: 600;
+:root:not(.dark) .mp-calendar__tooltip-name {
+  color: #1E293B;
 }
-
-/* Light Mode Overrides */
-:root:not(.dark) .mp-calendar { background: rgba(255, 255, 255, 0.95); }
-:root:not(.dark) .mp-calendar__day { color: #475569; }
-:root:not(.dark) .mp-calendar__tooltip { background: white; }
-:root:not(.dark) .mp-calendar__tooltip-name { color: #1E293B; }
 
 @media (max-width: 640px) {
-  .mp-calendar { padding: 0.8rem; }
-  .mp-calendar__grid { gap: 0.2rem; }
-  .mp-calendar__cell { min-height: 48px; }
-  .mp-calendar__day { font-size: 0.65rem; }
-  .mp-calendar__tooltip { width: 220px; }
+  .mp-calendar {
+    padding: 0.8rem;
+  }
+
+  .mp-calendar__grid {
+    gap: 0.2rem;
+  }
+
+  .mp-calendar__cell {
+    min-height: 48px;
+  }
+
+  .mp-calendar__day {
+    font-size: 0.65rem;
+  }
+
+  .mp-calendar__tooltip {
+    width: 220px;
+  }
 }
 
 .mp-upcoming {
@@ -274,65 +294,6 @@
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, rgba(165, 243, 252, 0.3), transparent);
-}
-
-/* --- Filtering UI (Hip Pills) --- */
-.mp-upcoming__filters {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 1.2rem;
-  padding: 0.8rem;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  border-radius: 12px;
-}
-
-.mp-filter-group {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.mp-filter-group__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #94a3b8;
-  min-width: 40px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.mp-filter-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.mp-filter-pill {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  color: #94a3b8;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.22rem 0.65rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-}
-
-.mp-filter-pill:hover {
-  background: rgba(51, 65, 85, 0.8);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #e2e8f0;
-}
-
-.mp-filter-pill.is-active {
-  background: rgba(56, 189, 248, 0.15);
-  border-color: #38bdf8;
-  color: #38bdf8;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
 }
 
 /* --- Timeline Layout --- */
@@ -466,34 +427,6 @@
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-@media (max-width: 640px) {
-  .mp-upcoming__filters {
-    padding: 0.6rem;
-  }
-  
-  .mp-filter-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .mp-upcoming__item {
-    gap: 0.6rem;
-  }
-
-  .mp-upcoming__time-axis {
-    min-width: 40px;
-  }
-
-  .mp-upcoming__content {
-    padding: 0.65rem 0.8rem;
-  }
-
-  .mp-upcoming__event {
-    font-size: 0.82rem;
-  }
-}
-
 .mp-importance {
   font-family: var(--mp-font-mono);
   font-size: 0.62rem;
@@ -558,30 +491,6 @@
 }
 
 /* ===== Light Mode Overrides for Calendar ===== */
-:root:not(.dark) .mp-upcoming__filters {
-  background: #F1F5F9;
-  border-color: #CBD5E1;
-}
-
-:root:not(.dark) .mp-filter-pill {
-  background: #FFFFFF;
-  border-color: #E2E8F0;
-  color: #64748B;
-}
-
-:root:not(.dark) .mp-filter-pill:hover {
-  background: #F8FAFC;
-  border-color: #38bdf8;
-  color: #0F172A;
-}
-
-:root:not(.dark) .mp-filter-pill.is-active {
-  background: #E0F2FE;
-  border-color: #0EA5E9;
-  color: #0284C7;
-  box-shadow: 0 0 8px rgba(14, 165, 233, 0.2);
-}
-
 :root:not(.dark) .mp-upcoming__date-text {
   background: #E0F2FE;
   color: #0369A1;
@@ -595,13 +504,13 @@
 :root:not(.dark) .mp-upcoming__content {
   background: #FFFFFF;
   border-color: #E2E8F0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 :root:not(.dark) .mp-upcoming__item:hover .mp-upcoming__content {
   background: #F8FAFC;
   border-color: #38BDF8;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 :root:not(.dark) .mp-upcoming__event {
@@ -622,12 +531,7 @@
 }
 
 /* Additional Visibility Fixes */
-:root:not(.dark) .mp-filter-group__label {
-  color: #334155 !important;
-  font-weight: 800;
-}
-
-:root:not(.dark) .mp-calendar__title {
-  color: #1E293B !important;
+:root:not(.dark) .mp-calendar .mp-calendar__title {
+  color: #1E293B;
   border-bottom-color: #E2E8F0;
 }
