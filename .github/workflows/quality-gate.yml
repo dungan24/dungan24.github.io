@@ -61,6 +61,7 @@ jobs:
         run: pwsh -File tools/agent-preflight.ps1 -RunBuild -FailOnFindings
 
       - name: Start Preview Server
+        if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'run-smoke') }}
         shell: bash
         run: |
           hugo server --port 1314 --bind 0.0.0.0 &
