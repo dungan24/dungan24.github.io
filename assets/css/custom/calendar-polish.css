@@ -1,7 +1,15 @@
-/* --- Calendar UI coherence refresh (Unified with Briefing Card) --- */
+/*
+ * WHY: 이 파일은 calendar.css의 스타일을 의도적으로 override합니다.
+ * CONSTRAINT: extend-head-uncached.html에서 반드시 calendar.css 이후에 로드되어야 합니다.
+ *             로딩 순서: calendar.css → calendar-polish.css
+ * COMPAT: calendar.css의 .mp-filter-pills, .mp-filter-pill, .mp-filter-group 등을
+ *         더 세련된 "Control Deck" 스타일로 교체합니다.
+ */
 
 /* 0. Rendering Quality Core */
-.mp-calendar, .mp-upcoming, .mp-upcoming * {
+.mp-calendar,
+.mp-upcoming,
+.mp-upcoming * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -258,6 +266,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .mp-calendar__cell,
   .mp-filter-pill,
   .mp-upcoming__content,
@@ -333,6 +342,11 @@
 :root:not(.dark) .mp-upcoming__impact {
   color: #435266;
   border-top-color: rgba(148, 163, 184, 0.35);
+}
+
+:root:not(.dark) .mp-filter-group__label {
+  color: #334155;
+  font-weight: 800;
 }
 
 /* Light mode overrides handled in main block via .mp-filter-pill selectors above */

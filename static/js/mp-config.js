@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var defaultConfig = {
@@ -178,6 +178,7 @@
   function mergeDeep(target, source) {
     if (!source) return target;
     for (var key in source) {
+      if (!Object.prototype.hasOwnProperty.call(source, key)) continue;
       if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
         if (!target[key]) target[key] = {};
         mergeDeep(target[key], source[key]);
