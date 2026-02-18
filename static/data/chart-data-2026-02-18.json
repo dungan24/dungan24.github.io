@@ -111,7 +111,7 @@
         null,
         20.6,
         21.2,
-        19.44
+        19.47
       ],
       "US10Y": [
         4.25,
@@ -155,7 +155,7 @@
         null,
         1443.3,
         1441.49,
-        1444.01
+        1445.45
       ],
       "BTC": [
         89462,
@@ -177,7 +177,7 @@
         null,
         69418,
         68699,
-        67564
+        67168
       ],
       "GOLD": [
         4908.8,
@@ -199,7 +199,7 @@
         null,
         5046.3,
         5008,
-        4934.8
+        4933.1
       ],
       "OIL": [
         59.36,
@@ -282,7 +282,7 @@
         "유가",
         "10년물"
       ],
-      "value": 0.01,
+      "value": 0.03,
       "status": "비동조",
       "meaning": "독립적"
     }
@@ -295,7 +295,7 @@
     "signals": [
       {
         "name": "VIX",
-        "value": "19.4",
+        "value": "19.5",
         "assessment": "✅",
         "note": "안정"
       },
@@ -324,44 +324,44 @@
       {
         "name": "헬스케어",
         "symbol": "XLV",
-        "week1": 2.16,
-        "month1": -0.28
+        "week1": 2.12,
+        "month1": -0.31
       },
       {
         "name": "산업",
         "symbol": "XLI",
         "week1": 1.54,
-        "month1": 11.27
+        "month1": 11.26
       },
       {
         "name": "금융",
         "symbol": "XLF",
-        "week1": 0.26,
-        "month1": -5.13
-      },
-      {
-        "name": "반도체",
-        "symbol": "SOXX",
-        "week1": -0.01,
-        "month1": 10.45
+        "week1": 0.38,
+        "month1": -5.01
       },
       {
         "name": "소비재",
         "symbol": "XLY",
-        "week1": -0.3,
-        "month1": -3.14
+        "week1": -0.05,
+        "month1": -2.9
       },
       {
-        "name": "테크",
-        "symbol": "XLK",
-        "week1": -0.86,
-        "month1": -3.52
+        "name": "반도체",
+        "symbol": "SOXX",
+        "week1": -0.29,
+        "month1": 10.11
       },
       {
         "name": "에너지",
         "symbol": "XLE",
-        "week1": -1.12,
-        "month1": 19.92
+        "week1": -0.83,
+        "month1": 20.22
+      },
+      {
+        "name": "테크",
+        "symbol": "XLK",
+        "week1": -1.04,
+        "month1": -3.69
       }
     ],
     "kr": [
@@ -417,18 +417,18 @@
     },
     {
       "metric": "BTC",
-      "label": "소폭 상승",
-      "changePct": 0.8
+      "label": "보합",
+      "changePct": 0.21
     },
     {
       "metric": "VIX",
       "label": "급격 불안",
-      "changePct": 11.02
+      "changePct": 11.19
     },
     {
       "metric": "USDKRW",
-      "label": "보합",
-      "changePct": 0.49
+      "label": "소폭 상승",
+      "changePct": 0.59
     }
   ],
   "keyEvents": [

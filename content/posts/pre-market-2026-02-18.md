@@ -16,11 +16,11 @@ chartData: "/data/chart-data-2026-02-18.json"
 
 - 한국 증시는 2026-02-18 휴장일 상태로 현물 거래가 없습니다.
 - **크립토**: Fear & Greed 8 (극단적 공포) ⚠️
-- 변동성: VIX 19.44 (-8.30%)
+- 변동성: VIX 19.47 (-8.16%)
 - 금리: 미 10년물 4.05% (0)
 
 > **오늘 달라진 것**
-> - VIX 5일 전 17.51 → 현재 19.44 (**+11.02%** 급등)
+> - VIX 5일 전 17.51 → 현재 19.47 (**+11.19%** 급등)
 > - 비트코인 3일 연속 ↓
 
 ---
@@ -33,10 +33,10 @@ chartData: "/data/chart-data-2026-02-18.json"
 
 핵심 뉴스로는 **"오늘의 주식 시장: 다우, S&P 500, 나스닥은 AI 기술 혼란이 완화되면서 상승세를 보였습니다. 국채 수익률은 수주 최저 수준에 가깝습니다. Palo Alto 주가 하락세; 탭에 분을 제공합니다."** 이 확인됐습니다.
 
-원/달러 환율은 1,444.01원으로 상승했습니다.
+원/달러 환율은 1,445.45원으로 상승했습니다.
 
 ### 왜 그런가
-S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19.44 수준을 유지했습니다.
+S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19.47 수준을 유지했습니다.
 
 한국 증시가 2026-02-18 휴장일이라 국내 가격 발견 기능이 멈춰, 해외 반응이 다음 거래일 심리에 더 직접 전이됩니다.
 
@@ -52,7 +52,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 가상자산 공포탐욕지수는 **8(극단적 공포)**로, 위험자산 심리의 과열/과매도 신호를 함께 점검할 필요가 있습니다.
 
 ### 행동 체크포인트
-**관측**: VIX 19.44로 정상 범위
+**관측**: VIX 19.47로 정상 범위
 **의미**: 시장 변동성이 안정적인 흐름 유지 중
 **시사점**: 휴장일 구간이라 미국장·환율·다음 거래일 일정만 확인해도 충분해요
 
@@ -64,8 +64,8 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
   - 상황: [USD] 소비자물가지수(CPI) - January 결과가 예상과 괴리
   - 대응: 발표 직후 미국 선물·달러 반응 확인 → 다음 거래일 갭 예측
   - 해제 기준: 예상 범위 내 결과는 갭 변동성 제한
-- **원/달러 1,444.01원**
-  - 상황: 원/달러가 1,444.01원에서 급변(일중 ±6원 이상)
+- **원/달러 1,445.45원**
+  - 상황: 원/달러가 1,445.45원에서 급변(일중 ±6원 이상)
   - 대응: 환율 급변 시 재개장 초반 외국인 수급 영향 큼. 관망 우선
   - 해제 기준: 일중 변동 ±3원 이내면 안정적 흐름
 
@@ -79,11 +79,11 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| S&P 500 | 6,843.22 | +7.05 | +0.10% | ↓1일 |
+| S&P 500 | 6,843.22 | +7.05 | +0.10% | - |
 | 나스닥 | 22,578.38 | +31.71 | +0.14% | - |
-| 나스닥 100 | 24,701.6 | -31.13 | -0.13% | ↓1일 |
-| 다우존스 | 49,533.19 | +32.26 | +0.07% | ↓1일 |
-| VIX (공포지수) | 19.44 | -1.76 | -8.30% | ↓2일 ⚡ 하위 9% |
+| 나스닥 100 | 24,701.6 | -31.13 | -0.13% | - |
+| 다우존스 | 49,533.19 | +32.26 | +0.07% | - |
+| VIX (공포지수) | 19.47 | -1.73 | -8.16% | ↑1일 ⚡ 하위 9% |
 | 미국 10년물 국채 | 4.05% | 0 | - | - |
 | 달러인덱스 (DXY) | 97.3 | +0.15 | +0.15% | - |
 
@@ -91,15 +91,15 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 67,564 | -222.96 | -0.33% | ↓3일 |
-| 이더리움 (ETH) | 1,988.96 | +22.08 | +1.11% | - |
+| 비트코인 (BTC) | 67,168 | -678.4 | -1.01% | ↓3일 |
+| 이더리움 (ETH) | 1,978.65 | +8.9 | +0.45% | - |
 | 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,444.01 | +3.25 | +0.23% | ↑2일 |
+| 원/달러 (USDKRW) | 1,445.45 | +4.69 | +0.33% | ↑2일 |
 
 ### 지수 선물
 
@@ -107,14 +107,14 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,898.25 | +37.75 | +0.55% |
-| 나스닥 100 선물 | 24,920.75 | +153 | +0.62% |
+| S&P 500 선물 | 6,898 | +37.5 | +0.55% |
+| 나스닥 100 선물 | 24,922 | +154.25 | +0.62% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,934.8 | +28.9 | +0.59% |
+| 국제 금 (Gold) | 4,933.1 | +27.2 | +0.55% |
 | WTI 유가 (Oil) | 63 | +0.74 | +1.19% |
 
 {{< market-charts >}}
@@ -123,18 +123,18 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-18 20:09:12","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-18 20:13:05","max_items":8} -->
 ### 글로벌
 
 1. [**오늘의 주식 시장: 다우, S&P 500, 나스닥은 AI 기술 혼란이 완화되면서 상승세를 보였습니다. 국채 수익률은 수주 최저 수준에 가깝습니다. Palo Alto 주가 하락세; 탭에 분을 제공합니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxQd2FxWDUwWTl6cVVteXprZG9NaTM0anFtRDVDdUxBdTBvY2FfbXdZRFpXUmUzdHZ2LTAyb3pWMmJ1NWdELW1jMGRLZW04dHZLcnFteUF1c2c1bUJ0akpfVnZTWDNRS1NEWTV6dzNzUE41LTdkdXBjVmNhSjQ2bkxnbUZWMVhFazVoaWEwU0NrN0tGR0JxNl9TaFM1bjZNRXZXWWxFNFBPaTBadTFDRGN2alY4bmpDOEx6UlNiNE1EdUtzODBSUmRTa2tjX2J6M0Z1TTlZSk43cFBDRkhnYXg0QWhfdndSSFZHMzFQMTYxZE5qSXpXZTR3R3RTWmktcXV5TFoyT3FKeVFQTFBNa1RXR1YyelNsZi1nbnNnU2Q0cDZuVVlaNFRxWmNQZ1RwaVNpSU1aRnc4dWpid1FhblpFM09mWk1JNFRmN0MtV0JnVGhUME5BbXpqeHNkYkdfY01jVmlQb3BVY1ZHZ1NIa0oyRUozLWtqVml4and0cTVXdzVob1VOZ04weEVwTC1HX0NhZkVBMDRHZDRkdG1mTU5wWWtna2E2LV9ZZG9iU3dVQjg3S2kwU2s0REdjUHhuUTg?oc=5)
    MarketWatch · 2026-02-18 18:47 KST · 시장 이벤트
    원문: Stock Market Today: Dow, S&P 500 and Nasdaq called higher as AI tech turmoil eases; Treasury yields near multi-week low; Palo Alto shares dip; Fed minutes on tap.
-   왜 중요한가: 금리 정책에 VIX 19.44로 반응. 변동성 확대 시 방어적 접근.
+   왜 중요한가: 금리 정책에 VIX 19.47로 반응. 변동성 확대 시 방어적 접근.
 
 2. [**트럼프 백악관은 연준의 모델이 틀렸다고 생각한다. 연준은 이에 동의하지 않습니다.**](https://news.google.com/rss/articles/CBMirANBVV95cUxQdnJWNlB6YzNlVnBTRU1SZGl4QjRTNkVHRG1teGlma1dTdHpLR1ROaVBBSHFYTndLaVV6Wkl0T1pqS0FXLTBud1Z4blRoaTJBa2VJRzRtQ0ljRDAyTlZaUWEyM0RvNzFnQzg1SUNJbFdRTVpqY0ZHNEgxRGJzamt1aWU2NzJzY1dZeW5NX2xZSHhlU012U2gwZ3dueGRQcUl3TjJ3RXdWZG5QS01XYThYVFlfX3RTb1luZlNrRGgxaDlnbnFJT2VFbzdyWW9Oc3YyWEtRRDZMa29RamIzU0E3TzVVd2xCSWcyNkRIZlAxZjdSaUlQWUgtVTIzejJYNnlCZmlmZ1BNSFA5bXQyZ2Z3bGduRjFSQU9IOVlQNnpOUUhBeHBldi1KbkdzVVJoazd2NnRtVWxUX3U4bGZrVXZfOXNfeVBfOHdwWVEwRHhNMTgyZGZvaVJFelFZMG9jeHk1bFNBTUgwdzVObHpHcjB5b1BxVXdzVEN4SXFkUVJKZkpyN2RjeTJMbzJXZldBNDdSc1dmLTVsaFhTLUdkeVRmdFUzQ1hNRVd6bE1hcg?oc=5)
    Barron's · 2026-02-18 15:30 KST · central-bank
    원문: Trump White House Thinks the Fed’s Models Are Wrong. The Fed Disagrees.
-   왜 중요한가: 금리 정책에 VIX 19.44로 반응. 변동성 확대 시 방어적 접근.
+   왜 중요한가: 금리 정책에 VIX 19.47로 반응. 변동성 확대 시 방어적 접근.
 
 3. [**인플레이션이 3%로 떨어지면서 3월 금리 인하에 대한 희망이 높아졌습니다.**](https://news.google.com/rss/articles/CBMijAFBVV95cUxNeTV4RUJZcFR5Y2JVMEE5ZDNXOUdEZnZBVXlxc0lfdExHWGp0RURfc1ZxR3BhUmhpQ000RFBycGdXTnNiWGFUc2kyVDdRSjdEMHVjT3ZwczM1UGJicEM0WjdmYTg2bW41VTFHdnhMSlBOZ2RRTjdwaTYxQnh5QjU4WnEtUjVFdkE0WF9Ncw?oc=5)
    Forbes · 2026-02-18 19:51 KST · central-bank
@@ -173,7 +173,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-18 20:09:12","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-18 20:13:05","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [영국] [GBP] CPI y/y** (D-Day)
@@ -256,7 +256,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 근거 | 값 | 판단 |
 |------|-----|------|
-| VIX | 19.4 | ✅ 안정 |
+| VIX | 19.5 | ✅ 안정 |
 | SPX 20일 | -1.0% | ⚠ 횡보 |
 | US10Y 방향 | -12bp (5일) | ⚠ 완화 기대 |
 | 크립토 심리 | 8 | ⚠ 극단적 공포 (contrarian 반등 시그널) |
@@ -271,13 +271,13 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 헬스케어 (XLV) | +2.16% | -0.28% |
-| 산업 (XLI) | +1.54% | +11.27% |
-| 금융 (XLF) | +0.26% | -5.13% |
-| 반도체 (SOXX) | -0.01% | +10.45% |
-| 소비재 (XLY) | -0.30% | -3.14% |
-| 테크 (XLK) | -0.86% | -3.52% |
-| 에너지 (XLE) | -1.12% | +19.92% |
+| 헬스케어 (XLV) | +2.12% | -0.31% |
+| 산업 (XLI) | +1.54% | +11.26% |
+| 금융 (XLF) | +0.38% | -5.01% |
+| 소비재 (XLY) | -0.05% | -2.90% |
+| 반도체 (SOXX) | -0.29% | +10.11% |
+| 에너지 (XLE) | -0.83% | +20.22% |
+| 테크 (XLK) | -1.04% | -3.69% |
 
 ### 한국 섹터 (최근 흐름)
 
@@ -297,9 +297,9 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | S&P 500 | 6,941.47 | 6,843.22 | -1.42% | 소폭 하락 |
-| 비트코인 | 67,026 | 67,564 | +0.80% | 소폭 상승 |
-| VIX | 17.51 | 19.44 | +11.02% | 급격 불안 |
-| 원/달러 | 1,437원 | 1,444.01원 | +0.49% | 보합 |
+| 비트코인 | 67,026 | 67,168 | +0.21% | 보합 |
+| VIX | 17.51 | 19.47 | +11.19% | 급격 불안 |
+| 원/달러 | 1,437원 | 1,445.45원 | +0.59% | 소폭 상승 |
 
 ## 이벤트 임팩트
 
@@ -336,7 +336,7 @@ S&P 500이 +0.10% 상승하고 나스닥이 +0.14% 상승한 가운데 VIX는 19
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-18 20:09:12 KST</span>
+  <span>생성 시각: 2026-02-18 20:13:05 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-18 20:09:12 KST</span>
+  <span>데이터 기준 시각: 2026-02-18 20:13:05 KST</span>
 </div>
