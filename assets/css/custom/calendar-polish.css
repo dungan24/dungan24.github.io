@@ -42,10 +42,7 @@
   display: none;
 }
 
-.mp-calendar__grid {
-  gap: 0.25rem;
-  padding: 1.5rem 1.5rem 0.5rem;
-}
+/* .mp-calendar__grid layout is handled in calendar.css */
 
 /* Calendar cells: subtle, consistent interaction */
 .mp-calendar__cell {
