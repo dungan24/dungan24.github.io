@@ -5,7 +5,7 @@
   var transitionDurationMs = Number(behavior.theme_transition_duration_ms || 500);
 
   // Blowfish의 appearance switcher 버튼 감지 (Desktop & Mobile)
-  const switchers = document.querySelectorAll('#appearance-switcher, #appearance-switcher-mobile');
+  var switchers = document.querySelectorAll('#appearance-switcher, #appearance-switcher-mobile');
   if (!switchers.length) return;
 
   switchers.forEach(function(switcher) {

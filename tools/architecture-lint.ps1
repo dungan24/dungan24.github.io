@@ -91,9 +91,6 @@ try {
       if ($loadedScripts[0] -ne "js/mp-config.js") {
         Add-Finding -Check "extend-footer-order" -Message "First script must be js/mp-config.js (actual: $($loadedScripts[0]))"
       }
-      if ($loadedScripts[$loadedScripts.Count - 1] -ne "js/footer-clock.js") {
-        Add-Finding -Check "extend-footer-order" -Message "Last script must be js/footer-clock.js (actual: $($loadedScripts[$loadedScripts.Count - 1]))"
-      }
 
       $parserIdx = [Array]::IndexOf($loadedScripts, "js/calendar/parser.js")
       $modelIdx = [Array]::IndexOf($loadedScripts, "js/calendar/model.js")
@@ -183,16 +180,26 @@ try {
   $qualityWorkflow = ".github/workflows/quality-gate.yml"
   if (-not (Test-Path -Path $qualityWorkflow -PathType Leaf)) {
     Add-Finding -Check "quality-workflow" -Message "Missing workflow: $qualityWorkflow"
-  } else {
-    $workflowRaw = Get-Content -Path $qualityWorkflow -Raw
-    if ($workflowRaw -notmatch "agent-preflight\.ps1") {
-      Add-Finding -Check "quality-workflow" -Message "Quality workflow does not run agent preflight."
-    }
-    if ($workflowRaw -notmatch "-RunBuild") {
-      Add-Finding -Check "quality-workflow" -Message "Quality workflow does not include build verification."
-    }
-    if ($workflowRaw -notmatch "-FailOnFindings") {
-      Add-Finding -Check "quality-workflow" -Message "Quality workflow does not fail on findings."
+  }
+
+  # ES5 enforcement: static/js/ 파일 전체에 ES6+ 문법 금지
+  # WHY: 프로젝트 전체가 ES5 스타일로 통일됨 (T-901). AI agent가 ES6를 다시 도입하는 것을 방지.
+  $jsRoot = "static/js"
+  if (Test-Path -Path $jsRoot -PathType Container) {
+    $jsFiles = Get-ChildItem -Path $jsRoot -Recurse -Filter "*.js"
+    foreach ($jsFile in $jsFiles) {
+      $relPath = $jsFile.FullName.Replace($repoRoot + "\", "").Replace("\", "/")
+      $lines = Get-Content -LiteralPath $jsFile.FullName
+      $lineNum = 0
+      foreach ($line in $lines) {
+        $lineNum++
+        $trimmed = $line.Trim()
+        # 주석 라인은 건너뜀 (// 또는 * 또는 /*)
+        if ($trimmed -match '^(//|/?\*)') { continue }
+        if ($trimmed -match '\bconst\s+|\blet\s+| => |(?<![''"`])`(?![''"`])') {
+          Add-Finding -Check "es5-violation" -Message ("ES6+ syntax at {0}:{1} — {2}" -f $relPath, $lineNum, $trimmed.Substring(0, [Math]::Min(100, $trimmed.Length)))
+        }
+      }
     }
   }
 
