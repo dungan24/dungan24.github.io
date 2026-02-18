@@ -572,7 +572,7 @@ Notes:
 ---
 
 ### T-1201
-Status: TODO
+Status: DONE
 Priority: P2
 Severity: 🟡 SHOULD
 DependsOn: T-902, T-1005, T-1103
@@ -699,7 +699,7 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 - 2026-02-18 | T-1101 | DONE | parser.js parseScheduleItem 중복 로직 리팩토링 | PASS
 - 2026-02-18 | T-1102 | DONE | render-charts.js 네임스페이스(MPCharts) 적용 | PASS
 - 2026-02-18 | T-1103 | DONE | calendar.css !important 제거 및 specificity 상향 | PASS
-<!-- 작업 완료 시 여기에 추가 -->
+- 2026-02-18 | T-1201 | DONE | calendar.css / polish.css 역할 분리 및 dead code 제거 | PASS
 
 ---
 

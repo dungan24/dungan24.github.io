@@ -2,16 +2,13 @@
 /* === Integrated Market Calendar (Fintech Style) === */
 
 .mp-calendar {
+  /* Layout & Box Model */
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   padding: 1.25rem;
-  background: var(--mp-glass-bg);
-  -webkit-backdrop-filter: var(--mp-glass-blur);
-  backdrop-filter: var(--mp-glass-blur);
-  border: 1px solid var(--mp-glass-border);
-  border-radius: var(--mp-radius-md);
-  box-shadow: var(--mp-shadow-sm);
   position: relative;
+
+  /* Visual styles are delegated to calendar-polish.css (.mp-glass-card) */
 }
 
 .mp-calendar__title {
@@ -29,7 +26,10 @@
 .mp-calendar__grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.4rem;
+  gap: 0.25rem;
+  /* Updated to match polished look */
+  padding: 1.5rem 1.5rem 0.5rem;
+  /* Moved from polish.css */
 }
 
 /* 요일 타이포그래피 (사이트 톤앤매너 통합) */
