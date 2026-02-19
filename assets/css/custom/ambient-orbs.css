@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Ambient Page Orb Layer
+   Phase 3 — Background & Regime
+
+   WHY: backdrop-filter 카드는 블러할 실질적 대상이 있어야 "프리미엄 글래스"
+        효과가 나온다. 이 파일은 모든 페이지 배경에 position:fixed로 soft
+        gradient orb 3개를 배치하여 뒤에서 컬러를 공급한다.
+
+   사용 변수: --mp-orb-color-primary, --mp-orb-color-secondary (custom.css 정의)
+   클래스명:  mp-page-orb-* (기존 mp-ambient-orb와 충돌 방지)
+   DOM 삽입: ambient-orbs.js가 body 첫 번째 자식으로 삽입
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Orb 레이어 컨테이너
+   - z-index: 0 → 콘텐츠(z-index 1+) 아래에 항상 위치
+   - pointer-events: none → 클릭/호버 이벤트 통과
+   - overflow: hidden → 뷰포트 밖으로 나가는 orb 잘림
+   -------------------------------------------------------------------------- */
+.mp-page-orb-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Orb 공통 스타일
+   -------------------------------------------------------------------------- */
+.mp-page-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: background 0.5s ease, opacity 0.5s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Orb 1: Primary — 좌상단
+   - 가장 큰 orb, 주 색상 공급원
+   -------------------------------------------------------------------------- */
+.mp-page-orb--primary {
+  top: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  filter: blur(100px);
+  background: radial-gradient(
+    circle,
+    rgba(var(--mp-orb-color-primary) / 0.18) 0%,
+    transparent 70%
+  );
+  animation: orb-float-primary 18s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Orb 2: Secondary — 우하단
+   - 보조 색상, primary와 보색 대비
+   -------------------------------------------------------------------------- */
+.mp-page-orb--secondary {
+  bottom: 10%;
+  right: -8%;
+  width: 450px;
+  height: 450px;
+  filter: blur(80px);
+  background: radial-gradient(
+    circle,
+    rgba(var(--mp-orb-color-secondary) / 0.12) 0%,
+    transparent 70%
+  );
+  animation: orb-float-secondary 24s ease-in-out infinite;
+  animation-delay: -8s;
+}
+
+/* --------------------------------------------------------------------------
+   Orb 3: Accent — 중앙
+   - 미세한 채움, 카드 뒤 컬러 밀도 보완
+   -------------------------------------------------------------------------- */
+.mp-page-orb--accent {
+  top: 40%;
+  left: 30%;
+  width: 350px;
+  height: 350px;
+  filter: blur(120px);
+  background: radial-gradient(
+    circle,
+    rgba(var(--mp-orb-color-primary) / 0.07) 0%,
+    transparent 70%
+  );
+  animation: orb-float-accent 30s ease-in-out infinite;
+  animation-delay: -15s;
+}
+
+/* --------------------------------------------------------------------------
+   Keyframes — subtle drift
+   미세한 위치 이동 + scale로 살아있는 느낌, 빠른 움직임 금지
+   -------------------------------------------------------------------------- */
+@keyframes orb-float-primary {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.97);
+  }
+}
+
+@keyframes orb-float-secondary {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(-50px, 30px) scale(1.08);
+  }
+  70% {
+    transform: translate(30px, -20px) scale(0.95);
+  }
+}
+
+@keyframes orb-float-accent {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -40px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   라이트 모드 — opacity 대폭 낮춤
+   WHY: 밝은 배경에서 0.18 opacity는 뭉치는 얼룩처럼 보임 → 섬세하게 낮춤
+   NOTE: @media prefers-color-scheme 사용 금지 (Prior decision)
+         .dark 클래스 기반 토글만 사용
+   -------------------------------------------------------------------------- */
+:root:not(.dark) .mp-page-orb--primary {
+  background: radial-gradient(
+    circle,
+    rgba(var(--mp-orb-color-primary) / 0.07) 0%,
+    transparent 70%
+  );
+}
+
+:root:not(.dark) .mp-page-orb--secondary {
+  background: radial-gradient(
+    circle,
+    rgba(var(--mp-orb-color-secondary) / 0.05) 0%,
+    transparent 70%
+  );
+}
+
+/* 라이트 모드에서 accent는 과하므로 숨김 */
+:root:not(.dark) .mp-page-orb--accent {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   모바일 (@media max-width: 640px)
+   WHY: 600px blur(100px) orb는 모바일 GPU에서 frame drop 유발
+        → 크기/blur 모두 낮춰 성능 확보
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .mp-page-orb--primary {
+    width: 300px;
+    height: 300px;
+    filter: blur(60px);
+  }
+
+  .mp-page-orb--secondary {
+    width: 220px;
+    height: 220px;
+    filter: blur(50px);
+  }
+
+  /* 모바일에서 accent 비활성 — 가장 비싼 blur(120px) 제거 */
+  .mp-page-orb--accent {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   prefers-reduced-motion
+   WHY: orb 자체는 표시하되 움직임만 제거 — 시각적 컬러 공급은 유지
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .mp-page-orb {
+    animation: none !important;
+  }
+}
