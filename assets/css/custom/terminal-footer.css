@@ -42,6 +42,7 @@
   letter-spacing: 0.1em;
   margin-bottom: 5px;
 }
+.dark .mp-f-copyright { color: #94A3B8; }
 
 .mp-f-visual-root {
   margin-top: 15px;
