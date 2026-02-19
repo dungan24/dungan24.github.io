@@ -365,11 +365,12 @@
 .mp-new-badge {
   display: inline-block;
   margin-left: 0.5rem;
-  padding: 1px 4px;
+  padding: 0 4px;
   background: var(--mp-neon-rose);
   color: white;
   border-radius: 2px;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
+  line-height: 1.4;
   vertical-align: middle;
   animation: pulse-new 2s infinite;
   text-shadow: none;

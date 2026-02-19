@@ -32,7 +32,13 @@
   
   <div class="mp-date-group" data-date="{{ $date }}">
     <div class="mp-date-label">{{ $displayDate }}</div>
-    {{ range .Pages }}
+    {{/* 슬롯 타입별 정렬: post(1) → mid(2) → pre(3) — 최신 순 */}}
+    {{ $sorted := slice }}
+    {{ range .Pages }}{{ if in .File.BaseFileName "post-market" }}{{ $sorted = $sorted | append . }}{{ end }}{{ end }}
+    {{ range .Pages }}{{ if in .File.BaseFileName "mid-day" }}{{ $sorted = $sorted | append . }}{{ end }}{{ end }}
+    {{ range .Pages }}{{ if in .File.BaseFileName "pre-market" }}{{ $sorted = $sorted | append . }}{{ end }}{{ end }}
+    {{ range .Pages }}{{ $bn := .File.BaseFileName }}{{ if and (not (in $bn "post-market")) (not (in $bn "mid-day")) (not (in $bn "pre-market")) }}{{ $sorted = $sorted | append . }}{{ end }}{{ end }}
+    {{ range $sorted }}
       {{ $regime := .Params.regime | default $defaultRegime }}
       {{ $regime = upper $regime }}
       {{ $regimeIcon := .Params.regimeIcon }}
@@ -47,7 +53,6 @@
       {{/* Summary 추출: front matter → blockquote → .Plain 순 */}}
       {{ $summary := .Params.summary | default .Description }}
       {{ if not $summary }}
-        {{/* Priority Insight: 첫 번째 blockquote(> **...**) 텍스트 추출 */}}
         {{ $bqMatch := findRE `\n> \*{0,2}[^\n\r]{5,}` .RawContent 1 }}
         {{ if $bqMatch }}
           {{ $bq := index $bqMatch 0 }}
@@ -80,16 +85,24 @@
         {{ $typeIcon = "🌙" }}
       {{ end }}
 
-      {{ $rawTime := .Date.Format "15:04" }}
-      {{ $timeLabel := $rawTime }}
-      {{ if eq $rawTime "00:00" }}
+      {{/* 생성 시각 추출: "생성 시각: YYYY-MM-DD HH:MM:SS" 패턴 */}}
+      {{ $genTime := "" }}
+      {{ $genMatch := findRE `생성 시각: \d{4}-\d{2}-\d{2} \d{2}:\d{2}` .RawContent 1 }}
+      {{ if $genMatch }}
+        {{ $gt := index $genMatch 0 }}
+        {{ $gt = replaceRE `생성 시각: \d{4}-\d{2}-\d{2} ` "" $gt }}
+        {{ $genTime = $gt }}
+      {{ end }}
+
+      {{ $timeLabel := $genTime }}
+      {{ if not $timeLabel }}
         {{ if eq $type "pre" }}{{ $timeLabel = "PRE" }}{{ end }}
         {{ if eq $type "mid" }}{{ $timeLabel = "MID" }}{{ end }}
         {{ if eq $type "post" }}{{ $timeLabel = "POST" }}{{ end }}
         {{ if eq $type "default" }}{{ $timeLabel = "DAILY" }}{{ end }}
       {{ end }}
       {{ $timeClass := "" }}
-      {{ if ne $timeLabel $rawTime }}{{ $timeClass = "is-slot" }}{{ end }}
+      {{ if not $genTime }}{{ $timeClass = "is-slot" }}{{ end }}
 
       {{ $isToday := false }}
       {{ $nowKST := now.UTC.Add (duration "hour" 9) }}
