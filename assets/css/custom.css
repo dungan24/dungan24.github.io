@@ -316,6 +316,10 @@ code, pre, .num-cell, .terminal-data {
   .prose table { font-size: 0.72rem; }
   .prose tbody td, .prose thead th { padding: 0.5rem 0.6rem; }
 
+  /* 히어로 타이틀 — 모바일 축소 */
+  .mp-heartbeat-title { font-size: 1.75rem; }
+  .mp-ecg-pulse { width: 60px; }
+
   .briefing-section {
     padding: 1rem 1rem 1.25rem;
     margin: 1.25rem 0;
@@ -356,6 +360,11 @@ code, pre, .num-cell, .terminal-data {
     padding: 0.5rem 0;
     min-height: 44px;
   }
+}
+
+/* 초소형 기기 (390px 이하) — 히어로 타이틀 추가 축소 */
+@media (max-width: 390px) {
+  .mp-heartbeat-title { font-size: 1.5rem; }
 }
 
 /* --- Prose List Bullet Fix --- */
