@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-19)
 ## Current Position
 
 Phase: 3 of 5 (Background & Regime)
-Plan: 0 of 2 in current phase
-Status: Ready to execute
-Last activity: 2026-02-19 — Phase 3 planned (2 plans, 2 waves, verified)
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-02-19 — Phase 3 Plan 01 complete (ambient orbs layer)
 
-Progress: [████░░░░░░] 40%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 2 minutes
-- Total execution time: 0.13 hours
+- Total execution time: 0.17 hours
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [████░░░░░░] 40%
 |-------|-------|-------|----------|
 | 1 - Foundation | 2 | 4 min | 2 min |
 | 2 - Icons & Navigation | 2 | 4 min | 2 min |
+| 3 - Background & Regime | 1 (of 2) | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: Plan 01-01 (2 min), Plan 01-02 (2 min), Plan 02-01 (2 min), Plan 02-02 (2 min)
+- Last 5 plans: Plan 01-01 (2 min), Plan 01-02 (2 min), Plan 02-01 (2 min), Plan 02-02 (2 min), Plan 03-01 (2 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -57,6 +58,9 @@ Recent decisions affecting current work:
 - [Phase 2 Plan 01]: 아이콘 <i> 태그에 aria-hidden=true — 인접 <span> 텍스트가 의미 전달 담당
 - [Phase 2 Plan 02]: opacity 속성은 #menu-blur 규칙에서 제외 — background-blur.js가 scroll 위치 기반 인라인 스타일로 제어
 - [Phase 2 Plan 02]: backdrop-filter !important 단축 속성으로 완전 교체 — Tailwind --tw-backdrop-blur 변수 무효화로 이중 blur 방지
+- [Phase 3 Plan 01]: page-level orb = position:fixed z-index:0, 홈 shell orb = position:absolute inside shell — 다른 역할, 충돌 없음
+- [Phase 3 Plan 01]: ambient-orbs.js는 mp-config.js 다음 로드 — 03-02 regime tinting이 MP_CONFIG.colors.regime 읽을 예정
+- [Phase 3 Plan 01]: body.firstChild 삽입 방식 — layout 템플릿 오염 없이 모든 페이지에 orb 레이어 삽입
 
 ### Pending Todos
 
@@ -70,5 +74,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Phase 3 planned. Ready to execute.
+Stopped at: Phase 3 Plan 01 complete. Resume at 03-02-PLAN.md.
+Resume file: .planning/phases/03-background-regime/03-02-PLAN.md
 Resume file: .planning/phases/03-background-regime/03-01-PLAN.md

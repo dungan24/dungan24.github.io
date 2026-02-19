@@ -30,9 +30,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Background
 
-- [ ] **BG-01**: Ambient orbs 배경 구현 (글래스 효과를 살리는 그라데이션 오브)
-- [ ] **BG-02**: Ambient orbs가 다크/라이트 모드에서 각각 적절히 표시
-- [ ] **BG-03**: Ambient orbs 애니메이션에 prefers-reduced-motion 존중
+- [x] **BG-01**: Ambient orbs 배경 구현 (글래스 효과를 살리는 그라데이션 오브)
+- [x] **BG-02**: Ambient orbs가 다크/라이트 모드에서 각각 적절히 표시
+- [x] **BG-03**: Ambient orbs 애니메이션에 prefers-reduced-motion 존중
 
 ### Regime Tinting
 
@@ -110,9 +110,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 2 | Complete |
 | NAV-02 | Phase 2 | Complete |
 | NAV-03 | Phase 2 | Complete |
-| BG-01 | Phase 3 | Pending |
-| BG-02 | Phase 3 | Pending |
-| BG-03 | Phase 3 | Pending |
+| BG-01 | Phase 3 | Complete |
+| BG-02 | Phase 3 | Complete |
+| BG-03 | Phase 3 | Complete |
 | RGME-01 | Phase 3 | Pending |
 | RGME-02 | Phase 3 | Pending |
 | NEWS-01 | Phase 4 | Pending |
