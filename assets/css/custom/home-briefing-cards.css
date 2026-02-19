@@ -125,7 +125,7 @@
 }
 
 .mp-date-group > .mp-briefing-card:last-child:nth-child(even) {
-  grid-column: 1 / -1;
+  grid-column: span 6;
 }
 
 .mp-date-label {
