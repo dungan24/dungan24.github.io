@@ -87,3 +87,76 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   transition-delay: 0s !important;
 }
+
+/* ===== Posts List Card — Cyberpunk Glassmorphism ===== */
+.article-link--card {
+  position: relative;
+  background: var(--mp-glass-bg) !important;
+  -webkit-backdrop-filter: var(--mp-glass-blur);
+  backdrop-filter: var(--mp-glass-blur);
+  border: 1px solid var(--mp-glass-border) !important;
+  border-radius: var(--mp-radius-lg) !important;
+  box-shadow: var(--mp-shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+/* HUD Corner Accents */
+.article-link--card::before,
+.article-link--card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+.article-link--card::before {
+  top: 0; left: 0;
+  border-top: 2px solid var(--mp-neon-cyan);
+  border-left: 2px solid var(--mp-neon-cyan);
+}
+.article-link--card::after {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--mp-neon-cyan);
+  border-right: 2px solid var(--mp-neon-cyan);
+}
+
+.article-link--card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), 0 8px 32px -8px rgba(0, 0, 0, 0.4);
+}
+.article-link--card:hover::before,
+.article-link--card:hover::after {
+  opacity: 0.8;
+}
+
+/* Light Mode — Posts Cards */
+:root:not(.dark) .article-link--card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(124, 58, 237, 0.15) !important;
+  box-shadow: 0 4px 16px -4px rgba(124, 58, 237, 0.08);
+}
+:root:not(.dark) .article-link--card::before {
+  border-top-color: var(--mp-neon-purple);
+  border-left-color: var(--mp-neon-purple);
+}
+:root:not(.dark) .article-link--card::after {
+  border-bottom-color: var(--mp-neon-purple);
+  border-right-color: var(--mp-neon-purple);
+}
+:root:not(.dark) .article-link--card:hover {
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.12);
+}
+
+/* Mobile — backdrop-filter 비활성 (성능) */
+@media (max-width: 640px) {
+  .article-link--card {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
