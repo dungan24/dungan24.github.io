@@ -54,9 +54,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Charts
 
-- [ ] **CHRT-01**: 차트 영역에 글래스 컨테이너 스타일 적용
-- [ ] **CHRT-02**: ECharts 팔레트를 디자인 시스템 컬러와 동기화 (params.toml 업데이트)
-- [ ] **CHRT-03**: 차트 컨테이너 다크/라이트 모드 최적화
+- [x] **CHRT-01**: 차트 영역에 글래스 컨테이너 스타일 적용
+- [x] **CHRT-02**: ECharts 팔레트를 디자인 시스템 컬러와 동기화 (params.toml 업데이트)
+- [x] **CHRT-03**: 차트 컨테이너 다크/라이트 모드 최적화
 
 ### Performance
 
@@ -122,9 +122,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CAL-01 | Phase 4 | Complete |
 | CAL-02 | Phase 4 | Complete |
 | CAL-03 | Phase 4 | Complete |
-| CHRT-01 | Phase 4 | Pending |
-| CHRT-02 | Phase 4 | Pending |
-| CHRT-03 | Phase 4 | Pending |
+| CHRT-01 | Phase 4 | Complete |
+| CHRT-02 | Phase 4 | Complete |
+| CHRT-03 | Phase 4 | Complete |
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
