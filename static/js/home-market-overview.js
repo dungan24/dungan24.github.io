@@ -27,7 +27,6 @@
   var palette = chartCfg.palette || {};
   var timeZone = calendar.timezone || "Asia/Seoul";
   var lookbackDays = Number(home.lookback_days || 7);
-  var barScale = Number(home.bar_scale_pct || 20);
   var liveClasses = home.live || {};
   var neutralSparkColor = palette.muted || "var(--color-neutral-500)";
   var chartDataPrefix = root.getAttribute("data-chart-data-prefix") || "";
@@ -178,22 +177,6 @@
             ? "var(--mp-ticker-up-spark)"
             : "var(--mp-ticker-down-spark)";
 
-        // Bar Gauge Calculation
-        // Cap width at 100% for ~3% move (scale factor 33) or ~5% (scale 20)
-        // Let's use scale 20 (5% move = 100% width) for visibility
-        var barWidth = 0;
-        if (changePct !== null && Number.isFinite(changePct)) {
-          barWidth = Math.min(Math.abs(changePct) * barScale, 100);
-        }
-        var barHtml =
-          '<div class="mp-ticker-bar-container">' +
-          '<div class="mp-ticker-bar" style="width:' +
-          barWidth +
-          "%; background-color:" +
-          changeColor +
-          '"></div>' +
-          "</div>";
-
         // T-601: count-up animation hooks (no external dependency)
         var valueHtml =
           '<span class="mp-ticker-price mp-animate-num" data-val="' +
@@ -219,7 +202,6 @@
           '">' +
           fmtChange(changePct) +
           "</span>" +
-          barHtml +
           generateSparkline(s, sparkColor) +
           "</div>";
       }

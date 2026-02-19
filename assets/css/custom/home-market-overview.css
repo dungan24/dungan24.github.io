@@ -117,32 +117,6 @@
   font-size: 0.85rem;
 }
 
-/* Ticker Bar Gauge (New Feature) */
-.mp-ticker-bar-container {
-  width: 40px;
-  height: 4px;
-  background: rgba(124, 58, 237, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  margin: 0 0.5rem;
-  flex-shrink: 0;
-  display: flex;
-}
-
-.mp-ticker-bar {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 640px) {
-  .mp-ticker-bar-container {
-    width: 24px;
-    margin: 0 0.25rem;
-  }
-}
-
 /* Live Status Pulse Dot */
 .mp-live-status {
   display: inline-block;
