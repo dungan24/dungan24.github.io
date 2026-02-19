@@ -161,7 +161,8 @@
     left: 0;
     width: 100%;
     background: rgba(10, 10, 26, 0.9);
-    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: var(--mp-glass-blur); /* was blur(16px) — var() enables mobile cascade (PERF-03) */
+    backdrop-filter: var(--mp-glass-blur);
     border-top: 1px solid rgba(124, 58, 237, 0.2);
     padding: 0.5rem 1rem 1.5rem; /* Safe area padding */
     justify-content: space-around;
@@ -204,7 +205,7 @@
 /* --- Search Modal (Blowfish Overrides) (T-703) --- */
 .search-modal-container {
   background: rgba(10, 10, 26, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
+  backdrop-filter: var(--mp-glass-blur) !important; /* was blur(16px) — var() enables mobile cascade (PERF-03) */
   border: 1px solid rgba(124, 58, 237, 0.25) !important;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) !important;
 }

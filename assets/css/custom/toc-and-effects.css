@@ -518,7 +518,14 @@ html { scroll-behavior: smooth; }
   .mp-news-card,
   .mp-post-hero,
   #TOCView,
-  .market-chart-card {
+  .market-chart-card,
+  #menu-blur,
+  #single_header,
+  .mp-briefing-meta,
+  .mp-regime-panel,
+  .mp-calendar.mp-glass-card,
+  #mp-mobile-bottom-nav,
+  .search-modal-container {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
