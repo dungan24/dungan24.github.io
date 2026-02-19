@@ -15,36 +15,37 @@ chartData: "/data/chart-data-2026-02-19.json"
 > **코스피 +3.09%, 코스닥 +4.94% 상승 마감**
 
 - 오늘 국내 증시는 강세 장세를 보이며 마감했습니다.
-- 최종 수급: 외국인 0억, 기관 0억, 개인 0억으로 마감했습니다.
+- 최종 수급: 외국인 -9,396억, 기관 +16,542억, 개인 -8,609억으로 마감했습니다.
 
 ---
 
 ## 2. 오늘의 해석
 
 ### 시장 마감 흐름
-오늘 코스피는 +3.09%, 코스닥은 +4.94%로 강세 마감했습니다. 마감 수급은 중립 수급. 미국 지수는 S&P +0.56%, 나스닥 +0.80% 흐름입니다.
+오늘 코스피는 +3.09%, 코스닥은 +4.94%로 강세 마감했습니다. 마감 수급은 외국인 매도(-9,396억)와 기관 매수(+16,542억)의 엇갈린 흐름, 개인 매도(-8,609억).
+미국 지수는 S&P -0.19%, 나스닥 -0.46% 흐름입니다.
 장후 핵심 뉴스는 "Forbes Daily: Federal Reserve Indicates Interest Rate Hike Is Possible"입니다.
 
 ### 오늘 장 핵심 동인
-왜냐하면 연준의 매파적 발언이 금리 동결 또는 인상 기조를 시사하면서 달러 강세가 나타나자, 신흥국 자금 이탈 우려가 커졌습니다.
-이러한 가운데 KOSPI는 5,677.25로 +3.09% 상승했지만, 외국인의 순매수 규모는 0원에 머물렀습니다.
-S&P 500 지수가 +0.56% 상승하는 등 미국 증시가 소폭 상승했지만, 연준의 향후 금리 정책에 대한 경계심은 여전히 시장에 영향을 주고 있습니다.
-오늘 마감 수급은 외국인 0억, 기관 0억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+왜냐하면 연준의 매파적 발언이 금리 동결 또는 인상 기조를 시사하면서 달러 강세가 나타났고, 그 결과 한국 KOSPI는 5,677.25로 상승했지만 외국인의 순매도 규모는 -9,396억 원에
+달했다.
+S&P 500 지수가 -0.19% 하락한 점을 고려하면, 미국 시장의 불안감이 신흥국 자금 이탈 압력으로 작용했을 가능성이 있으며, 이에 따라 국내 증시는 기관과 개인의 매수세에도 불구하고 제한적인
+상승에 그쳤다. 오늘 마감 수급은 외국인 -9,396억, 기관 +16,542억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
 
 ### 내일 장 관전 포인트
 내일 관전 포인트는 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다.
-그래서 미국장(S&P +0.56%, 나스닥 +0.80%)의 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보셔야 합니다.
+그래서 미국장(S&P -0.19%, 나스닥 -0.46%)의 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보셔야 합니다.
 
 ### 행동 체크포인트
 - **[USD] 소비자물가지수(CPI) - January 대응**
   - 상황: 야간 발표 결과가 예상과 괴리
   - 대응: 내일 시초가 갭 방향 예측. 선물 반응 먼저 확인
   - 해제 기준: 예상 범위 내 결과는 갭 변동성 제한
-- **미국장 연결(S&P +0.56%, 나스닥 +0.80%)**
+- **미국장 연결(S&P -0.19%, 나스닥 -0.46%)**
   - 상황: 밤사이 미국장 흐름이 현재 방향과 동일하게 지속
   - 대응: 동조 시 내일 아시아장 연속성 기대. 비중 유지/확대
   - 해제 기준: 미국장 흐름 전환(부호 반전) 시 내일 갭 무효
-- **수급 연속성(외국인 0억 중립)**
+- **수급 연속성(외국인 -9,396억 매도)**
   - 상황: 오늘 외국인 수급이 내일 시초가까지 지속
   - 대응: 수급 동조 시 추세 연장. 비중 조정 검토
   - 해제 기준: 내일 수급 전환(부호 반전) 시 추세 무효
@@ -66,44 +67,44 @@ S&P 500 지수가 +0.56% 상승하는 등 미국 증시가 소폭 상승했지�
 
 | 투자자 | 순매수 (억 원) |
 |--------|----------------|
-| 외국인 | 0 |
-| 기관 | 0 |
-| 개인 | 0 |
+| 외국인 | -9,396 |
+| 기관 | +16,542 |
+| 개인 | -8,609 |
 
 ### 프로그램매매
 
 | 구분 | 순매수 (억 원) |
 |------|----------------|
-| 차익 | 0 |
-| 비차익 | -0 |
-| 합계 | -0 |
+| 차익 | +741 |
+| 비차익 | -2,541 |
+| 합계 | -1,800 |
 
 ---
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 22:55:33","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 00:05:32","max_items":5} -->
 1. [**Forbes Daily: Federal Reserve Indicates Interest Rate Hike Is Possible**](https://news.google.com/rss/articles/CBMixwFBVV95cUxNUmFoZnJieS1HUnJ2NmZFTmxzR2lGRzFtenVGMXlHOVVobG5sSFhUUV9qaVNWMGEwLUlqcjR3LXhUdE9CSjJQb1J2TmZ6aFNvSExObmNBTFZUT2NpNjhNd2p5bmxtY0NDeHhTbkxLTXUyeGowZTF6Vkx0MG91SXFpWXRTTDZsOGlFbjVmVlJQdXJ5dlVjY2xRWnRtLXZrRjNMdm1oc0xnY1M2YXNHcG54c0gtNUlGRWoyVnNMR3BlNGdJWWxTOFZ3?oc=5)
-   22:55 KST | central-bank
+   00:05 KST | central-bank
 
-2. [**Why the Fed could deliver one final sting to your portfolio before Powell’s exit in May**](https://news.google.com/rss/articles/CBMizgNBVV95cUxPM3F4YTA2cHo4VEJESGVuSjJnX0ZyZFhwVDN2M1hFdjhiS29NdHpDQWV4YzBXQnE4NnBnQXd4RGl4LU1wbUZxaV9oRXJqM1BkbmtzR0dzRThBNmJETjFGSUxzRmRMejZPcGs3RFhFa1Ywd3dhZE9Fb2Zyb0lqcHh6eDJZQ0VKb3daNXFBLUltZFhJNWRpUTJMdTdSeVo1MmJYLVk0anZBQTFjWkdDOEQ1M3BYN3Q4MHJsdmZDUG9xcWtvcVJ1QmVjVjlYa3dUM2JnNU9pMXhZamFfRUtVenB4UWw1LUVBakFGM3hrUzJEdnZDSzF4MnhOMk8wR3VYRmxOX2dCU1doSGFJRUVrS1U2Z2lYUE0xU211eUlIMUVTcmNIU0d6M2MxTWJBOWxaaThRNTluU0x1a1hwd0FMenMtS3hkRy1DSVhSZVFWZnl1SFdWZVp4aEp6NWt1OE12OGMtQ21YRnp5dXVYcGhma09jOHJla2RqZU5pcF84SXg5UjRvUGhwakUzcHNGcXo4TkY5MUswNFlSV2FCbE1wYjU2MEV0VnhheDhuNWdLZFFYOEJFdGZOcHJqUnN5bUZfbUNFNTJjNnZYcWNPVmdDd3c?oc=5)
-   22:55 KST | central-bank
+2. [**Why the Fed could deliver one final sting to your portfolio before Powell’s exit in May**](https://news.google.com/rss/articles/CBMizgNBVV95cUxOVEM4R1ZXN2ZCeVFNTHVZWUhyMzNmV19LbEFtVk9SajNTUHZUdUQ0OW1vUDVFQmwtYmcwUTctMmZIS1hJd1ptcWJOY1MyeDZGLVNfNWtZbXUtbXZGVWFFR0hrc2dTdzdQUGZGM2VQYW1rUk15QlI2OUdFMFg4dUVUUC1Odkw2V2ZaZEtKcWRERVl5UUVZY00yMzdzSElMV0NIbWdONldmbmlnamY3SUpHUXpIU00xWnowVDVoaWdhUkhsMUJjV3pUM2lIdUFPMkVnVnJmbFk0T0lkZ0ZtN3A2STBnTjQ1aUZYY2NmYmZFVmlXWnhUdlU2VUxXQkx5eDhEQm1fUGFBOFoyWFFzVXNFbGhFaVNmeFhIaWs4UFpCU3E3MUN6N2FVR3NwRHMxSWR2LWIwUmE2UWwyWlo3VUJOQWhMV2lzcHpaeWZSUkxOX3JnZUFNZU5iSHNIOVdMZlktNDlSQXo3Y0NMSHNxYTdTWlh4NWlCdzlsa0UwVDJ3TVBXc1B6ME5oOFQyX2ZKTWtKRlppaDlvbDNtTmZLZHpQa2xfYUVWeFk0cmhWT29kYzNaZHdwZUpNTERxNjk2dENpSVJBRDN6bHU0Vjhza0E?oc=5)
+   00:05 KST | central-bank
 
-3. [**Gold Steadies in Thin Trading as Focus Turns to Fed Rate Plans**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
-   22:55 KST | 원자재
+3. [**Treasury yields move higher after data shows robust U.S. economy**](https://news.google.com/rss/articles/CBMilAFBVV95cUxQMGg4OEwyd0tlRDluYTZlaHBnbjczdHJtVXpzSkdXemJVNGlxMUhodkdmeWw1eU0zZDJlMzdaRXplZGpGajZWcG5TdDFBMGJJWlFKR0g5TXRxTXpxX3dqTENwLWNmYjI0dXRleXkyU0NoZl9IS1hrVlloQ1VacjFWQ1RxcDhIYnZESHZtZmoyb0JGLVNU0gGaAUFVX3lxTFBsd2VQckM2a055ZWktZjNFaWJFNXV4MjRCTnZjcDF6WnlCYml3QUNoR25fTTN3WUdHZDRROU9LQ2ptVmVWM3hrQWhTSEszSjRTb1g4SDlvTEp6ekZ5djRodHptVTdzc0Eza1B0U2RuQjdYV29zZjk0dU9kMkYyZkEtamZwRXFmSS1hY09WYU1Sc3R5emRUa1gwYmc?oc=5)
+   00:05 KST | 미국 매크로
 
-4. [**Gold advances on U.S.–Iran tensions as markets weigh Fed policy path**](https://news.google.com/rss/articles/CBMipAFBVV95cUxQN00yT0RPSUNNR0x3X3BOOXlCY1ZUTjBxSkFiWlVQc0JWdTJzVE5wdWlzX1NFbmRiQkppUDVrX0hod0VjWVJrakNFb2wyNVBtNV9KajBGRHNuTUpxLXlqb0VkcUxlSDM1Vi03T0JaRGJjTDdQM0xTSFAxXzFDQ1EtcExDUVlsZDQtZjZRQnpqTVhKcDU3YkhXS2NCcm1lcEllQkdVUdIBqgFBVV95cUxQWk95ZllMV0lpT1BXSDZ1V0Ftbk4wZmtpaWVwUkhWeFBXTGttZXBkdVBHOUdGRVJ5azA2al9uNHlwaDRtVG9pX01ONmhkdW1mNXUwOVp5NGdhU0xKRDRpazhtNzBtWDNXcC1Lc3UyMkZ4MHRmdXA1MFRvLS00aktRYWU3T3BiaEd3NzJKZnZHVG9iZldxdnd6YnpXVVE0U0JUTjFoTnlOOWJldw?oc=5)
-   22:55 KST | 원자재
+4. [**Gold Steadies in Thin Trading as Focus Turns to Fed Rate Plans**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
+   00:05 KST | 원자재
 
-5. [**Treasury yields move higher as investors await more economic data**](https://news.google.com/rss/articles/CBMilAFBVV95cUxQMGg4OEwyd0tlRDluYTZlaHBnbjczdHJtVXpzSkdXemJVNGlxMUhodkdmeWw1eU0zZDJlMzdaRXplZGpGajZWcG5TdDFBMGJJWlFKR0g5TXRxTXpxX3dqTENwLWNmYjI0dXRleXkyU0NoZl9IS1hrVlloQ1VacjFWQ1RxcDhIYnZESHZtZmoyb0JGLVNU0gGaAUFVX3lxTFBsd2VQckM2a055ZWktZjNFaWJFNXV4MjRCTnZjcDF6WnlCYml3QUNoR25fTTN3WUdHZDRROU9LQ2ptVmVWM3hrQWhTSEszSjRTb1g4SDlvTEp6ekZ5djRodHptVTdzc0Eza1B0U2RuQjdYV29zZjk0dU9kMkYyZkEtamZwRXFmSS1hY09WYU1Sc3R5emRUa1gwYmc?oc=5)
-   22:55 KST | 미국 매크로
+5. [**Gold advances on U.S.–Iran tensions as markets weigh Fed policy path**](https://news.google.com/rss/articles/CBMipAFBVV95cUxQN00yT0RPSUNNR0x3X3BOOXlCY1ZUTjBxSkFiWlVQc0JWdTJzVE5wdWlzX1NFbmRiQkppUDVrX0hod0VjWVJrakNFb2wyNVBtNV9KajBGRHNuTUpxLXlqb0VkcUxlSDM1Vi03T0JaRGJjTDdQM0xTSFAxXzFDQ1EtcExDUVlsZDQtZjZRQnpqTVhKcDU3YkhXS2NCcm1lcEllQkdVUdIBqgFBVV95cUxQWk95ZllMV0lpT1BXSDZ1V0Ftbk4wZmtpaWVwUkhWeFBXTGttZXBkdVBHOUdGRVJ5azA2al9uNHlwaDRtVG9pX01ONmhkdW1mNXUwOVp5NGdhU0xKRDRpazhtNzBtWDNXcC1Lc3UyMkZ4MHRmdXA1MFRvLS00aktRYWU3T3BiaEd3NzJKZnZHVG9iZldxdnd6YnpXVVE0U0JUTjFoTnlOOWJldw?oc=5)
+   00:05 KST | 원자재
 <!-- MP_BLOCK_END -->
 
 ---
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 22:55:33","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 00:05:32","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][USD][D-Day] [USD] Unemployment Claims
@@ -211,7 +212,7 @@ S&P 500 지수가 +0.56% 상승하는 등 미국 증시가 소폭 상승했지�
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-19 22:55:33 KST</span>
+  <span>생성 시각: 2026-02-20 00:05:32 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-19 22:55:33 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 00:05:32 KST</span>
 </div>
