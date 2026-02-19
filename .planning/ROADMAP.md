@@ -64,7 +64,11 @@ Plans:
   3. prefers-reduced-motion이 설정된 환경에서 orb 애니메이션이 정지된다
   4. Bull/Bear/Neutral regime에 따라 글래스 카드 배경이 미묘하게 다른 색조로 표시된다
   5. Regime 틴팅이 다크 모드와 라이트 모드 모두에서 적용된다
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Ambient orbs 전 페이지 배경 레이어 (CSS + JS + 로더 등록)
+- [ ] 03-02-PLAN.md — Regime 기반 글래스 카드 틴팅 (한국 컨벤션 색상 매핑)
 
 ### Phase 4: Component Redesign
 **Goal**: 뉴스 카드, 캘린더, 차트 컨테이너가 글래스 시스템으로 리디자인되어 통일된 프리미엄 인상을 준다
@@ -97,7 +101,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-02-19 |
 | 2. Icons & Navigation | 2/2 | Complete   | 2026-02-19 |
-| 3. Background & Regime | 0/TBD | Not started | - |
+| 3. Background & Regime | 0/2 | Planned | - |
 | 4. Component Redesign | 0/TBD | Not started | - |
 | 5. Performance & Accessibility | 0/TBD | Not started | - |
 
