@@ -228,8 +228,8 @@
 }
 
 /* ── 라이트 모드: 절반 불투명도 (흰 배경에서 0.06은 너무 진함) ── */
-:root:not(.dark) .regime-loaded .briefing-section::after,
-:root:not(.dark) .regime-loaded .mp-ticker-group::after {
+:root:not(.dark).regime-loaded .briefing-section::after,
+:root:not(.dark).regime-loaded .mp-ticker-group::after {
   background: rgba(var(--regime-color-rgb) / 0.03);
 }
 
