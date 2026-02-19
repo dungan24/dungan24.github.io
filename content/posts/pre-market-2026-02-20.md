@@ -19,8 +19,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 - 금리: 미 10년물 4.08% (0)
 - 환율: 원/달러 1,448.51 (+7.65)
 
-> **오늘 달라진 것**
-> - 비트코인 4일 연속 ↓
+
 
 ---
 
@@ -29,31 +28,31 @@ chartData: "/data/chart-data-2026-02-20.json"
 ### 무슨 일이 있었나
 미국 증시는 소폭 하락으로 마감했습니다. S&P 500 -0.28%, 나스닥 -0.31%, 다우 -0.54%.
 
-주요 소식으로는 **"금값 안정... 연준 금리 결정에 주목"** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"다우 지수·S&P 500 3일 연승 종식...나스닥 하락, 이란 긴장감에 석유 가격 급등"** 이 시장의 관심을 끌었습니다.
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
-오늘 한국장은 원/달러 1,448.51원(상승)과 한국 은행 1주 약세(-4.2%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
+오늘 한국장은 원/달러 1,448.51원(상승)과 한국 은행 1주 약세(-3.1%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
-연준 내부의 금리 인하 시점 이견이 부각되자 시장은 금리 인하 기대감을 낮추면서 위험자산 회피 심리가 커졌다.
-이러한 움직임은 나스닥 100 지수의 하락을 야기했고, 특히 고밸류에이션 성장주에 대한 투자 심리가 악화되면서 슈퍼마이크로(+8.2%)와 같은 일부 종목을 제외하고는 애플(-1.4%) 등 기술주 전반의 조정을 초래했다.
-다만, 금 가격이 안정적인 흐름을 보이는 것(NEWS_20260219_001)은 안전자산 선호 심리가 과도하게 확산되지는 않았음을 시사한다.
+연준의 금리 인하 경로에 대한 내부 이견이 공개되면서 시장은 금리 인하 시점에 대한 예측에 혼란을 겪기 시작했다.
+하지만 VIX 지수가 20.23으로 제한적인 상승에 그친 점은 투자자들이 극단적인 회피 심리를 보이지 않았음을 나타낸다.
+이러한 상황은 금리 하락 기대가 여전히 유효하다는 점을 시사하며, 기술주 중심의 나스닥 100이 0.41% 하락했지만 슈퍼마이크로(SMCI)가 8.2% 급등하는 등 섹터 간 차별화가 두드러졌다.
 
-반면, 유가 변동성이 6개월 최고 수준에 머무르는 등 에너지 시장의 불안정성은 인플레이션 압력을 지속시킬 수 있다는 우려를 낳고 있다.
-오늘 시장은 연준 관계자들의 추가 발언과 경제 지표 발표에 주목하며, 특히 VIX 지수(20.23)의 변동성을 주시하여 투자 심리가 안정될 수 있을지 확인할 필요가 있다.
-- 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 20.23가 20 아래로 내려오는지, 체크포인트 2) 금융(XLF) 1주 +0.58% 강도가 유지되는지를 먼저 보겠습니다.
+다만, 원/달러 환율이 1,448.51원으로 소폭 상승한 점은 달러 강세가 지속될 가능성을 보여주므로, 오늘 미국 10년물 국채 금리 추이와 달러인덱스(DXY)의 움직임을 면밀히 확인할 필요가 있다.
+- 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 20.23가 20 아래로 내려오는지, 체크포인트 2) 금융(XLF) 1주 +0.46% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 변동성 경계가 이어지며 방어 섹터와 현금흐름 중심 대응이 유리합니다. 대안 시나리오: VIX 진정과 함께 기술주 반등 폭이 커지면 위험자산 선호가 빠르게 회복됩니다.
 
-또한 **지정학** 관련 소식도 시장에 영향을 주고 있습니다. 긴장 완화 신호 → 안전자산 수요 감소 → 위험자산 복귀 → 증시 반등 한편, 지정학 긴장 고조 → 안전자산 선호 → 금 상승·주식 하락 → 변동성 확대
+또한 **에너지/OPEC** 관련 소식도 시장에 영향을 주고 있습니다. 유가 안정/하락 → 기업 원가 부담 완화 → 소비 여력 증가 → 경기 지지
 
-공포지수(VIX)는 20.23대로 경계 수준입니다.
+공포지수(VIX)는 20.23로 5일 전(20.6) 대비 -1.80% 변동했습니다.
 
 통계적으로 유가의 최근 변동은 6개월 기준 **상위 93%** 수준으로, 평소보다 드물게 강한 움직임입니다.
 
-현재 **유가 ↔ 10년물**가 비동조(r=+0.15)로, 독립적인 흐름입니다. 독립적
-또한 **S&P 500 ↔ BTC**도 r=-0.1 수준입니다. 독립적 움직임
+현재 **유가 ↔ 10년물**가 비동조(r=+0.18)로, 독립적인 흐름입니다. 독립적
+또한 **S&P 500 ↔ BTC**도 r=-0.13 수준입니다. 독립적 움직임
 
-패턴: **디커플링** (S&P 500↔원/달러 r=+0.04) 구간으로, 환율과 미국 증시가 독립적으로 움직이고 있습니다.
+패턴: **글로벌 반도체 랠리**가 미국과 한국에서 동시 확인되어 반도체 체인의 모멘텀 연장 가능성이 있습니다.
+패턴: **디커플링** (S&P 500↔원/달러 r=-0.01) 구간으로, 환율과 미국 증시가 독립적으로 움직이고 있습니다.
 
 ### 오늘 주목할 것
 오늘 가장 주목할 이벤트는 **[USD] 실업수당 청구건수**입니다. 이전 227K, 예상 223K.
@@ -84,22 +83,20 @@ chartData: "/data/chart-data-2026-02-20.json"
   - 해제 기준: 환율이 1,443원 이하로 내려오면 압력 완화
 
 ### 전략 시나리오 (AI 분석)
-**Market Regime: Cautious**
+**Market Regime: Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계**
 
-**단기 전략**: 관망하며 지표 확인 후 선별적 롱 포지션 준비
+**단기 전략**: 변동성 경계하며 선별적 Long 포지션 준비
 
 **확인 조건 (Confirmation Triggers)**:
-- VIX 지수가 20.0 미만으로 하락 및 안정화
-- S&P 500 지수가 20일 이동평균(-0.8%) 이상으로 반등 시작
-- 미국 10년물 국채금리가 4.08% 이하에서 추가 안정
+- VIX 지수 20.00 하회 시 (현재 20.23)
+- S&P 500이 횡보 구간을 상향 돌파하며 유의미한 상승 유지 시
+- 미국 10년물 국채 금리 4.00% 이하 안정화 시
 
 **무효화 기준 (Invalidation Rules)**:
-- VIX 지수가 22.0 이상으로 재상승 시 → 포지션 조정/해소
-- 미국 10년물 국채금리가 4.2% 이상으로 급등 시 → 포지션 조정/해소
+- VIX 지수 22.00 이상 급등 시 → 관망 및 포지션 해소
+- 지정학적 리스크 심화로 유가 추가 급등 시 → 포지션 조정/해소
 
-현재 시장은 'Cautious' 국면으로, 주요 지표 확인을 위한 관망세와 변동성 경계가 지배적입니다. VIX 지수는 20.23으로 경계 수준에 머물러 있으며, S&P 500은 20일 기준으로 -0.8% 횡보세를 보이고 있습니다. 미국 10년물 국채금리는 4.08% 수준에서 5일간 0bp 변동으로 안정적인 모습을 보이고 있으나, 곧 있을 연준 금리 결정에 대한 주목도가 높습니다.
-
-단기적으로는 관망세를 유지하며 연준의 통화정책 방향에 대한 명확한 시그널을 기다리는 것이 중요합니다. 금값 안정 소식은 긍정적이나, 달러인덱스(DXY) 97.8과 원/달러 환율 1,448.51원 등은 여전히 글로벌 유동성과 신흥국 통화에 대한 압력을 시사합니다. 향후 VIX가 20.23 미만으로 하락하고 S&P 500이 의미 있는 반등을 시작할 경우, 선별적인 롱 포지션을 고려할 수 있습니다. 한국 증시는 원/달러 환율 1,448.51원과 같은 외부 변수에 민감하게 반응하므로, 환율 동향을 주시하며 전략을 수립해야 합니다.
+현재 시장은 'Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계' 국면입니다. VIX 지수는 20.23으로 변동성에 대한 경계감이 여전하며, S&P 500은 최근 20일간 -1.3%의 횡보세를 보였습니다. 미국 10년물 국채 금리는 4.08%로 안정적이나, 최근 5일간 +2bp 소폭 상승했습니다. 이란 긴장감 고조로 인한 석유 가격 급등 뉴스는 인플레이션 압력과 지정학적 리스크를 동시에 부각시키며 투자심리를 위축시키고 있습니다. 이러한 상황에서는 과도한 방향성 베팅보다는 주요 지표의 추이를 면밀히 관찰하며, 리스크 관리에 중점을 둔 선별적인 접근이 필요합니다. 원/달러 환율이 1,448.51원 수준을 유지하고 있어, 한국 증시는 글로벌 변동성에 더욱 민감하게 반응할 수 있습니다.
 
 <!-- OPINION_ZONE_END -->
 
@@ -111,27 +108,27 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 | 항목 | 종가 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| S&P 500 | 6,861.89 | -19.42 | -0.28% | ↓1일 |
+| S&P 500 | 6,861.89 | -19.42 | -0.28% | - |
 | 나스닥 | 22,682.73 | -70.91 | -0.31% | - |
-| 나스닥 100 | 24,797.34 | -101.53 | -0.41% | ↓1일 |
-| 다우존스 | 49,395.16 | -267.5 | -0.54% | ↓1일 |
-| VIX (공포지수) | 20.23 | +0.61 | +3.11% | ↑2일 |
+| 나스닥 100 | 24,797.34 | -101.53 | -0.41% | - |
+| 다우존스 | 49,395.16 | -267.5 | -0.54% | - |
+| VIX (공포지수) | 20.23 | +0.61 | +3.11% | - |
 | 미국 10년물 국채 | 4.08% | 0 | - | - |
-| 달러인덱스 (DXY) | 97.83 | +0.13 | +0.14% | - |
+| 달러인덱스 (DXY) | 97.83 | +0.12 | +0.13% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,759 | +460.64 | +0.69% | ↓4일 |
-| 이더리움 (ETH) | 1,939.68 | -1.16 | -0.06% | - |
+| 비트코인 (BTC) | 66,847 | +427.82 | +0.64% | ↑1일 |
+| 이더리움 (ETH) | 1,942.48 | -4.47 | -0.23% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,448.51 | +7.65 | +0.53% | ↓1일 |
+| 원/달러 (USDKRW) | 1,448.51 | +7.65 | +0.53% | - |
 
 ### 지수 선물
 
@@ -155,45 +152,45 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 07:30:12","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 07:54:15","max_items":8} -->
 ### 글로벌
 
-1. [**금값 안정... 연준 금리 결정에 주목**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
-   Bloomberg · 2026-02-20 05:21 KST · 원자재
-   원문: Gold Steadies in Thin Trading as Focus Turns to Fed Rate Plans
+1. [**다우 지수·S&P 500 3일 연승 종식...나스닥 하락, 이란 긴장감에 석유 가격 급등**](https://news.google.com/rss/articles/CBMi2gNBVV95cUxPZEFFWlhmTERzOFZ0Ni1SdjNmUXlrR1ZCalVPUXNXV0NPZnlOM0I1dzVmOVp0UzZMbkxpVWtyb1lhcFhWNjliVDVLQnh6ckNxcWc1S25VNHRLX0w0YVVTMXV3OG1jb3FUWW4zYTJ6X3I2WEJPRjJUMDY3UTd3N1h0S0dxUXBpRFV4TnlhTDdHcWdxRWg4SUM5YlhkTzJXQmNMdmJqTjF4NkxwS1F5OG5wcnZfOEJVYnNTeUpra043bDlwbV90UllGNzhGaGFhQmZWbmItLS1YNnduaHMyaFV2NWxlNDRxWHJBNFRfZHF3ZEJqUVJtNzU0aFBlSmxDTEh4RUxHSTVsZEZra1dMV3hMVlRhb3hyQjAzZTZFVDJXMmd6aVpyVzh4Y2JZUy1yRDBZaDRTMkxNWV9SRHZYNEd3RWkyNFZmbXNmcVR2eXpGUnBsRzJkZWZjNXp5cy1aaWZ6Sk5STmFpenY4dFQwSmY2LTdhWmxuZzRxWlQwTHBUX0N2R1p6M3lwWWdQZTRzRjhOS094NlZ4REtJM2RIZzJFVEdCLTYtX19QQjNLeTNsNjA2cnpGR3BpTVdyZEpRazRSU094eGMtTEdhZ3VTbEtyZEEzajgwbUswcUE?oc=5)
+   MarketWatch · 2026-02-20 06:23 KST · 시장 이벤트
+   원문: Stock Market News, Feb. 19, 2026: Dow and S&P 500 end a 3-day winning streak, Nasdaq finishes the day lower; oil prices jump due to Iran tensions
+   왜 중요한가: 유가 급변은 인플레이션과 에너지 의존 기업 실적에 직접 영향을 미칩니다.
+
+2. [**연준 위원회 내 금리 인하 경로에 대한 분열 드러남**](https://news.google.com/rss/articles/CBMisgFBVV95cUxNaU5VZFBBQ0puLVktQms5OXlKSFRYMkpnR1J4MzFWU2dKN2hJUTk4QlphRHI0QlpBT2dhT1o3eXhod3JnakxrMEpISlNRbHhaY2lVaENCXzJzbFVXeW52bUhEd0ZkYktmWjBTUGRnc3VfNGRha2lrMVVGMVdla0NjdUpacVdDcFlkZ0Nld2hvdTVUbEU1UndiRlR4UlFqNC1CUW9lM3pXSjMxbUhtRjdfa2RB?oc=5)
+   Baltimore Sun · 2026-02-20 03:54 KST · central-bank
+   원문: Minutes reveal Federal Reserve division over path of interest rate cuts
    왜 중요한가: 금리 정책에 VIX 20.23로 반응. 변동성 확대 시 방어적 접근.
 
-2. [**S&P 500, 역사적인 전환을 맞아 주식시장 재편의 시대 도래**](https://news.google.com/rss/articles/CBMiwwNBVV95cUxQR09MeERIZm94WVpWSl9zMTdqUWYtSU90R0gwWXV3ZjlmOEV4d25fRWhwSU1ZN0N4YUFIb1h3U1J1V1RDdXlrZXY2VWd3WXJhaTVPNDMwRTZBMnd0cnhuamVacVhCeGxPRnFra3FPZ21wWFotV2hYSkFaSVMwU1RoNWUtMjlXT2JXOHJsNURRcUN4MnNacWRtaG95M3pHM3NORVhWQm5aS2tvQ2U3Vl9MMjZXVGJ1QUloejRCU080cGFrWUszX3gwb291RHdHR0VIeXFRMHl1Tmc4LU5FZ0hzczBmLUpiRXJiRjAxYjUxMklIazJGT2hISmplMlVaakJUMGlCQ3FQY1pKM0JyUDZsUjFCVVY2UWhQRy0xNkNpWTBvN29zcnlXWHBES1d0YUUxenZmUHdNNEo2ZzRzUnhKOHlKRV9aNHU2ZDRzTmtWa0NNZ1d1WXRzTkV6SXJfNklYWWJlMElSZGl5WU5fRXZHRnhsZmcxblRxaUpHVmxFZklJTEtNVVFTNzlwWmFyZ1o3emJfeDRQbnp5SllWWVBwRUZzcmNjX3lKcHM1WkJBZkJUdjA3WnZXWjRsX0pzUVNHblNF?oc=5)
+3. [**금값 안정... 연준 금리 결정에 주목**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
+   Bloomberg.com · 2026-02-20 05:21 KST · 원자재
+   원문: Gold Steadies in Thin Trading as Focus Turns to Fed Rate Plans
+   왜 중요한가: 시장 기대 금리 경로와 실제 연준 행동 간 괴리를 점검합니다.
+
+4. [**S&P 500, 역사적인 전환을 맞아 주식시장 재편의 시대 도래**](https://news.google.com/rss/articles/CBMiwwNBVV95cUxOUkRUUlJVQUJtb183MVJ0am5ZODVod0hHUlNIZkcwLVhqcnJhQ1E0Y2tXRVBrekthMnFCX0dqN1R6VlR3bEQzejZtaE00anRRV0t0RUZneHNfY2FmR2ZEcUdGLVMyMTZZdlpXYUl2SS1zM09BeFJNSkdZYWJPeWVYZWJ5Y2NwRDdrYTFsRWNKLTJyRkoxWHFDWVBIZ3N5ODV3T3otekhkYzdfdkkybFpqUk9nR2x4a3d3Rm9mbF9DNmFRZXRhb25GOC1mNC15cnZuNVEzVHdfeVRyWnpRblZWaTNENDlocUdyVHQxSkZ0bDhuX3hXWFVZQ3NNYnBxbW5QeWExX0xNVE5zY1cyWVpUeXJLX1ZrOWNlNU8wNW55NmcwTlRpZkFES2F6Z1lfcFpkbTZQME5RMklFQTN6c0dQVVdEdUhLODlVdDh4SFFsX2ZZeW9LVmstcDQ1ZmhYaktmYWs4Z0ZzRGluY0k3V3FQVDNaMEo5djhUUnNncjRKb3dmMmFuQm5pOEdhT2VUSGJvOHJoaXRDaGoydng1c054RXdmM2tnd0Y3eThCVE5UMHRjLTY0UFBFb1lHbER2NGUwU0Jr?oc=5)
    MarketWatch · 2026-02-20 06:12 KST · 시장 이벤트
    원문: The S&P 500 is undergoing a historic shift that could reshape the stock market
    왜 중요한가: 당일 가격 변동성과 리스크 프리미엄에 직접 연결될 가능성이 큰 이슈입니다.
 
-3. [**트럼프 tariffs가 중국에 효과를 보이지만, 미국 소규모 기업에 막대한 손실을 입히고 있다.**](https://news.google.com/rss/articles/CBMiowFBVV95cUxOZHEtSWVqVnNxd3pZby1sS2NxSVhoLTNIeGpsUWYzTHE1Z0Q1NDRPTGFObS1EY3pZUDE5NU5xTkRRNl9GT2tRTTB2UEp4WU9nRXlQaFdmTTluMGdBbmQ0eVlXdlNINm55RHJTQm11UFhvai1pc2ZxSUxqSkdHLUdNRElYeUp1eDZrVUVkaTZjcmphM1ltUHVtRG45T05RSU9HYkNZ?oc=5)
+5. [**트럼프 tariffs가 중국에 효과를 보이지만, 미국 소규모 기업에 막대한 손실을 입히고 있다.**](https://news.google.com/rss/articles/CBMiowFBVV95cUxOZHEtSWVqVnNxd3pZby1sS2NxSVhoLTNIeGpsUWYzTHE1Z0Q1NDRPTGFObS1EY3pZUDE5NU5xTkRRNl9GT2tRTTB2UEp4WU9nRXlQaFdmTTluMGdBbmQ0eVlXdlNINm55RHJTQm11UFhvai1pc2ZxSUxqSkdHLUdNRElYeUp1eDZrVUVkaTZjcmphM1ltUHVtRG45T05RSU9HYkNZ?oc=5)
    Fortune · 2026-02-20 02:18 KST · 지정학
    원문: JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American business
    왜 중요한가: 지정학 리스크 고조는 안전자산(금·달러) 선호와 위험자산 회피를 유발합니다.
 
-4. [**연준 위원회 내 금리 인하 경로에 대한 분열 드러남**](https://news.google.com/rss/articles/CBMisgFBVV95cUxNaU5VZFBBQ0puLVktQms5OXlKSFRYMkpnR1J4MzFWU2dKN2hJUTk4QlphRHI0QlpBT2dhT1o3eXhod3JnakxrMEpISlNRbHhaY2lVaENCXzJzbFVXeW52bUhEd0ZkYktmWjBTUGRnc3VfNGRha2lrMVVGMVdla0NjdUpacVdDcFlkZ0Nld2hvdTVUbEU1UndiRlR4UlFqNC1CUW9lM3pXSjMxbUhtRjdfa2RB?oc=5)
-   Baltimore Sun · 2026-02-20 03:54 KST · central-bank
-   원문: Minutes reveal Federal Reserve division over path of interest rate cuts
-   왜 중요한가: 시장 기대 금리 경로와 실제 연준 행동 간 괴리를 점검합니다.
-
-5. [**미국 경제 성장세 지속...국채 수익률 변동 미미**](https://news.google.com/rss/articles/CBMilAFBVV95cUxQMGg4OEwyd0tlRDluYTZlaHBnbjczdHJtVXpzSkdXemJVNGlxMUhodkdmeWw1eU0zZDJlMzdaRXplZGpGajZWcG5TdDFBMGJJWlFKR0g5TXRxTXpxX3dqTENwLWNmYjI0dXRleXkyU0NoZl9IS1hrVlloQ1VacjFWQ1RxcDhIYnZESHZtZmoyb0JGLVNU0gGaAUFVX3lxTFBsd2VQckM2a055ZWktZjNFaWJFNXV4MjRCTnZjcDF6WnlCYml3QUNoR25fTTN3WUdHZDRROU9LQ2ptVmVWM3hrQWhTSEszSjRTb1g4SDlvTEp6ekZ5djRodHptVTdzc0Eza1B0U2RuQjdYV29zZjk0dU9kMkYyZkEtamZwRXFmSS1hY09WYU1Sc3R5emRUa1gwYmc?oc=5)
-   CNBC · 2026-02-19 19:40 KST · 미국 매크로
-   원문: Treasury yields are little changed after data shows robust U.S. economy
-   왜 중요한가: 섹터 순환과 수급 변화의 방향을 확인하는 중간 강도의 신호입니다.
-
-6. [**트럼프 무역세 효과에 의문을 던진다.**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxPT0o5Y3JJRDVkalR5ZXc0OHNKSE83Z1lBSWw1SDlvMzJuZzFrNXc4VHo0NWtuZUt1bzlKY1JLeGhfaG9laGpLaHFnQ19lenhFRm8wTEVmdnliVE1uci1reUNLLWlENjNPeG9nbUIyYVQ4bXpRREJnYjgxc09CbTNxTktmMHRtV0pBaXVPOWtFU0xkZjdFYlpsaHBKY09od2VCUTFCZm9qQW5vaW90eHAxM013a0NvMmt4TEpKVzJ2eHlDMzNkTG8ycng5cFAxT0JDSEHSAdIBQVVfeXFMTUZGZGEtVjl3NmNvMTE3WEgyaXFadGJJWDdWbHZBM0c5QmNfTXNFbXIxdHdSNkFCb2lhZkJnVE5qVjFWclNiaWd5c01fU1BZeURqd2YzM1J6VjhidEFBMUZoRnh6dnlmR1RwcUk4bG9BUkhpZDBaVmNTbnhfRzBVdnB2cTBCOTc2N293UVZIQ1BZaGtBN2JSblE1S21jXy1aODFZbGw3UmoyYjVGMUhoX1dPZkpxeG5CYThVTDc0Y0RHN2hXdDRsZGtFMlhmVHJ0WUR3?oc=5)
-   South China Morning Post · 2026-02-20 02:03 KST · 지정학
-   원문: US trade deficit widens sharply in December, testing Trump tariff claims
-   왜 중요한가: 무역 환경 모니터링용 참고 자료입니다.
+6. [**트럼프 정책 역전에 따른 전기차 부문 6천500억 달러 가치 손실**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPVnhxeXM3U25YcWtQcnpkTUlfd2JLQUx2U3B0ZHBqMUxNbUNOWHVXWDBqeHY3N0JLSnNKU3c0bWYzcXFudUtMaVRpMDVpS0FpSWxlcnE0OW10NlRPdU5KV01acnY0QkxVRXJCdWFJOWg3Rm9MUlNJV0dwQmRWYTRMdTNlTUdXMXRvcFpaTEVFMWw5R0MzaE1Kck42blJ0TjIzVGZIUXlmNWFTclNDSVJIeENXMNIBuAFBVV95cUxNenU5bVU5R0tSbjRjZ0xFUDJ2bllJMFR6aGpvU2RhaFNuVHhMVTl6bXdaNk84SXJoV3VMdmJhZ19vTE85MU4weThlTnJsYms3cWNwRTFjdEJUYWpqZE1mbVNSLWtzVXBNRnF6bVhPQXlJdDY3SXZ2Y3RJb1BfOTUta0ltckRvaUNpZDdpRlE2ME8zeVhyNW5GUXIyT1Utay16TlZFZXNYOTRmV2JoODdweVpGZUtmaHpp?oc=5)
+   Crude Oil Prices Today | OilPrice.com · 2026-02-20 07:00 KST · 원자재
+   원문: Trump Policy Reversal Sparks $65 Billion Dollar Bleed in EV Sector
+   왜 중요한가: 환율 1,448.51원(상승) 흐름. 외국인 수급 영향 가능.
 <!-- MP_BLOCK_END -->
 
 ---
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 07:30:12","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 07:54:15","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [미국] [USD] Unemployment Claims** (D-Day)
@@ -278,8 +275,8 @@ chartData: "/data/chart-data-2026-02-20.json"
 | 근거 | 값 | 판단 |
 |------|-----|------|
 | VIX | 20.2 | ⚠ 경계 |
-| SPX 20일 | -0.8% | ⚠ 횡보 |
-| US10Y 방향 | 0bp (5일) | ✅ 안정 |
+| SPX 20일 | -1.3% | ⚠ 횡보 |
+| US10Y 방향 | +2bp (5일) | ✅ 안정 |
 | 크립토 심리 | 9 | ⚠ 극단적 공포 (contrarian 반등 시그널) |
 
 ## 시장 동조화(연관성 높은 지수들의 패턴 매칭) <!-- collapsed -->
@@ -292,32 +289,35 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 헬스케어 (XLV) | +1.78% | +0.30% |
-| 산업 (XLI) | +0.98% | +9.86% |
-| 금융 (XLF) | +0.58% | -5.34% |
-| 에너지 (XLE) | +0.50% | +18.26% |
-| 소비재 (XLY) | +0.24% | -4.22% |
-| 반도체 (SOXX) | +0.23% | +12.58% |
-| 테크 (XLK) | -0.57% | -1.73% |
+| 에너지 (XLE) | +1.80% | +19.73% |
+| 산업 (XLI) | +1.65% | +10.40% |
+| 반도체 (SOXX) | +0.81% | +9.73% |
+| 금융 (XLF) | +0.46% | -4.93% |
+| 헬스케어 (XLV) | +0.38% | +1.47% |
+| 테크 (XLK) | +0.29% | -2.57% |
+| 소비재 (XLY) | -0.33% | -5.07% |
 
 ### 한국 섹터 (최근 흐름)
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 바이오 | +0.40% | -20.78% |
-| 에너지 | -0.14% | +2.58% |
-| 반도체 | -0.75% | +3.54% |
-| 자동차 | -0.76% | +3.24% |
-| IT | -0.98% | -1.17% |
-| 2차전지 | -1.24% | +1.46% |
-| 은행 | -4.19% | +10.34% |
+| 2차전지 | +2.61% | +5.68% |
+| 바이오 | +2.33% | -20.35% |
+| 에너지 | +2.20% | +3.66% |
+| 자동차 | +0.20% | -2.12% |
+| 반도체 | +0.18% | +6.53% |
+| IT | +0.05% | +1.00% |
+| 은행 | -3.11% | +10.08% |
 
 
 ## 최근 흐름 (5일)
 
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
-| S&P 500 | 6,832.76 | 6,861.89 | +0.43% | 보합 |
+| S&P 500 | 6,836.17 | 6,861.89 | +0.38% | 보합 |
+| 비트코인 | 69,418 | 66,847 | -3.70% | 약세 전환 |
+| VIX | 20.6 | 20.23 | -1.80% | 소폭 안정 |
+| 원/달러 | 1,443.3원 | 1,448.51원 | +0.36% | 보합 |
 
 ## 이벤트 임팩트
 
@@ -353,7 +353,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 07:30:12 KST</span>
+  <span>생성 시각: 2026-02-20 07:54:15 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-20 07:30:12 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 07:54:15 KST</span>
 </div>

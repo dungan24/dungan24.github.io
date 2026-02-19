@@ -7,7 +7,7 @@
     var config = window.MP_CONFIG || {};
     var calConfig = config.calendar || {};
     var timeZone = calConfig.timezone || 'Asia/Seoul';
-    var periodDays = calConfig.period_days || { pm10: 10, pm20: 20, pm30: 30 };
+    var periodDays = calConfig.period_days || { pm5: 5, pm10: 10, pm20: 20 };
 
     function getEventStatus(event, now) {
       if (event.status === '예정' || event.status === '발표' || event.status === '마감') {
