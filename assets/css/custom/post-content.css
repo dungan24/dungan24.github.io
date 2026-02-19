@@ -15,7 +15,7 @@
 }
 
 .prose blockquote::before {
-  content: "PRIORITY_INSIGHT";
+  content: "INSIGHT";
   position: absolute;
   top: -10px;
   left: 10px;
