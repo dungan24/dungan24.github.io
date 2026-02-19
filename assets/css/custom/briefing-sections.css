@@ -127,8 +127,7 @@
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0 2rem;
   background: var(--mp-glass-bg);
-  -webkit-backdrop-filter: var(--mp-glass-blur);
-  backdrop-filter: var(--mp-glass-blur);
+  /* backdrop-filter removed — post-hero.css is the authoritative file for .mp-post-hero blur (PERF-02 dedup) */
   border: 1px solid var(--mp-glass-border);
   border-left: 4px solid var(--regime-color, #7C3AED);
   box-shadow: var(--mp-shadow-sm);

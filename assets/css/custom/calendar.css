@@ -376,12 +376,12 @@
 
 .mp-upcoming__content {
   flex: 1;
-  background: rgba(30, 41, 59, 0.4);
+  background: rgba(30, 41, 59, 0.6);
   border: 1px solid rgba(124, 58, 237, 0.15);
   border-radius: 12px;
   padding: 0.8rem 1rem;
   transition: transform 0.2s ease, background 0.2s ease;
-  backdrop-filter: blur(4px);
+  /* backdrop-filter removed — nested inside .mp-calendar.mp-glass-card which already has blur (PERF-02) */
 }
 
 .mp-upcoming__item:hover .mp-upcoming__content {
