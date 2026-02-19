@@ -48,7 +48,11 @@ Plans:
   2. 다크 모드와 라이트 모드 모두에서 네비게이션 텍스트/링크가 충분한 대비비로 읽힌다
   3. 모바일(768px 이하)에서 네비게이션이 사용 가능한 형태로 표시된다
   4. 기존 인라인 SVG/텍스트 아이콘이 Phosphor Icons으로 교체되어 있다
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Phosphor Icons v2 CDN 통합 + 이모지 아이콘 교체
+- [ ] 02-02-PLAN.md — Frosted glass 헤더 CSS 오버라이드 + 네비게이션 가독성
 
 ### Phase 3: Background & Regime
 **Goal**: 글래스 카드 뒤에 블러할 대상(ambient orbs)이 생기고 regime 상태가 글래스 색감에 반영된다
@@ -92,7 +96,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-02-19 |
-| 2. Icons & Navigation | 0/TBD | Not started | - |
+| 2. Icons & Navigation | 0/2 | Planned | - |
 | 3. Background & Regime | 0/TBD | Not started | - |
 | 4. Component Redesign | 0/TBD | Not started | - |
 | 5. Performance & Accessibility | 0/TBD | Not started | - |
