@@ -118,6 +118,15 @@ enableCodeCopy = true
       CAUTIOUS = 55
       RISK_OFF = 30
       PANIC = 10
+    # Chart palette — MUST stay in sync with assets/css/custom.css CSS variables
+    # primary = --mp-neon-purple (#7C3AED)
+    # cyan    = --mp-neon-cyan   (#00F0FF)
+    # pink    = --mp-neon-pink   (#FF3366) → --mp-color-up (dark mode success/상승)
+    # blue    = --mp-neon-blue   (#3388FF) → --mp-color-down (dark mode danger/하락)
+    # green   = --mp-neon-green  (#00FF88)
+    # yellow  = --mp-neon-yellow (#FFD600)
+    # NOTE: --mp-neon-rose (#F43F5E) is a SEPARATE CSS variable, NOT used in ECharts palette
+    # success_light = --mp-color-up (light mode), danger_light = --mp-color-down (light mode)
     [market_pulse.charts.palette]
       primary = "#7C3AED"
       cyan = "#00F0FF"

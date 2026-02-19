@@ -240,8 +240,6 @@
   flex-direction: column;
   gap: 0.5rem;
   background: var(--mp-glass-bg);
-  -webkit-backdrop-filter: var(--mp-glass-blur);
-  backdrop-filter: var(--mp-glass-blur);
   border: 1px solid var(--mp-glass-border);
   border-radius: var(--mp-radius-md);
   padding: 1rem 1.25rem;
@@ -269,6 +267,52 @@
   border-radius: 2px;
   border: 1px solid rgba(124, 58, 237, 0.2);
   margin-bottom: 0.5rem;
+}
+
+/* Category accent colors on source badge */
+.mp-news-card.is-cat-market .mp-news-card__source {
+  color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.25);
+}
+.mp-news-card.is-cat-macro .mp-news-card__source {
+  color: var(--mp-neon-purple);
+  /* default value — explicit declaration for maintainability */
+}
+.mp-news-card.is-cat-commodity .mp-news-card__source {
+  color: var(--mp-neon-yellow);
+  background: rgba(255, 214, 0, 0.1);
+  border-color: rgba(255, 214, 0, 0.25);
+}
+.mp-news-card.is-cat-central-bank .mp-news-card__source {
+  color: var(--mp-neon-rose);
+  background: rgba(244, 63, 94, 0.1);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+.mp-news-card.is-cat-corporate .mp-news-card__source {
+  color: var(--mp-neon-green);
+  background: rgba(0, 255, 136, 0.1);
+  border-color: rgba(0, 255, 136, 0.25);
+}
+.mp-news-card.is-cat-kr-macro .mp-news-card__source {
+  color: var(--mp-neon-blue);
+  background: rgba(51, 136, 255, 0.1);
+  border-color: rgba(51, 136, 255, 0.25);
+}
+.mp-news-card.is-cat-crypto .mp-news-card__source {
+  color: #E879F9;
+  background: rgba(232, 121, 249, 0.1);
+  border-color: rgba(232, 121, 249, 0.25);
+}
+.mp-news-card.is-cat-fx .mp-news-card__source {
+  color: var(--mp-neon-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+.mp-news-card.is-cat-geopolitical .mp-news-card__source {
+  color: #FB923C;
+  background: rgba(251, 146, 60, 0.1);
+  border-color: rgba(251, 146, 60, 0.25);
 }
 
 .mp-news-card__headline {
@@ -332,6 +376,43 @@
   color: var(--mp-neon-purple);
   background: rgba(124, 58, 237, 0.06);
   border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* Light mode category badge overrides — darker/saturated variants for readability */
+:root:not(.dark) .mp-news-card.is-cat-market .mp-news-card__source {
+  color: #0891B2;
+  background: rgba(8, 145, 178, 0.08);
+  border-color: rgba(8, 145, 178, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-commodity .mp-news-card__source {
+  color: #B45309;
+  background: rgba(180, 83, 9, 0.08);
+  border-color: rgba(180, 83, 9, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-central-bank .mp-news-card__source {
+  color: #BE123C;
+  background: rgba(190, 18, 60, 0.08);
+  border-color: rgba(190, 18, 60, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-corporate .mp-news-card__source {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  border-color: rgba(5, 150, 105, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-kr-macro .mp-news-card__source {
+  color: #2563EB;
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-crypto .mp-news-card__source {
+  color: #A21CAF;
+  background: rgba(162, 28, 175, 0.08);
+  border-color: rgba(162, 28, 175, 0.2);
+}
+:root:not(.dark) .mp-news-card.is-cat-geopolitical .mp-news-card__source {
+  color: #C2410C;
+  background: rgba(194, 65, 12, 0.08);
+  border-color: rgba(194, 65, 12, 0.2);
 }
 
 .mp-news-card__original {

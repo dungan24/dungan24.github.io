@@ -347,3 +347,20 @@
 }
 
 /* Light mode overrides handled in main block via .mp-filter-pill selectors above */
+
+/* Light mode: event status overrides (CAL-02, CAL-03) */
+:root:not(.dark) .mp-upcoming__item.is-status-closed {
+  opacity: 0.6;
+}
+:root:not(.dark) .mp-upcoming__item.is-status-closed .mp-upcoming__dot-line::before {
+  background: #94A3B8;
+  box-shadow: none;
+}
+:root:not(.dark) .mp-upcoming__item.is-status-released .mp-upcoming__dot-line::before {
+  background: #059669;
+  box-shadow: 0 0 4px rgba(5, 150, 105, 0.3);
+}
+:root:not(.dark) .mp-upcoming__item.is-status-scheduled .mp-upcoming__dot-line::before {
+  background: #0891B2;
+  box-shadow: 0 0 4px rgba(8, 145, 178, 0.3);
+}

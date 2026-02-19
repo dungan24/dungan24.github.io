@@ -490,6 +490,26 @@
   background: rgba(192, 132, 252, 0.12);
 }
 
+/* Event status visual differentiation */
+.mp-upcoming__item.is-status-closed {
+  opacity: 0.5;
+}
+.mp-upcoming__item.is-status-closed .mp-upcoming__dot-line::before {
+  background: var(--mp-text-muted, #64748B);
+  box-shadow: none;
+}
+
+.mp-upcoming__item.is-status-released .mp-upcoming__dot-line::before {
+  background: var(--mp-neon-green);
+  box-shadow: 0 0 6px var(--mp-neon-green);
+}
+
+.mp-upcoming__item.is-status-scheduled .mp-upcoming__dot-line::before {
+  /* default cyan — already styled in calendar-polish.css, 명시적 유지 */
+  background: var(--mp-neon-cyan);
+  box-shadow: 0 0 6px var(--mp-neon-cyan);
+}
+
 /* ===== Light Mode Overrides for Calendar ===== */
 :root:not(.dark) .mp-upcoming__date-text {
   background: #E0F2FE;
