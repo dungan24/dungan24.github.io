@@ -19,8 +19,8 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Icons
 
-- [ ] **ICON-01**: Phosphor Icons v2 CDN 통합 (jsDelivr, extend-head-uncached.html에 추가)
-- [ ] **ICON-02**: 기존 인라인 SVG/텍스트 아이콘을 Phosphor 아이콘으로 교체
+- [x] **ICON-01**: Phosphor Icons v2 CDN 통합 (jsDelivr, extend-head-uncached.html에 추가)
+- [x] **ICON-02**: 기존 인라인 SVG/텍스트 아이콘을 Phosphor 아이콘으로 교체
 
 ### Navigation
 
@@ -105,8 +105,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUN-05 | Phase 1 | Complete |
 | FOUN-06 | Phase 1 | Complete |
 | FOUN-07 | Phase 1 | Complete |
-| ICON-01 | Phase 2 | Pending |
-| ICON-02 | Phase 2 | Pending |
+| ICON-01 | Phase 2 | Complete |
+| ICON-02 | Phase 2 | Complete |
 | NAV-01 | Phase 2 | Pending |
 | NAV-02 | Phase 2 | Pending |
 | NAV-03 | Phase 2 | Pending |
