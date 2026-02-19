@@ -525,7 +525,9 @@ html { scroll-behavior: smooth; }
   .mp-regime-panel,
   .mp-calendar.mp-glass-card,
   #mp-mobile-bottom-nav,
-  .search-modal-container {
+  .search-modal-container,
+  .article-link--card,
+  .mp-pagination__card {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }

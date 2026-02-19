@@ -1,0 +1,36 @@
+{{ if .Params.showPagination | default (.Site.Params.article.showPagination | default true) }}
+  {{ if or .NextInSection .PrevInSection }}
+    {{ $next := .NextInSection }}
+    {{ $prev := .PrevInSection }}
+    {{ if .Params.invertPagination | default (.Site.Params.article.invertPagination | default false) }}
+      {{ $next = .PrevInSection }}
+      {{ $prev = .NextInSection }}
+    {{ end }}
+    <nav class="mp-pagination" aria-label="Post navigation">
+      {{/* Previous */}}
+      <div class="mp-pagination__slot mp-pagination__slot--prev">
+        {{ with $prev }}
+          <a href="{{ .RelPermalink }}" class="mp-pagination__card">
+            <span class="mp-pagination__dir">&larr; PREV</span>
+            <span class="mp-pagination__title">{{ .Title | emojify }}</span>
+            {{ if gt (.Date.Year) 1 }}
+              <span class="mp-pagination__date">{{ .Date.Format "2006-01-02" }}</span>
+            {{ end }}
+          </a>
+        {{ end }}
+      </div>
+      {{/* Next */}}
+      <div class="mp-pagination__slot mp-pagination__slot--next">
+        {{ with $next }}
+          <a href="{{ .RelPermalink }}" class="mp-pagination__card mp-pagination__card--next">
+            <span class="mp-pagination__dir">NEXT &rarr;</span>
+            <span class="mp-pagination__title">{{ .Title | emojify }}</span>
+            {{ if gt (.Date.Year) 1 }}
+              <span class="mp-pagination__date">{{ .Date.Format "2006-01-02" }}</span>
+            {{ end }}
+          </a>
+        {{ end }}
+      </div>
+    </nav>
+  {{ end }}
+{{ end }}
