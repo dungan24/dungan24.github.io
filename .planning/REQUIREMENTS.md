@@ -48,9 +48,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Calendar
 
-- [ ] **CAL-01**: 캘린더 컴포넌트를 글래스 카드 스타일로 리디자인
-- [ ] **CAL-02**: 이벤트 상태 시각화 개선 (지남/진행중/예정)
-- [ ] **CAL-03**: 캘린더 다크/라이트 모드 최적화
+- [x] **CAL-01**: 캘린더 컴포넌트를 글래스 카드 스타일로 리디자인
+- [x] **CAL-02**: 이벤트 상태 시각화 개선 (지남/진행중/예정)
+- [x] **CAL-03**: 캘린더 다크/라이트 모드 최적화
 
 ### Charts
 

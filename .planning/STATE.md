@@ -9,17 +9,17 @@ See: .planning/PROJECT.md (updated 2026-02-19)
 
 ## Current Position
 
-Phase: 3 of 5 (Background & Regime) — COMPLETE
+Phase: 4 of 5 (Component Redesign) — Plan 02 complete
 Plan: 2 of 2 in current phase — COMPLETE
-Status: Phase 3 complete. Ready to begin Phase 4.
-Last activity: 2026-02-19 — Phase 3 Plan 02 complete (regime tinting)
+Status: Phase 4 Plan 02 complete. Calendar event status CSS + light mode overrides.
+Last activity: 2026-02-19 — Phase 4 Plan 02 complete (calendar status CSS)
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 2 minutes
 - Total execution time: 0.17 hours
 
@@ -30,9 +30,10 @@ Progress: [██████░░░░] 60%
 | 1 - Foundation | 2 | 4 min | 2 min |
 | 2 - Icons & Navigation | 2 | 4 min | 2 min |
 | 3 - Background & Regime | 2 | 5 min | 2.5 min |
+| 4 - Component Redesign | 2 | ~2 min | ~1 min |
 
 **Recent Trend:**
-- Last 5 plans: Plan 01-02 (2 min), Plan 02-01 (2 min), Plan 02-02 (2 min), Plan 03-01 (2 min), Plan 03-02 (3 min)
+- Last 5 plans: Plan 02-01 (2 min), Plan 02-02 (2 min), Plan 03-01 (2 min), Plan 03-02 (3 min), Plan 04-02 (1 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -64,6 +65,9 @@ Recent decisions affecting current work:
 - [Phase 03-background-regime]: KR-convention color tables in ambient-orbs.js only — mp-config.js US colors untouched for badge/TOC theming
 - [Phase 03-background-regime]: mp:regime-ready CustomEvent replaces polling — same render() frame dispatch eliminates US→KR color flash
 - [Phase 03-background-regime]: .regime-loaded CSS class gate prevents violet flash on pages without regime data
+- [Phase 04-02]: is-status-closed opacity 0.6 in light mode (vs 0.5 dark) — white backgrounds need more visual presence
+- [Phase 04-02]: Light mode dot colors use saturated Tailwind values (#059669, #0891B2) — neon colors unreadable on white
+- [Phase 04-02]: renderer.js untouched — class injection was already correct, only CSS targeting rules were missing
 
 ### Pending Todos
 
@@ -77,4 +81,4 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 03-background-regime 03-02-PLAN.md. Phase 3 complete. Resume at Phase 4.
+Stopped at: Completed 04-component-redesign 04-02-PLAN.md. Phase 4 Plan 02 complete. CAL-01/02/03 done.
