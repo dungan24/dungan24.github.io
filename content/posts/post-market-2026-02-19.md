@@ -24,17 +24,19 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ### 시장 마감 흐름
 오늘 코스피 +3.09%, 코스닥 +4.94%로 꽤 큰 상승 움직임이 나왔습니다.
-기관이 약 1조 7천억 사들이고 외국인은 약 9천억 빠지면서 개인은 약 9천억 넘게 빠졌습니다 미국 쪽은 S&P -0.35%, 나스닥 -0.43% 흐름이에요.
+기관이 약 1조 7천억 사들이고 외국인은 약 9천억 빠지면서 개인은 약 9천억 넘게 빠졌습니다 미국 쪽은 S&P -0.41%, 나스닥 -0.39% 흐름이에요.
 장후 눈에 띄는 뉴스는 "JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American
 business"이었습니다.
 
 ### 오늘 장 핵심 동인
-왜냐하면 원자재/금 이슈가 장마감 해석의 핵심 축이었습니다.
-금 가격 상승 → 인플레 헤지 수요 증가 → 안전자산 선호 신호 한편, 금 가격 하락 → 위험자산 선호 전환 → 주식 시장으로 자금 이동 오늘 마감 수급은 외국인 -9,396억, 기관
-+16,542억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+왜냐하면 어휴, 오늘 장 마감하고 보니 머리가 좀 복잡하네요. 금 가격이 좀 오락가락하거든요.
+금값이 오르면서 인플레이션 걱정 때문에 안전자산 찾으려는 심리가 커졌는데, 동시에 금값이 살짝 내려가면서 위험자산 선호 심리도 같이 나타난 거 같아요.
+그래서 코스피는 3% 넘게 올랐지만, 미국 S&P 500은 오히려 살짝 빠졌어요. 외국인들이 국내 주식 약 9천억 원을 팔았는데, 기관이 1조 6천억 원 넘게 사면서 간신히 버틴 느낌이에요.
+코스닥은 외국인 매수세에 한 달 새 20%나 뛰었으니, 좀 조심해야 할 것 같죠? 오늘 마감 수급은 외국인 -9,396억, 기관 +16,542억으로 확인됐습니다.
+그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
 
 ### 내일 장 관전 포인트
-내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.35%, 나스닥 -0.43%)이 바로 흔들릴 수 있거든요.
+내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.41%, 나스닥 -0.39%)이 바로 흔들릴 수 있거든요.
 그래서 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보세요.
 
 ### 행동 체크포인트
@@ -42,7 +44,7 @@ business"이었습니다.
   - 상황: 결과가 시장 예상치와 크게 다르면 밤사이 미국 선물부터 흔들립니다
   - 대응: 내일 시초가 갭 방향을 예측하고 선물 반응을 먼저 확인하세요
   - 해제 기준: 예상 범위 안에서 나오면 갭 변동성은 제한적입니다
-- **미국장 연결(S&P -0.35%, 나스닥 -0.43%)**
+- **미국장 연결(S&P -0.41%, 나스닥 -0.39%)**
   - 상황: 밤사이 미국장이 지금 방향 그대로 흘러갑니다
   - 대응: 동조가 이어지면 내일 아시아장도 연속성을 기대할 수 있어요. 비중 유지 또는 확대 검토
   - 해제 기준: 미국장 흐름이 뒤집히면(부호 반전) 내일 갭 시나리오는 무효입니다
@@ -88,7 +90,7 @@ business"이었습니다.
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 02:43:53","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 02:48:22","max_items":5} -->
 ### 글로벌
 
 
@@ -156,7 +158,7 @@ business"이었습니다.
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 02:43:53","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 02:48:22","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][USD][D-Day] [USD] Unemployment Claims
@@ -251,7 +253,7 @@ business"이었습니다.
 ## 출처
 
 - 한국투자증권 Open API | https://openapi.koreainvestment.com:9443
-- Yahoo Finance | https://finance.yahoo.com
+- Yahoo Finance | https://finance.yahoo.com, https://news.google.com/rss (13건)
 - CoinGecko | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me | https://api.alternative.me/fng/
 - Google News RSS | https://news.google.com/rss
@@ -260,25 +262,13 @@ business"이었습니다.
 - ForexFactory Calendar | https://www.forexfactory.com/calendar
 - Static Economic Calendar | file://static-calendar.json
 - Yahoo Finance Historical | https://finance.yahoo.com
-- Yahoo Finance | https://news.google.com/rss/articles/CBMigAFBVV95cUxORDRQUmpCQlZobEtPUWN2c3hyNFMxbHNQWTljaTI0UGR5UHdhd0dQWE1ZdWdtR1NtUFhHc0JEN0NmVngtNVZDTU9wOTJ0ekxaakIwZmg3ZnhINVR1SnFjMVV2UUFiNm5fNmlCaDdiYTV4NGpWY0MwS2c5ejRVSkpOdQ?oc=5
-- GuruFocus | https://news.google.com/rss/articles/CBMipwFBVV95cUxPLUpMVnl2aE45dEdFVld4Q19iaGl1SFR0aGowaHZiLU5KYmlEMjVtbFU4d0YwVWNXRzNKZ2hEZUh0YjZYMXlYV1pVZkdyZW5wekhISDJlTzFLNDZNcG11MGVNaTRPNzhJR19BV2xmam9MQV82M3l3bFhSallkUkp5SndJZzd4SVRHQ09wdjZuRkItZWF3YU9KTEowdzZYMW1xUlpScHhERQ?oc=5
-- Finviz | https://news.google.com/rss/articles/CBMirgFBVV95cUxOOTZnV21LS2xJQUxMc2tQQjNfVktVN3VZOUE5WmdQM3lLTzVFSjROOVhhX2RNbTZfZUVfakMtNUJ0dXNzeGQ1MGVseE5vQjd4UHcyR2Z1Y3J1a2F3MHJaTlh0NmFfZVZtSFN3RWpZaUxaWEhJS2F1RmZ6QzJLQWVhV1RDR2FocWZwTy1KdkZjRFBLVncyRXlTZEZfQmZzckI4YmpDNGNFbjEyVG9lTXc?oc=5
-- Yahoo Finance | https://news.google.com/rss/articles/CBMihAFBVV95cUxOVnNyMDJ6QnFxdjRDb3BPOFBEdXdrbUpyS2pPZGxBQ2JtMFFsODZ6U0l1ZHNVWkFZQlZWVF8ycEpPS19CRGlhYlpfTk5mM3JBOUJYSnVNTzVRTXdyTHh3SVczMWJLZzV0aEtZWEZ2R0FDT3ViLUJ0cnJEdzZxOUUzS2Vwd2k?oc=5
-- Yahoo Finance | https://finance.yahoo.com/quote/005930.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/000660.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/373220.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/207940.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/005380.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/000270.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/068270.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/105560.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/055550.KS
-- Yahoo Finance | https://finance.yahoo.com/quote/005490.KS
+- GuruFocus | https://news.google.com/rss
+- Finviz | https://news.google.com/rss
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 02:43:53 KST</span>
+  <span>생성 시각: 2026-02-20 02:48:22 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 02:43:53 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 02:48:22 KST</span>
 </div>
