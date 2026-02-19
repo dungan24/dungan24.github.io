@@ -12,15 +12,14 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **달러인덱스 97.71(+0.57%) 급등, 원/달러 1,440.86원, 크립토 극단적 공포(8) — 에너지/OPEC**
+> **원/달러 1,451.52원(+10.66원) 급등, 외국인 수급 주목, 크립토 극단적 공포(9) — 금리/연준**
 
-- **달러**: DXY 97.71 (+0.57%) ↑ ⚡
-- **크립토**: Fear & Greed 8 (극단적 공포) ⚠️
+- **환율**: 원/달러 1,451.52원 (+10.66원) ↑ ⚡
+- **크립토**: Fear & Greed 9 (극단적 공포) ⚠️
 - 변동성: VIX 19.62 (-3.30%)
 - 금리: 미 10년물 4.08% (+0.03)
 
-> **오늘 달라진 것**
-> - 비트코인 4일 연속 ↓
+
 
 ---
 
@@ -31,28 +30,29 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 주요 소식으로는 **"Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다."** 이 시장의 관심을 끌었습니다.
 
-**국내**: **미국 FOMC 1월 의사록 공개** (한국경제 증권), **“17억집 가진 사람이 기초연금?”…정부, 지급대상 축소안 검토** (매일경제 경제)
-가상자산 시장은 공포탐욕지수 **8(극단적 공포)**으로 바닥권 탐색 중입니다.
+**국내**: **설 연휴 쉬어간 코스피지수 향방은…반도체株·외국인 수급 주목 [오늘장 미리보기]** (한국경제 증권), **미국 FOMC 1월 의사록 공개** (한국경제 증권)
+가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
-오늘 한국장은 원/달러 1,440.86원(상승)과 한국 2차전지 1주 약세(-2.7%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
+오늘 한국장은 원/달러 1,451.52원(상승)과 한국 2차전지 1주 약세(-2.7%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
-미국 10년물 금리 상승은 투자 심리를 위축시킬 수 있지만, 뉴스에서 언급된 것처럼 AI 및 기술주 혼란이 완화되면서 나스닥 100 지수가 상대적으로 강한 상승세를 보였다.
-다만, 달러인덱스가 97.7로 소폭 상승하면서 원/달러 환율이 1,440.86원으로 상승한 점은 국내 투자 심리에 부담을 줄 수 있다.
-유가 상승(4.5% 이상)은 에너지 섹터(XLE)에 긍정적으로 작용하면서 기업 원가 부담을 완화하고 소비 여력을 증가시켜 경기 지지 효과를 가져왔다.
+미국 10년물 금리 상승은 연준의 매파적 발언과 맞물려 시장의 긴장감을 높였다.
+이러한 금리 상승은 달러 강세로 이어졌고, 그 결과 원/달러 환율이 상승하면서 신흥국 자금 이탈 우려를 자극했다.
+하지만 나스닥 100 지수가 0.80% 상승하면서 기술주 중심의 강세가 나타났는데, 이는 금리 상승에도 불구하고 성장 기대감이 여전히 존재함을 시사한다.
 
-하지만 VIX 지수가 19.62로 안정적인 수준을 유지하고 있어, 시장의 변동성 확대 가능성은 제한적이다.
-오늘 확인할 체크포인트는 미국 10년물 금리 추이와 달러인덱스 변화를 주시하며, 성장주와 가치주 간의 상대 강도 변화를 살펴볼 필요가 있다.
-- 그래서 오늘은: 에너지/OPEC 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 에너지(XLE) 1주 +0.50% 강도가 유지되는지를 먼저 보겠습니다.
+특히 엔비디아와 아마존의 상승세는 투자 심리가 위축되지 않았음을 보여준다.
+다만, 캐터필러의 하락은 경기 둔화 우려가 여전히 남아있음을 나타낸다.
+오늘 시장은 연준의 추가적인 발언과 경제 지표 발표에 주목해야 하며, 특히 원/달러 환율의 변동성을 주시하며 위험 관리 전략을 점검해야 한다.
+- 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 금융(XLF) 1주 +0.58% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 지수 혼조와 종목별 차별화가 이어지며 추세 확인 장세가 지속됩니다. 대안 시나리오: 한 방향 모멘텀이 강화되면 혼조 구간이 종료되고 추세 매매 구간으로 전환됩니다.
 
-또한 **금리/연준** 관련 소식도 시장에 영향을 주고 있습니다. 연준 매파적 발언 → 금리 동결/인상 기조 → 달러 강세 → 신흥국 자금 이탈
+또한 **에너지/OPEC** 관련 소식도 시장에 영향을 주고 있습니다. 유가 안정/하락 → 기업 원가 부담 완화 → 소비 여력 증가 → 경기 지지
 
 공포지수(VIX)는 19.62대로 안정 수준입니다.
 
-달러인덱스(DXY)는 97.71로 +0.57% 상승했습니다.
+통계적으로 원/달러의 최근 변동은 6개월 기준 **상위 95%** 수준으로, 평소보다 드물게 강한 움직임입니다.
 
-현재 **유가 ↔ 10년물**가 비동조(r=+0.14)로, 독립적인 흐름입니다. 독립적
+현재 **유가 ↔ 10년물**가 비동조(r=+0.15)로, 독립적인 흐름입니다. 독립적
 또한 **S&P 500 ↔ BTC**도 r=-0.1 수준입니다. 독립적 움직임
 
 패턴: **디커플링** (S&P 500↔원/달러 r=0) 구간으로, 환율과 미국 증시가 독립적으로 움직이고 있습니다.
@@ -65,7 +65,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 현재 시장 국면은 **Cautious** 상태로, 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계
 
-가상자산 공포탐욕지수는 **8(극단적 공포)**. 역사적으로 이 구간에서 단기 반등 확률이 높지만, 추세 전환과는 별개입니다.
+가상자산 공포탐욕지수는 **9(극단적 공포)**. 역사적으로 이 구간에서 단기 반등 확률이 높지만, 추세 전환과는 별개입니다.
 
 ### 행동 체크포인트
 **관측**: VIX 19.62로 정상 범위
@@ -76,14 +76,14 @@ chartData: "/data/chart-data-2026-02-19.json"
   - 상황: [USD] 소비자물가지수(CPI) - January 결과가 시장 예상과 크게 괴리
   - 대응: 발표 직후 지수 선물·환율 급변 시 포지션 재점검
   - 해제 기준: 예상 범위 내 결과는 즉각 대응보다 흐름 관찰
-- **크립토 극단적 공포(8)**
-  - 상황: 공포탐욕지수가 8에서 10 이하로 진입하거나 3일 이상 저점 유지
+- **크립토 극단적 공포(9)**
+  - 상황: 공포탐욕지수가 9에서 10 이하로 진입하거나 3일 이상 저점 유지
   - 대응: 역사적 과매도 구간. 단기 반등 확률 높으나 분할 접근
   - 해제 기준: 지수가 30 이상으로 반등하면 과매도 해제
-- **원/달러 레벨(1,440.86원)**
-  - 상황: 원/달러가 1,440.86원 기준 1,447원 돌파 또는 추가 상승
+- **원/달러 레벨(1,451.52원)**
+  - 상황: 원/달러가 1,451.52원 기준 1,462원 돌파 또는 추가 상승
   - 대응: 외국인 수급 악화 가능성. 대형주 비중 축소 검토
-  - 해제 기준: 환율이 1,437원 이하로 내려오면 압력 완화
+  - 해제 기준: 환율이 1,444원 이하로 내려오면 압력 완화
 
 ### 전략 시나리오 (AI 분석)
 **Market Regime: Cautious**
@@ -109,37 +109,37 @@ chartData: "/data/chart-data-2026-02-19.json"
 | 다우존스 | 49,662.66 | +129.47 | +0.26% | - |
 | VIX (공포지수) | 19.62 | -0.67 | -3.30% | - |
 | 미국 10년물 국채 | 4.08% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 97.71 | +0.56 | +0.57% | - |
+| 달러인덱스 (DXY) | 97.7 | -0.01 | -0.01% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,271 | -1,186.25 | -1.79% | ↓4일 |
-| 이더리움 (ETH) | 1,946.03 | -45.73 | -2.35% | - |
-| 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
+| 비트코인 (BTC) | 66,489 | -957.44 | -1.44% | ↑1일 |
+| 이더리움 (ETH) | 1,957.03 | -34.84 | -1.78% | - |
+| 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,440.86 | +0.1 | +0.01% | - |
+| 원/달러 (USDKRW) | 1,451.52 | +10.66 | +0.74% | ↑1일 ⚡ 상위 5% |
 
 ### 지수 선물
 
-> ↗ 본장 +0.56% 마감 → 선물 +0.16% 반등 중 (Basis: +0.16%)
+> ↗ 본장 +0.56% 마감 → 선물 +0.13% 반등 중 (Basis: +0.13%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,892.5 | -1.75 | -0.03% |
-| 나스닥 100 선물 | 24,947.75 | -8.25 | -0.03% |
+| S&P 500 선물 | 6,890 | -4.25 | -0.06% |
+| 나스닥 100 선물 | 24,935.5 | -20.5 | -0.08% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | 4,996 | -13.5 | -0.27% |
-| WTI 유가 (Oil) | 64.9 | -0.15 | -0.23% |
+| 국제 금 (Gold) | 4,985.3 | -24.2 | -0.48% |
+| WTI 유가 (Oil) | 65.01 | -0.04 | -0.06% |
 
 {{< market-charts >}}
 
@@ -147,10 +147,10 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 08:10:09","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 09:43:15","max_items":8} -->
 ### 글로벌
 
-1. [**Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxPSUVHQ2NNVjZyLVhsWkJITkxhbFJDS2g2SEE4YTRIU3AxM2t1U0ZQSHdEMTZIcllRZmlGRVZrWDBINmFXWlE4aWtUVjFZZXM1Y0pPUjZxMmpjcWN3VEhzYXdpMTlOU1ZtLWtUMDdZZ2lsS2JqRjhPVEVTVDZ0cVVZRFVGR3V0bG9Pc3k1YUNzbWdkS2dNWUloUFAyZUtNR2hHUnZ5OUM5SHNKVGQwVFEybUJ0Zmo1dm1aaXUyczY3Wk85ZlFMRl84dUVQbnhzR3FBbXBzdmUtc0I2cnk0V1AxSDJiSTZudGNxRFBDXzM3S05BblpGaWsyLWZUanhxMXM5N0dHbWppejRWMjc0N2ZFZjNJUkVxa0VqWFdUYVI3cHgzRHBRR082djM2c0t3RXF2U24tTkZjSFlUSkgxSm83a2pWdHdaTlhyQk15Wm15d0hDM2NDcXFBem5NeDE4b2ZsNVBPQWFWV2pCemZFTjBSQmk0QjlteTRsVzBNeGdON0QwTGxTcVh2SkVocnMxaWU4NnQ2ZFA3SFlnMGJmU1NzN2xwM2pyTVhFbURSZEFLYzBHMGFkM2JfNEhnRVNsSEk?oc=5)
+1. [**Stock Market News, 2026년 2월 18일: Dow, S&P 500은 3회 연속 상승세를 유지하고 AI 및 기술 혼란이 완화되면서 Nasdaq은 상승했습니다. 원유는 4.5% 이상 급등했습니다.**](https://news.google.com/rss/articles/CBMivwNBVV95cUxNaHJyS3E0ZmtsTEV2WWtMakNvSTlGS1d4YzBJYTJReWppZDE1UzVKalRENks3NHNVWFc0Rjh1RlZZTXRMekpWdWlieG8xVWpTa2Uxb1FkNER0MU42eER6QzlqSFFrTEJWTVpmWVRqaVFpZ1hHZ0l1X2ZrcGJDLXhaUWFCSjlfTEhIMDNLRzZ4eFlXd05xMHptd1R6VkI1QW92N1pKaHVETHJlM0Z1VlBKQzdXV2xCN2lEM0t3MktUN0UzbUdJenYxbS1IT28xbTZhNWJhdGdTRm1KbWZfb0haSHdPbGJPaFF5R2poVTJpcTNIYWNrZ18taGRYeEZLUUVnb2ZpdFBYZEFicGN2RlBiZS16a0dGU0hXbDdHX2xrb1dnQVpGdTRWSDZKSVQzLXk2QlpjeWd0TkZJMmxxRXVSNUdtd1hEeFNlU2l6MlZaVlJJSmpyQ19BWV9mRUM3c0RUdENyOEJnYzJTRU1ldUNiVTNmaEp0N3c5NDM3YXdKVGZDX0NHUTlNOHBtRFM1cGd4a2dXbnozRl81a081WGdid2RsLWFRcnBTSVpvbFNNNGlEY1M0ZllySk4wWmx5aFU?oc=5)
    MarketWatch · 2026-02-19 06:15 KST · 시장 이벤트
    원문: Stock Market News, Feb. 18, 2026: Dow, S&P 500 secure third straight session of gains, Nasdaq rises as AI and tech turmoil eases; crude oil spikes by more than 4.5%.
    왜 중요한가: 유가 급변은 인플레이션과 에너지 의존 기업 실적에 직접 영향을 미칩니다.
@@ -160,28 +160,32 @@ chartData: "/data/chart-data-2026-02-19.json"
    원문: Fed says last month's 'rate checks' were at Treasury's request
    왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
 
-3. [**연준 관계자들은 지난 회의에서 금리 인상 시나리오를 논의했습니다.**](https://news.google.com/rss/articles/CBMijAFBVV95cUxQY2pYLXcxUFpnOHB0Sm90aTg2V3pMQ0RlY2JqRWdKclRIUm1jcVZCdUFxU1ZLX2VfYmpxTlJYQUtaWmt1SnNLel9XckN4dk1HaHMtQk5Pek0tOWpZaVFXZXFPNkk1Q2JsTUNSQmtNcUZ2eE8wZ1QxN1pBNTZmZEJfUFc3UWtSME9EXzNEZw?oc=5)
+3. [**초점이 연준 금리 계획으로 바뀌면서 금 거래가 계속 유지됨**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
+   Bloomberg · 2026-02-19 08:31 KST · 원자재
+   원문: Gold Steadies in Thin Trading as Focus Turns to Fed Rate Plans
+   왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
+
+4. [**연준 관계자들은 지난 회의에서 금리 인상 시나리오를 논의했습니다.**](https://news.google.com/rss/articles/CBMijAFBVV95cUxQY2pYLXcxUFpnOHB0Sm90aTg2V3pMQ0RlY2JqRWdKclRIUm1jcVZCdUFxU1ZLX2VfYmpxTlJYQUtaWmt1SnNLel9XckN4dk1HaHMtQk5Pek0tOWpZaVFXZXFPNkk1Q2JsTUNSQmtNcUZ2eE8wZ1QxN1pBNTZmZEJfUFc3UWtSME9EXzNEZw?oc=5)
    NBC News · 2026-02-19 07:15 KST · central-bank
    원문: Federal Reserve officials discussed interest rate hike scenarios at their last meeting
    왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
 
-4. [**연준 관계자들은 인플레이션 목표 달성 과정이 '불균일'할 것이라고 경고했습니다.**](https://news.google.com/rss/articles/CBMicEFVX3lxTE1DZ01xUmF1Njh5VXFIc0dQckJISkZCM0cxQzg1cWxHQU5XT0E0aXUtcTV6WWRFNzZDTm9oNFlBY3NMWkM3QWxYX2JOY2k4UnM5Nmw4aDI2VDBTb05LT2NwdjdON1htYlh1MjZnUWREWWQ?oc=5)
-   Financial Times · 2026-02-19 04:25 KST · central-bank
-   원문: Federal Reserve officials warn progress towards inflation goal will be ‘uneven’
-   왜 중요한가: 물가 지표에 10년물 4.08%(상승) 반응. 금리 경로 재조정 가능성.
-
-5. [**오늘의 시장: Moderna의 반등; 석유와 금의 점프**](https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ1kyX3BZdHRXYXFQZkxZb0hGZm1aR1ZqeGZPOGFWRk5wall4Mkw3T1ZsTjF1ZHYwZzdvS0UxNzVFbC16b0wzbEQxeWhWLWVLSUQySXJRelRoenM2SU9TV09CWjkzVk5DSDhVaDFZbTk4SUdJd1hYanI4ckZVb0FDak9SaHNFeWhkVmZJYWdxcw?oc=5)
-   GuruFocus · 2026-02-19 07:41 KST · 원자재
-   원문: Market Today: Moderna rebounds; oil and gold jump
-   왜 중요한가: 에너지 섹터 수급 변화와 원가 압박 여부를 확인합니다.
+5. [**백악관 고문은 연준 관세 연구 작성자들이 '훈련'을 받아야 한다고 말했습니다.**](https://news.google.com/rss/articles/CBMirAFBVV95cUxQTFp1QllwYkM4bmw1bUxoRFNkRUtyU3dfcGhORy1sVkhsMF9NNkNGWlV4ZGc3cUIxbHdTRWJBd1hxUXJxYzIzM3pjMnU5LVAxNjFZd2tBOFBUbXZ4cVpnYXRLd0ItY3BMYThHc2NnRjlXMGUxdDBueGR5LVpEM2ZGUHotRnF0UDdiaG1xeGZmTV9GNHpyMmJNWGltc2dzUUJ5S084RW9nVG1xYkhk?oc=5)
+   USA Today · 2026-02-19 06:46 KST · 지정학
+   원문: White House adviser says Fed tariff study authors should be 'disciplined'
+   왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
 
 ### 국내
 
-1. [**미국 FOMC 1월 의사록 공개**](https://www.hankyung.com/article/2026021896361)
+1. [**설 연휴 쉬어간 코스피지수 향방은…반도체株·외국인 수급 주목 [오늘장 미리보기]**](https://www.hankyung.com/article/202602190083i)
+   한국경제 증권 · 2026-02-19 08:12 KST · 국내 시장
+   왜 중요한가: AI/반도체 이슈에 나스닥이 +0.80% 반응. 국내 반도체 섹터 영향 주시.
+
+2. [**미국 FOMC 1월 의사록 공개**](https://www.hankyung.com/article/2026021896361)
    한국경제 증권 · 2026-02-19 00:56 KST · central-bank
    왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
 
-2. [**“17억집 가진 사람이 기초연금?”…정부, 지급대상 축소안 검토**](https://www.mk.co.kr/news/economy/11965241)
+3. [**“17억집 가진 사람이 기초연금?”…정부, 지급대상 축소안 검토**](https://www.mk.co.kr/news/economy/11965241)
    매일경제 경제 · 2026-02-18 21:44 KST · 국내 시장
    > 2050년 수급자 1300만명 넘어 ‘하후상박’으로 제도 개편 65세이상 70% 받는 기초연금 소득 · 자산 많아도 대거 포함 올해 779만명 예산만 27조 필요 지급 대상 축소....
    왜 중요한가: 2050년 수급자 1300만명 넘어 ‘하후상박’으로 제도 개편 65세이상 70% 받는 기초연금 소득 · 자산 많아도 대거 포함 올해 779…
@@ -191,27 +195,10 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 08:10:09","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 09:43:15","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
-- **[상] [영국] [GBP] CPI y/y** (D-Day)
-  시각: 2026-02-18 16:00:00 KST | 상태: 마감
-  [GBP] 소비자물가지수(CPI) 전년동월비
-  데이터: 이전 3.4% | 예상 3.0%
-  영향: 예상 대비 상회 시 미 국채금리와 달러 강세, 성장주 변동성 확대 가능성이 큽니다.
-  체크: DXY, 미국채10년, 원/달러
-<!-- MP_KEY_EVENT_END -->
-
-<!-- MP_KEY_EVENT_START -->
-- **[상] [미국] [USD] FOMC Meeting Minutes** (D-Day)
-  시각: 2026-02-19 04:00:00 KST | 상태: 마감
-  [USD] 연준(FOMC) 의사록
-  영향: 연준 스탠스 변화 신호가 나오면 금리, 달러, 미국 지수 선물 방향이 동시에 흔들릴 수 있습니다.
-  체크: 미국채10년, DXY, 나스닥100선물, S&P500선물, VIX
-<!-- MP_KEY_EVENT_END -->
-
-<!-- MP_KEY_EVENT_START -->
-- **[상] [미국] [USD] Unemployment Claims** (D+1)
+- **[상] [미국] [USD] Unemployment Claims** (D-Day)
   시각: 2026-02-19 22:30:00 KST | 상태: 예정
   [USD] 실업수당 청구건수
   데이터: 이전 227K | 예상 223K
@@ -220,7 +207,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 <!-- MP_KEY_EVENT_END -->
 
 <!-- MP_KEY_EVENT_START -->
-- **[상] [영국] [GBP] Retail Sales m/m** (D+2)
+- **[상] [영국] [GBP] Retail Sales m/m** (D+1)
   시각: 2026-02-20 16:00:00 KST | 상태: 예정
   [GBP] 소매판매 전월비
   데이터: 이전 0.4% | 예상 0.2%
@@ -229,7 +216,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 <!-- MP_KEY_EVENT_END -->
 
 <!-- MP_KEY_EVENT_START -->
-- **[상] [유로존] [EUR] German Flash Manufacturing PMI** (D+2)
+- **[상] [유로존] [EUR] German Flash Manufacturing PMI** (D+1)
   시각: 2026-02-20 17:30:00 KST | 상태: 예정
   [EUR] German Flash 제조업 구매관리자지수(PMI)
   데이터: 이전 48.7 | 예상 49.6
@@ -238,7 +225,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 <!-- MP_KEY_EVENT_END -->
 
 <!-- MP_KEY_EVENT_START -->
-- **[상] [유로존] [EUR] German Flash Services PMI** (D+2)
+- **[상] [유로존] [EUR] German Flash Services PMI** (D+1)
   시각: 2026-02-20 17:30:00 KST | 상태: 예정
   [EUR] German Flash 서비스업 구매관리자지수(PMI)
   데이터: 이전 53.3 | 예상 52.4
@@ -247,7 +234,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 <!-- MP_KEY_EVENT_END -->
 
 <!-- MP_KEY_EVENT_START -->
-- **[상] [영국] [GBP] Flash Manufacturing PMI** (D+2)
+- **[상] [영국] [GBP] Flash Manufacturing PMI** (D+1)
   시각: 2026-02-20 18:30:00 KST | 상태: 예정
   [GBP] Flash 제조업 구매관리자지수(PMI)
   데이터: 이전 51.6 | 예상 51.5
@@ -256,7 +243,25 @@ chartData: "/data/chart-data-2026-02-19.json"
 <!-- MP_KEY_EVENT_END -->
 
 <!-- MP_KEY_EVENT_START -->
-- **[중] [한국] [KRW] Korea Producer Price Index (PPI) y/y** (D+2)
+- **[상] [영국] [GBP] Flash Services PMI** (D+1)
+  시각: 2026-02-20 18:30:00 KST | 상태: 예정
+  [GBP] Flash 서비스업 구매관리자지수(PMI)
+  데이터: 이전 54.3 | 예상 53.5
+  영향: 소비/활동 지표는 실적 기대와 금리 경로를 함께 자극해 섹터 간 회전이 발생할 수 있습니다.
+  체크: DXY, 미국채10년
+<!-- MP_KEY_EVENT_END -->
+
+<!-- MP_KEY_EVENT_START -->
+- **[상] [미국] [USD] Advance GDP q/q** (D+1)
+  시각: 2026-02-20 22:30:00 KST | 상태: 예정
+  [USD] Advance 국내총생산(GDP) 전분기비
+  데이터: 이전 3.0% | 예상 3.0%
+  영향: 성장 지표가 약하면 경기민감주 압박, 강하면 위험자산 선호 회복 가능성을 점검해야 합니다.
+  체크: 미국채10년, DXY, 나스닥100선물, S&P500선물
+<!-- MP_KEY_EVENT_END -->
+
+<!-- MP_KEY_EVENT_START -->
+- **[중] [한국] [KRW] Korea Producer Price Index (PPI) y/y** (D+1)
   시각: 2026-02-21 06:00:00 KST | 상태: 예정
   [KRW] 한국 생산자물가지수(PPI) 전년동월비
   체크: 원/달러, 국고채3년, KOSPI200선물
@@ -277,7 +282,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 | VIX | 19.6 | ✅ 안정 |
 | SPX 20일 | -0.5% | ⚠ 횡보 |
 | US10Y 방향 | +408bp (5일) | ⚠ 긴축 기대 |
-| 크립토 심리 | 8 | ⚠ 극단적 공포 (contrarian 반등 시그널) |
+| 크립토 심리 | 9 | ⚠ 극단적 공포 (contrarian 반등 시그널) |
 
 ## 시장 동조화(연관성 높은 지수들의 패턴 매칭) <!-- collapsed -->
 
@@ -339,7 +344,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 - Yahoo Finance (api) | https://finance.yahoo.com
 - CoinGecko (api) | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me (api) | https://api.alternative.me/fng/
-- 한국투자증권 Open API (api) | https://openapi.koreainvestment.com:9443
+- 키움증권 REST API (api) | https://api.kiwoom.com
 - Google News RSS (html) | https://news.google.com/rss
 - 한국경제 증권 (html) | https://www.hankyung.com/feed/finance
 - 매일경제 경제 (html) | https://www.mk.co.kr/rss/30100041/
@@ -350,7 +355,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-19 08:10:09 KST</span>
+  <span>생성 시각: 2026-02-19 09:43:15 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-19 08:10:09 KST</span>
+  <span>데이터 기준 시각: 2026-02-19 09:43:15 KST</span>
 </div>
