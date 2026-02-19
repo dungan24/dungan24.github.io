@@ -1,4 +1,4 @@
-# CLAUDE.md — market-pulse-blog
+# CLAUDE.md — dungan24.github.io
 
 ## 프로젝트 개요
 
@@ -13,13 +13,13 @@ Hugo + Blowfish 테마 위에서 마크다운/JSON 산출물을 UI로 렌더링�
 ## 쌍둥이 레포 관계
 
 ```
-market-pulse (private)                 market-pulse-blog (public)
+market-pulse (private)                 dungan24.github.io (public)
 ├── writer/composer/publisher  ---->   ├── content/posts/*.md
 └── chart-data extractor        ---->   ├── static/data/chart-data-*.json
                                        └── Hugo + JS 렌더링
 ```
 
-데이터 흐름은 단방향(`market-pulse -> market-pulse-blog`)입니다.
+데이터 흐름은 단방향(`market-pulse -> dungan24.github.io`)입니다.
 이 레포는 사실 생성이 아니라 렌더링/표현 계층을 담당합니다.
 
 ## 계약 문서 (Cross-Repo SSOT)
@@ -135,6 +135,15 @@ pwsh -File tools/agent-preflight.ps1 -RunUiViewportSmoke -FailOnFindings
 pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 ```
 
+## Git 워크플로우
+
+**1인 운영 블로그 — main 직접 작업 허용 (전역 규칙 예외)**
+
+- UI 개발, 콘텐츠 발행 모두 main에 직접 commit
+- feature 브랜치 / PR 불필요
+- 파이프라인 publish도 main에 직접 push
+- 대규모 리팩토링이나 실험적 작업에만 선택적으로 feature 브랜치 사용
+
 ## 변경 원칙
 
 - `content/posts/`는 파이프라인 산출물이므로 수동 편집을 지양
@@ -148,4 +157,4 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 계약/운영 변경 시 같은 세션에서 함께 업데이트:
 
 - `market-pulse`: `AGENTS.md`, `CLAUDE.md`, 계약 문서
-- `market-pulse-blog`: `AGENTS.md`, `CLAUDE.md`, 필요 시 `README.md`
+- `dungan24.github.io`: `AGENTS.md`, `CLAUDE.md`, 필요 시 `README.md`
