@@ -1,11 +1,3 @@
-:root {
-  --mp-chart-card-bg: rgba(10, 10, 26, 0.85);
-  --mp-chart-border: rgba(124, 58, 237, 0.25);
-  --mp-chart-accent: #7c3aed;
-  --mp-chart-cyan: #00f0ff;
-  --mp-chart-text-muted: #64748b;
-}
-
 .market-chart-card {
   position: relative;
   overflow: hidden;
@@ -146,12 +138,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-:root:not(.dark) {
-  --mp-chart-card-bg: rgba(255, 255, 255, 0.95);
-  --mp-chart-border: rgba(124, 58, 237, 0.15);
-  --mp-chart-text-muted: #94a3b8;
 }
 
 :root:not(.dark) .market-chart-card {

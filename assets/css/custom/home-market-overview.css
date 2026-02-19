@@ -6,11 +6,6 @@
   overflow: hidden;
 }
 
-:root {
-  --mp-orb-color-primary: 124 58 237;
-  --mp-orb-color-secondary: 0 240 255;
-}
-
 .mp-ambient-orb {
   position: absolute;
   border-radius: 50%;
