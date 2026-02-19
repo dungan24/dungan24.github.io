@@ -33,7 +33,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `#TOCView`와 `.market-chart-card`가 prefers-reduced-motion 블록 안에 포함되어 있다
   4. `--mp-*` 변수 선언이 custom.css에만 존재하고, 14개 컴포넌트 파일은 정의 없이 소비만 한다
   5. 640px 이하에서 blur가 8px, 480px 이하에서 4px로 자동 축소된다
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — CSS 라이브 버그 3종 수정 (중복 :root:not(.dark) 통합, ::before blur 제거, reduced-motion 보완)
+- [ ] 01-02-PLAN.md — 3티어 토큰 통합 + 모바일 blur 미디어쿼리 (컴포넌트 파일 변수 선언 custom.css로 이전)
 
 ### Phase 2: Icons & Navigation
 **Goal**: 사용자가 사이트에 진입하는 첫 인상인 헤더가 글래스 처리되고 아이콘 시스템이 통일된다
@@ -87,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Not started | - |
 | 2. Icons & Navigation | 0/TBD | Not started | - |
 | 3. Background & Regime | 0/TBD | Not started | - |
 | 4. Component Redesign | 0/TBD | Not started | - |
