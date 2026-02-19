@@ -12,43 +12,44 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **코스피 +3.09%, 코스닥 +4.94% 상승 마감**
+> **코스피 +3.09% 올랐고, 코스닥 +4.94% 반등한 하루**
 
-- 오늘 국내 증시는 강세 장세를 보이며 마감했습니다.
-- 최종 수급: 외국인 -9,396억, 기관 +16,542억, 개인 -8,609억으로 마감했습니다.
+- 오늘 국내 증시는 강세 흐름으로 장을 마쳤습니다.
+- 수급: 기관이 약 1조 7천억 쓸어담은 반면, 외국인은 약 9천억 빠졌습니다.
+- 개인은 약 9천억 던졌습니다
 
 ---
 
 ## 2. 오늘의 해석
 
 ### 시장 마감 흐름
-오늘 코스피는 +3.09%, 코스닥은 +4.94%로 강세 마감했습니다. 마감 수급은 외국인 매도(-9,396억)와 기관 매수(+16,542억)의 엇갈린 흐름, 개인 매도(-8,609억).
-미국 지수는 S&P -0.12%, 나스닥 -0.15% 흐름입니다. 장후 핵심 뉴스는 "This Software Stock Is the S&P 500’s Worst Performer Today.
-Earnings Beat Estimates but Guidance Disappoints."입니다.
+오늘 코스피 +3.09%, 코스닥 +4.94%로 꽤 큰 상승 움직임이 나왔습니다.
+기관이 약 1조 7천억 사들이고 외국인은 약 9천억 빠지면서 개인은 약 9천억 넘게 빠졌습니다 미국 쪽은 S&P -0.35%, 나스닥 -0.43% 흐름이에요.
+장후 눈에 띄는 뉴스는 "JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American
+business"이었습니다.
 
 ### 오늘 장 핵심 동인
-왜냐하면 오늘 KOSPI는 5,677.25로 3.09% 상승하며 마감하자, 이는 실적 서프라이즈에 따른 기업 가치 재평가 기대감이 투자 심리를 개선했기 때문입니다.
-S&P 500이 -0.12% 하락하는 등 미국 증시가 부진한 모습을 보였음에도 불구하고, KOSDAQ은 4.94% 급등하며 긍정적인 흐름을 이끌었습니다.
-외국인은 9,396억 원 순매도했지만, 기관의 16,542억 원 순매수가 이를 상쇄하면서 섹터 전반에 대한 투자 심리가 개선된 것으로 분석됩니다.
-오늘 마감 수급은 외국인 -9,396억, 기관 +16,542억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+왜냐하면 원자재/금 이슈가 장마감 해석의 핵심 축이었습니다.
+금 가격 상승 → 인플레 헤지 수요 증가 → 안전자산 선호 신호 한편, 금 가격 하락 → 위험자산 선호 전환 → 주식 시장으로 자금 이동 오늘 마감 수급은 외국인 -9,396억, 기관
++16,542억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
 
 ### 내일 장 관전 포인트
-내일 관전 포인트는 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다.
-그래서 미국장(S&P -0.12%, 나스닥 -0.15%)의 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보셔야 합니다.
+내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.35%, 나스닥 -0.43%)이 바로 흔들릴 수 있거든요.
+그래서 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보세요.
 
 ### 행동 체크포인트
 - **[USD] 소비자물가지수(CPI) - January 대응**
-  - 상황: 야간 발표 결과가 예상과 괴리
-  - 대응: 내일 시초가 갭 방향 예측. 선물 반응 먼저 확인
-  - 해제 기준: 예상 범위 내 결과는 갭 변동성 제한
-- **미국장 연결(S&P -0.12%, 나스닥 -0.15%)**
-  - 상황: 밤사이 미국장 흐름이 현재 방향과 동일하게 지속
-  - 대응: 동조 시 내일 아시아장 연속성 기대. 비중 유지/확대
-  - 해제 기준: 미국장 흐름 전환(부호 반전) 시 내일 갭 무효
-- **수급 연속성(외국인 -9,396억 매도)**
-  - 상황: 오늘 외국인 수급이 내일 시초가까지 지속
-  - 대응: 수급 동조 시 추세 연장. 비중 조정 검토
-  - 해제 기준: 내일 수급 전환(부호 반전) 시 추세 무효
+  - 상황: 결과가 시장 예상치와 크게 다르면 밤사이 미국 선물부터 흔들립니다
+  - 대응: 내일 시초가 갭 방향을 예측하고 선물 반응을 먼저 확인하세요
+  - 해제 기준: 예상 범위 안에서 나오면 갭 변동성은 제한적입니다
+- **미국장 연결(S&P -0.35%, 나스닥 -0.43%)**
+  - 상황: 밤사이 미국장이 지금 방향 그대로 흘러갑니다
+  - 대응: 동조가 이어지면 내일 아시아장도 연속성을 기대할 수 있어요. 비중 유지 또는 확대 검토
+  - 해제 기준: 미국장 흐름이 뒤집히면(부호 반전) 내일 갭 시나리오는 무효입니다
+- **수급 연속성(외국인 약 9천억 매도)**
+  - 상황: 오늘 외국인 수급 방향이 내일 시초가까지 이어집니다
+  - 대응: 수급이 동조하면 추세가 연장되니 비중 조정을 검토하세요
+  - 해제 기준: 내일 수급이 뒤집히면(부호 반전) 기존 추세는 끊긴 겁니다
 
 <!-- OPINION_ZONE_END -->
 
@@ -87,28 +88,75 @@ S&P 500이 -0.12% 하락하는 등 미국 증시가 부진한 모습을 보였�
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 00:53:33","max_items":5} -->
-1. [**This Software Stock Is the S&P 500’s Worst Performer Today. Earnings Beat Estimates but Guidance Disappoints.**](https://news.google.com/rss/articles/CBMi-wJBVV95cUxPeEE5ckUzTlhNNW44Ym5RaUZReFJ4c3JKTmpsZlVpQTZJU1NOSUdTQ2RxUE10SGx6ZGxhMkc1RkVJUVRPamNxNUxFWEZUeUlWa29qdlR4WlhiS1BIOXBZUWVxMUI5VzV1ZjJvRm05NExjWjlPMXJkbEtRX21qbnhXRk9KSmpNZ21lZUN6ei1jbkRVVkpxNFhPb3hKSDFLMTVCQnpISmo5bGxFenBOQ1l5eWVsT3F5WHBpcHZ6QW5CRFllRzdVWXpDRXlsM2hhS1NqUjhFZ3Zyak9JT0JCb25WTm8tLTl5R09NczBwc08tYXRLcW5rMld4aE1JNlRtWFdyOGV1Y2UzUFd2NzM3R29qVFBDMVNLc1NQNDQtTHM0VllyYS12dzdjQWNEMXpMWDZNMmdwcE5vakxHbE1aTXMxOG43bWFZUk0yYjFwZ05kUlVKWVpNSTVNWlBSd3RJbk4yd0lOTHVEamNlMHA1dzF5WHk1V1NTWmRLbkhj?oc=5)
-   00:53 KST | 시장 이벤트
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 02:43:53","max_items":5} -->
+### 글로벌
 
-2. [**Forbes Daily: Federal Reserve Indicates Interest Rate Hike Is Possible**](https://news.google.com/rss/articles/CBMixwFBVV95cUxNUmFoZnJieS1HUnJ2NmZFTmxzR2lGRzFtenVGMXlHOVVobG5sSFhUUV9qaVNWMGEwLUlqcjR3LXhUdE9CSjJQb1J2TmZ6aFNvSExObmNBTFZUT2NpNjhNd2p5bmxtY0NDeHhTbkxLTXUyeGowZTF6Vkx0MG91SXFpWXRTTDZsOGlFbjVmVlJQdXJ5dlVjY2xRWnRtLXZrRjNMdm1oc0xnY1M2YXNHcG54c0gtNUlGRWoyVnNMR3BlNGdJWWxTOFZ3?oc=5)
-   00:53 KST | central-bank
 
-3. [**Treasury yields move higher after data shows robust U.S. economy**](https://news.google.com/rss/articles/CBMilAFBVV95cUxQMGg4OEwyd0tlRDluYTZlaHBnbjczdHJtVXpzSkdXemJVNGlxMUhodkdmeWw1eU0zZDJlMzdaRXplZGpGajZWcG5TdDFBMGJJWlFKR0g5TXRxTXpxX3dqTENwLWNmYjI0dXRleXkyU0NoZl9IS1hrVlloQ1VacjFWQ1RxcDhIYnZESHZtZmoyb0JGLVNU0gGaAUFVX3lxTFBsd2VQckM2a055ZWktZjNFaWJFNXV4MjRCTnZjcDF6WnlCYml3QUNoR25fTTN3WUdHZDRROU9LQ2ptVmVWM3hrQWhTSEszSjRTb1g4SDlvTEp6ekZ5djRodHptVTdzc0Eza1B0U2RuQjdYV29zZjk0dU9kMkYyZkEtamZwRXFmSS1hY09WYU1Sc3R5emRUa1gwYmc?oc=5)
-   00:53 KST | 미국 매크로
+1. [**트럼프 tariffs가 중국에 효과를 보이지만, 미국 소규모 기업에 막대한 손실을 입히고 있다.**](https://news.google.com/rss/articles/CBMiowFBVV95cUxOZHEtSWVqVnNxd3pZby1sS2NxSVhoLTNIeGpsUWYzTHE1Z0Q1NDRPTGFObS1EY3pZUDE5NU5xTkRRNl9GT2tRTTB2UEp4WU9nRXlQaFdmTTluMGdBbmQ0eVlXdlNINm55RHJTQm11UFhvai1pc2ZxSUxqSkdHLUdNRElYeUp1eDZrVUVkaTZjcmphM1ltUHVtRG45T05RSU9HYkNZ?oc=5)
+   Fortune · 2026-02-20 02:18 KST · 지정학
+   원문: JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American business
+   > (원문 참조)
 
-4. [**US Treasury Yields Hit 4.08% as Industrial Strength Reshapes 2026 Economic Outlook**](https://news.google.com/rss/articles/CBMi6wFBVV95cUxQLVJnTWNfeDVTYkpvek1XV0xFZUNYdGRPY0RWQlotbzdGZmVMdFZxY0hnR2N6d3ptaTVpVk5XOWJrQWIwWkFBcDdkdXBmN1NnS1NGcElFUkNlSEthbHhwRXhWeHdPWkQtYk0tUnAxZGRUQmgwZ2FmT3gwV3hWdVl1eUp1QnNVZE9tLUowSGxSLVBtVDNxYjNlNVZ5bUIxRUJFeGVtbkpJU2dRTmpYX1pHcWZYbDBQQWQ4T3lXSndWb0NWbkNCRUo0amRoSDAtV1FmeE5QVzBpSnlRNzR1QmFRdFU3azdfNzl0WnVj?oc=5)
-   00:53 KST | 미국 매크로
+2. [**연준 금리 인하 기대감은 곧바로 실현되지 않을 것**](https://news.google.com/rss/articles/CBMicEFVX3lxTFBIeDRGMmxlUEtZNGxpc2NqN0lZUC05RTc4OXFXMWQ0NUQzOHFaX2llYXlXNXJEbUJFdDJDSXVlN0lvUF9SV1E5OG9WcmktSmRmaEFiS181MGI0WGhJSlFET2xUektzU0ktc3JkTG5YX3k?oc=5)
+   Axios · 2026-02-20 01:59 KST · central-bank
+   원문: Interest rate cuts: Don't count on more from the Fed soon
+   > (원문 참조)
 
-5. [**International Seaways On Energy Markets As Sanctions Tighten Supply And Oil Demand Rises**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxOUmhsWnBIM3ZXZ1J2bFRiaXVacXVTeUVCdktUN1hVNlotel9GM3pQUmpPd056OE8tRkROdHE2Y01QMllvSm1DQllkWF81RkdhNG5YSk40dkpaOTJHNWh1WDhKVUxVVjE0TjVUandIV3RwYkZXWGFLWDR2NTJXQ3BjNlEzcVJIcE11NWlsbTFXTm1JQkZOeU9saGtKM0tzcHFPNFd6S1BlNGhHNkxOcGtkUkRFYzVpa1M5SmZUOVB4UmlPajZWUWplN2VmZGdpQ3BlUEE?oc=5)
-   00:53 KST | 지정학
+3. [**S&P 500 상위 성과 주식은 마케팅 분야... 대규모 합병으로 성장**](https://news.google.com/rss/articles/CBMi_wJBVV95cUxOWHR3MnRNNlNHekNLOHo0cjNRVHdwRF9KLTJYNDhoWHYwUWE5cU5xazV1aHBMdUFVbVZMeTQ1UmVwTE5Gc2ZQZndsM29KWUFGVHBEWnlhSWxjeERMSlVmTnJBVzFtWHNoYUhHeXJHbVV2ZUUtdFBrdlY2NWg5VkJNcjFWSTJRaUk0NUZHZmRnbHI2TFZWNXNUNDF4S01XenQya0h0Wko0Q1I3UTlwVFBDSEFNRnVFckkwdVNGWEhQYlZrRjVMWklIYmUwZWowTzhMNzdFbFJpREE1LS1hRGlUSjlXalVwYlZxd19OSkg2ZU8yTXZ6bFg4cXhrWGszcGtUZzMwcG5BN2tMZFdhck1tQ1NXaUhQNFJCUVV5dnA0al9FRGUyZEF2Yy03bDZXc0V4eTJUWUxRX1dfVG1vR01laEI3UG12a1JZWWYwQUpmT2E5dUJXcGZVRUMyejZsVTZYb0ZTaE9US1VrM0VtSkF6Ykg0bThOOUpocHdKWExfMA?oc=5)
+   Barron's · 2026-02-20 01:53 KST · 시장 이벤트
+   원문: This Marketing Stock Is the S&P 500’s Top Performer Today. A Big Merger Helped.
+   > (원문 참조)
+
+4. [**트럼프 무역세 효과에 의문을 던진다.**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxPT0o5Y3JJRDVkalR5ZXc0OHNKSE83Z1lBSWw1SDlvMzJuZzFrNXc4VHo0NWtuZUt1bzlKY1JLeGhfaG9laGpLaHFnQ19lenhFRm8wTEVmdnliVE1uci1reUNLLWlENjNPeG9nbUIyYVQ4bXpRREJnYjgxc09CbTNxTktmMHRtV0pBaXVPOWtFU0xkZjdFYlpsaHBKY09od2VCUTFCZm9qQW5vaW90eHAxM013a0NvMmt4TEpKVzJ2eHlDMzNkTG8ycng5cFAxT0JDSEHSAdIBQVVfeXFMTUZGZGEtVjl3NmNvMTE3WEgyaXFadGJJWDdWbHZBM0c5QmNfTXNFbXIxdHdSNkFCb2lhZkJnVE5qVjFWclNiaWd5c01fU1BZeURqd2YzM1J6VjhidEFBMUZoRnh6dnlmR1RwcUk4bG9BUkhpZDBaVmNTbnhfRzBVdnB2cTBCOTc2N293UVZIQ1BZaGtBN2JSblE1S21jXy1aODFZbGw3UmoyYjVGMUhoX1dPZkpxeG5CYThVTDc0Y0RHN2hXdDRsZGtFMlhmVHJ0WUR3?oc=5)
+   South China Morning Post · 2026-02-20 02:03 KST · 지정학
+   원문: US trade deficit widens sharply in December, testing Trump tariff claims
+   > (원문 참조)
+
+### 국내
+
+
+1. [**'외국인 9000억 순매수' 불붙은 코스닥…한달새 20% 올랐다**](https://www.hankyung.com/article/202602191533i)
+   한국경제 증권 · 2026-02-19 17:21 KST · 국내 시장
+
+2. [**'외국인 9000억 순매수' 불붙은 코스닥…한달새 20% 올랐다**](https://www.hankyung.com/article/202602191533i)
+   한국경제 증권 · 2026-02-19 17:21 KST · 국내 시장
 <!-- MP_BLOCK_END -->
+
+---
+
+## 외국 IB 시그널 
+
+### 애널리스트 컨센서스
+
+삼성전자, SK하이닉스, LG에너지솔루션에 대해 IB 쪽은 매수 의견이 우세합니다
+
+| 종목 | 컨센서스 | 의견 |
+|------|----------|------|
+| 삼성전자 | 4.20 | 매수 |
+| SK하이닉스 | 4.14 | 매수 |
+| LG에너지솔루션 | 3.87 | 매수 |
+| 삼성바이오로직스 | 4.38 | 매수 |
+| 현대차 | 4.22 | 매수 |
+| 기아 | 4.39 | 매수 |
+| 셀트리온 | 4.17 | 매수 |
+| KB금융 | 4.30 | 매수 |
+| 신한지주 | 4.30 | 매수 |
+| POSCO홀딩스 | 4.13 | 매수 |
+
+### IB 리포트 & 주요 공시
+
+리포트 4건도 확인해 보세요.
+
+1. 📰 [**JP Morgan Raises Target Price on Citi (C), Keeps Overweight Call**](https://news.google.com/rss/articles/CBMigAFBVV95cUxORDRQUmpCQlZobEtPUWN2c3hyNFMxbHNQWTljaTI0UGR5UHdhd0dQWE1ZdWdtR1NtUFhHc0JEN0NmVngtNVZDTU9wOTJ0ekxaakIwZmg3ZnhINVR1SnFjMVV2UUFiNm5fNmlCaDdiYTV4NGpWY0MwS2c5ejRVSkpOdQ?oc=5)
+2. 📰 [**JP Morgan Raises Price Target for Celanese (CE) to $53 | CE Stoc**](https://news.google.com/rss/articles/CBMipwFBVV95cUxPLUpMVnl2aE45dEdFVld4Q19iaGl1SFR0aGowaHZiLU5KYmlEMjVtbFU4d0YwVWNXRzNKZ2hEZUh0YjZYMXlYV1pVZkdyZW5wekhISDJlTzFLNDZNcG11MGVNaTRPNzhJR19BV2xmam9MQV82M3l3bFhSallkUkp5SndJZzd4SVRHQ09wdjZuRkItZWF3YU9KTEowdzZYMW1xUlpScHhERQ?oc=5)
+3. 📰 [**JP Morgan Raises Target Price on Truist Financial (TFC) to $47, Keeps Neutral Call**](https://news.google.com/rss/articles/CBMirgFBVV95cUxOOTZnV21LS2xJQUxMc2tQQjNfVktVN3VZOUE5WmdQM3lLTzVFSjROOVhhX2RNbTZfZUVfakMtNUJ0dXNzeGQ1MGVseE5vQjd4UHcyR2Z1Y3J1a2F3MHJaTlh0NmFfZVZtSFN3RWpZaUxaWEhJS2F1RmZ6QzJLQWVhV1RDR2FocWZwTy1KdkZjRFBLVncyRXlTZEZfQmZzckI4YmpDNGNFbjEyVG9lTXc?oc=5)
+4. 📰 [**JP Morgan Increases Target Price on Huntington Bancshares (HBAN) to $21**](https://news.google.com/rss/articles/CBMihAFBVV95cUxOVnNyMDJ6QnFxdjRDb3BPOFBEdXdrbUpyS2pPZGxBQ2JtMFFsODZ6U0l1ZHNVWkFZQlZWVF8ycEpPS19CRGlhYlpfTk5mM3JBOUJYSnVNTzVRTXdyTHh3SVczMWJLZzV0aEtZWEZ2R0FDT3ViLUJ0cnJEdzZxOUUzS2Vwd2k?oc=5)
 
 ---
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 00:53:33","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 02:43:53","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][USD][D-Day] [USD] Unemployment Claims
@@ -194,9 +242,9 @@ S&P 500이 -0.12% 하락하는 등 미국 증시가 부진한 모습을 보였�
 
 - **DXY**: 달러 가치 지수. 오르면 달러가 강해진다는 뜻
 - **선물**: 미래 특정 시점에 사고팔기로 약속한 계약. 장 시작 전 방향을 가늠하는 데 사용
+- **연준**: 미국 중앙은행(Federal Reserve). 금리를 결정하는 곳
 - **국채**: 정부가 발행하는 채권. 수익률이 오르면 대출 금리도 오르는 경향
 - **원/달러**: 1달러를 사는 데 필요한 원화. 숫자가 크면 원화 가치가 떨어진 것
-- **소비자물가지수**: CPI. 물가 상승률을 재는 대표 지표. 연준 금리 결정에 핵심
 
 ---
 
@@ -212,11 +260,25 @@ S&P 500이 -0.12% 하락하는 등 미국 증시가 부진한 모습을 보였�
 - ForexFactory Calendar | https://www.forexfactory.com/calendar
 - Static Economic Calendar | file://static-calendar.json
 - Yahoo Finance Historical | https://finance.yahoo.com
+- Yahoo Finance | https://news.google.com/rss/articles/CBMigAFBVV95cUxORDRQUmpCQlZobEtPUWN2c3hyNFMxbHNQWTljaTI0UGR5UHdhd0dQWE1ZdWdtR1NtUFhHc0JEN0NmVngtNVZDTU9wOTJ0ekxaakIwZmg3ZnhINVR1SnFjMVV2UUFiNm5fNmlCaDdiYTV4NGpWY0MwS2c5ejRVSkpOdQ?oc=5
+- GuruFocus | https://news.google.com/rss/articles/CBMipwFBVV95cUxPLUpMVnl2aE45dEdFVld4Q19iaGl1SFR0aGowaHZiLU5KYmlEMjVtbFU4d0YwVWNXRzNKZ2hEZUh0YjZYMXlYV1pVZkdyZW5wekhISDJlTzFLNDZNcG11MGVNaTRPNzhJR19BV2xmam9MQV82M3l3bFhSallkUkp5SndJZzd4SVRHQ09wdjZuRkItZWF3YU9KTEowdzZYMW1xUlpScHhERQ?oc=5
+- Finviz | https://news.google.com/rss/articles/CBMirgFBVV95cUxOOTZnV21LS2xJQUxMc2tQQjNfVktVN3VZOUE5WmdQM3lLTzVFSjROOVhhX2RNbTZfZUVfakMtNUJ0dXNzeGQ1MGVseE5vQjd4UHcyR2Z1Y3J1a2F3MHJaTlh0NmFfZVZtSFN3RWpZaUxaWEhJS2F1RmZ6QzJLQWVhV1RDR2FocWZwTy1KdkZjRFBLVncyRXlTZEZfQmZzckI4YmpDNGNFbjEyVG9lTXc?oc=5
+- Yahoo Finance | https://news.google.com/rss/articles/CBMihAFBVV95cUxOVnNyMDJ6QnFxdjRDb3BPOFBEdXdrbUpyS2pPZGxBQ2JtMFFsODZ6U0l1ZHNVWkFZQlZWVF8ycEpPS19CRGlhYlpfTk5mM3JBOUJYSnVNTzVRTXdyTHh3SVczMWJLZzV0aEtZWEZ2R0FDT3ViLUJ0cnJEdzZxOUUzS2Vwd2k?oc=5
+- Yahoo Finance | https://finance.yahoo.com/quote/005930.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/000660.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/373220.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/207940.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/005380.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/000270.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/068270.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/105560.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/055550.KS
+- Yahoo Finance | https://finance.yahoo.com/quote/005490.KS
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 00:53:33 KST</span>
+  <span>생성 시각: 2026-02-20 02:43:53 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 00:53:33 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 02:43:53 KST</span>
 </div>
