@@ -41,10 +41,10 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### News Cards
 
-- [ ] **NEWS-01**: 뉴스 카드를 글래스 카드 스타일로 리디자인
-- [ ] **NEWS-02**: 카테고리별 뱃지/색상 구분 적용
-- [ ] **NEWS-03**: 뉴스 카드 호버 효과 (글래스 경계 강조, 그림자 변화)
-- [ ] **NEWS-04**: 뉴스 카드 모바일 레이아웃 최적화
+- [x] **NEWS-01**: 뉴스 카드를 글래스 카드 스타일로 리디자인
+- [x] **NEWS-02**: 카테고리별 뱃지/색상 구분 적용
+- [x] **NEWS-03**: 뉴스 카드 호버 효과 (글래스 경계 강조, 그림자 변화)
+- [x] **NEWS-04**: 뉴스 카드 모바일 레이아웃 최적화
 
 ### Calendar
 
@@ -115,10 +115,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BG-03 | Phase 3 | Complete |
 | RGME-01 | Phase 3 | Complete |
 | RGME-02 | Phase 3 | Complete |
-| NEWS-01 | Phase 4 | Pending |
-| NEWS-02 | Phase 4 | Pending |
-| NEWS-03 | Phase 4 | Pending |
-| NEWS-04 | Phase 4 | Pending |
+| NEWS-01 | Phase 4 | Complete |
+| NEWS-02 | Phase 4 | Complete |
+| NEWS-03 | Phase 4 | Complete |
+| NEWS-04 | Phase 4 | Complete |
 | CAL-01 | Phase 4 | Complete |
 | CAL-02 | Phase 4 | Complete |
 | CAL-03 | Phase 4 | Complete |

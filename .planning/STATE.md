@@ -70,6 +70,8 @@ Recent decisions affecting current work:
 - [Phase 04-02]: renderer.js untouched — class injection was already correct, only CSS targeting rules were missing
 - [Phase 04-03]: params.toml palette.pink (#FF3366) = --mp-neon-pink = --mp-color-up — pink=red=상승 (Korean convention), intentional
 - [Phase 04-03]: --mp-neon-rose (#F43F5E) is SEPARATE from ECharts palette pink — documented in params.toml sync comment
+- [Phase 04-component-redesign]: .mp-news-card backdrop-filter 제거 — 부모 .briefing-section과 중첩 위반, opaque rgba 배경으로 대체 (NEWS-01)
+- [Phase 04-component-redesign]: CATEGORY_CLASS_MAP IIFE 스코프에만 — window.MP_* 전역 변수 추가 금지 원칙 준수 (NEWS-02)
 
 ### Pending Todos
 
