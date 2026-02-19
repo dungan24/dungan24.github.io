@@ -6,5 +6,8 @@
       "Bash(git push:*)",
       "Bash(gh pr:*)"
     ]
+  },
+  "env": {
+    "ALLOW_MAIN_BRANCH": "true"
   }
 }
