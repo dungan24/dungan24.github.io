@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-19)
 
 **Core value:** 브리핑을 여는 순간 "이거 제대로 만든 거다"라는 프리미엄 인상을 주는 것
-**Current focus:** Phase 4 — Chart Theming
+**Current focus:** Phase 5 — Performance & Accessibility
 
 ## Current Position
 
-Phase: 4 of 5 (Component Redesign) — Plan 03 of 03 complete
-Plan: 3 of 3 in current phase — COMPLETE
-Status: Phase 4 complete. Chart glass container verified + palette sync documented.
-Last activity: 2026-02-19 — Phase 4 Plan 03 complete (chart glass + palette sync)
+Phase: 5 of 5 (Performance & Accessibility) — Plan 01 of 01 complete
+Plan: 1 of 1 in current phase — COMPLETE
+Status: Phase 5 Plan 01 complete. backdrop-filter 중첩 위반 4건 제거 + PERF-01/02/03 충족.
+Last activity: 2026-02-19 — Phase 5 Plan 01 complete (backdrop-filter audit + mobile blur variableization)
 
-Progress: [████████░░] 83%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 2 minutes
-- Total execution time: 0.22 hours
+- Total plans completed: 8
+- Average duration: 2.25 minutes
+- Total execution time: 0.29 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [████████░░] 83%
 | 2 - Icons & Navigation | 2 | 4 min | 2 min |
 | 3 - Background & Regime | 2 | 5 min | 2.5 min |
 | 4 - Component Redesign | 3 | ~5 min | ~1.7 min |
+| 5 - Performance & Accessibility | 1 | 4 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: Plan 02-02 (2 min), Plan 03-01 (2 min), Plan 03-02 (3 min), Plan 04-02 (1 min), Plan 04-03 (3 min)
+- Last 5 plans: Plan 03-01 (2 min), Plan 03-02 (3 min), Plan 04-02 (1 min), Plan 04-03 (3 min), Plan 05-01 (4 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -72,6 +73,10 @@ Recent decisions affecting current work:
 - [Phase 04-03]: --mp-neon-rose (#F43F5E) is SEPARATE from ECharts palette pink — documented in params.toml sync comment
 - [Phase 04-component-redesign]: .mp-news-card backdrop-filter 제거 — 부모 .briefing-section과 중첩 위반, opaque rgba 배경으로 대체 (NEWS-01)
 - [Phase 04-component-redesign]: CATEGORY_CLASS_MAP IIFE 스코프에만 — window.MP_* 전역 변수 추가 금지 원칙 준수 (NEWS-02)
+- [Phase 05-01]: 중첩 자식 backdrop-filter 제거 패턴 — 부모가 blur를 가지면 자식은 opaque rgba() 배경만 사용 (PERF-02)
+- [Phase 05-01]: 모바일-visible 요소는 var(--mp-glass-blur) cascade 참여 — .search-modal-container, #mp-mobile-bottom-nav 전환 (PERF-03)
+- [Phase 05-01]: prefers-reduced-motion 가드 14개 셀렉터로 확장 — 7개 누락 요소 추가 (PERF-01)
+- [Phase 05-01]: terminal-footer.css blur(10px) 하드코딩 — 연구 감사 누락된 pre-existing, 후속 플랜으로 deferred
 
 ### Pending Todos
 
@@ -85,4 +90,4 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 04-component-redesign 04-03-PLAN.md. Phase 4 complete. CHRT-01/02/03 verified.
+Stopped at: Completed 05-performance-accessibility 05-01-PLAN.md. Phase 5 Plan 01 complete. PERF-01/02/03 verified.

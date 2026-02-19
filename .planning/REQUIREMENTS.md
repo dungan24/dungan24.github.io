@@ -60,9 +60,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Performance
 
-- [ ] **PERF-01**: 뷰포트당 활성 backdrop-filter 요소를 8-10개 이하로 제한
-- [ ] **PERF-02**: 내부 카드는 opaque rgba() 배경 사용, 최외곽 컨테이너만 backdrop-filter 적용
-- [ ] **PERF-03**: 모바일에서 blur 값 자동 축소 (CSS 미디어 쿼리)
+- [x] **PERF-01**: 뷰포트당 활성 backdrop-filter 요소를 8-10개 이하로 제한
+- [x] **PERF-02**: 내부 카드는 opaque rgba() 배경 사용, 최외곽 컨테이너만 backdrop-filter 적용
+- [x] **PERF-03**: 모바일에서 blur 값 자동 축소 (CSS 미디어 쿼리)
 
 ## v2 Requirements
 
@@ -125,9 +125,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CHRT-01 | Phase 4 | Complete |
 | CHRT-02 | Phase 4 | Complete |
 | CHRT-03 | Phase 4 | Complete |
-| PERF-01 | Phase 5 | Pending |
-| PERF-02 | Phase 5 | Pending |
-| PERF-03 | Phase 5 | Pending |
+| PERF-01 | Phase 5 | Complete |
+| PERF-02 | Phase 5 | Complete |
+| PERF-03 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 30 total
