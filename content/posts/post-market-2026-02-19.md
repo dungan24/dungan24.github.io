@@ -24,19 +24,19 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ### 시장 마감 흐름
 오늘 코스피 +3.09%, 코스닥 +4.94%로 꽤 큰 상승 움직임이 나왔습니다.
-기관이 약 1조 7천억 사들이고 외국인은 약 9천억 빠지면서 개인은 약 9천억 넘게 빠졌습니다 미국 쪽은 S&P -0.41%, 나스닥 -0.39% 흐름이에요.
+기관이 약 1조 7천억 사들이고 외국인은 약 9천억 빠지면서 개인은 약 9천억 넘게 빠졌습니다 미국 쪽은 S&P -0.36%, 나스닥 -0.47% 흐름이에요.
 장후 눈에 띄는 뉴스는 "JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American
 business"이었습니다.
 
 ### 오늘 장 핵심 동인
 왜냐하면 어휴, 오늘 장 마감하고 보니 머리가 좀 복잡하네요. 금 가격이 좀 오락가락하거든요.
-금값이 오르면서 인플레이션 걱정 때문에 안전자산 찾으려는 심리가 커졌는데, 동시에 금값이 살짝 내려가면서 위험자산 선호 심리도 같이 나타난 거 같아요.
-그래서 코스피는 3% 넘게 올랐지만, 미국 S&P 500은 오히려 살짝 빠졌어요. 외국인들이 국내 주식 약 9천억 원을 팔았는데, 기관이 1조 6천억 원 넘게 사면서 간신히 버틴 느낌이에요.
-코스닥은 외국인 매수세에 한 달 새 20%나 뛰었으니, 좀 조심해야 할 것 같죠? 오늘 마감 수급은 외국인 -9,396억, 기관 +16,542억으로 확인됐습니다.
-그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+금값이 오르면서 인플레이션 걱정 때문에 안전자산 찾으려는 심리가 커졌는데, 동시에 금값이 살짝 내려가면서 위험 자산에 투자하려는 움직임도 있었어요. 그래서 어쩌라고?
+하실 텐데, KOSPI는 3% 넘게 올랐지만, 미국 S&P 500은 오히려 떨어졌거든요. 코스닥은 외국인들이 약 9천억 원을 순매수하면서 한 달 새에 20%나 뛰었네요.
+기관은 1조 6천억 넘게 샀는데, 개인은 팔고 있으니… 뭔가 묘한 그림이죠? 결국, 국내 시장은 외국인 자금 유입 덕분에 버틴 거 같아요.
+오늘 마감 수급은 외국인 -9,396억, 기관 +16,542억으로 확인됐습니다. 그래서 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
 
 ### 내일 장 관전 포인트
-내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.41%, 나스닥 -0.39%)이 바로 흔들릴 수 있거든요.
+내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.36%, 나스닥 -0.47%)이 바로 흔들릴 수 있거든요.
 그래서 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보세요.
 
 ### 행동 체크포인트
@@ -44,7 +44,7 @@ business"이었습니다.
   - 상황: 결과가 시장 예상치와 크게 다르면 밤사이 미국 선물부터 흔들립니다
   - 대응: 내일 시초가 갭 방향을 예측하고 선물 반응을 먼저 확인하세요
   - 해제 기준: 예상 범위 안에서 나오면 갭 변동성은 제한적입니다
-- **미국장 연결(S&P -0.41%, 나스닥 -0.39%)**
+- **미국장 연결(S&P -0.36%, 나스닥 -0.47%)**
   - 상황: 밤사이 미국장이 지금 방향 그대로 흘러갑니다
   - 대응: 동조가 이어지면 내일 아시아장도 연속성을 기대할 수 있어요. 비중 유지 또는 확대 검토
   - 해제 기준: 미국장 흐름이 뒤집히면(부호 반전) 내일 갭 시나리오는 무효입니다
@@ -90,29 +90,25 @@ business"이었습니다.
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 02:48:22","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 02:54:27","max_items":5} -->
 ### 글로벌
 
 
 1. [**트럼프 tariffs가 중국에 효과를 보이지만, 미국 소규모 기업에 막대한 손실을 입히고 있다.**](https://news.google.com/rss/articles/CBMiowFBVV95cUxOZHEtSWVqVnNxd3pZby1sS2NxSVhoLTNIeGpsUWYzTHE1Z0Q1NDRPTGFObS1EY3pZUDE5NU5xTkRRNl9GT2tRTTB2UEp4WU9nRXlQaFdmTTluMGdBbmQ0eVlXdlNINm55RHJTQm11UFhvai1pc2ZxSUxqSkdHLUdNRElYeUp1eDZrVUVkaTZjcmphM1ltUHVtRG45T05RSU9HYkNZ?oc=5)
    Fortune · 2026-02-20 02:18 KST · 지정학
    원문: JPMorgan analysis finds Trump's tariffs are working on China—at a huge cost to small American business
-   > (원문 참조)
 
 2. [**연준 금리 인하 기대감은 곧바로 실현되지 않을 것**](https://news.google.com/rss/articles/CBMicEFVX3lxTFBIeDRGMmxlUEtZNGxpc2NqN0lZUC05RTc4OXFXMWQ0NUQzOHFaX2llYXlXNXJEbUJFdDJDSXVlN0lvUF9SV1E5OG9WcmktSmRmaEFiS181MGI0WGhJSlFET2xUektzU0ktc3JkTG5YX3k?oc=5)
    Axios · 2026-02-20 01:59 KST · central-bank
    원문: Interest rate cuts: Don't count on more from the Fed soon
-   > (원문 참조)
 
 3. [**S&P 500 상위 성과 주식은 마케팅 분야... 대규모 합병으로 성장**](https://news.google.com/rss/articles/CBMi_wJBVV95cUxOWHR3MnRNNlNHekNLOHo0cjNRVHdwRF9KLTJYNDhoWHYwUWE5cU5xazV1aHBMdUFVbVZMeTQ1UmVwTE5Gc2ZQZndsM29KWUFGVHBEWnlhSWxjeERMSlVmTnJBVzFtWHNoYUhHeXJHbVV2ZUUtdFBrdlY2NWg5VkJNcjFWSTJRaUk0NUZHZmRnbHI2TFZWNXNUNDF4S01XenQya0h0Wko0Q1I3UTlwVFBDSEFNRnVFckkwdVNGWEhQYlZrRjVMWklIYmUwZWowTzhMNzdFbFJpREE1LS1hRGlUSjlXalVwYlZxd19OSkg2ZU8yTXZ6bFg4cXhrWGszcGtUZzMwcG5BN2tMZFdhck1tQ1NXaUhQNFJCUVV5dnA0al9FRGUyZEF2Yy03bDZXc0V4eTJUWUxRX1dfVG1vR01laEI3UG12a1JZWWYwQUpmT2E5dUJXcGZVRUMyejZsVTZYb0ZTaE9US1VrM0VtSkF6Ykg0bThOOUpocHdKWExfMA?oc=5)
    Barron's · 2026-02-20 01:53 KST · 시장 이벤트
    원문: This Marketing Stock Is the S&P 500’s Top Performer Today. A Big Merger Helped.
-   > (원문 참조)
 
 4. [**트럼프 무역세 효과에 의문을 던진다.**](https://news.google.com/rss/articles/CBMi0gFBVV95cUxPT0o5Y3JJRDVkalR5ZXc0OHNKSE83Z1lBSWw1SDlvMzJuZzFrNXc4VHo0NWtuZUt1bzlKY1JLeGhfaG9laGpLaHFnQ19lenhFRm8wTEVmdnliVE1uci1reUNLLWlENjNPeG9nbUIyYVQ4bXpRREJnYjgxc09CbTNxTktmMHRtV0pBaXVPOWtFU0xkZjdFYlpsaHBKY09od2VCUTFCZm9qQW5vaW90eHAxM013a0NvMmt4TEpKVzJ2eHlDMzNkTG8ycng5cFAxT0JDSEHSAdIBQVVfeXFMTUZGZGEtVjl3NmNvMTE3WEgyaXFadGJJWDdWbHZBM0c5QmNfTXNFbXIxdHdSNkFCb2lhZkJnVE5qVjFWclNiaWd5c01fU1BZeURqd2YzM1J6VjhidEFBMUZoRnh6dnlmR1RwcUk4bG9BUkhpZDBaVmNTbnhfRzBVdnB2cTBCOTc2N293UVZIQ1BZaGtBN2JSblE1S21jXy1aODFZbGw3UmoyYjVGMUhoX1dPZkpxeG5CYThVTDc0Y0RHN2hXdDRsZGtFMlhmVHJ0WUR3?oc=5)
    South China Morning Post · 2026-02-20 02:03 KST · 지정학
    원문: US trade deficit widens sharply in December, testing Trump tariff claims
-   > (원문 참조)
 
 ### 국내
 
@@ -158,7 +154,7 @@ business"이었습니다.
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 02:48:22","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 02:54:27","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][USD][D-Day] [USD] Unemployment Claims
@@ -268,7 +264,7 @@ business"이었습니다.
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 02:48:22 KST</span>
+  <span>생성 시각: 2026-02-20 02:54:27 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 02:48:22 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 02:54:27 KST</span>
 </div>
