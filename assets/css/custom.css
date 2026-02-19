@@ -79,6 +79,17 @@ code, pre, .num-cell, .terminal-data {
   /* Regime Dynamic Color Variables (JS overrides at runtime) */
   --regime-color: #7C3AED;
   --regime-color-rgb: 124 58 237;
+
+  /* === Tier 3: Component Tokens (migrated from component files) === */
+  /* chart-cards.css에서 이전 */
+  --mp-chart-card-bg: rgba(10, 10, 26, 0.85);
+  --mp-chart-border: rgba(124, 58, 237, 0.25);
+  --mp-chart-accent: #7c3aed;
+  --mp-chart-cyan: #00f0ff;
+  --mp-chart-text-muted: #64748b;
+  /* home-market-overview.css에서 이전 */
+  --mp-orb-color-primary: 124 58 237;
+  --mp-orb-color-secondary: 0 240 255;
 }
 
 .dark {
@@ -101,6 +112,23 @@ code, pre, .num-cell, .terminal-data {
   --mp-ticker-down-spark: #DC2626;
   --mp-brand-color: var(--mp-brand-color-light);
   --mp-brand-color-rgb: 124 58 237;
+  /* chart-cards.css :root:not(.dark) 에서 이전 */
+  --mp-chart-card-bg: rgba(255, 255, 255, 0.95);
+  --mp-chart-border: rgba(124, 58, 237, 0.15);
+  --mp-chart-text-muted: #94a3b8;
+}
+
+/* === Mobile Blur Optimization (FOUN-07) === */
+@media (max-width: 640px) {
+  :root {
+    --mp-glass-blur: blur(8px) saturate(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mp-glass-blur: blur(4px) saturate(1.1);
+  }
 }
 
 /* --- Homepage Hero Polish --- */
