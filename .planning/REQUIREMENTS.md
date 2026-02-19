@@ -24,9 +24,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Navigation
 
-- [ ] **NAV-01**: Frosted glass 스타일의 스티키 헤더 구현 (backdrop-filter + 반투명 배경)
-- [ ] **NAV-02**: 다크/라이트 모드 모두에서 네비게이션 가독성 보장
-- [ ] **NAV-03**: 모바일 반응형 네비게이션 개선
+- [x] **NAV-01**: Frosted glass 스타일의 스티키 헤더 구현 (backdrop-filter + 반투명 배경)
+- [x] **NAV-02**: 다크/라이트 모드 모두에서 네비게이션 가독성 보장
+- [x] **NAV-03**: 모바일 반응형 네비게이션 개선
 
 ### Background
 
@@ -107,9 +107,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUN-07 | Phase 1 | Complete |
 | ICON-01 | Phase 2 | Complete |
 | ICON-02 | Phase 2 | Complete |
-| NAV-01 | Phase 2 | Pending |
-| NAV-02 | Phase 2 | Pending |
-| NAV-03 | Phase 2 | Pending |
+| NAV-01 | Phase 2 | Complete |
+| NAV-02 | Phase 2 | Complete |
+| NAV-03 | Phase 2 | Complete |
 | BG-01 | Phase 3 | Pending |
 | BG-02 | Phase 3 | Pending |
 | BG-03 | Phase 3 | Pending |

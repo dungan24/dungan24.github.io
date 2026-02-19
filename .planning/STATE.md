@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-19)
 ## Current Position
 
 Phase: 2 of 5 (Icons & Navigation)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-19 — Phase 2 Plan 01 complete (Phosphor Icons CDN + emoji replacement)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-19 — Phase 2 Plan 02 complete (#menu-blur frosted glass override + nav link colors)
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 2 minutes
-- Total execution time: 0.10 hours
+- Total execution time: 0.13 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 - Foundation | 2 | 4 min | 2 min |
-| 2 - Icons & Navigation | 1 | 2 min | 2 min |
+| 2 - Icons & Navigation | 2 | 4 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: Plan 01-01 (2 min), Plan 01-02 (2 min), Plan 02-01 (2 min)
+- Last 5 plans: Plan 01-01 (2 min), Plan 01-02 (2 min), Plan 02-01 (2 min), Plan 02-02 (2 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -55,6 +55,8 @@ Recent decisions affecting current work:
 - [Phase 2 Plan 01]: Phosphor Icons: bold/regular CSS CDN만 로드 (~120KB) — 전체 스크립트 번들(~3MB) 금지
 - [Phase 2 Plan 01]: Phosphor regular weight 클래스는 ph(접두사만) — ph-regular 클래스 존재하지 않음
 - [Phase 2 Plan 01]: 아이콘 <i> 태그에 aria-hidden=true — 인접 <span> 텍스트가 의미 전달 담당
+- [Phase 2 Plan 02]: opacity 속성은 #menu-blur 규칙에서 제외 — background-blur.js가 scroll 위치 기반 인라인 스타일로 제어
+- [Phase 2 Plan 02]: backdrop-filter !important 단축 속성으로 완전 교체 — Tailwind --tw-backdrop-blur 변수 무효화로 이중 blur 방지
 
 ### Pending Todos
 
@@ -68,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Phase 2 Plan 01 complete. Phase 2 Plan 02 (Active State Indicator) ready to execute.
+Stopped at: Completed 02-02-PLAN.md. Phase 2 (Icons & Navigation) complete. Phase 3 ready to plan.
 Resume file: None
