@@ -34,20 +34,18 @@ chartData: "/data/chart-data-2026-02-20.json"
 오늘 한국장은 원/달러 1,448.51원(상승)과 한국 은행 1주 약세(-3.1%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
-연준 내부의 금리 인하 시점 이견이 시장에 혼란을 야기하면서 S&P 500 지수가 소폭 하락했다.
-하지만 금이 안정적인 흐름을 보이는 것(NEWS_20260219_003)은 안전자산 선호 심리가 과도하게 확산되지 않았음을 보여준다.
-이러한 상황은 기술주(NDX)의 하락폭을 키우면서 나스닥 100 지수의 조정을 심화시켰다.
+연준 내부의 금리 인하 경로에 대한 이견이 공개되자 투자 심리가 위축되면서 S&P 500이 소폭 하락했다.
+하지만 금리 인하 기대가 완전히 꺾인 것은 아니어서 VIX 지수의 상승폭이 제한적인 수준에 머물렀다.
+다만, 달러인덱스가 97.8로 강세를 보이면서 원/달러 환율이 1,448.51원으로 상승하는 모습은 외국인 투자 자금 이탈 가능성을 시사한다.
 
-다만, 유가 변동률이 6개월 최고 수준에 근접하며 에너지 섹터의 강세를 보이고 있어, 시장 전체의 하방 경직성을 확보하고 있다.
-오늘 원/달러 환율(USDKRW)과 미국 10년물 국채 금리(US10Y_YIELD)의 추이를 확인하여 연준의 정책 방향에 대한 불확실성이 해소될지 주시해야 한다.
+이러한 상황은 기술주 중심의 나스닥 100이 0.41% 하락하는 요인으로 작용했다.
+오늘 시장은 연준 관계자들의 추가 발언과 경제 지표 발표에 주목하며, 특히 금리 인하 시점에 대한 힌트를 얻을 수 있는 발언을 확인할 필요가 있다.
 - 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 20.23가 20 아래로 내려오는지, 체크포인트 2) 금융(XLF) 1주 +0.46% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 변동성 경계가 이어지며 방어 섹터와 현금흐름 중심 대응이 유리합니다. 대안 시나리오: VIX 진정과 함께 기술주 반등 폭이 커지면 위험자산 선호가 빠르게 회복됩니다.
 
 또한 **에너지/OPEC** 관련 소식도 시장에 영향을 주고 있습니다. 유가 안정/하락 → 기업 원가 부담 완화 → 소비 여력 증가 → 경기 지지
 
 공포지수(VIX)는 20.23로 5일 전(20.6) 대비 -1.80% 변동했습니다.
-
-통계적으로 유가의 최근 변동은 6개월 기준 **상위 93%** 수준으로, 평소보다 드물게 강한 움직임입니다.
 
 현재 **유가 ↔ 10년물**가 비동조(r=+0.18)로, 독립적인 흐름입니다. 독립적
 또한 **S&P 500 ↔ BTC**도 r=-0.13 수준입니다. 독립적 움직임
@@ -86,22 +84,17 @@ chartData: "/data/chart-data-2026-02-20.json"
 ### 전략 시나리오 (AI 분석)
 **Market Regime: Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계**
 
-**단기 전략**: 변동성 활용 관망 후 선별적 단기 매수 기회 모색
+**단기 전략**: 관망 기조 유지 및 변동성 확대 대비
 
 **확인 조건 (Confirmation Triggers)**:
-- VIX 지수 20.0 미만 하회 및 유지
-- S&P 500 지수 0.5% 이상 상승 전환
-- 미국 10년물 국채금리 4.05% 이하 하락
+- VIX 20.0 하회 및 S&P 500 0.5% 이상 반등
+- 미국 10년물 국채금리 4.00% 하회 지속
 
 **무효화 기준 (Invalidation Rules)**:
-- VIX 지수 21.0 이상 재상승 및 SPX 추가 하락 지속 → 포지션 조정
-- 원/달러 환율 1,450원 이상 돌파 시도 → 포지션 해소
+- VIX 21.0 상회 및 S&P 500 추가 하락 시 → 방어적 포지션 강화
+- 원/달러 환율 1,450원 돌파 시 → 포트폴리오 내 달러 비중 조정
 
-현재 시장은 Cautious 국면으로, 방향성 탐색과 지표 확인을 위한 관망세가 우세하며 변동성에 대한 경계가 필요합니다. VIX 지수는 20.23으로 여전히 경계 수준이며, S&P 500은 -0.28% 하락하며 3일간의 상승세를 마감했습니다. 미국 10년물 국채금리는 4.08%로 비교적 안정적이나, 이란 긴장감으로 인한 유가 급등과 나스닥 하락이 시장에 부담을 주고 있습니다.
-
-*   단기적으로는 VIX 20.23 미만 하회 등 시장 변동성 완화 신호 확인 후, 기술적 반등 가능성이 있는 섹터에서 선별적인 단기 매수 기회를 모색합니다.
-*   DXY는 97.8 수준이나, 지정학적 리스크 확대로 안전자산 선호 심리가 강화되면 달러 강세 압력이 가중될 수 있습니다.
-*   원/달러 환율은 1,448.51원으로 높아 국내 증시 외국인 수급에 부정적 영향을 미칠 수 있어 면밀한 관찰이 필요합니다.
+현재 시장은 'Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계' 국면에 있습니다. VIX는 20.23으로 여전히 경계 수준이며, S&P 500은 최근 3일간의 상승세를 멈추고 -0.28% 하락했습니다. 이는 이란 긴장감에 따른 석유 가격 급등과 맞물려 투자자들의 신중한 태도를 반영합니다. 미국 10년물 국채금리는 4.08%로 비교적 안정적이나, 달러인덱스(DXY) 97.8과 원/달러 1,448.51원은 글로벌 위험 회피 심리와 달러 강세 압력을 시사합니다. 이러한 환경에서는 적극적인 포지션 구축보다는 시장의 방향성을 확인하기 위한 관망이 필요하며, 지정학적 리스크 확대로 인한 변동성 확대에 대비해야 합니다. 특히 원화 약세가 지속될 경우 한국 증시에는 부담으로 작용할 수 있습니다.
 
 <!-- OPINION_ZONE_END -->
 
@@ -125,8 +118,8 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,851 | +434.53 | +0.65% | - |
-| 이더리움 (ETH) | 1,942.28 | -4.66 | -0.24% | - |
+| 비트코인 (BTC) | 66,894 | +501.7 | +0.75% | ↑1일 |
+| 이더리움 (ETH) | 1,943.75 | -4.08 | -0.21% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율 
@@ -149,7 +142,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
 | 국제 금 (Gold) | $5,015.5 | +6 | +0.12% |
-| WTI 유가 (Oil) | $66.67 | +1.62 | +2.49% |
+| WTI 유가 (Oil) | $66.67 | +0.27 | +0.41% |
 
 {{< market-charts >}}
 
@@ -157,7 +150,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 07:55:56","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 07:57:07","max_items":8} -->
 ### 글로벌
 
 1. [**다우 지수·S&P 500 3일 연승 종식...나스닥 하락, 이란 긴장감에 석유 가격 급등**](https://news.google.com/rss/articles/CBMi2gNBVV95cUxPZEFFWlhmTERzOFZ0Ni1SdjNmUXlrR1ZCalVPUXNXV0NPZnlOM0I1dzVmOVp0UzZMbkxpVWtyb1lhcFhWNjliVDVLQnh6ckNxcWc1S25VNHRLX0w0YVVTMXV3OG1jb3FUWW4zYTJ6X3I2WEJPRjJUMDY3UTd3N1h0S0dxUXBpRFV4TnlhTDdHcWdxRWg4SUM5YlhkTzJXQmNMdmJqTjF4NkxwS1F5OG5wcnZfOEJVYnNTeUpra043bDlwbV90UllGNzhGaGFhQmZWbmItLS1YNnduaHMyaFV2NWxlNDRxWHJBNFRfZHF3ZEJqUVJtNzU0aFBlSmxDTEh4RUxHSTVsZEZra1dMV3hMVlRhb3hyQjAzZTZFVDJXMmd6aVpyVzh4Y2JZUy1yRDBZaDRTMkxNWV9SRHZYNEd3RWkyNFZmbXNmcVR2eXpGUnBsRzJkZWZjNXp5cy1aaWZ6Sk5STmFpenY4dFQwSmY2LTdhWmxuZzRxWlQwTHBUX0N2R1p6M3lwWWdQZTRzRjhOS094NlZ4REtJM2RIZzJFVEdCLTYtX19QQjNLeTNsNjA2cnpGR3BpTVdyZEpRazRSU094eGMtTEdhZ3VTbEtyZEEzajgwbUswcUE?oc=5)
@@ -195,7 +188,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 07:55:56","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 07:57:07","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [미국] [USD] Unemployment Claims** (D-Day)
@@ -320,7 +313,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | S&P 500 | 6,836.17 | 6,861.89 | +0.38% | 보합 |
-| 비트코인 | 69,418 | 66,851 | -3.70% | 약세 전환 |
+| 비트코인 | 69,418 | 66,894 | -3.64% | 약세 전환 |
 | VIX | 20.6 | 20.23 | -1.80% | 소폭 안정 |
 | 원/달러 | 1,443.3원 | 1,448.51원 | +0.36% | 보합 |
 
@@ -358,7 +351,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 07:55:56 KST</span>
+  <span>생성 시각: 2026-02-20 07:57:07 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-20 07:55:56 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 07:57:07 KST</span>
 </div>
