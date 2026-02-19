@@ -177,11 +177,11 @@
   backdrop-filter: var(--mp-glass-blur);
   border: 1px solid rgba(124, 58, 237, 0.25);
   border-radius: 8px;
-  padding: 2.5rem 1.5rem 1.25rem;
+  padding: 2.1rem 1.5rem 1.25rem;
   text-decoration: none !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 10px 30px -10px rgba(0, 0, 0, 0.5),
     inset 0 0 20px rgba(124, 58, 237, 0.05);
 }
@@ -210,9 +210,9 @@
   position: absolute;
   top: -1px;
   left: 12px;
-  padding: 2px 12px;
+  padding: 1px 10px;
   font-family: var(--mp-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   border-bottom-right-radius: 4px;
@@ -256,7 +256,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 0.75rem;
+  margin-top: 0.4rem;
   margin-bottom: 0.75rem;
   gap: 1rem;
 }
@@ -341,7 +341,7 @@
 @media (max-width: 768px) {
   .mp-briefing-card {
     width: 100%;
-    padding: 1.5rem 1.25rem 1rem;
+    padding: 1.3rem 1.25rem 1rem;
   }
 
   .mp-briefing-card__title { font-size: 1rem; }
