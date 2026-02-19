@@ -119,9 +119,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NEWS-02 | Phase 4 | Pending |
 | NEWS-03 | Phase 4 | Pending |
 | NEWS-04 | Phase 4 | Pending |
-| CAL-01 | Phase 4 | Pending |
-| CAL-02 | Phase 4 | Pending |
-| CAL-03 | Phase 4 | Pending |
+| CAL-01 | Phase 4 | Complete |
+| CAL-02 | Phase 4 | Complete |
+| CAL-03 | Phase 4 | Complete |
 | CHRT-01 | Phase 4 | Pending |
 | CHRT-02 | Phase 4 | Pending |
 | CHRT-03 | Phase 4 | Pending |
@@ -136,4 +136,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-19*
-*Last updated: 2026-02-19 after roadmap creation — all 30 requirements mapped*
+*Last updated: 2026-02-19 after 04-02 execution — CAL-01/02/03 complete*
