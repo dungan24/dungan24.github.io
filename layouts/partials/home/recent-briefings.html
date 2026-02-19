@@ -44,14 +44,23 @@
       {{ end }}
       {{ if not $regimeIcon }}{{ $regimeIcon = "⚪" }}{{ end }}
 
+      {{/* Summary 추출: front matter → blockquote → .Plain 순 */}}
       {{ $summary := .Params.summary | default .Description }}
       {{ if not $summary }}
-        {{ $plain := .Plain | replaceRE `\s+` " " | trim " " }}
-        {{ if $plain }}{{ $summary = $plain | truncate 140 }}{{ end }}
+        {{/* Priority Insight: 첫 번째 blockquote(> **...**) 텍스트 추출 */}}
+        {{ $bqMatch := findRE `\n> \*{0,2}[^\n\r]{5,}` .RawContent 1 }}
+        {{ if $bqMatch }}
+          {{ $bq := index $bqMatch 0 }}
+          {{ $bq = replaceRE `[\n\r]*>\s*` "" $bq }}
+          {{ $bq = replaceRE `\*{1,2}` "" $bq }}
+          {{ $bq = trim $bq " \t\r\n" }}
+          {{ if $bq }}{{ $summary = truncate 140 $bq }}{{ end }}
+        {{ end }}
       {{ end }}
       {{ if not $summary }}
-        {{ $rawFallback := .RawContent | replaceRE `<!--[\s\S]*?-->` " " | replaceRE `#{1,6}\s*` "" | replaceRE `\s+` " " | trim " " }}
-        {{ if $rawFallback }}{{ $summary = $rawFallback | truncate 140 }}{{ end }}
+        {{ $plain := .Plain | replaceRE `\s+` " " }}
+        {{ $plain = trim $plain " " }}
+        {{ if $plain }}{{ $summary = truncate 140 $plain }}{{ end }}
       {{ end }}
       {{ if not $summary }}{{ $summary = "핵심 데이터와 시나리오를 담은 브리핑입니다. 본문에서 자세히 확인하세요." }}{{ end }}
 
