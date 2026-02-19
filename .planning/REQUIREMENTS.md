@@ -9,9 +9,9 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Foundation
 
-- [ ] **FOUN-01**: 중복된 `:root:not(.dark)` CSS 블록을 단일 블록으로 통합
-- [ ] **FOUN-02**: `.mp-briefing-meta::before`의 nested backdrop-filter 버그 수정
-- [ ] **FOUN-03**: `#TOCView`와 `.market-chart-card`를 prefers-reduced-motion 블록에 추가
+- [x] **FOUN-01**: 중복된 `:root:not(.dark)` CSS 블록을 단일 블록으로 통합
+- [x] **FOUN-02**: `.mp-briefing-meta::before`의 nested backdrop-filter 버그 수정
+- [x] **FOUN-03**: `#TOCView`와 `.market-chart-card`를 prefers-reduced-motion 블록에 추가
 - [ ] **FOUN-04**: 3티어 CSS 변수 시스템 구축 (primitive → semantic → component 계층)
 - [ ] **FOUN-05**: 다크 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
 - [ ] **FOUN-06**: 라이트 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
@@ -98,9 +98,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUN-01 | Phase 1 | Pending |
-| FOUN-02 | Phase 1 | Pending |
-| FOUN-03 | Phase 1 | Pending |
+| FOUN-01 | Phase 1 | Complete |
+| FOUN-02 | Phase 1 | Complete |
+| FOUN-03 | Phase 1 | Complete |
 | FOUN-04 | Phase 1 | Pending |
 | FOUN-05 | Phase 1 | Pending |
 | FOUN-06 | Phase 1 | Pending |
