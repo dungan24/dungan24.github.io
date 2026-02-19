@@ -36,8 +36,8 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 
 ### Regime Tinting
 
-- [ ] **RGME-01**: Regime 상태(bull/bear/neutral)에 따라 글래스 배경에 미묘한 틴팅 적용
-- [ ] **RGME-02**: Regime 틴팅이 다크/라이트 모드 모두에서 작동
+- [x] **RGME-01**: Regime 상태(bull/bear/neutral)에 따라 글래스 배경에 미묘한 틴팅 적용
+- [x] **RGME-02**: Regime 틴팅이 다크/라이트 모드 모두에서 작동
 
 ### News Cards
 
@@ -113,8 +113,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BG-01 | Phase 3 | Complete |
 | BG-02 | Phase 3 | Complete |
 | BG-03 | Phase 3 | Complete |
-| RGME-01 | Phase 3 | Pending |
-| RGME-02 | Phase 3 | Pending |
+| RGME-01 | Phase 3 | Complete |
+| RGME-02 | Phase 3 | Complete |
 | NEWS-01 | Phase 4 | Pending |
 | NEWS-02 | Phase 4 | Pending |
 | NEWS-03 | Phase 4 | Pending |
