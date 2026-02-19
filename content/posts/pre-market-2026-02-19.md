@@ -12,14 +12,15 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 1. 핵심 요약 (30초)
 
-> **원/달러 1,451.18원(+10.32원) 급등, 외국인 수급 주목, 크립토 극단적 공포(9) — 금리/연준**
+> **원/달러 1,451.44원(+10.58원) 급등, 외국인 수급 주목, 크립토 극단적 공포(9) — 금리/연준**
 
-- **환율**: 원/달러 1,451.18원 (+10.32원) ↑ ⚡
+- **환율**: 원/달러 1,451.44원 (+10.58원) ↑ ⚡
 - **크립토**: Fear & Greed 9 (극단적 공포) ⚠️
 - 변동성: VIX 19.62 (-3.30%)
 - 금리: 미 10년물 4.08% (+0.03)
 
-
+> **오늘 달라진 것**
+> - 비트코인 4일 연속 ↓
 
 ---
 
@@ -28,20 +29,20 @@ chartData: "/data/chart-data-2026-02-19.json"
 ### 무슨 일이 있었나
 미국 증시는 소폭 상승으로 마감했습니다. S&P 500 +0.56%, 나스닥 +0.78%, 다우 +0.26%.
 
-주요 소식으로는 **"거래 부진에서 연준 금리 계획에 초점이 맞춰지면서 금은 계속 유지됩니다."** 이 시장의 관심을 끌었습니다.
+주요 소식으로는 **"금값 안정... 연준 금리 결정에 주목하는 거래량 적어"** 이 시장의 관심을 끌었습니다.
 
 **국내**: **설 연휴 쉬어간 코스피지수 향방은…반도체株·외국인 수급 주목 [오늘장 미리보기]** (한국경제 증권), **'20만 전자'도 찍나…삼성전자, 사상 첫 19만원 '돌파'** (한국경제 증권)
 가상자산 시장은 공포탐욕지수 **9(극단적 공포)**으로 바닥권 탐색 중입니다.
 
-오늘 한국장은 원/달러 1,451.18원(상승)과 한국 은행 1주 약세(-4.2%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
+오늘 한국장은 원/달러 1,451.44원(상승)과 한국 은행 1주 약세(-4.3%p)를 감안하면 외국인 수급 방향이 주요 변수입니다.
 
 ### 왜 그런가
 미국 10년물 금리 상승은 초기에는 위험자산에 부담을 주었지만, 연준의 비둘기파적 신호(NEWS_20260219_001)가 투자 심리를 개선하면서 상황이 반전되었다.
 금리 인하 기대감이 커지자 성장주(특히 기술주)에 대한 선호도가 높아졌고, 그 결과 나스닥 100 지수가 견조한 상승세를 보였다.
 반면, 캐터필러(CAT)와 같은 경기순환주가 하락하면서 섹터 간 차별화가 나타났으며, 이는 시장이 금리 하락에 따른 수혜를 예상하고 있음을 시사한다.
 
-다만, 달러인덱스(DXY_INDEX: 97.8)가 상승하면서 원/달러 환율(USDKRW: 1,451.18원)이 상승 압력을 받고 있어, 환율 변동성을 주시해야 한다.
-오늘 확인할 체크포인트는 미국 10년물 금리가 4.1%를 상향 돌파하는지, 그리고 달러인덱스가 98을 넘어서는지 여부이다.
+다만, 달러인덱스(DXY_INDEX: 97.8)가 상승하면서(NEWS_20260219_004) 원/달러 환율(USDKRW: 1,451.44원)이 상승 압력을 받고 있어, 환율 변동성을 주시해야 한다.
+오늘 SPX의 5일 이동평균선 돌파 여부와 VIX 지수(VIX_INDEX: 19.62)의 추가 하락 추세 확인이 필요하다.
 - 그래서 오늘은: 금리/연준 흐름 기준으로 체크포인트 1) VIX 19.62가 20 위로 재상승하는지, 체크포인트 2) 금융(XLF) 1주 +0.58% 강도가 유지되는지를 먼저 보겠습니다.
 - 기준 시나리오: 지수 혼조와 종목별 차별화가 이어지며 추세 확인 장세가 지속됩니다. 대안 시나리오: 한 방향 모멘텀이 강화되면 혼조 구간이 종료되고 추세 매매 구간으로 전환됩니다.
 
@@ -54,7 +55,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 현재 **유가 ↔ 10년물**가 비동조(r=+0.15)로, 독립적인 흐름입니다. 독립적
 또한 **S&P 500 ↔ BTC**도 r=-0.09 수준입니다. 독립적 움직임
 
-패턴: **디커플링** (S&P 500↔원/달러 r=+0.03) 구간으로, 환율과 미국 증시가 독립적으로 움직이고 있습니다.
+패턴: **디커플링** (S&P 500↔원/달러 r=+0.04) 구간으로, 환율과 미국 증시가 독립적으로 움직이고 있습니다.
 
 ### 오늘 주목할 것
 오늘 가장 주목할 이벤트는 **[USD] 실업수당 청구건수**입니다. 이전 227K, 예상 223K.
@@ -79,26 +80,25 @@ chartData: "/data/chart-data-2026-02-19.json"
   - 상황: 공포탐욕지수가 9에서 10 이하로 진입하거나 3일 이상 저점 유지
   - 대응: 역사적 과매도 구간. 단기 반등 확률 높으나 분할 접근
   - 해제 기준: 지수가 30 이상으로 반등하면 과매도 해제
-- **원/달러 레벨(1,451.18원)**
-  - 상황: 원/달러가 1,451.18원 기준 1,462원 돌파 또는 추가 상승
+- **원/달러 레벨(1,451.44원)**
+  - 상황: 원/달러가 1,451.44원 기준 1,462원 돌파 또는 추가 상승
   - 대응: 외국인 수급 악화 가능성. 대형주 비중 축소 검토
   - 해제 기준: 환율이 1,444원 이하로 내려오면 압력 완화
 
 ### 전략 시나리오 (AI 분석)
 **Market Regime: Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계**
 
-**단기 전략**: 관망 속 선별적 주식 비중 확대 검토
+**단기 전략**: 시장 안정 지표 기반 선별적 Long 및 관망 지속
 
 **확인 조건 (Confirmation Triggers)**:
-- VIX 지수 18.00 이하 지속 확인
-- S&P 500이 20일 이동평균 상회 마감 및 유지
-- 미국 10년물 국채 금리 4.00% 하회
+- S&P 500 추가 상승세 (예: +0.56% 이상) 지속 및 VIX 19.0 이하 하락
+- 미국 10년물 국채 금리 4.0% 하회
 
 **무효화 기준 (Invalidation Rules)**:
-- VIX 지수 21.00 이상 재상승 시 → 포지션 조정/해소
-- 미국 10년물 금리 4.20% 이상 돌파 시 → 포지션 조정/해소
+- VIX 20.0 상회 및 S&P 500 0.5% 이상 하락 → 포지션 조정/해소
+- 미국 10년물 국채 금리 4.15% 상회 및 DXY 98.0 상회 → 포지션 조정/해소
 
-현재 시장은 'Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계' 국면에 있습니다. VIX 지수가 19.62로 안정적인 수준을 유지하고 있고, 미국 10년물 국채 금리도 4.08%로 5일간 0bp 변동하며 안정세를 보입니다. S&P 500은 당일 +0.56% 상승했지만, 20일 기준으로는 -0.5%로 방향성 없는 횡보를 나타냅니다. 연준 금리 계획에 대한 불확실성 속에서도 주요 지표의 변동성 경계는 다소 완화된 상황입니다. 달러인덱스(DXY)는 97.8로 견고하며, 원/달러 환율은 1,451.18원을 기록, 여전히 높은 수준을 유지하고 있어 한국 증시의 상단은 제한될 수 있습니다.
+현재 시장은 'Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계' 국면입니다. VIX는 19.62로 안정세를 유지하고 있고, 미국 10년물 국채 금리는 4.08% 수준에서 5일간 0bp 움직임으로 안정적인 흐름을 보이고 있습니다. S&P 500은 당일 +0.56% 상승했지만, 20일 기준으로는 -0.5%의 횡보세를 보여 방향성에 대한 혼조세가 있습니다. 달러인덱스(DXY)는 97.8로 견고하며, 원/달러 환율은 1,451.44원으로 여전히 높은 수준입니다. 거래량은 연준 금리 결정에 주목하며 적은 편으로, 시장 참여자들의 관망 심리가 지배적입니다. 안정적인 VIX와 국채 금리는 제한적인 상승 시도를 가능하게 하나, 방향성 탐색 국면임을 인지하고 선별적인 접근이 필요합니다. 금값 안정 소식은 단기 변동성 확대를 제한하지만, 연준의 금리 결정에 따라 급변할 수 있으므로 주의가 요구됩니다. 국내 증시는 원/달러 환율의 높은 수준이 부담으로 작용할 수 있으며, 연준 결정에 따른 글로벌 유동성 변화에 민감하게 반응할 것으로 예상됩니다.
 
 <!-- OPINION_ZONE_END -->
 
@@ -116,37 +116,37 @@ chartData: "/data/chart-data-2026-02-19.json"
 | 다우존스 | 49,662.66 | +129.47 | +0.26% | - |
 | VIX (공포지수) | 19.62 | -0.67 | -3.30% | - |
 | 미국 10년물 국채 | 4.08% | +0.03 | - | - |
-| 달러인덱스 (DXY) | 97.76 | +0.06 | +0.06% | - |
+| 달러인덱스 (DXY) | 97.75 | +0.05 | +0.05% | - |
 
 ### 가상자산 
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 66,883 | -795.91 | -1.19% | - |
-| 이더리움 (ETH) | 1,975.66 | -20.35 | -1.03% | - |
+| 비트코인 (BTC) | 66,829 | -815.31 | -1.22% | ↓4일 |
+| 이더리움 (ETH) | 1,972.76 | -20.32 | -1.03% | - |
 | 공포탐욕지수 | 9 (극단적 공포) | - | - | - |
 
 ### 환율 
 
 | 항목 | 현재가 | 등락 | 등락률 | 흐름 |
 |------|--------|------|--------|------|
-| 원/달러 (USDKRW) | 1,451.18 | +10.32 | +0.72% | - ⚡ 상위 6% |
+| 원/달러 (USDKRW) | 1,451.44 | +10.58 | +0.73% | - ⚡ 상위 6% |
 
 ### 지수 선물
 
-> ↗ 본장 +0.56% 마감 → 선물 +0.24% 반등 중 (Basis: +0.24%)
+> ↗ 본장 +0.56% 마감 → 선물 +0.22% 반등 중 (Basis: +0.22%)
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| S&P 500 선물 | 6,897.5 | +3.25 | +0.05% |
-| 나스닥 100 선물 | 24,979.75 | +23.75 | +0.10% |
+| S&P 500 선물 | 6,896.75 | +2.5 | +0.04% |
+| 나스닥 100 선물 | 24,973.75 | +17.75 | +0.07% |
 
 ### 원자재
 
 | 항목 | 현재가 | 등락 | 등락률 |
 |------|--------|------|--------|
-| 국제 금 (Gold) | $5,001.6 | -7.9 | -0.16% |
-| WTI 유가 (Oil) | $65.35 | +0.3 | +0.46% |
+| 국제 금 (Gold) | $5,002 | -7.5 | -0.15% |
+| WTI 유가 (Oil) | $65.31 | +0.26 | +0.40% |
 
 {{< market-charts >}}
 
@@ -154,30 +154,30 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 13:35:55","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-19 13:46:24","max_items":8} -->
 ### 글로벌
 
-1. [**거래 부진에서 연준 금리 계획에 초점이 맞춰지면서 금은 계속 유지됩니다.**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
+1. [**금값 안정... 연준 금리 결정에 주목하는 거래량 적어**](https://news.google.com/rss/articles/CBMiswFBVV95cUxOMk95X0lDLUpMWGhhOU9HMVNQQ2dfVnh0aXhKSHNSVkYyem1QYlhHZnpiLVNLSGZUYnl2eFVHa0l0QVZQWVNjUTVaY211WnhaQlBzQVFMYlFDOW1oenJUSjl3eHh3VWxoaEpQSllHOVEtQjlkQjFlM2NybnBoUlg0MEgwMkpKNVd3QkZRcUYxX0xOUFB0MW5WNVJpdEh4aUpSUlZzRWJ1aDRJdjRpZnFxUXJuZw?oc=5)
    Bloomberg.com · 2026-02-19 12:22 KST · 원자재
    원문: Gold Steadies as Focus Turns to Fed Rate Plans in Thin Trading
    왜 중요한가: 금리 정책에 VIX 19.62로 반응. 변동성 확대 시 방어적 접근.
 
-2. [**연준은 지난달 금리 확인이 재무부의 요청에 따른 것이라고 밝혔습니다.**](https://news.google.com/rss/articles/CBMiogFBVV95cUxPYVE4d012U0VmbFJaSDhIaTJJanVRODB2SGMzSG8xQ3Rvb19hM0twanB2R0NIZ1hvOXZVVEFTV1J4ZHl4MFR4cjVBRzRJZE1Od0FvMHRmQUNWTnBJSEx4Ty1Ma1FjRnlzR0g4OHlyUTB2c3NWZkVkcTBuRzg0ejhjcUtwY2d0bGdYR0lWYm81YXhJRS1FeDdBdFVhUHZKNGNiZHc?oc=5)
+2. [**연준 "금리 점검"은 지난달 정부의 요청에 따른 것**](https://news.google.com/rss/articles/CBMiogFBVV95cUxPYVE4d012U0VmbFJaSDhIaTJJanVRODB2SGMzSG8xQ3Rvb19hM0twanB2R0NIZ1hvOXZVVEFTV1J4ZHl4MFR4cjVBRzRJZE1Od0FvMHRmQUNWTnBJSEx4Ty1Ma1FjRnlzR0g4OHlyUTB2c3NWZkVkcTBuRzg0ejhjcUtwY2d0bGdYR0lWYm81YXhJRS1FeDdBdFVhUHZKNGNiZHc?oc=5)
    Reuters · 2026-02-19 05:58 KST · 미국 매크로
    원문: Fed says last month's 'rate checks' were at Treasury's request
    왜 중요한가: 시장 기대 금리 경로와 실제 연준 행동 간 괴리를 점검합니다.
 
-3. [**다우존스 선물: S&P 500이 ASML 선두인 Nvidia로 인해 저항세를 보이고 있습니다. Carvana는 늦게 다이빙하고 Walmart는 마감되었습니다.**](https://news.google.com/rss/articles/CBMixAFBVV95cUxQNU43TUZHM1ZhRURsR1RiX3p2WGExdnU4aUNTdGRaRHA4OXFnTHkyT3h3Qk1lY3VqaTZmbFp2RkpIYWg3VVMzdVBhUWNmeVF0MnFqeGlseWZjeXZ0eHFhWVBwRlJNdGhXZ3FCY2ZGTkp1NEpmQ2w2VkQ1a3EzcnVxa1l4MkRVSXFucHVnUXRlQXZ0NV91cmNVdGJqZHFrZ1hMZFJ1ekd0MkJ5eUltRHJSNDU5N2hmY0hiZ0VzdXdGOF9oMkpP?oc=5)
+3. [**다우 선물: S&P 500 저항선 진입…나스닥 100 Nvidia·ASML 선도; 카르바나 급락, 월마트 발표待**](https://news.google.com/rss/articles/CBMixAFBVV95cUxQNU43TUZHM1ZhRURsR1RiX3p2WGExdnU4aUNTdGRaRHA4OXFnTHkyT3h3Qk1lY3VqaTZmbFp2RkpIYWg3VVMzdVBhUWNmeVF0MnFqeGlseWZjeXZ0eHFhWVBwRlJNdGhXZ3FCY2ZGTkp1NEpmQ2w2VkQ1a3EzcnVxa1l4MkRVSXFucHVnUXRlQXZ0NV91cmNVdGJqZHFrZ1hMZFJ1ekd0MkJ5eUltRHJSNDU5N2hmY0hiZ0VzdXdGOF9oMkpP?oc=5)
    Investor's Business Daily · 2026-02-19 13:05 KST · 시장 이벤트
    원문: Dow Jones Futures: S&P 500 Rises To Resistance As Nvidia, ASML Lead; Carvana Dives Late, Walmart Due
    왜 중요한가: AI/반도체 이슈에 나스닥이 +0.80% 반응. 국내 반도체 섹터 영향 주시.
 
-4. [**강한 경제지표에 달러지수 상승; Fed 의사록은 분할 표시**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPOGJUeGt4amgyTlRQeHpVaVVlUDJIeklhOUpod0ZpcFd0Q3hLRHA5bXJTZllYRS1UTzdONzhsOGlCWWxNdnAyeTFYTk5nVVNFYWwwRjdEVWtYQm1ZNEt2YkFFekJYM3J2X25acUpxRkxTVmJJcWlsbjFoQk1TbmhJSnJPN1RGc3lTV0tKTFREMjlfMXhtMzhTdE5SM01mV1plYVBqcVpHTjRsdEl0UjQzY2hFTQ?oc=5)
+4. [**미 달러 지수 상승... 경제 지표 호조에 연준 분열 신호**](https://news.google.com/rss/articles/CBMiswFBVV95cUxPOGJUeGt4amgyTlRQeHpVaVVlUDJIeklhOUpod0ZpcFd0Q3hLRHA5bXJTZllYRS1UTzdONzhsOGlCWWxNdnAyeTFYTk5nVVNFYWwwRjdEVWtYQm1ZNEt2YkFFekJYM3J2X25acUpxRkxTVmJJcWlsbjFoQk1TbmhJSnJPN1RGc3lTV0tKTFREMjlfMXhtMzhTdE5SM01mV1plYVBqcVpHTjRsdEl0UjQzY2hFTQ?oc=5)
    Equiti Global · 2026-02-19 10:44 KST · fx
    원문: Dollar index climbs on strong economic data; Fed minutes show split
    왜 중요한가: 연준 위원 발언 뉘앙스가 단기 채권 가격에 즉각 반영됩니다.
 
-5. [**주식시장은 셋째 날 상승세를 이어갔지만 S&P 500은 저항에 부딪혔습니다. 랄프 로렌 아이즈 브레이크아웃**](https://news.google.com/rss/articles/CBMiywFBVV95cUxPVW9ROG53Q0IzeEJCLUdxaUU1d0ZUSk1MZ3R2bWQ5ZEp5YllaYmg4c2lvUmtoWWFBaDNrb011clJ4TE5GTlJXV0lZYjF3SGZ6ZngxX3FKaWc2RVNCSHFCeHdxR2ZnRVI1QlVab3pOMll2eS1ZV1JPR0NjZHZkeUQ1dTNQV0NXRGJ0ZnhCcjNkUWd5NUtsME00aEt6ZWwxSkp2Rm8zY2ZJRHJiUzdQS18xNEFKSmdRLUtxcUk4WU9ESHRxVG5vRUFvcmoyaw?oc=5)
+5. [**주식 시장 3일 연속 상승...S&P 500 저항선에 부딪혀 Ralph Lauren 브레이크아웃 노린다**](https://news.google.com/rss/articles/CBMiywFBVV95cUxPVW9ROG53Q0IzeEJCLUdxaUU1d0ZUSk1MZ3R2bWQ5ZEp5YllaYmg4c2lvUmtoWWFBaDNrb011clJ4TE5GTlJXV0lZYjF3SGZ6ZngxX3FKaWc2RVNCSHFCeHdxR2ZnRVI1QlVab3pOMll2eS1ZV1JPR0NjZHZkeUQ1dTNQV0NXRGJ0ZnhCcjNkUWd5NUtsME00aEt6ZWwxSkp2Rm8zY2ZJRHJiUzdQS18xNEFKSmdRLUtxcUk4WU9ESHRxVG5vRUFvcmoyaw?oc=5)
    Investor's Business Daily · 2026-02-19 08:56 KST · 시장 이벤트
    원문: Stock Market Extends Gains For Third Day, But S&P 500 Hits Resistance; Ralph Lauren Eyes Breakout
    왜 중요한가: 즉시 반영 강도는 낮을 수 있지만, 방향성 확인용 보조 신호로 추적할 가치가 있습니다.
@@ -201,7 +201,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 13:35:55","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-19 13:46:24","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[상] [미국] [USD] Unemployment Claims** (D-Day)
@@ -312,13 +312,13 @@ chartData: "/data/chart-data-2026-02-19.json"
 
 | 섹터 | 1주 초과수익 | 1개월 초과수익 |
 |------|--------------|----------------|
-| 바이오 | +0.56% | -20.61% |
-| 자동차 | -0.23% | +3.92% |
-| 에너지 | -0.23% | +2.47% |
-| 반도체 | -0.67% | +3.64% |
-| IT | -0.98% | -1.16% |
-| 2차전지 | -1.27% | +1.43% |
-| 은행 | -4.24% | +10.27% |
+| 바이오 | +0.34% | -20.86% |
+| 에너지 | -0.24% | +2.46% |
+| 자동차 | -0.73% | +3.28% |
+| 반도체 | -0.74% | +3.56% |
+| IT | -0.96% | -1.14% |
+| 2차전지 | -1.22% | +1.49% |
+| 은행 | -4.32% | +10.18% |
 
 
 ## 최근 흐름 (5일)
@@ -361,7 +361,7 @@ chartData: "/data/chart-data-2026-02-19.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-19 13:35:55 KST</span>
+  <span>생성 시각: 2026-02-19 13:46:24 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-19 13:35:55 KST</span>
+  <span>데이터 기준 시각: 2026-02-19 13:46:24 KST</span>
 </div>
