@@ -80,7 +80,12 @@ Plans:
   3. 뉴스 카드에 마우스를 올리면 글래스 경계 강조 또는 그림자 변화가 발생한다
   4. 캘린더가 글래스 카드 스타일로 표시되고 이벤트 상태(지남/진행중/예정)가 시각적으로 구분된다
   5. 차트 컨테이너에 글래스 스타일의 테두리와 box-shadow가 적용되고 ECharts 팔레트가 디자인 시스템 색상과 동기화된다
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — 뉴스 카드 글래스 리디자인 (backdrop-filter 제거 + 카테고리 뱃지 + 모바일 1열)
+- [ ] 04-02-PLAN.md — 캘린더 이벤트 상태 시각 구분 CSS + 글래스 토큰 정합성 확인
+- [ ] 04-03-PLAN.md — 차트 글래스 컨테이너 확인 + ECharts 팔레트 동기화 (pink drift 수정)
 
 ### Phase 5: Performance & Accessibility
 **Goal**: 글래스 효과가 모바일에서 부드럽게 작동하고 WCAG 2.1 AA 기준을 통과한다
