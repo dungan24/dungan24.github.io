@@ -235,6 +235,12 @@
   margin-top: 1rem;
 }
 
+@media (max-width: 640px) {
+  .mp-news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .mp-news-card {
   display: flex;
   flex-direction: column;
@@ -252,6 +258,11 @@
   transform: translateY(-1px);
   border-color: rgba(0, 240, 255, 0.4);
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+:root:not(.dark) .mp-news-card:hover {
+  border-color: rgba(8, 145, 178, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .mp-news-card__source {
