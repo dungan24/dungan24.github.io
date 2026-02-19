@@ -95,7 +95,10 @@ Plans:
   1. 뷰포트에 동시 활성화된 backdrop-filter 요소가 10개 이하다 (DevTools 레이어 패널로 확인 가능)
   2. 내부 중첩 카드(뉴스 카드 등)는 backdrop-filter 없이 opaque rgba() 배경을 사용하고, 최외곽 컨테이너만 backdrop-filter를 갖는다
   3. 640px 이하 모바일에서 blur 값이 자동으로 줄어들어 적용된다 (CSS DevTools로 확인)
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md — backdrop-filter 중첩 위반 제거 + 모바일 blur 변수화 + reduced-motion 가드 보완
 
 ## Progress
 
@@ -108,7 +111,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Icons & Navigation | 2/2 | Complete   | 2026-02-19 |
 | 3. Background & Regime | 2/2 | Complete    | 2026-02-19 |
 | 4. Component Redesign | 3/3 | Complete   | 2026-02-19 |
-| 5. Performance & Accessibility | 0/TBD | Not started | - |
+| 5. Performance & Accessibility | 0/1 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-19*
