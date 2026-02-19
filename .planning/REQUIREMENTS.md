@@ -12,10 +12,10 @@ Requirements for glassmorphism redesign. Each maps to roadmap phases.
 - [x] **FOUN-01**: 중복된 `:root:not(.dark)` CSS 블록을 단일 블록으로 통합
 - [x] **FOUN-02**: `.mp-briefing-meta::before`의 nested backdrop-filter 버그 수정
 - [x] **FOUN-03**: `#TOCView`와 `.market-chart-card`를 prefers-reduced-motion 블록에 추가
-- [ ] **FOUN-04**: 3티어 CSS 변수 시스템 구축 (primitive → semantic → component 계층)
-- [ ] **FOUN-05**: 다크 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
-- [ ] **FOUN-06**: 라이트 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
-- [ ] **FOUN-07**: 모바일 blur 최적화 변수 정의 (640px 이하: 8px, 480px 이하: 4px)
+- [x] **FOUN-04**: 3티어 CSS 변수 시스템 구축 (primitive → semantic → component 계층)
+- [x] **FOUN-05**: 다크 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
+- [x] **FOUN-06**: 라이트 모드 최적화된 컬러 팔레트 정의 (primitive 토큰)
+- [x] **FOUN-07**: 모바일 blur 최적화 변수 정의 (640px 이하: 8px, 480px 이하: 4px)
 
 ### Icons
 
@@ -101,10 +101,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUN-01 | Phase 1 | Complete |
 | FOUN-02 | Phase 1 | Complete |
 | FOUN-03 | Phase 1 | Complete |
-| FOUN-04 | Phase 1 | Pending |
-| FOUN-05 | Phase 1 | Pending |
-| FOUN-06 | Phase 1 | Pending |
-| FOUN-07 | Phase 1 | Pending |
+| FOUN-04 | Phase 1 | Complete |
+| FOUN-05 | Phase 1 | Complete |
+| FOUN-06 | Phase 1 | Complete |
+| FOUN-07 | Phase 1 | Complete |
 | ICON-01 | Phase 2 | Pending |
 | ICON-02 | Phase 2 | Pending |
 | NAV-01 | Phase 2 | Pending |

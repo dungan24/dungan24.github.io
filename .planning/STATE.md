@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-19)
 ## Current Position
 
 Phase: 1 of 5 (Foundation)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-19 — Completed Plan 01 (CSS live bug fixes)
+Last activity: 2026-02-19 — Completed Plan 02 (CSS 3티어 토큰 시스템 구축)
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 2 minutes
-- Total execution time: 0.03 hours
+- Total execution time: 0.07 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1 - Foundation | 1 | 2 min | 2 min |
+| 1 - Foundation | 2 | 4 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: Plan 01-01 (2 min)
-- Trend: -
+- Last 5 plans: Plan 01-01 (2 min), Plan 01-02 (2 min)
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -48,6 +48,9 @@ Recent decisions affecting current work:
 - [Pre-Phase 1]: custom.css 라인 89/218의 중복 `:root:not(.dark)` 블록이 라이브 버그로 확인됨
 - [Phase 1 Plan 01]: 두 번째 :root:not(.dark) 블록은 첫 번째 블록의 subset — 단순 삭제로 해결
 - [Phase 1 Plan 01]: ::before pseudo-element backdrop-filter 완전 제거 — 부모의 glassmorphism으로 충분
+- [Phase 1 Plan 02]: 컴포넌트 파일 :root 블록 완전 제거 — 선언만 custom.css로 이전, 변수 소비(var()) 코드는 유지
+- [Phase 1 Plan 02]: 모바일 blur 미디어쿼리는 :root:not(.dark) 직후 배치 — cascade 순서 보장
+- [Phase 1 Plan 02]: blur 변수는 전체 함수 문자열화 — blur(var(--px)) 중첩은 CSS 스펙상 불가
 
 ### Pending Todos
 
@@ -61,5 +64,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 01-01-PLAN.md — CSS live bug fixes (FOUN-01, FOUN-02, FOUN-03)
+Stopped at: Completed 01-02-PLAN.md — CSS 3티어 토큰 시스템 구축 (FOUN-04, FOUN-05, FOUN-06, FOUN-07)
 Resume file: None

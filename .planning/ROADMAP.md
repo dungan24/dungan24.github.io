@@ -15,7 +15,7 @@
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - CSS 버그 수정 + 3티어 토큰 시스템 구축 (모든 컴포넌트 작업의 전제 조건)
+- [x] **Phase 1: Foundation** - CSS 버그 수정 + 3티어 토큰 시스템 구축 (모든 컴포넌트 작업의 전제 조건) (completed 2026-02-19)
 - [ ] **Phase 2: Icons & Navigation** - Phosphor Icons 통합 + Frosted glass 스티키 헤더
 - [ ] **Phase 3: Background & Regime** - Ambient orbs 배경 + Regime 글래스 틴팅
 - [ ] **Phase 4: Component Redesign** - 뉴스 카드 / 캘린더 / 차트 글래스 리디자인
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/2 | In Progress|  |
+| 1. Foundation | 2/2 | Complete   | 2026-02-19 |
 | 2. Icons & Navigation | 0/TBD | Not started | - |
 | 3. Background & Regime | 0/TBD | Not started | - |
 | 4. Component Redesign | 0/TBD | Not started | - |
