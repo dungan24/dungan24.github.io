@@ -1,45 +1,61 @@
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
-  var ns = window.MPCalendar = window.MPCalendar || {};
+  var ns = (window.MPCalendar = window.MPCalendar || {});
 
-  ns.createModel = function(parser) {
+  ns.createModel = function (parser) {
     var config = window.MP_CONFIG || {};
     var calConfig = config.calendar || {};
-    var timeZone = calConfig.timezone || 'Asia/Seoul';
+    var timeZone = calConfig.timezone || "Asia/Seoul";
     var periodDays = calConfig.period_days || { pm5: 5, pm10: 10, pm20: 20 };
 
     function getEventStatus(event, now) {
-      if (event.status === '예정' || event.status === '발표' || event.status === '마감') {
+      if (
+        event.status === "예정" ||
+        event.status === "발표" ||
+        event.status === "마감"
+      ) {
         return event.status;
       }
-      if (!event.dateTime || isNaN(event.dateTime.getTime())) return '예정';
-      if (event.actual) return '발표';
-      return event.dateTime.getTime() <= now.getTime() ? '마감' : '예정';
+      if (!event.dateTime || isNaN(event.dateTime.getTime())) return "예정";
+      if (event.actual) return "발표";
+      return event.dateTime.getTime() <= now.getTime() ? "마감" : "예정";
     }
 
     function getStatusBadgeClass(status) {
-      if (status === '발표') return 'released';
-      if (status === '마감') return 'closed';
-      return 'scheduled';
+      if (status === "발표") return "released";
+      if (status === "마감") return "closed";
+      return "scheduled";
     }
 
     function isKoreanScheduleEvent(event) {
-      var country = String(event && event.country ? event.country : '').trim().toUpperCase();
-      if (country === 'KR' || country === 'KOR' || country === 'KRW' || country === '한국') return true;
-      var raw = String(event && event.raw ? event.raw : '');
+      var country = String(event && event.country ? event.country : "")
+        .trim()
+        .toUpperCase();
+      if (
+        country === "KR" ||
+        country === "KOR" ||
+        country === "KRW" ||
+        country === "한국"
+      )
+        return true;
+      var raw = String(event && event.raw ? event.raw : "");
       return /^\[(KR|KOR|KRW)\]/i.test(raw) || /\[한국\]/.test(raw);
     }
 
     function selectUpcomingEvents(events, limit) {
       if (!Array.isArray(events) || events.length <= limit) return events || [];
       var selected = events.slice(0, limit);
-      var hasKorean = selected.some(function(e) { return isKoreanScheduleEvent(e); });
+      var hasKorean = selected.some(function (e) {
+        return isKoreanScheduleEvent(e);
+      });
       if (!hasKorean) {
-        var koreanCandidate = events.find(function(e) { return isKoreanScheduleEvent(e); });
+        var koreanCandidate = events.find(function (e) {
+          return isKoreanScheduleEvent(e);
+        });
         if (koreanCandidate) {
           selected[selected.length - 1] = koreanCandidate;
-          selected.sort(function(a, b) {
+          selected.sort(function (a, b) {
             return a.dateTime.getTime() - b.dateTime.getTime();
           });
         }
@@ -48,38 +64,57 @@
     }
 
     function normalizeCountryBucket(country) {
-      var c = String(country || '').trim().toUpperCase();
-      if (c === '미국' || c === 'USD' || c === 'US') return 'us';
-      if (c === '한국' || c === 'KR' || c === 'KOR' || c === 'KRW') return 'kr';
-      return 'other';
+      var c = String(country || "")
+        .trim()
+        .toUpperCase();
+      if (c === "미국" || c === "USD" || c === "US") return "us";
+      if (c === "한국" || c === "KR" || c === "KOR" || c === "KRW") return "kr";
+      return "other";
     }
 
     function getKstDayDiff(eventDate, now) {
       var eventYmd = parser.kstYmd(eventDate || now);
       var nowYmd = parser.kstYmd(now);
-      var e = new Date(eventYmd + 'T00:00:00Z');
-      var n = new Date(nowYmd + 'T00:00:00Z');
+      var e = new Date(eventYmd + "T00:00:00Z");
+      var n = new Date(nowYmd + "T00:00:00Z");
       return Math.round((e.getTime() - n.getTime()) / (24 * 60 * 60 * 1000));
     }
 
     function matchesUpcomingFilter(event, filterState, now) {
-      if (filterState.importance === 'high' && event.importance !== 'high') return false;
-      if (filterState.importance === 'high-medium' && event.importance === 'low') return false;
+      if (filterState.importance === "high" && event.importance !== "high")
+        return false;
+      if (
+        filterState.importance === "high-medium" &&
+        event.importance === "low"
+      )
+        return false;
       var periodDiff = getKstDayDiff(event.dateTime, now);
       var periodLimit = Number(periodDays[filterState.period]);
-      if (Number.isFinite(periodLimit) && (periodDiff < -periodLimit || periodDiff > periodLimit)) return false;
-      if (filterState.country !== 'all' && normalizeCountryBucket(event.country) !== filterState.country) return false;
+      if (
+        Number.isFinite(periodLimit) &&
+        (periodDiff < -periodLimit || periodDiff > periodLimit)
+      )
+        return false;
+      if (
+        filterState.country !== "all" &&
+        normalizeCountryBucket(event.country) !== filterState.country
+      )
+        return false;
       return true;
     }
 
     function getMonthAnchor(events, now) {
-      if (!events || events.length === 0) return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
-      var valid = events.filter(function(e) { return e.dateTime && !isNaN(e.dateTime.getTime()); });
-      if (valid.length === 0) return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+      if (!events || events.length === 0)
+        return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+      var valid = events.filter(function (e) {
+        return e.dateTime && !isNaN(e.dateTime.getTime());
+      });
+      if (valid.length === 0)
+        return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
 
       var nearest = valid[0];
       var minDiff = Math.abs(nearest.dateTime.getTime() - now.getTime());
-      valid.forEach(function(e) {
+      valid.forEach(function (e) {
         var diff = Math.abs(e.dateTime.getTime() - now.getTime());
         if (diff < minDiff) {
           minDiff = diff;
@@ -87,14 +122,16 @@
         }
       });
 
-      var p = new Intl.DateTimeFormat('en-CA', {
+      var p = new Intl.DateTimeFormat("en-CA", {
         timeZone: timeZone,
-        year: 'numeric',
-        month: '2-digit'
-      }).formatToParts(nearest.dateTime).reduce(function(acc, cur) {
-        acc[cur.type] = cur.value;
-        return acc;
-      }, {});
+        year: "numeric",
+        month: "2-digit",
+      })
+        .formatToParts(nearest.dateTime)
+        .reduce(function (acc, cur) {
+          acc[cur.type] = cur.value;
+          return acc;
+        }, {});
       return { year: Number(p.year), month: Number(p.month) };
     }
 
@@ -104,19 +141,21 @@
       var prevMonthDays = new Date(Date.UTC(year, month - 1, 0)).getUTCDate();
 
       var eventMap = {};
-      events.forEach(function(e) {
+      events.forEach(function (e) {
         if (!e.dateTime || isNaN(e.dateTime.getTime())) return;
-        var parts = new Intl.DateTimeFormat('en-CA', {
+        var parts = new Intl.DateTimeFormat("en-CA", {
           timeZone: timeZone,
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit'
-        }).formatToParts(e.dateTime).reduce(function(acc, cur) {
-          acc[cur.type] = cur.value;
-          return acc;
-        }, {});
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+          .formatToParts(e.dateTime)
+          .reduce(function (acc, cur) {
+            acc[cur.type] = cur.value;
+            return acc;
+          }, {});
 
-        var key = parts.year + '-' + parts.month + '-' + parts.day;
+        var key = parts.year + "-" + parts.month + "-" + parts.day;
         if (!eventMap[key]) eventMap[key] = [];
         eventMap[key].push(e);
       });
@@ -146,31 +185,37 @@
           dayNum = dayNum - daysInMonth;
         }
 
-        var mm = String(cellMonth).padStart(2, '0');
-        var dd = String(dayNum).padStart(2, '0');
-        var key = String(cellYear) + '-' + mm + '-' + dd;
+        var mm = String(cellMonth).padStart(2, "0");
+        var dd = String(dayNum).padStart(2, "0");
+        var key = String(cellYear) + "-" + mm + "-" + dd;
 
-        var dayEvents = (eventMap[key] || []).slice().sort(function(a, b) {
+        var dayEvents = (eventMap[key] || []).slice().sort(function (a, b) {
           return a.dateTime.getTime() - b.dateTime.getTime();
         });
 
-        var highCount = dayEvents.filter(function(e) { return e.importance === 'high'; }).length;
+        var highCount = dayEvents.filter(function (e) {
+          return e.importance === "high";
+        }).length;
         var krHolidaySet = parser.getKrxHolidaySet(cellYear);
-        var holiday = krHolidaySet.has(key) || dayEvents.some(function(e) { return e.isHoliday; });
+        var holiday =
+          krHolidaySet.has(key) ||
+          dayEvents.some(function (e) {
+            return e.isHoliday;
+          });
 
         var tooltipData = {
           date: key,
           isHoliday: holiday,
-          events: dayEvents.map(function(e) {
+          events: dayEvents.map(function (e) {
             return {
               name: e.name,
               nameKo: e.nameKo,
               importance: e.importance,
               status: getEventStatus(e, now),
-              time: parser.formatKst(e.dateTime).split(' ')[1], // HH:mm만 추출
-              country: e.country
+              time: parser.formatKst(e.dateTime).split(" ")[1], // HH:mm만 추출
+              country: e.country,
             };
-          })
+          }),
         };
 
         cells.push({
@@ -182,7 +227,7 @@
           highCount: highCount,
           isHoliday: holiday,
           isToday: key === parser.kstYmd(now),
-          tooltipData: tooltipData
+          tooltipData: tooltipData,
         });
       }
 
@@ -195,7 +240,7 @@
       selectUpcomingEvents: selectUpcomingEvents,
       matchesUpcomingFilter: matchesUpcomingFilter,
       getMonthAnchor: getMonthAnchor,
-      buildCalendarModel: buildCalendarModel
+      buildCalendarModel: buildCalendarModel,
     };
   };
 })();
