@@ -2,6 +2,9 @@
 title: "투자 전략"
 description: "시장 국면 기반 대응 프레임워크와 체크리스트"
 draft: false
+date: 2026-01-01
+showDate: false
+showPagination: false
 ---
 
 Market Pulse는 방향 예측보다 **확률과 리스크 관리**를 우선합니다.

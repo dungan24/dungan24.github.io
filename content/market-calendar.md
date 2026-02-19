@@ -2,6 +2,9 @@
 title: "마켓 캘린더"
 description: "변동성 이벤트를 해석하고 대응하는 캘린더 사용 가이드"
 draft: false
+date: 2026-01-01
+showDate: false
+showPagination: false
 ---
 
 마켓 캘린더는 단순 일정표가 아니라 **변동성 관리 도구**입니다.
