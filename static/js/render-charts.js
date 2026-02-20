@@ -48,6 +48,9 @@
     US10Y: METRIC_PALETTE.US10Y || "#f472b6",
   };
 
+  // 공통 폰트
+  var FONT = "Noto Sans KR, -apple-system, BlinkMacSystemFont, sans-serif";
+
   // 공통 애니메이션 설정
   var ANIMATION = {
     duration: 800,
@@ -84,6 +87,7 @@
   function getTooltipStyle() {
     var dark = isDarkMode();
     return {
+      appendToBody: true,
       backgroundColor: dark
         ? "rgba(10, 10, 26, 0.95)"
         : "rgba(255, 255, 255, 0.98)",
@@ -108,7 +112,9 @@
     if (!el) return null;
     var existing = echarts.getInstanceByDom(el);
     if (existing) existing.dispose();
-    var chart = echarts.init(el, isDarkMode() ? "dark" : null);
+    var chart = echarts.init(el, isDarkMode() ? "dark" : null, {
+      renderer: "svg",
+    });
     MPCharts._instances.push(chart);
     return chart;
   }
@@ -289,11 +295,12 @@
 
     chart.setOption({
       backgroundColor: theme.bg,
+      textStyle: { fontFamily: FONT, fontWeight: 500 },
       tooltip: tooltipStyle,
       legend: {
         data: seriesKeys,
         bottom: 0,
-        textStyle: { color: theme.text, fontSize: mobile ? 9 : 10 },
+        textStyle: { color: theme.text, fontSize: mobile ? 10 : 11 },
         itemWidth: 12,
         itemHeight: 3,
         itemGap: mobile ? 8 : 12,
@@ -318,7 +325,8 @@
         data: dates,
         axisLabel: {
           color: theme.textMuted,
-          fontSize: mobile ? 9 : 10,
+          fontSize: mobile ? 10 : 11,
+          fontWeight: 500,
           formatter: shortDate,
           rotate: mobile ? 45 : 0,
         },
@@ -331,7 +339,8 @@
           position: "left",
           axisLabel: {
             color: theme.textMuted,
-            fontSize: 10,
+            fontSize: 11,
+            fontWeight: 500,
             formatter: "{value}%",
           },
           splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
@@ -342,7 +351,8 @@
           position: "right",
           axisLabel: {
             color: theme.textMuted,
-            fontSize: 10,
+            fontSize: 11,
+            fontWeight: 500,
             formatter: "{value}%",
           },
           splitLine: { show: false },
@@ -440,14 +450,17 @@
       var abs = Math.abs(v);
       if (abs > maxAbs) maxAbs = abs;
     });
-    var axisRange = Math.max(
-      0.3,
-      Math.min(1.0, Math.ceil(maxAbs * 5) / 5 + 0.1),
+    var rawRange = Math.max(
+      0.25,
+      Math.min(1.0, Math.ceil(maxAbs * 10) / 10 + 0.05),
     );
-    var axisInterval = axisRange <= 0.5 ? 0.1 : 0.25;
+    var axisInterval = rawRange <= 0.5 ? 0.1 : 0.25;
+    // 축 범위를 interval 배수로 맞춰 라벨 중복 방지
+    var axisRange = Math.ceil(rawRange / axisInterval) * axisInterval;
 
     chart.setOption({
       backgroundColor: theme.bg,
+      textStyle: { fontFamily: FONT, fontWeight: 500 },
       tooltip: tooltipStyle,
       grid: {
         left: mobile ? "5%" : "5%",
@@ -463,10 +476,12 @@
         interval: axisInterval,
         axisLabel: {
           color: theme.textMuted,
-          fontSize: 10,
+          fontSize: 11,
+          fontWeight: 500,
           formatter: function (v) {
             return v === 0 ? "0" : (v > 0 ? "+" : "") + v.toFixed(1);
           },
+          hideOverlap: true,
         },
         splitLine: {
           lineStyle: {
@@ -626,15 +641,17 @@
 
     chart.setOption({
       backgroundColor: "transparent",
+      textStyle: { fontFamily: FONT, fontWeight: 500 },
       tooltip: tooltipStyle,
       series: [
         {
           type: "gauge",
+          center: ["50%", "55%"],
           startAngle: 210,
           endAngle: -30,
           min: 0,
           max: 100,
-          radius: "95%",
+          radius: "80%",
           progress: {
             show: true,
             width: 12,
@@ -667,7 +684,12 @@
           },
           axisTick: { show: false },
           splitLine: { show: false },
-          axisLabel: { distance: -50, color: theme.textMuted, fontSize: 10 },
+          axisLabel: {
+            distance: -45,
+            color: theme.textMuted,
+            fontSize: 11,
+            fontWeight: 500,
+          },
           detail: {
             offsetCenter: [0, "30%"],
             formatter: function () {
@@ -708,6 +730,25 @@
   }
 
   // ===== 차트 4: 섹터 강도 (Sectors) =====
+
+  // US↔KR 비교를 위한 고정 섹터 순서 (같은 행 = 같은 업종)
+  var SECTOR_ORDER = {
+    // US sectors
+    테크: 0,
+    반도체: 1,
+    에너지: 2,
+    금융: 3,
+    산업: 4,
+    헬스케어: 5,
+    소비재: 6,
+    // KR sectors (대응되는 업종과 같은 순서)
+    IT: 0,
+    /* 반도체: 1 */ /* 에너지: 2 */ 은행: 3,
+    자동차: 4,
+    바이오: 5,
+    "2차전지": 6,
+  };
+
   function renderSectors(data) {
     if (!data.sectorStrength) return;
     var ss = data.sectorStrength;
@@ -721,7 +762,11 @@
       var mobile = isMobile();
 
       var sorted = items.slice().sort(function (a, b) {
-        return b.week1 - a.week1;
+        var orderA =
+          SECTOR_ORDER[a.name] !== undefined ? SECTOR_ORDER[a.name] : 99;
+        var orderB =
+          SECTOR_ORDER[b.name] !== undefined ? SECTOR_ORDER[b.name] : 99;
+        return orderA - orderB;
       });
       var names = sorted.map(function (s) {
         return s.name;
@@ -744,6 +789,28 @@
         if (v < week1Values[minIdx]) minIdx = i;
       });
 
+      // IQR 기반 x축 범위 계산 — 아웃라이어가 축을 과도하게 늘리는 것 방지
+      var allValues = week1Values.concat(
+        month1Values.filter(function (v) {
+          return v !== null;
+        }),
+      );
+      var sortedVals = allValues.slice().sort(function (a, b) {
+        return a - b;
+      });
+      var q1 = sortedVals[Math.floor(sortedVals.length * 0.25)];
+      var q3 = sortedVals[Math.floor(sortedVals.length * 0.75)];
+      var iqr = q3 - q1;
+      var lowerFence = q1 - 1.5 * iqr;
+      var upperFence = q3 + 1.5 * iqr;
+      var sectorAxisMin = Math.min(-5, Math.floor(lowerFence / 5) * 5);
+      var sectorAxisMax = Math.max(5, Math.ceil(upperFence / 5) * 5);
+
+      // 아웃라이어 바를 축 범위로 클램핑하는 헬퍼
+      function clampValue(v) {
+        return Math.max(sectorAxisMin, Math.min(sectorAxisMax, v));
+      }
+
       var tooltipStyle = getTooltipStyle();
       tooltipStyle.trigger = "axis";
       tooltipStyle.axisPointer = { type: "shadow" };
@@ -755,7 +822,10 @@
           "</div>";
         params.forEach(function (p) {
           if (p.value === null || p.value === undefined) return;
-          var sign = p.value >= 0 ? "+" : "";
+          // 클램핑된 바의 원본값 사용
+          var orig =
+            p.data && p.data._orig !== undefined ? p.data._orig : p.value;
+          var sign = orig >= 0 ? "+" : "";
           lines +=
             '<div style="display:flex; justify-content:space-between; gap:16px; margin-bottom:3px; align-items:center;">' +
             '<span style="display:inline-flex; align-items:center; gap:6px; color:' +
@@ -766,10 +836,10 @@
             p.seriesName +
             "</span>" +
             '<span style="font-weight:700; font-variant-numeric:tabular-nums; color:' +
-            (p.value >= 0 ? theme.success : theme.danger) +
+            (orig >= 0 ? theme.success : theme.danger) +
             '">' +
             sign +
-            p.value.toFixed(2) +
+            orig.toFixed(2) +
             "%</span>" +
             "</div>";
         });
@@ -780,58 +850,24 @@
       var successHex = dark ? "#FF3366" : "#DC2626";
       var dangerHex = dark ? "#3388FF" : "#2563EB";
 
-      // 시리즈 구성: 1개월(뒤, 글래스) → 1주(앞, 솔리드) 겹침
+      // 시리즈 구성: 1주(위) + 1개월(아래) 그룹 바 (나란히 배치)
+      var barSize = mobile ? 8 : 10;
       var seriesArr = [];
 
-      // 1개월: 뒤에 깔리는 글래스모피즘 바
-      if (hasMonth1) {
-        seriesArr.push({
-          name: "1개월",
-          type: "bar",
-          z: 1,
-          barWidth: mobile ? 16 : 22,
-          barCategoryGap: "30%",
-          itemStyle: {
-            color: dark
-              ? "rgba(148, 163, 184, 0.15)"
-              : "rgba(30, 30, 58, 0.08)",
-          },
-          data: month1Values.map(function (v) {
-            if (v === null) return { value: null };
-            var baseColor = v >= 0 ? successHex : dangerHex;
-            return {
-              value: v,
-              itemStyle: {
-                color: hexToRgba(baseColor, 0.1),
-                borderColor: hexToRgba(baseColor, 0.2),
-                borderWidth: 1,
-                borderRadius: v >= 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
-              },
-            };
-          }),
-          label: { show: false },
-          animationDuration: ANIMATION.duration,
-          animationEasing: ANIMATION.easing,
-          animationDelay: function (idx) {
-            return idx * 60 + 200;
-          },
-        });
-      }
-
-      // 1주: 위에 겹치는 솔리드 그라디언트 바
+      // 1주: 솔리드 그라디언트 바 (위쪽)
       seriesArr.push({
         name: "1주",
         type: "bar",
-        z: 2,
-        barWidth: mobile ? 8 : 10,
-        barGap: "-100%",
-        barCategoryGap: "30%",
+        barWidth: barSize,
+        barCategoryGap: "40%",
         data: week1Values.map(function (v, i) {
           var isTop = i === maxIdx;
           var isBottom = i === minIdx;
           var baseColor = v >= 0 ? successHex : dangerHex;
+          var clamped = clampValue(v);
           return {
-            value: v,
+            value: clamped,
+            _orig: v,
             itemStyle: {
               color: new echarts.graphic.LinearGradient(
                 v >= 0 ? 0 : 1,
@@ -867,8 +903,55 @@
         animationDelay: ANIMATION.delay,
       });
 
+      // 1개월: 반투명 바 (아래쪽, 나란히)
+      if (hasMonth1) {
+        seriesArr.push({
+          name: "1개월",
+          type: "bar",
+          barWidth: barSize,
+          barGap: "20%",
+          data: month1Values.map(function (v, i) {
+            if (v === null) return { value: null };
+            var w = week1Values[i];
+            // 같은 부호이고 차이가 작으면 1개월 라벨 숨김 (툴팁으로 확인 가능)
+            var vPos = v >= 0;
+            var wPos = w >= 0;
+            var tooClose = vPos === wPos && Math.abs(v - w) < 3;
+            var baseColor = v >= 0 ? successHex : dangerHex;
+            var clamped = clampValue(v);
+            return {
+              value: clamped,
+              _orig: v,
+              itemStyle: {
+                color: hexToRgba(baseColor, 0.12),
+                borderColor: hexToRgba(baseColor, 0.55),
+                borderWidth: 1.5,
+                borderType: "dashed",
+                borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
+              },
+              label: {
+                show: !tooClose,
+                position: v >= 0 ? "right" : "left",
+                formatter: (v >= 0 ? "+" : "") + v.toFixed(1) + "%",
+                color: dark
+                  ? "rgba(148, 163, 184, 0.7)"
+                  : "rgba(100, 116, 139, 0.8)",
+                fontSize: mobile ? 8 : 9,
+                fontWeight: 500,
+              },
+            };
+          }),
+          animationDuration: ANIMATION.duration,
+          animationEasing: ANIMATION.easing,
+          animationDelay: function (idx) {
+            return idx * 60 + 200;
+          },
+        });
+      }
+
       chart.setOption({
         backgroundColor: "transparent",
+        textStyle: { fontFamily: FONT, fontWeight: 500 },
         tooltip: tooltipStyle,
         legend: {
           data: hasMonth1
@@ -882,18 +965,21 @@
                   name: "1개월",
                   icon: "roundRect",
                   itemStyle: {
-                    color: "transparent",
+                    color: dark
+                      ? "rgba(148, 163, 184, 0.15)"
+                      : "rgba(100, 116, 139, 0.1)",
                     borderColor: dark
-                      ? "rgba(148, 163, 184, 0.5)"
-                      : "rgba(30, 30, 58, 0.3)",
-                    borderWidth: 1,
+                      ? "rgba(148, 163, 184, 0.6)"
+                      : "rgba(100, 116, 139, 0.5)",
+                    borderWidth: 1.5,
+                    borderType: "dashed",
                   },
                 },
               ]
             : ["1주"],
           top: 0,
           right: 0,
-          textStyle: { color: theme.text, fontSize: 10 },
+          textStyle: { color: theme.text, fontSize: mobile ? 9 : 10 },
           itemWidth: 14,
           itemHeight: 8,
         },
@@ -906,10 +992,14 @@
         },
         xAxis: {
           type: "value",
+          min: sectorAxisMin,
+          max: sectorAxisMax,
           axisLabel: {
             color: theme.textMuted,
-            fontSize: 10,
+            fontSize: mobile ? 9 : 11,
+            fontWeight: 500,
             formatter: "{value}%",
+            hideOverlap: true,
           },
           splitLine: { lineStyle: { color: theme.grid, type: [3, 5] } },
           axisLine: { show: false },
@@ -920,7 +1010,7 @@
           inverse: true,
           axisLabel: {
             color: theme.text,
-            fontSize: mobile ? 10 : 11,
+            fontSize: mobile ? 11 : 12,
             fontWeight: 500,
           },
           axisLine: {
