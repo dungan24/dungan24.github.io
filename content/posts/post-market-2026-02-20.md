@@ -87,7 +87,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:31:40","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:35:28","max_items":5} -->
 ### 글로벌
 
 
@@ -153,7 +153,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:31:40","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:35:28","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][GBP][D-Day] [GBP] Retail Sales m/m
@@ -262,7 +262,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 21:31:40 KST</span>
+  <span>생성 시각: 2026-02-20 21:35:28 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 21:31:40 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 21:35:28 KST</span>
 </div>
