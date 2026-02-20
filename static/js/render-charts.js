@@ -433,24 +433,41 @@
       return lines;
     };
 
+    // X축 범위를 데이터에 맞게 동적 계산 (최소 ±0.3, 최대 ±1.0)
+    var maxAbs = 0;
+    values.forEach(function (v) {
+      var abs = Math.abs(v);
+      if (abs > maxAbs) maxAbs = abs;
+    });
+    var axisRange = Math.max(
+      0.3,
+      Math.min(1.0, Math.ceil(maxAbs * 5) / 5 + 0.1),
+    );
+    var axisInterval = axisRange <= 0.5 ? 0.1 : 0.25;
+
     chart.setOption({
       backgroundColor: theme.bg,
       tooltip: tooltipStyle,
       grid: {
         left: mobile ? "3%" : "3%",
-        right: mobile ? "18%" : "15%",
+        right: mobile ? "22%" : "18%",
         top: "5%",
         bottom: "5%",
         containLabel: true,
       },
       xAxis: {
         type: "value",
-        min: -1,
-        max: 1,
-        interval: 0.5,
-        axisLabel: { color: theme.textMuted, fontSize: 10 },
+        min: -axisRange,
+        max: axisRange,
+        interval: axisInterval,
+        axisLabel: {
+          color: theme.textMuted,
+          fontSize: 10,
+          formatter: function (v) {
+            return v === 0 ? "0" : (v > 0 ? "+" : "") + v.toFixed(1);
+          },
+        },
         splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
-        // 제로 기준선 강조
         axisLine: { show: false },
       },
       yAxis: {
@@ -460,7 +477,7 @@
         axisLabel: {
           color: theme.text,
           fontSize: mobile ? 10 : 11,
-          width: mobile ? 100 : 130,
+          width: mobile ? 90 : 120,
           overflow: "truncate",
         },
         axisLine: { lineStyle: { color: theme.axis } },
@@ -469,50 +486,48 @@
       series: [
         {
           type: "bar",
-          data: values.map(function (v) {
+          data: values.map(function (v, i) {
             var baseHex = getCorrBaseHex(v);
             var opacity = getCorrOpacity(v);
             return {
               value: v,
               itemStyle: {
                 color: new echarts.graphic.LinearGradient(
-                  v >= 0 ? 0 : 1, 0, v >= 0 ? 1 : 0, 0,
+                  v >= 0 ? 0 : 1,
+                  0,
+                  v >= 0 ? 1 : 0,
+                  0,
                   [
-                    { offset: 0, color: hexToRgba(baseHex, 0.08) },
+                    { offset: 0, color: hexToRgba(baseHex, 0.15) },
                     { offset: 1, color: hexToRgba(baseHex, opacity) },
                   ],
                 ),
                 borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
               },
+              label: {
+                show: true,
+                position: v >= 0 ? "right" : "left",
+                formatter:
+                  (v > 0 ? "+" : "") +
+                  v.toFixed(2) +
+                  " " +
+                  (statusLabels[i] || ""),
+                color: getCorrTextColor(v),
+                fontSize: mobile ? 9 : 11,
+                fontWeight: 600,
+              },
             };
           }),
           barWidth: mobile ? 18 : 24,
-          label: {
-            show: true,
-            position: "right",
-            formatter: function (params) {
-              var v = params.value;
-              var sign = v > 0 ? "+" : "";
-              var idx = params.dataIndex;
-              var status = statusLabels[idx];
-              return sign + v.toFixed(2) + (status ? "  " + status : "");
-            },
-            color: function (params) {
-              return getCorrTextColor(params.value);
-            },
-            fontSize: mobile ? 10 : 11,
-            fontWeight: 600,
-            fontFamily: "Noto Sans KR, sans-serif",
-          },
           // 제로 라인 강조
           markLine: {
             silent: true,
             symbol: "none",
             lineStyle: {
               color: dark
-                ? "rgba(0, 240, 255, 0.4)"
-                : "rgba(124, 58, 237, 0.4)",
-              width: 1.5,
+                ? "rgba(0, 240, 255, 0.5)"
+                : "rgba(124, 58, 237, 0.5)",
+              width: 2,
               type: "solid",
             },
             data: [{ xAxis: 0 }],
