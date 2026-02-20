@@ -37,12 +37,20 @@
     }).format(d);
   }
 
-  // ── 날짜 URL 생성 ──
+  // ── 날짜 URL 생성 (주말 스킵) ──
   function buildUrls() {
     var now = new Date();
     var urls = [];
-    for (var i = 0; i <= LOOKBACK_DAYS; i++) {
+    var i = 0;
+    while (urls.length <= LOOKBACK_DAYS) {
       var d = new Date(now.getTime() - 86400000 * i);
+      i++;
+      // 주말 스킵 — KST 기준 요일 확인
+      var dayStr = new Intl.DateTimeFormat("en-US", {
+        timeZone: timeZone,
+        weekday: "short",
+      }).format(d);
+      if (dayStr === "Sat" || dayStr === "Sun") continue;
       urls.push(chartDataPrefix + fmtDate(d) + ".json");
     }
     return urls;
