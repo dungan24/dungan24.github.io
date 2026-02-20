@@ -780,80 +780,35 @@
       var successHex = dark ? "#FF3366" : "#DC2626";
       var dangerHex = dark ? "#3388FF" : "#2563EB";
 
-      var seriesArr = [
-        {
-          name: "1주",
-          type: "bar",
-          data: week1Values.map(function (v, i) {
-            var isTop = i === maxIdx;
-            var isBottom = i === minIdx;
-            var baseColor = v >= 0 ? successHex : dangerHex;
-            return {
-              value: v,
-              itemStyle: {
-                color: new echarts.graphic.LinearGradient(
-                  v >= 0 ? 0 : 1,
-                  0,
-                  v >= 0 ? 1 : 0,
-                  0,
-                  [
-                    { offset: 0, color: hexToRgba(baseColor, 0.15) },
-                    { offset: 0.4, color: hexToRgba(baseColor, 0.5) },
-                    { offset: 1, color: hexToRgba(baseColor, 0.95) },
-                  ],
-                ),
-                borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
-                shadowColor:
-                  isTop || isBottom ? hexToRgba(baseColor, 0.4) : "transparent",
-                shadowBlur: isTop || isBottom ? 10 : 0,
-              },
-              label: {
-                show: true,
-                position: v >= 0 ? "right" : "left",
-                formatter: (v >= 0 ? "+" : "") + v.toFixed(1) + "%",
-                color: v >= 0 ? theme.success : theme.danger,
-                fontSize: mobile ? 9 : 10,
-                fontWeight: isTop || isBottom ? 700 : 600,
-                textShadowColor:
-                  isTop || isBottom ? hexToRgba(baseColor, 0.4) : "transparent",
-                textShadowBlur: isTop || isBottom ? 4 : 0,
-              },
-            };
-          }),
-          barCategoryGap: "30%",
-          barGap: "5%",
-          animationDuration: ANIMATION.duration,
-          animationEasing: ANIMATION.easing,
-          animationDelay: ANIMATION.delay,
-        },
-      ];
+      // 시리즈 구성: 1개월(뒤, 글래스) → 1주(앞, 솔리드) 겹침
+      var seriesArr = [];
 
+      // 1개월: 뒤에 깔리는 글래스모피즘 바
       if (hasMonth1) {
         seriesArr.push({
           name: "1개월",
           type: "bar",
+          z: 1,
+          barWidth: mobile ? 16 : 22,
+          barCategoryGap: "30%",
+          itemStyle: {
+            color: dark
+              ? "rgba(148, 163, 184, 0.15)"
+              : "rgba(30, 30, 58, 0.08)",
+          },
           data: month1Values.map(function (v) {
             if (v === null) return { value: null };
             var baseColor = v >= 0 ? successHex : dangerHex;
             return {
               value: v,
               itemStyle: {
-                color: new echarts.graphic.LinearGradient(
-                  v >= 0 ? 0 : 1,
-                  0,
-                  v >= 0 ? 1 : 0,
-                  0,
-                  [
-                    { offset: 0, color: hexToRgba(baseColor, 0.1) },
-                    { offset: 1, color: hexToRgba(baseColor, 0.5) },
-                  ],
-                ),
-                borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
+                color: hexToRgba(baseColor, 0.1),
+                borderColor: hexToRgba(baseColor, 0.2),
+                borderWidth: 1,
+                borderRadius: v >= 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
               },
             };
           }),
-          barCategoryGap: "30%",
-          barGap: "5%",
           label: { show: false },
           animationDuration: ANIMATION.duration,
           animationEasing: ANIMATION.easing,
@@ -863,17 +818,84 @@
         });
       }
 
+      // 1주: 위에 겹치는 솔리드 그라디언트 바
+      seriesArr.push({
+        name: "1주",
+        type: "bar",
+        z: 2,
+        barWidth: mobile ? 8 : 10,
+        barGap: "-100%",
+        barCategoryGap: "30%",
+        data: week1Values.map(function (v, i) {
+          var isTop = i === maxIdx;
+          var isBottom = i === minIdx;
+          var baseColor = v >= 0 ? successHex : dangerHex;
+          return {
+            value: v,
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(
+                v >= 0 ? 0 : 1,
+                0,
+                v >= 0 ? 1 : 0,
+                0,
+                [
+                  { offset: 0, color: hexToRgba(baseColor, 0.3) },
+                  { offset: 0.4, color: hexToRgba(baseColor, 0.7) },
+                  { offset: 1, color: hexToRgba(baseColor, 1) },
+                ],
+              ),
+              borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
+              shadowColor:
+                isTop || isBottom ? hexToRgba(baseColor, 0.5) : "transparent",
+              shadowBlur: isTop || isBottom ? 10 : 0,
+            },
+            label: {
+              show: true,
+              position: v >= 0 ? "right" : "left",
+              formatter: (v >= 0 ? "+" : "") + v.toFixed(1) + "%",
+              color: v >= 0 ? theme.success : theme.danger,
+              fontSize: mobile ? 9 : 10,
+              fontWeight: isTop || isBottom ? 700 : 600,
+              textShadowColor:
+                isTop || isBottom ? hexToRgba(baseColor, 0.4) : "transparent",
+              textShadowBlur: isTop || isBottom ? 4 : 0,
+            },
+          };
+        }),
+        animationDuration: ANIMATION.duration,
+        animationEasing: ANIMATION.easing,
+        animationDelay: ANIMATION.delay,
+      });
+
       chart.setOption({
         backgroundColor: "transparent",
         tooltip: tooltipStyle,
         legend: {
-          data: hasMonth1 ? ["1주", "1개월"] : ["1주"],
+          data: hasMonth1
+            ? [
+                {
+                  name: "1주",
+                  icon: "roundRect",
+                  itemStyle: { borderWidth: 0 },
+                },
+                {
+                  name: "1개월",
+                  icon: "roundRect",
+                  itemStyle: {
+                    color: "transparent",
+                    borderColor: dark
+                      ? "rgba(148, 163, 184, 0.5)"
+                      : "rgba(30, 30, 58, 0.3)",
+                    borderWidth: 1,
+                  },
+                },
+              ]
+            : ["1주"],
           top: 0,
           right: 0,
           textStyle: { color: theme.text, fontSize: 10 },
-          itemWidth: 12,
-          itemHeight: 3,
-          icon: "roundRect",
+          itemWidth: 14,
+          itemHeight: 8,
         },
         grid: {
           left: "5%",
