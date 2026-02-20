@@ -1,0 +1,684 @@
+/* ================================================================
+   Bloomberg Terminal Theme — Override Layer
+   Loaded ONLY when colorScheme = "bloomberg" (via extend-head-uncached)
+   Cascade priority: loaded after all other custom CSS files
+   ================================================================ */
+
+/* ===========================
+   1. ROOT VARIABLE OVERRIDES
+   =========================== */
+:root {
+  /* --- Typography: Terminal Feel --- */
+  --mp-font-mono: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  --mp-font-display: 'JetBrains Mono', 'Consolas', monospace;
+  --mp-font-subtitle: 'JetBrains Mono', 'Consolas', monospace;
+  /* Keep sans for body readability */
+  /* --mp-font-sans: unchanged (Noto Sans KR) */
+
+  /* --- Core Neon → Amber/Blue --- */
+  --mp-neon-purple: #FF8C00;
+  --mp-neon-cyan: #0068FF;
+  --mp-neon-rose: #ff433d;
+  --mp-neon-green: #4af6c3;
+  --mp-neon-pink: #ff433d;
+  --mp-neon-yellow: #FFD600;
+  --mp-neon-blue: #0068FF;
+
+  /* --- Brand Color: Amber --- */
+  --mp-brand-color-light: #FF8C00;
+  --mp-brand-color-dark: #FFa033;
+  --mp-brand-color: var(--mp-brand-color-light);
+  --mp-brand-color-rgb: 255 140 0;
+
+  /* --- Glass → Solid --- */
+  --mp-glass-bg: rgba(0, 0, 0, 0.92);
+  --mp-glass-border: rgba(255, 140, 0, 0.25);
+  --mp-glass-blur: none;
+
+  /* --- Borders: Amber --- */
+  --mp-border: rgba(255, 140, 0, 0.15);
+
+  /* --- Accents --- */
+  --mp-accent-fact: #FF8C00;
+  --mp-accent-opinion: #0068FF;
+
+  /* --- Shadows: Amber Glow --- */
+  --mp-shadow-sm: 0 2px 12px -2px rgba(255, 140, 0, 0.15);
+  --mp-shadow-md: 0 8px 24px -8px rgba(255, 140, 0, 0.2);
+  --mp-shadow-lg: 0 16px 48px -12px rgba(255, 140, 0, 0.25);
+  --mp-shadow-neon: 0 0 20px rgba(255, 140, 0, 0.3), 0 0 40px rgba(255, 140, 0, 0.1);
+
+  /* --- Radius: Sharper Edges --- */
+  --mp-radius-sm: 2px;
+  --mp-radius-md: 4px;
+  --mp-radius-lg: 6px;
+
+  /* --- Ticker Colors --- */
+  --mp-ticker-up: #4af6c3;
+  --mp-ticker-down: #ff433d;
+  --mp-ticker-up-spark: #4af6c3;
+  --mp-ticker-down-spark: #ff433d;
+
+  /* --- Up/Down (Korean style) --- */
+  --mp-color-up: #ff433d;
+  --mp-color-down: #0068FF;
+
+  /* --- Regime (default: amber) --- */
+  --regime-color: #FF8C00;
+  --regime-color-rgb: 255 140 0;
+
+  /* --- Chart Card Tokens --- */
+  --mp-chart-card-bg: rgba(0, 0, 0, 0.92);
+  --mp-chart-border: rgba(255, 140, 0, 0.25);
+  --mp-chart-accent: #FF8C00;
+  --mp-chart-cyan: #0068FF;
+  --mp-chart-text-muted: #737373;
+
+  /* --- Orb Colors --- */
+  --mp-orb-color-primary: 255 140 0;
+  --mp-orb-color-secondary: 0 104 255;
+}
+
+.dark {
+  --mp-brand-color: var(--mp-brand-color-dark);
+  --mp-brand-color-rgb: 255 160 51;
+}
+
+/* ===========================
+   2. LIGHT MODE OVERRIDES
+   =========================== */
+:root:not(.dark) {
+  --mp-glass-bg: rgba(255, 255, 255, 0.95);
+  --mp-glass-border: rgba(255, 140, 0, 0.15);
+  --mp-glass-blur: none;
+  --mp-shadow-sm: 0 4px 16px -4px rgba(255, 140, 0, 0.08);
+  --mp-neon-cyan: #0052CC;
+  --mp-neon-purple: #D97706;
+  --mp-color-up: #DC2626;
+  --mp-color-down: #2563EB;
+  --mp-ticker-up: #047857;
+  --mp-ticker-down: #B91C1C;
+  --mp-ticker-up-spark: #059669;
+  --mp-ticker-down-spark: #DC2626;
+  --mp-brand-color: var(--mp-brand-color-light);
+  --mp-brand-color-rgb: 255 140 0;
+  --mp-chart-card-bg: rgba(255, 255, 255, 0.95);
+  --mp-chart-border: rgba(255, 140, 0, 0.15);
+  --mp-chart-text-muted: #94a3b8;
+}
+
+
+/* ===========================
+   3. SCANLINE DISABLE
+   =========================== */
+body::after {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+
+/* ===========================
+   4. HOMEPAGE HERO
+   =========================== */
+
+/* ECG line stroke — amber instead of cyan */
+.mp-ecg-line {
+  stroke: #FF8C00 !important;
+}
+
+/* Hero title shimmer — amber gradient */
+.mp-heartbeat {
+  background: linear-gradient(135deg, #E5E5E5 0%, #FF8C00 45%, #E5E5E5 100%) !important;
+  background-size: 200% 200% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* Subtitle text — Bloomberg terminal style */
+.mp-subtitle-text {
+  color: #0068FF !important;
+  text-shadow: 0 0 8px rgba(0, 104, 255, 0.3) !important;
+}
+
+/* Glitch animation — amber tones */
+@keyframes glitch {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 140, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2); transform: translate(0); }
+  20% { text-shadow: 0 0 10px rgba(0, 104, 255, 0.5), -2px 0 #0068FF; transform: translate(-1px, 1px); }
+  40% { text-shadow: 0 0 10px rgba(255, 67, 61, 0.5), 2px 0 #ff433d; transform: translate(1px, -1px); }
+  60% { text-shadow: 0 0 10px rgba(0, 104, 255, 0.5), -1px 0 #0068FF; transform: translate(-1px, 0); }
+  80% { text-shadow: 0 0 10px rgba(255, 140, 0, 0.5), 1px 0 #FF8C00; transform: translate(1px, 1px); }
+}
+
+
+/* ===========================
+   5. PROSE / CONTENT OVERRIDES
+   =========================== */
+
+/* h1 — amber */
+.prose h1 {
+  color: #FF8C00 !important;
+  text-shadow: 0 0 10px rgba(255, 140, 0, 0.4), 0 0 40px rgba(255, 140, 0, 0.15) !important;
+}
+
+/* h2 subtitle — blue */
+.prose h2.hero-subtitle {
+  color: #0068FF !important;
+  text-shadow: 0 0 8px rgba(0, 104, 255, 0.3) !important;
+}
+
+/* num-up / num-down text-shadow */
+.num-up {
+  text-shadow: 0 0 6px rgba(255, 67, 61, 0.3) !important;
+}
+.num-down {
+  text-shadow: 0 0 6px rgba(0, 104, 255, 0.3) !important;
+}
+
+/* stat-highlight */
+.stat-highlight {
+  background: rgba(255, 140, 0, 0.15) !important;
+  color: #FF8C00 !important;
+  border: 1px solid rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Table borders and backgrounds */
+.prose table {
+  border: 1px solid rgba(255, 140, 0, 0.2) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.prose thead th {
+  background: rgba(255, 140, 0, 0.12) !important;
+  color: #FF8C00 !important;
+  border-bottom: 1px solid rgba(255, 140, 0, 0.2) !important;
+}
+
+.prose tbody td {
+  border-bottom: 1px solid rgba(255, 140, 0, 0.06) !important;
+}
+
+.prose tbody tr:hover td {
+  background: rgba(255, 140, 0, 0.06) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-track { background: #000 !important; }
+::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.4) !important; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 140, 0, 0.7) !important; }
+
+
+/* ===========================
+   6. BRIEFING SECTIONS
+   =========================== */
+
+.briefing-section:hover {
+  border-color: rgba(255, 140, 0, 0.5) !important;
+}
+
+.briefing-section::before {
+  background: #000 !important;
+  border: 1px solid rgba(255, 140, 0, 0.5) !important;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Fact section: amber accent */
+.briefing-section--fact {
+  border-left: 4px solid #FF8C00 !important;
+}
+.briefing-section--fact::before {
+  color: #FF8C00 !important;
+  border-color: rgba(255, 140, 0, 0.6) !important;
+  content: "<GO> MARKET DATA" !important;
+}
+
+/* Opinion section: blue accent */
+.briefing-section--opinion {
+  border-left: 4px solid #0068FF !important;
+}
+.briefing-section--opinion::before {
+  color: #0068FF !important;
+  border-color: rgba(0, 104, 255, 0.6) !important;
+  content: "<GO> ANALYST INTEL" !important;
+}
+
+:root:not(.dark) .briefing-section h2 {
+  color: #1a1a1a !important;
+}
+
+
+/* ===========================
+   7. TICKER GROUPS
+   =========================== */
+
+.mp-ticker-group:hover {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+}
+
+.mp-ticker-group__title {
+  color: #FF8C00 !important;
+  border-bottom: 1px solid rgba(255, 140, 0, 0.2) !important;
+}
+
+.mp-ticker-group__title::after {
+  background: #FF8C00 !important;
+  box-shadow: 0 0 8px #FF8C00 !important;
+}
+
+.mp-ticker-row:hover {
+  background: rgba(255, 140, 0, 0.06) !important;
+}
+
+.mp-ticker-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 140, 0, 0.06) !important;
+}
+
+/* Section headers */
+.mp-section-header {
+  color: #FF8C00 !important;
+  border-bottom: 1px solid rgba(255, 140, 0, 0.2) !important;
+}
+
+.mp-section-header::after {
+  background: #FF8C00 !important;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.5) !important;
+}
+
+
+/* ===========================
+   8. NEWS CARDS
+   =========================== */
+
+/* Base hover — amber glow */
+.mp-news-card:hover {
+  border-color: rgba(255, 140, 0, 0.5) !important;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Category badge colors (keep semantic but adapt) */
+.mp-news-card.is-cat-commodity .mp-cat-badge {
+  border-color: rgba(255, 214, 0, 0.6) !important;
+  background: rgba(255, 214, 0, 0.12) !important;
+}
+
+.mp-news-card.is-cat-central-bank .mp-cat-badge {
+  border-color: rgba(255, 67, 61, 0.6) !important;
+  background: rgba(255, 67, 61, 0.12) !important;
+}
+
+.mp-news-card.is-cat-corporate .mp-cat-badge {
+  border-color: rgba(74, 246, 195, 0.6) !important;
+  background: rgba(74, 246, 195, 0.12) !important;
+}
+
+.mp-news-card.is-cat-kr-macro .mp-cat-badge {
+  border-color: rgba(0, 104, 255, 0.6) !important;
+  background: rgba(0, 104, 255, 0.12) !important;
+}
+
+
+/* ===========================
+   9. CHART CARDS
+   =========================== */
+
+.market-chart-card {
+  border-color: rgba(255, 140, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.92) !important;
+}
+
+.market-chart-card:hover {
+  border-color: rgba(255, 140, 0, 0.5) !important;
+}
+
+/* Chart corner decorations */
+.market-chart-card::before,
+.market-chart-card::after {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+}
+
+/* Chart spinner */
+.mp-chart-spinner {
+  border-color: rgba(255, 140, 0, 0.15) !important;
+  border-top-color: #FF8C00 !important;
+}
+
+/* Chart status text */
+.mp-chart-status {
+  color: #FF8C00 !important;
+}
+
+:root:not(.dark) .market-chart-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(255, 140, 0, 0.15) !important;
+}
+
+
+/* ===========================
+   10. HOME BRIEFING CARDS
+   =========================== */
+
+.mp-briefing-card {
+  border-color: rgba(255, 140, 0, 0.15) !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+}
+
+.mp-briefing-card:hover {
+  border-color: rgba(255, 140, 0, 0.5) !important;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Regime colors on cards (keep semantic) */
+.mp-briefing-card[data-regime="RISK_ON"] {
+  border-left-color: #4af6c3 !important;
+}
+.mp-briefing-card[data-regime="CAUTIOUS"] {
+  border-left-color: #FFD600 !important;
+}
+.mp-briefing-card[data-regime="RISK_OFF"] {
+  border-left-color: #ff433d !important;
+}
+.mp-briefing-card[data-regime="PANIC"] {
+  border-left-color: #FF0040 !important;
+}
+
+/* Card date / slot labels */
+.mp-briefing-card__date {
+  color: #FF8C00 !important;
+}
+
+.mp-briefing-card__slot {
+  color: #0068FF !important;
+}
+
+:root:not(.dark) .mp-briefing-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(255, 140, 0, 0.12) !important;
+}
+
+
+/* ===========================
+   11. TOC & EFFECTS
+   =========================== */
+
+/* TOC link active */
+#TableOfContents a.is-active,
+#TableOfContents a:hover {
+  color: #FF8C00 !important;
+  border-left-color: #FF8C00 !important;
+}
+
+/* Grid background lines — amber */
+.mp-grid-bg::before {
+  background-image:
+    linear-gradient(rgba(255, 140, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 140, 0, 0.03) 1px, transparent 1px) !important;
+}
+
+
+/* ===========================
+   12. TERMINAL FOOTER
+   =========================== */
+
+.mp-hud-edge {
+  border-color: #FF8C00 !important;
+}
+
+.dark .mp-hud-edge {
+  border-color: #FF8C00 !important;
+}
+
+.mp-f-clock {
+  color: #FF8C00 !important;
+}
+
+.mp-f-status-indicator {
+  background: #FF8C00 !important;
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.5) !important;
+}
+
+/* HUD corners */
+.mp-hud-corner {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+}
+
+.mp-hud-status {
+  color: #FF8C00 !important;
+}
+
+
+/* ===========================
+   13. LAYOUT OVERRIDES
+   =========================== */
+
+/* Header border */
+#menu-blur {
+  border-bottom-color: rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Regime panel labels */
+.mp-regime--cautious .mp-regime-label { color: #FFD600 !important; }
+.mp-regime--risk-on .mp-regime-label { color: #4af6c3 !important; }
+.mp-regime--risk-off .mp-regime-label { color: #ff433d !important; }
+.mp-regime--panic .mp-regime-label { color: #FF0040 !important; }
+
+/* Collapse/expand toggles */
+.mp-collapse-toggle {
+  border-color: rgba(255, 140, 0, 0.15) !important;
+}
+.mp-collapse-toggle:hover {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+  color: #FF8C00 !important;
+}
+
+
+/* ===========================
+   14. CALENDAR
+   =========================== */
+
+/* Calendar cell today */
+.mp-calendar__cell.is-today {
+  border-color: #FF8C00 !important;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.3) !important;
+}
+
+/* High importance marker */
+.mp-calendar__marker.is-high {
+  background: #FF8C00 !important;
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.4) !important;
+}
+
+/* Upcoming event timeline */
+.mp-upcoming__date-text {
+  color: #FF8C00 !important;
+}
+
+.mp-upcoming__dot {
+  background: #FF8C00 !important;
+}
+
+/* D-day chip */
+.mp-dday-chip {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+  color: #FF8C00 !important;
+}
+
+
+/* ===========================
+   15. GLOSSARY
+   =========================== */
+
+.gl-chip {
+  border-color: rgba(255, 140, 0, 0.25) !important;
+}
+
+.gl-chip:hover,
+.gl-chip.is-active {
+  border-color: #FF8C00 !important;
+  background: rgba(255, 140, 0, 0.12) !important;
+  color: #FF8C00 !important;
+}
+
+.gl-search:focus {
+  border-color: #FF8C00 !important;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.2) !important;
+}
+
+.gl-card {
+  border-color: rgba(255, 140, 0, 0.15) !important;
+}
+
+.gl-card:hover {
+  border-color: rgba(255, 140, 0, 0.4) !important;
+}
+
+/* Mermaid diagrams */
+.dark pre.mermaid svg .node rect {
+  fill: rgba(255, 140, 0, 0.12) !important;
+  stroke: #FF8C00 !important;
+}
+
+.dark pre.mermaid svg .node polygon {
+  fill: rgba(0, 104, 255, 0.12) !important;
+  stroke: #0068FF !important;
+}
+
+
+/* ===========================
+   16. SKELETON LOADING
+   =========================== */
+
+.mp-skeleton {
+  background: rgba(255, 140, 0, 0.06) !important;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.mp-skeleton::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 140, 0, 0.06) 50%,
+    transparent 100%
+  ) !important;
+}
+
+
+/* ===========================
+   17. POST HERO
+   =========================== */
+
+/* Scanline effect on post hero — disabled */
+.mp-post-hero::after {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+
+/* ===========================
+   18. READING PROGRESS
+   =========================== */
+
+/* Progress bar already uses --regime-color-rgb which is overridden above */
+
+
+/* ===========================
+   19. AMBIENT ORBS
+   =========================== */
+
+/* Orbs use --mp-orb-color-primary/secondary which are overridden in :root */
+/* Reduce orb intensity for cleaner Bloomberg feel */
+.mp-ambient-orb {
+  opacity: 0.3 !important;
+}
+
+.mp-page-orb--left,
+.mp-page-orb--right {
+  opacity: 0.2 !important;
+}
+
+
+/* ===========================
+   20. THEME FIXES
+   =========================== */
+
+/* Article card HUD corners — amber */
+.mp-article-corner {
+  border-color: rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Post content blockquote */
+.prose blockquote {
+  border-left-color: rgba(255, 140, 0, 0.4) !important;
+}
+
+/* Briefing section h3 — opinion cyan → blue */
+.briefing-section--opinion h3 {
+  color: #0068FF !important;
+}
+
+/* Post content divider */
+.mp-content-divider {
+  border-color: rgba(255, 140, 0, 0.15) !important;
+}
+
+/* So-What section — use amber as default */
+.mp-so-what-regime {
+  border-left-color: var(--so-what-regime-color, #FF8C00) !important;
+}
+
+
+/* ===========================
+   21. LIGHT MODE COMPONENT FIXES
+   =========================== */
+
+:root:not(.dark) .briefing-section::before {
+  background: #fff !important;
+}
+
+:root:not(.dark) .prose h1 {
+  color: #D97706 !important;
+  text-shadow: none !important;
+}
+
+:root:not(.dark) .mp-ecg-line {
+  stroke: #D97706 !important;
+}
+
+:root:not(.dark) .mp-section-header {
+  color: #D97706 !important;
+}
+
+:root:not(.dark) .mp-ticker-group__title {
+  color: #D97706 !important;
+}
+
+:root:not(.dark) .mp-briefing-card__date {
+  color: #D97706 !important;
+}
+
+:root:not(.dark) .mp-briefing-card__slot {
+  color: #0052CC !important;
+}
+
+:root:not(.dark) .mp-hud-corner {
+  border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+:root:not(.dark) .mp-hud-status {
+  color: #D97706 !important;
+}
+
+:root:not(.dark) .num-up { color: #DC2626 !important; text-shadow: none !important; }
+:root:not(.dark) .num-down { color: #2563EB !important; text-shadow: none !important; }
+
+/* Light mode opinion section label */
+:root:not(.dark) .briefing-section--opinion::before {
+  color: #0052CC !important;
+}
+
+/* Light mode fact section label */
+:root:not(.dark) .briefing-section--fact::before {
+  color: #D97706 !important;
+}

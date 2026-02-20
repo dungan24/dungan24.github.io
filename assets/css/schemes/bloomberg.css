@@ -1,0 +1,37 @@
+/* Market Pulse — Bloomberg Terminal Theme */
+/* neutral: 순수 블랙, primary: 앰버/오렌지, secondary: 블룸버그 블루 */
+:root {
+  --color-neutral: 212, 212, 212;
+  --color-neutral-50: 245, 245, 245;
+  --color-neutral-100: 229, 229, 229;
+  --color-neutral-200: 212, 212, 212;
+  --color-neutral-300: 163, 163, 163;
+  --color-neutral-400: 115, 115, 115;
+  --color-neutral-500: 82, 82, 82;
+  --color-neutral-600: 38, 38, 38;
+  --color-neutral-700: 23, 23, 23;
+  --color-neutral-800: 12, 12, 12;
+  --color-neutral-900: 0, 0, 0;
+
+  --color-primary-50: 255, 243, 224;
+  --color-primary-100: 255, 224, 178;
+  --color-primary-200: 255, 200, 117;
+  --color-primary-300: 255, 176, 59;
+  --color-primary-400: 255, 152, 0;
+  --color-primary-500: 255, 140, 0;
+  --color-primary-600: 230, 126, 0;
+  --color-primary-700: 191, 105, 0;
+  --color-primary-800: 153, 84, 0;
+  --color-primary-900: 115, 63, 0;
+
+  --color-secondary-50: 224, 238, 255;
+  --color-secondary-100: 179, 213, 255;
+  --color-secondary-200: 128, 183, 255;
+  --color-secondary-300: 77, 153, 255;
+  --color-secondary-400: 38, 128, 255;
+  --color-secondary-500: 0, 104, 255;
+  --color-secondary-600: 0, 83, 204;
+  --color-secondary-700: 0, 62, 153;
+  --color-secondary-800: 0, 42, 102;
+  --color-secondary-900: 0, 21, 51;
+}
