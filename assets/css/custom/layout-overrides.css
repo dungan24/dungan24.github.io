@@ -446,6 +446,7 @@
 :root:not(.dark) .briefing-section::before {
   color: var(--mp-neon-purple);
   border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: none;
 }
 :root:not(.dark) .briefing-section--fact::before {
   color: var(--mp-neon-purple);
