@@ -128,13 +128,35 @@
     min-width: 0;
   }
 
-  /* 스크롤바 최소화 */
+  /* 스크롤바 — 시각적 힌트 강화 */
   .mp-home-shell .mp-ticker-groups::-webkit-scrollbar {
-    height: 3px;
+    height: 6px;
   }
   .mp-home-shell .mp-ticker-groups::-webkit-scrollbar-thumb {
-    background: rgba(124, 58, 237, 0.3);
-    border-radius: 2px;
+    background: rgba(124, 58, 237, 0.6);
+    border-radius: 3px;
+  }
+  .mp-home-shell .mp-ticker-groups::-webkit-scrollbar-track {
+    background: rgba(124, 58, 237, 0.1);
+  }
+
+  /* 스크롤 가능 그라디언트 페이드 힌트 */
+  .mp-home-shell .mp-ticker-groups-wrap {
+    position: relative;
+  }
+  .mp-home-shell .mp-ticker-groups-wrap::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    background: linear-gradient(to right, transparent, var(--mp-bg, #0a0e1a));
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mp-home-shell .mp-ticker-groups-wrap.scrolled-end::after {
+    opacity: 0;
   }
 }
 

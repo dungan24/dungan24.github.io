@@ -237,7 +237,32 @@
     }
 
     enhanceSummaries();
+    initTickerScrollHint();
     initRegimeFilter();
+
+    // BUG-001: 모바일 Market Overview 스크롤 페이드 힌트
+    function initTickerScrollHint() {
+      var ticker = document.querySelector(".mp-home-shell .mp-ticker-groups");
+      if (!ticker || !ticker.parentElement) return;
+
+      // 래퍼로 감싸기
+      var parent = ticker.parentElement;
+      var wrap = document.createElement("div");
+      wrap.className = "mp-ticker-groups-wrap";
+      parent.insertBefore(wrap, ticker);
+      wrap.appendChild(ticker);
+
+      // 스크롤 상태에 따라 페이드 토글
+      function updateFade() {
+        var atEnd =
+          ticker.scrollLeft + ticker.clientWidth >= ticker.scrollWidth - 4;
+        wrap.classList.toggle("scrolled-end", atEnd);
+      }
+
+      ticker.addEventListener("scroll", updateFade, { passive: true });
+      // 초기 상태 — 콘텐츠가 스크롤 불필요하면 페이드 숨김
+      requestAnimationFrame(updateFade);
+    }
 
     // T-701: Regime Filter Logic
     function initRegimeFilter() {
