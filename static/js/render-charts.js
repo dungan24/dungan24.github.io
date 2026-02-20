@@ -98,7 +98,7 @@
         lineHeight: 20,
       },
       extraCssText: dark
-        ? "box-shadow: 0 4px 24px rgba(0, 240, 255, 0.2), inset 0 0 12px rgba(0, 240, 255, 0.06); backdrop-filter: blur(12px);"
+        ? "box-shadow: 0 0 12px rgba(0, 240, 255, 0.25), 0 8px 32px rgba(0, 240, 255, 0.15), inset 0 0 12px rgba(0, 240, 255, 0.06); backdrop-filter: blur(14px); border: 1px solid rgba(0, 240, 255, 0.15);"
         : "box-shadow: 0 8px 32px rgba(0,0,0,0.15); backdrop-filter: blur(8px);",
     };
   }
@@ -216,8 +216,8 @@
                   color: color,
                   borderColor: dark ? COLORS.bg : COLORS.white,
                   borderWidth: 2,
-                  shadowColor: hexToRgba(color, 0.5),
-                  shadowBlur: 6,
+                  shadowColor: hexToRgba(color, 0.7),
+                  shadowBlur: 10,
                 },
               },
             ],
@@ -230,8 +230,8 @@
       if (isArea) {
         seriesObj.areaStyle = {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: hexToRgba(color, 0.2) },
-            { offset: 0.6, color: hexToRgba(color, 0.05) },
+            { offset: 0, color: hexToRgba(color, 0.28) },
+            { offset: 0.4, color: hexToRgba(color, 0.1) },
             { offset: 1, color: hexToRgba(color, 0) },
           ]),
         };
@@ -391,13 +391,14 @@
       return b.value - a.value;
     });
 
-    // Y축 라벨에 status/meaning 병기
     var labels = sorted.map(function (c) {
-      var pairLabel = c.labels ? c.labels.join(" / ") : c.pair;
-      return pairLabel;
+      return c.labels ? c.labels.join(" / ") : c.pair;
     });
     var statusLabels = sorted.map(function (c) {
       return c.status || "";
+    });
+    var meaningLabels = sorted.map(function (c) {
+      return c.meaning || "";
     });
     var values = sorted.map(function (c) {
       return c.value;
@@ -449,8 +450,8 @@
       backgroundColor: theme.bg,
       tooltip: tooltipStyle,
       grid: {
-        left: mobile ? "3%" : "3%",
-        right: mobile ? "22%" : "18%",
+        left: mobile ? "5%" : "5%",
+        right: mobile ? "16%" : "14%",
         top: "5%",
         bottom: "5%",
         containLabel: true,
@@ -467,7 +468,12 @@
             return v === 0 ? "0" : (v > 0 ? "+" : "") + v.toFixed(1);
           },
         },
-        splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
+        splitLine: {
+          lineStyle: {
+            color: theme.grid,
+            type: [3, 5],
+          },
+        },
         axisLine: { show: false },
       },
       yAxis: {
@@ -477,10 +483,35 @@
         axisLabel: {
           color: theme.text,
           fontSize: mobile ? 10 : 11,
-          width: mobile ? 90 : 120,
+          width: mobile ? 100 : 130,
           overflow: "truncate",
+          formatter: function (value, index) {
+            return "{name|" + value + "}\n{status|" + statusLabels[index] + "}";
+          },
+          rich: {
+            name: {
+              color: theme.text,
+              fontSize: mobile ? 10 : 11,
+              fontWeight: 500,
+              lineHeight: 16,
+            },
+            status: {
+              color: dark
+                ? "rgba(0, 240, 255, 0.6)"
+                : "rgba(124, 58, 237, 0.6)",
+              fontSize: mobile ? 8 : 9,
+              lineHeight: 14,
+              fontWeight: 600,
+            },
+          },
         },
-        axisLine: { lineStyle: { color: theme.axis } },
+        axisLine: {
+          lineStyle: {
+            color: dark
+              ? "rgba(0, 240, 255, 0.15)"
+              : "rgba(124, 58, 237, 0.15)",
+          },
+        },
         axisTick: { show: false },
       },
       series: [
@@ -498,37 +529,48 @@
                   v >= 0 ? 1 : 0,
                   0,
                   [
-                    { offset: 0, color: hexToRgba(baseHex, 0.15) },
+                    { offset: 0, color: hexToRgba(baseHex, 0.1) },
+                    { offset: 0.5, color: hexToRgba(baseHex, opacity * 0.6) },
                     { offset: 1, color: hexToRgba(baseHex, opacity) },
                   ],
                 ),
                 borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
+                shadowColor: hexToRgba(baseHex, 0.25),
+                shadowBlur: 6,
+              },
+              emphasis: {
+                itemStyle: {
+                  shadowColor: hexToRgba(baseHex, 0.5),
+                  shadowBlur: 14,
+                },
               },
               label: {
                 show: true,
                 position: v >= 0 ? "right" : "left",
-                formatter:
-                  (v > 0 ? "+" : "") +
-                  v.toFixed(2) +
-                  " " +
-                  (statusLabels[i] || ""),
+                formatter: (v > 0 ? "+" : "") + v.toFixed(2),
                 color: getCorrTextColor(v),
-                fontSize: mobile ? 9 : 11,
-                fontWeight: 600,
+                fontSize: mobile ? 10 : 12,
+                fontWeight: 700,
+                textShadowColor: hexToRgba(baseHex, 0.4),
+                textShadowBlur: 4,
               },
             };
           }),
-          barWidth: mobile ? 18 : 24,
-          // 제로 라인 강조
+          barWidth: mobile ? 20 : 26,
+          // 제로 라인 글로우
           markLine: {
             silent: true,
             symbol: "none",
             lineStyle: {
               color: dark
-                ? "rgba(0, 240, 255, 0.5)"
+                ? "rgba(0, 240, 255, 0.6)"
                 : "rgba(124, 58, 237, 0.5)",
               width: 2,
-              type: "solid",
+              type: [4, 4],
+              shadowColor: dark
+                ? "rgba(0, 240, 255, 0.3)"
+                : "rgba(124, 58, 237, 0.2)",
+              shadowBlur: 8,
             },
             data: [{ xAxis: 0 }],
             label: { show: false },
@@ -595,39 +637,37 @@
           radius: "95%",
           progress: {
             show: true,
-            width: 10,
-            itemStyle: {
-              color: regimeColor,
-              shadowColor: hexToRgba(regimeColor, 0.5),
-              shadowBlur: 10,
-            },
-          },
-          pointer: {
-            length: "18%",
-            width: 5,
-            offsetCenter: [0, "-60%"],
+            width: 12,
             itemStyle: {
               color: regimeColor,
               shadowColor: hexToRgba(regimeColor, 0.6),
-              shadowBlur: 8,
+              shadowBlur: 16,
+            },
+          },
+          pointer: {
+            length: "22%",
+            width: 6,
+            offsetCenter: [0, "-60%"],
+            itemStyle: {
+              color: regimeColor,
+              shadowColor: hexToRgba(regimeColor, 0.7),
+              shadowBlur: 12,
             },
           },
           axisLine: {
             lineStyle: {
-              width: 10,
+              width: 12,
               color: [
-                [
-                  1,
-                  dark
-                    ? "rgba(124, 58, 237, 0.12)"
-                    : "rgba(124, 58, 237, 0.08)",
-                ],
+                [0.25, hexToRgba(COLORS.panic, dark ? 0.2 : 0.12)],
+                [0.5, hexToRgba(COLORS.pink, dark ? 0.15 : 0.1)],
+                [0.75, hexToRgba(COLORS.yellow, dark ? 0.15 : 0.1)],
+                [1, hexToRgba(COLORS.green, dark ? 0.15 : 0.1)],
               ],
             },
           },
           axisTick: { show: false },
           splitLine: { show: false },
-          axisLabel: { distance: -45, color: theme.textMuted, fontSize: 10 },
+          axisLabel: { distance: -50, color: theme.textMuted, fontSize: 10 },
           detail: {
             offsetCenter: [0, "30%"],
             formatter: function () {
@@ -642,18 +682,20 @@
               );
             },
             rich: {
-              icon: { fontSize: 24, padding: [0, 0, 4, 0] },
+              icon: { fontSize: 26, padding: [0, 0, 6, 0] },
               label: {
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 color: theme.text,
-                padding: [0, 0, 2, 0],
+                padding: [0, 0, 4, 0],
               },
               score: {
-                fontSize: 11,
-                fontWeight: 500,
-                color: theme.textMuted,
-                padding: [2, 0, 0, 0],
+                fontSize: 18,
+                fontWeight: 800,
+                color: regimeColor,
+                padding: [4, 0, 0, 0],
+                textShadowColor: hexToRgba(regimeColor, 0.5),
+                textShadowBlur: 8,
               },
             },
           },
@@ -744,6 +786,7 @@
           type: "bar",
           data: week1Values.map(function (v, i) {
             var isTop = i === maxIdx;
+            var isBottom = i === minIdx;
             var baseColor = v >= 0 ? successHex : dangerHex;
             return {
               value: v,
@@ -754,31 +797,31 @@
                   v >= 0 ? 1 : 0,
                   0,
                   [
-                    { offset: 0, color: hexToRgba(baseColor, 0.3) },
-                    { offset: 1, color: hexToRgba(baseColor, 0.9) },
+                    { offset: 0, color: hexToRgba(baseColor, 0.15) },
+                    { offset: 0.4, color: hexToRgba(baseColor, 0.5) },
+                    { offset: 1, color: hexToRgba(baseColor, 0.95) },
                   ],
                 ),
                 borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
-                shadowColor: isTop ? hexToRgba(baseColor, 0.35) : "transparent",
-                shadowBlur: isTop ? 8 : 0,
+                shadowColor:
+                  isTop || isBottom ? hexToRgba(baseColor, 0.4) : "transparent",
+                shadowBlur: isTop || isBottom ? 10 : 0,
+              },
+              label: {
+                show: true,
+                position: v >= 0 ? "right" : "left",
+                formatter: (v >= 0 ? "+" : "") + v.toFixed(1) + "%",
+                color: v >= 0 ? theme.success : theme.danger,
+                fontSize: mobile ? 9 : 10,
+                fontWeight: isTop || isBottom ? 700 : 600,
+                textShadowColor:
+                  isTop || isBottom ? hexToRgba(baseColor, 0.4) : "transparent",
+                textShadowBlur: isTop || isBottom ? 4 : 0,
               },
             };
           }),
           barCategoryGap: "30%",
           barGap: "5%",
-          label: {
-            show: true,
-            position: "right",
-            formatter: function (params) {
-              var sign = params.value >= 0 ? "+" : "";
-              return sign + params.value.toFixed(1) + "%";
-            },
-            color: function (params) {
-              return params.value >= 0 ? theme.success : theme.danger;
-            },
-            fontSize: mobile ? 9 : 10,
-            fontWeight: 600,
-          },
           animationDuration: ANIMATION.duration,
           animationEasing: ANIMATION.easing,
           animationDelay: ANIMATION.delay,
@@ -795,7 +838,16 @@
             return {
               value: v,
               itemStyle: {
-                color: hexToRgba(baseColor, 0.35),
+                color: new echarts.graphic.LinearGradient(
+                  v >= 0 ? 0 : 1,
+                  0,
+                  v >= 0 ? 1 : 0,
+                  0,
+                  [
+                    { offset: 0, color: hexToRgba(baseColor, 0.1) },
+                    { offset: 1, color: hexToRgba(baseColor, 0.5) },
+                  ],
+                ),
                 borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
               },
             };
@@ -824,8 +876,8 @@
           icon: "roundRect",
         },
         grid: {
-          left: "3%",
-          right: mobile ? "18%" : "14%",
+          left: "5%",
+          right: mobile ? "16%" : "14%",
           top: hasMonth1 ? "28px" : "5%",
           bottom: "5%",
           containLabel: true,
@@ -837,15 +889,25 @@
             fontSize: 10,
             formatter: "{value}%",
           },
-          splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
+          splitLine: { lineStyle: { color: theme.grid, type: [3, 5] } },
           axisLine: { show: false },
         },
         yAxis: {
           type: "category",
           data: names,
           inverse: true,
-          axisLabel: { color: theme.text, fontSize: mobile ? 10 : 11 },
-          axisLine: { lineStyle: { color: theme.axis } },
+          axisLabel: {
+            color: theme.text,
+            fontSize: mobile ? 10 : 11,
+            fontWeight: 500,
+          },
+          axisLine: {
+            lineStyle: {
+              color: dark
+                ? "rgba(0, 240, 255, 0.15)"
+                : "rgba(124, 58, 237, 0.15)",
+            },
+          },
           axisTick: { show: false },
         },
         series: seriesArr,
