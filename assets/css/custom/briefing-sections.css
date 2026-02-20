@@ -243,6 +243,7 @@
 .mp-news-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
   background: var(--mp-glass-bg);
   border: 1px solid var(--mp-glass-border);
@@ -348,7 +349,7 @@
 
 
 .mp-news-card__excerpt {
-  margin-top: 0.75rem;
+  margin-top: auto;
   padding: 0.6rem 0.85rem;
   background: rgba(0, 240, 255, 0.04);
   border-left: 2px solid rgba(0, 240, 255, 0.3);
@@ -849,5 +850,39 @@
     padding: 0.65rem 0.85rem;
     font-size: 0.9rem;
   }
+}
+
+/* --- Pending Table Placeholder (T-1303) --- */
+.mp-table-pending {
+  position: relative;
+}
+
+.mp-table-pending__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  border: 1px dashed rgba(124, 58, 237, 0.25);
+  border-radius: var(--mp-radius-md);
+  background: rgba(124, 58, 237, 0.03);
+}
+
+.mp-table-pending__icon {
+  font-size: 1.5rem;
+}
+
+.mp-table-pending__msg {
+  font-family: var(--mp-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mp-neon-purple);
+  letter-spacing: 0.08em;
+}
+
+:root:not(.dark) .mp-table-pending__overlay {
+  background: rgba(124, 58, 237, 0.02);
+  border-color: rgba(124, 58, 237, 0.15);
 }
 

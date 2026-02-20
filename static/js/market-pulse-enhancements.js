@@ -41,6 +41,8 @@
     if (typeof ns.colorizeTableCells === "function")
       ns.colorizeTableCells(content);
     if (typeof ns.wrapTables === "function") ns.wrapTables(content);
+    if (typeof ns.markPendingTables === "function")
+      ns.markPendingTables(content);
 
     var convertScheduleToCalendar = null;
     if (typeof ns.createCalendarConverter === "function") {
