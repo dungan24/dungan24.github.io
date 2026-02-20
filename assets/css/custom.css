@@ -579,9 +579,14 @@ code, pre, .num-cell, .terminal-data {
 }
 
 .mp-sparkline {
-  width: 54px;
-  height: 20px;
+  width: 70px;
+  height: 24px;
   flex-shrink: 0;
+}
+
+:root:not(.dark) .mp-sparkline polyline[stroke="#94A3B8"],
+:root:not(.dark) .mp-sparkline polyline[stroke="#64748B"] {
+  stroke: #94A3B8;
 }
 
 /* --- Section Headers --- */

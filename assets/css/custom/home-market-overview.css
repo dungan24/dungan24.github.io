@@ -1,7 +1,7 @@
 .mp-home-shell {
   max-width: 72rem;
   margin: 0 auto;
-  padding: 1.6rem 1rem 2.25rem;
+  padding: 1rem 1rem 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -44,7 +44,7 @@
 
 .mp-home-hero {
   text-align: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .mp-subtitle-text {
@@ -52,7 +52,7 @@
   font-size: 0.75rem;
   color: #00f0ff;
   letter-spacing: 0.15em;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.25rem 0 0.75rem;
   text-transform: uppercase;
   text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
 }
@@ -108,6 +108,33 @@
   100% {
     stroke-dashoffset: 269;
     opacity: 0;
+  }
+}
+
+/* T-1502: 모바일 Market Overview 수평 스크롤 */
+@media (max-width: 640px) {
+  .mp-home-shell .mp-ticker-groups {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .mp-home-shell .mp-ticker-group {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+
+  /* 스크롤바 최소화 */
+  .mp-home-shell .mp-ticker-groups::-webkit-scrollbar {
+    height: 3px;
+  }
+  .mp-home-shell .mp-ticker-groups::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.3);
+    border-radius: 2px;
   }
 }
 

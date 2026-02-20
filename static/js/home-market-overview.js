@@ -113,8 +113,8 @@
     var min = Math.min.apply(null, pts);
     var max = Math.max.apply(null, pts);
     var range = max - min || 1;
-    var w = 60;
-    var h = 20;
+    var w = 70;
+    var h = 24;
     var pad = 2;
     var coords = [];
 
