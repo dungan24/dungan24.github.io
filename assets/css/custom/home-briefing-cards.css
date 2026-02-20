@@ -104,6 +104,14 @@
   }
 }
 
+/* Filter Empty State */
+.mp-filter-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
 /* --- Categorized Briefing Cards (Home) --- */
 .mp-briefing-cards {
   display: flex;

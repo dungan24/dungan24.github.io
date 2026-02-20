@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  document.addEventListener("DOMContentLoaded", function () {
+  function init() {
     var content =
       document.querySelector(".article-content") ||
       document.querySelector(".prose");
@@ -56,6 +56,8 @@
       ) {
         ns.transformCalendarShortcodes(document, convertScheduleToCalendar);
       }
+      enhanceSummaries();
+      initRegimeFilter();
       return;
     }
 
@@ -235,24 +237,23 @@
     }
 
     enhanceSummaries();
+    initRegimeFilter();
 
     // T-701: Regime Filter Logic
-    var filterWrap = document.getElementById("mp-regime-filter-wrap");
-    var filterContainer = document.getElementById("mp-regime-filter");
-    var filterNote = document.getElementById("mp-regime-filter-note");
-    var cardsContainer = document.getElementById("mp-briefing-cards-container");
+    function initRegimeFilter() {
+      var filterWrap = document.getElementById("mp-regime-filter-wrap");
+      var filterContainer = document.getElementById("mp-regime-filter");
+      var filterNote = document.getElementById("mp-regime-filter-note");
+      var cardsContainer = document.getElementById(
+        "mp-briefing-cards-container",
+      );
 
-    if (filterContainer && cardsContainer) {
+      if (!filterContainer || !cardsContainer) return;
+
       var chips = filterContainer.querySelectorAll(".mp-filter-chip");
       var cards = cardsContainer.querySelectorAll(".mp-briefing-card");
 
-      var uniqueRegimes = new Set();
-      cards.forEach(function (card) {
-        var regime = card.getAttribute("data-regime");
-        if (regime) uniqueRegimes.add(regime);
-      });
-
-      var disableFilters = cards.length < 4 || uniqueRegimes.size <= 1;
+      var disableFilters = cards.length < 4;
       if (disableFilters) {
         if (filterWrap) {
           filterWrap.classList.add("is-disabled");
@@ -278,8 +279,8 @@
           var filter = this.getAttribute("data-filter");
 
           // Handle Filtering with Date Groups
-          // We need to hide cards, and if a date group becomes empty, hide the date group too.
           var groups = document.querySelectorAll(".mp-date-group");
+          var totalVisible = 0;
 
           groups.forEach(function (group) {
             var groupCards = group.querySelectorAll(".mp-briefing-card");
@@ -301,9 +302,26 @@
             } else {
               group.style.display = "";
             }
+            totalVisible += visibleCount;
           });
+
+          // Empty state when no cards match the filter
+          var emptyEl = document.getElementById("mp-filter-empty");
+          if (!emptyEl) {
+            emptyEl = document.createElement("div");
+            emptyEl.id = "mp-filter-empty";
+            emptyEl.className = "mp-filter-empty";
+            emptyEl.textContent = "해당 조건의 브리핑이 없습니다";
+            cardsContainer.appendChild(emptyEl);
+          }
+          emptyEl.style.display = totalVisible === 0 ? "" : "none";
         });
       });
     }
-  });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
