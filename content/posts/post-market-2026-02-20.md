@@ -28,8 +28,9 @@ chartData: "/data/chart-data-2026-02-20.json"
 장후 눈에 띄는 뉴스는 "How Jerome Powell Is Trump-Proofing the Fed"이었습니다.
 
 ### 오늘 장 핵심 움직임
-인플레이션 이슈가 장마감 해석의 핵심 축이었습니다. CPI 둔화 → 연준 금리 인하 기대 재점화 → 증시 상방 탄력 오늘 마감 수급은 외국인 -7,420억, 기관 +16,150억으로 확인됐습니다.
-단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+기술/AI/반도체 이슈가 장마감 해석의 핵심 축이었습니다.
+AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방 오늘 마감 수급은 외국인 -7,420억, 기관
++16,150억으로 확인됐습니다. 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
 
 ### 내일 장 관전 포인트
 내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.28%, 나스닥 -0.41%)이 바로 흔들릴 수 있거든요.
@@ -86,17 +87,17 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 20:04:16","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:16:56","max_items":5} -->
 ### 글로벌
 
 
 1. [**파월 의장, 트럼프 리스크 대비 연준 독립성 강화 나선다**](https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSjN1ZmxSaTR2RFBwRlNUUWZKY1pRQlJXbHVDcUw1Y1M3V3lSMzVxRjlzbHJrSU9FeXMzWXJaSlQta0ZsN29lVXRYbjc1N0NWRDBtZ0hmOE5od1FRUWl0UmcxYmZjcnVhUWlHcHhIUDR4WGRhQjNIMGphVnlZbXFDV2U1eTVEQVJIQWxPMU1Ma0dPbjdvRFQxSzJlMmVibURyTm5vc3pTTUdldGJMcVV1RzNDNFJ4Q0NKQ3BhTTMxUzZ4dw?oc=5)
-   Bloomberg · 2026-02-20 19:00 KST · central-bank
+   Bloomberg.com · 2026-02-20 19:00 KST · central-bank
    원문: How Jerome Powell Is Trump-Proofing the Fed
 
-2. [**나스닥·S&P 500 선물 상승세, PCE 보고서·관세 결정 주목…NVDA·TSLA·GOOGL 등 개별 종목도 관심**](https://news.google.com/rss/articles/CBMiywFBVV95cUxOaWx1cDlndXA1S2lWbFVsMlppSjRFZlBZempyaFZQWXZiZnJGcGJTemczU0JpSGtzTThabFJ2VGt4MG9Wc0dCU3RNeXpja0ZxOU9peW9BMHpyaW93WWJIZUtHTDBnLTFyZ2x5S0RYSVR4WmF2c2dZdG9SSVl3cFk3LWxTdFY5XzJSNGpRNnNBYzV6d1Z4NDBtSTVJOHZvUlAtcHFvWnVFTGhwUUFSMklxbENyTUpZTGcyQXNMMjJFZWo0RG1Td0ZLbENRTQ?oc=5)
-   Stocktwits · 2026-02-20 17:53 KST · 지정학
-   원문: Nasdaq, S&P 500 Futures Rise Before PCE Report, Likely Tariff Ruling: Why NVDA, TSLA, GOOGL, IBRX, APP, GRAL Are On Traders' Radar Today
+2. [**엔비디아 실적 발표, 향후 수개월 시장 시험대 오를 듯 - 펀드스트랫**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxNd3RGazFSd25PSWxXUm04RHVEbEZESVBCb2FIcndiMTR4NlJkVUF0XzVBOFJheVh0aEw4OG81QkRDZXpEd0lKYThVN1Q1VHZOWmdUdlpvRllHM3lieHY3ZXBYcnRCbUxJYnlwRzJGVm9DMTRuZ0M4Ulh0aXAwdkdhdHRLRXJXYVAycVFfdWdvRU9jdmQ3dFNKY2VwT3kzU0Zic2ZlVllNU3ZhQ3c4RFlhY0xYeDlTRTk5UEJRT2tZbWZxbXBHMzdUTzQ1NlZKb1J1Y21HTmtwN1VWcnV1N1A3cHVzYmxLMnZpbXgxaVJ5YkRiNVpoRm9sS3JFZ29mV2pIb0FUVjhmdGo1azZ0Snl3U1c2akhMazg0c2dSUDM3bm1jVDJodF9nUkFPUDhELVFaQkd2U080NXlaQm5PSUcyZDJfb2s2WHR6MWpHOHlTbVByakdFeU9wblFOWmZJbWZqR3VwZncyR1o1VGRqNlQwYTN0WWVFZ1hTOHlPcTRtTVA0X3B1ZG54eVJYZGFrQXNoZzBXRTJDX3pWSER2RnVYT3RvQ1YwM04xeVdwQVFXbS1hbVp6RWxualY4cm45OERvUlVsbG5wNVdEdngtaEtGMFBfRTVBRnM1V3NqZllLRC1nSzBoUllVZFZMeU4ydkZyQ1M4U3FuNHZCZHNhWGNJOUU4SkZPamU4MFE4LVNjbGp5UnBSc0twcjBOalJESTNxdUVwNGlCejhxT1R5UnVXbEhHSVVibjgwczlNd3BHQ2pFcHFhNG1Nakd5eHZsSWNIRy10TnhOcjAzdFEwelk5cnJCeUFJWHVhVUE?oc=5)
+   MarketWatch · 2026-02-20 18:55 KST · 시장 이벤트
+   원문: Reaction to Nvidia's earnings next week will test market in coming months — Fundstrat
 
 3. [**주가 지수 선물 상승세…GDP·PCE 지표 발표 앞두고 관망세**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
    Seeking Alpha · 2026-02-20 18:38 KST · 미국 매크로
@@ -109,13 +110,13 @@ chartData: "/data/chart-data-2026-02-20.json"
 ### 국내
 
 
-1. [**신한銀, 기초연금수급자에 보이스피싱 무료보험 지원**](https://www.mk.co.kr/news/economy/11967498)
-   매일경제 경제 · 2026-02-20 17:40 KST · 국내 시장
-   > 신한은행이 보이스피싱 등 금융사기에 취약한 고령 기초연금 수급자에게 무료 보험을 들어줄 계획이다. 20일 금융권에 따르면 신한은행은 '보이스피싱 취약 시니어 안심케어 보험서비스'를...
-
-2. [**‘일탈회계 종료’ 삼성생명, 자기자본 2배로 확 늘었다**](https://www.mk.co.kr/news/economy/11967190)
+1. [**‘일탈회계 종료’ 삼성생명, 자기자본 2배로 확 늘었다**](https://www.mk.co.kr/news/economy/11967190)
    매일경제 경제 · 2026-02-20 13:34 KST · 국내 시장
    > 삼성생명이 이른바 ‘일탈 회계’ 중단에 따라 유배당 보험 계약자들의 몫으로 분류됐던 삼성전자 지분 가치를 자기자본으로 편입했다. 삼성생명은 지난 19일 감사보고서를 통해 그동안 ‘...
+
+2. [**신한銀, 기초연금수급자에 보이스피싱 무료보험 지원**](https://www.mk.co.kr/news/economy/11967498)
+   매일경제 경제 · 2026-02-20 17:40 KST · 국내 시장
+   > 신한은행이 보이스피싱 등 금융사기에 취약한 고령 기초연금 수급자에게 무료 보험을 들어줄 계획이다. 20일 금융권에 따르면 신한은행은 '보이스피싱 취약 시니어 안심케어 보험서비스'를...
 <!-- MP_BLOCK_END -->
 
 ---
@@ -152,7 +153,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 20:04:16","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:16:56","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][GBP][D-Day] [GBP] Retail Sales m/m
@@ -261,7 +262,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 20:04:16 KST</span>
+  <span>생성 시각: 2026-02-20 21:16:56 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 20:04:16 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 21:16:56 KST</span>
 </div>
