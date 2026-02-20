@@ -3,6 +3,7 @@
 
   var MPCharts = (window.MPCharts = window.MPCharts || {});
   MPCharts._data = null;
+  MPCharts._instances = [];
 
   var MP_CONFIG = window.MP_CONFIG || {};
   var CHART_CONFIG = MP_CONFIG.charts || {};
@@ -47,6 +48,15 @@
     US10Y: METRIC_PALETTE.US10Y || "#f472b6",
   };
 
+  // 공통 애니메이션 설정
+  var ANIMATION = {
+    duration: 800,
+    easing: "cubicOut",
+    delay: function (idx) {
+      return idx * 60;
+    },
+  };
+
   function isDarkMode() {
     return (
       document.documentElement.classList.contains("dark") ||
@@ -63,8 +73,9 @@
     return {
       bg: "transparent",
       text: dark ? COLORS.text : COLORS.textDark,
+      textMuted: dark ? COLORS.textLight : COLORS.headerDark,
       axis: dark ? "rgba(124, 58, 237, 0.25)" : COLORS.borderLight,
-      grid: dark ? "rgba(124, 58, 237, 0.1)" : COLORS.gridLight,
+      grid: dark ? "rgba(124, 58, 237, 0.15)" : COLORS.gridLight,
       success: dark ? COLORS.pink : COLORS.successLight,
       danger: dark ? COLORS.blue : COLORS.dangerLight,
     };
@@ -74,21 +85,21 @@
     var dark = isDarkMode();
     return {
       backgroundColor: dark
-        ? "rgba(10, 10, 26, 0.92)"
+        ? "rgba(10, 10, 26, 0.95)"
         : "rgba(255, 255, 255, 0.98)",
       borderColor: dark ? "rgba(0, 240, 255, 0.4)" : "rgba(124, 58, 237, 0.3)",
       borderWidth: 1,
-      borderRadius: 4,
-      padding: 12,
+      borderRadius: 8,
+      padding: [12, 16],
       textStyle: {
         color: dark ? COLORS.text : COLORS.textDark,
         fontSize: 12,
         fontFamily: "Noto Sans KR, sans-serif",
-        lineHeight: 18,
+        lineHeight: 20,
       },
       extraCssText: dark
-        ? "box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.05); backdrop-filter: blur(10px);"
-        : "box-shadow: 0 8px 24px rgba(0,0,0,0.12);",
+        ? "box-shadow: 0 4px 24px rgba(0, 240, 255, 0.2), inset 0 0 12px rgba(0, 240, 255, 0.06); backdrop-filter: blur(12px);"
+        : "box-shadow: 0 8px 32px rgba(0,0,0,0.15); backdrop-filter: blur(8px);",
     };
   }
 
@@ -97,7 +108,9 @@
     if (!el) return null;
     var existing = echarts.getInstanceByDom(el);
     if (existing) existing.dispose();
-    return echarts.init(el, isDarkMode() ? "dark" : null);
+    var chart = echarts.init(el, isDarkMode() ? "dark" : null);
+    MPCharts._instances.push(chart);
+    return chart;
   }
 
   function hexToRgba(hex, alpha) {
@@ -105,6 +118,12 @@
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
     return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+  }
+
+  // X축 날짜 축약: "2026-01-26" → "01/26"
+  function shortDate(dateStr) {
+    if (!dateStr || dateStr.length < 10) return dateStr;
+    return dateStr.slice(5, 7) + "/" + dateStr.slice(8, 10);
   }
 
   // ===== 차트 1: 시계열 추이 (Normalized Trend) =====
@@ -117,6 +136,7 @@
     var series = timeSeries.series;
     var theme = getTheme();
     var dark = isDarkMode();
+    var mobile = isMobile();
 
     function normalizeToPercent(arr) {
       if (!arr || arr.length === 0) return arr;
@@ -145,39 +165,74 @@
       "US10Y",
     ];
     var rightKeys = ["VIX"];
-    // series는 { SPX: [...], NDX: [...] } 형태의 객체
     var seriesKeys = Object.keys(series).filter(function (k) {
       return leftKeys.indexOf(k) > -1 || rightKeys.indexOf(k) > -1;
     });
     var chartSeries = [];
 
     seriesKeys.forEach(function (key) {
-      var data = series[key];
-      if (!data || data.length === 0) return;
+      var sData = series[key];
+      if (!sData || sData.length === 0) return;
       var isRight = rightKeys.indexOf(key) > -1;
       var color = METRIC_COLORS[key] || COLORS.primary;
       var isMajorIndex = ["SPX", "NDX", "DJI"].indexOf(key) > -1;
       var isArea = isMajorIndex;
-      var lineWidth = isRight ? 1.5 : isMajorIndex ? 2 : 1.5;
+      var lineWidth = isRight ? 1.5 : isMajorIndex ? 2.5 : 1.5;
+      var normalizedData = normalizeToPercent(sData);
 
       var seriesObj = {
         name: key,
         type: "line",
         yAxisIndex: isRight ? 1 : 0,
-        data: normalizeToPercent(data),
+        data: normalizedData,
         showSymbol: false,
         smooth: true,
         connectNulls: false,
         lineStyle: { width: lineWidth, color: color },
         itemStyle: { color: color },
-        emphasis: { lineStyle: { width: 3 } },
+        emphasis: { lineStyle: { width: lineWidth + 1 } },
+        animationDuration: ANIMATION.duration,
+        animationEasing: ANIMATION.easing,
       };
+
+      // 마지막 데이터포인트에 마커 표시
+      if (normalizedData && normalizedData.length > 0) {
+        var lastIdx = normalizedData.length - 1;
+        while (
+          lastIdx >= 0 &&
+          (normalizedData[lastIdx] === null ||
+            normalizedData[lastIdx] === undefined)
+        ) {
+          lastIdx--;
+        }
+        if (lastIdx >= 0) {
+          seriesObj.markPoint = {
+            symbol: "circle",
+            symbolSize: isMajorIndex ? 8 : 6,
+            data: [
+              {
+                coord: [lastIdx, normalizedData[lastIdx]],
+                itemStyle: {
+                  color: color,
+                  borderColor: dark ? COLORS.bg : COLORS.white,
+                  borderWidth: 2,
+                  shadowColor: hexToRgba(color, 0.5),
+                  shadowBlur: 6,
+                },
+              },
+            ],
+            label: { show: false },
+            animation: true,
+          };
+        }
+      }
 
       if (isArea) {
         seriesObj.areaStyle = {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: hexToRgba(color, 0.15) },
-            { offset: 1, color: hexToRgba(color, 0.02) },
+            { offset: 0, color: hexToRgba(color, 0.2) },
+            { offset: 0.6, color: hexToRgba(color, 0.05) },
+            { offset: 1, color: hexToRgba(color, 0) },
           ]),
         };
       }
@@ -186,9 +241,24 @@
 
     var tooltipStyle = getTooltipStyle();
     tooltipStyle.trigger = "axis";
+    tooltipStyle.axisPointer = {
+      type: "cross",
+      lineStyle: {
+        color: dark ? "rgba(0, 240, 255, 0.3)" : "rgba(124, 58, 237, 0.3)",
+        type: "dashed",
+      },
+      crossStyle: {
+        color: dark ? "rgba(0, 240, 255, 0.3)" : "rgba(124, 58, 237, 0.3)",
+      },
+      label: {
+        backgroundColor: dark
+          ? "rgba(10, 10, 26, 0.9)"
+          : "rgba(255, 255, 255, 0.95)",
+      },
+    };
     tooltipStyle.formatter = function (params) {
       var res =
-        '<div style="margin-bottom:8px; font-weight:700; color:' +
+        '<div style="margin-bottom:8px; font-weight:700; font-size:13px; color:' +
         (dark ? COLORS.cyan : COLORS.primary) +
         '">' +
         params[0].name +
@@ -198,13 +268,15 @@
         if (val === null || val === undefined) return;
         var sign = val > 0 ? "+" : "";
         res +=
-          '<div style="display:flex; justify-content:space-between; gap:20px; margin-bottom:4px;">' +
-          '<span style="color:' +
+          '<div style="display:flex; justify-content:space-between; gap:20px; margin-bottom:4px; align-items:center;">' +
+          '<span style="display:inline-flex; align-items:center; gap:6px; color:' +
           theme.text +
-          '">' +
+          '"><span style="display:inline-block;width:8px;height:3px;border-radius:2px;background:' +
+          item.color +
+          '"></span>' +
           item.seriesName +
           "</span>" +
-          '<span style="font-weight:700; color:' +
+          '<span style="font-weight:700; font-variant-numeric:tabular-nums; color:' +
           (val >= 0 ? theme.success : theme.danger) +
           '">' +
           sign +
@@ -221,9 +293,11 @@
       legend: {
         data: seriesKeys,
         bottom: 0,
-        textStyle: { color: theme.text, fontSize: 10 },
+        textStyle: { color: theme.text, fontSize: mobile ? 9 : 10 },
         itemWidth: 12,
-        itemHeight: 8,
+        itemHeight: 3,
+        itemGap: mobile ? 8 : 12,
+        icon: "roundRect",
         selected: {
           BTC: false,
           GOLD: false,
@@ -242,7 +316,12 @@
       xAxis: {
         type: "category",
         data: dates,
-        axisLabel: { color: theme.text, fontSize: 10 },
+        axisLabel: {
+          color: theme.textMuted,
+          fontSize: mobile ? 9 : 10,
+          formatter: shortDate,
+          rotate: mobile ? 45 : 0,
+        },
         axisLine: { lineStyle: { color: theme.axis } },
         axisTick: { show: false },
       },
@@ -250,19 +329,29 @@
         {
           type: "value",
           position: "left",
-          axisLabel: { color: theme.text, fontSize: 10, formatter: "{value}%" },
-          splitLine: { lineStyle: { color: theme.grid } },
-          axisLine: { lineStyle: { color: theme.axis } },
+          axisLabel: {
+            color: theme.textMuted,
+            fontSize: 10,
+            formatter: "{value}%",
+          },
+          splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
+          axisLine: { show: false },
         },
         {
           type: "value",
           position: "right",
-          axisLabel: { color: theme.text, fontSize: 10, formatter: "{value}%" },
+          axisLabel: {
+            color: theme.textMuted,
+            fontSize: 10,
+            formatter: "{value}%",
+          },
           splitLine: { show: false },
-          axisLine: { lineStyle: { color: theme.axis } },
+          axisLine: { show: false },
         },
       ],
       series: chartSeries,
+      animationDuration: ANIMATION.duration,
+      animationEasing: ANIMATION.easing,
     });
   }
 
@@ -274,20 +363,41 @@
     var correlations = data.correlations;
     var theme = getTheme();
     var dark = isDarkMode();
-    var threshold = 0.5;
+    var mobile = isMobile();
 
-    function getCorrColor(val) {
-      if (val >= threshold) return theme.success;
-      if (val <= -threshold) return theme.danger;
-      return theme.text;
+    // 값 크기에 따른 색상 (항상 hex 반환)
+    function getCorrBaseHex(val) {
+      var abs = Math.abs(val);
+      if (abs >= 0.4) return val > 0 ? COLORS.pink : COLORS.blue;
+      if (abs >= 0.2) return dark ? COLORS.cyan : COLORS.primary;
+      return dark ? COLORS.textLight : COLORS.headerDark;
+    }
+
+    function getCorrOpacity(val) {
+      var abs = Math.abs(val);
+      if (abs >= 0.7) return 1;
+      if (abs >= 0.4) return 0.75;
+      if (abs >= 0.2) return 0.6;
+      return 0.45;
+    }
+
+    function getCorrTextColor(val) {
+      var abs = Math.abs(val);
+      if (abs >= 0.4) return val > 0 ? theme.success : theme.danger;
+      return theme.textMuted;
     }
 
     var sorted = correlations.slice().sort(function (a, b) {
       return b.value - a.value;
     });
 
+    // Y축 라벨에 status/meaning 병기
     var labels = sorted.map(function (c) {
-      return c.labels ? c.labels.join(" / ") : c.pair;
+      var pairLabel = c.labels ? c.labels.join(" / ") : c.pair;
+      return pairLabel;
+    });
+    var statusLabels = sorted.map(function (c) {
+      return c.status || "";
     });
     var values = sorted.map(function (c) {
       return c.value;
@@ -298,26 +408,37 @@
     tooltipStyle.axisPointer = { type: "shadow" };
     tooltipStyle.formatter = function (params) {
       var p = params[0];
+      var idx = p.dataIndex;
+      var item = sorted[idx];
       var sign = p.value > 0 ? "+" : "";
-      return (
-        '<div style="font-weight:700; margin-bottom:4px;">' +
+      var lines =
+        '<div style="font-weight:700; margin-bottom:6px; font-size:13px;">' +
         p.name +
         "</div>" +
         '<div style="color:' +
-        getCorrColor(p.value) +
-        '; font-weight:800; font-size:14px;">' +
+        getCorrTextColor(p.value) +
+        '; font-weight:800; font-size:16px; margin-bottom:4px;">' +
         sign +
         p.value.toFixed(2) +
-        "</div>"
-      );
+        "</div>";
+      if (item.status) {
+        lines +=
+          '<div style="font-size:11px; color:' +
+          theme.textMuted +
+          ';">' +
+          item.status;
+        if (item.meaning) lines += " · " + item.meaning;
+        lines += "</div>";
+      }
+      return lines;
     };
 
     chart.setOption({
       backgroundColor: theme.bg,
       tooltip: tooltipStyle,
       grid: {
-        left: "3%",
-        right: "8%",
+        left: mobile ? "3%" : "3%",
+        right: mobile ? "18%" : "15%",
         top: "5%",
         bottom: "5%",
         containLabel: true,
@@ -327,29 +448,79 @@
         min: -1,
         max: 1,
         interval: 0.5,
-        axisLabel: { color: theme.text, fontSize: 10 },
+        axisLabel: { color: theme.textMuted, fontSize: 10 },
         splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
+        // 제로 기준선 강조
+        axisLine: { show: false },
       },
       yAxis: {
         type: "category",
         data: labels,
         inverse: true,
-        axisLabel: { color: theme.text, fontSize: 10 },
+        axisLabel: {
+          color: theme.text,
+          fontSize: mobile ? 10 : 11,
+          width: mobile ? 100 : 130,
+          overflow: "truncate",
+        },
         axisLine: { lineStyle: { color: theme.axis } },
+        axisTick: { show: false },
       },
       series: [
         {
           type: "bar",
           data: values.map(function (v) {
+            var baseHex = getCorrBaseHex(v);
+            var opacity = getCorrOpacity(v);
             return {
               value: v,
               itemStyle: {
-                color: getCorrColor(v),
+                color: new echarts.graphic.LinearGradient(
+                  v >= 0 ? 0 : 1, 0, v >= 0 ? 1 : 0, 0,
+                  [
+                    { offset: 0, color: hexToRgba(baseHex, 0.08) },
+                    { offset: 1, color: hexToRgba(baseHex, opacity) },
+                  ],
+                ),
                 borderRadius: v > 0 ? [0, 4, 4, 0] : [4, 0, 0, 4],
               },
             };
           }),
-          barWidth: isMobile() ? 12 : 18,
+          barWidth: mobile ? 18 : 24,
+          label: {
+            show: true,
+            position: "right",
+            formatter: function (params) {
+              var v = params.value;
+              var sign = v > 0 ? "+" : "";
+              var idx = params.dataIndex;
+              var status = statusLabels[idx];
+              return sign + v.toFixed(2) + (status ? "  " + status : "");
+            },
+            color: function (params) {
+              return getCorrTextColor(params.value);
+            },
+            fontSize: mobile ? 10 : 11,
+            fontWeight: 600,
+            fontFamily: "Noto Sans KR, sans-serif",
+          },
+          // 제로 라인 강조
+          markLine: {
+            silent: true,
+            symbol: "none",
+            lineStyle: {
+              color: dark
+                ? "rgba(0, 240, 255, 0.4)"
+                : "rgba(124, 58, 237, 0.4)",
+              width: 1.5,
+              type: "solid",
+            },
+            data: [{ xAxis: 0 }],
+            label: { show: false },
+          },
+          animationDuration: ANIMATION.duration,
+          animationEasing: ANIMATION.easing,
+          animationDelay: ANIMATION.delay,
         },
       ],
     });
@@ -384,7 +555,16 @@
     var tooltipStyle = getTooltipStyle();
     tooltipStyle.trigger = "item";
     tooltipStyle.formatter = function () {
-      return "<b>" + regime.label + "</b><br/>Score: " + score + "/100";
+      var lines = "<b>" + regime.label + "</b><br/>Score: " + score + "/100";
+      if (regime.summary) {
+        lines +=
+          '<br/><span style="font-size:11px; color:' +
+          theme.textMuted +
+          '">' +
+          regime.summary +
+          "</span>";
+      }
+      return lines;
     };
 
     chart.setOption({
@@ -398,17 +578,41 @@
           min: 0,
           max: 100,
           radius: "95%",
-          progress: { show: true, width: 8, itemStyle: { color: regimeColor } },
-          pointer: {
-            length: "12%",
-            width: 6,
-            offsetCenter: [0, "-60%"],
-            itemStyle: { color: regimeColor },
+          progress: {
+            show: true,
+            width: 10,
+            itemStyle: {
+              color: regimeColor,
+              shadowColor: hexToRgba(regimeColor, 0.5),
+              shadowBlur: 10,
+            },
           },
-          axisLine: { lineStyle: { width: 8, color: [[1, theme.grid]] } },
+          pointer: {
+            length: "18%",
+            width: 5,
+            offsetCenter: [0, "-60%"],
+            itemStyle: {
+              color: regimeColor,
+              shadowColor: hexToRgba(regimeColor, 0.6),
+              shadowBlur: 8,
+            },
+          },
+          axisLine: {
+            lineStyle: {
+              width: 10,
+              color: [
+                [
+                  1,
+                  dark
+                    ? "rgba(124, 58, 237, 0.12)"
+                    : "rgba(124, 58, 237, 0.08)",
+                ],
+              ],
+            },
+          },
           axisTick: { show: false },
           splitLine: { show: false },
-          axisLabel: { distance: -45, color: theme.text, fontSize: 10 },
+          axisLabel: { distance: -45, color: theme.textMuted, fontSize: 10 },
           detail: {
             offsetCenter: [0, "30%"],
             formatter: function () {
@@ -417,15 +621,30 @@
                 (regime.icon || "―") +
                 "}\n{label|" +
                 regime.label +
+                "}\n{score|" +
+                score +
                 "}"
               );
             },
             rich: {
-              icon: { fontSize: 24, padding: [0, 0, 5, 0] },
-              label: { fontSize: 14, fontWeight: 700, color: theme.text },
+              icon: { fontSize: 24, padding: [0, 0, 4, 0] },
+              label: {
+                fontSize: 14,
+                fontWeight: 700,
+                color: theme.text,
+                padding: [0, 0, 2, 0],
+              },
+              score: {
+                fontSize: 11,
+                fontWeight: 500,
+                color: theme.textMuted,
+                padding: [2, 0, 0, 0],
+              },
             },
           },
           data: [{ value: score }],
+          animationDuration: ANIMATION.duration + 400,
+          animationEasing: "elasticOut",
         },
       ],
     });
@@ -441,6 +660,8 @@
       if (!el || !items) return;
       var chart = createChart(id);
       var theme = getTheme();
+      var dark = isDarkMode();
+      var mobile = isMobile();
 
       var sorted = items.slice().sort(function (a, b) {
         return b.week1 - a.week1;
@@ -458,24 +679,36 @@
         return v !== null;
       });
 
+      // 최강/최약 인덱스
+      var maxIdx = 0;
+      var minIdx = 0;
+      week1Values.forEach(function (v, i) {
+        if (v > week1Values[maxIdx]) maxIdx = i;
+        if (v < week1Values[minIdx]) minIdx = i;
+      });
+
       var tooltipStyle = getTooltipStyle();
       tooltipStyle.trigger = "axis";
       tooltipStyle.axisPointer = { type: "shadow" };
       tooltipStyle.formatter = function (params) {
         var name = params[0].name;
         var lines =
-          '<div style="font-weight:700; margin-bottom:6px;">' + name + "</div>";
+          '<div style="font-weight:700; margin-bottom:6px; font-size:13px;">' +
+          name +
+          "</div>";
         params.forEach(function (p) {
           if (p.value === null || p.value === undefined) return;
           var sign = p.value >= 0 ? "+" : "";
           lines +=
-            '<div style="display:flex; justify-content:space-between; gap:16px; margin-bottom:3px;">' +
-            '<span style="color:' +
+            '<div style="display:flex; justify-content:space-between; gap:16px; margin-bottom:3px; align-items:center;">' +
+            '<span style="display:inline-flex; align-items:center; gap:6px; color:' +
             p.color +
-            '">' +
+            '"><span style="display:inline-block;width:8px;height:3px;border-radius:2px;background:' +
+            p.color +
+            '"></span>' +
             p.seriesName +
             "</span>" +
-            '<span style="font-weight:700; color:' +
+            '<span style="font-weight:700; font-variant-numeric:tabular-nums; color:' +
             (p.value >= 0 ? theme.success : theme.danger) +
             '">' +
             sign +
@@ -486,21 +719,54 @@
         return lines;
       };
 
+      // 양수/음수용 그라디언트 색상
+      var successHex = dark ? "#FF3366" : "#DC2626";
+      var dangerHex = dark ? "#3388FF" : "#2563EB";
+
       var seriesArr = [
         {
           name: "1주",
           type: "bar",
-          data: week1Values.map(function (v) {
+          data: week1Values.map(function (v, i) {
+            var isTop = i === maxIdx;
+            var baseColor = v >= 0 ? successHex : dangerHex;
             return {
               value: v,
               itemStyle: {
-                color: v >= 0 ? theme.success : theme.danger,
+                color: new echarts.graphic.LinearGradient(
+                  v >= 0 ? 0 : 1,
+                  0,
+                  v >= 0 ? 1 : 0,
+                  0,
+                  [
+                    { offset: 0, color: hexToRgba(baseColor, 0.3) },
+                    { offset: 1, color: hexToRgba(baseColor, 0.9) },
+                  ],
+                ),
                 borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
+                shadowColor: isTop ? hexToRgba(baseColor, 0.35) : "transparent",
+                shadowBlur: isTop ? 8 : 0,
               },
             };
           }),
           barCategoryGap: "30%",
           barGap: "5%",
+          label: {
+            show: true,
+            position: "right",
+            formatter: function (params) {
+              var sign = params.value >= 0 ? "+" : "";
+              return sign + params.value.toFixed(1) + "%";
+            },
+            color: function (params) {
+              return params.value >= 0 ? theme.success : theme.danger;
+            },
+            fontSize: mobile ? 9 : 10,
+            fontWeight: 600,
+          },
+          animationDuration: ANIMATION.duration,
+          animationEasing: ANIMATION.easing,
+          animationDelay: ANIMATION.delay,
         },
       ];
 
@@ -510,29 +776,23 @@
           type: "bar",
           data: month1Values.map(function (v) {
             if (v === null) return { value: null };
+            var baseColor = v >= 0 ? successHex : dangerHex;
             return {
               value: v,
               itemStyle: {
-                color:
-                  v >= 0
-                    ? hexToRgba(
-                        theme.success.startsWith("rgba")
-                          ? "#00FF88"
-                          : theme.success,
-                        0.45,
-                      )
-                    : hexToRgba(
-                        theme.danger.startsWith("rgba")
-                          ? "#3388FF"
-                          : theme.danger,
-                        0.45,
-                      ),
+                color: hexToRgba(baseColor, 0.35),
                 borderRadius: v >= 0 ? [0, 3, 3, 0] : [3, 0, 0, 3],
               },
             };
           }),
           barCategoryGap: "30%",
           barGap: "5%",
+          label: { show: false },
+          animationDuration: ANIMATION.duration,
+          animationEasing: ANIMATION.easing,
+          animationDelay: function (idx) {
+            return idx * 60 + 200;
+          },
         });
       }
 
@@ -544,26 +804,34 @@
           top: 0,
           right: 0,
           textStyle: { color: theme.text, fontSize: 10 },
-          itemWidth: 10,
-          itemHeight: 8,
+          itemWidth: 12,
+          itemHeight: 3,
+          icon: "roundRect",
         },
         grid: {
           left: "3%",
-          right: "10%",
+          right: mobile ? "18%" : "14%",
           top: hasMonth1 ? "28px" : "5%",
           bottom: "5%",
           containLabel: true,
         },
         xAxis: {
           type: "value",
-          axisLabel: { color: theme.text, fontSize: 10, formatter: "{value}%" },
+          axisLabel: {
+            color: theme.textMuted,
+            fontSize: 10,
+            formatter: "{value}%",
+          },
           splitLine: { lineStyle: { color: theme.grid, type: "dashed" } },
+          axisLine: { show: false },
         },
         yAxis: {
           type: "category",
           data: names,
           inverse: true,
-          axisLabel: { color: theme.text, fontSize: 11 },
+          axisLabel: { color: theme.text, fontSize: mobile ? 10 : 11 },
+          axisLine: { lineStyle: { color: theme.axis } },
+          axisTick: { show: false },
         },
         series: seriesArr,
       });
@@ -573,10 +841,25 @@
     if (ss.kr) renderSingle("chart-sectors-kr", ss.kr);
   }
 
+  // ===== 윈도우 리사이즈 핸들러 =====
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      MPCharts._instances.forEach(function (chart) {
+        if (chart && !chart.isDisposed()) {
+          chart.resize();
+        }
+      });
+    }, 150);
+  });
+
   // ===== 글로벌 진입점 =====
   MPCharts.renderAllCharts = function (data) {
     if (!data) return;
     MPCharts._data = data;
+    // 이전 인스턴스 정리
+    MPCharts._instances = [];
     renderTimeSeries(data);
     renderCorrelations(data);
     renderRegime(data);
