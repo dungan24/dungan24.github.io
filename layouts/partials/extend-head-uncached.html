@@ -15,6 +15,15 @@
   {{ end }}
 {{ end }}
 
+{{/* Bloomberg Terminal Theme: conditional CSS + font loading */}}
+{{ if eq .Site.Params.colorScheme "bloomberg" }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap">
+  {{ with resources.Get "css/custom/bloomberg-overrides.css" }}
+    {{ $css := . | resources.Minify | resources.Fingerprint $alg }}
+    <link type="text/css" rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ end }}
+{{ end }}
+
 <script>
   window.__MP_CONFIG = {{ index .Site.Params "market_pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
 </script>

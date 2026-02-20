@@ -439,6 +439,10 @@ code, pre, .num-cell, .terminal-data {
   min-width: 60px;
 }
 
+.mp-ecg-line {
+  stroke: var(--mp-neon-cyan);
+}
+
 .mp-ecg-pulse--right {
   transform: scaleX(-1);
 }
