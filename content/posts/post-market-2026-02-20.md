@@ -9,47 +9,40 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 
 <!-- OPINION_ZONE_START -->
-
 ## 1. 핵심 요약 (30초)
 
 > **코스피 +2.31%·코스닥 -0.58% 급등, 기관 폭풍 매수**
 
-- 오늘 국내 증시는 강세 흐름으로 장을 마쳤습니다.
-- 수급: 기관이 약 1조 6천억 쓸어담은 반면, 외국인은 약 7천억 빠졌습니다.
-- 개인은 약 1조 던졌습니다
+- 오늘 국내 증시는 전반적인 강세 흐름 속에 기분 좋게 장을 마쳤네요.
+- 수급 측면을 보면 기관이 약 1조 6천억 원을 거세게 쓸어담은 반면, 외국인은 약 7천억 원 정도 빠져나가는 모습이었죠.
+- 이에 대응하며 개인 투자자들은 약 1조 원 물량을 시장에 던졌습니다.
 
 ---
 
 ## 2. 오늘의 해석
 
 ### 시장 마감 흐름
-오늘 코스피 +2.31%, 코스닥 -0.58%로 꽤 큰 상승 움직임이 나왔습니다.
-기관이 약 1조 6천억 사들이고 외국인은 약 7천억 빠지면서 개인은 약 1조 넘게 빠졌습니다 미국 쪽은 S&P -0.28%, 나스닥 -0.41% 흐름이에요.
-장후 눈에 띄는 뉴스는 "How Jerome Powell Is Trump-Proofing the Fed"이었습니다.
+오늘 코스피는 +2.31% 상승하고 코스닥은 -0.58%를 기록하며 꽤나 큰 변동성을 동반한 상승 움직임이 나타났어요. 기관이 앞서 언급한 대로 약 1조 6천억 원을 사들였고, 외국인과 개인은 각각 약 7천억 원과 1조 원 넘게 매도세를 보였네요. 한편 미국 쪽은 S&P -0.28%, 나스닥 -0.41%로 다소 주춤한 흐름인데요. 장 마감 후에는 "How Jerome Powell Is Trump-Proofing the Fed"라는 뉴스가 유독 눈에 띄었습니다.
 
 ### 오늘 장 핵심 움직임
-기술/AI/반도체 이슈가 장마감 해석의 핵심 축이었습니다.
-AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상승 한편, AI 거품 우려 → 밸류에이션 부담 → 기술주 차익실현 → 나스닥 하방 오늘 마감 수급은 외국인 -7,420억, 기관
-+16,150억으로 확인됐습니다. 단기 추세는 같은 테마의 해외장 반응까지 확인한 뒤 이어가는 편이 안전합니다.
+이런 흐름 속에서 기술과 AI, 그리고 반도체 관련 이슈가 장 마감 해석의 핵심 축으로 작용했어요. AI 수요 확대가 반도체 슈퍼사이클 기대로 이어지며 기술주 주도 상승을 이끌어냈지만, 한편으로는 AI 거품 우려와 밸류에이션 부담이 차익실현 욕구를 자극하며 나스닥에 하방 압력을 가하기도 했죠. 오늘 최종 수급은 외국인 -7,420억 원, 기관 +16,150억 원으로 집계되었는데요. 단기적인 추세는 같은 테마의 해외 시장 반응까지 꼼꼼히 확인한 뒤에 이어가는 편이 안전하겠네요.
 
 ### 내일 장 관전 포인트
-내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST)입니다. 결과에 따라 미국장(S&P -0.28%, 나스닥 -0.41%)이 바로 흔들릴 수 있거든요.
-그래서 밤사이 반응을 먼저 확인하고 국내 선물 흐름을 연결해서 보세요.
+정리하면 내일 가장 눈여겨볼 지표는 22시 30분에 발표될 [USD] 소비자물가지수(CPI) - January예요. 이 결과에 따라 앞서 확인한 미국 시장의 변동성이 바로 흔들릴 수 있거든요. 그래서 밤사이의 반응을 먼저 세심하게 살피고, 국내 선물 흐름과 어떻게 연결되는지 함께 지켜보시는 것이 좋습니다.
 
 ### 행동 체크포인트
 - **[USD] 소비자물가지수(CPI) - January 대응**
-  - 상황: 결과가 시장 예상치와 크게 다르면 밤사이 미국 선물부터 흔들립니다
-  - 대응: 내일 시초가 갭 방향을 예측하고 선물 반응을 먼저 확인하세요
-  - 해제 기준: 예상 범위 안에서 나오면 갭 변동성은 제한적입니다
+  - 상황: 지표 결과가 시장 예상치와 크게 다를 경우 밤사이 미국 선물 시장부터 요동칠 수 있어요
+  - 대응: 내일 시초가 갭이 어느 방향으로 뜰지 예측해 보시고, 선물 시장의 반응을 우선적으로 확인하세요
+  - 해제 기준: 수치가 예상 범위 안에서 발표된다면 갭 변동성은 그리 크지 않을 거예요
 - **미국장 연결(S&P -0.28%, 나스닥 -0.41%)**
-  - 상황: 밤사이 미국장이 지금 방향 그대로 흘러갑니다
-  - 대응: 동조가 이어지면 내일 아시아장도 연속성을 기대할 수 있어요. 비중 유지 또는 확대 검토
-  - 해제 기준: 미국장 흐름이 뒤집히면(부호 반전) 내일 갭 시나리오는 무효입니다
+  - 상황: 밤사이 미국 증시가 현재의 하락 방향을 그대로 유지하며 흘러가는 상황이에요
+  - 대응: 시장 간의 동조화가 이어진다면 내일 아시아 시장도 연속적인 흐름을 기대하며 비중 유지나 확대를 검토해 보세요
+  - 해제 기준: 만약 미국장의 흐름이 반등하며 부호가 반전된다면 내일의 갭 시나리오는 무효가 됩니다
 - **수급 연속성(외국인 약 7천억 매도)**
-  - 상황: 오늘 외국인 수급 방향이 내일 시초가까지 이어집니다
-  - 대응: 수급이 동조하면 추세가 연장되니 비중 조정을 검토하세요
-  - 해제 기준: 내일 수급이 뒤집히면(부호 반전) 기존 추세는 끊긴 겁니다
-
+  - 상황: 오늘 보여준 외국인의 수급 방향이 내일 시초가 형성 단계까지 그대로 이어질 수 있거든요
+  - 대응: 수급이 오늘과 같은 방향으로 동조한다면 추세 연장에 무게를 두고 비중 조정을 신중히 검토하세요
+  - 해제 기준: 내일 외국인 수급이 매수세로 뒤집히며 부호가 반전된다면 기존의 추세는 일단 끊긴 것으로 봐야 해요 <!-- 작성 완료 -->
 <!-- OPINION_ZONE_END -->
 
 ---
@@ -87,7 +80,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:35:28","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:42:39","max_items":5} -->
 ### 글로벌
 
 
@@ -95,17 +88,17 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
    Bloomberg.com · 2026-02-20 19:00 KST · central-bank
    원문: How Jerome Powell Is Trump-Proofing the Fed
 
-2. [**엔비디아 실적 발표, 향후 수개월 시장 시험대 오를 듯 - 펀드스트랫**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxNd3RGazFSd25PSWxXUm04RHVEbEZESVBCb2FIcndiMTR4NlJkVUF0XzVBOFJheVh0aEw4OG81QkRDZXpEd0lKYThVN1Q1VHZOWmdUdlpvRllHM3lieHY3ZXBYcnRCbUxJYnlwRzJGVm9DMTRuZ0M4Ulh0aXAwdkdhdHRLRXJXYVAycVFfdWdvRU9jdmQ3dFNKY2VwT3kzU0Zic2ZlVllNU3ZhQ3c4RFlhY0xYeDlTRTk5UEJRT2tZbWZxbXBHMzdUTzQ1NlZKb1J1Y21HTmtwN1VWcnV1N1A3cHVzYmxLMnZpbXgxaVJ5YkRiNVpoRm9sS3JFZ29mV2pIb0FUVjhmdGo1azZ0Snl3U1c2akhMazg0c2dSUDM3bm1jVDJodF9nUkFPUDhELVFaQkd2U080NXlaQm5PSUcyZDJfb2s2WHR6MWpHOHlTbVByakdFeU9wblFOWmZJbWZqR3VwZncyR1o1VGRqNlQwYTN0WWVFZ1hTOHlPcTRtTVA0X3B1ZG54eVJYZGFrQXNoZzBXRTJDX3pWSER2RnVYT3RvQ1YwM04xeVdwQVFXbS1hbVp6RWxualY4cm45OERvUlVsbG5wNVdEdngtaEtGMFBfRTVBRnM1V3NqZllLRC1nSzBoUllVZFZMeU4ydkZyQ1M4U3FuNHZCZHNhWGNJOUU4SkZPamU4MFE4LVNjbGp5UnBSc0twcjBOalJESTNxdUVwNGlCejhxT1R5UnVXbEhHSVVibjgwczlNd3BHQ2pFcHFhNG1Nakd5eHZsSWNIRy10TnhOcjAzdFEwelk5cnJCeUFJWHVhVUE?oc=5)
+2. [**엔비디아 실적 발표, 향후 수개월 시장 시험대 오를 듯 - 펀드스트랫**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxOSTl6T19KdV8xeUtZRHdOSHhrWk9XY2tPNzJ6Z1NHMzVqNkVBZnlwdk5OTi16X3hxSXBFeGVHMFhvTVcxb0hxamRIam92bEpVX01GcGpiR29Ib1o3NGp4Z0h2aFdoOEgtMml0RmxsTHNkZUN0aEJBVERNLXNLb1ZlNWUyZ2N4bGsxY25RUnZrQ0tjWDFfQkFTRG40RjZiQ3hhMmZ3RUJ5WlFBYUp2YlBkTVNyY2ZKbmdNaEhMbXYyVnN6ZDNoZEdVZ0hQNks3WHFDS1lfNUtVV0hZS3hDQzNnZ3NKWEdKdlVCamtqMDkwOXEyYzV0UEpqQ0F2c1dRQTJsVUtwT0t5b0VFREtTY3Q5cGJKbGhMMy1mTWQ2WmpMcW5qekhXXzdXR2trUHQ4UGh6aW8yMDhWU1R3UVV4QUJzUlVQclpaZnNySmVqZzMtaFRWdDMtS2dUVzZaSmNZUy1PZkxrOUJYeGlsa0xwMDYwY0ptMkxYR2xXY2o5dkE4aTRvMnV5TmFReGhLbkthbHFLRVV3ZmVlRGlNdHlXVFpWUGJYUDRZVjd2c3VVa1hjMWdqS1hxS2liU294M2xaN001RVU4Q01kVjRvTUp2SlJUQXRTRF9vR1h4a1ByRnExckpBdkI5TmR2YTQ4S09qQ29RZW9PVXJqSGk2Skp5MFdvaEVFbFpCbWJjMlVRdXhlVEw0dG91cElhVTN2QnBuclVsS0RXUlhLRTdNbnFmNDBhaUk5d243aVBzSnh3UVlQZldNaE01RUFKMmFPbU1NcFNCLWl0bzUySWUtOEoxVFpzQk5JVWw4Z3pHaFE?oc=5)
    MarketWatch · 2026-02-20 18:55 KST · 시장 이벤트
    원문: Reaction to Nvidia's earnings next week will test market in coming months — Fundstrat
 
-3. [**주가 지수 선물 상승세…GDP·PCE 지표 발표 앞두고 관망세**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
+3. [**미-이란 긴장 고조와 유럽 국채 수익률 하락에 금값 상승**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOTHhKVU93NGprenktcTZlbXo4bUZURkhLOGdtZ2FmaGx3cWVtNVlYR3hPbzExZUNsQ3VsWFlja25BUTU1MzRuc2d1emdVd3hfZWRGOEZLUlJ2SkJJMmE1c3NDMTAyWE5fbTkwY2psV2ZzXzd2cUt6UzZuVl8zRHdKSzZoTDA2MU9FbTVVN0VxTQ?oc=5)
+   Reuters · 2026-02-20 13:49 KST · 미국 매크로
+   원문: Gold rises on US-Iran tensions and lower European bond yields
+
+4. [**주가 지수 선물 상승세…GDP·PCE 지표 발표 앞두고 관망세**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
    Seeking Alpha · 2026-02-20 18:38 KST · 미국 매크로
    원문: Stock index futures up ahead of GDP, PCE data (SPX:)
-
-4. [**미-이란 전쟁 우려에 국제유가 6개월 만에 최고치…원유 투자 적기인가**](https://news.google.com/rss/articles/CBMi4gFBVV95cUxOT2Q5cC1SbkxxeXFRTjI3MldSVlpNQXI0VndVTnh3WTJSaV95YzdsbkRSdHJncnJIMFYzVUNsWm8xcWMtQjIzSkx6WkVUdFlVSW1XYXgwZ1ZRZURjVjJGRmhEdnlXem9nX2RUV1VfTlBfekdKT1ViVFFkbWM3SUhnbWJ6TU9JM3k2M3pQempjYnk1QV9qVkY2dVJabTlfOFZxbFJISjNKODNESjNVdFNSbExlLWFvU3UtS2Z0RDdsbmQ4azl0NjN1YjFXQy1uMHhFR29kNGxadUl0enVIaG5MUVl30gHnAUFVX3lxTE9VY0NWZ3ZCckszYnFTMDJ6U0hUM1QxUGxxcWZER3FJRE15OFI4clktS0pXTVdpbzRaX1ZWM1pSTDJDY1BZZEM3NE5HbmswTVp1azB5b3FXT1BoZTlNWmpvckkyLTVRUGJaNXRGZG02LXpMWm5NUXlNX2kxdGNDd0s2YURXWXJLZ2h2eFl2SzdpUWdnQUdwcE1Ic2VFcWNzOGh2Nmc4Ui1hSFRRRVFkUmwzSTJZcnlvYlNGZXJMU0M5X0pYSEhlSEpHR2hDT3JmQnlQWWcyU1FxSHo2WGp4ZXRVOVRDRnpDQQ?oc=5)
-   Mint · 2026-02-20 18:10 KST · 원자재
-   원문: US-Iran war buzz fuels crude oil price to six month high. Time to invest in black gold?
 
 ### 국내
 
@@ -153,7 +146,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:35:28","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:42:39","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][GBP][D-Day] [GBP] Retail Sales m/m
@@ -262,7 +255,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 21:35:28 KST</span>
+  <span>생성 시각: 2026-02-20 21:42:39 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 21:35:28 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 21:42:39 KST</span>
 </div>
