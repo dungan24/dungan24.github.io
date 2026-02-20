@@ -9,14 +9,19 @@ node_modules/
 .claude/latest.md
 .claude/history.jsonl
 
-# 개발용 스크린샷
+# 개발용 스크린샷 (Playwright MCP, agent-browser 등)
 screenshots/
+.screenshots/
+qa-*.png
+page-*.png
 post-current-full.png
 docs/screenshots/*.png
 docs/screenshots/*.jpg
 docs/screenshots/*.jpeg
 docs/screenshots/*.webp
 docs/screenshots/*.gif
+*.webm
+trace.zip
 
 # 임시/실험 파일
 _tmp-*
