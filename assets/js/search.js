@@ -14,7 +14,9 @@ var hasResults = false;
 
 // Listen for events
 showButton ? showButton.addEventListener("click", displaySearch) : null;
-showButtonMobile ? showButtonMobile.addEventListener("click", displaySearch) : null;
+showButtonMobile
+  ? showButtonMobile.addEventListener("click", displaySearch)
+  : null;
 hideButton.addEventListener("click", hideSearch);
 wrapper.addEventListener("click", hideSearch);
 modal.addEventListener("click", function (event) {
@@ -27,7 +29,8 @@ document.addEventListener("keydown", function (event) {
   if (event.key == "/") {
     const active = document.activeElement;
     const tag = active.tagName;
-    const isInputField = tag === "INPUT" || tag === "TEXTAREA" || active.isContentEditable;
+    const isInputField =
+      tag === "INPUT" || tag === "TEXTAREA" || active.isContentEditable;
 
     if (!searchVisible && !isInputField) {
       event.preventDefault();
@@ -147,6 +150,12 @@ function buildIndex() {
 function executeQuery(term) {
   if (!fuse) return; // 인덱스 로드 전 호출 방지
   let results = fuse.search(term);
+  // BUG-003: 날짜 내림차순 정렬 (최신 우선)
+  results.sort(function (a, b) {
+    var da = a.item.date ? new Date(a.item.date) : new Date(0);
+    var db = b.item.date ? new Date(b.item.date) : new Date(0);
+    return db - da;
+  });
   let resultsHTML = "";
 
   if (results.length > 0) {
