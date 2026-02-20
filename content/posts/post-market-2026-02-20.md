@@ -87,7 +87,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:16:56","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:20:14","max_items":5} -->
 ### 글로벌
 
 
@@ -95,11 +95,11 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
    Bloomberg.com · 2026-02-20 19:00 KST · central-bank
    원문: How Jerome Powell Is Trump-Proofing the Fed
 
-2. [**엔비디아 실적 발표, 향후 수개월 시장 시험대 오를 듯 - 펀드스트랫**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxNd3RGazFSd25PSWxXUm04RHVEbEZESVBCb2FIcndiMTR4NlJkVUF0XzVBOFJheVh0aEw4OG81QkRDZXpEd0lKYThVN1Q1VHZOWmdUdlpvRllHM3lieHY3ZXBYcnRCbUxJYnlwRzJGVm9DMTRuZ0M4Ulh0aXAwdkdhdHRLRXJXYVAycVFfdWdvRU9jdmQ3dFNKY2VwT3kzU0Zic2ZlVllNU3ZhQ3c4RFlhY0xYeDlTRTk5UEJRT2tZbWZxbXBHMzdUTzQ1NlZKb1J1Y21HTmtwN1VWcnV1N1A3cHVzYmxLMnZpbXgxaVJ5YkRiNVpoRm9sS3JFZ29mV2pIb0FUVjhmdGo1azZ0Snl3U1c2akhMazg0c2dSUDM3bm1jVDJodF9nUkFPUDhELVFaQkd2U080NXlaQm5PSUcyZDJfb2s2WHR6MWpHOHlTbVByakdFeU9wblFOWmZJbWZqR3VwZncyR1o1VGRqNlQwYTN0WWVFZ1hTOHlPcTRtTVA0X3B1ZG54eVJYZGFrQXNoZzBXRTJDX3pWSER2RnVYT3RvQ1YwM04xeVdwQVFXbS1hbVp6RWxualY4cm45OERvUlVsbG5wNVdEdngtaEtGMFBfRTVBRnM1V3NqZllLRC1nSzBoUllVZFZMeU4ydkZyQ1M4U3FuNHZCZHNhWGNJOUU4SkZPamU4MFE4LVNjbGp5UnBSc0twcjBOalJESTNxdUVwNGlCejhxT1R5UnVXbEhHSVVibjgwczlNd3BHQ2pFcHFhNG1Nakd5eHZsSWNIRy10TnhOcjAzdFEwelk5cnJCeUFJWHVhVUE?oc=5)
+2. [**Nvidia 실적 발표 다음 주, 시장 향방은 불투명**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxNd3RGazFSd25PSWxXUm04RHVEbEZESVBCb2FIcndiMTR4NlJkVUF0XzVBOFJheVh0aEw4OG81QkRDZXpEd0lKYThVN1Q1VHZOWmdUdlpvRllHM3lieHY3ZXBYcnRCbUxJYnlwRzJGVm9DMTRuZ0M4Ulh0aXAwdkdhdHRLRXJXYVAycVFfdWdvRU9jdmQ3dFNKY2VwT3kzU0Zic2ZlVllNU3ZhQ3c4RFlhY0xYeDlTRTk5UEJRT2tZbWZxbXBHMzdUTzQ1NlZKb1J1Y21HTmtwN1VWcnV1N1A3cHVzYmxLMnZpbXgxaVJ5YkRiNVpoRm9sS3JFZ29mV2pIb0FUVjhmdGo1azZ0Snl3U1c2akhMazg0c2dSUDM3bm1jVDJodF9nUkFPUDhELVFaQkd2U080NXlaQm5PSUcyZDJfb2s2WHR6MWpHOHlTbVByakdFeU9wblFOWmZJbWZqR3VwZncyR1o1VGRqNlQwYTN0WWVFZ1hTOHlPcTRtTVA0X3B1ZG54eVJYZGFrQXNoZzBXRTJDX3pWSER2RnVYT3RvQ1YwM04xeVdwQVFXbS1hbVp6RWxualY4cm45OERvUlVsbG5wNVdEdngtaEtGMFBfRTVBRnM1V3NqZllLRC1nSzBoUllVZFZMeU4ydkZyQ1M4U3FuNHZCZHNhWGNJOUU4SkZPamU4MFE4LVNjbGp5UnBSc0twcjBOalJESTNxdUVwNGlCejhxT1R5UnVXbEhHSVVibjgwczlNd3BHQ2pFcHFhNG1Nakd5eHZsSWNIRy10TnhOcjAzdFEwelk5cnJCeUFJWHVhVUE?oc=5)
    MarketWatch · 2026-02-20 18:55 KST · 시장 이벤트
    원문: Reaction to Nvidia's earnings next week will test market in coming months — Fundstrat
 
-3. [**주가 지수 선물 상승세…GDP·PCE 지표 발표 앞두고 관망세**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
+3. [**GDP, PCE 지표 발표 앞두고 주식지수 선물 상승**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
    Seeking Alpha · 2026-02-20 18:38 KST · 미국 매크로
    원문: Stock index futures up ahead of GDP, PCE data (SPX:)
 
@@ -153,7 +153,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:16:56","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:20:14","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][GBP][D-Day] [GBP] Retail Sales m/m
@@ -262,7 +262,7 @@ AI 수요 확대 → 반도체 슈퍼사이클 기대 → 기술주 주도 상�
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 21:16:56 KST</span>
+  <span>생성 시각: 2026-02-20 21:20:14 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 21:16:56 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 21:20:14 KST</span>
 </div>
