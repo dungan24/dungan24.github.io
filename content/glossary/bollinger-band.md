@@ -22,6 +22,8 @@ params:
 
 ![한눈에 보기](/images/glossary/bollinger-band.png)
 
+*찬조출연: 존 볼린저 — 볼린저밴드를 직접 만든 본인 등판 🎸*
+
 ## 쉽게 이해하기
 
 고무줄에 비유하면:

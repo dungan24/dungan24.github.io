@@ -22,6 +22,8 @@ params:
 
 ![한눈에 보기](/images/glossary/dividend-yield.png)
 
+*찬조출연: 존 D. 록펠러 — "배당금 들어오는 날이 유일하게 행복하다" 💎*
+
 ## 쉽게 이해하기
 
 월세 수익률에 비유하면:
