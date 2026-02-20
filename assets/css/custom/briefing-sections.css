@@ -772,4 +772,82 @@
   opacity: 0.6;
 }
 
+/* ===== SO WHAT Section (전략 시나리오) ===== */
+.mp-so-what {
+  border-top: 1px solid rgba(124, 58, 237, 0.2);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Regime Badge */
+.mp-so-what-regime {
+  position: relative;
+  border-left: 4px solid var(--so-what-regime-color, #7C3AED);
+  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
+  padding: 0.85rem 1.15rem;
+  margin: 1rem 0;
+  background: rgba(var(--so-what-regime-rgb, 124, 58, 237), 0.08);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.mp-so-what-regime strong {
+  color: var(--so-what-regime-color, #7C3AED) !important;
+  text-shadow: 0 0 10px rgba(var(--so-what-regime-rgb, 124, 58, 237), 0.35);
+}
+
+:root:not(.dark) .mp-so-what-regime {
+  background: rgba(var(--so-what-regime-rgb, 124, 58, 237), 0.06);
+}
+
+:root:not(.dark) .mp-so-what-regime strong {
+  text-shadow: none !important;
+}
+
+/* Confirm / Invalid list icons */
+.mp-so-what-icon {
+  margin-right: 0.35rem;
+  font-size: 0.85em;
+  vertical-align: baseline;
+}
+
+/* Override neon bar bullets for SO WHAT lists */
+.mp-so-what .mp-so-what-confirm li::before,
+.mp-so-what .mp-so-what-invalid li::before {
+  display: none;
+}
+
+.mp-so-what .mp-so-what-confirm li,
+.mp-so-what .mp-so-what-invalid li {
+  padding-left: 0.25rem !important;
+}
+
+/* Confirmation list — subtle green tint */
+.mp-so-what-confirm {
+  border-left: 2px solid rgba(16, 185, 129, 0.4);
+  padding-left: 1rem !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Invalidation list — subtle red tint */
+.mp-so-what-invalid {
+  border-left: 2px solid rgba(239, 68, 68, 0.4);
+  padding-left: 1rem !important;
+  margin-left: 0.5rem !important;
+}
+
+:root:not(.dark) .mp-so-what-confirm {
+  border-left-color: rgba(5, 150, 105, 0.35);
+}
+
+:root:not(.dark) .mp-so-what-invalid {
+  border-left-color: rgba(220, 38, 38, 0.35);
+}
+
+@media (max-width: 640px) {
+  .mp-so-what-regime {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+  }
+}
 
