@@ -6,6 +6,8 @@ node_modules/
 # AI 작업 파일
 .aidocs/
 .claude/plan.md
+.claude/latest.md
+.claude/history.jsonl
 
 # 개발용 스크린샷
 screenshots/
