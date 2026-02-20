@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{ .Scratch.Set "scope" "list" }}
+<header>
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  {{ with .Description }}
+    <p class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+  {{ end }}
+</header>
+
+<section class="gl-container mt-6">
+  {{/* 검색 + 카운트 */}}
+  <div class="gl-search-wrap">
+    <input type="text" id="gl-search" class="gl-search" placeholder="용어 검색...">
+    <span class="gl-count" id="gl-count">{{ len .Pages }}개 용어</span>
+  </div>
+
+  {{/* 통합 필터 바 */}}
+  <div class="gl-toolbar" id="gl-toolbar">
+    {{/* 초성 — 존재하는 것만 */}}
+    {{ $consonants := slice "ㄱ" "ㄴ" "ㄷ" "ㄹ" "ㅁ" "ㅂ" "ㅅ" "ㅇ" "ㅈ" "ㅊ" "ㅋ" "ㅌ" "ㅍ" "ㅎ" }}
+    {{ $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
+    {{ $existConsonants := slice }}
+    {{ $existLetters := slice }}
+    {{ range .Pages }}
+      {{ with .Params.consonant }}{{ $existConsonants = $existConsonants | append . }}{{ end }}
+      {{ with .Params.letter }}{{ $existLetters = $existLetters | append . }}{{ end }}
+    {{ end }}
+    {{ $existConsonants = $existConsonants | uniq }}
+    {{ $existLetters = $existLetters | uniq }}
+
+    {{ range $c := $consonants }}
+      {{ if in $existConsonants $c }}
+        <button class="gl-chip gl-chip--letter" data-filter-type="consonant" data-filter-value="{{ $c }}">{{ $c }}</button>
+      {{ end }}
+    {{ end }}
+
+    {{ if and (gt (len $existConsonants) 0) (gt (len $existLetters) 0) }}
+      <span class="gl-divider">|</span>
+    {{ end }}
+
+    {{ range $l := $letters }}
+      {{ if in $existLetters $l }}
+        <button class="gl-chip gl-chip--letter" data-filter-type="letter" data-filter-value="{{ $l }}">{{ $l }}</button>
+      {{ end }}
+    {{ end }}
+
+    <span class="gl-divider">·</span>
+
+    {{/* 카테고리 — 인라인 */}}
+    {{ $categories := slice }}
+    {{ range .Pages }}
+      {{ with .Params.category }}{{ $categories = $categories | append . }}{{ end }}
+    {{ end }}
+    {{ $categories = $categories | uniq | sort }}
+    {{ range $cat := $categories }}
+      <button class="gl-chip gl-chip--category" data-filter-type="category" data-filter-value="{{ $cat }}">{{ $cat }}</button>
+    {{ end }}
+
+    <span class="gl-divider">·</span>
+
+    {{/* 난이도 — 인라인 */}}
+    <button class="gl-chip gl-chip--difficulty gl-chip--beginner" data-filter-type="difficulty" data-filter-value="초급">초급</button>
+    <button class="gl-chip gl-chip--difficulty gl-chip--intermediate" data-filter-type="difficulty" data-filter-value="중급">중급</button>
+    <button class="gl-chip gl-chip--difficulty gl-chip--advanced" data-filter-type="difficulty" data-filter-value="고급">고급</button>
+  </div>
+
+  {{/* 용어 카드 그리드 */}}
+  <div class="gl-grid" id="gl-grid">
+    {{ range .Pages.ByTitle }}
+      <a href="{{ .RelPermalink }}" class="gl-card"
+         data-consonant="{{ .Params.consonant }}"
+         data-letter="{{ .Params.letter }}"
+         data-category="{{ .Params.category }}"
+         data-difficulty="{{ .Params.difficulty }}"
+         data-title="{{ .Title }}"
+         data-description="{{ .Description }}">
+        <div class="gl-card__header">
+          <h2 class="gl-card__title">{{ .Title }}</h2>
+          {{ with .Params.term_en }}
+            <span class="gl-card__en">{{ . }}</span>
+          {{ end }}
+        </div>
+        <p class="gl-card__desc">{{ .Description }}</p>
+        <div class="gl-card__footer">
+          {{ with .Params.category }}
+            <span class="gl-badge gl-badge--category">{{ . }}</span>
+          {{ end }}
+          {{ with .Params.difficulty }}
+            <span class="gl-badge gl-badge--{{ cond (eq . "초급") "beginner" (cond (eq . "중급") "intermediate" "advanced") }}">{{ . }}</span>
+          {{ end }}
+        </div>
+      </a>
+    {{ end }}
+  </div>
+
+  {{/* 빈 상태 */}}
+  <div class="gl-empty" id="gl-empty" style="display:none;">
+    검색 결과가 없습니다.
+  </div>
+</section>
+
+<script src="{{ "js/glossary-filter.js" | relURL }}"></script>
+{{ end }}
