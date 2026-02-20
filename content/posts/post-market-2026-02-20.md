@@ -13,36 +13,41 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 > **코스피 +2.31%·코스닥 -0.58% 급등, 기관 폭풍 매수**
 
-- 오늘 국내 증시는 전반적인 강세 흐름 속에 기분 좋게 장을 마쳤네요.
-- 수급 측면을 보면 기관이 약 1조 6천억 원을 거세게 쓸어담은 반면, 외국인은 약 7천억 원 정도 빠져나가는 모습이었죠.
-- 이에 대응하며 개인 투자자들은 약 1조 원 물량을 시장에 던졌습니다.
+- 오늘 국내 증시는 전반적으로 강세 흐름을 보이며 장을 마감했습니다.
+- 수급: 기관이 약 1조 6천억 원을 쓸어 담은 반면, 외국인은 약 7천억 원 정도 빠져나갔네요.
+- 개인은 약 1조 원 물량을 던졌습니다.
 
 ---
 
 ## 2. 오늘의 해석
 
 ### 시장 마감 흐름
-오늘 코스피는 +2.31% 상승하고 코스닥은 -0.58%를 기록하며 꽤나 큰 변동성을 동반한 상승 움직임이 나타났어요. 기관이 앞서 언급한 대로 약 1조 6천억 원을 사들였고, 외국인과 개인은 각각 약 7천억 원과 1조 원 넘게 매도세를 보였네요. 한편 미국 쪽은 S&P -0.28%, 나스닥 -0.41%로 다소 주춤한 흐름인데요. 장 마감 후에는 "How Jerome Powell Is Trump-Proofing the Fed"라는 뉴스가 유독 눈에 띄었습니다.
+먼저 마감 지수를 살펴보면 코스피 +2.31%, 코스닥 -0.58%로 꽤 뚜렷한 상승과 하락 움직임이 나왔습니다.
+수급은 앞서 확인한 대로 기관 매수세 속에 외인과 개인은 매도하는 양상이었고, 미국 쪽은 S&P -0.08%, 나스닥 -0.11% 흐름을 보이고 있네요.
+장 마감 후 눈에 띄는 뉴스로는 "GDP Likely Rose Almost 2% in Last Year’s Fourth Quarter"가 있었습니다.
 
 ### 오늘 장 핵심 움직임
-이런 흐름 속에서 기술과 AI, 그리고 반도체 관련 이슈가 장 마감 해석의 핵심 축으로 작용했어요. AI 수요 확대가 반도체 슈퍼사이클 기대로 이어지며 기술주 주도 상승을 이끌어냈지만, 한편으로는 AI 거품 우려와 밸류에이션 부담이 차익실현 욕구를 자극하며 나스닥에 하방 압력을 가하기도 했죠. 오늘 최종 수급은 외국인 -7,420억 원, 기관 +16,150억 원으로 집계되었는데요. 단기적인 추세는 같은 테마의 해외 시장 반응까지 꼼꼼히 확인한 뒤에 이어가는 편이 안전하겠네요.
+이런 흐름 속에서 기술/AI/반도체 이슈가 장마감 해석의 핵심 축이었습니다.
+AI 수요 확대가 반도체 슈퍼사이클 기대로 이어지며 기술주 상승을 주도했지만, 한편으론 AI 거품 우려와 밸류에이션 부담이 기술주 차익실현을 부추겨 나스닥 하방 압력으로 작용했거든요.
+구체적으로 확정된 마감 수급은 외국인 -7,420억, 기관 +16,150억으로 확인됐습니다. 단기 추세는 같은 테마의 해외 시장 반응까지 확인한 뒤 이어가는 편이 안전하겠네요.
 
 ### 내일 장 관전 포인트
-정리하면 내일 가장 눈여겨볼 지표는 22시 30분에 발표될 [USD] 소비자물가지수(CPI) - January예요. 이 결과에 따라 앞서 확인한 미국 시장의 변동성이 바로 흔들릴 수 있거든요. 그래서 밤사이의 반응을 먼저 세심하게 살피고, 국내 선물 흐름과 어떻게 연결되는지 함께 지켜보시는 것이 좋습니다.
+내일 가장 눈여겨볼 건 [USD] 소비자물가지수(CPI) - January(22:30 KST) 발표입니다. 결과에 따라 미국장(S&P -0.08%, 나스닥 -0.11%)이 바로 흔들릴 수 있거든요.
+그래서 밤사이 시장 반응을 먼저 확인하고, 국내 선물 흐름을 연결해서 살펴보시는 게 좋습니다.
 
 ### 행동 체크포인트
 - **[USD] 소비자물가지수(CPI) - January 대응**
-  - 상황: 지표 결과가 시장 예상치와 크게 다를 경우 밤사이 미국 선물 시장부터 요동칠 수 있어요
-  - 대응: 내일 시초가 갭이 어느 방향으로 뜰지 예측해 보시고, 선물 시장의 반응을 우선적으로 확인하세요
-  - 해제 기준: 수치가 예상 범위 안에서 발표된다면 갭 변동성은 그리 크지 않을 거예요
-- **미국장 연결(S&P -0.28%, 나스닥 -0.41%)**
-  - 상황: 밤사이 미국 증시가 현재의 하락 방향을 그대로 유지하며 흘러가는 상황이에요
-  - 대응: 시장 간의 동조화가 이어진다면 내일 아시아 시장도 연속적인 흐름을 기대하며 비중 유지나 확대를 검토해 보세요
-  - 해제 기준: 만약 미국장의 흐름이 반등하며 부호가 반전된다면 내일의 갭 시나리오는 무효가 됩니다
+  - 상황: 만약 결과가 시장 예상치와 크게 다르면 밤사이 미국 선물부터 흔들릴 거예요.
+  - 대응: 내일 시초가 갭 방향을 미리 예측해 보고 선물 반응을 우선적으로 확인하세요.
+  - 해제 기준: 예상 범위 안에서 결과가 나온다면 갭 변동성은 제한적일 겁니다.
+- **미국장 연결(S&P -0.08%, 나스닥 -0.11%)**
+  - 상황: 밤사이 미국장이 지금 보고 있는 방향 그대로 흘러가는 경우입니다.
+  - 대응: 동조화가 이어진다면 내일 아시아장도 연속성을 기대할 수 있으니 비중 유지나 확대를 검토해 보세요.
+  - 해제 기준: 미국장 흐름이 뒤집히면(부호 반전) 내일 갭 시나리오는 무효가 됩니다.
 - **수급 연속성(외국인 약 7천억 매도)**
-  - 상황: 오늘 보여준 외국인의 수급 방향이 내일 시초가 형성 단계까지 그대로 이어질 수 있거든요
-  - 대응: 수급이 오늘과 같은 방향으로 동조한다면 추세 연장에 무게를 두고 비중 조정을 신중히 검토하세요
-  - 해제 기준: 내일 외국인 수급이 매수세로 뒤집히며 부호가 반전된다면 기존의 추세는 일단 끊긴 것으로 봐야 해요 <!-- 작성 완료 -->
+  - 상황: 오늘 확인된 외국인 수급 방향이 내일 시초가까지 이어지는지 봐야겠죠.
+  - 대응: 수급이 동조하면 추세가 연장되니 비중 조정을 검토하시는 게 좋겠습니다.
+  - 해제 기준: 내일 수급이 뒤집히면(부호 반전) 기존 추세는 끊긴 것으로 판단합니다.
 <!-- OPINION_ZONE_END -->
 
 ---
@@ -80,25 +85,25 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 ## 장후 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 21:42:39","max_items":5} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-20 23:50:28","max_items":5} -->
 ### 글로벌
 
 
-1. [**파월 의장, 트럼프 리스크 대비 연준 독립성 강화 나선다**](https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSjN1ZmxSaTR2RFBwRlNUUWZKY1pRQlJXbHVDcUw1Y1M3V3lSMzVxRjlzbHJrSU9FeXMzWXJaSlQta0ZsN29lVXRYbjc1N0NWRDBtZ0hmOE5od1FRUWl0UmcxYmZjcnVhUWlHcHhIUDR4WGRhQjNIMGphVnlZbXFDV2U1eTVEQVJIQWxPMU1Ma0dPbjdvRFQxSzJlMmVibURyTm5vc3pTTUdldGJMcVV1RzNDNFJ4Q0NKQ3BhTTMxUzZ4dw?oc=5)
-   Bloomberg.com · 2026-02-20 19:00 KST · central-bank
+1. [**작년 4분기 GDP, 2% 가까이 상승했을 가능성**](https://news.google.com/rss/articles/CBMijwNBVV95cUxOODZHcUJxOHptT1Nocy10Uk55dU5zWjVucllFYXVjLUY0c0hEZVNpVlIzcmtmUHUwNmd5eW83bXE0YjB2NEMwU1Y5VjZpeXBYdjNSODc2eHFHVXFhLVpHc0Q4VEl6aWxQZFJyMEkwLURLaWxPM21wZHN3NUVfemt6NEM1RDQtSVUzcmpSTmNTWTRUX185YXBKVE1uR2ExdkZOeS1xR1JMelNIeVVoV0hURXROa2hMMm1XaWdzT3NsNG92djdBbUh4MWplOElfMDNMdGJjamZTcEZWRnBQTXhuOHJqZjdNcHdXV2lZaGlxc3hCVGk2NHh3bjN6cTZ6SS1ZdzF6VlRXNl9YRTdLRmpNNFlkdm9zWm5NRHotVkxZSXNfV3piejZHTDJ4ZUIxdVg1c3BsRTBhV1NicW5Sa1dFajBfRmZSWnNJT0tvM09Jb1AwSE5US3RNTWFVdnl6TU9Gc0FiNGFpQ1hmVDVOU1pQSEZyYWh3N1ZhVFduZkNkYjFLbDhhRmdQVmNoUjVQZHc?oc=5)
+   Barron's · 2026-02-20 22:33 KST · 미국 매크로
+   원문: GDP Likely Rose Almost 2% in Last Year’s Fourth Quarter
+
+2. [**미국 연준 선호 인플레이션 지표, 예상대로 3% 기록**](https://news.google.com/rss/articles/CBMi-wJBVV95cUxQZU5Ib19nbGZJZnNESnQzdkNCTGlJbk40QjBzZUdqUjdqWlFrRWVmakplWTB5RkJYbVV6NHNtYk1nS2lGNjNwcHhjQzVrX3p1N0tZbXhUcHdJSWtNb0ZqRkVUblNNTGtwTDAzRTFzY19jdU9wTWwwX1RfT1NNUmxKMm1FaEp4a2hoVzZJajdzQ29iTklfS0FxcENVa1pmcVQ5TVhIZXZEV3FVVWZtMHoyQXNSbjl2UXJjSUpqMjJ1bE1mWUpvNDRQNnBNWjVkdDFXazB6SFVPTnhoMkJweVNLRFJ1eXdNOTJiMTB6MWw1OWdnYzJROWg5VHYweE03cFM3VmYwOUpuSWRCYS1tWkI2WVE5Zm05OEZwQ0JYVVl4U3F4TUF6ZWFvejd4eXk5MUlOTVJ4SkU5VUI3U2xQV1d5ZlA2bDJtaHN6cGt5bVM5OFdnWHE4Nko3V2hTQVp5WkFmY1dCcmxBdG1vVHhmQ0lHenRKV0ViTkgwXy1R?oc=5)
+   Barron's · 2026-02-20 22:39 KST · central-bank
+   원문: The Fed’s Preferred Inflation Gauge Comes In as Expected, at 3%
+
+3. [**파월 의장, 트럼프 리스크 대비 연준 독립성 강화 나선다**](https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSjN1ZmxSaTR2RFBwRlNUUWZKY1pRQlJXbHVDcUw1Y1M3V3lSMzVxRjlzbHJrSU9FeXMzWXJaSlQta0ZsN29lVXRYbjc1N0NWRDBtZ0hmOE5od1FRUWl0UmcxYmZjcnVhUWlHcHhIUDR4WGRhQjNIMGphVnlZbXFDV2U1eTVEQVJIQWxPMU1Ma0dPbjdvRFQxSzJlMmVibURyTm5vc3pTTUdldGJMcVV1RzNDNFJ4Q0NKQ3BhTTMxUzZ4dw?oc=5)
+   Bloomberg · 2026-02-20 19:00 KST · central-bank
    원문: How Jerome Powell Is Trump-Proofing the Fed
 
-2. [**엔비디아 실적 발표, 향후 수개월 시장 시험대 오를 듯 - 펀드스트랫**](https://news.google.com/rss/articles/CBMi6gRBVV95cUxOSTl6T19KdV8xeUtZRHdOSHhrWk9XY2tPNzJ6Z1NHMzVqNkVBZnlwdk5OTi16X3hxSXBFeGVHMFhvTVcxb0hxamRIam92bEpVX01GcGpiR29Ib1o3NGp4Z0h2aFdoOEgtMml0RmxsTHNkZUN0aEJBVERNLXNLb1ZlNWUyZ2N4bGsxY25RUnZrQ0tjWDFfQkFTRG40RjZiQ3hhMmZ3RUJ5WlFBYUp2YlBkTVNyY2ZKbmdNaEhMbXYyVnN6ZDNoZEdVZ0hQNks3WHFDS1lfNUtVV0hZS3hDQzNnZ3NKWEdKdlVCamtqMDkwOXEyYzV0UEpqQ0F2c1dRQTJsVUtwT0t5b0VFREtTY3Q5cGJKbGhMMy1mTWQ2WmpMcW5qekhXXzdXR2trUHQ4UGh6aW8yMDhWU1R3UVV4QUJzUlVQclpaZnNySmVqZzMtaFRWdDMtS2dUVzZaSmNZUy1PZkxrOUJYeGlsa0xwMDYwY0ptMkxYR2xXY2o5dkE4aTRvMnV5TmFReGhLbkthbHFLRVV3ZmVlRGlNdHlXVFpWUGJYUDRZVjd2c3VVa1hjMWdqS1hxS2liU294M2xaN001RVU4Q01kVjRvTUp2SlJUQXRTRF9vR1h4a1ByRnExckpBdkI5TmR2YTQ4S09qQ29RZW9PVXJqSGk2Skp5MFdvaEVFbFpCbWJjMlVRdXhlVEw0dG91cElhVTN2QnBuclVsS0RXUlhLRTdNbnFmNDBhaUk5d243aVBzSnh3UVlQZldNaE01RUFKMmFPbU1NcFNCLWl0bzUySWUtOEoxVFpzQk5JVWw4Z3pHaFE?oc=5)
-   MarketWatch · 2026-02-20 18:55 KST · 시장 이벤트
-   원문: Reaction to Nvidia's earnings next week will test market in coming months — Fundstrat
-
-3. [**미-이란 긴장 고조와 유럽 국채 수익률 하락에 금값 상승**](https://news.google.com/rss/articles/CBMijwFBVV95cUxOTHhKVU93NGprenktcTZlbXo4bUZURkhLOGdtZ2FmaGx3cWVtNVlYR3hPbzExZUNsQ3VsWFlja25BUTU1MzRuc2d1emdVd3hfZWRGOEZLUlJ2SkJJMmE1c3NDMTAyWE5fbTkwY2psV2ZzXzd2cUt6UzZuVl8zRHdKSzZoTDA2MU9FbTVVN0VxTQ?oc=5)
-   Reuters · 2026-02-20 13:49 KST · 미국 매크로
-   원문: Gold rises on US-Iran tensions and lower European bond yields
-
-4. [**주가 지수 선물 상승세…GDP·PCE 지표 발표 앞두고 관망세**](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdEhFOG5VbDZRalk4RGVBckdZb0dRcXFha2NHWkdzXy0wc0dfMEwyeERIdDNnNDVMVGVobXBQNlpWVngyNWhBdGJzVDVIMFNvQ01vM2dCYmQ5RHZ2UWc5M0hHLXBWbWkyUGx0RzRHSmtDS2tjSGhQWFlIc09VRVA1UjFvc3hHNzBz?oc=5)
-   Seeking Alpha · 2026-02-20 18:38 KST · 미국 매크로
-   원문: Stock index futures up ahead of GDP, PCE data (SPX:)
+4. [**미-이란 긴장 고조와 유럽 국채 수익률 하락에 금값 상승**](https://news.google.com/rss/articles/CBMiigFBVV95cUxOQjdKSHBZRjFIV2NZSnFqa2g1bE11ZXBldEVuUnlYWE92cW1aVllZckpEZXQ4S01jY2ozTWx2N1FUZ2F2dzM0U3VOVHRrMlR5aThKRlV5Ymk3Q1l0MVJVbHdWYVpCN2VJelhjUzRBRE0zcmZTMzY4eVFUeWVzbjlWRUpDcllzb2xEREHSAY8BQVVfeXFMT1lITGdJU082RDZOZy1OOHRsNnpJMGlGdUNIWHpmb0UyOTdTMFI1NnFKSUl1MWpucmFNRXRkOVUwNno1c3IzbnhhQVpyVmlpTVp3MWFHT2x3MTFQcWluUDkwaVR2NGllUk1yZTUwVExvZW1zeXJiRGQydnR2eXp2bjU4SVVZQkhHbUJiR0NjakU?oc=5)
+   CNBC · 2026-02-20 14:23 KST · 미국 매크로
+   원문: Gold rises on U.S.-Iran tensions and lower European bond yields
 
 ### 국내
 
@@ -139,14 +144,14 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 1. 📰 [**JP Morgan Increases Target Price on Huntington Bancshares (HBAN) to $21**](https://news.google.com/rss/articles/CBMihAFBVV95cUxOVnNyMDJ6QnFxdjRDb3BPOFBEdXdrbUpyS2pPZGxBQ2JtMFFsODZ6U0l1ZHNVWkFZQlZWVF8ycEpPS19CRGlhYlpfTk5mM3JBOUJYSnVNTzVRTXdyTHh3SVczMWJLZzV0aEtZWEZ2R0FDT3ViLUJ0cnJEdzZxOUUzS2Vwd2k?oc=5)
 2. 📰 [**JP Morgan Updates Price Target for GGAL, Maintains Overweight Ra**](https://news.google.com/rss/articles/CBMivwFBVV95cUxNNnRWaWJzMmVmODIxaHVlRGNyRE9mRFNDOVZwZVlOQlhiSDZfS3VlVlBMb2ZMNVJraWtqczBTZ1hFbmtLV1RqdFFvbl9WTkkyV0NzejZQUU1pbG05SWRydlM3OUROSUhhb3hJb3M3LU5ZekFvZW5Zb1BfR1VtWU5zcjdqMW1wbi1jdDVRMmVyQWd4VVZmTjluNXJzN2FnZkgtS1hsd1pfUHEtbDE0WjUxakJqYW1wYzE4cFdWb0Fqcw?oc=5)
-3. 📰 [**JP Morgan Raises Target Price on Citi (C), Keeps Overweight Call**](https://news.google.com/rss/articles/CBMigAFBVV95cUxORDRQUmpCQlZobEtPUWN2c3hyNFMxbHNQWTljaTI0UGR5UHdhd0dQWE1ZdWdtR1NtUFhHc0JEN0NmVngtNVZDTU9wOTJ0ekxaakIwZmg3ZnhINVR1SnFjMVV2UUFiNm5fNmlCaDdiYTV4NGpWY0MwS2c5ejRVSkpOdQ?oc=5)
+3. 📰 [**JP Morgan Raises Target Price on Citi (C), Keeps Overweight Call**](https://news.google.com/rss/articles/CBMi4gJBVV95cUxOUWR0ZTBzNWdWNlpiTlNrd2dlY3Zvem9zX3d1VTJTZVN4bTN3bUM0b0NJQXRYNDJGTmVObGZFTkpfUTZTRVA2SG4xLUhBN2RIcnhLY1RQTVVReU5Za1JYN0dDNEdYTDYwTUNOdjVoTlNZYU85cHZjeC0yT0ZuclZfRlBQY1hVNWNDLXhxakExbGZ1MHpZc2wwUlRjODV1UUdMUHo2bUhzdFhsSGp6Mmx1SWszNlFQeWRHV1EyWnBaaVlUcldvN3AxYmxIdlJOTkZiZkR4bWJwNGYycUlldjJIRVctRnhnQkNxYUxvX2F4TjBYS2NsVTBRbkdLY0JrNzNyZTdoOGNrUnBhcHRodjcxNExNUllRdGlwNWhQNDdKT1Rpd3VzaFVYWnphM1ZRR3ZCZlVfMHU4ZmlCRmttZ2oweE1OWmkwU2duckZ1T1BCSlM2aFlwS3pVcVcyWTViTEVRbXc?oc=5)
 4. 📰 [**JP Morgan Raises Price Target for Howmet Aerospace (HWM) to $265**](https://news.google.com/rss/articles/CBMitgFBVV95cUxPS2VuUTFET1NwX3BPWlFENVVxNTFlZURHSG9mNlJDVnNyaGpPLWh4NXlQQlBNVmNSREFycDdYZ1RnaEdZT1g4cUl1a1d1RWNvcUlsSVlrRG50aHU0SGg2elRuZDVhUUcwd2dFX3NZXzVKUU1IQTlRVXZhbkNhc3pVNVJkaWtva3liNWxzRnhZbERqenhRSjl2QWF2UVpyMGd2WWdYWFdPTUI1cS1xbnJmbS1fUUM3QQ?oc=5)
 
 ---
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 21:42:39","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-20 23:50:28","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 1. [상][GBP][D-Day] [GBP] Retail Sales m/m
@@ -195,7 +200,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 <!-- MP_KEY_EVENT_START -->
 6. [상][USD][D-Day] [USD] Advance GDP q/q
-   시각: 2026-02-20 22:30:00 KST | 상태: 예정
+   시각: 2026-02-20 22:30:00 KST | 상태: 마감
    [USD] Advance 국내총생산(GDP) 전분기비
    데이터: 이전 3.0% | 예상 2.8%
    영향: 성장 지표가 약하면 경기민감주 압박, 강하면 위험자산 선호 회복 가능성을 점검해야 합니다.
@@ -204,7 +209,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 
 <!-- MP_KEY_EVENT_START -->
 7. [상][USD][D-Day] [USD] Core PCE Price Index m/m
-   시각: 2026-02-20 22:30:00 KST | 상태: 예정
+   시각: 2026-02-20 22:30:00 KST | 상태: 마감
    [USD] 근원 개인소비지출 물가지수(PCE) 전월비
    데이터: 이전 0.2% | 예상 0.3%
    영향: 매크로 일정 발표 전후로 달러, 금리, 지수 선물 변동성 확대 가능성에 유의해야 합니다.
@@ -241,7 +246,7 @@ chartData: "/data/chart-data-2026-02-20.json"
 ## 출처
 
 - 한국투자증권 Open API | https://openapi.koreainvestment.com:9443
-- Yahoo Finance | https://finance.yahoo.com, https://news.google.com/rss (13건)
+- Yahoo Finance | https://finance.yahoo.com, https://news.google.com/rss (12건)
 - CoinGecko | https://api.coingecko.com/api/v3/simple/price
 - Alternative.me | https://api.alternative.me/fng/
 - Google News RSS | https://news.google.com/rss
@@ -251,11 +256,12 @@ chartData: "/data/chart-data-2026-02-20.json"
 - Static Economic Calendar | file://static-calendar.json
 - Yahoo Finance Historical | https://finance.yahoo.com
 - GuruFocus | https://news.google.com/rss (2건)
+- MSN | https://news.google.com/rss
 
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-20 21:42:39 KST</span>
+  <span>생성 시각: 2026-02-20 23:50:28 KST</span>
   <span>브리핑 슬롯: post-market (장후)</span>
-  <span>데이터 기준 시각: 2026-02-20 21:42:39 KST</span>
+  <span>데이터 기준 시각: 2026-02-20 23:50:28 KST</span>
 </div>
