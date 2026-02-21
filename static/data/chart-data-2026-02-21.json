@@ -177,7 +177,7 @@
         67226,
         66829,
         66853,
-        67915
+        68047
       ],
       "GOLD": [
         5079.9,
@@ -232,7 +232,7 @@
         "S&P 500",
         "BTC"
       ],
-      "value": -0.06,
+      "value": -0.05,
       "status": "비동조",
       "meaning": "독립적 움직임"
     },
@@ -242,7 +242,7 @@
         "S&P 500",
         "원/달러"
       ],
-      "value": -0.03,
+      "value": -0.04,
       "status": "비동조",
       "meaning": "환율 독립적"
     },
@@ -252,7 +252,7 @@
         "S&P 500",
         "10년물"
       ],
-      "value": -0.18,
+      "value": -0.17,
       "status": "비동조",
       "meaning": "독립적"
     },
@@ -262,7 +262,7 @@
         "VIX",
         "금"
       ],
-      "value": -0.09,
+      "value": -0.1,
       "status": "비동조",
       "meaning": "독립적"
     },
@@ -272,7 +272,7 @@
         "BTC",
         "금"
       ],
-      "value": 0.13,
+      "value": 0.14,
       "status": "비동조",
       "meaning": "독립적 자산"
     },
@@ -313,7 +313,7 @@
       },
       {
         "name": "크립토 심리",
-        "value": "7",
+        "value": "8",
         "assessment": "⚠",
         "note": "극단적 공포 (contrarian 반등 시그널)"
       }
@@ -324,44 +324,44 @@
       {
         "name": "산업",
         "symbol": "XLI",
-        "week1": 0.64,
-        "month1": 9.49
+        "week1": 0.68,
+        "month1": 9.59
       },
       {
         "name": "금융",
         "symbol": "XLF",
-        "week1": 0.41,
-        "month1": -4.2
-      },
-      {
-        "name": "에너지",
-        "symbol": "XLE",
-        "week1": 0.15,
-        "month1": 19.57
+        "week1": 0.55,
+        "month1": -4.09
       },
       {
         "name": "반도체",
         "symbol": "SOXX",
-        "week1": 0.15,
-        "month1": 9.58
-      },
-      {
-        "name": "테크",
-        "symbol": "XLK",
-        "week1": 0.11,
-        "month1": -2.81
+        "week1": 0.27,
+        "month1": 9.77
       },
       {
         "name": "소비재",
         "symbol": "XLY",
-        "week1": -0.42,
-        "month1": -5.09
+        "week1": 0.02,
+        "month1": -4.71
+      },
+      {
+        "name": "에너지",
+        "symbol": "XLE",
+        "week1": -0.1,
+        "month1": 19.4
+      },
+      {
+        "name": "테크",
+        "symbol": "XLK",
+        "week1": -0.13,
+        "month1": -3.06
       },
       {
         "name": "헬스케어",
         "symbol": "XLV",
-        "week1": -1.32,
-        "month1": 0.89
+        "week1": -1.61,
+        "month1": 0.62
       }
     ],
     "kr": [
@@ -418,7 +418,7 @@
     {
       "metric": "BTC",
       "label": "소폭 하락",
-      "changePct": -1.14
+      "changePct": -0.95
     },
     {
       "metric": "VIX",
@@ -436,7 +436,7 @@
       "eventName": "[USD] ISM Services PMI",
       "eventNameKo": "[USD] ISM 서비스업 구매관리자지수(PMI)",
       "eventTimeKst": "2026-02-10 00:00:00 KST",
-      "dday": "D-11",
+      "dday": "D-12",
       "country": "미국",
       "importance": "medium",
       "status": "마감",
@@ -453,7 +453,7 @@
       "eventName": "[USD] Consumer Price Index (CPI) - January",
       "eventNameKo": "[USD] 소비자물가지수(CPI) - January",
       "eventTimeKst": "2026-02-11 22:30:00 KST",
-      "dday": "D-9",
+      "dday": "D-10",
       "country": "미국",
       "importance": "high",
       "status": "마감",
@@ -471,7 +471,7 @@
       "eventName": "[USD] FOMC Meeting Minutes",
       "eventNameKo": "[USD] 연준(FOMC) 의사록",
       "eventTimeKst": "2026-02-13 04:00:00 KST",
-      "dday": "D-8",
+      "dday": "D-9",
       "country": "미국",
       "importance": "high",
       "status": "마감",
@@ -487,7 +487,7 @@
       "eventName": "[USD] Producer Price Index (PPI) - January",
       "eventNameKo": "[USD] 생산자물가지수(PPI) - January",
       "eventTimeKst": "2026-02-13 22:30:00 KST",
-      "dday": "D-7",
+      "dday": "D-8",
       "country": "미국",
       "importance": "medium",
       "status": "마감",
@@ -504,7 +504,7 @@
       "eventName": "[USD] Retail Sales - January",
       "eventNameKo": "[USD] 소매판매 - January",
       "eventTimeKst": "2026-02-14 22:30:00 KST",
-      "dday": "D-6",
+      "dday": "D-7",
       "country": "미국",
       "importance": "medium",
       "status": "마감",
@@ -521,7 +521,7 @@
       "eventName": "[KRW] Korea Unemployment Rate",
       "eventNameKo": "[KRW] 한국 실업률",
       "eventTimeKst": "2026-02-18 08:00:00 KST",
-      "dday": "D-3",
+      "dday": "D-4",
       "country": "한국",
       "importance": "medium",
       "status": "마감",
@@ -536,7 +536,7 @@
       "eventName": "[USD] Initial Jobless Claims",
       "eventNameKo": "[USD] 신규 실업수당 청구건수",
       "eventTimeKst": "2026-02-19 22:30:00 KST",
-      "dday": "D-1",
+      "dday": "D-2",
       "country": "미국",
       "importance": "medium",
       "status": "마감",
@@ -553,7 +553,7 @@
       "eventName": "[USD] S&P Global Manufacturing PMI (Flash)",
       "eventNameKo": "[USD] S&P Global 제조업 구매관리자지수(PMI) (Flash)",
       "eventTimeKst": "2026-02-20 23:45:00 KST",
-      "dday": "D-Day",
+      "dday": "D-1",
       "country": "미국",
       "importance": "medium",
       "status": "마감",
@@ -570,7 +570,7 @@
       "eventName": "[KRW] Korea Producer Price Index (PPI) y/y",
       "eventNameKo": "[KRW] 한국 생산자물가지수(PPI) 전년동월비",
       "eventTimeKst": "2026-02-21 06:00:00 KST",
-      "dday": "D-Day",
+      "dday": "D-1",
       "country": "한국",
       "importance": "medium",
       "status": "마감",
@@ -585,7 +585,7 @@
       "eventName": "[KRW] Korea Consumer Confidence",
       "eventNameKo": "[KRW] 한국 소비자신뢰지수",
       "eventTimeKst": "2026-02-25 06:00:00 KST",
-      "dday": "D+4",
+      "dday": "D+3",
       "country": "한국",
       "importance": "low",
       "status": "예정",
@@ -599,7 +599,7 @@
       "eventName": "[USD] Consumer Confidence",
       "eventNameKo": "[USD] 소비자신뢰지수",
       "eventTimeKst": "2026-02-26 00:00:00 KST",
-      "dday": "D+5",
+      "dday": "D+4",
       "country": "미국",
       "importance": "medium",
       "status": "예정",
@@ -614,7 +614,7 @@
       "eventName": "[USD] Durable Goods Orders m/m",
       "eventNameKo": "[USD] 내구재 주문 전월비",
       "eventTimeKst": "2026-02-27 22:30:00 KST",
-      "dday": "D+7",
+      "dday": "D+6",
       "country": "미국",
       "importance": "high",
       "status": "예정",
@@ -629,7 +629,7 @@
       "eventName": "[KRW] Korea Industrial Production m/m",
       "eventNameKo": "[KRW] 한국 산업생산 전월비",
       "eventTimeKst": "2026-03-01 08:00:00 KST",
-      "dday": "D+8",
+      "dday": "D+7",
       "country": "한국",
       "importance": "high",
       "status": "예정",
@@ -644,7 +644,7 @@
       "eventName": "[USD] ISM Manufacturing PMI",
       "eventNameKo": "[USD] ISM 제조업 구매관리자지수(PMI)",
       "eventTimeKst": "2026-03-03 00:00:00 KST",
-      "dday": "D+10",
+      "dday": "D+9",
       "country": "미국",
       "importance": "high",
       "status": "예정",
@@ -659,7 +659,7 @@
       "eventName": "[USD] ADP Employment Change",
       "eventNameKo": "[USD] ADP 민간고용 변화",
       "eventTimeKst": "2026-03-04 22:15:00 KST",
-      "dday": "D+12",
+      "dday": "D+11",
       "country": "미국",
       "importance": "medium",
       "status": "예정",
@@ -674,7 +674,7 @@
       "eventName": "[KRW] Korea Consumer Price Index (CPI) y/y",
       "eventNameKo": "[KRW] 한국 소비자물가지수(CPI) 전년동월비",
       "eventTimeKst": "2026-03-06 08:00:00 KST",
-      "dday": "D+13",
+      "dday": "D+12",
       "country": "한국",
       "importance": "high",
       "status": "예정",
@@ -689,7 +689,7 @@
       "eventName": "[USD] Non-Farm Payrolls",
       "eventNameKo": "[USD] 비농업 고용지표(NFP)",
       "eventTimeKst": "2026-03-06 22:30:00 KST",
-      "dday": "D+14",
+      "dday": "D+13",
       "country": "미국",
       "importance": "high",
       "status": "예정",
