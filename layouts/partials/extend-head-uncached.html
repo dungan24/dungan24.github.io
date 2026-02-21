@@ -28,10 +28,14 @@
   window.__MP_CONFIG = {{ index .Site.Params "market_pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
 </script>
 
-{{ if .Params.regime }}
-
+{{ if .Params.chartData }}
 <script>
-  window.__MP_PAGE = {{ dict "regime" .Params.regime "regimeIcon" .Params.regimeIcon "summary" .Params.summary "chartData" .Params.chartData | jsonify | safeJS }};
+  window.__MP_PAGE = {{ dict
+    "regime" (.Params.regime | default "")
+    "regimeIcon" (.Params.regimeIcon | default "")
+    "summary" (.Params.summary | default "")
+    "chartData" .Params.chartData
+  | jsonify | safeJS }};
 </script>
 {{ end }}
 {{ if .Params.chartData }}
