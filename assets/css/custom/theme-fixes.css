@@ -14,18 +14,18 @@
   color: #475569 !important; /* Slate-600 */
 }
 
-/* Remove heavy text shadows in light mode */
-:root:not(.dark) * {
+/* Remove heavy text shadows in light mode — targeted elements only */
+:root:not(.dark) .mp-ticker-change,
+:root:not(.dark) .num-up,
+:root:not(.dark) .num-down,
+:root:not(.dark) .mp-neon-glow,
+:root:not(.dark) .mp-heartbeat,
+:root:not(.dark) .briefing-section h3,
+:root:not(.dark) .briefing-section h4 {
   text-shadow: none !important;
 }
 
-/* Re-add subtle shadows for key elements if needed, but keep it clean */
-:root:not(.dark) .mp-heartbeat {
-  background: linear-gradient(135deg, #1E1E3A 0%, var(--mp-brand-color) 45%, #1E1E3A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: none !important;
-}
+/* .mp-heartbeat light mode — defined in custom.css */
 
 /* Mobile Light Mode Specifics */
 @media (max-width: 640px) {
@@ -84,7 +84,7 @@
 .theme-transition *,
 .theme-transition *::before,
 .theme-transition *::after {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   transition-delay: 0s !important;
 }
 

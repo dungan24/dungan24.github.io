@@ -82,14 +82,7 @@
   color: #7C3AED !important;
 }
 
-/* Cyberpunk Divider Light Mode */
-:root:not(.dark) .mp-cyber-divider {
-  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.15), transparent);
-}
-:root:not(.dark) .mp-cyber-divider::after {
-  background: var(--regime-color, #7C3AED);
-  box-shadow: none;
-}
+/* .mp-cyber-divider light mode removed — dead selector */
 
 /* ===== Prev/Next Pagination — Cyberpunk HUD Cards ===== */
 .mp-pagination {

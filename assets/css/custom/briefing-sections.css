@@ -9,34 +9,7 @@
   content: "" !important;
 }
 
-/* Cyberpunk Divider (T-504) */
-.mp-cyber-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--mp-glass-border), transparent);
-  margin: 3rem 0;
-  position: relative;
-  overflow: visible;
-  border: none;
-}
-
-.mp-cyber-divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 4px;
-  background: var(--regime-color, var(--mp-neon-purple));
-  box-shadow: 0 0 10px var(--regime-color, var(--mp-neon-purple));
-  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mp-cyber-divider::after {
-    box-shadow: none;
-  }
-}
+/* .mp-cyber-divider removed — dead selector */
 
 .briefing-section ul:not(.mp-regime-signals) li {
   position: relative;
@@ -117,35 +90,7 @@
   background: linear-gradient(to top, rgba(165, 243, 252, 0.4) 40%, transparent 40%);
 }
 
-/* ===== Post Page - Regime Hero & Enhanced Layout ===== */
-
-/* --- Post Regime Hero Banner --- */
-.mp-post-hero {
-  position: relative;
-  border-left: 4px solid var(--regime-color, #7C3AED);
-  border-radius: 0 var(--mp-radius-md) var(--mp-radius-md) 0;
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-  background: var(--mp-glass-bg);
-  /* backdrop-filter removed — post-hero.css is the authoritative file for .mp-post-hero blur (PERF-02 dedup) */
-  border: 1px solid var(--mp-glass-border);
-  border-left: 4px solid var(--regime-color, #7C3AED);
-  box-shadow: var(--mp-shadow-sm);
-}
-
-.mp-post-hero__top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-.mp-post-hero__summary {
-  color: #CBD5E1;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
+/* .mp-post-hero styles removed — post-hero.css is the authoritative source */
 
 :root:not(.dark) .mp-post-hero {
   background: rgba(255, 255, 255, 0.9);
