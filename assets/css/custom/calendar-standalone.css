@@ -208,7 +208,7 @@
 }
 
 .mp-mobile-sheet__time {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono, 'Fira Code', 'JetBrains Mono', monospace);
   color: rgb(var(--color-neutral-500));
 }
 
@@ -275,7 +275,7 @@
 .mp-expect-badge {
   background: rgba(124, 58, 237, 0.08);
   color: rgb(124, 58, 237);
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: var(--mp-font-mono, 'Fira Code', 'JetBrains Mono', monospace);
 }
 
 .dark .mp-expect-badge {
