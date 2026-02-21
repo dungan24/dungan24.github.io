@@ -1048,6 +1048,9 @@
     if (!data) return;
     MPCharts._data = data;
     // 이전 인스턴스 정리
+    MPCharts._instances.forEach(function (c) {
+      if (c && !c.isDisposed()) c.dispose();
+    });
     MPCharts._instances = [];
     renderTimeSeries(data);
     renderCorrelations(data);
