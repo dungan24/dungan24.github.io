@@ -215,12 +215,29 @@
             fgCard.appendChild(fgHeader);
 
             if (!isNaN(fgVal)) {
-              var fillClass;
-              if (fgVal <= 25) fillClass = "is-extreme-fear";
-              else if (fgVal <= 46) fillClass = "is-fear";
-              else if (fgVal <= 54) fillClass = "is-neutral";
-              else if (fgVal <= 74) fillClass = "is-greed";
-              else fillClass = "is-extreme-greed";
+              var fillClass, fgLabel;
+              if (fgVal <= 25) {
+                fillClass = "is-extreme-fear";
+                fgLabel = "극단적 공포";
+              } else if (fgVal <= 46) {
+                fillClass = "is-fear";
+                fgLabel = "공포";
+              } else if (fgVal <= 54) {
+                fillClass = "is-neutral";
+                fgLabel = "중립";
+              } else if (fgVal <= 74) {
+                fillClass = "is-greed";
+                fgLabel = "탐욕";
+              } else {
+                fillClass = "is-extreme-greed";
+                fgLabel = "극단적 탐욕";
+              }
+
+              // 구간 라벨
+              var fgLabelEl = document.createElement("span");
+              fgLabelEl.className = "mp-fg-callout__label " + fillClass;
+              fgLabelEl.textContent = fgLabel;
+              fgHeader.appendChild(fgLabelEl);
 
               var gauge = document.createElement("div");
               gauge.className = "mp-fg-gauge";
@@ -231,14 +248,17 @@
               fgCard.appendChild(gauge);
             }
 
-            if (change.textContent || change.firstChild) {
+            // status가 "-" 만 있으면 무의미 → 숨김
+            var changeRaw = (change.textContent || "").trim();
+            if (changeRaw && changeRaw !== "-" && change.firstChild) {
               var fgStatus = document.createElement("div");
               fgStatus.className = "mp-fg-callout__status";
               fgStatus.appendChild(change);
               fgCard.appendChild(fgStatus);
             }
 
-            card.appendChild(fgCard);
+            // ticker group 밖에 별도 카드로 배치 (container 뒤에 추가)
+            container._pendingFgCard = fgCard;
             return; // forEach 콜백에서 조기 종료
           }
 
@@ -263,7 +283,7 @@
           }
           tickerRow.appendChild(flowSpan);
 
-          // VIX 임계값 뱃지 — change 컬럼 안에 inline 배치
+          // VIX 임계값 뱃지 — name 컬럼 아래에 배치
           if (/VIX/.test(nameText)) {
             var vixVal = parseFloat(
               (price.textContent || "").replace(/[^0-9.]/g, ""),
@@ -282,7 +302,7 @@
                 label: zoneLabel,
               });
               zoneBadge.classList.add("mp-vix-zone-badge");
-              change.appendChild(zoneBadge);
+              name.appendChild(zoneBadge);
             }
           }
 
@@ -306,6 +326,14 @@
       section.appendChild(container);
     } else {
       section.insertBefore(container, section.firstChild);
+    }
+
+    // 공포탐욕 게이지를 ticker groups 바로 뒤에 별도 배치
+    if (container._pendingFgCard) {
+      container.parentNode.insertBefore(
+        container._pendingFgCard,
+        container.nextSibling,
+      );
     }
   }
 
