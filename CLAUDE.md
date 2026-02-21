@@ -98,8 +98,9 @@ blog는 카드/필터 렌더에서 fallback 로직으로 화면 안정성을 유
 
 ## 런타임 구조
 
-- Loader:
-  - `layouts/partials/extend-footer.html`
+- Loader (조건부):
+  - `layouts/partials/extend-footer.html` — `$isBriefingPost`(slot 보유 페이지) / `$isStandaloneCalendar`(/market-calendar/) / `.IsHome` 등으로 스크립트 조건부 로딩
+  - ⚠️ `footer.html`에서 반드시 `partial "extend-footer.html" .` 형태 사용 — `partialCached` 불가 (페이지 context `.IsPage`, `.Params`, `.RelPermalink` 필요)
 - Data bridge:
   - `layouts/partials/extend-head-uncached.html` (`window.__MP_CONFIG`, 조건부 `window.__MP_PAGE`)
 - Post transform:
@@ -151,6 +152,14 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 - `layouts/`에 신규 인라인 `<script>/<style>` 추가 금지
   - 예외: `extend-head-uncached.html`의 데이터 브리지 인라인 스크립트
 - 모바일(640/768/1024)에서 렌더 회귀 확인 필수
+
+### XSS 방어 패턴 (2026-02-21 적용)
+
+- 공통 유틸: `static/js/briefing/dom-utils.js`에 `ns.escapeHtml()` + `ns.sanitizeHref()` 정의
+  - 브리핑 JS 전체에서 `MPBriefing.dom.escapeHtml()` / `MPBriefing.dom.sanitizeHref()` 사용
+  - 독자 IIFE(`market-pulse-enhancements.js` 등)는 로컬 `escapeHtml()` 함수 별도 선언
+- regime badge: `badge.setAttribute("data-regime", r.current)` 필수 — `theme-fixes.css`의 `[data-regime="RISK_ON"]` CSS와 연동
+- innerHTML 사용 시 외부 데이터(href, headline, source, excerpt 등)는 반드시 이스케이프
 
 ## 교차 레포 문서 동기화
 

@@ -65,7 +65,13 @@ pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 - Do not edit generated briefing posts in `content/posts/` unless explicitly requested
 - Treat all slot posts (`pre-market-*`, `mid-day-*`, `post-market-*`) and `static/data/chart-data-*.json` as pipeline-managed outputs
 - Keep markdown parsing rules backward-compatible with writer output
-- Keep `layouts/partials/extend-footer.html` as a thin script loader only
+- `layouts/partials/extend-footer.html` is a conditional script loader grouped by page type:
+  - always: `mp-config.js`, `ambient-orbs.js`, `theme-transition.js`, `reading-progress.js`, `branding-patch.js`, `footer-clock.js`
+  - briefing post only (`isset .Params "slot"`): all `briefing/*.js`, `market-pulse-enhancements.js`, `market-charts-loader.js`, `render-charts.js`
+  - calendar pipeline (briefing OR `/market-calendar/`): `calendar/parser.js`, `calendar/model.js`, `calendar/renderer.js`, `market-pulse-calendar.js`, `briefing/calendar-loader.js`
+  - standalone calendar only (`RelPermalink "/market-calendar/"`): `standalone-calendar.js`
+- ⚠️ `layouts/partials/footer.html` must call `partial "extend-footer.html" .` — NOT `partialCached`
+  - `extend-footer.html` uses `.IsPage`, `.Params`, `.RelPermalink` and requires live page context
 - Implement post behavior changes in `static/js/briefing/*.js`
 - Implement calendar parsing/rendering changes in `static/js/calendar/*.js`
 - Keep `static/js/market-pulse-calendar.js` as entrypoint/adapter only (no parser/model/renderer implementation)
@@ -73,6 +79,15 @@ pwsh -File tools/architecture-lint.ps1 -FailOnFindings
 - Prefer no inline `<script>/<style>` in `layouts/`; use external assets
 - Allowed exception: `layouts/partials/extend-head-uncached.html` config bridge (`window.__MP_CONFIG`, conditional `window.__MP_PAGE`)
 - Preserve mobile behavior across 640px, 768px, 1024px breakpoints
+
+### XSS defense patterns (enforced from 2026-02-21)
+
+- Use `MPBriefing.dom.escapeHtml()` for all external string values in `innerHTML` (headline, source, excerpt, href text)
+- Use `MPBriefing.dom.sanitizeHref()` for all href values (blocks `javascript:` protocol)
+- Both utilities are defined in `static/js/briefing/dom-utils.js` as `ns.escapeHtml` / `ns.sanitizeHref`
+- Standalone IIFEs outside `MPBriefing` namespace (e.g. `market-pulse-enhancements.js`) declare local `escapeHtml` function
+- `calendar/renderer.js` exposes `ns.escapeHtml` for reuse by `standalone-calendar.js`
+- regime badge must set `badge.setAttribute("data-regime", r.current)` — CSS `[data-regime="RISK_ON"]` selector depends on this
 
 ### Contract-sensitive rendering rules (cross-repo)
 
