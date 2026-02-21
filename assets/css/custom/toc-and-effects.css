@@ -147,7 +147,7 @@
 #TOCView {
   position: sticky;
   top: 6rem;
-  background: rgba(10, 10, 26, 0.7);
+  background: rgba(var(--mp-bg-base-rgb) / 0.7);
   -webkit-backdrop-filter: blur(16px) saturate(1.8);
   backdrop-filter: blur(16px) saturate(1.8);
   border: 1px solid rgba(124, 58, 237, 0.25);
@@ -426,7 +426,7 @@
   position: absolute;
   top: -10px;
   left: 12px;
-  background: rgba(10, 10, 26, 0.85);
+  background: rgba(var(--mp-bg-base-rgb) / 0.85);
   padding: 2px 10px;
   font-family: var(--mp-font-mono);
   font-size: 0.6rem;
@@ -487,21 +487,7 @@
   animation: pulse-slower 12s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.briefing-section,
-.mp-ticker-group {
-  animation: fade-in-up 0.6s ease both;
-}
-
-.mp-ticker-group:nth-child(1),
-.briefing-section:nth-child(1) { animation-delay: 0.08s; }
-.mp-ticker-group:nth-child(2),
-.briefing-section:nth-child(2) { animation-delay: 0.16s; }
-.mp-ticker-group:nth-child(3),
-.briefing-section:nth-child(3) { animation-delay: 0.24s; }
-.mp-ticker-group:nth-child(4),
-.briefing-section:nth-child(4) { animation-delay: 0.32s; }
-.mp-ticker-group:nth-child(5),
-.briefing-section:nth-child(5) { animation-delay: 0.4s; }
+/* .briefing-section/.mp-ticker-group animation removed — uses .is-revealed transition system (JS IntersectionObserver) */
 
 html { scroll-behavior: smooth; }
 
@@ -554,48 +540,7 @@ html { scroll-behavior: smooth; }
   background-color: rgba(156, 163, 175, 0.5);
 }
 
-/* TOC Active State */
-.toc-custom a {
-  display: block;
-  padding: 0.25rem 0;
-  color: #64748B;
-  transition: all 0.2s;
-  border-left: 2px solid transparent;
-  padding-left: 0.75rem;
-}
-.dark .toc-custom a { color: #64748B; }
-.toc-custom a:hover {
-  color: var(--mp-neon-purple);
-  border-left-color: rgba(124, 58, 237, 0.3);
-}
-.dark .toc-custom a:hover {
-  color: var(--mp-neon-purple);
-  border-left-color: rgba(124, 58, 237, 0.3);
-}
-.toc-custom a.active {
-  color: var(--mp-neon-cyan);
-  font-weight: 600;
-  border-left-color: var(--mp-neon-cyan);
-}
-.dark .toc-custom a.active {
-  color: var(--mp-neon-cyan);
-  border-left-color: var(--mp-neon-cyan);
-}
-.toc-custom ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-.toc-custom li ul {
-  padding-left: 1rem;
-}
-
-/* Group Hover Fix for Feature Image */
-.group-img:hover .group-img-hover\:opacity-100 {
-  opacity: 1;
-}
+/* .toc-custom and .group-img-hover removed — dead selectors */
 
 /* Prose overrides for better reading experience */
 .prose {

@@ -61,7 +61,7 @@
 
 /* --- Filter Chips --- */
 .gl-chip {
-  background: rgba(10, 10, 26, 0.6);
+  background: rgba(var(--mp-bg-base-rgb) / 0.6);
   border: 1px solid rgba(124, 58, 237, 0.2);
   color: #94A3B8;
   font-family: var(--mp-font-mono);

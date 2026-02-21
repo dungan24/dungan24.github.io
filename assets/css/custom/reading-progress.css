@@ -9,7 +9,7 @@
       var(--regime-color, var(--mp-neon-purple)) 0%,
       var(--mp-neon-cyan) 100%);
   box-shadow: 0 0 10px rgba(var(--regime-color-rgb, 124 58 237) / 0.5);
-  z-index: 9999;
+  z-index: var(--z-modal);
   transition: width 0.1s linear;
   pointer-events: none;
 }

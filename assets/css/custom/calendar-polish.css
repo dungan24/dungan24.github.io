@@ -113,7 +113,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted, #a8b8cf);
+  color: var(--mp-text-muted, #a8b8cf);
   opacity: 0.95;
 }
 

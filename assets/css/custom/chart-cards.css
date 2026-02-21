@@ -52,7 +52,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--mp-chart-cyan);
-  background: rgba(10, 10, 26, 0.9);
+  background: rgba(var(--mp-bg-base-rgb) / 0.9);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 

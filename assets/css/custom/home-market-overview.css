@@ -151,12 +151,24 @@
     top: 0;
     bottom: 0;
     width: 2rem;
-    background: linear-gradient(to right, transparent, var(--mp-bg, #0a0e1a));
+    background: linear-gradient(to right, transparent, rgb(var(--mp-bg-base-rgb)));
     pointer-events: none;
     transition: opacity 0.3s;
   }
   .mp-home-shell .mp-ticker-groups-wrap.scrolled-end::after {
     opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-ecg-line,
+  .mp-ecg-line--right {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+  .mp-live-status::after {
+    animation: none;
   }
 }
 
