@@ -1,7 +1,18 @@
 <!-- Market Pulse: UI Polish & Intelligence -->
+{{- $isBriefingPost := and .IsPage (isset .Params "slot") -}}
+{{- $isStandaloneCalendar := eq .RelPermalink "/market-calendar/" -}}
+{{- $needsCalendar := or $isBriefingPost $isStandaloneCalendar -}}
+
+{{/* ── 전체 페이지 (항상 로드) ── */}}
 <script defer src="{{ "js/mp-config.js" | relURL }}"></script>
 <script defer src="{{ "js/ambient-orbs.js" | relURL }}"></script>
 <script defer src="{{ "js/theme-transition.js" | relURL }}"></script>
+<script defer src="{{ "js/reading-progress.js" | relURL }}"></script>
+<script defer src="{{ "js/branding-patch.js" | relURL }}"></script>
+<script defer src="{{ "js/footer-clock.js" | relURL }}"></script>
+
+{{/* ── 브리핑 포스트 전용 (slot front matter가 있는 페이지) ── */}}
+{{- if $isBriefingPost -}}
 <script defer src="{{ "js/briefing/dom-utils.js" | relURL }}"></script>
 <script defer src="{{ "js/briefing/section-wrapping.js" | relURL }}"></script>
 <script defer src="{{ "js/briefing/regime-hero.js" | relURL }}"></script>
@@ -10,13 +21,21 @@
 <script defer src="{{ "js/briefing/ticker-cards.js" | relURL }}"></script>
 <script defer src="{{ "js/briefing/so-what.js" | relURL }}"></script>
 <script defer src="{{ "js/briefing/toc-scrollspy.js" | relURL }}"></script>
+<script defer src="{{ "js/market-pulse-enhancements.js" | relURL }}"></script>
+<script defer src="{{ "js/market-charts-loader.js" | relURL }}"></script>
+<script defer src="{{ "js/render-charts.js" | relURL }}"></script>
+{{- end -}}
+
+{{/* ── 캘린더 파이프라인 (브리핑 포스트 + standalone-calendar 공용) ── */}}
+{{- if $needsCalendar -}}
 <script defer src="{{ "js/calendar/parser.js" | relURL }}"></script>
 <script defer src="{{ "js/calendar/model.js" | relURL }}"></script>
 <script defer src="{{ "js/calendar/renderer.js" | relURL }}"></script>
 <script defer src="{{ "js/market-pulse-calendar.js" | relURL }}"></script>
 <script defer src="{{ "js/briefing/calendar-loader.js" | relURL }}"></script>
+{{- end -}}
+
+{{/* ── standalone 캘린더 페이지 전용 ── */}}
+{{- if $isStandaloneCalendar -}}
 <script defer src="{{ "js/standalone-calendar.js" | relURL }}"></script>
-<script defer src="{{ "js/market-pulse-enhancements.js" | relURL }}"></script>
-<script defer src="{{ "js/reading-progress.js" | relURL }}"></script>
-<script defer src="{{ "js/branding-patch.js" | relURL }}"></script>
-<script defer src="{{ "js/footer-clock.js" | relURL }}"></script>
+{{- end -}}
