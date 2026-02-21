@@ -1,5 +1,5 @@
 {{/* regime-panel: 사이버펑크 HUD 스타일 시장 국면 패널 */}}
-{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $mp := .Site.Params.market_pulse }}
 {{ $regimeCfg := index $mp "regime" | default dict }}
 {{ $defaultStatus := index $regimeCfg "default_status" | default "CAUTIOUS" }}
 {{ $defaultLabel := index $regimeCfg "default_label" | default "Cautious" }}

@@ -1,5 +1,5 @@
 {{/* Recent Briefings - Categorized cards with distinctive styles */}}
-{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $mp := .Site.Params.market_pulse }}
 {{ $homeCfg := index $mp "home" | default dict }}
 {{ $filtersDefault := slice
   (dict "value" "ALL" "label" "ALL")

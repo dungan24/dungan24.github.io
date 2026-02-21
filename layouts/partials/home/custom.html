@@ -1,5 +1,5 @@
 {{/* Market Pulse Homepage - Hero + Tickers + Briefings */}}
-{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $mp := .Site.Params.market_pulse }}
 {{ $paths := index $mp "paths" | default dict }}
 {{ $postsPath := index $paths "posts" | default "posts/" }}
 {{ $chartDataPrefix := index $paths "chart_data_prefix" | default "data/chart-data-" }}
@@ -48,7 +48,6 @@
         </h1>
 
         <svg class="mp-ecg-pulse mp-ecg-pulse--right" viewBox="0 0 200 40" fill="none">
-          <use href="#ecg-glow"/>
           <path
             class="mp-ecg-line mp-ecg-line--right"
             filter="url(#ecg-glow)"
@@ -97,4 +96,4 @@
 </div>
 
 {{ $overviewJs := "js/home-market-overview.js" | relURL }}
-<script src="{{ printf "%s?v=%d" $overviewJs now.Unix }}" defer></script>
+<script src="{{ $overviewJs }}" defer></script>

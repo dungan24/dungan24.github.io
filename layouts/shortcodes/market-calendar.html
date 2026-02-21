@@ -1,4 +1,4 @@
-{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $mp := .Site.Params.market_pulse }}
 {{ $labels := index $mp "labels" | default dict }}
 {{ $defaultTitle := index $labels "market_calendar_title" | default "이벤트 캘린더" }}
 {{ $defaultEmpty := index $labels "empty_events" | default "일정 데이터를 추가하면 캘린더가 자동 변환됩니다." }}
