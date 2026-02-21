@@ -114,4 +114,19 @@
       wrapper.appendChild(overlay);
     });
   };
+
+  /** HTML 특수문자 이스케이프 */
+  ns.escapeHtml = function (str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  };
+
+  /** javascript: 프로토콜 차단 */
+  ns.sanitizeHref = function (url) {
+    var u = String(url || "").trim();
+    return /^javascript:/i.test(u) ? "#" : u;
+  };
 })();

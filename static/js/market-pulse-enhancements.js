@@ -1,5 +1,13 @@
 (function () {
   "use strict";
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function init() {
     var content =
       document.querySelector(".article-content") ||
@@ -111,7 +119,9 @@
         ns.enableCollapsibleSections(content);
       if (typeof ns.enableHashAutoOpen === "function") ns.enableHashAutoOpen();
 
-      var newsSection = findSection(config.sections.news);
+      var cfgSections = config.sections || {};
+
+      var newsSection = findSection(cfgSections.news);
       if (newsSection && typeof ns.transformNewsSection === "function") {
         try {
           // T-602: Add loading skeleton before content is ready if needed,
@@ -126,7 +136,7 @@
         }
       }
 
-      var calendarSection = findSection(config.sections.calendar);
+      var calendarSection = findSection(cfgSections.calendar);
       if (calendarSection && convertScheduleToCalendar) {
         if (typeof ns.transformCalendarSection === "function") {
           ns.transformCalendarSection(
@@ -145,7 +155,7 @@
         }
       }
 
-      var keyDataSection = findSection(config.sections.key_data);
+      var keyDataSection = findSection(cfgSections.key_data);
       if (
         keyDataSection &&
         typeof ns.convertTablesToTickerCards === "function"
@@ -160,7 +170,7 @@
         }
       }
 
-      var sectorSection = findSection(config.sections.sector);
+      var sectorSection = findSection(cfgSections.sector);
       if (
         sectorSection &&
         typeof ns.convertTablesToTickerCards === "function"
@@ -221,7 +231,7 @@
         re.lastIndex = 0;
         while ((match = re.exec(text)) !== null) {
           if (count < 2) {
-            parts.push(text.slice(lastIndex, match.index));
+            parts.push(escapeHtml(text.slice(lastIndex, match.index)));
             parts.push(
               '<span class="mp-summary-highlight">' + match[0] + "</span>",
             );
@@ -231,7 +241,7 @@
             break;
           }
         }
-        parts.push(text.slice(lastIndex));
+        parts.push(escapeHtml(text.slice(lastIndex)));
         el.innerHTML = parts.join("");
         el.setAttribute("data-enhanced", "true");
       });

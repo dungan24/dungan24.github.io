@@ -90,30 +90,33 @@
         var category = metaParts[2] || "";
         var excerpt = blockquote ? (blockquote.textContent || "").trim() : "";
 
+        var esc = ns.escapeHtml;
+        var sHref = ns.sanitizeHref(href);
+
         card.innerHTML =
           (source
-            ? '<div class="mp-news-card__source">' + source + "</div>"
+            ? '<div class="mp-news-card__source">' + esc(source) + "</div>"
             : "") +
           '<div class="mp-news-card__headline"><a href="' +
-          href +
+          esc(sHref) +
           '" target="_blank" rel="noopener">' +
-          headline +
+          esc(headline) +
           "</a></div>" +
           (originalHeadline
             ? '<div class="mp-news-card__original"><span class="mp-news-card__en-tag">' +
               (labels.en_tag || "EN") +
               "</span>" +
-              originalHeadline +
+              esc(originalHeadline) +
               "</div>"
             : "") +
           '<div class="mp-news-card__meta">' +
-          [time, category].filter(Boolean).join(" \u00B7 ") +
+          [esc(time), esc(category)].filter(Boolean).join(" \u00B7 ") +
           "</div>" +
           (excerpt
             ? '<div class="mp-news-card__excerpt"><span class="mp-news-card__kr-tag">' +
               (labels.kr_tag || "KR") +
               "</span>" +
-              excerpt +
+              esc(excerpt) +
               "</div>"
             : "");
 

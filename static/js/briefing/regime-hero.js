@@ -60,19 +60,20 @@
 
   function buildMetricHtml(label, value) {
     if (value === null) return "";
+    var esc = ns.escapeHtml;
     var v = parseFloat(value);
     // VIX: 올라가면 위험(num-up은 빨강 = 나쁨), 내려가면 안정
     var colorClass = v >= 0 ? "num-up" : "num-down";
     return (
       '<div class="mp-quick-metric">' +
       '<span class="mp-qm-label">' +
-      label +
+      esc(label) +
       "</span>" +
       '<span class="mp-qm-val ' +
       colorClass +
       '">' +
       (v >= 0 ? "+" : "") +
-      value +
+      esc(value) +
       "%</span>" +
       "</div>"
     );
@@ -97,6 +98,7 @@
 
   /** hero DOM 생성 (regime/metrics는 비어있을 수 있음) */
   function createHeroElement(opts) {
+    var esc = ns.escapeHtml;
     var hero = document.createElement("div");
     hero.className = "mp-post-hero";
     hero.id = "mp-regime-hero";
@@ -115,16 +117,20 @@
       '<div class="mp-post-hero__top">' +
       '<div class="mp-post-hero__badges">' +
       (regime
-        ? '<span class="mp-regime-badge">' +
+        ? '<span class="mp-regime-badge" data-regime="' +
+          esc(regime) +
+          '">' +
           regimeIcon +
           " " +
-          regime +
+          esc(regime) +
           "</span>"
         : '<span class="mp-regime-badge mp-regime-badge--pending"></span>') +
       metricsHtml +
       "</div>" +
       "</div>" +
-      (summary ? '<p class="mp-post-hero__summary">' + summary + "</p>" : "");
+      (summary
+        ? '<p class="mp-post-hero__summary">' + esc(summary) + "</p>"
+        : "");
 
     return hero;
   }
@@ -153,6 +159,7 @@
         if (badge) {
           badge.classList.remove("mp-regime-badge--pending");
           badge.textContent = (r.icon || "") + " " + r.current;
+          badge.setAttribute("data-regime", r.current);
         }
 
         // summary
