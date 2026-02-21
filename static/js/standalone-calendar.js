@@ -62,41 +62,53 @@
     return (ev.eventName || "") + "|" + (ev.eventTimeKst || "");
   }
 
-  // ── 병렬 fetch + 병합 ──
+  // ── 순차 fetch + 조기 종료 ──
+  // WHY: 파이프라인이 최근 가동되어 과거 JSON이 없음.
+  // 병렬 fetch 시 브라우저가 "Failed to load resource" 콘솔 에러를 표시하므로
+  // 최신→과거 순서로 순차 fetch하되, 3회 연속 실패 시 중단하여 콘솔 오염 방지.
+  var MAX_CONSECUTIVE_FAILS = 3;
+
   function fetchAndMerge() {
     var urls = buildUrls();
+    var seen = new Set();
+    var merged = [];
+    var consecutiveFails = 0;
 
     // WHY: 최신 파일 우선 — urls[0]이 오늘, 뒤로 갈수록 과거
     // 먼저 나온 이벤트가 우선이므로 seen set으로 중복 제거
-    var promises = urls.map(function (url) {
-      return fetch(url)
+    function fetchNext(i) {
+      if (i >= urls.length || consecutiveFails >= MAX_CONSECUTIVE_FAILS) {
+        return Promise.resolve(merged);
+      }
+
+      return fetch(urls[i])
         .then(function (r) {
           if (!r.ok) throw new Error(r.status);
           return r.json();
         })
-        .catch(function () {
-          // 주말/휴일 등 데이터 미생성 날짜는 404 예상됨
-          return null;
-        });
-    });
-
-    return Promise.all(promises).then(function (results) {
-      var seen = new Set();
-      var merged = [];
-
-      results.forEach(function (data) {
-        if (!data || !Array.isArray(data.keyEvents)) return;
-        data.keyEvents.forEach(function (ev) {
-          var key = eventKey(ev);
-          if (!seen.has(key)) {
-            seen.add(key);
-            merged.push(ev);
+        .then(function (data) {
+          consecutiveFails = 0;
+          if (data && Array.isArray(data.keyEvents)) {
+            data.keyEvents.forEach(function (ev) {
+              var key = eventKey(ev);
+              if (!seen.has(key)) {
+                seen.add(key);
+                merged.push(ev);
+              }
+            });
           }
+          return fetchNext(i + 1);
+        })
+        .catch(function () {
+          consecutiveFails++;
+          if (consecutiveFails >= MAX_CONSECUTIVE_FAILS) {
+            return merged;
+          }
+          return fetchNext(i + 1);
         });
-      });
+    }
 
-      return merged;
-    });
+    return fetchNext(0);
   }
 
   // ── 로딩 UI ──
