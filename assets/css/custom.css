@@ -7,7 +7,7 @@ body::after {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 40;
+  z-index: var(--z-scanline);
   background: repeating-linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.03) 0px,
@@ -40,17 +40,27 @@ code, pre, .num-cell, .terminal-data {
   --mp-font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Noto Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   --mp-font-display: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
   --mp-font-subtitle: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
-  --mp-font-mono: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
+  --mp-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
+  --mp-bg-base-rgb: 10 10 26;
   --mp-border: rgba(124, 58, 237, 0.15);
   --mp-glass-bg: rgba(18, 18, 42, 0.72);
   --mp-glass-border: rgba(124, 58, 237, 0.25);
   --mp-glass-blur: blur(14px) saturate(1.4);
-  --mp-accent-fact: #7C3AED;
-  --mp-accent-opinion: #00F0FF;
   --mp-shadow-sm: 0 2px 12px -2px rgba(124, 58, 237, 0.2);
   --mp-shadow-md: 0 8px 24px -8px rgba(124, 58, 237, 0.3);
-  --mp-shadow-lg: 0 16px 48px -12px rgba(124, 58, 237, 0.4);
   --mp-shadow-neon: 0 0 20px rgba(124, 58, 237, 0.4), 0 0 40px rgba(124, 58, 237, 0.15), 0 0 60px rgba(124, 58, 237, 0.05);
+
+  /* z-index scale */
+  --z-orbs: 0;
+  --z-content: 1;
+  --z-hud: 3;
+  --z-badge: 10;
+  --z-scanline: 40;
+  --z-nav: 100;
+  --z-tooltip: 9000;
+  --z-overlay: 9500;
+  --z-modal: 9999;
+  --z-sheet: 10000;
   --mp-radius-sm: 4px;
   --mp-radius-md: 8px;
   --mp-radius-lg: 12px;
@@ -82,7 +92,7 @@ code, pre, .num-cell, .terminal-data {
 
   /* === Tier 3: Component Tokens (migrated from component files) === */
   /* chart-cards.css에서 이전 */
-  --mp-chart-card-bg: rgba(10, 10, 26, 0.85);
+  --mp-chart-card-bg: rgba(var(--mp-bg-base-rgb) / 0.85);
   --mp-chart-border: rgba(124, 58, 237, 0.25);
   --mp-chart-accent: #7c3aed;
   --mp-chart-cyan: #00f0ff;
@@ -205,19 +215,10 @@ code, pre, .num-cell, .terminal-data {
 .briefing-section--fact {
   border-left: 4px solid var(--mp-neon-purple);
 }
-.briefing-section--fact::before {
-  color: var(--mp-neon-purple);
-  border-color: rgba(124, 58, 237, 0.6);
-  content: "// DATA :: MARKET_FACTS";
-}
+/* .briefing-section--fact/opinion ::before content moved to briefing-sections.css */
 
 .briefing-section--opinion {
   border-left: 4px solid var(--mp-neon-cyan);
-}
-.briefing-section--opinion::before {
-  color: var(--mp-neon-cyan);
-  border-color: rgba(0, 240, 255, 0.6);
-  content: "// ANALYST :: INTELLIGENCE";
 }
 
 /* --- 상승/하락 색상 강화 (한국식: 빨강=상승, 파랑=하락) --- */
