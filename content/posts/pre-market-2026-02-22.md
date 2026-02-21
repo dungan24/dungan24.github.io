@@ -2,10 +2,10 @@
 title: "개장전 브리핑 (Pre-Market)"
 date: 2026-02-22T00:00:00+09:00
 slot: pre-market
-generatedAt: 2026-02-22T03:22:43+09:00
-asOfTime: 2026-02-22T03:22:43+09:00
+generatedAt: 2026-02-22T03:37:55+09:00
+asOfTime: 2026-02-22T03:37:55+09:00
 regime: CAUTIOUS
-summary: "한국 증시 주말 휴장, 미국장은 S&P +0.69%, 나스닥 +0.90% 점검 구간 — 인플레이션"
+summary: "한국 증시 주말 휴장, 미국장은 S&P +0.69%, 나스닥 +0.90% 점검 구간 — 관세/무역"
 draft: false
 tags: ["pre-market", "브리핑"]
 chartData: "/data/chart-data-2026-02-22.json"
@@ -14,7 +14,7 @@ chartData: "/data/chart-data-2026-02-22.json"
 <!-- OPINION_ZONE_START -->
 ## 1. 핵심 요약 (30초)
 
-> **한국 증시 주말 휴장, 미국장은 S&P +0.69%, 나스닥 +0.90% 점검 구간 — 인플레이션**
+> **한국 증시 주말 휴장, 미국장은 S&P +0.69%, 나스닥 +0.90% 점검 구간 — 관세/무역**
 
 - 한국 증시는 2026-02-22 주말 휴장 상태로 현물 거래가 없습니다.
 
@@ -48,7 +48,7 @@ chartData: "/data/chart-data-2026-02-22.json"
 
 ### 지수 선물
 
-> ↗ S&P500 본장 +0.69% 마감 → ES 선물 프리미엄 +0.20% (선물-현물 스프레드)
+> ↗ S&P 500 본장 +0.69% 마감 → ES 선물 프리미엄 +0.20% (선물-현물 스프레드)
 
 | 항목 | 현재가 | 등락 | 등락률 | 시장상태 |
 |------|--------|------|--------|---------|
@@ -70,9 +70,9 @@ chartData: "/data/chart-data-2026-02-22.json"
 
 | 항목 | 가격 | 등락 | 등락률 | 흐름 |
 |------|------|------|--------|------|
-| 비트코인 (BTC) | 68,469 | +958.57 | +1.40% | ↑3일 |
-| 이더리움 (ETH) | 1,989.25 | +28.05 | +1.41% | - |
-| 리플 (XRP) | $1.44 | +0.02 | +1.10% | - |
+| 비트코인 (BTC) | 68,515 | +733.11 | +1.07% | ↑3일 |
+| 이더리움 (ETH) | 1,991.65 | +22.51 | +1.13% | - |
+| 리플 (XRP) | $1.45 | +0.01 | +0.97% | - |
 | 크립토 공포탐욕지수 | 8 (극단적 공포) | - | - | - |
 
 > 크립토 공포탐욕지수: 변동성·거래량·소셜미디어·설문·지배력·트렌드 6가지 요소로 산출. 0–25 극단적 공포, 26–46 공포, 47–54 중립, 55–74 탐욕, 75–100 극단적 탐욕.
@@ -86,61 +86,71 @@ chartData: "/data/chart-data-2026-02-22.json"
 ## 2. 오늘의 해석
 
 ### 무슨 일이 있었나
-한국 증시는 2026-02-22 주말 휴장이네요. 현물 거래가 없는 상태예요.
-미국 증시는 소폭 상승하며 마감했어요. S&P 500 +0.69%, 나스닥 +0.90%, 다우존스 +0.47%를 기록했죠.
-핵심 뉴스로는 **"S&P 500, 1.4% GDP 예상치 하회·3% 근원 PCE 발표에 연준 금리 인하 시험대"**가 가장 눈에 띄어요.
-원/달러 환율은 1,445.98원으로 소폭 내렸거든요.
+한국 증시는 2026-02-22 주말 휴장 구간을 맞이하여 현물 거래가 이루어지지 않고 있어요.
+반면 미국 증시는 전반적인 소폭 상승세로 거래를 마감했네요. 주요 벤치마크 지수들이 일제히 긍정적인 방향으로 불을 밝혔습니다.
+
+시장에서 돋보인 핵심 뉴스로는 **"S&P 500, 1.4% GDP 예상치 하회·3% 근원 PCE 발표에 연준 금리 인하 시험대"** 소식이 확인되었어요.
+
+이와 함께 외환시장에서는 원/달러 가치가 소폭 하향 조정되면서 어느 정도 진정되는 분위기거든요.
+
+이런 흐름에서, 휴장 중 글로벌 요인들이 앞으로 어떻게 작용할지 짚어보겠습니다.
 
 ### 왜 그런가
-이런 흐름에서 그 이유를 짚어볼게요.
-미국 지수들이 전반적으로 오름세를 보인 가운데, VIX는 안정적인 수준에 머물렀어요.
-국내 주식시장의 가격 발견 기능이 멈춘 비거래일인 만큼, 주말 동안의 해외 시장 반응이 다음 거래일의 투자 심리에 더 직접적으로 전이되거든요.
-특히 이번 핵심 뉴스 반응이 향후 시장의 투자 심리를 선행할 가능성이 매우 커요.
-그래서 **[USD] 내구재 주문 전월비** 발표 전후의 미국 지수 선물과 원/달러 환율의 방향성을 먼저 확인하는 것이 중요하죠.
+미국을 대표하는 주요 지수들이 일제히 오름세를 기록한 상황 속에서, 변동성 지표는 여전히 평이한 구간을 든든하게 유지해주고 있어요.
+
+현재 국내 주식시장의 가격 발견 기능이 일시적으로 멈춰 있는 비거래일인 만큼, 해외 투자자들의 반응이 다음 거래일의 투자 심리에 훨씬 직접적이고 빠르게 전이되는 경향이 있거든요.
+
+글로벌 헤드라인으로 전해진 주요 경제 지표 뉴스 반응이 곧 열릴 국내 시장의 전반적인 분위기를 한발 앞서 이끌어갈 가능성이 큽니다.
+
+정리하면, **[USD] 내구재 주문 전월비** 일정이 다가오는 만큼 그 전후로 나타날 미국 지수 선물과 달러화의 방향성을 가장 먼저 꼼꼼히 확인해 두셔야 하죠.
 
 ### 오늘 주목할 것
-정리하면, 오늘 눈여겨볼 포인트는 다음과 같아요.
-한국 증시가 주말 휴장인 만큼 **[USD] 내구재 주문 전월비** 지표와 미국 선물의 움직임이 다음 거래일 시초가를 결정지을 주요 변수예요.
-현재 시장 국면은 **Cautious** 상태로, 조심스럽게 방향성을 탐색하고 있네요. 주요 지표를 확인하기 위한 관망세가 짙고 변동성에 대한 경계감도 존재하죠.
-가상자산 공포탐욕지수는 **8(극단적 공포)**를 가리키고 있어서, 위험자산 전반에 걸친 투자 심리의 과열이나 과매도 신호를 함께 점검해볼 필요가 있어요.
+오늘은 우리 증시가 주말 휴장으로 문을 닫은 구간이기에, **[USD] 내구재 주문 전월비** 결과와 이에 따른 미국 선물의 즉각적인 반응이 다음 거래일 시초가를 결정지을 가장 중요한 변수예요.
+
+현재 시장 국면은 **Cautious** 상태로 뚜렷한 방향성을 적극적으로 탐색하고 있는 중입니다. 새로운 지표 결과를 확인하기 전까지는 관망하려는 심리가 짙게 깔려 있고, 혹시 모를 변동성 확대에도 철저히 경계하고 있네요.
+
+더불어 가상자산 시장의 심리 지표는 **8(극단적 공포)** 단계에 머물고 있어서, 위험자산 전반에 걸친 과열이나 과매도 신호를 다각도로 함께 점검해 보실 필요가 있어요.
 
 **다음 개장일(2026-02-23) 코스피 시나리오**:
-- 상승 트리거: 미국 증시의 상승 모멘텀과 환율의 하락 전환으로 인해 외국인 수급이 유입될 수 있다는 기대감이 있어요.
-- 하락 트리거: 현재로서는 뚜렷한 하방 악재가 확인되지 않았네요.
+- 상승 트리거: 간밤에 보여준 미국 증시의 견고한 상승 모멘텀이 전해지고, 원/달러 환율이 하락 흐름을 보인다면 외국인 자금의 긍정적인 유입을 기대해 볼 수 있습니다.
+- 하락 트리거: 당장 뚜렷하게 시장을 강하게 끌어내릴 만한 돌발 악재는 아직까지 확인되지 않은 상태예요.
+
+한편, 세부적인 시장 대응을 위해 확인해야 할 지침도 짚어볼게요.
 
 ### 행동 체크포인트
-한편, 우리가 취해야 할 구체적인 행동을 알아볼게요.
-**관측**: VIX 19.09로 정상 범위
-**의미**: 시장의 변동성이 튀지 않고 안정적인 흐름을 유지하고 있어요.
-**시사점**: 주말 휴장 구간이라 미국장과 환율, 그리고 다음 거래일 일정 정도만 가볍게 확인해도 충분하거든요.
+**관측**: 시장의 공포 심리를 나타내는 변동성 지표가 안정적인 정상 범위 안착 흐름을 보이고 있어요.
+**의미**: 전반적인 시장의 출렁임이나 불안감이 꽤 차분하고 안정적인 흐름을 꾸준히 유지하는 중이네요.
+**시사점**: 주말 휴장 구간인 만큼, 무리하게 복잡한 분석을 더하기보다는 미국장 결과와 환율 동향, 그리고 다음 거래일의 주요 일정 정도만 가볍게 확인하셔도 충분해요.
 
 - **휴장일 모드**
   - 상황: 한국 증시가 2026-02-22 주말 휴장인 상황
-  - 대응: 국내 현물 체결은 없으니 해외장과 환율 변동만 잘 점검하면 돼요.
-  - 해제 기준: 거래일이 다시 재개되기 전까지는 국내 수급 상황을 해석하기가 불가능하죠.
+  - 대응: 국내 주식의 현물 체결이 전혀 이루어지지 않아요. 해외 시장 분위기와 환율의 움직임 정도만 차분히 점검해 두세요.
+  - 해제 기준: 새로운 거래일이 공식적으로 재개되기 전까지는 국내 수급 상황을 정확하게 해석하기 어렵습니다.
 - **[USD] 내구재 주문 전월비(2026-02-27 22:30:00 KST)**
-  - 상황: [USD] 내구재 주문 전월비 결과가 시장의 예상과 괴리를 보일 때
-  - 대응: 지표 발표 직후 미국 선물과 달러의 반응을 확인해 다음 거래일의 갭을 미리 예측해야 해요.
-  - 해제 기준: 결과가 예상 범위 내로 나온다면 갭 변동성은 제한적일 것으로 보여요.
+  - 상황: [USD] 내구재 주문 전월비 결과가 시장의 사전 예상치와 크게 괴리되는 상황
+  - 대응: 발표 직후 즉각적으로 나타나는 미국 지수 선물과 달러화의 반응을 빠르게 확인해서, 다음 거래일 개장 초기의 갭을 미리 예측해 보셔야 해요.
+  - 해제 기준: 예상 범위 내에 무난하게 부합하는 결과가 나온다면 갭 변동성은 꽤 제한적인 수준에 머물 것으로 보입니다.
 - **원/달러 1,445.98원**
-  - 상황: 원/달러가 1,445.98원에서 급변(일중 ±6원 이상)하는 경우
-  - 대응: 환율이 급격히 변동하면 개장 초반 외국인 수급에 미치는 영향이 매우 크니 일단 관망하는 것이 우선이에요.
-  - 해제 기준: 일중 변동폭이 ±3원 이내에 머문다면 비교적 안정적인 흐름으로 볼 수 있어요.
+  - 상황: 원/달러가 1,445.98원에서 하루 중 급격하게 요동치는(일중 ±6원 이상) 상황
+  - 대응: 환율이 갑작스럽게 크게 변동하면 재개장 초반 외국인 수급에 미치는 영향이 매우 막대합니다. 일단 관망하는 태도를 우선시하세요.
+  - 해제 기준: 일중 변동 폭이 ±3원 이내의 좁은 범위에서 유지된다면 한결 안정적인 흐름으로 판단할 수 있거든요.
+
+마지막으로, 지금의 시장 환경을 반영한 포트폴리오 전략을 살펴보겠습니다.
 
 ### 전략 시나리오 (AI 분석)
-마지막으로 AI가 분석한 전략 시나리오를 살펴볼게요.
 **Market Regime: Cautious — 방향성 탐색 중. 지표 확인을 위한 관망세 및 변동성 경계**
 
-**단기 전략**: 현금 비중을 넉넉히 확대하고, 환율 및 변동성 지표가 확실히 안정될 때까지 관망할 것을 권고해요.
+**단기 전략**: 미국의 핵심 지표인 내구재 주문 결과를 온전히 확인하기 전까지는, 현금 비중을 넉넉히 확대하고 방어적인 태도로 포트폴리오를 운용하시기를 적극 권고드려요.
 
 **확인 조건 (Confirmation Triggers)**:
-- VIX 지수가 17 이하에 안착하게 되면 변동성이 충분히 완화된 것으로 판단할 수 있어요.
-- 환율이 1,400원 아래로 내려가면 안정을 확인할 수 있겠죠.
+- 시장 변동성 지표가 17 이하로 완전히 안착하거나, 반대로 22 이상을 강력하게 돌파해버리는지 꼼꼼히 확인하셔야 합니다.
+- 미국 10년물 국채 금리가 다시금 4.30%를 상회하며 오름세를 굳히는지도 중요한 체크 포인트예요.
 
 **무효화 기준 (Invalidation Rules)**:
-- 만약 VIX가 22 이상으로 오르거나 환율이 1,460원을 돌파한다면 보유 포지션의 조정 및 해소가 필요해요.
+- 변동성 지표가 25를 훌쩍 돌파하거나, 원/달러 환율이 1,480원 선을 넘어서며 급등할 경우에는 → 들고 계신 포지션을 즉시 방어적으로 조정하거나 해소하는 쪽으로 신속히 대응하세요.
 
-현재 시장은 Cautious 국면에 머물며 신중하게 방향성을 탐색하고 있는 상태거든요. 앞선 수치들을 고려할 때 변동성 확대 위험과 환율 상승 압력이 꽤나 높은 수준이죠. 여기에 미국의 GDP 성장률 예상치 하회와 근원 PCE 발표 등 연준의 금리 정책과 관련된 불확실성이 시장을 덮고 있는 환경이에요. 따라서 다가오는 미국의 내구재 주문 지표가 발표되기 전까지는 신규 투자를 조금 미루고, 현금을 확보해두는 방어적 대응을 적극 권고드려요. 특히 1,446원 부근 및 1,440원을 넘어선 고환율 상태는 외국인 자금의 이탈을 부추길 수 있어, 결국 한국 증시에 강한 하방 압력으로 이어질 수 있으니 각별한 주의가 필요하네요.
+현재 시장은 아직 뚜렷한 방향성을 찾기 위해 탐색 중인 Cautious 국면이에요. 미국의 낮아진 경제 성장률과 물가 지표 발표로 인해 연준의 금리 인하 기대감이 만만찮은 시험대에 오른 까다로운 상황이거든요. 시장 변동성 지표는 안도 구간에 머물고 있지만 혹시 모를 충격을 대비해 여전히 경계감을 늦출 수 없는 수준을 맴돌고 있습니다. 주요 국채 금리 역시 뚜렷한 방향을 잡지 못한 채 관망세를 보이고 있죠. 
+이러한 모습은 마치 거대한 시스템 마이그레이션을 단행하기 앞서 혹시 모를 롤백 시나리오를 철저하게 준비하듯이, 앞으로 발표될 지표들을 온전히 소화하기 전까지는 방어적인 태세를 단단히 유지하시는 편이 훨씬 안전하겠네요. 무엇보다 환율이 1,446원 부근에 다다르면서 환차손 리스크가 한껏 높아진 상태이므로, 한국 증시에 투자하실 때는 평소보다 극도로 보수적인 접근을 유지하시길 바랍니다.
 <!-- OPINION_ZONE_END -->
 
 ---
@@ -149,7 +159,7 @@ chartData: "/data/chart-data-2026-02-22.json"
 
 ## 주요 뉴스 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-22 03:22:43","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"news.top","priority":60,"as_of_kst":"2026-02-22 03:37:55","max_items":8} -->
 ### 글로벌
 
 1. [**S&P 500, 1.4% GDP 예상치 하회·3% 근원 PCE 발표에 연준 금리 인하 시험대**](https://news.google.com/rss/articles/CBMikgFBVV95cUxPSFh4WF9uQ2paWUs5ZGU1OFlwckVhQXAwN3BqWmw2empuY0xPZ3Rla0FfTTc2T3VSVE9mY2hjR29CaHl0aGltZWRSME9fbmlhWkw1dUZOVlNTT08zZGcyUXd4RjgwOGFqd29oSkMxRFVveDl1NEJsN1FLU1lLOEQxdWNXUmVhUXZPbHhKbGhUM1NpZw?oc=5)
@@ -157,32 +167,32 @@ chartData: "/data/chart-data-2026-02-22.json"
    원문: ^GSPC Today: February 21 — 1.4% GDP Miss, 3% Core PCE Test Fed Cuts
    왜 중요한가: 물가 지표 환경에서 10년물 4.09%(상승) 흐름. 금리 경로 재조정 가능성.
 
-2. [**제롬 파월 의장, 연준 대차대조표 규모 축소 계획…케빈 워시 전 의장, 시장·재무부 불안 없이 실행 방안 제시**](https://news.google.com/rss/articles/CBMisgFBVV95cUxNMC1DbjIwbkNnVVk2RHl0Ry1QVEs5NUM2MUJHQ2tKWGZISXBFei1tU2hNVmFLM2w1Rm1POHAtRE5hUlc0RVV0aUpfVEtNSFRNZmFPcTBBWm9tSGRsN1R5QjhDMjUzeFcyR01KVE5TM1pma0Zwc3UydGxxRWhCVTRhRi1oenZMbW5jQlVqTHJiYzRwa0YxVlJqc1hiOW1DWVhNSHZPN0EtMXpiTEM2S2JPSTRn?oc=5)
-   Fortune · 2026-02-21 17:35 KST · central-bank
-   원문: Jerome Powell knows the Fed's balance sheet got too big—Kevin Warsh has a plan, he just has to sell it without freaking out markets or the Treasury
-   왜 중요한가: 금리 정책 환경에서 VIX 19.09 흐름. 변동성 확대 시 방어적 접근.
-
-3. [**2026년 2월 20일 증시: 트럼프 관세 위헌 판결에 다우지수 상승**](https://news.google.com/rss/articles/CBMi-wJBVV95cUxPbzBmdjBzcmhYbFhzUEEtRy1IUENfRmQ2cklUeHRZV2ZnaWh1SnJlSUxZV200ZnBicXI2cXkzbURhMWhJbUxzUlZiZ1VaVThiRzc2UFljejA3d2xWa25hekdPa2c5V2xNYlRSVlZYODNJLWJtMHRWWWFQUUlfSDRiY2lfaThFVk1fMnlCN1VPcnVYdHoxX2gxRmdzSjVKM280aTc0SGJzSlFyUV9XQ3NKd0RMUnBQeDZkZWhxeWs0bUZOVmUyOXZudzk0dVpmdklyYVdaNzExQWVsTkw2ODJ6ckx4MTB0bDBIZ3R0OVRZTnl3RjlVYVRzRExwbDVvb2RtSmpiU1BSeFJUcHZpN3kwYm9TcGxPLW9EMDhqTGw3eHY5U2NJT3FhY0lEYkowR3V1VHVDUm9DTk1XalNxMXo3c0huSjZTNFI0ODljMWVOY3VHdjJ2ZWotaE5aanptM2t3U2U3NlRzelFLbzNxUVNBTkttd2xSMjhTem5R?oc=5)
-   Barron's · 2026-02-21 23:18 KST · 지정학
-   원문: Stock Market News From Feb. 20, 2026: Dow Rises After Supreme Court Strikes Down Trump's Tariffs
-   왜 중요한가: 당일 가격 변동성과 리스크 프리미엄에 직접 연결될 가능성이 큰 이슈입니다.
-
-4. [**다우 선물: 트럼프 관세 랠리 속 나스닥 집중…엔비디아 주목**](https://news.google.com/rss/articles/CBMivwFBVV95cUxNOGI4OE9oTExGRzJsdS1mZUFWV1Zjc0J2Mk9jeHZpckFyMk1BSktUanlMUHJYaWVoVWZiTGdhTTRTWW9Ga0czWEpVNzJlTV9vSWVUUzFhV2VCQ0NMZndvVy16NXlyTGpGZTdsR000Nm9MdDUxNWRORE5IdUgwLVpqTE8wVUR5SVk3X3pjeHM1OHRhWXBwY09xUUVFOWpRaUxCUnV0bGdSQV92NzNKZng5VV9MZDZrWWtvZWNLWFBZWQ?oc=5)
+2. [**다우 선물: 트럼프 관세 랠리 속 나스닥 집중…엔비디아 주목**](https://news.google.com/rss/articles/CBMivwFBVV95cUxNOGI4OE9oTExGRzJsdS1mZUFWV1Zjc0J2Mk9jeHZpckFyMk1BSktUanlMUHJYaWVoVWZiTGdhTTRTWW9Ga0czWEpVNzJlTV9vSWVUUzFhV2VCQ0NMZndvVy16NXlyTGpGZTdsR000Nm9MdDUxNWRORE5IdUgwLVpqTE8wVUR5SVk3X3pjeHM1OHRhWXBwY09xUUVFOWpRaUxCUnV0bGdSQV92NzNKZng5VV9MZDZrWWtvZWNLWFBZWQ?oc=5)
    Investor's Business Daily · 2026-02-21 23:21 KST · 시장 이벤트
    원문: Dow Jones Futures: All Eyes On Nvidia After Stock Market's Trump Tariff Rally
    왜 중요한가: 관세 판결은 수입 원가 불확실성 직결 — 소비재·유통·항공 섹터 영향 확인
 
-5. [**2월 26일, 주식 시장에 엄청난 날이 될 수 있다**](https://news.google.com/rss/articles/CBMif0FVX3lxTFBMT2lEb2duaU1UbUx3eWVYcEJMX3kzLVY2eWNRVEtHb0ZvMHZ2R3VPU0dGWmVfS1BnTklPLVVuZ0t2VXBabnVTcHk5blhLOTNkdXFvZnVmeDNiel9HVGk3ajRKTzZYRmc0enA1QU10c1pEQmpwTl92Yks2blpsWjg?oc=5)
-   Nasdaq · 2026-02-21 22:39 KST · 시장 이벤트
-   원문: February 26 Could Be a Huge Day for the Stock Market
-   왜 중요한가: 단기 가격 충격은 제한적이지만, 시장 내러티브의 배경 흐름을 확인하는 데 유의미한 신호입니다.
+3. [**미국, 현재 관세 부과 대상 국가 및 제품 공개**](https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUjg2dnFmWVhreXFuam9oQ3dmbnJIM1NrS2VaSkYwbnBZR0I4cjRXODItSHBEX2xmaVI3VmhMNXZfSWVWaDNtOHhHNVZxbjVidWFYYXVvNXZ6UDg3WVQ0N283V1lDdXJiZjFMNDZYdi1pTlIzX2NZS21CQWtaSHJ1a0JzcVh4dGJfamdn?oc=5)
+   The New York Times · 2026-02-22 02:08 KST · 지정학
+   원문: Here Are the Countries and Products Subject to Tariffs Now
+   왜 중요한가: 시장 변동성 확인 및 섹터별 수급 변화 여부 점검 필요
+
+4. [**트럼프 관세에 대한 연방대법원 판결, 5가지 핵심 쟁점 분석**](https://news.google.com/rss/articles/CBMikgFBVV95cUxOV0RWMENVN0hoVEd0TTV3ZmlBZTh5V0ZaVFZJQ214SF9MVEZfSEpHa0c0c2xVbUdrYXhMc1lrOGJmUXBTR3l0MUk4SHhocEhyRFFaTUwzeTJKaEZKQmxqSEVZc3RSZHFYaHlIZkRIbnBLZ2JFR0hiS0hoQjM1am8zUXVDNjcyajZWdnNybEFOdDc0Z9IBlwFBVV95cUxNbFBwX2hxenlUSDNxNkdjc085bHdmQ0NCcHRabjNmRUtCUjJLbkVQRFNvclhUaUk2MENVcXk2LWVudHpWZmF3b1RUd1UyWUl1UFBTVkhGdURFbkdJcTV5ZGpkaUJaQ3JLeUgxRFpwaGRCUXBRakV4SWhqQkhNazdReUU2MXloMHNoYWZTUS1TajNaVC0wLURv?oc=5)
+   CNBC · 2026-02-21 23:44 KST · 지정학
+   원문: Five key takeaways from the Supreme Court's landmark decision against Trump's tariffs
+   왜 중요한가: 포트폴리오 리밸런싱 트리거가 될 수 있는 중간 강도 신호입니다.
+
+5. [**아시아 경제, 트럼프 추가 관세 움직임에 영향 분석…혼란 가중**](https://news.google.com/rss/articles/CBMivwFBVV95cUxQdllzaE5ZeGtJZGp2X2Q2M0xHSzZVMUhibWpIVmN0dTFMdzlLLTI2NmQyQ0diLU5hX2lJSjAxc1pRY2x4blFSMTdybTFRdU5wNlpmQ3hrb2dETFFnRzdFeWJDdnlnM204eFRWcExrVmE5c2MzOEd3V3JVbVVmZ1VTVVRMbl9Gdks2YkxXdEs0Y3Z6QTRwelFsLWlaSGpyZTNFRmloeXp1WnpUekxEVkdnVEh6aVFhSi1GRFhwMndHOA?oc=5)
+   The Jakarta Post · 2026-02-21 19:53 KST · 지정학
+   원문: Asian economies weigh impact of fresh Trump tariff moves, confusion
+   왜 중요한가: 관세 정책 변화가 달러·원화 방향에 선반영 가능. 환율 1차 확인
 <!-- MP_BLOCK_END -->
 
 ---
 
 ## 주요 일정 (최근) 
 
-<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-22 03:22:43","max_items":8} -->
+<!-- MP_BLOCK_START {"schema_version":"mp-block-v2","block_id":"calendar.recent","priority":55,"as_of_kst":"2026-02-22 03:37:55","max_items":8} -->
 <!-- MP_KEY_EVENTS_START -->
 <!-- MP_KEY_EVENT_START -->
 - **[중] [미국] [USD] S&P Global Manufacturing PMI (Flash)** (D-1)
@@ -267,17 +277,33 @@ chartData: "/data/chart-data-2026-02-22.json"
 
 ## 섹터 상대강도 <!-- collapsed -->
 
-이번 주 미국 섹터: **산업** +0.68% 강세, **헬스케어** -1.61% 약세. 한국 섹터: **에너지** +1.55% 강세, **은행** -2.57% 약세.
+이번 주 미국 섹터: **산업** +0.68% 강세, **헬스케어** -1.61% 약세.
 
-| 🇺🇸 미국 | 1주 | 1개월 | 🇰🇷 한국 | 1주 | 1개월 |
-|------|------|------|------|------|------|
-| 산업 (XLI) | +0.68% | +8.84% | 에너지 | +1.55% | -3.77% |
-| 금융 (XLF) | +0.55% | -2.43% | IT | +0.79% | +2.03% |
-| 반도체 (SOXX) | +0.27% | +8.62% | 2차전지 | +0.63% | -6.78% |
-| 소비재 (XLY) | +0.02% | -4.66% | 반도체 | -0.69% | +7.88% |
-| 에너지 (XLE) | -0.10% | +17.54% | 자동차 | -2.16% | -8.37% |
-| 테크 (XLK) | -0.13% | -3.04% | 바이오 | -2.38% | -17.83% |
-| 헬스케어 (XLV) | -1.61% | +0.83% | 은행 | -2.57% | +12.18% |
+### 미국 섹터
+
+| 섹터 | 1주 초과수익 | 1개월 초과수익 |
+|------|--------------|----------------|
+| 산업 (XLI) | +0.68% | +8.84% |
+| 금융 (XLF) | +0.55% | -2.43% |
+| 반도체 (SOXX) | +0.27% | +8.62% |
+| 소비재 (XLY) | +0.02% | -4.66% |
+| 에너지 (XLE) | -0.10% | +17.54% |
+| 테크 (XLK) | -0.13% | -3.04% |
+| 헬스케어 (XLV) | -1.61% | +0.83% |
+
+이번 주 한국 섹터: **에너지** +1.55% 강세, **은행** -2.57% 약세.
+
+### 한국 섹터 (최근 흐름)
+
+| 섹터 | 1주 초과수익 | 1개월 초과수익 |
+|------|--------------|----------------|
+| 에너지 | +1.55% | -3.77% |
+| IT | +0.79% | +2.03% |
+| 2차전지 | +0.63% | -6.78% |
+| 반도체 | -0.69% | +7.88% |
+| 자동차 | -2.16% | -8.37% |
+| 바이오 | -2.38% | -17.83% |
+| 은행 | -2.57% | +12.18% |
 
 
 ## 최근 흐름 (5일) <!-- collapsed -->
@@ -285,7 +311,7 @@ chartData: "/data/chart-data-2026-02-22.json"
 | 지표 | 5일전 | 현재 | 변동 | 방향 |
 |------|-------|------|------|------|
 | S&P 500 | 6,843.22 | 6,909.51 | +0.97% | 소폭 상승 |
-| 비트코인 | 67,226 | 68,469 | +1.85% | 소폭 상승 |
+| 비트코인 | 67,226 | 68,515 | +1.92% | 소폭 상승 |
 | VIX | 19.48 | 19.09 | -2.00% | 안정화 |
 | 원/달러 | 1,446.01원 | 1,445.98원 | -0.00% | 보합 |
 
@@ -323,7 +349,7 @@ chartData: "/data/chart-data-2026-02-22.json"
 ---
 
 <div class="mp-briefing-meta">
-  <span>생성 시각: 2026-02-22 03:22:43 KST</span>
+  <span>생성 시각: 2026-02-22 03:37:55 KST</span>
   <span>브리핑 슬롯: pre-market (개장전)</span>
-  <span>데이터 기준 시각: 2026-02-22 03:22:43 KST</span>
+  <span>데이터 기준 시각: 2026-02-22 03:37:55 KST</span>
 </div>
