@@ -799,8 +799,9 @@
 
 /* --- VIX 임계값 뱃지 (Issue #3) --- */
 .mp-vix-zone-badge {
-  margin-left: 0.5rem;
-  font-size: 0.7rem;
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.65rem;
 }
 
 /* --- 공포탐욕지수 게이지 카드 (Issue #2) --- */

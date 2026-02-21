@@ -263,7 +263,7 @@
           }
           tickerRow.appendChild(flowSpan);
 
-          // VIX 임계값 뱃지
+          // VIX 임계값 뱃지 — change 컬럼 안에 inline 배치
           if (/VIX/.test(nameText)) {
             var vixVal = parseFloat(
               (price.textContent || "").replace(/[^0-9.]/g, ""),
@@ -282,7 +282,7 @@
                 label: zoneLabel,
               });
               zoneBadge.classList.add("mp-vix-zone-badge");
-              tickerRow.appendChild(zoneBadge);
+              change.appendChild(zoneBadge);
             }
           }
 
