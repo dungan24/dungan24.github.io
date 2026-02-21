@@ -62,6 +62,15 @@
     return (ev.eventName || "") + "|" + (ev.eventTimeKst || "");
   }
 
+  // ── HTML 이스케이프 (모듈 전역 단일 사본) ──
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   // ── 순차 fetch + 조기 종료 ──
   // WHY: 파이프라인이 최근 가동되어 과거 JSON이 없음.
   // 병렬 fetch 시 브라우저가 "Failed to load resource" 콘솔 에러를 표시하므로
@@ -302,14 +311,6 @@
       var calConfig = config.calendar || {};
       var sharedTooltip = document.getElementById("mp-shared-tooltip");
 
-      function escapeHtml(str) {
-        return String(str || "")
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
-      }
-
       cells.forEach(function (c) {
         var cell = document.createElement("div");
         cell.className = "mp-calendar__cell";
@@ -377,14 +378,6 @@
     if (!c.tooltipData || (!c.tooltipData.events.length && !c.isHoliday)) {
       sharedTooltip.classList.remove("is-active");
       return;
-    }
-
-    function escapeHtml(str) {
-      return String(str || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
     }
 
     var html =
@@ -516,13 +509,6 @@
 
     var content = mobileSheet.querySelector(".mp-mobile-sheet__content");
     if (!content) return;
-
-    function escapeHtml(str) {
-      return String(str || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-    }
 
     var html =
       '<div class="mp-mobile-sheet__header">' +
