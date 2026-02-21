@@ -73,7 +73,7 @@
     PANIC: "37 99 235" /* blue-600 (극단적 하락도 파랑) */,
   };
 
-  /* 한국 컨벤션 카드 틴팅 색상 매핑 */
+  /* 한국 컨벤션 regime 악센트 색상 매핑 (badge, progress bar 등) */
   var KR_TINT_RGB = {
     RISK_ON: "255 51 102" /* 사용자 지정 bull red */,
     CAUTIOUS: "124 58 237" /* violet */,
@@ -91,12 +91,9 @@
     docRoot.style.setProperty("--mp-orb-color-primary", orbRgb);
     docRoot.style.setProperty("--mp-orb-color-secondary", orbRgb);
 
-    /* 카드 틴팅 색상 주입 */
+    /* regime 악센트 색상 주입 (post-hero, reading-progress 등에서 사용) */
     var tintRgb = KR_TINT_RGB[regimeStr] || "124 58 237";
     docRoot.style.setProperty("--regime-color-rgb", tintRgb);
-
-    /* .regime-loaded 추가 → CSS 틴팅 ::after 오버레이 활성화 */
-    docRoot.classList.add("regime-loaded");
   }
 
   /* regime 소스 감지 (3-tier 전략) */
@@ -126,6 +123,7 @@
     /* 안전망: 8초 후 미수신 시 리스너 정리 (틴팅 없음 = 안전한 기본값) */
     setTimeout(function () {
       applied = true; /* 이후 이벤트 무시 */
+      document.removeEventListener("mp:regime-ready", handler);
     }, 8000);
   }
 
