@@ -33,7 +33,7 @@
 - `assets/css/custom.css`: 글로벌 토큰(`--mp-*`)과 공통 베이스 레이어
 - `assets/css/custom/*.css`: 기능 단위 스타일 레이어
 - `layouts/partials/extend-head-uncached.html`: 커스텀 CSS 수동 로딩 목록(명시적 순서)
-- `layouts/partials/extend-footer.html`: JS 모듈 수동 로딩 목록(명시적 순서)
+- `layouts/partials/extend-footer.html`: **조건부** JS 로딩 (slot/page type 기반 그룹)
 - `static/js/briefing/*.js`: 포스트 렌더링/변환 모듈
 - `static/js/calendar/*.js`: 캘린더 parser/model/renderer 코어
 - `static/js/market-pulse-calendar.js`: 캘린더 엔트리포인트(어댑터)
@@ -116,9 +116,13 @@
 
 ### 6.2 JavaScript
 
-- `MUST`: 새 JS 모듈 추가 시 `layouts/partials/extend-footer.html` 순서 의존성 확인
+- `MUST`: 새 JS 모듈 추가 시 `layouts/partials/extend-footer.html` 조건부 그룹과 순서 의존성 확인
 - `MUST`: 선행 모듈이 필요하면 주석/설명으로 의존성 명시
 - `MUST NOT`: 엔트리포인트 파일에 parser/model/renderer 코어 로직 혼합
+- `MUST NOT`: `innerHTML`에 외부 입력(뉴스 제목, URL, 소스명 등) 직접 삽입
+  - `MPBriefing.dom.escapeHtml()` 으로 이스케이프 후 삽입
+  - href 값은 `MPBriefing.dom.sanitizeHref()` 통과 필수 (`javascript:` 프로토콜 차단)
+  - `MPBriefing` 네임스페이스 외부 IIFE는 로컬 `escapeHtml` 함수 선언 후 사용
 
 ### 6.3 Layout Inline Policy
 

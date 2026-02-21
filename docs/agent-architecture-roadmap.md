@@ -33,9 +33,19 @@ Goal: reduce regression risk and improve change velocity without changing briefi
   - `static/js/calendar/renderer.js`
   - `static/js/market-pulse-calendar.js` (adapter/entrypoint)
 - Template hygiene:
-  - `extend-footer.html` remains loader-only
+  - `extend-footer.html` is a **conditional script loader** (not flat loader-only):
+    - always: 6 ambient/UX scripts
+    - briefing post (`isset .Params "slot"`): 11 briefing-specific scripts
+    - calendar pipeline (briefing OR `/market-calendar/`): 5 calendar scripts
+    - standalone calendar: `standalone-calendar.js`
+  - ⚠️ `footer.html` must use `partial "extend-footer.html" .` — `partialCached` incompatible with page context
   - `extend-head-uncached.html` keeps only config/data bridge inline scripts
   - no runtime implementation logic inside layout partials
+- XSS defense layer:
+  - `static/js/briefing/dom-utils.js` exports `ns.escapeHtml()` and `ns.sanitizeHref()`
+  - all innerHTML insertions in briefing JS use `MPBriefing.dom.escapeHtml()` / `sanitizeHref()`
+  - `calendar/renderer.js` exposes `ns.escapeHtml` for shared use by `standalone-calendar.js`
+  - regime badge sets `data-regime` attribute; `theme-fixes.css` uses `[data-regime]` selector
 
 ## 2) Contract Compatibility Status
 
