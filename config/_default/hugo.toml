@@ -16,15 +16,4 @@ enableEmoji = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-[markup.goldmark.renderer]
-  unsafe = true
-
-[markup.goldmark.parser.attribute]
-  block = true
-
-[markup.highlight]
-  noClasses = false
-
-[markup.tableOfContents]
-  startLevel = 2
-  endLevel = 4
+# markup config defined in markup.toml

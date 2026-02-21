@@ -1,12 +1,14 @@
 {{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
-{{ $mp := index .Site.Params "market_pulse" | default .Site.Params.market_pulse }}
+{{ $mp := .Site.Params.market_pulse }}
 {{ $external := index $mp "external" | default dict }}
 {{ $fontsCssUrl := index $external "fonts_css_url" | default "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" }}
 {{ $echartsCdn := index $external "echarts_cdn" | default "https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js" }}
 
 <link rel="stylesheet" href="{{ $fontsCssUrl }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+{{ $phosphorBold := index $external "phosphor_icons_bold" | default "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" }}
+{{ $phosphorRegular := index $external "phosphor_icons_regular" | default "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" }}
+<link rel="stylesheet" href="{{ $phosphorBold }}">
+<link rel="stylesheet" href="{{ $phosphorRegular }}">
 
 {{ range $path := slice "css/custom/briefing-sections.css" "css/custom/calendar.css" "css/custom/calendar-polish.css" "css/custom/calendar-standalone.css" "css/custom/toc-and-effects.css" "css/custom/layout-overrides.css" "css/custom/chart-cards.css" "css/custom/home-market-overview.css" "css/custom/terminal-footer.css" "css/custom/home-briefing-cards.css" "css/custom/post-content.css" "css/custom/theme-fixes.css" "css/custom/reading-progress.css" "css/custom/post-hero.css" "css/custom/skeleton.css" "css/custom/ambient-orbs.css" "css/custom/glossary.css" }}
   {{ with resources.Get $path }}
@@ -25,7 +27,7 @@
 {{ end }}
 
 <script>
-  window.__MP_CONFIG = {{ index .Site.Params "market_pulse" | default .Site.Params.market_pulse | jsonify | safeJS }};
+  window.__MP_CONFIG = {{ .Site.Params.market_pulse | jsonify | safeJS }};
 </script>
 
 {{ if .Params.chartData }}
@@ -37,8 +39,6 @@
     "chartData" .Params.chartData
   | jsonify | safeJS }};
 </script>
-{{ end }}
-{{ if .Params.chartData }}
 <script src="{{ $echartsCdn }}"></script>
 {{ end }}
 {{/* calendar-polish.css must come after calendar.css */}}
