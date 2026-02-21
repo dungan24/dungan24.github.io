@@ -363,10 +363,6 @@ code, pre, .num-cell, .terminal-data {
   }
 }
 
-/* 초소형 기기 (390px 이하) — 히어로 타이틀 추가 축소 */
-@media (max-width: 390px) {
-  .mp-heartbeat-title { font-size: 1.5rem; }
-}
 
 /* --- Prose List Bullet Fix --- */
 /* Tailwind v4 prose-invert의 --tw-prose-bullets가 배경색과 동일해 안 보이는 버그 수정 */
@@ -446,6 +442,14 @@ code, pre, .num-cell, .terminal-data {
 
 .mp-ecg-pulse--right {
   transform: scaleX(-1);
+}
+
+/* 초소형 기기 (390px 이하) — 히어로 타이틀 클리핑 방지 */
+/* WHY: 375px에서 SVG(60px×2) + gap + 타이틀이 넘침 → ECG 숨기고 전폭 사용 */
+@media (max-width: 390px) {
+  .mp-heartbeat-title { font-size: 1.5rem; }
+  .mp-ecg-pulse { display: none; }
+  .mp-hero-title-row { gap: 0; }
 }
 
 .mp-regime-badge {
