@@ -339,6 +339,7 @@
             month: "2-digit",
             day: "2-digit",
             weekday: "short",
+            timeZone: calConfig.timezone || "Asia/Seoul",
           });
 
           if (currentDateStr !== lastDateStr) {

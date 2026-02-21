@@ -104,13 +104,15 @@
     }
 
     function getMonthAnchor(events, now) {
+      var nowYmd = parser.kstYmd(now);
+      var nowYear = parseInt(nowYmd.slice(0, 4), 10);
+      var nowMonth = parseInt(nowYmd.slice(5, 7), 10);
       if (!events || events.length === 0)
-        return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+        return { year: nowYear, month: nowMonth };
       var valid = events.filter(function (e) {
         return e.dateTime && !isNaN(e.dateTime.getTime());
       });
-      if (valid.length === 0)
-        return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+      if (valid.length === 0) return { year: nowYear, month: nowMonth };
 
       var nearest = valid[0];
       var minDiff = Math.abs(nearest.dateTime.getTime() - now.getTime());
