@@ -62,14 +62,16 @@
     return (ev.eventName || "") + "|" + (ev.eventTimeKst || "");
   }
 
-  // ── HTML 이스케이프 (모듈 전역 단일 사본) ──
-  function escapeHtml(str) {
-    return String(str || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
+  // ── HTML 이스케이프 (renderer.js의 ns.escapeHtml 재사용, fallback 포함) ──
+  var escapeHtml =
+    (window.MPCalendar && window.MPCalendar.escapeHtml) ||
+    function (str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    };
 
   // ── 순차 fetch + 조기 종료 ──
   // WHY: 파이프라인이 최근 가동되어 과거 JSON이 없음.

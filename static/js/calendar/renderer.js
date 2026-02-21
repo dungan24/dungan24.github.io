@@ -3,6 +3,15 @@
 
   var ns = (window.MPCalendar = window.MPCalendar || {});
 
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  ns.escapeHtml = escapeHtml;
+
   ns.createRenderer = function (parser, model) {
     function convertScheduleToCalendar(section) {
       var config = window.MP_CONFIG || {};
@@ -84,14 +93,6 @@
         sharedTooltip.id = "mp-shared-tooltip";
         sharedTooltip.className = "mp-calendar__tooltip-shared";
         document.body.appendChild(sharedTooltip);
-      }
-
-      function escapeHtml(str) {
-        return String(str || "")
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
       }
 
       function updateTooltip(c, e) {
@@ -308,6 +309,7 @@
       upcomingWrap.appendChild(filterBar);
 
       function renderUpcomingList() {
+        var now = parser.getKstNow(); // 매 호출마다 현재 시각 갱신
         upcomingList.innerHTML = "";
         if (upcomingEvents.length === 0) {
           var empty = document.createElement("div");
