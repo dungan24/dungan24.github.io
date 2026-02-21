@@ -66,7 +66,7 @@
   <script type="text/javascript" src="{{ $jsProcess.RelPermalink }}" integrity="{{ $jsProcess.Data.Integrity }}"></script>
   
   {{ if templates.Exists "partials/extend-footer.html" }}
-    {{ partialCached "extend-footer.html" "global" }}
+    {{ partial "extend-footer.html" . }}
   {{ end }}
 
   <!-- Mobile Bottom Nav -->
