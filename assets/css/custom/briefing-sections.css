@@ -797,6 +797,71 @@
   }
 }
 
+/* --- VIX 임계값 뱃지 (Issue #3) --- */
+.mp-vix-zone-badge {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* --- 공포탐욕지수 게이지 카드 (Issue #2) --- */
+.mp-fg-callout {
+  padding: 0.75rem 1rem;
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  border-radius: var(--mp-radius-md);
+  margin-bottom: 0.5rem;
+}
+
+.mp-fg-callout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.mp-fg-callout__name {
+  font-size: 0.85rem;
+  color: #CBD5E1;
+}
+
+.mp-fg-callout__value {
+  font-family: var(--mp-font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c084fc;
+}
+
+.mp-fg-callout__status {
+  margin-top: 0.4rem;
+}
+
+.mp-fg-gauge {
+  height: 6px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.mp-fg-gauge__fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.mp-fg-gauge__fill.is-extreme-fear { background: #ef4444; }
+.mp-fg-gauge__fill.is-fear         { background: #f97316; }
+.mp-fg-gauge__fill.is-neutral      { background: #94a3b8; }
+.mp-fg-gauge__fill.is-greed        { background: #84cc16; }
+.mp-fg-gauge__fill.is-extreme-greed{ background: #10b981; }
+
+:root:not(.dark) .mp-fg-callout {
+  background: rgba(124, 58, 237, 0.04);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+:root:not(.dark) .mp-fg-callout__name { color: #475569; }
+:root:not(.dark) .mp-fg-callout__value { color: #7C3AED; }
+
 /* --- Pending Table Placeholder (T-1303) --- */
 .mp-table-pending {
   position: relative;

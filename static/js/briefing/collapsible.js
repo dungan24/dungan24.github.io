@@ -26,6 +26,20 @@
       if (!h2) return;
       var title = (h2.textContent || "").trim();
       var forceCollapsed = sec.dataset && sec.dataset.mpCollapsed === "true";
+
+      // h2 내 <!-- collapsed --> HTML 코멘트 노드 감지
+      if (!forceCollapsed && h2) {
+        for (var ci = 0; ci < h2.childNodes.length; ci++) {
+          if (
+            h2.childNodes[ci].nodeType === 8 &&
+            h2.childNodes[ci].nodeValue.trim() === "collapsed"
+          ) {
+            forceCollapsed = true;
+            break;
+          }
+        }
+      }
+
       var shouldCollapse = titles.some(function (t) {
         return title.indexOf(t) !== -1;
       });
