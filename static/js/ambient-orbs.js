@@ -111,14 +111,17 @@
     }
 
     /* 3차: mp:regime-ready 이벤트 리스닝 (비동기 fetch 완료 대기) */
+    // WHY: var로 외부 스코프에 선언해야 setTimeout 콜백에서도 접근 가능.
+    //      named function expression은 함수 내부 스코프에서만 이름이 보임.
     var applied = false;
-    document.addEventListener("mp:regime-ready", function handler(e) {
+    var handler = function (e) {
       if (applied) return;
       applied = true;
       var regime = (e.detail && e.detail.regime) || "";
       applyRegime(regime);
       document.removeEventListener("mp:regime-ready", handler);
-    });
+    };
+    document.addEventListener("mp:regime-ready", handler);
 
     /* 안전망: 8초 후 미수신 시 리스너 정리 (틴팅 없음 = 안전한 기본값) */
     setTimeout(function () {
