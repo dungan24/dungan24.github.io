@@ -2,7 +2,7 @@
 
 /* Widen outer container for XL+ (1280px+) screens */
 @media (min-width: 1280px) {
-  .max-w-7xl {
+  .single .max-w-7xl {
     max-width: 96rem !important;
     padding-left: 3rem !important;
     padding-right: 3rem !important;
@@ -89,7 +89,7 @@
 
   /* Scroll fade hint on right edge */
   .briefing-section {
-    --table-fade: linear-gradient(to right, transparent 85%, rgba(10, 10, 26, 0.85));
+    --table-fade: linear-gradient(to right, transparent 85%, rgba(var(--mp-bg-base-rgb) / 0.85));
   }
 
   .briefing-section table {
@@ -115,7 +115,7 @@
 /* Blowfish fixed.html의 #menu-blur Tailwind 클래스(bg-neutral/25, backdrop-blur-2xl) 오버라이드 */
 /* opacity는 건드리지 않음 — background-blur.js가 scroll 위치에 따라 제어 */
 #menu-blur {
-  background: rgba(10, 10, 26, 0.78) !important;
+  background: rgba(var(--mp-bg-base-rgb) / 0.78) !important;
   -webkit-backdrop-filter: var(--mp-glass-blur) !important;
   backdrop-filter: var(--mp-glass-blur) !important;
   border-bottom: 1px solid rgba(124, 58, 237, 0.12);
@@ -160,13 +160,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 26, 0.9);
+    background: rgba(var(--mp-bg-base-rgb) / 0.9);
     -webkit-backdrop-filter: var(--mp-glass-blur); /* was blur(16px) — var() enables mobile cascade (PERF-03) */
     backdrop-filter: var(--mp-glass-blur);
     border-top: 1px solid rgba(124, 58, 237, 0.2);
     padding: 0.5rem 1rem 1.5rem; /* Safe area padding */
     justify-content: space-around;
-    z-index: 9999;
+    z-index: var(--z-modal);
     box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
   }
 
@@ -204,7 +204,7 @@
 
 /* --- Search Modal (Blowfish Overrides) (T-703) --- */
 .search-modal-container {
-  background: rgba(10, 10, 26, 0.95) !important;
+  background: rgba(var(--mp-bg-base-rgb) / 0.95) !important;
   backdrop-filter: var(--mp-glass-blur) !important; /* was blur(16px) — var() enables mobile cascade (PERF-03) */
   border: 1px solid rgba(124, 58, 237, 0.25) !important;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) !important;
@@ -475,16 +475,7 @@
   border-bottom-color: rgba(124, 58, 237, 0.12);
 }
 
-/* --- Hero Title (MARKET PULSE) — soften glow --- */
-:root:not(.dark) .mp-heartbeat {
-  background: linear-gradient(135deg, #1E1E3A 0%, var(--mp-brand-color) 45%, #1E1E3A 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: none;
-  animation: title-shimmer 6s ease-in-out infinite;
-}
+/* .mp-heartbeat light mode — defined in custom.css */
 
 /* --- Hero Subtitle (// FACT-DRIVEN MARKET INTELLIGENCE) --- */
 :root:not(.dark) .mp-subtitle-text {
@@ -553,11 +544,7 @@
   border-left-color: var(--regime-color, var(--mp-neon-purple));
 }
 
-/* --- Briefing Meta Footer --- */
-:root:not(.dark) .mp-briefing-meta::before {
-  color: var(--mp-neon-purple);
-  border-color: rgba(124, 58, 237, 0.2);
-}
+/* .mp-briefing-meta::before light mode — defined in toc-and-effects.css */
 
 /* --- News Card hover --- */
 :root:not(.dark) .mp-news-card:hover {
