@@ -16,8 +16,9 @@
       window.location.pathname === normalizedHomePath ||
       window.location.pathname === normalizedIndexPath;
 
-    var REGIME_COLOR_MAP = config.colors.regime;
-    var REGIME_COLOR_RGB_MAP = config.colors.regime_rgb;
+    var REGIME_COLOR_MAP = (config.colors && config.colors.regime) || {};
+    var REGIME_COLOR_RGB_MAP =
+      (config.colors && config.colors.regime_rgb) || {};
 
     function findSectionByTitle(titleText) {
       if (typeof ns.findSectionByTitle === "function") {
