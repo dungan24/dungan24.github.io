@@ -26,6 +26,7 @@
     chartDataPrefix = "/" + chartDataPrefix;
 
   var LOOKBACK_DAYS = 14;
+  var MOBILE_BP = (calendar && calendar.mobile_breakpoint) || 768;
 
   // ── 유틸 ──
   function fmtDate(d) {
@@ -265,75 +266,8 @@
       var ns = window.MPCalendar || {};
       if (typeof ns.createParser !== "function") return;
 
-      var KRX_HOLIDAYS = {
-        2024: [
-          "2024-01-01",
-          "2024-02-09",
-          "2024-02-10",
-          "2024-02-12",
-          "2024-03-01",
-          "2024-05-06",
-          "2024-05-15",
-          "2024-06-06",
-          "2024-08-15",
-          "2024-09-16",
-          "2024-09-17",
-          "2024-09-18",
-          "2024-10-03",
-          "2024-10-09",
-          "2024-12-25",
-        ],
-        2025: [
-          "2025-01-01",
-          "2025-01-28",
-          "2025-01-29",
-          "2025-01-30",
-          "2025-03-01",
-          "2025-05-05",
-          "2025-06-06",
-          "2025-08-15",
-          "2025-10-03",
-          "2025-10-06",
-          "2025-10-07",
-          "2025-10-08",
-          "2025-10-09",
-          "2025-12-25",
-        ],
-        2026: [
-          "2026-01-01",
-          "2026-02-16",
-          "2026-02-17",
-          "2026-02-18",
-          "2026-03-01",
-          "2026-05-05",
-          "2026-05-24",
-          "2026-06-06",
-          "2026-08-15",
-          "2026-09-24",
-          "2026-09-25",
-          "2026-09-26",
-          "2026-10-03",
-          "2026-10-09",
-          "2026-12-25",
-        ],
-        2027: [
-          "2027-01-01",
-          "2027-02-06",
-          "2027-02-08",
-          "2027-02-09",
-          "2027-03-01",
-          "2027-05-05",
-          "2027-05-13",
-          "2027-06-06",
-          "2027-08-15",
-          "2027-09-14",
-          "2027-09-15",
-          "2027-09-16",
-          "2027-10-03",
-          "2027-10-09",
-          "2027-12-25",
-        ],
-      };
+      var KRX_HOLIDAYS =
+        (window.MPBriefing && window.MPBriefing.KRX_PUBLIC_HOLIDAYS) || {};
 
       var parser = ns.createParser(KRX_HOLIDAYS);
       var model = ns.createModel(parser);
@@ -394,11 +328,11 @@
 
         // 데스크탑 툴팁 (기존 로직 재사용)
         cell.addEventListener("mouseenter", function (e) {
-          if (window.innerWidth <= 768) return;
+          if (window.innerWidth <= MOBILE_BP) return;
           updateTooltip(c, e, sharedTooltip, model);
         });
         cell.addEventListener("mousemove", function (e) {
-          if (window.innerWidth <= 768) return;
+          if (window.innerWidth <= MOBILE_BP) return;
           moveTooltip(e, sharedTooltip);
         });
         cell.addEventListener("mouseleave", function () {
@@ -407,7 +341,7 @@
 
         // 모바일 터치
         cell.addEventListener("click", function () {
-          if (window.innerWidth > 768) return;
+          if (window.innerWidth > MOBILE_BP) return;
           if (
             c.tooltipData &&
             (c.tooltipData.events.length > 0 || c.isHoliday)
@@ -639,7 +573,7 @@
     var cells = document.querySelectorAll(".mp-calendar__cell");
     cells.forEach(function (cell, idx) {
       cell.addEventListener("click", function () {
-        if (window.innerWidth > 768) return;
+        if (window.innerWidth > MOBILE_BP) return;
         // 셀 데이터는 툴팁에서 가져올 수 없으므로, 툴팁 HTML을 파싱하는 대신
         // 날짜를 기반으로 이벤트 목록을 재구성
         var dayEl = cell.querySelector(".mp-calendar__day");

@@ -171,6 +171,7 @@
       filter_all: "전체",
       filter_high: "상",
       filter_high_medium: "상+중",
+      filter_pm5: "±5일",
       filter_pm10: "±10일",
       filter_pm20: "±20일",
       filter_pm30: "±30일",
@@ -192,7 +193,9 @@
       default_period_filter: "pm10",
       default_country_filter: "all",
       upcoming_limit: 20,
+      mobile_breakpoint: 768,
       period_days: {
+        pm5: 5,
         pm10: 10,
         pm20: 20,
         pm30: 30,

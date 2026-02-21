@@ -1,6 +1,7 @@
 /**
  * glossary-filter.js — 주식사전 필터링 로직
  * 초성/알파벳, 카테고리, 난이도 필터 + 검색
+ * NOTE: 이 파일은 ES6 (const/let/arrow) 사용 — glossary 전용 페이지에서만 로드
  */
 (function () {
   "use strict";

@@ -67,6 +67,8 @@ enableCodeCopy = true
   [market_pulse.external]
     echarts_cdn = "https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"
     fonts_css_url = "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+    phosphor_icons_bold = "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"
+    phosphor_icons_regular = "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
 
   [market_pulse.behavior]
     reading_progress_initial_delay_ms = 100
