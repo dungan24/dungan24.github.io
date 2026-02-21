@@ -519,9 +519,10 @@
 
 .briefing-section .mp-ticker-row {
   display: grid;
-  grid-template-columns: minmax(90px, 1.6fr) minmax(60px, 1fr) auto auto;
+  grid-template-columns: minmax(90px, 1.8fr) minmax(55px, 1fr) auto auto;
   align-items: center;
-  column-gap: 0.5rem;
+  column-gap: 0.4rem;
+  line-height: 1;
 }
 
 .briefing-section .mp-ticker-name {
@@ -529,6 +530,17 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+
+.briefing-section .mp-ticker-price {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.briefing-section .mp-ticker-change {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .briefing-section .mp-ticker-price,
@@ -537,16 +549,30 @@
   justify-self: end;
 }
 
-.mp-ticker-flow {
-  font-family: var(--mp-font-mono);
-  font-size: 0.7rem;
-  color: rgb(var(--color-neutral-400));
-  min-width: 48px;
-  text-align: right;
+
+.mp-ticker-zone {
+  justify-self: end;
+  align-self: center;
+  display: flex;
+  align-items: center;
 }
 
-.mp-ticker-flow.is-empty {
+.mp-ticker-zone.is-empty {
   visibility: hidden;
+}
+
+.mp-zone-badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.45rem;
+  white-space: nowrap;
+  min-width: 3.6rem;
+  justify-content: center;
+}
+
+.mp-zone-badge .mp-status-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .mp-ticker-change.is-status {
@@ -565,13 +591,13 @@
   }
 
   .briefing-section .mp-ticker-row {
-    grid-template-columns: minmax(80px, 1.5fr) minmax(50px, 1fr) auto auto;
+    grid-template-columns: minmax(100px, 2fr) minmax(50px, 1fr) auto auto;
     column-gap: 0.4rem;
   }
 
   .briefing-section .mp-ticker-price,
   .briefing-section .mp-ticker-change,
-  .briefing-section .mp-ticker-flow {
+  .briefing-section .mp-ticker-zone {
     min-width: 0;
     white-space: nowrap;
   }
@@ -579,7 +605,7 @@
 
 @media (max-width: 640px) {
   .briefing-section .mp-ticker-row {
-    grid-template-columns: minmax(70px, 1.5fr) minmax(45px, 1fr) auto auto;
+    grid-template-columns: minmax(90px, 2fr) minmax(45px, 1fr) auto auto;
     column-gap: 0.3rem;
   }
 }
@@ -800,87 +826,7 @@
   }
 }
 
-/* --- VIX 임계값 뱃지 (Issue #3) --- */
-.mp-vix-zone-badge {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.6rem;
-}
-
-/* --- 공포탐욕지수 게이지 카드 (Issue #2) --- */
-.mp-fg-callout {
-  max-width: 360px;
-  padding: 0.75rem 1rem;
-  background: rgba(192, 132, 252, 0.08);
-  border: 1px solid rgba(192, 132, 252, 0.2);
-  border-radius: var(--mp-radius-md);
-  margin: 0.75rem 0;
-}
-
-.mp-fg-callout__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-
-.mp-fg-callout__name {
-  font-size: 0.85rem;
-  color: #CBD5E1;
-}
-
-.mp-fg-callout__value {
-  font-family: var(--mp-font-mono);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #c084fc;
-}
-
-.mp-fg-callout__status {
-  margin-top: 0.4rem;
-}
-
-.mp-fg-gauge {
-  height: 6px;
-  background: rgba(148, 163, 184, 0.2);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: 0.5rem;
-}
-
-.mp-fg-gauge__fill {
-  height: 100%;
-  border-radius: 999px;
-  transition: width 0.4s ease;
-}
-
-.mp-fg-gauge__fill.is-extreme-fear { background: #ef4444; }
-.mp-fg-gauge__fill.is-fear         { background: #f97316; }
-.mp-fg-gauge__fill.is-neutral      { background: #94a3b8; }
-.mp-fg-gauge__fill.is-greed        { background: #84cc16; }
-.mp-fg-gauge__fill.is-extreme-greed{ background: #10b981; }
-
-/* 공포탐욕 구간 라벨 */
-.mp-fg-callout__label {
-  font-family: var(--mp-font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  margin-left: 0.5rem;
-}
-.mp-fg-callout__label.is-extreme-fear { color: #ef4444; background: rgba(239, 68, 68, 0.12); }
-.mp-fg-callout__label.is-fear         { color: #f97316; background: rgba(249, 115, 22, 0.12); }
-.mp-fg-callout__label.is-neutral      { color: #94a3b8; background: rgba(148, 163, 184, 0.12); }
-.mp-fg-callout__label.is-greed        { color: #84cc16; background: rgba(132, 204, 22, 0.12); }
-.mp-fg-callout__label.is-extreme-greed{ color: #10b981; background: rgba(16, 185, 129, 0.12); }
-
-:root:not(.dark) .mp-fg-callout {
-  background: rgba(124, 58, 237, 0.04);
-  border-color: rgba(124, 58, 237, 0.15);
-}
-:root:not(.dark) .mp-fg-callout__name { color: #475569; }
-:root:not(.dark) .mp-fg-callout__value { color: #7C3AED; }
+/* mp-vix-zone-badge removed — replaced by mp-zone-badge in 4th column */
 
 /* --- Pending Table Placeholder (T-1303) --- */
 .mp-table-pending {

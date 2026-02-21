@@ -3,6 +3,60 @@
 
   var ns = (window.MPBriefing = window.MPBriefing || {});
 
+  function getZoneInfo(nameText, priceText, changeText) {
+    var val = parseFloat((priceText || "").replace(/[^0-9.]/g, ""));
+
+    // --- 고유 임계값이 있는 종목 ---
+    // VIX
+    if (
+      /VIX|공포지수/.test(nameText) &&
+      !/공포탐욕/.test(nameText) &&
+      !isNaN(val)
+    ) {
+      if (val < 20) return { tone: "ok", label: "안전" };
+      if (val <= 25) return { tone: "warn", label: "주의" };
+      return { tone: "danger", label: "위험" };
+    }
+    // 원/달러
+    if (/원\/달러|USDKRW/.test(nameText) && !isNaN(val)) {
+      if (val < 1350) return { tone: "ok", label: "안전" };
+      if (val < 1400) return { tone: "info", label: "보통" };
+      if (val < 1450) return { tone: "warn", label: "주의" };
+      return { tone: "danger", label: "위험" };
+    }
+    // DXY
+    if (/DXY|달러인덱스/.test(nameText) && !isNaN(val)) {
+      if (val < 100) return { tone: "ok", label: "약달러" };
+      if (val <= 105) return { tone: "neutral", label: "보통" };
+      return { tone: "warn", label: "강달러" };
+    }
+    // 공포탐욕지수
+    if (/공포탐욕/.test(nameText) && !isNaN(val)) {
+      if (val <= 25) return { tone: "danger", label: "극단적 공포" };
+      if (val <= 46) return { tone: "warn", label: "공포" };
+      if (val <= 54) return { tone: "neutral", label: "중립" };
+      if (val <= 74) return { tone: "ok", label: "탐욕" };
+      return { tone: "accent", label: "극단적 탐욕" };
+    }
+    // 미국 10년물
+    if (/10년물/.test(nameText) && !isNaN(val)) {
+      if (val < 4.0) return { tone: "ok", label: "안전" };
+      if (val <= 4.5) return { tone: "warn", label: "주의" };
+      return { tone: "danger", label: "위험" };
+    }
+
+    // --- 변동률 기반 (나머지 전체) ---
+    var chg = parseFloat((changeText || "").replace(/[^0-9.\-+]/g, ""));
+    if (isNaN(chg)) return { tone: "neutral", label: "보합" };
+    if (chg >= 2) return { tone: "ok", label: "강세" };
+    if (chg >= 0.5) return { tone: "ok", label: "상승" };
+    if (chg >= 0.2) return { tone: "ok", label: "강보합" };
+    if (chg > -0.2) return { tone: "neutral", label: "보합" };
+    if (chg > -0.5) return { tone: "warn", label: "약보합" };
+    if (chg > -2) return { tone: "warn", label: "하락" };
+    return { tone: "danger", label: "약세" };
+  }
+
   function parseAssessmentStatus(text, context) {
     if (!text) return null;
     var cleaned = String(text)
@@ -188,123 +242,30 @@
             }
           }
 
-          // 공포탐욕지수 → 게이지 카드로 교체
           var nameText = (name.textContent || "").trim();
+
+          // 공포탐욕지수: price에서 숫자만 추출 ("8 (극단적 공포)" → "8")
           if (/공포탐욕/.test(nameText)) {
-            var fgVal = parseInt(
-              (price.textContent || "").replace(/[^0-9]/g, ""),
-              10,
-            );
-            var fgCard = document.createElement("div");
-            fgCard.className = "mp-fg-callout";
-
-            var fgHeader = document.createElement("div");
-            fgHeader.className = "mp-fg-callout__header";
-
-            var fgName = document.createElement("span");
-            fgName.className = "mp-fg-callout__name";
-            fgName.textContent = nameText;
-
-            var fgVal2 = document.createElement("span");
-            fgVal2.className = "mp-fg-callout__value";
-            fgVal2.textContent = isNaN(fgVal)
-              ? (price.textContent || "").trim()
-              : fgVal;
-            fgHeader.appendChild(fgName);
-            fgHeader.appendChild(fgVal2);
-            fgCard.appendChild(fgHeader);
-
-            if (!isNaN(fgVal)) {
-              var fillClass, fgLabel;
-              if (fgVal <= 25) {
-                fillClass = "is-extreme-fear";
-                fgLabel = "극단적 공포";
-              } else if (fgVal <= 46) {
-                fillClass = "is-fear";
-                fgLabel = "공포";
-              } else if (fgVal <= 54) {
-                fillClass = "is-neutral";
-                fgLabel = "중립";
-              } else if (fgVal <= 74) {
-                fillClass = "is-greed";
-                fgLabel = "탐욕";
-              } else {
-                fillClass = "is-extreme-greed";
-                fgLabel = "극단적 탐욕";
-              }
-
-              // 구간 라벨
-              var fgLabelEl = document.createElement("span");
-              fgLabelEl.className = "mp-fg-callout__label " + fillClass;
-              fgLabelEl.textContent = fgLabel;
-              fgHeader.appendChild(fgLabelEl);
-
-              var gauge = document.createElement("div");
-              gauge.className = "mp-fg-gauge";
-              var fill = document.createElement("div");
-              fill.className = "mp-fg-gauge__fill " + fillClass;
-              fill.style.width = Math.min(100, Math.max(0, fgVal)) + "%";
-              gauge.appendChild(fill);
-              fgCard.appendChild(gauge);
-            }
-
-            // status가 "-" 만 있으면 무의미 → 숨김
-            var changeRaw = (change.textContent || "").trim();
-            if (changeRaw && changeRaw !== "-" && change.firstChild) {
-              var fgStatus = document.createElement("div");
-              fgStatus.className = "mp-fg-callout__status";
-              fgStatus.appendChild(change);
-              fgCard.appendChild(fgStatus);
-            }
-
-            // ticker group 밖에 별도 카드로 배치 (container 뒤에 추가)
-            container._pendingFgCard = fgCard;
-            return; // forEach 콜백에서 조기 종료
+            var fgNum = (price.textContent || "").replace(/[^0-9]/g, "");
+            price.textContent = fgNum || price.textContent;
           }
 
           tickerRow.appendChild(name);
           tickerRow.appendChild(price);
           tickerRow.appendChild(change);
 
-          var flowSpan = document.createElement("span");
-          flowSpan.className = "mp-ticker-flow";
-          if (tds.length >= 5) {
-            var rawFlow = (tds[4].textContent || "").trim();
-            var flow = rawFlow.replace(/^\-\s*/, "");
-            if (flow && flow !== "-") {
-              flowSpan.textContent = flow;
-              if (/\u2191/.test(flow)) flowSpan.classList.add("num-up");
-              else if (/\u2193/.test(flow)) flowSpan.classList.add("num-down");
-            } else {
-              flowSpan.classList.add("is-empty");
-            }
+          // 4th column: zone badge (임계값 기준 뱃지)
+          var zoneSpan = document.createElement("span");
+          zoneSpan.className = "mp-ticker-zone";
+          var zoneInfo = getZoneInfo(nameText, price.textContent, changeText);
+          if (zoneInfo) {
+            var zoneBadge = buildStatusBadge(zoneInfo);
+            zoneBadge.classList.add("mp-zone-badge");
+            zoneSpan.appendChild(zoneBadge);
           } else {
-            flowSpan.classList.add("is-empty");
+            zoneSpan.classList.add("is-empty");
           }
-          tickerRow.appendChild(flowSpan);
-
-          // VIX 임계값 뱃지 — name 컬럼 아래에 배치
-          if (/VIX/.test(nameText)) {
-            var vixVal = parseFloat(
-              (price.textContent || "").replace(/[^0-9.]/g, ""),
-            );
-            if (!isNaN(vixVal)) {
-              var zoneTone =
-                vixVal < 20 ? "ok" : vixVal <= 25 ? "warn" : "danger";
-              var zoneLabel =
-                vixVal < 20
-                  ? "< 20 안전"
-                  : vixVal <= 25
-                    ? "20~25 주의"
-                    : "> 25 위험";
-              var zoneBadge = buildStatusBadge({
-                tone: zoneTone,
-                label: zoneLabel,
-              });
-              zoneBadge.classList.add("mp-vix-zone-badge");
-              name.appendChild(zoneBadge);
-            }
-          }
+          tickerRow.appendChild(zoneSpan);
 
           card.appendChild(tickerRow);
         });
@@ -326,14 +287,6 @@
       section.appendChild(container);
     } else {
       section.insertBefore(container, section.firstChild);
-    }
-
-    // 공포탐욕 게이지를 ticker groups 바로 뒤에 별도 배치
-    if (container._pendingFgCard) {
-      container.parentNode.insertBefore(
-        container._pendingFgCard,
-        container.nextSibling,
-      );
     }
   }
 
