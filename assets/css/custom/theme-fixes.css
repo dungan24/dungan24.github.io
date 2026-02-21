@@ -76,8 +76,8 @@
 }
 
 /* Force dark text for other regime colors in light mode if they are too bright */
-:root:not(.dark) .mp-regime-badge[style*="--regime-color: #00FF88"] { color: #065F46 !important; border-color: #10B981 !important; } /* Green */
-:root:not(.dark) .mp-regime-badge[style*="--regime-color: #FF3366"] { color: #9F1239 !important; border-color: #F43F5E !important; } /* Rose */
+:root:not(.dark) .mp-regime-badge[data-regime="RISK_ON"] { color: #065F46 !important; border-color: #10B981 !important; } /* Green */
+:root:not(.dark) .mp-regime-badge[data-regime="RISK_OFF"] { color: #9F1239 !important; border-color: #F43F5E !important; } /* Rose */
 
 /* Theme Transition Smoothing */
 .theme-transition,

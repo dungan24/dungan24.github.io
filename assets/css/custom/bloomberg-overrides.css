@@ -123,21 +123,21 @@ body::after {
 
 /* ECG line stroke — amber instead of cyan */
 .mp-ecg-line {
-  stroke: #FF8C00 !important;
+  stroke: #FF8C00; /* THEME_OVERRIDE: cascade wins over custom.css (no !important there) */
 }
 
 /* Hero title shimmer — amber gradient */
 .mp-heartbeat {
-  background: linear-gradient(135deg, #E5E5E5 0%, #FF8C00 45%, #E5E5E5 100%) !important;
-  background-size: 200% 200% !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
+  background: linear-gradient(135deg, #E5E5E5 0%, #FF8C00 45%, #E5E5E5 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text; /* THEME_OVERRIDE: cascade wins over custom.css */
 }
 
 /* Subtitle text — Bloomberg terminal style */
 .mp-subtitle-text {
-  color: #0068FF !important;
-  text-shadow: 0 0 8px rgba(0, 104, 255, 0.3) !important;
+  color: #0068FF;
+  text-shadow: 0 0 8px rgba(0, 104, 255, 0.3); /* THEME_OVERRIDE: cascade wins over home-market-overview.css */
 }
 
 /* Glitch animation — amber tones */
@@ -168,17 +168,17 @@ body::after {
 
 /* num-up / num-down text-shadow */
 .num-up {
-  text-shadow: 0 0 6px rgba(255, 67, 61, 0.3) !important;
+  text-shadow: 0 0 6px rgba(255, 67, 61, 0.3); /* THEME_OVERRIDE: cascade wins over custom.css */
 }
 .num-down {
-  text-shadow: 0 0 6px rgba(0, 104, 255, 0.3) !important;
+  text-shadow: 0 0 6px rgba(0, 104, 255, 0.3); /* THEME_OVERRIDE: cascade wins over custom.css */
 }
 
 /* stat-highlight */
 .stat-highlight {
-  background: rgba(255, 140, 0, 0.15) !important;
-  color: #FF8C00 !important;
-  border: 1px solid rgba(255, 140, 0, 0.3) !important;
+  background: rgba(255, 140, 0, 0.15); /* THEME_OVERRIDE: cascade wins (no !important in custom.css) */
+  color: #FF8C00 !important; /* THEME_OVERRIDE: custom.css uses !important on color */
+  border: 1px solid rgba(255, 140, 0, 0.3); /* THEME_OVERRIDE: cascade wins */
 }
 
 /* Table borders and backgrounds */
@@ -623,7 +623,7 @@ body::after {
 }
 
 :root:not(.dark) .mp-ecg-line {
-  stroke: #D97706 !important;
+  stroke: #D97706; /* THEME_OVERRIDE: higher specificity than custom.css .mp-ecg-line */
 }
 
 :root:not(.dark) .mp-section-header {
