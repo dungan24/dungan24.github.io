@@ -341,10 +341,7 @@ body::after {
   border-top-color: #FF8C00 !important;
 }
 
-/* Chart status text */
-.mp-chart-status {
-  color: #FF8C00 !important;
-}
+/* .mp-chart-status removed — dead selector */
 
 :root:not(.dark) .market-chart-card {
   background: rgba(255, 255, 255, 0.95) !important;
@@ -406,12 +403,7 @@ body::after {
   border-left-color: #FF8C00 !important;
 }
 
-/* Grid background lines — amber */
-.mp-grid-bg::before {
-  background-image:
-    linear-gradient(rgba(255, 140, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 140, 0, 0.03) 1px, transparent 1px) !important;
-}
+/* .mp-grid-bg::before removed — dead selector */
 
 
 /* ===========================
@@ -430,10 +422,7 @@ body::after {
   color: #FF8C00 !important;
 }
 
-.mp-f-status-indicator {
-  background: #FF8C00 !important;
-  box-shadow: 0 0 6px rgba(255, 140, 0, 0.5) !important;
-}
+/* .mp-f-status-indicator removed — dead selector */
 
 /* HUD corners */
 .mp-hud-corner {
@@ -550,10 +539,7 @@ body::after {
   background: rgba(255, 140, 0, 0.06) !important;
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
+/* @keyframes shimmer removed — unreferenced */
 
 .mp-skeleton::after {
   background: linear-gradient(
@@ -593,8 +579,8 @@ body::after {
   opacity: 0.3 !important;
 }
 
-.mp-page-orb--left,
-.mp-page-orb--right {
+.mp-page-orb--primary,
+.mp-page-orb--secondary {
   opacity: 0.2 !important;
 }
 
@@ -603,10 +589,7 @@ body::after {
    20. THEME FIXES
    =========================== */
 
-/* Article card HUD corners — amber */
-.mp-article-corner {
-  border-color: rgba(255, 140, 0, 0.3) !important;
-}
+/* .mp-article-corner removed — dead selector */
 
 /* Post content blockquote */
 .prose blockquote {
@@ -618,10 +601,7 @@ body::after {
   color: #0068FF !important;
 }
 
-/* Post content divider */
-.mp-content-divider {
-  border-color: rgba(255, 140, 0, 0.15) !important;
-}
+/* .mp-content-divider removed — dead selector */
 
 /* So-What section — use amber as default */
 .mp-so-what-regime {
