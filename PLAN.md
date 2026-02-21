@@ -701,6 +701,11 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 - 2026-02-18 | T-1103 | DONE | calendar.css !important 제거 및 specificity 상향 | PASS
 - 2026-02-18 | T-1201 | DONE | calendar.css / polish.css 역할 분리 및 dead code 제거 | PASS
 
+### QA 세션 (2026-02-21)
+- 2026-02-21 | BUG-001 | DONE | standalone-calendar.js 병렬 fetch → 순차 + 3연속 404 조기 종료 | 콘솔 에러 ~8→4건
+- 2026-02-21 | BUG-002 | DONE | custom.css 390px 미디어쿼리 위치 수정 + ECG 숨김 + gap 제거 | 375px 클리핑 해결
+- 2026-02-21 | REFACTOR | DONE | standalone-calendar.js escapeHtml 3중복 → 모듈 단일화 + &quot; 누락 수정 | code review 반영
+
 ---
 
 ## 10) Change Log
@@ -708,3 +713,4 @@ pwsh -File tools/calendar-smoke.ps1 -BaseUrl http://localhost:1314
 - 2026-02-16: 기존 개략 계획을 코드베이스 실측 기반의 상세 Task Board + 상태관리형 계획으로 전면 교체
 - 2026-02-17: 규칙 준수 재점검 결과를 반영해 문서 정합성 최신화
 - 2026-02-18: 전체 코드베이스 best practice 점검 결과를 기반으로 M9~M12 신규 계획 수립 (기존 완료 내용 요약 보존)
+- 2026-02-21: QA 세션 버그 2건 수정 (BUG-001 캘린더 404 에러 감소, BUG-002 모바일 히어로 클리핑) + escapeHtml 리팩토링

@@ -1,6 +1,6 @@
 # PROJECT_MAP.md
 
-**최종 업데이트**: 2026-02-18  
+**최종 업데이트**: 2026-02-21
 **목적**: 이 레포의 현재 운영 구조를 빠르게 파악하기 위한 실행 지도
 
 ## 1) 프로젝트 정의
@@ -22,6 +22,7 @@
   - `static/js/market-pulse-enhancements.js`
   - `static/js/calendar/{parser,model,renderer}.js`
   - `static/js/market-pulse-calendar.js`
+  - `static/js/standalone-calendar.js` (독립 캘린더 페이지 /market-calendar/ 전용 로더)
   - `static/js/render-charts.js`, `static/js/market-charts-loader.js`
 - 스타일:
   - `assets/css/custom.css`
@@ -51,6 +52,10 @@
   - `Market Overview` + `Recent Briefings` 카드형 구조
   - Regime filter 칩(ALL/RISK_ON/CAUTIOUS/RISK_OFF/PANIC)
   - 모바일 하단 고정 내비게이션
+  - 모바일 375px 히어로 타이틀 클리핑 수정 (ECG 숨김, 390px 미디어쿼리)
+- 독립 캘린더 (`/market-calendar/`):
+  - `standalone-calendar.js`가 최신→과거 순 순차 fetch + 3연속 404 시 조기 종료
+  - 월 네비게이션, 모바일 바텀시트, 서프라이즈 배지 포함
 - 정보 페이지:
   - 메뉴: `투자 전략`, `마켓 캘린더`, `About`
   - 푸터 링크: `Security Protocol`, `Data Consent`, `API Documentation`
