@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ .Scratch.Set "scope" "list" }}
+{{ .Store.Set "scope" "list" }}
 <header>
   <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
   {{ with .Description }}
@@ -99,5 +99,5 @@
   </div>
 </section>
 
-<script src="{{ "js/glossary-filter.js" | relURL }}"></script>
+<script defer src="{{ "js/glossary-filter.js" | relURL }}"></script>
 {{ end }}
