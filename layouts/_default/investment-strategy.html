@@ -1,0 +1,217 @@
+{{ define "main" }}
+
+{{/* 챕터 진행률 인디케이터 */}}
+<nav class="is-progress" id="is-progress">
+  <div class="is-progress__track">
+    <a href="#ch-philosophy" class="is-progress__dot" data-chapter="0" title="투자 철학"></a>
+    <a href="#ch-macro" class="is-progress__dot" data-chapter="1" title="거시 판단"></a>
+    <a href="#ch-picking" class="is-progress__dot" data-chapter="2" title="종목 선정"></a>
+    <a href="#ch-holding" class="is-progress__dot" data-chapter="3" title="보유 태도"></a>
+  </div>
+</nav>
+
+{{/* ========== Hero ========== */}}
+<section class="is-hero">
+  <div class="is-hero__inner">
+    <p class="is-hero__eyebrow">Investment Strategy</p>
+    <h1 class="is-hero__title">겁쟁이 투자자의<br>생존 프레임워크</h1>
+    <p class="is-hero__subtitle">분석 100시간에 수익은 예적금 +&alpha;.<br>그래도 살아남았으면, 전략은 있는 겁니다.</p>
+    <div class="is-hero__scroll-hint">
+      <span>스크롤하여 시작</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </div>
+</section>
+
+{{/* ========== Chapter 1: 투자 철학 ========== */}}
+<section class="is-chapter" id="ch-philosophy">
+  <div class="is-chapter__inner">
+    <div class="is-chapter__header is-reveal">
+      <span class="is-chapter__num">01</span>
+      <h2 class="is-chapter__title">투자 철학</h2>
+      <p class="is-chapter__lead">다섯 가지 가치를 <strong>계층 필터</strong>로 걸러냅니다.<br>위에서 탈락하면 아래는 보지 않습니다.</p>
+    </div>
+
+    <div class="is-filter-stack">
+      <div class="is-filter-card is-reveal" data-delay="0">
+        <div class="is-filter-card__rank">1st</div>
+        <div class="is-filter-card__body">
+          <h3>테마 <span class="is-filter-card__sub">(매크로)</span></h3>
+          <p>거시 방향이 맞는가?</p>
+          <p class="is-filter-card__detail">금리 사이클, 산업 정책, 글로벌 자금 흐름. 방향이 틀리면 종목이 아무리 좋아도 역풍입니다.</p>
+        </div>
+      </div>
+      <div class="is-filter-card is-reveal" data-delay="1">
+        <div class="is-filter-card__rank">2nd</div>
+        <div class="is-filter-card__body">
+          <h3>추세</h3>
+          <p>기술적 타이밍이 왔는가?</p>
+          <p class="is-filter-card__detail">아무리 좋은 테마도 차트가 무너지고 있으면 기다립니다. 추세는 친구입니다.</p>
+        </div>
+      </div>
+      <div class="is-filter-card is-reveal" data-delay="2">
+        <div class="is-filter-card__rank">3rd</div>
+        <div class="is-filter-card__body">
+          <h3>펀더멘탈</h3>
+          <p>안전판이 있는가?</p>
+          <p class="is-filter-card__detail">실적, 밸류에이션, 재무 건전성. 테마와 추세가 꺾여도 바닥을 잡아줄 안전판.</p>
+        </div>
+      </div>
+      <div class="is-filter-card is-reveal" data-delay="3">
+        <div class="is-filter-card__rank">4th</div>
+        <div class="is-filter-card__body">
+          <h3>거래량</h3>
+          <p>시장이 동의하는가?</p>
+          <p class="is-filter-card__detail">내 판단이 맞아도 시장이 관심 없으면 주가는 안 움직입니다. 거래량은 시장의 투표입니다.</p>
+        </div>
+      </div>
+      <div class="is-filter-card is-reveal" data-delay="4">
+        <div class="is-filter-card__rank">5th</div>
+        <div class="is-filter-card__body">
+          <h3>시간</h3>
+          <p>기회비용을 감당할 수 있는가?</p>
+          <p class="is-filter-card__detail">기다리는 시간도 다 기대수익입니다. 6개월 묶일 종목이면 그만한 확신이 있어야 합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ========== Chapter 2: 거시 판단 워크플로우 ========== */}}
+<section class="is-chapter is-chapter--alt" id="ch-macro">
+  <div class="is-chapter__inner">
+    <div class="is-chapter__header is-reveal">
+      <span class="is-chapter__num">02</span>
+      <h2 class="is-chapter__title">거시 판단 워크플로우</h2>
+      <p class="is-chapter__lead">매크로를 읽는 순서가 있습니다.<br>네 가지를 순서대로 체크하고, <strong>주도 테마의 현재 위치</strong>를 추측합니다.</p>
+    </div>
+
+    <div class="is-workflow">
+      <div class="is-workflow__step is-reveal" data-delay="0">
+        <div class="is-workflow__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="is-workflow__content">
+          <h3>금리 &middot; 통화정책</h3>
+          <p>한미 기준금리 방향, FOMC 스탠스, 금리 인하/인상 사이클의 어디쯤인지. 돈의 가격이 모든 것의 출발점입니다.</p>
+        </div>
+      </div>
+      <div class="is-workflow__connector is-reveal"></div>
+      <div class="is-workflow__step is-reveal" data-delay="1">
+        <div class="is-workflow__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="is-workflow__content">
+          <h3>환율 &middot; 달러</h3>
+          <p>원/달러 방향성, DXY 추이. 외국인 수급과 직결되고, 수출주·내수주 판도를 바꿉니다.</p>
+        </div>
+      </div>
+      <div class="is-workflow__connector is-reveal"></div>
+      <div class="is-workflow__step is-reveal" data-delay="2">
+        <div class="is-workflow__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="is-workflow__content">
+          <h3>유동성 &middot; 자금 흐름</h3>
+          <p>외국인·기관 수급, 고객예탁금, 신용잔고. 돈이 어디에서 어디로 흐르는지가 다음 주도주를 결정합니다.</p>
+        </div>
+      </div>
+      <div class="is-workflow__connector is-reveal"></div>
+      <div class="is-workflow__step is-reveal" data-delay="3">
+        <div class="is-workflow__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H2v7l6.29 6.29c.94.94 2.48.94 3.42 0l4.58-4.58c.94-.94.94-2.48 0-3.42L9 5z"/><circle cx="6" cy="9" r="1"/></svg>
+        </div>
+        <div class="is-workflow__content">
+          <h3>정부정책 &middot; 기대값</h3>
+          <p>발표된 정책뿐 아니라 실제 시행 가능성과 시장의 기대값 괴리를 봅니다. 정책 수혜주는 기대에 사서 뉴스에 파는 경우가 많습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ========== Chapter 3: 종목 선정 ========== */}}
+<section class="is-chapter" id="ch-picking">
+  <div class="is-chapter__inner">
+    <div class="is-chapter__header is-reveal">
+      <span class="is-chapter__num">03</span>
+      <h2 class="is-chapter__title">종목 선정 기준</h2>
+      <p class="is-chapter__lead">거시 판단을 통과한 테마 안에서,<br>개별 종목은 이 기준으로 고릅니다.</p>
+    </div>
+
+    <div class="is-criteria">
+      <div class="is-criteria__card is-reveal" data-delay="0">
+        <div class="is-criteria__badge">기술적 진입</div>
+        <h3>MACD 주봉 양수<br><span class="is-criteria__and">&amp;</span><br>스토캐스틱 슬로우 주봉 양수</h3>
+        <p>두 조건이 동시에 충족될 때만 진입을 고려합니다. 하나라도 음수면 기다립니다.</p>
+      </div>
+      <div class="is-criteria__card is-reveal" data-delay="1">
+        <div class="is-criteria__badge">테마 적합성</div>
+        <h3>시장 관심 테마인가?</h3>
+        <p>아무리 차트가 좋아도 시장이 관심 없는 섹터면 모멘텀이 부족합니다. 현재 시장의 주도 테마와 연결되는지 확인합니다.</p>
+      </div>
+      <div class="is-criteria__card is-reveal" data-delay="2">
+        <div class="is-criteria__badge">펀더멘탈 검증</div>
+        <h3>기본기가 나쁘지 않은가?</h3>
+        <p>실적, 부채비율, 현금흐름. 화려한 테마에 속아서 부실기업을 사면 테마가 꺾일 때 같이 무너집니다.</p>
+      </div>
+      <div class="is-criteria__card is-reveal" data-delay="3">
+        <div class="is-criteria__badge">저평가 함정 체크</div>
+        <h3>저평가라면, 이유가 있다</h3>
+        <p>싸다고 다 좋은 게 아닙니다. 저평가인 이유를 꼼꼼하게 찾아봅니다. 이유를 모르겠으면 사지 않습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ========== Chapter 4: 보유 태도 ========== */}}
+<section class="is-chapter is-chapter--alt" id="ch-holding">
+  <div class="is-chapter__inner">
+    <div class="is-chapter__header is-reveal">
+      <span class="is-chapter__num">04</span>
+      <h2 class="is-chapter__title">보유종목을 대하는 태도</h2>
+      <p class="is-chapter__lead">사는 것보다 들고 있는 게 더 어렵습니다.</p>
+    </div>
+
+    <div class="is-principles">
+      <div class="is-principle is-reveal" data-delay="0">
+        <div class="is-principle__icon">&oplus;</div>
+        <div class="is-principle__body">
+          <h3>인과관계를 추적한다</h3>
+          <p>내 종목이 크게 움직일 때 — 왜 떨어지는지, 왜 오르는지.<br>원인을 기록하고, 회귀 분석하고, 같은 실수의 확률을 낮춥니다.</p>
+        </div>
+      </div>
+      <div class="is-principle is-reveal" data-delay="1">
+        <div class="is-principle__icon">&times;</div>
+        <div class="is-principle__body">
+          <h3>Fast Fail &mdash; Not Fallback</h3>
+          <p>실패를 인정할 줄 알아야 합니다. 손절은 실패가 아니라 다음 기회를 위한 자본 보전입니다.<br>"물타기로 평단 낮추자"는 대부분 더 깊은 수렁입니다.</p>
+        </div>
+      </div>
+      <div class="is-principle is-reveal" data-delay="2">
+        <div class="is-principle__icon">&hoarr;</div>
+        <div class="is-principle__body">
+          <h3>기다리는 시간도 기대수익이다</h3>
+          <p>6개월 묶여서 10% 먹는 것과, 2주 만에 5% 먹는 것.<br>시간 가치를 항상 계산합니다.</p>
+        </div>
+      </div>
+      <div class="is-principle is-reveal" data-delay="3">
+        <div class="is-principle__icon">&check;</div>
+        <div class="is-principle__body">
+          <h3>수익 실현해야 내 돈이다</h3>
+          <p>평가이익은 숫자일 뿐입니다. 실현하지 않으면 내 돈이 아닙니다.<br>욕심을 이기는 게 분석보다 어렵습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ========== Footer Quote ========== */}}
+<section class="is-footer-quote">
+  <blockquote class="is-reveal">
+    <p>"맞추려고 하면 진다.<br>살아남으면 기회는 또 온다."</p>
+  </blockquote>
+</section>
+
+<script defer src="{{ "js/investment-strategy.js" | relURL }}"></script>
+{{ end }}
