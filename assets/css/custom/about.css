@@ -1,0 +1,338 @@
+/* ===== About Page — AI Interview Style ===== */
+
+.ab-hero,
+.ab-interview,
+.ab-footer {
+  --ab-accent: var(--mp-neon-cyan, #00f0ff);
+  --ab-accent-rgb: 0, 240, 255;
+  --ab-ai: #7c3aed;
+  --ab-ai-rgb: 124, 58, 237;
+  --ab-human: #0891b2;
+  --ab-human-rgb: 8, 145, 178;
+  --ab-text: #E2E8F0;
+  --ab-text-muted: #94A3B8;
+  --ab-text-dim: #64748B;
+  --ab-bg-ai: rgba(124, 58, 237, 0.08);
+  --ab-bg-human: rgba(var(--ab-accent-rgb), 0.06);
+  --ab-border-ai: rgba(124, 58, 237, 0.25);
+  --ab-border-human: rgba(var(--ab-accent-rgb), 0.2);
+  --ab-radius: var(--mp-radius-md, 8px);
+}
+
+/* ========== Hero ========== */
+.ab-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 40%, rgba(var(--ab-ai-rgb), 0.08) 0%, transparent 70%);
+}
+
+.ab-hero__inner {
+  max-width: 32rem;
+}
+
+.ab-hero__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(var(--ab-ai-rgb), 0.12);
+  border: 2px solid rgba(var(--ab-ai-rgb), 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.ab-hero__emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.ab-hero__title {
+  font-family: var(--mp-font-display, system-ui);
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--ab-text);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.ab-hero__subtitle {
+  font-size: 0.95rem;
+  color: var(--ab-text-muted);
+  line-height: 1.7;
+  margin: 0;
+  font-style: italic;
+}
+
+.ab-hero__credit {
+  font-size: 0.8rem;
+  color: var(--ab-text-dim);
+  font-style: normal;
+}
+
+/* ========== Interview Section ========== */
+.ab-interview {
+  padding: 2rem 1.5rem 4rem;
+}
+
+.ab-interview__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ========== Q&A Block ========== */
+.ab-qa {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Question row (AI) */
+.ab-qa__q {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* Answer row (Human) */
+.ab-qa__a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+/* Icons */
+.ab-qa__icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.ab-qa__q .ab-qa__icon {
+  background: rgba(var(--ab-ai-rgb), 0.15);
+  border: 1px solid rgba(var(--ab-ai-rgb), 0.3);
+}
+
+.ab-qa__a .ab-qa__icon {
+  background: rgba(var(--ab-human-rgb), 0.12);
+  border: 1px solid rgba(var(--ab-human-rgb), 0.25);
+}
+
+/* Bubbles */
+.ab-qa__bubble {
+  border-radius: var(--ab-radius);
+  padding: 1rem 1.25rem;
+  max-width: 85%;
+  line-height: 1.7;
+}
+
+.ab-qa__bubble p {
+  font-size: 0.88rem;
+  margin: 0 0 0.5rem;
+  color: var(--ab-text);
+}
+
+.ab-qa__bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.ab-qa__bubble ul {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.ab-qa__bubble ul:last-child {
+  margin-bottom: 0;
+}
+
+.ab-qa__bubble li {
+  font-size: 0.85rem;
+  color: var(--ab-text);
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+}
+
+.ab-qa__bubble li:last-child {
+  margin-bottom: 0;
+}
+
+.ab-qa__bubble strong {
+  color: var(--ab-accent);
+}
+
+.ab-qa__bubble a {
+  color: var(--ab-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ab-qa__bubble a:hover {
+  opacity: 0.8;
+}
+
+/* AI bubble (left) */
+.ab-qa__bubble--ai {
+  background: var(--ab-bg-ai);
+  border: 1px solid var(--ab-border-ai);
+  border-bottom-left-radius: 3px;
+}
+
+.ab-qa__bubble--ai p {
+  font-weight: 500;
+  color: var(--ab-text-muted);
+  font-size: 0.9rem;
+}
+
+.ab-qa__aside {
+  font-size: 0.78rem;
+  color: var(--ab-text-dim);
+  font-weight: 400;
+}
+
+/* Human bubble (right) */
+.ab-qa__bubble--human {
+  background: var(--ab-bg-human);
+  border: 1px solid var(--ab-border-human);
+  border-bottom-right-radius: 3px;
+}
+
+/* ========== Disclaimer Box ========== */
+.ab-disclaimer {
+  margin-top: 1rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--ab-text-dim);
+  border-radius: var(--ab-radius);
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.ab-disclaimer p {
+  font-size: 0.78rem;
+  color: var(--ab-text-dim);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* ========== Reveal Animation ========== */
+.ab-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Answer delay */
+.ab-qa__a.ab-reveal {
+  transition-delay: 0.3s;
+}
+
+.ab-reveal.ab-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Footer ========== */
+.ab-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.ab-footer p {
+  font-size: 0.82rem;
+  color: var(--ab-text-dim);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ab-footer__meta {
+  margin-top: 0.75rem !important;
+  font-size: 0.75rem !important;
+}
+
+.ab-footer__meta a {
+  color: var(--ab-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ab-footer__meta a:hover {
+  color: var(--ab-accent);
+}
+
+.ab-footer__sep {
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}
+
+/* ========== Light Mode ========== */
+:root:not(.dark) .ab-hero,
+:root:not(.dark) .ab-interview,
+:root:not(.dark) .ab-footer {
+  --ab-text: #1E293B;
+  --ab-text-muted: #475569;
+  --ab-text-dim: #94A3B8;
+  --ab-bg-ai: rgba(124, 58, 237, 0.05);
+  --ab-bg-human: rgba(8, 145, 178, 0.05);
+  --ab-border-ai: rgba(124, 58, 237, 0.15);
+  --ab-border-human: rgba(8, 145, 178, 0.15);
+  --ab-accent: #0891B2;
+  --ab-accent-rgb: 8, 145, 178;
+}
+
+:root:not(.dark) .ab-hero {
+  background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(var(--ab-ai-rgb), 0.04) 0%, transparent 70%);
+}
+
+:root:not(.dark) .ab-qa__bubble--ai,
+:root:not(.dark) .ab-qa__bubble--human {
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:root:not(.dark) .ab-disclaimer {
+  background: rgba(148, 163, 184, 0.04);
+}
+
+/* ========== Tablet ========== */
+@media (min-width: 641px) and (max-width: 768px) {
+  .ab-qa__bubble {
+    max-width: 75%;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 640px) {
+  .ab-hero {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .ab-interview {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .ab-qa__bubble {
+    max-width: 90%;
+    padding: 0.85rem 1rem;
+  }
+
+  .ab-qa__icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 0.95rem;
+  }
+}

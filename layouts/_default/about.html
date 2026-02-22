@@ -1,0 +1,215 @@
+{{ define "main" }}
+
+{{/* ========== Hero ========== */}}
+<section class="ab-hero">
+  <div class="ab-hero__inner">
+    <div class="ab-hero__avatar" role="img" aria-label="블로그 운영자">
+      <span class="ab-hero__emoji">👨‍💻</span>
+    </div>
+    <h1 class="ab-hero__title">둥안이 아빠의<br>마켓 펄스</h1>
+    <p class="ab-hero__subtitle">
+      "분석 시간 대비 수익률이 최저임금 이하입니다."<br>
+      <span class="ab-hero__credit">— 본인 (자기 객관화 완료)</span>
+    </p>
+  </div>
+</section>
+
+{{/* ========== Interview ========== */}}
+<section class="ab-interview">
+  <div class="ab-interview__inner">
+
+    {{/* --- Q1: 소개 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>반갑습니다! 어떤 분이신지 궁금한데요.</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>40대 초반, IT회사 다니는 평범한 직장인입니다. 퇴근하면 만 1살짜리 딸(둥안이) 기저귀 갈다가 하루가 끝나고요. 주식 볼 시간은 둥안이가 잠든 밤 10시 이후 약 1.5시간입니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q2: 왜 만들었나 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>이 블로그를 왜 만들게 됐나요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>주식은 원래 자산의 15~20%만 넣고 조용히 하고 있었는데, 코로나 때 주변에서 수익 인증이 쏟아지니까 — 솔직히 배 아팠습니다. 그때부터 진지하게 공부를 시작했고요.</p>
+          <p>한국장은 꽤 오래 했습니다. 이상거래량 잡고, 매물대 소화 패턴 보고, 차트 읽는 게 루틴이었는데 — 타고난 겁쟁이라 분석은 열심히 해놓고 막상 진입 타이밍이 오면 "한 번만 더 확인하고…"를 반복했습니다. 그 "한 번 더"가 보통 세 번입니다.</p>
+          <p>둥안이가 태어나고 나서는 더 쫄보가 됐습니다. 잃으면 안 되는 돈이 생기니까요.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q3: 수익률 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>그 정도면 수익은 꽤 나지 않았나요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>수익률은 주변 주린이들보다 나았는데, 시간 대비로 따지면 처참합니다. 분석 100시간에 수익은 예적금 +α. 투자를 한 건지 관람을 한 건지 아직도 잘 모르겠습니다.</p>
+          <p>어느 순간 미국장도 봐야겠다 싶었는데, 한국장만 해도 머리가 터지는 판에 매일 두 시장을 따라가는 건 물리적으로 안 됩니다. 그래서 IT쟁이답게 자동화하기로 했습니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q4: AI --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>그래서 AI한테 시켰다는 거죠? 근데 AI가 말을 잘 듣던가요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>AI로 시장 데이터 수집, 뉴스 요약, 브리핑 초안까지 뽑는 파이프라인을 직접 만들었습니다.</p>
+          <p>근데 여기서 한 가지 문제가 — <strong>AI 환각(hallucination)</strong>입니다. 없는 숫자를 지어내거나, 뉴스를 미묘하게 비틀어서 전달하는 그 현상. 좋은 모델 쓰면 정확한데 비용이 무섭고, 저렴한 걸로 바꾸면 가끔 창작 활동을 합니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q5: 환각 대응 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>그 문제는 어떻게 해결했나요? <span class="ab-qa__aside">(솔직히 궁금합니다)</span></p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>고민 끝에 내린 결론이 <strong>영역 분리</strong>입니다. 숫자는 API에서 직접 가져오고, 해석은 AI가 하되 팩트와 구분해서 표시하고, 뉴스는 원문 링크를 필수로 달아서 요약이 이상하면 직접 확인할 수 있게 했습니다.</p>
+          <p>둥안이 재운 다음에 파이프라인 고치는 게 요즘 유일한 취미입니다. 프론트엔드도 AI 코딩 도구로 만들고 있는데, 본업이 이쪽인데도 영 소질이 없어서 가끔 UI가 좀 이상할 수 있습니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q6: 핵심 콘텐츠 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>그래서 이 블로그에 들어오면 뭘 볼 수 있는 건가요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>크게 세 가지입니다.</p>
+          <p><strong>마켓 캘린더</strong> — 단순 경제 일정표가 아닙니다. FOMC, CPI, 고용 지표 같은 이벤트가 언제, 얼마나 세게 시장을 흔들 수 있는지를 한눈에 보여줍니다. 저 같은 겁쟁이에겐 "오늘 뭐가 터질 수 있는지"를 아는 게 제일 중요하더라고요.</p>
+          <p><strong>뉴스 요약</strong> — 영어 실력이 솔직히 부족합니다. 미국식 줄임말이나 전문 용어가 나오면 번역기 돌려야 합니다. 그걸 매일 수십 건씩 할 시간이 없어서, AI가 원문 읽고 한국어로 핵심만 뽑아줍니다.</p>
+          <p><strong>브리핑</strong> — 하루 세 번(개장 전, 장중, 장 마감 후) 나갑니다. 사실(Fact Zone)과 해석(Opinion Zone)을 구분해뒀습니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q7: 블로그 활용법 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>다른 투자 블로그랑 뭐가 다른 건가요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>솔직히 <strong>'정답'이 아니라 '재료'</strong>를 모아두는 곳입니다. "이 종목 오릅니다" 같은 예측은 없고, "오늘 금리 발표 있으니까 변동성 주의" 정도를 정리합니다.</p>
+          <p>결국 결정은 본인이 하는 거니까요. 저는 그 전에 참고할 만한 재료만 최대한 정리해두겠다는 거죠.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q8: 원칙 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>혹시 스스로 정한 규칙 같은 게 있나요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p><strong>예측 안 합니다.</strong> "내일 뭐가 오를까"가 아니라 "오늘 뭘 봐야 하나"만 정리합니다.</p>
+          <p><strong>인과관계를 정리합니다.</strong> 손절을 할지 추가 매수를 할지, 그 판단에 필요한 재료를 모아두는 게 이 블로그의 역할이라고 생각합니다.</p>
+          <p><strong>팩트와 의견을 섞지 않습니다.</strong> AI 해석이 숫자 사이에 슬쩍 끼면 진짜 위험합니다.</p>
+          <p><strong>틀릴 수 있다는 전제로 씁니다.</strong> 항상 최악부터 깔고 가는 스타일입니다.</p>
+          <p>이 원칙들이 실제로 어떻게 적용되는지는 <a href="{{ "investment-strategy/" | relURL }}">투자 철학</a>에 정리해뒀습니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q9: 공개 이유 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>원래 혼자 보려고 만든 거라면서요. 왜 공개하셨어요?</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>공개하면 같이 보는 사람이 생기지 않을까 싶었습니다. 고수분들이 "이건 좀 아닌데요" 하고 한마디 해주시면 그게 저한테 제일 도움이 됩니다.</p>
+          <p>광고는 아직 양심상 못 붙이고 있습니다. 둥안이 기저귀값이라도 벌겠다는 꿈은 있는데 갈 길이 멉니다.</p>
+          <p>댓글은 아직 없습니다. 개발할 시간이 없어서라고 하고 싶은데, 솔직히 말하면 욕먹을까봐 못 열고 있습니다.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- Q10: 마무리 --- */}}
+    <div class="ab-qa">
+      <div class="ab-qa__q ab-reveal">
+        <div class="ab-qa__icon">🤖</div>
+        <div class="ab-qa__bubble ab-qa__bubble--ai">
+          <p>마지막으로, 이 블로그를 읽는 분들한테 한마디 해주세요.</p>
+        </div>
+      </div>
+      <div class="ab-qa__a ab-reveal">
+        <div class="ab-qa__bubble ab-qa__bubble--human">
+          <p>저도 매일 이거 보면서 투자하는 사람인데, 분석만 열심히 하고 수익은 놓쳐온 사람의 브리핑이라는 점 참고해 주세요.</p>
+        </div>
+        <div class="ab-qa__icon">👨‍💻</div>
+      </div>
+    </div>
+
+    {{/* --- 면책 --- */}}
+    <div class="ab-disclaimer ab-reveal">
+      <p>본 블로그의 내용은 정보 제공 목적이며, 투자 권유나 자문이 아닙니다. AI 파이프라인으로 수집·가공된 정보는 오류나 지연이 포함될 수 있으며, 정확성·완전성을 보장하지 않습니다. 언급된 자산을 보유·매매 중일 수 있습니다. 모든 투자 판단과 결과는 본인 책임입니다.</p>
+    </div>
+
+  </div>
+</section>
+
+{{/* ========== Footer ========== */}}
+<section class="ab-footer">
+  <p class="ab-reveal">이 인터뷰는 AI가 질문하고, 사람이 답했습니다.<br>블로그도 그렇게 만들어지고 있습니다.</p>
+  <p class="ab-footer__meta ab-reveal">
+    <a href="https://github.com/dungan24/dungan24.github.io" target="_blank" rel="noopener">GitHub</a>
+    <span class="ab-footer__sep">·</span>
+    마지막 업데이트: {{ now.Format "2006-01-02" }}
+  </p>
+</section>
+
+<script defer src="{{ "js/about.js" | relURL }}"></script>
+{{ end }}
