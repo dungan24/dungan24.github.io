@@ -829,6 +829,7 @@ pre.mermaid svg {
   padding: 0.55rem 0.85rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.82);
+  text-align: left !important;
 }
 
 .gl-detail .prose tbody tr:nth-child(even) td,
