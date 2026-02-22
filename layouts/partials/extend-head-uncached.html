@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="{{ $phosphorBold }}">
 <link rel="stylesheet" href="{{ $phosphorRegular }}">
 
-{{ range $path := slice "css/custom/briefing-sections.css" "css/custom/calendar.css" "css/custom/calendar-polish.css" "css/custom/calendar-standalone.css" "css/custom/toc-and-effects.css" "css/custom/layout-overrides.css" "css/custom/chart-cards.css" "css/custom/home-market-overview.css" "css/custom/terminal-footer.css" "css/custom/home-briefing-cards.css" "css/custom/post-content.css" "css/custom/theme-fixes.css" "css/custom/reading-progress.css" "css/custom/post-hero.css" "css/custom/skeleton.css" "css/custom/ambient-orbs.css" "css/custom/glossary.css" "css/custom/investment-strategy.css" }}
+{{ range $path := slice "css/custom/briefing-sections.css" "css/custom/calendar.css" "css/custom/calendar-polish.css" "css/custom/calendar-standalone.css" "css/custom/toc-and-effects.css" "css/custom/layout-overrides.css" "css/custom/chart-cards.css" "css/custom/home-market-overview.css" "css/custom/terminal-footer.css" "css/custom/home-briefing-cards.css" "css/custom/post-content.css" "css/custom/theme-fixes.css" "css/custom/reading-progress.css" "css/custom/post-hero.css" "css/custom/skeleton.css" "css/custom/ambient-orbs.css" "css/custom/glossary.css" "css/custom/glossary-tooltip.css" "css/custom/investment-strategy.css" "css/custom/about.css" }}
   {{ with resources.Get $path }}
     {{ $css := . | resources.Minify | resources.Fingerprint $alg }}
     <link type="text/css" rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
