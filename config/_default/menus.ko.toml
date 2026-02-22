@@ -4,26 +4,26 @@
   weight = 10
 
 [[main]]
-  name = "투자 전략"
-  pageRef = "investment-strategy"
-  weight = 20
-
-[[main]]
   name = "마켓 캘린더"
   pageRef = "market-calendar"
-  weight = 30
+  weight = 20
 
 [[main]]
   name = "주식사전"
   pageRef = "glossary"
-  weight = 35
+  weight = 30
 
 [[main]]
-  name = "태그"
-  pageRef = "tags"
+  name = "투자 철학"
+  pageRef = "investment-strategy"
   weight = 40
 
 [[main]]
   name = "About"
   pageRef = "about"
   weight = 50
+
+[[main]]
+  name = "태그"
+  pageRef = "tags"
+  weight = 60
