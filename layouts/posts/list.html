@@ -1,0 +1,150 @@
+{{ define "main" }}
+{{ .Store.Set "scope" "list" }}
+
+{{ $pages := .Pages }}
+{{ $totalCount := len $pages }}
+
+{{/* ========== 히어로 ========== */}}
+<section class="pl-hero">
+  <div class="pl-hero__inner">
+    <h1 class="pl-hero__title">브리핑 아카이브</h1>
+    <p class="pl-hero__subtitle">Market Pulse 브리핑 전체 목록</p>
+    <p class="pl-hero__count">총 <span id="pl-count">{{ $totalCount }}</span>개 브리핑</p>
+  </div>
+</section>
+
+{{/* ========== 슬롯 필터 ========== */}}
+<nav class="pl-filter-bar" id="pl-filter-bar">
+  <div class="pl-filter-bar__inner">
+    <span class="pl-filter-bar__label">슬롯</span>
+    <button class="pl-filter-chip is-active" data-slot="all">전체</button>
+    <button class="pl-filter-chip" data-slot="pre-market">Pre-Market</button>
+    <button class="pl-filter-chip" data-slot="mid-day">Mid-Day</button>
+    <button class="pl-filter-chip" data-slot="post-market">Post-Market</button>
+  </div>
+</nav>
+
+{{/* ========== 날짜별 그룹 카드 ========== */}}
+<section class="pl-container" id="pl-main">
+  {{ $grouped := $pages.GroupByDate "2006-01-02" }}
+  {{ range $grouped }}
+    {{ $dateStr := .Key }}
+    {{ $t := time $dateStr }}
+    {{ $weekdays := slice "일" "월" "화" "수" "목" "금" "토" }}
+    {{ $wdIdx := $t.Weekday }}
+    {{ $wd := index $weekdays (int $wdIdx) }}
+    {{ $label := printf "%s (%s)" ($t.Format "01.02") $wd }}
+
+    <div class="pl-date-group" data-date="{{ $dateStr }}">
+      <div class="pl-date-label">{{ $label }}</div>
+      <div class="pl-date-cards">
+        {{ range .Pages }}
+          {{ $slot := .Params.slot | default "" }}
+          {{ $slotClass := "other" }}
+          {{ $slotLabel := "기타" }}
+          {{ if eq $slot "pre-market" }}
+            {{ $slotClass = "pre" }}
+            {{ $slotLabel = "Pre-Market" }}
+          {{ else if eq $slot "mid-day" }}
+            {{ $slotClass = "mid" }}
+            {{ $slotLabel = "Mid-Day" }}
+          {{ else if eq $slot "post-market" }}
+            {{ $slotClass = "post" }}
+            {{ $slotLabel = "Post-Market" }}
+          {{ end }}
+
+          {{ $regime := .Params.regime | default "" }}
+          {{ $summary := .Params.summary | default .Description | default "" }}
+
+          <a href="{{ .RelPermalink }}" class="pl-card pl-card--{{ $slotClass }}" data-slot="{{ $slot }}" data-regime="{{ $regime }}">
+            <span class="pl-card__slot">{{ $slotLabel }}</span>
+            <div class="pl-card__header">
+              <h3 class="pl-card__title">{{ .Title }}</h3>
+              {{ with .Params.generatedAt }}
+                {{ $gt := time . }}
+                <time class="pl-card__time">{{ $gt.Format "15:04" }} KST</time>
+              {{ end }}
+            </div>
+            {{ with $summary }}
+              <p class="pl-card__summary">{{ . }}</p>
+            {{ end }}
+            <div class="pl-card__footer">
+              {{ with $regime }}
+                <span class="pl-card__regime">{{ . }}</span>
+              {{ end }}
+              {{ with $.Params.tags }}
+                <div class="pl-card__tags">
+                  {{ range first 3 . }}
+                    <span class="pl-card__tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+
+  <div class="pl-empty" id="pl-empty" style="display:none;">
+    해당 슬롯의 브리핑이 없습니다.
+  </div>
+</section>
+
+{{/* ========== 페이지네이션 ========== */}}
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pl-pagination">
+  {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">&laquo;</a>
+  {{ end }}
+  {{ range $paginator.Pagers }}
+    {{ if eq . $paginator }}
+      <span class="is-current">{{ .PageNumber }}</span>
+    {{ else }}
+      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+  {{ end }}
+  {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">&raquo;</a>
+  {{ end }}
+</nav>
+{{ end }}
+
+{{/* ========== 필터 JS ========== */}}
+<script>
+(function() {
+  var chips = document.querySelectorAll('.pl-filter-chip');
+  var groups = document.querySelectorAll('.pl-date-group');
+  var empty = document.getElementById('pl-empty');
+  var countEl = document.getElementById('pl-count');
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      var slot = chip.getAttribute('data-slot');
+      var visible = 0;
+
+      groups.forEach(function(group) {
+        var cards = group.querySelectorAll('.pl-card');
+        var groupVisible = 0;
+        cards.forEach(function(card) {
+          if (slot === 'all' || card.getAttribute('data-slot') === slot) {
+            card.style.display = '';
+            groupVisible++;
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        group.style.display = groupVisible > 0 ? '' : 'none';
+      });
+
+      if (countEl) countEl.textContent = visible;
+      if (empty) empty.style.display = visible === 0 ? '' : 'none';
+    });
+  });
+})();
+</script>
+{{ end }}
