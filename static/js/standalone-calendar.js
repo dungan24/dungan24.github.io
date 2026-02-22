@@ -73,53 +73,47 @@
         .replace(/"/g, "&quot;");
     };
 
-  // ── 순차 fetch + 조기 종료 ──
-  // WHY: 파이프라인이 최근 가동되어 과거 JSON이 없음.
-  // 병렬 fetch 시 브라우저가 "Failed to load resource" 콘솔 에러를 표시하므로
-  // 최신→과거 순서로 순차 fetch하되, 3회 연속 실패 시 중단하여 콘솔 오염 방지.
-  var MAX_CONSECUTIVE_FAILS = 3;
-
+  // ── 병렬 fetch + 중복 제거 ──
+  // WHY: 최신→과거 14영업일 JSON을 한번에 가져와 병합.
+  // 404는 조용히 무시 (파이프라인이 아직 없는 과거 날짜).
   function fetchAndMerge() {
     var urls = buildUrls();
     var seen = new Set();
     var merged = [];
-    var consecutiveFails = 0;
 
-    // WHY: 최신 파일 우선 — urls[0]이 오늘, 뒤로 갈수록 과거
-    // 먼저 나온 이벤트가 우선이므로 seen set으로 중복 제거
-    function fetchNext(i) {
-      if (i >= urls.length || consecutiveFails >= MAX_CONSECUTIVE_FAILS) {
-        return Promise.resolve(merged);
-      }
-
-      return fetch(urls[i])
+    var promises = urls.map(function (url, idx) {
+      return fetch(url)
         .then(function (r) {
-          if (!r.ok) throw new Error(r.status);
+          if (!r.ok) return null;
           return r.json();
         })
-        .then(function (data) {
-          consecutiveFails = 0;
-          if (data && Array.isArray(data.keyEvents)) {
-            data.keyEvents.forEach(function (ev) {
-              var key = eventKey(ev);
-              if (!seen.has(key)) {
-                seen.add(key);
-                merged.push(ev);
-              }
-            });
-          }
-          return fetchNext(i + 1);
-        })
         .catch(function () {
-          consecutiveFails++;
-          if (consecutiveFails >= MAX_CONSECUTIVE_FAILS) {
-            return merged;
-          }
-          return fetchNext(i + 1);
+          return null;
+        })
+        .then(function (data) {
+          // idx를 함께 반환하여 순서 보존
+          return { idx: idx, data: data };
         });
-    }
+    });
 
-    return fetchNext(0);
+    return Promise.all(promises).then(function (results) {
+      // 최신(idx 0) 우선 정렬 후 중복 제거
+      results.sort(function (a, b) {
+        return a.idx - b.idx;
+      });
+      results.forEach(function (r) {
+        if (r.data && Array.isArray(r.data.keyEvents)) {
+          r.data.keyEvents.forEach(function (ev) {
+            var key = eventKey(ev);
+            if (!seen.has(key)) {
+              seen.add(key);
+              merged.push(ev);
+            }
+          });
+        }
+      });
+      return merged;
+    });
   }
 
   // ── 로딩 UI ──
@@ -155,38 +149,27 @@
       // 기존 파이프라인에 데이터 준비 알림
       document.dispatchEvent(new CustomEvent("mp:chart-data-ready"));
 
-      // 캘린더 섹션 찾기 — market-calendar.md의 "## 이벤트 캘린더" h2
-      // 기존 enhancements.js의 calendar 섹션 매칭이 처리해줌
-      // 하지만 standalone 페이지에서는 enhancements.js가 section을 못 찾을 수 있으므로
-      // 직접 렌더링도 시도
-      waitForCalendarRender();
+      // standalone 페이지에서는 직접 렌더 시도, 기존 파이프라인이 이미 처리했으면 스킵
+      var existingGrid = document.querySelector(".mp-calendar__grid");
+      if (existingGrid) {
+        container.innerHTML = "";
+        onCalendarRendered();
+      } else {
+        // 기존 파이프라인에 한 프레임 여유를 준 뒤 직접 렌더
+        requestAnimationFrame(function () {
+          if (document.querySelector(".mp-calendar__grid")) {
+            container.innerHTML = "";
+            onCalendarRendered();
+          } else {
+            renderCalendarDirectly();
+          }
+        });
+      }
     })
     .catch(function (err) {
       console.warn("Standalone calendar: fetch failed", err);
       showError();
     });
-
-  function waitForCalendarRender() {
-    // 기존 파이프라인이 렌더할 때까지 잠시 대기
-    var attempts = 0;
-    var maxAttempts = 20;
-    var interval = setInterval(function () {
-      attempts++;
-      var calendarGrid = document.querySelector(".mp-calendar__grid");
-      if (calendarGrid) {
-        clearInterval(interval);
-        container.innerHTML = "";
-        onCalendarRendered();
-        return;
-      }
-
-      if (attempts >= maxAttempts) {
-        clearInterval(interval);
-        // 기존 파이프라인이 렌더 안 했으면 직접 렌더
-        renderCalendarDirectly();
-      }
-    }, 150);
-  }
 
   function renderCalendarDirectly() {
     // WHY: enhancements.js가 캘린더 섹션을 못 찾은 경우 직접 렌더
