@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/cpi.png)
+![한눈에 보기](/images/glossary/cpi.webp)
 
 *찬조출연: 폴 볼커 — 1980년대 초인플레이션을 금리 20%로 잡아낸 전 연준 의장 🔥*
 

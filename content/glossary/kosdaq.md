@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/kosdaq.png)
+![한눈에 보기](/images/glossary/kosdaq.webp)
 
 *찬조출연: 셀트리온 — 코스닥에서 시작해 코스피로 이전한 바이오 대표 기업 💊*
 

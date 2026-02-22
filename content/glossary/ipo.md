@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/ipo.png)
+![한눈에 보기](/images/glossary/ipo.webp)
 
 *찬조출연: 거래소 종을 울리는 CEO — 상장 당일 시세를 알리는 의식의 주인공 🔔*
 

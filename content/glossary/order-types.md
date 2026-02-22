@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/order-types.png)
+![한눈에 보기](/images/glossary/order-types.webp)
 
 *찬조출연: 택시 vs 버스 — 택시(시장가)는 바로 타지만 요금이 비쌀 수 있고, 버스(지정가)는 내 노선이 올 때까지 기다려야 합니다 🚕🚌*
 

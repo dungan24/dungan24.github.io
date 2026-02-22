@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/kospi.png)
+![한눈에 보기](/images/glossary/kospi.webp)
 
 *찬조출연: 삼성전자 — KOSPI 내 비중 약 20~25%를 차지하는 독보적 1위 종목. 삼성전자 주가가 코스피를 반쯤 끌고 다닌다고 봐도 과언이 아닙니다 📱*
 

@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/pbr.png)
+![한눈에 보기](/images/glossary/pbr.webp)
 
 *찬조출연: 벤저민 그레이엄 — 가치투자의 아버지, 안전마진 개념 창시자 📚*
 

@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/basis.png)
+![한눈에 보기](/images/glossary/basis.webp)
 
 *찬조출연: 만기일의 魔女 — 네 마녀의 날(쿼드러플 위칭 데이)마다 베이시스가 요동칩니다 🧙‍♀️*
 

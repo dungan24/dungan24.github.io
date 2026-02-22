@@ -1,7 +1,7 @@
 ---
 title: "SPY (S&P 500 ETF)"
 description: "S&P 500 지수를 추종하는 세계 최대 ETF. 미국 대형주 500개에 한 번에 투자하는 가장 대표적인 상품."
-date: 2026-02-23
+date: 2026-02-22
 tags: ["투자상품"]
 params:
   term_en: "SPDR S&P 500 ETF Trust"
@@ -17,6 +17,12 @@ params:
 **SPY = S&P 500을 통째로 사는 ETF**
 
 1993년 상장된 세계 최초이자 최대 규모의 ETF입니다. 운용자산 약 5,000억 달러.
+
+## 한눈에 보기
+
+![한눈에 보기](/images/glossary/spy.webp)
+
+*찬조출연: 존 보글 — 뱅가드 창업자, 인덱스펀드의 아버지 🏴*
 
 ## 쉽게 이해하기
 

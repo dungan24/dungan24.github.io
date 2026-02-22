@@ -1,7 +1,7 @@
 ---
 title: "DIA (다우존스 ETF)"
 description: "다우존스 산업평균지수를 추종하는 ETF. 미국 우량 대형주 30개로 구성된 전통 지수 상품."
-date: 2026-02-23
+date: 2026-02-22
 tags: ["투자상품"]
 params:
   term_en: "SPDR Dow Jones Industrial Average ETF"
@@ -17,6 +17,12 @@ params:
 **DIA = 다우존스 30개 우량주를 한 번에 사는 ETF**
 
 130년 역사의 다우존스 지수를 추종합니다. 월 배당이 특징.
+
+## 한눈에 보기
+
+![한눈에 보기](/images/glossary/dia.webp)
+
+*찬조출연: 찰스 다우 — 월스트리트 저널 창간자, 다우존스 지수를 처음 만든 사람 📰*
 
 ## 쉽게 이해하기
 

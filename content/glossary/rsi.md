@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/rsi.png)
+![한눈에 보기](/images/glossary/rsi.webp)
 
 *찬조출연: 제시 리버모어 — 월가의 전설적 투기꾼, 추세매매의 선구자 🎰*
 

@@ -1,7 +1,7 @@
 ---
 title: "ISM (제조업지수)"
 description: "미국 제조업 구매관리자 설문 기반 경기 지표. 50 기준으로 확장/수축을 판단하는 경기 선행지표."
-date: 2026-02-23
+date: 2026-02-22
 tags: ["거시경제"]
 params:
   term_en: "Institute for Supply Management"
@@ -17,6 +17,12 @@ params:
 **ISM 제조업지수 = 공장 사장님들의 경기 체감 온도 (50 넘으면 확장)**
 
 매월 1일(영업일) 발표. PMI와 유사하지만 ISM은 미국 전용 지표입니다.
+
+## 한눈에 보기
+
+![한눈에 보기](/images/glossary/ism.webp)
+
+*찬조출연: ISM 공장장 — 미국 제조업 체온계를 관리하는 사람 🌡️*
 
 ## 쉽게 이해하기
 

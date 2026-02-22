@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/gdp.png)
+![한눈에 보기](/images/glossary/gdp.webp)
 
 *찬조출연: 존 메이너드 케인즈 — 거시경제학의 창시자, "정부가 경제를 살린다" 🎩*
 

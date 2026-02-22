@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/eps.png)
+![한눈에 보기](/images/glossary/eps.webp)
 
 *찬조출연: 피터 린치 — 마젤란 펀드의 전설, "이익이 주가를 만든다" 📝*
 

@@ -1,7 +1,7 @@
 ---
 title: "스태그플레이션"
 description: "경기침체(Stagnation)와 인플레이션(Inflation)이 동시에 오는 최악의 경제 상황."
-date: 2026-02-23
+date: 2026-02-22
 tags: ["거시경제"]
 params:
   term_en: "Stagflation"
@@ -17,6 +17,12 @@ params:
 **스태그플레이션 = 경기는 죽는데 물가는 오르는 최악의 조합**
 
 금리를 올리면 경기가 더 죽고, 내리면 물가가 더 오르는 진퇴양난.
+
+## 한눈에 보기
+
+![한눈에 보기](/images/glossary/stagflation.webp)
+
+*찬조출연: 폴 볼커 — 스태그플레이션을 금리 충격으로 끝낸 남자 🔨*
 
 ## 쉽게 이해하기
 

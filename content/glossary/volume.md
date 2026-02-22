@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/volume.png)
+![한눈에 보기](/images/glossary/volume.webp)
 
 *찬조출연: 선술집 주인 — 손님이 많은 날(거래량 폭증)은 뭔가 일이 생긴 날입니다 🍺*
 

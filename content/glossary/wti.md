@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/wti.png)
+![한눈에 보기](/images/glossary/wti.webp)
 
 *찬조출연: 존 D. 록펠러 — 19세기 미국 석유 산업을 독점한 스탠더드오일의 창립자, 현대 원유 산업의 원조 ⛽*
 

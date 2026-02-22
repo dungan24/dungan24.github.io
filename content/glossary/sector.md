@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/sector.png)
+![한눈에 보기](/images/glossary/sector.webp)
 
 *찬조출연: GICS(글로벌산업분류기준) — S&P와 MSCI가 공동 제정한 국제 표준 분류 체계 🗂️*
 

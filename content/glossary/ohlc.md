@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/ohlc.png)
+![한눈에 보기](/images/glossary/ohlc.webp)
 
 *찬조출연: 일기예보 — 오늘 최저 기온과 최고 기온, 아침과 저녁 기온. 기상청이 하루 날씨를 요약하는 방식이 OHLC와 같습니다 🌡️*
 

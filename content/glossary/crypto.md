@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/crypto.png)
+![한눈에 보기](/images/glossary/crypto.webp)
 
 *찬조출연: 사토시 나카모토 — 비트코인을 만들고 사라진 전설의 익명 개발자 👻*
 

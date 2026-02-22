@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/vix.png)
+![한눈에 보기](/images/glossary/vix.webp)
 
 *찬조출연: 나심 탈레브 — "블랙스완"의 저자, 변동성과 불확실성의 철학자 🦢*
 

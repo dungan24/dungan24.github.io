@@ -203,16 +203,24 @@
     var isTouch = "ontouchstart" in window;
 
     // Desktop: hover
-    document.addEventListener("pointerenter", function (e) {
-      if (isTouch) return;
-      var a = e.target.closest(".gl-term");
-      if (a) showTooltip(a);
-    }, true);
+    document.addEventListener(
+      "pointerenter",
+      function (e) {
+        if (isTouch) return;
+        var a = e.target.closest(".gl-term");
+        if (a) showTooltip(a);
+      },
+      true,
+    );
 
-    document.addEventListener("pointerleave", function (e) {
-      if (isTouch) return;
-      if (e.target.closest(".gl-term")) hideTooltip();
-    }, true);
+    document.addEventListener(
+      "pointerleave",
+      function (e) {
+        if (isTouch) return;
+        if (e.target.closest(".gl-term")) hideTooltip();
+      },
+      true,
+    );
 
     // Mobile: first tap = tooltip, second tap or "자세히 보기" = navigate
     document.addEventListener("click", function (e) {

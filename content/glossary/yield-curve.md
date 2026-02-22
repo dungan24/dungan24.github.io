@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/yield-curve.png)
+![한눈에 보기](/images/glossary/yield-curve.webp)
 
 *찬조출연: 캠벨 하비 — 1986년 박사 논문에서 역전된 수익률 곡선이 경기침체를 예측한다는 것을 처음 입증한 경제학자 📉*
 

@@ -20,7 +20,7 @@ params:
 
 ## 한눈에 보기
 
-![한눈에 보기](/images/glossary/futures.png)
+![한눈에 보기](/images/glossary/futures.webp)
 
 *찬조출연: 레오 멜라메드 — 1972년 시카고상업거래소(CME)에서 금융 선물을 처음 도입한 현대 선물 시장의 아버지 📜*
 
