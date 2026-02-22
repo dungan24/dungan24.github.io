@@ -1,0 +1,618 @@
+[
+  {
+    "slug": "base-rate",
+    "title": "기준금리",
+    "desc": "기준금리 = 중앙은행이 정하는 '돈의 가격'",
+    "aliases": [
+      "기준금리"
+    ]
+  },
+  {
+    "slug": "basis",
+    "title": "베이시스",
+    "desc": "베이시스 = 선물가격 − 현물가격",
+    "aliases": [
+      "베이시스"
+    ]
+  },
+  {
+    "slug": "bid-ask",
+    "title": "호가",
+    "desc": "호가 = 주식을 사려는 가격(매수호가)과 팔려는 가격(매도호가)의 쌍",
+    "aliases": [
+      "호가"
+    ]
+  },
+  {
+    "slug": "bollinger-band",
+    "title": "볼린저밴드",
+    "desc": "볼린저밴드 = 20일 이동평균 ± (2 x 표준편차)",
+    "aliases": [
+      "볼린저밴드"
+    ]
+  },
+  {
+    "slug": "circuit-breaker",
+    "title": "서킷브레이커",
+    "desc": "서킷브레이커 = 주가가 폭락할 때 거래를 멈추는 '비상 전원 차단기'. 공황 상태의 시장에 강제로 냉각 시간을 줍니다.",
+    "aliases": [
+      "서킷브레이커"
+    ]
+  },
+  {
+    "slug": "cpi",
+    "title": "CPI (소비자물가지수)",
+    "desc": "CPI = 장바구니 물가의 변화율",
+    "aliases": [
+      "CPI (소비자물가지수)",
+      "CPI",
+      "소비자물가지수"
+    ]
+  },
+  {
+    "slug": "crypto",
+    "title": "가상자산",
+    "desc": "가상자산 = 24시간 열려있는 글로벌 위험자산 시장",
+    "aliases": [
+      "가상자산"
+    ]
+  },
+  {
+    "slug": "dia",
+    "title": "DIA (다우존스 ETF)",
+    "desc": "DIA = 다우존스 30개 우량주를 한 번에 사는 ETF",
+    "aliases": [
+      "DIA (다우존스 ETF)",
+      "DIA",
+      "다우존스 ETF"
+    ]
+  },
+  {
+    "slug": "dividend-yield",
+    "title": "배당수익률",
+    "desc": "배당수익률 = 주당 배당금 / 현재 주가 x 100",
+    "aliases": [
+      "배당수익률"
+    ]
+  },
+  {
+    "slug": "dividend",
+    "title": "배당 (Dividend)",
+    "desc": "배당 = 기업이 주주에게 나눠주는 이익 분배금",
+    "aliases": [
+      "배당 (Dividend)",
+      "배당",
+      "Dividend"
+    ]
+  },
+  {
+    "slug": "dow-jones",
+    "title": "다우존스",
+    "desc": "다우존스 = 미국 대표 우량기업 30개의 주가 평균",
+    "aliases": [
+      "다우존스"
+    ]
+  },
+  {
+    "slug": "dxy",
+    "title": "달러인덱스",
+    "desc": "달러인덱스(DXY) = 달러의 '몸무게 측정기'",
+    "aliases": [
+      "달러인덱스"
+    ]
+  },
+  {
+    "slug": "eps",
+    "title": "EPS (주당순이익)",
+    "desc": "EPS = 당기순이익 / 발행주식 수",
+    "aliases": [
+      "EPS (주당순이익)",
+      "EPS",
+      "주당순이익"
+    ]
+  },
+  {
+    "slug": "etf",
+    "title": "ETF (상장지수펀드)",
+    "desc": "ETF = 지수를 따라가는 펀드를 주식처럼 사고파는 것",
+    "aliases": [
+      "ETF (상장지수펀드)",
+      "ETF",
+      "상장지수펀드"
+    ]
+  },
+  {
+    "slug": "fear-greed",
+    "title": "공포탐욕지수 (Fear & Greed Index)",
+    "desc": "공포탐욕지수 = 지금 시장이 겁에 질렸는지, 들떠 있는지를 0~100으로 측정한 지표",
+    "aliases": [
+      "공포탐욕지수 (Fear & Greed Index)",
+      "공포탐욕지수",
+      "Fear & Greed Index"
+    ]
+  },
+  {
+    "slug": "fed",
+    "title": "연준 (Fed)",
+    "desc": "연준 = 달러를 찍고 금리를 정하는 미국 중앙은행",
+    "aliases": [
+      "연준 (Fed)",
+      "연준",
+      "Fed"
+    ]
+  },
+  {
+    "slug": "fomc",
+    "title": "FOMC (연방공개시장위원회)",
+    "desc": "FOMC = 미국 금리를 결정하는 최고 회의체",
+    "aliases": [
+      "FOMC (연방공개시장위원회)",
+      "FOMC",
+      "연방공개시장위원회"
+    ]
+  },
+  {
+    "slug": "foreign-flow",
+    "title": "외국인수급",
+    "desc": "외국인수급 = 외국인 투자자의 순매수(사들인 금액 − 판 금액)",
+    "aliases": [
+      "외국인수급"
+    ]
+  },
+  {
+    "slug": "futures",
+    "title": "선물 (Futures)",
+    "desc": "선물 = 미래 가격을 오늘 미리 정해두는 계약",
+    "aliases": [
+      "선물 (Futures)",
+      "선물",
+      "Futures"
+    ]
+  },
+  {
+    "slug": "gdp",
+    "title": "GDP (국내총생산)",
+    "desc": "GDP = 한 나라 안에서 1년간 만들어낸 모든 가치의 합계",
+    "aliases": [
+      "GDP (국내총생산)",
+      "GDP",
+      "국내총생산"
+    ]
+  },
+  {
+    "slug": "gold",
+    "title": "금 (Gold)",
+    "desc": "금 = 위기의 피난처이자 달러의 거울",
+    "aliases": [
+      "금 (Gold)",
+      "금",
+      "Gold"
+    ]
+  },
+  {
+    "slug": "inflation",
+    "title": "인플레이션",
+    "desc": "인플레이션 = 돈의 가치가 떨어지면서 물건 가격이 전반적으로 오르는 현상",
+    "aliases": [
+      "인플레이션"
+    ]
+  },
+  {
+    "slug": "ipo",
+    "title": "IPO (기업공개)",
+    "desc": "IPO = 비상장 기업이 주식시장에 처음으로 문을 여는 날",
+    "aliases": [
+      "IPO (기업공개)",
+      "IPO",
+      "기업공개"
+    ]
+  },
+  {
+    "slug": "ism",
+    "title": "ISM (제조업지수)",
+    "desc": "ISM 제조업지수 = 공장 사장님들의 경기 체감 온도 (50 넘으면 확장)",
+    "aliases": [
+      "ISM (제조업지수)",
+      "ISM",
+      "제조업지수"
+    ]
+  },
+  {
+    "slug": "iwm",
+    "title": "IWM (러셀 2000 ETF)",
+    "desc": "IWM = 미국 소형주 2,000개를 한 번에 사는 ETF",
+    "aliases": [
+      "IWM (러셀 2000 ETF)",
+      "IWM",
+      "러셀 2000 ETF"
+    ]
+  },
+  {
+    "slug": "kodex200",
+    "title": "KODEX 200",
+    "desc": "KODEX 200 = 코스피 대형주 200개를 한 번에 사는 한국 대표 ETF",
+    "aliases": [
+      "KODEX 200"
+    ]
+  },
+  {
+    "slug": "kosdaq",
+    "title": "KOSDAQ (코스닥)",
+    "desc": "KOSDAQ = 한국의 중소·벤처기업 전용 주식시장",
+    "aliases": [
+      "KOSDAQ (코스닥)",
+      "KOSDAQ",
+      "코스닥"
+    ]
+  },
+  {
+    "slug": "kospi",
+    "title": "KOSPI (코스피)",
+    "desc": "KOSPI = 한국 증권시장의 온도계",
+    "aliases": [
+      "KOSPI (코스피)",
+      "KOSPI",
+      "코스피"
+    ]
+  },
+  {
+    "slug": "macd",
+    "title": "MACD (이동평균수렴확산)",
+    "desc": "MACD = 단기 EMA(12일) - 장기 EMA(26일)",
+    "aliases": [
+      "MACD (이동평균수렴확산)",
+      "MACD",
+      "이동평균수렴확산"
+    ]
+  },
+  {
+    "slug": "margin-credit",
+    "title": "신용거래·증거금 (Margin & Credit Trading)",
+    "desc": "신용거래 = 증권사에서 돈을 빌려 주식을 사는 것. 레버리지는 양날의 검",
+    "aliases": [
+      "신용거래·증거금 (Margin & Credit Trading)",
+      "신용거래·증거금",
+      "Margin & Credit Trading"
+    ]
+  },
+  {
+    "slug": "market-cap",
+    "title": "시가총액",
+    "desc": "시가총액 = 주가 x 발행주식 수",
+    "aliases": [
+      "시가총액"
+    ]
+  },
+  {
+    "slug": "mortgage",
+    "title": "모기지 (주택담보대출)",
+    "desc": "모기지 = 집을 담보로 잡고 빌리는 돈 (30년 모기지 금리가 핵심)",
+    "aliases": [
+      "모기지 (주택담보대출)",
+      "모기지",
+      "주택담보대출"
+    ]
+  },
+  {
+    "slug": "moving-average",
+    "title": "이동평균선",
+    "desc": "이동평균선 = 최근 N일간 종가의 평균을 매일 이어 그린 선",
+    "aliases": [
+      "이동평균선"
+    ]
+  },
+  {
+    "slug": "nasdaq",
+    "title": "나스닥",
+    "desc": "나스닥 = 기술주들의 운동장",
+    "aliases": [
+      "나스닥"
+    ]
+  },
+  {
+    "slug": "nfp",
+    "title": "NFP (비농업고용)",
+    "desc": "NFP = 한 달간 미국에서 새로 생긴 일자리 수 (농업 제외)",
+    "aliases": [
+      "NFP (비농업고용)",
+      "NFP",
+      "비농업고용"
+    ]
+  },
+  {
+    "slug": "ohlc",
+    "title": "시가·고가·저가·종가",
+    "desc": "OHLC = 시가(Open) · 고가(High) · 저가(Low) · 종가(Close), 하루 주가의 4개 좌표",
+    "aliases": [
+      "시가·고가·저가·종가"
+    ]
+  },
+  {
+    "slug": "order-types",
+    "title": "시장가·지정가 주문",
+    "desc": "시장가 = 지금 당장 체결, 가격은 시장에 맡김 / 지정가 = 내 가격 고수, 체결은 나중에",
+    "aliases": [
+      "시장가·지정가 주문"
+    ]
+  },
+  {
+    "slug": "pbr",
+    "title": "PBR (주가순자산비율)",
+    "desc": "PBR = 주가 / 주당순자산(BPS)",
+    "aliases": [
+      "PBR (주가순자산비율)",
+      "PBR",
+      "주가순자산비율"
+    ]
+  },
+  {
+    "slug": "pce",
+    "title": "PCE (개인소비지출물가지수)",
+    "desc": "PCE = 연준이 가장 신뢰하는 물가 지표",
+    "aliases": [
+      "PCE (개인소비지출물가지수)",
+      "PCE",
+      "개인소비지출물가지수"
+    ]
+  },
+  {
+    "slug": "per",
+    "title": "PER (주가수익비율)",
+    "desc": "PER = 주가 / 주당순이익(EPS)",
+    "aliases": [
+      "PER (주가수익비율)",
+      "PER",
+      "주가수익비율"
+    ]
+  },
+  {
+    "slug": "pmi",
+    "title": "PMI (구매관리자지수)",
+    "desc": "PMI = 기업 현장의 '경기 온도계', 50이 기준선",
+    "aliases": [
+      "PMI (구매관리자지수)",
+      "PMI",
+      "구매관리자지수"
+    ]
+  },
+  {
+    "slug": "ppi",
+    "title": "PPI (생산자물가지수)",
+    "desc": "PPI = 공장 출고 가격의 변화율 (CPI의 선행지표)",
+    "aliases": [
+      "PPI (생산자물가지수)",
+      "PPI",
+      "생산자물가지수"
+    ]
+  },
+  {
+    "slug": "preferred-stock",
+    "title": "우선주",
+    "desc": "우선주 = 배당을 먼저, 더 많이 받는 대신 주주총회 투표권(의결권)은 포기한 주식",
+    "aliases": [
+      "우선주"
+    ]
+  },
+  {
+    "slug": "price-limit",
+    "title": "상한가·하한가",
+    "desc": "상한가·하한가 = 하루에 주가가 움직일 수 있는 법적 최대 한계",
+    "aliases": [
+      "상한가·하한가"
+    ]
+  },
+  {
+    "slug": "program-trading",
+    "title": "프로그램매매",
+    "desc": "프로그램매매 = 사람이 아닌 시스템이 규칙에 따라 자동 실행하는 대량 주식 매매",
+    "aliases": [
+      "프로그램매매"
+    ]
+  },
+  {
+    "slug": "qe-qt",
+    "title": "양적완화 / 양적긴축 (QE/QT)",
+    "desc": "QE = 중앙은행이 직접 돈을 찍어 채권을 사들이는 것 / QT = 그 반대",
+    "aliases": [
+      "양적완화 / 양적긴축 (QE/QT)",
+      "양적완화 / 양적긴축",
+      "QE/QT"
+    ]
+  },
+  {
+    "slug": "qqq",
+    "title": "QQQ (나스닥 100 ETF)",
+    "desc": "QQQ = 나스닥 빅테크 100개를 한 번에 사는 ETF",
+    "aliases": [
+      "QQQ (나스닥 100 ETF)",
+      "QQQ",
+      "나스닥 100 ETF"
+    ]
+  },
+  {
+    "slug": "repo",
+    "title": "레포 (RP)",
+    "desc": "레포 = 채권을 맡기고 하루~며칠 돈을 빌리는 것 (전당포)",
+    "aliases": [
+      "레포 (RP)",
+      "레포",
+      "RP"
+    ]
+  },
+  {
+    "slug": "reverse-repo",
+    "title": "역레포 (RRP)",
+    "desc": "역레포 = 남는 현금을 연준에 맡기고 이자를 받는 것 (연준 예금)",
+    "aliases": [
+      "역레포 (RRP)",
+      "역레포",
+      "RRP"
+    ]
+  },
+  {
+    "slug": "rights-issue",
+    "title": "유상증자·무상증자",
+    "desc": "유상증자 = 새 주식을 팔아 돈을 조달 (주가 희석 주의), 무상증자 = 쌓인 잉여금을 주식으로 전환해 공짜 배포",
+    "aliases": [
+      "유상증자·무상증자"
+    ]
+  },
+  {
+    "slug": "roe",
+    "title": "ROE (자기자본이익률)",
+    "desc": "ROE = 당기순이익 / 자기자본 x 100",
+    "aliases": [
+      "ROE (자기자본이익률)",
+      "ROE",
+      "자기자본이익률"
+    ]
+  },
+  {
+    "slug": "rsi",
+    "title": "RSI (상대강도지수)",
+    "desc": "RSI = 상승폭 / (상승폭 + 하락폭) x 100",
+    "aliases": [
+      "RSI (상대강도지수)",
+      "RSI",
+      "상대강도지수"
+    ]
+  },
+  {
+    "slug": "russell2000",
+    "title": "러셀 2000",
+    "desc": "러셀 2000 = 미국 소형주 2,000개의 성적표",
+    "aliases": [
+      "러셀 2000"
+    ]
+  },
+  {
+    "slug": "sector",
+    "title": "업종·섹터",
+    "desc": "섹터 = 같은 업종끼리 묶은 주식 분류 단위. 어떤 섹터가 강세인지 파악하면 시장의 '체온'을 읽을 수 있습니다.",
+    "aliases": [
+      "업종·섹터"
+    ]
+  },
+  {
+    "slug": "short-selling",
+    "title": "공매도",
+    "desc": "공매도 = 빌려서 팔고 → 떨어지면 사서 갚고 → 차익 수익",
+    "aliases": [
+      "공매도"
+    ]
+  },
+  {
+    "slug": "sp500",
+    "title": "S&P 500",
+    "desc": "S&P 500 = 미국 주식시장의 '체온계'",
+    "aliases": [
+      "S&P 500"
+    ]
+  },
+  {
+    "slug": "spy",
+    "title": "SPY (S&P 500 ETF)",
+    "desc": "SPY = S&P 500을 통째로 사는 ETF",
+    "aliases": [
+      "SPY (S&P 500 ETF)",
+      "SPY",
+      "S&P 500 ETF"
+    ]
+  },
+  {
+    "slug": "stagflation",
+    "title": "스태그플레이션",
+    "desc": "스태그플레이션 = 경기는 죽는데 물가는 오르는 최악의 조합",
+    "aliases": [
+      "스태그플레이션"
+    ]
+  },
+  {
+    "slug": "stock-split",
+    "title": "액면분할 (Stock Split)",
+    "desc": "액면분할 = 피자를 더 많은 조각으로 자르는 것. 피자 크기(기업 가치)는 그대로",
+    "aliases": [
+      "액면분할 (Stock Split)",
+      "액면분할",
+      "Stock Split"
+    ]
+  },
+  {
+    "slug": "stop-loss",
+    "title": "손절·익절",
+    "desc": "손절 = 더 큰 손실을 막기 위해 손해를 보고 파는 것, 익절 = 목표 수익에 도달했을 때 이익을 확정하는 것",
+    "aliases": [
+      "손절·익절"
+    ]
+  },
+  {
+    "slug": "tapering",
+    "title": "테이퍼링",
+    "desc": "테이퍼링 = 돈 풀기(QE)를 서서히 줄이는 것 (수도꼭지 잠그기 시작)",
+    "aliases": [
+      "테이퍼링"
+    ]
+  },
+  {
+    "slug": "treasury-yield",
+    "title": "국채 수익률",
+    "desc": "국채 수익률 = 정부에 돈을 빌려줄 때 받는 이자율",
+    "aliases": [
+      "국채 수익률"
+    ]
+  },
+  {
+    "slug": "unemployment-rate",
+    "title": "실업률",
+    "desc": "실업률 = 일하고 싶은데 일 못 하는 사람의 비율",
+    "aliases": [
+      "실업률"
+    ]
+  },
+  {
+    "slug": "usd-krw",
+    "title": "원달러환율",
+    "desc": "원달러환율 상승 = 원화 약세 = 달러가 비싸진 것",
+    "aliases": [
+      "원달러환율"
+    ]
+  },
+  {
+    "slug": "vix",
+    "title": "VIX (공포지수)",
+    "desc": "VIX = S&P 500 옵션에서 추출한 30일 내재변동성(implied volatility)",
+    "aliases": [
+      "VIX (공포지수)",
+      "VIX",
+      "공포지수"
+    ]
+  },
+  {
+    "slug": "volume",
+    "title": "거래량",
+    "desc": "거래량 = 해당 기간에 실제로 사고팔린 주식 수(주)",
+    "aliases": [
+      "거래량"
+    ]
+  },
+  {
+    "slug": "wti",
+    "title": "WTI (서부텍사스원유)",
+    "desc": "WTI = 미국 원유 시장의 가격 기준표",
+    "aliases": [
+      "WTI (서부텍사스원유)",
+      "WTI",
+      "서부텍사스원유"
+    ]
+  },
+  {
+    "slug": "yield-curve",
+    "title": "장단기금리차 (수익률 곡선)",
+    "desc": "장단기금리차 = 10년물 금리 − 2년물 금리",
+    "aliases": [
+      "장단기금리차 (수익률 곡선)",
+      "장단기금리차",
+      "수익률 곡선"
+    ]
+  }
+]
