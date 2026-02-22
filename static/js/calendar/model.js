@@ -9,6 +9,19 @@
     var timeZone = calConfig.timezone || "Asia/Seoul";
     var periodDays = calConfig.period_days || { pm5: 5, pm10: 10, pm20: 20 };
 
+    var getMonthAnchorFormatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: timeZone,
+      year: "numeric",
+      month: "2-digit",
+    });
+
+    var buildCalendarFormatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
     function getEventStatus(event, now) {
       if (
         event.status === "예정" ||
@@ -124,12 +137,7 @@
         }
       });
 
-      var p = new Intl.DateTimeFormat("en-CA", {
-        timeZone: timeZone,
-        year: "numeric",
-        month: "2-digit",
-      })
-        .formatToParts(nearest.dateTime)
+      var p = getMonthAnchorFormatter.formatToParts(nearest.dateTime)
         .reduce(function (acc, cur) {
           acc[cur.type] = cur.value;
           return acc;
@@ -145,13 +153,7 @@
       var eventMap = {};
       events.forEach(function (e) {
         if (!e.dateTime || isNaN(e.dateTime.getTime())) return;
-        var parts = new Intl.DateTimeFormat("en-CA", {
-          timeZone: timeZone,
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        })
-          .formatToParts(e.dateTime)
+        var parts = buildCalendarFormatter.formatToParts(e.dateTime)
           .reduce(function (acc, cur) {
             acc[cur.type] = cur.value;
             return acc;

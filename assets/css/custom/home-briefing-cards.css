@@ -40,7 +40,7 @@
 
 .mp-filter-chip {
   background: rgba(var(--mp-bg-base-rgb) / 0.6);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.45);
   color: #94A3B8;
   font-family: var(--mp-font-mono);
   font-size: 0.7rem;
@@ -70,14 +70,17 @@
   border-color: rgba(124, 58, 237, 0.2);
   color: #64748B;
 }
+
 :root:not(.dark) .mp-regime-filter-label,
 :root:not(.dark) .mp-regime-filter-note {
   color: #475569;
 }
+
 :root:not(.dark) .mp-filter-chip:hover {
   border-color: #0891B2;
   color: #1E293B;
 }
+
 :root:not(.dark) .mp-filter-chip.is-active {
   background: rgba(8, 145, 178, 0.1);
   border-color: #0891B2;
@@ -99,6 +102,7 @@
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
   .mp-filter-chip {
     flex: 0 0 auto;
   }
@@ -123,17 +127,17 @@
 /* Timeline Date Group */
 .mp-date-group {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.2rem;
   position: relative;
 }
 
-.mp-date-group > .mp-briefing-card {
-  grid-column: span 6;
+.mp-date-group>.mp-briefing-card {
+  grid-column: span 1;
 }
 
-.mp-date-group > .mp-briefing-card:last-child:nth-child(even) {
-  grid-column: span 6;
+.mp-date-group>.mp-briefing-card:last-child:nth-child(even) {
+  grid-column: span 1;
 }
 
 .mp-date-label {
@@ -165,13 +169,13 @@
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .mp-date-label {
     margin-bottom: 0.5rem;
   }
 
-  .mp-date-group > .mp-briefing-card,
-  .mp-date-group > .mp-briefing-card:last-child:nth-child(even) {
+  .mp-date-group>.mp-briefing-card,
+  .mp-date-group>.mp-briefing-card:last-child:nth-child(even) {
     grid-column: auto;
     width: 100%;
   }
@@ -208,7 +212,7 @@
 
 .mp-briefing-card:hover {
   border-color: rgba(0, 240, 255, 0.4);
-  box-shadow: 
+  box-shadow:
     0 0 20px rgba(0, 240, 255, 0.1),
     0 10px 40px -10px rgba(0, 0, 0, 0.6);
   transform: translateY(-2px);
@@ -234,29 +238,48 @@
 
 
 /* Type Themes - Enhanced Visibility */
-.mp-card--pre .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
-  color: var(--mp-neon-cyan); 
-  border-color: var(--mp-neon-cyan); 
+.mp-card--pre .mp-briefing-card__type-tag {
+  background: #0A0A1A;
+  color: var(--mp-neon-cyan);
+  border-color: var(--mp-neon-cyan);
 }
-.mp-card--mid .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
-  color: var(--mp-neon-green); 
-  border-color: var(--mp-neon-green); 
+
+.mp-card--mid .mp-briefing-card__type-tag {
+  background: #0A0A1A;
+  color: var(--mp-neon-green);
+  border-color: var(--mp-neon-green);
 }
-.mp-card--post .mp-briefing-card__type-tag { 
-  background: #0A0A1A; 
-  color: #C084FC; /* Brighter purple */
-  border-color: #A855F7; 
+
+.mp-card--post .mp-briefing-card__type-tag {
+  background: #0A0A1A;
+  color: #C084FC;
+  /* Brighter purple */
+  border-color: #A855F7;
 }
 
 /* Light Mode Type Tag Overrides - Make them Pop */
-:root:not(.dark) .mp-card--pre .mp-briefing-card__type-tag { background: #0E7490; color: #FFFFFF; border-color: #0E7490; }
-:root:not(.dark) .mp-card--mid .mp-briefing-card__type-tag { background: #047857; color: #FFFFFF; border-color: #047857; }
-:root:not(.dark) .mp-card--post .mp-briefing-card__type-tag { background: #6D28D9; color: #FFFFFF; border-color: #6D28D9; }
+:root:not(.dark) .mp-card--pre .mp-briefing-card__type-tag {
+  background: #0E7490;
+  color: #FFFFFF;
+  border-color: #0E7490;
+}
+
+:root:not(.dark) .mp-card--mid .mp-briefing-card__type-tag {
+  background: #047857;
+  color: #FFFFFF;
+  border-color: #047857;
+}
+
+:root:not(.dark) .mp-card--post .mp-briefing-card__type-tag {
+  background: #6D28D9;
+  color: #FFFFFF;
+  border-color: #6D28D9;
+}
 
 /* Remove colored top borders, rely on the tag and hover state */
-.mp-card--pre, .mp-card--mid, .mp-card--post {
+.mp-card--pre,
+.mp-card--mid,
+.mp-card--post {
   border-top: 1px solid rgba(124, 58, 237, 0.25);
 }
 
@@ -281,6 +304,7 @@
 .mp-briefing-card__header time {
   font-family: var(--mp-font-mono);
   font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
   color: #64748B;
   flex-shrink: 0;
   margin-top: 0.2rem;
@@ -296,7 +320,7 @@
 
 .mp-briefing-card__summary {
   font-size: 0.95rem;
-  color: #94A3B8;
+  color: #CBD5E1;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   display: -webkit-box;
@@ -343,31 +367,66 @@
 
 /* Light Mode Overrides */
 /* Background/Border handled by CSS variables */
-:root:not(.dark) .mp-briefing-card__title { color: #1E1E3A; }
-:root:not(.dark) .mp-briefing-card__summary { color: #475569; }
+:root:not(.dark) .mp-briefing-card__title {
+  color: #1E1E3A;
+}
+
+:root:not(.dark) .mp-briefing-card__summary {
+  color: #475569;
+}
 
 @media (max-width: 768px) {
   .mp-briefing-card {
     width: 100%;
-    padding: 1.3rem 1.25rem 1rem;
+    padding: 2.1rem 1.25rem 1.1rem;
   }
 
-  .mp-briefing-card__title { font-size: 1rem; }
+  .mp-briefing-card__title {
+    font-size: 1rem;
+  }
 }
 
 /* Regime Colors - Replaces inline styles */
-.mp-briefing-card[data-regime="RISK_ON"] .mp-briefing-card__regime { color: #00FF88; }
-.mp-briefing-card[data-regime="CAUTIOUS"] .mp-briefing-card__regime { color: #FFD600; }
-.mp-briefing-card[data-regime="RISK_OFF"] .mp-briefing-card__regime { color: #FF3366; }
-.mp-briefing-card[data-regime="PANIC"] .mp-briefing-card__regime { color: #FF0040; }
-.mp-briefing-card[data-regime="NEUTRAL"] .mp-briefing-card__regime { color: #94A3B8; }
+.mp-briefing-card[data-regime="RISK_ON"] .mp-briefing-card__regime {
+  color: #00FF88;
+}
+
+.mp-briefing-card[data-regime="CAUTIOUS"] .mp-briefing-card__regime {
+  color: #FFD600;
+}
+
+.mp-briefing-card[data-regime="RISK_OFF"] .mp-briefing-card__regime {
+  color: #FF3366;
+}
+
+.mp-briefing-card[data-regime="PANIC"] .mp-briefing-card__regime {
+  color: #FF0040;
+}
+
+.mp-briefing-card[data-regime="NEUTRAL"] .mp-briefing-card__regime {
+  color: #94A3B8;
+}
 
 /* Light Mode Regime Colors for readability */
-:root:not(.dark) .mp-briefing-card[data-regime="RISK_ON"] .mp-briefing-card__regime { color: #059669; }
-:root:not(.dark) .mp-briefing-card[data-regime="CAUTIOUS"] .mp-briefing-card__regime { color: #D97706; }
-:root:not(.dark) .mp-briefing-card[data-regime="RISK_OFF"] .mp-briefing-card__regime { color: #DC2626; }
-:root:not(.dark) .mp-briefing-card[data-regime="PANIC"] .mp-briefing-card__regime { color: #B91C1C; }
-:root:not(.dark) .mp-briefing-card[data-regime="NEUTRAL"] .mp-briefing-card__regime { color: #64748B; }
+:root:not(.dark) .mp-briefing-card[data-regime="RISK_ON"] .mp-briefing-card__regime {
+  color: #059669;
+}
+
+:root:not(.dark) .mp-briefing-card[data-regime="CAUTIOUS"] .mp-briefing-card__regime {
+  color: #D97706;
+}
+
+:root:not(.dark) .mp-briefing-card[data-regime="RISK_OFF"] .mp-briefing-card__regime {
+  color: #DC2626;
+}
+
+:root:not(.dark) .mp-briefing-card[data-regime="PANIC"] .mp-briefing-card__regime {
+  color: #B91C1C;
+}
+
+:root:not(.dark) .mp-briefing-card[data-regime="NEUTRAL"] .mp-briefing-card__regime {
+  color: #64748B;
+}
 
 /* New Badge */
 .mp-new-badge {
@@ -387,13 +446,23 @@
 }
 
 @keyframes pulse-new {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 /* Light Mode Badge */
 :root:not(.dark) .mp-new-badge {
-  background: #DC2626; /* Red-600 */
+  background: #DC2626;
+  /* Red-600 */
 }
 
 /* Summary Highlights */
@@ -415,14 +484,17 @@
   border-color: rgba(0, 255, 136, 0.5);
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.6);
 }
+
 .mp-briefing-card[data-regime="CAUTIOUS"]:hover {
   border-color: rgba(255, 214, 0, 0.5);
   box-shadow: 0 0 20px rgba(255, 214, 0, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.6);
 }
+
 .mp-briefing-card[data-regime="RISK_OFF"]:hover {
   border-color: rgba(255, 51, 102, 0.5);
   box-shadow: 0 0 20px rgba(255, 51, 102, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.6);
 }
+
 .mp-briefing-card[data-regime="PANIC"]:hover {
   border-color: rgba(255, 0, 64, 0.5);
   box-shadow: 0 0 20px rgba(255, 0, 64, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.6);
@@ -433,14 +505,17 @@
   border-color: rgba(5, 150, 105, 0.4);
   box-shadow: 0 4px 20px -4px rgba(5, 150, 105, 0.2);
 }
+
 :root:not(.dark) .mp-briefing-card[data-regime="CAUTIOUS"]:hover {
   border-color: rgba(217, 119, 6, 0.4);
   box-shadow: 0 4px 20px -4px rgba(217, 119, 6, 0.2);
 }
+
 :root:not(.dark) .mp-briefing-card[data-regime="RISK_OFF"]:hover {
   border-color: rgba(220, 38, 38, 0.4);
   box-shadow: 0 4px 20px -4px rgba(220, 38, 38, 0.2);
 }
+
 :root:not(.dark) .mp-briefing-card[data-regime="PANIC"]:hover {
   border-color: rgba(185, 28, 28, 0.4);
   box-shadow: 0 4px 20px -4px rgba(185, 28, 28, 0.2);

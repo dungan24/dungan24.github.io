@@ -35,14 +35,16 @@
       return String(year) + '-' + pad2(month) + '-' + pad2(day);
     }
 
+    var kstYmdFormatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: timeZone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+
     function kstYmd(date) {
       if (!date || isNaN(date.getTime())) return '';
-      var p = new Intl.DateTimeFormat('en-CA', {
-        timeZone: timeZone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      }).formatToParts(date).reduce(function (acc, cur) {
+      var p = kstYmdFormatter.formatToParts(date).reduce(function (acc, cur) {
         acc[cur.type] = cur.value;
         return acc;
       }, {});
@@ -64,17 +66,19 @@
       return set;
     }
 
+    var formatKstFormatter = new Intl.DateTimeFormat(locale, {
+      timeZone: timeZone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+
     function formatKst(date) {
       if (!date || isNaN(date.getTime())) return '-';
-      var p = new Intl.DateTimeFormat(locale, {
-        timeZone: timeZone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      }).formatToParts(date).reduce(function (acc, cur) {
+      var p = formatKstFormatter.formatToParts(date).reduce(function (acc, cur) {
         acc[cur.type] = cur.value;
         return acc;
       }, {});

@@ -17,15 +17,16 @@
     var cm = colorMap || {};
     var rm = rgbMap || {};
     var defaults = resolveColorMap();
+    var lRegime = regime ? regime.toLowerCase() : "";
     var color =
       cm[regime] ||
-      defaults.regime[regime] ||
-      defaults.regime.CAUTIOUS ||
+      defaults.regime[lRegime] ||
+      defaults.regime.cautious ||
       "#fbbf24";
     var rgb =
       rm[regime] ||
-      defaults.rgb[regime] ||
-      defaults.rgb.CAUTIOUS ||
+      defaults.rgb[lRegime] ||
+      defaults.rgb.cautious ||
       "251 191 36";
     return { color: color, rgb: rgb };
   }
@@ -118,12 +119,12 @@
       '<div class="mp-post-hero__badges">' +
       (regime
         ? '<span class="mp-regime-badge" data-regime="' +
-          esc(regime) +
-          '">' +
-          regimeIcon +
-          " " +
-          esc(regime) +
-          "</span>"
+        esc(regime) +
+        '">' +
+        regimeIcon +
+        " " +
+        esc(regime) +
+        "</span>"
         : '<span class="mp-regime-badge mp-regime-badge--pending"></span>') +
       metricsHtml +
       "</div>" +

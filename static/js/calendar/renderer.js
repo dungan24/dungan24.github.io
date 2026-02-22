@@ -308,6 +308,13 @@
 
       upcomingWrap.appendChild(filterBar);
 
+      var upcomingDateFormatter = new Intl.DateTimeFormat(locale, {
+        month: "2-digit",
+        day: "2-digit",
+        weekday: "short",
+        timeZone: calConfig.timezone || "Asia/Seoul",
+      });
+
       function renderUpcomingList() {
         var now = parser.getKstNow(); // 매 호출마다 현재 시각 갱신
         upcomingList.innerHTML = "";
@@ -337,12 +344,7 @@
         var lastDateStr = "";
 
         visible.forEach(function (e) {
-          var currentDateStr = e.dateTime.toLocaleDateString(locale, {
-            month: "2-digit",
-            day: "2-digit",
-            weekday: "short",
-            timeZone: calConfig.timezone || "Asia/Seoul",
-          });
+          var currentDateStr = upcomingDateFormatter.format(e.dateTime);
 
           if (currentDateStr !== lastDateStr) {
             var dateDivider = document.createElement("div");

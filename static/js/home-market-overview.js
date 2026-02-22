@@ -35,11 +35,13 @@
     chartDataPrefix = cfgPrefix.charAt(0) === "/" ? cfgPrefix : "/" + cfgPrefix;
   }
 
+  var defHex = "#7C3AED";
+  var defRgb = "124 58 237";
   var REGIME_COLORS = {
-    RISK_ON: { hex: c.RISK_ON, rgb: r.RISK_ON },
-    CAUTIOUS: { hex: c.CAUTIOUS, rgb: r.CAUTIOUS },
-    RISK_OFF: { hex: c.RISK_OFF, rgb: r.RISK_OFF },
-    PANIC: { hex: c.PANIC, rgb: r.PANIC },
+    RISK_ON: { hex: c.risk_on || "#4ade80", rgb: r.risk_on || "74 222 128" },
+    CAUTIOUS: { hex: c.cautious || "#fbbf24", rgb: r.cautious || "251 191 36" },
+    RISK_OFF: { hex: c.risk_off || "#f87171", rgb: r.risk_off || "248 113 113" },
+    PANIC: { hex: c.panic || "#ef4444", rgb: r.panic || "239 68 68" },
   };
 
   // WHY: mp-config.js의 defaultConfig가 이미 fallback을 제공하므로 중복 불필요
@@ -219,10 +221,14 @@
 
     container.innerHTML =
       html ||
-      '<span class="mp-loading-inline">' +
-        (labels.empty_events ||
-          "\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4") +
-        "</span>";
+      '<div class="mp-ticker-group is-offline">' +
+      '<div class="mp-ticker-group__title">SYSTEM STATUS</div>' +
+      '<div class="mp-ticker-row is-fear-greed" style="opacity:0.6; --fg-value:0%; --fg-color:#ef4444; padding-bottom: 0.5rem; position: relative;">' +
+      '<span class="mp-ticker-name" style="color:#ef4444">MARKET DATA FEED</span>' +
+      '<span class="mp-ticker-price" style="color:#ef4444">OFFLINE</span>' +
+      '<span class="mp-ticker-change is-dash">-</span>' +
+      '</div>' +
+      '</div>';
 
     // Trigger animations after render
     animateNumbers(container);
@@ -353,10 +359,14 @@
       var tg = DOM.tickerGroups;
       if (tg) {
         tg.innerHTML =
-          '<span class="mp-loading-inline">' +
-          (labels.empty_events ||
-            "\uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC62C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4") +
-          "</span>";
+          '<div class="mp-ticker-group is-offline">' +
+          '<div class="mp-ticker-group__title">SYSTEM STATUS</div>' +
+          '<div class="mp-ticker-row is-fear-greed" style="opacity:0.6; --fg-value:0%; --fg-color:#ef4444; padding-bottom: 0.5rem; position: relative;">' +
+          '<span class="mp-ticker-name" style="color:#ef4444">MARKET DATA FEED</span>' +
+          '<span class="mp-ticker-price" style="color:#ef4444">OFFLINE</span>' +
+          '<span class="mp-ticker-change is-dash">-</span>' +
+          '</div>' +
+          '</div>';
       }
 
       var statusDot = DOM.liveStatus;

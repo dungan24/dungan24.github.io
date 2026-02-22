@@ -46,8 +46,14 @@
     }
 
     // --- 변동률 기반 (나머지 전체) ---
-    var chg = parseFloat((changeText || "").replace(/[^0-9.\-+]/g, ""));
-    if (isNaN(chg)) return { tone: "neutral", label: "보합" };
+    var chgRaw = (changeText || "").trim();
+    var chg = parseFloat(chgRaw.replace(/[^0-9.\-+]/g, ""));
+
+    // Point 4, 6: 데이터 부재시 또는 숫자가 아닐 때 기본 neutral(보합) 반환
+    if (isNaN(chg) || chgRaw === "-" || chgRaw === "") {
+      return { tone: "neutral", label: "보합" };
+    }
+
     if (chg >= 2) return { tone: "ok", label: "강세" };
     if (chg >= 0.5) return { tone: "ok", label: "상승" };
     if (chg >= 0.2) return { tone: "ok", label: "강보합" };
@@ -213,21 +219,29 @@
 
           var name = document.createElement("span");
           name.className = "mp-ticker-name";
-          name.textContent = (tds[0].textContent || "").trim();
+          var nameText = (tds[0].textContent || "").trim();
+          name.textContent = nameText;
 
           var price = document.createElement("span");
           price.className = "mp-ticker-price";
-          price.textContent = (tds[1].textContent || "").trim();
+          var priceRaw = (tds[1].textContent || "").trim();
 
           var change = document.createElement("span");
           change.className = "mp-ticker-change";
-          var changeText =
+          var changeText = (
             tds.length >= 4
               ? (tds[3].textContent || "").trim()
-              : (tds[2].textContent || "").trim();
+              : (tds[2].textContent || "").trim()
+          );
+
+          // Point 4: 데이터 부재 ("-") 처리
+          if (priceRaw === "-" || changeText === "-") {
+            tickerRow.classList.add("is-missing");
+          }
+
           var status = parseAssessmentStatus(changeText, {
-            metricName: (name.textContent || "").trim(),
-            valueText: (price.textContent || "").trim(),
+            metricName: nameText,
+            valueText: priceRaw,
           });
 
           if (status) {
@@ -235,19 +249,34 @@
             change.appendChild(buildStatusBadge(status));
           } else {
             change.textContent = changeText;
-            if (/^\+/.test(changeText) || /\u2191/.test(changeText)) {
+            if (changeText === "-") {
+              change.classList.add("is-dash");
+            } else if (/^\+/.test(changeText) || /\u2191/.test(changeText)) {
               change.classList.add("num-up");
             } else if (/^-/.test(changeText) && changeText !== "-") {
               change.classList.add("num-down");
             }
           }
 
-          var nameText = (name.textContent || "").trim();
-
-          // 공포탐욕지수: price에서 숫자만 추출 ("8 (극단적 공포)" → "8")
+          // Point 5: 공포탐욕지수 가로 게이지 바 처리
           if (/공포탐욕/.test(nameText)) {
-            var fgNum = (price.textContent || "").replace(/[^0-9]/g, "");
-            price.textContent = fgNum || price.textContent;
+            var fgNum = parseInt(priceRaw.replace(/[^0-9]/g, ""), 10);
+            if (!isNaN(fgNum)) {
+                price.textContent = fgNum;
+                tickerRow.classList.add("is-fear-greed");
+                tickerRow.style.setProperty("--fg-value", fgNum + "%");
+                var fgColor = "#94a3b8"; // neutral
+                if (fgNum <= 25) fgColor = "#ef4444"; // danger
+                else if (fgNum <= 46) fgColor = "#f59e0b"; // warn
+                else if (fgNum <= 54) fgColor = "#94a3b8"; // neutral
+                else if (fgNum <= 74) fgColor = "#10b981"; // ok
+                else fgColor = "#c084fc"; // accent
+                tickerRow.style.setProperty("--fg-color", fgColor);
+            } else {
+                price.textContent = priceRaw;
+            }
+          } else {
+            price.textContent = priceRaw;
           }
 
           tickerRow.appendChild(name);
@@ -258,13 +287,12 @@
           var zoneSpan = document.createElement("span");
           zoneSpan.className = "mp-ticker-zone";
           var zoneInfo = getZoneInfo(nameText, price.textContent, changeText);
-          if (zoneInfo) {
-            var zoneBadge = buildStatusBadge(zoneInfo);
-            zoneBadge.classList.add("mp-zone-badge");
-            zoneSpan.appendChild(zoneBadge);
-          } else {
-            zoneSpan.classList.add("is-empty");
-          }
+          
+          // Point 6: 모든 항목이 최소 neutral 톤이라도 갖게 강제 (getZoneInfo에서 보장)
+          var zoneBadge = buildStatusBadge(zoneInfo);
+          zoneBadge.classList.add("mp-zone-badge");
+          zoneSpan.appendChild(zoneBadge);
+          
           tickerRow.appendChild(zoneSpan);
 
           card.appendChild(tickerRow);

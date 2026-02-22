@@ -519,28 +519,78 @@
 
 .briefing-section .mp-ticker-row {
   display: grid;
-  grid-template-columns: minmax(90px, 1.8fr) minmax(55px, 1fr) auto auto;
+  grid-template-columns: 1.5fr 1fr 0.8fr 0.8fr; /* Point 1: Fixed ratio */
   align-items: center;
-  column-gap: 0.4rem;
-  line-height: 1;
+  column-gap: 0.6rem;
+  line-height: 1.4;
+  padding: 0.15rem 0;
 }
 
+/* Point 4: Row-level opacity for missing data */
+.briefing-section .mp-ticker-row.is-missing {
+  opacity: 0.6;
+}
+
+/* Point 5: Fear & Greed Special Treatment (Gauge Bar) */
+.briefing-section .mp-ticker-row.is-fear-greed {
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-top: 0.4rem;
+}
+.briefing-section .mp-ticker-row.is-fear-greed::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+:root:not(.dark) .briefing-section .mp-ticker-row.is-fear-greed::after {
+  background: rgba(0, 0, 0, 0.08); /* Track color for light mode */
+}
+.briefing-section .mp-ticker-row.is-fear-greed::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  width: var(--fg-value, 50%);
+  background: var(--fg-color, #94a3b8);
+  box-shadow: 0 0 6px var(--fg-color, #94a3b8);
+  border-radius: 2px;
+  z-index: 1;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .briefing-section .mp-ticker-name {
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.8rem;
+  font-size: 0.875rem; /* Point 3: 14px */
+  color: rgb(var(--color-neutral-400)); /* Point 2: Muted name */
 }
 
 .briefing-section .mp-ticker-price {
-  font-size: 0.8rem;
+  font-size: 0.875rem; /* Point 3: 14px */
+  font-weight: 600;
+  color: #fff; /* Point 2: Bright price */
   font-variant-numeric: tabular-nums;
 }
 
+:root:not(.dark) .briefing-section .mp-ticker-price {
+  color: #0E7490; /* Darker Cyan for Light mode */
+}
+
 .briefing-section .mp-ticker-change {
-  font-size: 0.75rem;
+  font-size: 0.875rem; /* Point 3: 14px */
   font-variant-numeric: tabular-nums;
+  justify-self: end;
+}
+
+.briefing-section .mp-ticker-change.is-dash {
+  opacity: 0.3; /* Point 4: Dash opacity */
 }
 
 .briefing-section .mp-ticker-price,
@@ -591,7 +641,7 @@
   }
 
   .briefing-section .mp-ticker-row {
-    grid-template-columns: minmax(100px, 2fr) minmax(50px, 1fr) auto auto;
+    grid-template-columns: 1.5fr 1fr 0.8fr 0.8fr;
     column-gap: 0.4rem;
   }
 
@@ -605,8 +655,19 @@
 
 @media (max-width: 640px) {
   .briefing-section .mp-ticker-row {
-    grid-template-columns: minmax(90px, 2fr) minmax(45px, 1fr) auto auto;
+    grid-template-columns: 1.5fr 1fr 0.6fr 0.6fr;
     column-gap: 0.3rem;
+  }
+
+  /* Point 7: Hide status text, keep dot only in ticker rows */
+  .mp-ticker-row .mp-status-badge .mp-status-label {
+    display: none;
+  }
+  .mp-ticker-row .mp-status-badge {
+    padding: 0.3rem;
+    min-width: 0;
+    justify-content: center;
+    gap: 0;
   }
 }
 

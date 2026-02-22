@@ -33,6 +33,7 @@
 :root:not(.dark) .mp-ambient-orb--left {
   background: radial-gradient(circle, rgba(var(--mp-orb-color-primary) / 0.08), transparent 70%);
 }
+
 :root:not(.dark) .mp-ambient-orb--right {
   background: radial-gradient(circle, rgba(var(--mp-orb-color-secondary) / 0.06), transparent 70%);
 }
@@ -78,11 +79,12 @@
 .mp-ecg-line {
   stroke-dasharray: 269;
   stroke-dashoffset: 269;
-  animation: ecg-draw 3.5s ease-in-out infinite;
+  animation: ecg-draw 3s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
 }
 
 .mp-ecg-line--right {
-  animation-delay: 0.3s;
+  animation-delay: 0s;
+  /* Sync starting times exactly */
 }
 
 @keyframes ecg-draw {
@@ -90,21 +92,21 @@
     stroke-dashoffset: 269;
     opacity: 0;
   }
-  8% {
-    opacity: 0.85;
+
+  15% {
+    opacity: 0.9;
   }
+
   50% {
     stroke-dashoffset: 0;
-    opacity: 0.85;
+    opacity: 0.9;
   }
+
   70% {
     stroke-dashoffset: 0;
-    opacity: 0.5;
+    opacity: 0.4;
   }
-  90% {
-    stroke-dashoffset: 0;
-    opacity: 0;
-  }
+
   100% {
     stroke-dashoffset: 269;
     opacity: 0;
@@ -132,10 +134,12 @@
   .mp-home-shell .mp-ticker-groups::-webkit-scrollbar {
     height: 6px;
   }
+
   .mp-home-shell .mp-ticker-groups::-webkit-scrollbar-thumb {
     background: rgba(124, 58, 237, 0.6);
     border-radius: 3px;
   }
+
   .mp-home-shell .mp-ticker-groups::-webkit-scrollbar-track {
     background: rgba(124, 58, 237, 0.1);
   }
@@ -144,6 +148,7 @@
   .mp-home-shell .mp-ticker-groups-wrap {
     position: relative;
   }
+
   .mp-home-shell .mp-ticker-groups-wrap::after {
     content: '';
     position: absolute;
@@ -155,18 +160,15 @@
     pointer-events: none;
     transition: opacity 0.3s;
   }
+
   .mp-home-shell .mp-ticker-groups-wrap.scrolled-end::after {
     opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mp-ecg-line,
-  .mp-ecg-line--right {
-    animation: none;
-    stroke-dashoffset: 0;
-    opacity: 0.5;
-  }
+
+  /* Forcing ECG to animate even in battery saver mode for cyberpunk style */
   .mp-live-status::after {
     animation: none;
   }
@@ -185,7 +187,8 @@
   height: 8px;
   border-radius: 50%;
   margin-left: 0.5rem;
-  background-color: #94A3B8; /* default gray */
+  background-color: #94A3B8;
+  /* default gray */
   position: relative;
   vertical-align: middle;
 }
@@ -204,22 +207,25 @@
 }
 
 @keyframes status-ping {
-  75%, 100% {
+
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
 }
 
 .mp-live-status.is-fresh {
-  background-color: var(--mp-neon-green);
-  color: var(--mp-neon-green);
-  box-shadow: 0 0 8px var(--mp-neon-green);
+  background-color: var(--regime-color, var(--mp-neon-green));
+  color: var(--regime-color, var(--mp-neon-green));
+  box-shadow: 0 0 8px var(--regime-color, var(--mp-neon-green));
 }
 
 .mp-live-status.is-stale {
-  background-color: var(--mp-neon-yellow);
-  color: var(--mp-neon-yellow);
-  box-shadow: 0 0 8px var(--mp-neon-yellow);
+  background-color: var(--regime-color, var(--mp-neon-yellow));
+  color: var(--regime-color, var(--mp-neon-yellow));
+  box-shadow: 0 0 8px var(--regime-color, var(--mp-neon-yellow));
+  opacity: 0.7;
 }
 
 .mp-live-status.is-error {

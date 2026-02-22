@@ -310,7 +310,7 @@
 
 /* ===== Glossary Detail Layout ===== */
 @media (min-width: 1024px) {
-  section:has(pre.mermaid) > div.min-w-0.min-h-0.max-w-fit {
+  section:has(pre.mermaid)>div.min-w-0.min-h-0.max-w-fit {
     width: 100%;
     max-width: none;
     flex: 1 1 auto;
@@ -379,7 +379,7 @@ pre.mermaid svg {
   fill: rgba(124, 58, 237, 0.25) !important;
 }
 
-.dark pre.mermaid svg text.actor > tspan {
+.dark pre.mermaid svg text.actor>tspan {
   fill: #e2e8f0 !important;
 }
 
@@ -442,6 +442,13 @@ pre.mermaid svg {
     flex-wrap: nowrap;
     padding-bottom: 0.5rem;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .gl-toolbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
   }
 
   .gl-chip {
