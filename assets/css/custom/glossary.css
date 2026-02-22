@@ -796,12 +796,21 @@ pre.mermaid svg {
 /* 테이블 스타일 — specificity 강화 (.prose override) */
 .gl-detail .prose table,
 .gl-detail .article-content table {
-  width: 100%;
+  width: 100% !important;
+  min-width: 100%;
+  table-layout: auto;
+  display: table !important;
   border-collapse: collapse;
   font-size: 0.88rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   overflow: hidden;
+}
+
+/* 본문 컨테이너 — flex 전폭 사용 */
+.gl-detail .min-w-0.max-w-fit {
+  max-width: 100%;
+  flex-grow: 1;
 }
 
 .gl-detail .prose thead th,
