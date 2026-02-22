@@ -1,97 +1,166 @@
 {{ define "main" }}
 {{ .Store.Set "scope" "list" }}
-<header>
-  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
-  {{ with .Description }}
-    <p class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+
+{{/* ── 데이터 수집 ── */}}
+{{ $pages := .Pages }}
+{{ $totalCount := len $pages }}
+{{ $consonants := slice "ㄱ" "ㄴ" "ㄷ" "ㄹ" "ㅁ" "ㅂ" "ㅅ" "ㅇ" "ㅈ" "ㅊ" "ㅋ" "ㅌ" "ㅍ" "ㅎ" }}
+{{ $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
+{{ $existConsonants := slice }}
+{{ $existLetters := slice }}
+{{ $categories := slice }}
+{{ range $pages }}
+  {{ with .Params.consonant }}{{ $existConsonants = $existConsonants | append . }}{{ end }}
+  {{ with .Params.letter }}{{ $existLetters = $existLetters | append . }}{{ end }}
+  {{ with .Params.category }}{{ $categories = $categories | append . }}{{ end }}
+{{ end }}
+{{ $existConsonants = $existConsonants | uniq }}
+{{ $existLetters = $existLetters | uniq }}
+{{ $categories = $categories | uniq | sort }}
+
+{{/* ── 피처드: 최신 date 3개 ── */}}
+{{ $featured := first 3 $pages.ByDate.Reverse }}
+
+{{/* ========== 히어로 ========== */}}
+<section class="gl-hero">
+  <div class="gl-hero__inner">
+    <h1 class="gl-hero__title">{{ .Title }}</h1>
+    {{ with .Description }}
+      <p class="gl-hero__subtitle">{{ . }}</p>
+    {{ end }}
+    <div class="gl-hero__search">
+      <svg class="gl-hero__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="gl-search" class="gl-hero__search-input" placeholder="용어를 검색하세요...">
+    </div>
+    <p class="gl-hero__count"><span id="gl-count">{{ $totalCount }}</span>개 용어 수록</p>
+    {{ with .Content }}
+      <div class="gl-hero__note">{{ . }}</div>
+    {{ end }}
+  </div>
+</section>
+
+{{/* ========== 필터 바 (sticky) ========== */}}
+<nav class="gl-filter-bar" id="gl-filter-bar">
+  <div class="gl-filter-bar__inner">
+    {{/* 초성/영문 */}}
+    <div class="gl-filter-group">
+      <span class="gl-filter-group__label">초성</span>
+      <div class="gl-filter-group__pills">
+        {{ range $c := $consonants }}
+          {{ if in $existConsonants $c }}
+            <button class="gl-pill gl-pill--letter" data-filter-type="consonant" data-filter-value="{{ $c }}">{{ $c }}</button>
+          {{ end }}
+        {{ end }}
+        {{ range $l := $letters }}
+          {{ if in $existLetters $l }}
+            <button class="gl-pill gl-pill--letter" data-filter-type="letter" data-filter-value="{{ $l }}">{{ $l }}</button>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+
+    {{/* 카테고리 */}}
+    <div class="gl-filter-group">
+      <span class="gl-filter-group__label">카테고리</span>
+      <div class="gl-filter-group__pills">
+        {{ range $cat := $categories }}
+          <button class="gl-pill gl-pill--category" data-filter-type="category" data-filter-value="{{ $cat }}">{{ $cat }}</button>
+        {{ end }}
+      </div>
+    </div>
+
+    {{/* 난이도 */}}
+    <div class="gl-filter-group">
+      <span class="gl-filter-group__label">난이도</span>
+      <div class="gl-filter-group__pills">
+        <button class="gl-pill gl-pill--beginner" data-filter-type="difficulty" data-filter-value="초급"><span class="gl-pill__dot"></span>초급</button>
+        <button class="gl-pill gl-pill--intermediate" data-filter-type="difficulty" data-filter-value="중급"><span class="gl-pill__dot"></span>중급</button>
+        <button class="gl-pill gl-pill--advanced" data-filter-type="difficulty" data-filter-value="고급"><span class="gl-pill__dot"></span>고급</button>
+      </div>
+    </div>
+
+    {{/* 활성 필터 요약 + 초기화 */}}
+    <div class="gl-filter-summary" id="gl-filter-summary" style="display:none;">
+      <span class="gl-filter-summary__text" id="gl-filter-summary-text"></span>
+      <button class="gl-filter-reset" id="gl-filter-reset">초기화</button>
+    </div>
+  </div>
+</nav>
+
+{{/* ========== 피처드 카드 (이달의 용어) ========== */}}
+<section class="gl-container" id="gl-main">
+  <div class="gl-featured" id="gl-featured">
+    <h2 class="gl-section-title">최신 용어</h2>
+    <div class="gl-featured__grid">
+      {{ range $featured }}
+        {{ $slug := .File.ContentBaseName }}
+        <a href="{{ .RelPermalink }}" class="gl-fcard"
+           data-consonant="{{ .Params.consonant }}"
+           data-letter="{{ .Params.letter }}"
+           data-category="{{ .Params.category }}"
+           data-difficulty="{{ .Params.difficulty }}"
+           data-title="{{ .Title }}"
+           data-description="{{ .Description }}">
+          <div class="gl-fcard__img-wrap">
+            <img src="/images/glossary/{{ $slug }}.png" alt="{{ .Title }}" class="gl-fcard__img" loading="lazy">
+          </div>
+          <div class="gl-fcard__body">
+            <h3 class="gl-fcard__title">{{ .Title }}</h3>
+            {{ with .Params.term_en }}
+              <span class="gl-fcard__en">{{ . }}</span>
+            {{ end }}
+            <p class="gl-fcard__desc">{{ .Description }}</p>
+            <div class="gl-fcard__meta">
+              {{ with .Params.category }}
+                <span class="gl-badge gl-badge--category">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.difficulty }}
+                <span class="gl-badge gl-badge--{{ cond (eq . "초급") "beginner" (cond (eq . "중급") "intermediate" "advanced") }}">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+
+  {{/* ========== 카테고리별 섹션 ========== */}}
+  {{ range $cat := $categories }}
+    {{ $catPages := where $pages ".Params.category" $cat }}
+    <section class="gl-cat-section" data-category="{{ $cat }}">
+      <h2 class="gl-section-title">{{ $cat }}</h2>
+      <div class="gl-cat-grid">
+        {{ range $catPages.ByTitle }}
+          {{ $slug := .File.ContentBaseName }}
+          <a href="{{ .RelPermalink }}" class="gl-card"
+             data-consonant="{{ .Params.consonant }}"
+             data-letter="{{ .Params.letter }}"
+             data-category="{{ .Params.category }}"
+             data-difficulty="{{ .Params.difficulty }}"
+             data-title="{{ .Title }}"
+             data-description="{{ .Description }}">
+            <div class="gl-card__thumb">
+              <img src="/images/glossary/{{ $slug }}.png" alt="{{ .Title }}" loading="lazy">
+            </div>
+            <div class="gl-card__body">
+              <div class="gl-card__header">
+                <h3 class="gl-card__title">{{ .Title }}</h3>
+                {{ with .Params.term_en }}
+                  <span class="gl-card__en">{{ . }}</span>
+                {{ end }}
+              </div>
+              <p class="gl-card__desc">{{ .Description }}</p>
+              <div class="gl-card__footer">
+                {{ with .Params.difficulty }}
+                  <span class="gl-badge gl-badge--{{ cond (eq . "초급") "beginner" (cond (eq . "중급") "intermediate" "advanced") }}">{{ . }}</span>
+                {{ end }}
+              </div>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    </section>
   {{ end }}
-</header>
-
-<section class="gl-container mt-6">
-  {{/* 검색 + 카운트 */}}
-  <div class="gl-search-wrap">
-    <input type="text" id="gl-search" class="gl-search" placeholder="용어 검색...">
-    <span class="gl-count" id="gl-count">{{ len .Pages }}개 용어</span>
-  </div>
-
-  {{/* 통합 필터 바 */}}
-  <div class="gl-toolbar" id="gl-toolbar">
-    {{/* 초성 — 존재하는 것만 */}}
-    {{ $consonants := slice "ㄱ" "ㄴ" "ㄷ" "ㄹ" "ㅁ" "ㅂ" "ㅅ" "ㅇ" "ㅈ" "ㅊ" "ㅋ" "ㅌ" "ㅍ" "ㅎ" }}
-    {{ $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
-    {{ $existConsonants := slice }}
-    {{ $existLetters := slice }}
-    {{ range .Pages }}
-      {{ with .Params.consonant }}{{ $existConsonants = $existConsonants | append . }}{{ end }}
-      {{ with .Params.letter }}{{ $existLetters = $existLetters | append . }}{{ end }}
-    {{ end }}
-    {{ $existConsonants = $existConsonants | uniq }}
-    {{ $existLetters = $existLetters | uniq }}
-
-    {{ range $c := $consonants }}
-      {{ if in $existConsonants $c }}
-        <button class="gl-chip gl-chip--letter" data-filter-type="consonant" data-filter-value="{{ $c }}">{{ $c }}</button>
-      {{ end }}
-    {{ end }}
-
-    {{ if and (gt (len $existConsonants) 0) (gt (len $existLetters) 0) }}
-      <span class="gl-divider">|</span>
-    {{ end }}
-
-    {{ range $l := $letters }}
-      {{ if in $existLetters $l }}
-        <button class="gl-chip gl-chip--letter" data-filter-type="letter" data-filter-value="{{ $l }}">{{ $l }}</button>
-      {{ end }}
-    {{ end }}
-
-    <span class="gl-divider">·</span>
-
-    {{/* 카테고리 — 인라인 */}}
-    {{ $categories := slice }}
-    {{ range .Pages }}
-      {{ with .Params.category }}{{ $categories = $categories | append . }}{{ end }}
-    {{ end }}
-    {{ $categories = $categories | uniq | sort }}
-    {{ range $cat := $categories }}
-      <button class="gl-chip gl-chip--category" data-filter-type="category" data-filter-value="{{ $cat }}">{{ $cat }}</button>
-    {{ end }}
-
-    <span class="gl-divider">·</span>
-
-    {{/* 난이도 — 인라인 */}}
-    <button class="gl-chip gl-chip--difficulty gl-chip--beginner" data-filter-type="difficulty" data-filter-value="초급">초급</button>
-    <button class="gl-chip gl-chip--difficulty gl-chip--intermediate" data-filter-type="difficulty" data-filter-value="중급">중급</button>
-    <button class="gl-chip gl-chip--difficulty gl-chip--advanced" data-filter-type="difficulty" data-filter-value="고급">고급</button>
-  </div>
-
-  {{/* 용어 카드 그리드 */}}
-  <div class="gl-grid" id="gl-grid">
-    {{ range .Pages.ByTitle }}
-      <a href="{{ .RelPermalink }}" class="gl-card"
-         data-consonant="{{ .Params.consonant }}"
-         data-letter="{{ .Params.letter }}"
-         data-category="{{ .Params.category }}"
-         data-difficulty="{{ .Params.difficulty }}"
-         data-title="{{ .Title }}"
-         data-description="{{ .Description }}">
-        <div class="gl-card__header">
-          <h2 class="gl-card__title">{{ .Title }}</h2>
-          {{ with .Params.term_en }}
-            <span class="gl-card__en">{{ . }}</span>
-          {{ end }}
-        </div>
-        <p class="gl-card__desc">{{ .Description }}</p>
-        <div class="gl-card__footer">
-          {{ with .Params.category }}
-            <span class="gl-badge gl-badge--category">{{ . }}</span>
-          {{ end }}
-          {{ with .Params.difficulty }}
-            <span class="gl-badge gl-badge--{{ cond (eq . "초급") "beginner" (cond (eq . "중급") "intermediate" "advanced") }}">{{ . }}</span>
-          {{ end }}
-        </div>
-      </a>
-    {{ end }}
-  </div>
 
   {{/* 빈 상태 */}}
   <div class="gl-empty" id="gl-empty" style="display:none;">
