@@ -793,73 +793,32 @@ pre.mermaid svg {
   margin-top: -0.25rem;
 }
 
-/* 테이블 스타일 — specificity 강화 (.prose override) */
-.gl-detail .prose table,
-.gl-detail .article-content table {
-  width: 100% !important;
-  min-width: 100%;
-  table-layout: auto;
+/* 테이블 전폭 + 컬럼 사이징 (브리핑과 동일) */
+.gl-detail .prose table {
   display: table !important;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  overflow: hidden;
+  width: 100% !important;
+}
+
+.gl-detail .prose table th:not(:last-child),
+.gl-detail .prose table td:not(:last-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.gl-detail .prose table th:last-child,
+.gl-detail .prose table td:last-child {
+  width: auto;
+}
+
+.gl-detail .prose td:not(:first-child),
+.gl-detail .prose thead th:not(:first-child) {
+  text-align: left !important;
 }
 
 /* 본문 컨테이너 — flex 전폭 사용 */
 .gl-detail .min-w-0.max-w-fit {
   max-width: 100%;
   flex-grow: 1;
-}
-
-.gl-detail .prose thead th,
-.gl-detail .article-content table th {
-  background: rgba(var(--gl-purple-rgb, 124, 58, 237), 0.18) !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-weight: 600;
-  font-size: 0.82rem;
-  text-align: left;
-  padding: 0.65rem 0.85rem;
-  border-bottom: 2px solid rgba(var(--gl-purple-rgb, 124, 58, 237), 0.3);
-}
-
-.gl-detail .prose td,
-.gl-detail .article-content table td {
-  padding: 0.55rem 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.82);
-  text-align: left !important;
-}
-
-.gl-detail .prose tbody tr:nth-child(even) td,
-.gl-detail .article-content table tbody tr:nth-child(even) td {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.gl-detail .prose tr:last-child td,
-.gl-detail .article-content table tr:last-child td {
-  border-bottom: none;
-}
-
-.gl-detail .prose tr:hover td,
-.gl-detail .article-content table tr:hover td {
-  background: rgba(var(--gl-purple-rgb, 124, 58, 237), 0.08);
-}
-
-/* 강조 행 (bold) */
-.gl-detail .prose td > strong,
-.gl-detail .article-content table td > strong {
-  color: var(--gl-accent, #06b6d4);
-}
-
-/* 모바일 테이블 가로 스크롤 */
-@media (max-width: 640px) {
-  .gl-detail .article-content table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
 /* 관련 용어 섹션 */
