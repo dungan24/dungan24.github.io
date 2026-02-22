@@ -536,6 +536,14 @@
   background: rgba(255, 255, 255, 0.9);
 }
 
+:root:not(.dark) .gl-detail .article-content table td {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+:root:not(.dark) .gl-detail .article-content table tr:hover td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
 :root:not(.dark) .gl-card {
   box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.08);
 }
@@ -783,6 +791,56 @@ pre.mermaid svg {
   font-size: 0.78rem;
   color: var(--gl-text-dim);
   margin-top: -0.25rem;
+}
+
+/* 테이블 스타일 — specificity 강화 (.prose override) */
+.gl-detail .prose table,
+.gl-detail .article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gl-detail .prose thead th,
+.gl-detail .article-content table th {
+  background: rgba(var(--gl-purple-rgb, 124, 58, 237), 0.18) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 2px solid rgba(var(--gl-purple-rgb, 124, 58, 237), 0.3);
+}
+
+.gl-detail .prose td,
+.gl-detail .article-content table td {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.gl-detail .prose tbody tr:nth-child(even) td,
+.gl-detail .article-content table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.gl-detail .prose tr:last-child td,
+.gl-detail .article-content table tr:last-child td {
+  border-bottom: none;
+}
+
+.gl-detail .prose tr:hover td,
+.gl-detail .article-content table tr:hover td {
+  background: rgba(var(--gl-purple-rgb, 124, 58, 237), 0.08);
+}
+
+/* 강조 행 (bold) */
+.gl-detail .prose td > strong,
+.gl-detail .article-content table td > strong {
+  color: var(--gl-accent, #06b6d4);
 }
 
 /* 모바일 테이블 가로 스크롤 */
