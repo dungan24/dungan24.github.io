@@ -1,0 +1,92 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+  <article class="gl-detail">
+    {{/* ── 히어로 헤더 ── */}}
+    <header class="gl-detail__header max-w-prose">
+      <nav class="gl-detail__breadcrumb">
+        <a href="{{ "glossary/" | relURL }}">주식사전</a> /
+      </nav>
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+      {{ with .Params.term_en }}
+        <p class="gl-detail__term-en">{{ . }}</p>
+      {{ end }}
+      <div class="gl-detail__badges">
+        {{ with .Params.difficulty }}
+          {{ $class := "beginner" }}
+          {{ if eq . "중급" }}{{ $class = "intermediate" }}{{ end }}
+          {{ if eq . "고급" }}{{ $class = "advanced" }}{{ end }}
+          <span class="gl-badge gl-badge--{{ $class }}">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.category }}
+          <span class="gl-badge gl-badge--category">{{ . }}</span>
+        {{ end }}
+        <span class="gl-detail__date">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }}분 분량
+        </span>
+      </div>
+    </header>
+
+    {{/* ── 본문 (TOC + Content) ── */}}
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      {{ $enableToc := site.Params.article.showTableOfContents | default false }}
+      {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
+      {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+      {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
+      {{ if $showToc }}
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
+            {{ partial "toc.html" . }}
+          </div>
+        </div>
+      {{ end }}
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        <div class="article-content max-w-prose mb-20">
+          {{ .Content }}
+        </div>
+      </div>
+
+      {{ with .File }}
+        {{ $path := .Path }}
+        {{ $jsPage := resources.Get "js/page.js" }}
+        {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+        <script
+          type="text/javascript"
+          src="{{ $jsPage.RelPermalink }}"
+          integrity="{{ $jsPage.Data.Integrity }}"
+          data-oid="views_{{ $path }}"
+          data-oid-likes="likes_{{ $path }}"></script>
+      {{ end }}
+    </section>
+
+    {{/* ── 관련 용어 ── */}}
+    {{ with .Params.related }}
+    <section class="gl-detail__related max-w-prose">
+      <h2>관련 용어</h2>
+      <div class="gl-detail__related-grid">
+        {{ range . }}
+          {{ $title := . }}
+          {{ range where site.RegularPages "Section" "glossary" }}
+            {{ if eq .Title $title }}
+              <a href="{{ .RelPermalink }}" class="gl-detail__related-card">
+                <span class="gl-detail__related-title">{{ .Title }}</span>
+                {{ with .Params.term_en }}
+                  <span class="gl-detail__related-en">{{ . }}</span>
+                {{ end }}
+              </a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ── 푸터 ── */}}
+    <footer class="pt-8 max-w-prose print:hidden">
+      <a href="{{ "glossary/" | relURL }}" class="gl-detail__back">← 주식사전으로 돌아가기</a>
+      {{ partial "article-pagination.html" . }}
+    </footer>
+  </article>
+{{ end }}

@@ -717,3 +717,118 @@ pre.mermaid svg {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==========================================================
+   Glossary Detail Page (.gl-detail)
+   ========================================================== */
+
+.gl-detail__header {
+  margin-top: 1.25rem;
+}
+
+.gl-detail__breadcrumb {
+  font-size: 0.8rem;
+  color: var(--gl-text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.gl-detail__breadcrumb a {
+  color: var(--gl-accent);
+}
+
+.gl-detail__term-en {
+  font-size: 0.9rem;
+  color: var(--gl-text-muted);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.gl-detail__badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.gl-detail__date {
+  font-size: 0.8rem;
+  color: var(--gl-text-dim);
+}
+
+/* 이미지 사이즈 제한 */
+.gl-detail .article-content figure img,
+.gl-detail .article-content p > img {
+  max-height: 420px;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* 이미지 하단 캡션 스타일 */
+.gl-detail .article-content figure + p > em,
+.gl-detail .article-content p:has(> img) + p > em {
+  display: block;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--gl-text-dim);
+  margin-top: -0.25rem;
+}
+
+/* 모바일 테이블 가로 스크롤 */
+@media (max-width: 640px) {
+  .gl-detail .article-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* 관련 용어 섹션 */
+.gl-detail__related {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gl-border);
+}
+
+.gl-detail__related h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.gl-detail__related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.gl-detail__related-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gl-border);
+  border-radius: var(--gl-radius, 8px);
+  background: var(--gl-bg-card);
+  transition: border-color 0.2s;
+  text-decoration: none;
+}
+
+.gl-detail__related-card:hover {
+  border-color: var(--gl-accent);
+}
+
+.gl-detail__related-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.gl-detail__related-en {
+  font-size: 0.75rem;
+  color: var(--gl-text-dim);
+}
+
+/* 돌아가기 링크 */
+.gl-detail__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--gl-accent);
+}
