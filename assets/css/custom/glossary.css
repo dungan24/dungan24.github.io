@@ -391,8 +391,8 @@
 }
 
 .gl-card__thumb {
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 90px;
   border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
