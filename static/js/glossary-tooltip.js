@@ -22,14 +22,25 @@
     return tooltip;
   }
 
+  let activeAnchor = null;
+
   function showTooltip(anchor) {
     const tt = getTooltip();
     const title = anchor.dataset.glTitle || "";
     const desc = anchor.dataset.glDesc || "";
+    const href = anchor.href || "";
     tt.innerHTML =
-      '<div class="gl-tooltip__title">' + escHtml(title) + "</div>" +
-      '<div class="gl-tooltip__desc">' + escHtml(desc) + "</div>";
+      '<div class="gl-tooltip__title">' +
+      escHtml(title) +
+      "</div>" +
+      '<div class="gl-tooltip__desc">' +
+      escHtml(desc) +
+      "</div>" +
+      '<a class="gl-tooltip__link" href="' +
+      escHtml(href) +
+      '">자세히 보기 →</a>';
     tt.classList.add("is-active");
+    activeAnchor = anchor;
 
     // Position near anchor
     const rect = anchor.getBoundingClientRect();
@@ -51,6 +62,7 @@
 
   function hideTooltip() {
     if (tooltip) tooltip.classList.remove("is-active");
+    activeAnchor = null;
   }
 
   function escHtml(s) {
@@ -66,13 +78,21 @@
         let p = node.parentElement;
         while (p && p !== root) {
           const tag = p.tagName;
-          if (tag === "A" || tag === "CODE" || tag === "PRE" || tag === "SCRIPT" || tag === "STYLE") {
+          if (
+            tag === "A" ||
+            tag === "CODE" ||
+            tag === "PRE" ||
+            tag === "SCRIPT" ||
+            tag === "STYLE"
+          ) {
             return NodeFilter.FILTER_REJECT;
           }
           if (p.classList.contains("gl-term")) return NodeFilter.FILTER_REJECT;
           p = p.parentElement;
         }
-        return node.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return node.textContent.trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
       },
     });
     let n;
@@ -84,19 +104,30 @@
   async function init() {
     // Only run on briefing posts (FACT/OPINION zones exist)
     const zones = [];
-    const comments = document.createTreeWalker(document, NodeFilter.SHOW_COMMENT);
-    let inFact = false, inOpinion = false;
-    let factStart = null, opinionStart = null;
+    const comments = document.createTreeWalker(
+      document,
+      NodeFilter.SHOW_COMMENT,
+    );
+    let inFact = false,
+      inOpinion = false;
+    let factStart = null,
+      opinionStart = null;
     let c;
     while ((c = comments.nextNode())) {
       const v = c.textContent.trim();
-      if (v === "FACT_ZONE_START") { inFact = true; factStart = c; }
+      if (v === "FACT_ZONE_START") {
+        inFact = true;
+        factStart = c;
+      }
       if (v === "FACT_ZONE_END" && inFact && factStart) {
         // Collect siblings between start and end comment
         zones.push({ start: factStart, end: c });
         inFact = false;
       }
-      if (v === "OPINION_ZONE_START") { inOpinion = true; opinionStart = c; }
+      if (v === "OPINION_ZONE_START") {
+        inOpinion = true;
+        opinionStart = c;
+      }
       if (v === "OPINION_ZONE_END" && inOpinion && opinionStart) {
         zones.push({ start: opinionStart, end: c });
         inOpinion = false;
@@ -110,7 +141,9 @@
       const resp = await fetch(DATA_URL);
       if (!resp.ok) return;
       terms = await resp.json();
-    } catch { return; }
+    } catch {
+      return;
+    }
 
     if (!terms || !terms.length) return;
 
@@ -154,7 +187,8 @@
           link.dataset.glDesc = term.desc;
 
           const parent = node.parentNode;
-          if (before) parent.insertBefore(document.createTextNode(before), node);
+          if (before)
+            parent.insertBefore(document.createTextNode(before), node);
           parent.insertBefore(link, node);
           if (after) parent.insertBefore(document.createTextNode(after), node);
           parent.removeChild(node);
@@ -166,14 +200,42 @@
     }
 
     // Event delegation for tooltips
+    var isTouch = "ontouchstart" in window;
+
+    // Desktop: hover
     document.addEventListener("pointerenter", function (e) {
-      const a = e.target.closest(".gl-term");
+      if (isTouch) return;
+      var a = e.target.closest(".gl-term");
       if (a) showTooltip(a);
     }, true);
 
     document.addEventListener("pointerleave", function (e) {
+      if (isTouch) return;
       if (e.target.closest(".gl-term")) hideTooltip();
     }, true);
+
+    // Mobile: first tap = tooltip, second tap or "자세히 보기" = navigate
+    document.addEventListener("click", function (e) {
+      if (!isTouch) return;
+      var a = e.target.closest(".gl-term");
+      // Tap inside tooltip link → allow navigation
+      if (e.target.closest(".gl-tooltip__link")) return;
+      // Tap on a gl-term
+      if (a) {
+        if (activeAnchor === a) {
+          // Second tap on same term → navigate
+          hideTooltip();
+          return;
+        }
+        e.preventDefault();
+        showTooltip(a);
+        return;
+      }
+      // Tap outside → dismiss
+      if (!e.target.closest(".gl-tooltip")) {
+        hideTooltip();
+      }
+    });
   }
 
   // Run after DOM ready

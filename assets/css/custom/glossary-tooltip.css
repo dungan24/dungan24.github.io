@@ -68,9 +68,32 @@
   color: #334155;
 }
 
-/* Hide on mobile (touch = no hover) */
+/* Mobile: touch-friendly tooltip */
 @media (max-width: 640px) {
   .gl-tooltip {
-    display: none !important;
+    width: min(280px, calc(100vw - 32px));
   }
+}
+
+.gl-tooltip.is-active {
+  pointer-events: auto;
+}
+
+/* "자세히 보기" link inside tooltip */
+.gl-tooltip__link {
+  display: block;
+  padding: 0.35rem 0.75rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mp-neon-cyan, #00F0FF);
+  text-decoration: none;
+  text-align: right;
+}
+
+.gl-tooltip__link:hover {
+  text-decoration: underline;
+}
+
+:root:not(.dark) .gl-tooltip__link {
+  color: var(--mp-neon-cyan, #0891B2);
 }
